@@ -8,20 +8,20 @@
     "loyalty": 10,
     "total": 194
   },
-  "lastRun": "2026-09-19T08:12:20.671Z",
-  "lastRunDurationMs": 108205,
+  "lastRun": "2026-09-20T08:45:13.257Z",
+  "lastRunDurationMs": 104754,
   "lastRunMode": "full",
   "sources": [
     {
-      "attempted": 121,
+      "attempted": 120,
       "discovered": 550,
       "failures": 0,
       "fresh": 120,
-      "ms": 13252,
+      "ms": 14846,
       "name": "rade.ir",
       "ok": true,
-      "parsed": 121,
-      "rotated": 1
+      "parsed": 120,
+      "rotated": 0
     },
     {
       "detail": [
@@ -146,14 +146,14 @@
           "url": "https://vipad.ir/"
         }
       ],
-      "ms": 87095,
+      "ms": 86093,
       "name": "bank-sites",
       "ok": true,
       "reachable": 2,
       "targets": 20
     },
     {
-      "ms": 7682,
+      "ms": 3610,
       "name": "macro-indicators",
       "ok": true,
       "sourcesOk": 2,
