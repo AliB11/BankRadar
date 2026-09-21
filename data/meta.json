@@ -1,16 +1,16 @@
 {
-  "autoDiscovered": 123,
+  "autoDiscovered": 154,
   "counts": {
     "credit": 53,
-    "deposits": 23,
+    "deposits": 48,
     "funds": 8,
     "loans": 102,
     "loyalty": 10,
-    "total": 196
+    "total": 221
   },
-  "lastRun": "2026-09-21T09:10:15.031Z",
-  "lastRunDurationMs": 104797,
-  "lastRunMode": "full",
+  "lastRun": "2026-09-21T20:06:28.403Z",
+  "lastRunDurationMs": 59,
+  "lastRunMode": "only:dgshahr",
   "sources": [
     {
       "attempted": 121,
@@ -158,6 +158,15 @@
       "ok": true,
       "sourcesOk": 2,
       "touched": []
+    },
+    {
+      "ms": 15,
+      "name": "dgshahr.com",
+      "ok": true,
+      "parsed": 31,
+      "schemes": 13,
+      "standard": 6,
+      "tiers": 51
     }
   ],
   "stale": 0,

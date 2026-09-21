@@ -1128,6 +1128,7 @@ export function footerHTML() {
   const sources = [
     ['بانک مرکزی جمهوری اسلامی ایران', 'https://www.cbi.ir'],
     ['رده — مقایسه خدمات بانکی', 'https://www.rade.ir/loan/'],
+    ['دیجی‌شهر — مقایسه نرخ سود سپرده بانکی', 'https://dgshahr.com/blog/best-banks-for-deposit-rates/'],
     ['مرکز آمار ایران', 'https://www.amar.org.ir'],
     ['بانک ملی ایران', 'https://bmi.ir'],
     ['بانک ملت', 'https://bankmellat.ir'],
@@ -1150,7 +1151,7 @@ export function footerHTML() {
         <h4>منابع اصلی داده</h4>
         <ul>
           ${sources
-            .slice(0, 4)
+            .slice(0, 5)
             .map(([name, url]) => `<li><a href="${safeUrl(url)}" target="_blank" rel="noopener noreferrer">${esc(name)}</a></li>`)
             .join('')}
           <li><a href="https://fipiran.ir" target="_blank" rel="noopener noreferrer">مرکز پردازش اطلاعات مالی ایران (فیپیران)</a></li>
@@ -1160,7 +1161,7 @@ export function footerHTML() {
         <h4>بانک‌های پایش‌شده</h4>
         <ul>
           ${sources
-            .slice(4)
+            .slice(5)
             .map(([name, url]) => `<li><a href="${safeUrl(url)}" target="_blank" rel="noopener noreferrer">${esc(name)}</a></li>`)
             .join('')}
         </ul>

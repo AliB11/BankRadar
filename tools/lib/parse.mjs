@@ -186,3 +186,69 @@ export function slugify(input) {
       .slice(0, 60) || 'unknown'
   );
 }
+
+/* ------------------------------------------------------------------ */
+/* تطبیق نام بانک و ساخت شناسه لاتین (پیش‌تر در sync-weekly)             */
+/* ------------------------------------------------------------------ */
+
+export function matchBank(rawBankName, bankList = []) {
+  if (!rawBankName) return { id: 'unknown', name: 'نامشخص' };
+  const folded = foldForMatch(rawBankName);
+
+  for (const b of bankList) {
+    if (foldForMatch(b.name) === folded) return b;
+    if (Array.isArray(b.aliases)) {
+      for (const alias of b.aliases) {
+        if (foldForMatch(alias) === folded) return b;
+      }
+    }
+  }
+
+  // جست‌وجوی تطبیق زیررشته‌ای با دو محافظ:
+  //   ۱. واژه‌های عام (مثل «بانک») نباید به‌صورت تصادفی به نخستین بانک فهرست
+  //      بچسبند؛ هم به‌عنوان ورودی و هم به‌عنوان نام بانک نادیده گرفته می‌شوند.
+  //   ۲. از میان چند نامزد، بلندترین تطبیق انتخاب می‌شود تا نتیجه به ترتیب
+  //      فهرست وابسته نباشد.
+  const GENERIC = new Set(['بانک', 'مؤسسه', 'موسسه', 'اعتباری', 'قرض الحسنه', 'ایران', 'اسلامی', 'کارگزاری', 'صندوق']);
+  if (GENERIC.has(folded)) return { id: slugify(rawBankName), name: rawBankName.trim() };
+
+  let best = null;
+  let bestLen = 0;
+  const consider = (b, raw) => {
+    const needle = foldForMatch(raw);
+    if (!needle || GENERIC.has(needle)) return;
+    const hit = folded.includes(needle) || needle.includes(folded);
+    if (hit && needle.length > bestLen) {
+      best = b;
+      bestLen = needle.length;
+    }
+  };
+  for (const b of bankList) {
+    consider(b, b.name);
+    if (Array.isArray(b.aliases)) {
+      for (const alias of b.aliases) consider(b, alias);
+    }
+  }
+  if (best) return best;
+
+  return { id: slugify(rawBankName), name: rawBankName.trim() };
+}
+
+/**
+ * ساخت شناسه لاتین معتبر برای رکورد ورودی.
+ *
+ * slugify نام‌های فارسی ناشناخته را با حروف فارسی برمی‌گرداند (که برای نام بانک
+ * خوب است) اما شناسه محصول باید با الگوی `^[a-z0-9][a-z0-9-]*$` بخواند وگرنه
+ * اعتبارسنجی داده، کل درون‌ریزی را رد می‌کند. برای بخش فارسی، اثر انگشت پایدار
+ * ساخته می‌شود تا دو محصول متفاوت شناسه یکسان نگیرند.
+ */
+export function makeLatinId(bankId, productTitle) {
+  const h = [...foldForMatch(productTitle)].reduce((a, c) => (a * 31 + c.codePointAt(0)) >>> 0, 7);
+  const head = `${slugify(bankId)}-${slugify(productTitle)}`
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 48);
+  const tail = h.toString(36);
+  return (head && /^[a-z0-9]/.test(head) ? `${head}-${tail}` : `imp-${tail}`).slice(0, 60);
+}
