@@ -15,17 +15,19 @@
  *   node tools/sync-weekly.mjs --input=output.json   # درون‌ریزی خروجی JSON منابع معتبر
  *   node tools/sync-weekly.mjs --input=output.csv    # درون‌ریزی خروجی CSV منابع معتبر
  *   node tools/sync-weekly.mjs --limit=150           # سقف واکشی صفحات برای ممیزی عمیق
+ *   DGSHAHR_HTML_FILE=… (برای تغذیه آفلاین منبع دیجی‌شهر در اجرای خط لوله)
  */
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { runSource } from './lib/http.mjs';
-import { foldForMatch, daysSince, today, slugify, normalizeText, toNumber } from './lib/parse.mjs';
+import { foldForMatch, daysSince, today, slugify, normalizeText, toNumber, matchBank, makeLatinId } from './lib/parse.mjs';
 import { todayJalali, formatJalali } from './lib/jalali.mjs';
 import * as rade from './sources/rade.mjs';
 import * as banks from './sources/banks.mjs';
 import * as cbi from './sources/cbi.mjs';
+import * as dgshahr from './sources/dgshahr.mjs';
 import { buildBundle } from './build-bundle.mjs';
 import { sortDeep, mergeProducts, deepEqual } from './collect.mjs';
 import { signatureOf } from './data-signature.mjs';
@@ -144,33 +146,8 @@ export function parseCSV(text) {
 /* تطبیق و یکسان‌سازی هوشمند نام بانک‌ها                             */
 /* ------------------------------------------------------------------ */
 
-export function matchBank(rawBankName, bankList = []) {
-  if (!rawBankName) return { id: 'unknown', name: 'نامشخص' };
-  const folded = foldForMatch(rawBankName);
-
-  for (const b of bankList) {
-    if (foldForMatch(b.name) === folded) return b;
-    if (Array.isArray(b.aliases)) {
-      for (const alias of b.aliases) {
-        if (foldForMatch(alias) === folded) return b;
-      }
-    }
-  }
-
-  // جست‌وجوی تطبیق زیررشته‌ای
-  for (const b of bankList) {
-    if (folded.includes(foldForMatch(b.name)) || foldForMatch(b.name).includes(folded)) {
-      return b;
-    }
-    if (Array.isArray(b.aliases)) {
-      for (const alias of b.aliases) {
-        if (folded.includes(foldForMatch(alias))) return b;
-      }
-    }
-  }
-
-  return { id: slugify(rawBankName), name: rawBankName.trim() };
-}
+// matchBank و makeLatinId به tools/lib/parse.mjs منتقل شدند (منبع‌ها هم به آن‌ها نیاز دارند)
+export { matchBank, makeLatinId };
 
 /* ------------------------------------------------------------------ */
 /* تبدیل و نرمال‌سازی داده‌های ورودی بیرونی                              */
@@ -215,7 +192,7 @@ export function parseInputData(rawContent, filename = 'input.json', banksList = 
 
     const id = raw.id && /^[a-z0-9][a-z0-9-]*$/.test(raw.id)
       ? raw.id
-      : `${matchedBank.id}-${slugify(productTitle)}`.slice(0, 60);
+      : makeLatinId(matchedBank.id, productTitle);
 
     const sourceUrl = raw.sourceUrl || raw.url || raw.source?.url || 'https://www.cbi.ir';
     const sourceTitle = raw.sourceTitle || raw.source?.title || matchedBank.name;
@@ -289,7 +266,7 @@ export function detectAnomalies(products = [], indicators = {}) {
         bank: p.bank,
         rate: p.rate,
         title: 'نرخ سود سپرده بالاتر از سقف مصوب',
-        detail: `${at}: نرخ ${p.rate}٪ بالاتر از سقف مصوب ۲۳٪ بانک مرکزی است.`,
+        detail: `${at}: نرخ ${p.rate}٪ بالاتر از سقف مصوب ${depositCap1y}٪ بانک مرکزی است.`,
       });
     }
 
@@ -551,6 +528,27 @@ export async function syncWeekly(opts = {}) {
         reachable: bankResult.data.ok,
         ms: bankResult.ms,
       });
+    }
+
+    // مجله دیجی‌شهر — جدول نرخ‌های سود سپرده (ترجیحی و طرح‌های ویژه)
+    const banksData = await readJSON('banks.json', { banks: [] });
+    const dgResult = await runSource('dgshahr-weekly', () =>
+      dgshahr.collect({ existing: dataset.products, banks: banksData?.banks ?? [], log: vlog }),
+    );
+    if (dgResult.ok) {
+      incoming = incoming.concat(dgResult.data.products);
+      sourcesLog.push({
+        name: 'dgshahr.com (weekly-audit)',
+        ok: true,
+        parsed: dgResult.data.products.length,
+        tiers: dgResult.data.tierRows,
+        schemes: dgResult.data.schemeRows,
+        ms: dgResult.ms,
+      });
+      log(`دیجی‌شهر: ${dgResult.data.products.length} محصول سپرده در ممیزی هفتگی`);
+    } else {
+      sourcesLog.push({ name: 'dgshahr.com', ok: false, error: dgResult.error, ms: dgResult.ms });
+      log(`دیجی‌شهر: ناموفق — ${dgResult.error}`);
     }
   }
 

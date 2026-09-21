@@ -13,6 +13,7 @@
  *   node tools/collect.mjs --dry-run    # بدون نوشتن، فقط گزارش
  *   node tools/collect.mjs --offline    # بدون شبکه (فقط بازسازی bundle و اعتبارسنجی)
  *   node tools/collect.mjs --limit=60   # محدودکردن تعداد صفحات وام
+ *   node tools/collect.mjs --only=dgshahr  # فقط منبع دیجی‌شهر (برای درون‌ریزی آفلاین: DGSHAHR_HTML_FILE)
  */
 
 import fs from 'node:fs/promises';
@@ -23,6 +24,7 @@ import { foldForMatch, daysSince, today, slugify } from './lib/parse.mjs';
 import * as rade from './sources/rade.mjs';
 import * as banks from './sources/banks.mjs';
 import * as cbi from './sources/cbi.mjs';
+import * as dgshahr from './sources/dgshahr.mjs';
 import { buildBundle } from './build-bundle.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -39,6 +41,9 @@ const DRY_RUN = FLAG('dry-run');
 const OFFLINE = FLAG('offline');
 const VERBOSE = FLAG('verbose');
 const LIMIT = Number(OPT('limit', 120));
+// محدودکردن اجرا به برخی منابع: --only=dgshahr یا --only=rade,banks
+const ONLY = new Set(String(OPT('only', '')).split(',').map((s) => s.trim()).filter(Boolean));
+const runs = (name) => !ONLY.size || ONLY.has(name);
 
 const log = (msg) => console.log(`[collect] ${msg}`);
 const vlog = (msg) => VERBOSE && console.log(`[verbose] ${msg}`);
@@ -92,7 +97,7 @@ function matchKey(p) {
  * ادغام محصولات تازه‌کشف‌شده در مجموعه موجود.
  * @param {object[]} existing
  * @param {object[]} incoming
- * @returns {{merged:object[], stats:{added:number, updated:number, unchanged:number, restored:number}}}
+ * @returns {{merged:object[], stats:{added:number, updated:number, unchanged:number}}}
  */
 /**
  * مقایسه ساختاری دو مقدار JSON-پذیر.
@@ -134,6 +139,12 @@ export function mergeProducts(existing, incoming) {
   for (const raw of incoming) {
     if (!raw || !raw.product) continue;
     const candidate = { ...raw };
+    // رکورد بی‌شناسه نباید روی کلید undefined روی هم بیفتد؛ شناسه پایدار و
+    // سازگار با الگوی مجاز (^[a-z0-9][a-z0-9-]*$) از کلید تطبیق ساخته می‌شود.
+    if (!candidate.id) {
+      const h = [...matchKey(candidate)].reduce((a, c) => (a * 31 + c.codePointAt(0)) >>> 0, 7);
+      candidate.id = `auto-${h.toString(36)}`;
+    }
     // رکورد دیده‌شده در این اجرا
     candidate.stale = false;
     candidate.lastSeen = today();
@@ -169,6 +180,13 @@ export function mergeProducts(existing, incoming) {
       if (frozen.includes(k)) continue;
       if (skipEmpty && (v === null || v === undefined || v === '')) continue;
       if (skipEmpty && Array.isArray(v) && v.length === 0) continue;
+      // تاریخ‌های کنترلی هرگز با مقدار تهی پاک نمی‌شوند: نبودِ تاریخ در تجزیه
+      // تازه یعنی «نامعلوم»، نه «حذف». پاک شدن lastUpdated رکورد معتبر را از
+      // اعتبار می‌اندازد (اعتبارسنجی، تاریخ را الزامی می‌داند) و کل خط لوله را
+      // به‌خاطر یک صفحه بدون تاریخ، سرخ می‌کند.
+      if ((k === 'lastUpdated' || k === 'lastSeen' || k === 'lastVerified') && (v === null || v === undefined || v === '')) {
+        continue;
+      }
       const prev = next[k];
       // مقایسه ارجاعی برای اشیای تودرتو («extra») همیشه «متفاوت» می‌داد و
       // هر رکورد خودکار در هر اجرا «به‌روزشده» شمرده می‌شد؛ آمار ادغام
@@ -251,6 +269,7 @@ async function main() {
   let indicators = indicatorsBase;
 
   if (!OFFLINE) {
+    if (runs('rade')) {
     // ۱) رده
     // چرخش بازبینی: قدیمی‌ترین رکوردهای خودکار از نظر lastSeen اول صف
     // می‌ایستند. با سهمی از سقف واکشی، همه رکوردها در چند روز نوبت
@@ -284,7 +303,9 @@ async function main() {
       report.sources.push({ name: 'rade.ir', ok: false, error: radeResult.error, ms: radeResult.ms });
       log(`رده: ناموفق — ${radeResult.error}`);
     }
+    }
 
+    if (runs('banks')) {
     // ۲) سایت بانک‌ها
     const bankResult = await runSource('banks', () => banks.collect({ concurrency: 4, log: vlog }));
     if (bankResult.ok) {
@@ -309,7 +330,9 @@ async function main() {
     } else {
       report.sources.push({ name: 'bank-sites', ok: false, error: bankResult.error, ms: bankResult.ms });
     }
+    }
 
+    if (runs('cbi')) {
     // ۳) شاخص‌های کلان
     const cbiResult = await runSource('cbi', () => cbi.collect(indicatorsBase, { log: vlog }));
     if (cbiResult.ok) {
@@ -325,6 +348,33 @@ async function main() {
     } else {
       report.sources.push({ name: 'macro-indicators', ok: false, error: cbiResult.error, ms: cbiResult.ms });
     }
+    }
+
+
+    // ۴) مجله دیجی‌شهر — جدول نرخ‌های سود سپرده (ترجیحی و طرح‌های ویژه)
+    if (runs('dgshahr')) {
+      const banksData = await readJSON('banks.json', { banks: [] });
+      const dgResult = await runSource('dgshahr', () =>
+        dgshahr.collect({ existing: dataset.products, banks: banksData?.banks ?? [], log: vlog }),
+      );
+      if (dgResult.ok) {
+        incoming = incoming.concat(dgResult.data.products);
+        report.sources.push({
+          name: 'dgshahr.com',
+          ok: true,
+          parsed: dgResult.data.products.length,
+          tiers: dgResult.data.tierRows,
+          schemes: dgResult.data.schemeRows,
+          standard: (dgResult.data.standard ?? []).length,
+          ms: dgResult.ms,
+        });
+        log(`دیجی‌شهر: ${dgResult.data.products.length} محصول سپرده (${dgResult.data.tierRows} پله ترجیحی + ${dgResult.data.schemeRows} طرح)`);
+      } else {
+        report.sources.push({ name: 'dgshahr.com', ok: false, error: dgResult.error, ms: dgResult.ms });
+        log(`دیجی‌شهر: ناموفق — ${dgResult.error}`);
+      }
+    }
+
   } else {
     log('حالت offline: واکشی شبکه انجام نشد');
   }
@@ -362,15 +412,24 @@ async function main() {
   report.stale = productsOut.stale;
   report.autoDiscovered = productsOut.autoDiscovered;
 
+  // در اجرای جزئی (--only) وضعیت منابعی که اجرا نشده‌اند از گزارش قبلی حفظ می‌شود
+  let metaSources = report.sources;
+  if (ONLY.size) {
+    const prevMeta = await readJSON('meta.json', { sources: [] });
+    const byName = new Map((prevMeta?.sources ?? []).map((s) => [s.name, s]));
+    for (const s of report.sources) byName.set(s.name, s);
+    metaSources = [...byName.values()];
+  }
+
   await writeJSON('meta.json', {
     version: 2,
     lastRun: report.finishedAt,
     lastRunDurationMs: report.durationMs,
-    lastRunMode: OFFLINE ? 'offline' : DRY_RUN ? 'dry-run' : 'full',
+    lastRunMode: OFFLINE ? 'offline' : DRY_RUN ? 'dry-run' : ONLY.size ? `only:${[...ONLY].join(',')}` : 'full',
     counts: productsOut.counts,
     stale: productsOut.stale,
     autoDiscovered: productsOut.autoDiscovered,
-    sources: report.sources,
+    sources: metaSources,
   });
 
   if (!DRY_RUN) {

@@ -80,9 +80,21 @@ const server = http.createServer(async (req, res) => {
     let filePath = decodeURIComponent(url.pathname);
     if (filePath.endsWith('/')) filePath += 'index.html';
 
-    const absolute = path.join(ROOT, filePath);
-    // جلوگیری از خروج از ریشه پروژه
-    if (!absolute.startsWith(ROOT)) {
+    const absolute = path.resolve(path.join(ROOT, filePath));
+    // جلوگیری از خروج از ریشه پروژه. مقایسه پیشوندی ساده (startsWith) کافی
+    // نیست: نشانی‌های رمزگذاری‌شده مثل «..%2f..%2fetc/passwd» پس از decode
+    // از ریشه بیرون می‌زنند و چون رشته‌شان می‌تواند با ROOT شروع شود، از فیلتر
+    // ساده رد می‌شدند.
+    const rel = path.relative(ROOT, absolute);
+    if (rel.startsWith('..') || path.isAbsolute(rel)) {
+      res.writeHead(403).end('Forbidden');
+      return;
+    }
+
+    // پوشه .git (و هر مسیر پنهان دیگری) هرگز سرو نمی‌شود؛ این سرور گاهی از
+    // پشت پروکسی پیش‌نمایش هم در دسترس است و افشای .git/config و credentials
+    // پذیرفتنی نیست.
+    if (rel.split(path.sep).some((seg) => seg.startsWith('.'))) {
       res.writeHead(403).end('Forbidden');
       return;
     }

@@ -128,7 +128,14 @@ export function faDate(iso) {
 export function daysSince(iso) {
   const m = String(iso ?? '').match(/^(\d{4})-(\d{2})-(\d{2})/);
   if (!m) return Infinity;
-  const target = Date.UTC(Number(m[1]), Number(m[2]) - 1, Number(m[3]));
+  const year = Number(m[1]);
+  const month = Number(m[2]);
+  const day = Number(m[3]);
+  // تاریخ نامعتبر (ماه ۱۹ یا روز ۹۹) نباید با سرریز Date.UTC به «امروز» یا
+  // آینده تبدیل شود؛ برای داده خراب، حکم «کهنه/نامشخص» امن‌تر است.
+  if (month < 1 || month > 12 || day < 1 || day > 31) return Infinity;
+  const target = Date.UTC(year, month - 1, day);
+  if (Number.isNaN(target)) return Infinity;
   const now = new Date();
   const todayMs = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
   return Math.max(0, Math.floor((todayMs - target) / 86_400_000));
@@ -142,7 +149,8 @@ export function faAgo(iso) {
   if (d === 1) return 'دیروز';
   if (d < 31) return `${fa(d)} روز پیش`;
   if (d < 365) return `${fa(Math.round(d / 30))} ماه پیش`;
-  return `${fa(Math.round(d / 12))} سال پیش`;
+  // تقسیم روز بر ۱۲ (ماه) سال را چند برابر بزرگ نشان می‌داد: ۵۰۰ روز → «۴۲ سال پیش»
+  return `${fa(Math.round(d / 365))} سال پیش`;
 }
 
 /** وضعیت تازگی: خوب/هشدار/کهنه */
@@ -153,7 +161,7 @@ export function freshness(iso) {
   return 'bad';
 }
 
-/* تبدیل میلادی↔شمسی (نسخه سبک سمت مرورگر) */
+/* تبدیل میلادی↔شمسی (نسخه سبک سمت مرورگر؛ هم‌الگوریتم با tools/lib/jalali.mjs) */
 const BREAKS = [-61, 9, 38, 199, 426, 686, 756, 818, 1111, 1181, 1210, 1635, 2060, 2097, 2192, 2262, 2324, 2394, 2456, 3178];
 const div = (a, b) => Math.trunc(a / b);
 const mod = (a, b) => a - Math.floor(a / b) * b;
@@ -182,28 +190,31 @@ function jalCal(jy) {
   if (leap === -1) leap = 4;
   return { leap, gy, march };
 }
+
+/** میلادی → روز ژولینی */
 const g2d = (gy, gm, gd) =>
   div((gy + div(gm - 8, 6) + 100100) * 1461, 4) +
   div(153 * mod(gm + 9, 12) + 2, 5) + gd - 34840408 -
   div(div(gy + 100100 + div(gm - 8, 6), 100) * 3, 4) + 752;
 
-function d2j(jdn) {
+/** روز ژولینی → میلادی */
+function d2g(jdn) {
   let j = 4 * jdn + 139361631;
   j = j + div(div(4 * jdn + 183187720, 146097) * 3, 4) * 4 - 3908;
   const i = div(mod(j, 1461), 4) * 5 + 308;
   const gd = div(mod(i, 153), 5) + 1;
   const gm = mod(div(i, 153), 12) + 1;
   const gy = div(j, 1461) - 100100 + div(8 - gm, 6);
-  return { jy: gy - 621, jm: 1, jd: 1, _gy: gy, _gm: gm, _gd: gd };
+  return { gy, gm, gd };
 }
 
 /** میلادی → شمسی */
 export function g2j(gy, gm, gd) {
   const jdn = g2d(gy, gm, gd);
-  const gy2 = d2j(jdn)._gy;
-  let jy = gy2 - 621;
+  const gYear = d2g(jdn).gy;
+  let jy = gYear - 621;
   const r = jalCal(jy);
-  const jdn1f = g2d(gy2, 3, r.march);
+  const jdn1f = g2d(gYear, 3, r.march);
   let k = jdn - jdn1f;
   if (k >= 0) {
     if (k <= 185) return { jy, jm: 1 + div(k, 31), jd: mod(k, 31) + 1 };

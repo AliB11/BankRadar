@@ -252,6 +252,15 @@ export async function loadData() {
   store.derived = bundled?.derived ?? {};
   store.period = bundled?.period ?? '';
   store.meta = { ...(bundled?.meta ?? {}), loadSource: source };
+  // وقتی نسخه تازه‌تر JSON جایگزین می‌شود، شمارش‌ها و مهر اجرا هم باید از همان
+  // نسخه بیایند؛ وگرنه مرکز داده آمار کهنه بسته را نشان می‌دهد.
+  if (fresh) {
+    if (fresh.counts) store.meta.counts = fresh.counts;
+    if (fresh.generatedAt) {
+      store.meta.generatedAt = fresh.generatedAt;
+      store.meta.lastRun = fresh.generatedAt;
+    }
+  }
 
   // بازیابی تنظیمات کاربر
   const savedWeights = storage.get('weights');
@@ -310,6 +319,7 @@ const normSearch = (s) =>
   String(s ?? '')
     .replace(/[\u200c\u200d]/g, ' ')
     .replace(/[۰-۹]/g, (d) => String('۰۱۲۳۴۵۶۷۸۹'.indexOf(d)))
+    .replace(/[٠-٩]/g, (d) => String('٠١٢٣٤٥٦٧٨٩'.indexOf(d)))
     .replace(/[ي]/g, 'ی')
     .replace(/[ك]/g, 'ک')
     .toLowerCase()
@@ -413,7 +423,6 @@ export function summary() {
     (p) => daysSince(mostRecent(p.lastUpdated, p.lastSeen)) <= 30,
   ).length;
   const sourceFresh30 = products.filter((p) => daysSince(p.lastUpdated) <= 30).length;
-  const fresh30 = verified30;
   const stale = products.filter((p) => p.stale).length;
   const auto = products.filter((p) => p.autoDiscovered).length;
   const missingDate = products.filter((p) => !p.lastUpdated).length;
@@ -422,7 +431,6 @@ export function summary() {
     total: products.length,
     banks: new Set(products.map((p) => p.bank)).size,
     byCategory,
-    fresh30,
     verified30,
     sourceFresh30,
     stale,

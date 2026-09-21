@@ -12,9 +12,9 @@ import {
   CATEGORY_META, store, scoreOf, resultOf, summary, availableBanks, availableBanksIn, PRESETS,
   CONTRACT_META, CONTRACT_KEYS, isCreditCategory, contractCounts,
 } from './store.js';
-import { scoreTone, explainScore, WEIGHT_META, WEIGHT_KEYS } from './score.js';
+import { scoreTone, explainScore, WEIGHT_META, WEIGHT_KEYS, mostRecent } from './score.js';
 import { scoreRing, donut, rateLadder, compareBars, freshnessGrid } from './charts.js';
-import { loanSummary, realRate, scheduleFor, scheduleLegacy, installmentInflationTrajectory } from './finance.js';
+import { loanSummary, realRate, scheduleFor, installmentInflationTrajectory } from './finance.js';
 
 const confChip = {
   high: ['chip chip--good', 'منبع تأییدشده'],
@@ -28,6 +28,7 @@ const collateralLabel = {
   guarantor: 'ضامن',
   'deposit-block': 'سپرده مسدود',
   collateral: 'وثیقه ملکی',
+  promissory: 'سفته',
   mixed: 'ترکیبی',
 };
 
@@ -367,7 +368,11 @@ export function cardHTML(p) {
   const score = result.score;
   const tone = scoreTone(score);
   const meta = CATEGORY_META[p.category];
-  const fresh = freshness(p.lastUpdated);
+  // ملاک تازگی با موتور امتیازدهی یکی است: جدیدترین تاریخ بازبینی خط لوله یا
+  // به‌روزرسانی منبع (mostRecent). پیش‌تر فقط lastUpdated ملاک رنگ نشانگر بود و
+  // رکورد «دیروز بازبینی‌شده با منبع کهنه» به‌اشتباه قرمز نشان داده می‌شد.
+  const checked = mostRecent(p.lastUpdated, p.lastSeen);
+  const fresh = freshness(checked);
   const compared = store.compare.has(p.id);
   const initials = bankMonogram(p.bank);
 
@@ -413,11 +418,11 @@ export function cardHTML(p) {
       </div>
       <div class="metric">
         <span class="k">سقف / دامنه</span>
-        <span class="v">${fa(esc(p.amountLabel || faToman(p.maxAmount) || 'نامشخص'))}</span>
+        <span class="v">${esc(fa(p.amountLabel || faToman(p.maxAmount) || 'نامشخص'))}</span>
       </div>
       <div class="metric">
         <span class="k">مدت</span>
-        <span class="v">${fa(esc(p.termLabel || (p.termMonths ? `${fa(p.termMonths)} ماه` : 'نامشخص')))}</span>
+        <span class="v">${esc(fa(p.termLabel || (p.termMonths ? `${fa(p.termMonths)} ماه` : 'نامشخص')))}</span>
       </div>
     </div>
 
@@ -436,7 +441,6 @@ export function cardHTML(p) {
         ${(() => {
           // دو تاریخ متفاوت است: زمان بازبینی توسط خط لوله، و زمان
           // به‌روزرسانی خود منبع. نمایش هر دو، تصویر صادقانه‌تری می‌دهد.
-          const checked = p.lastSeen || p.lastUpdated;
           const srcDate = p.lastUpdated;
           const srcOld = srcDate && daysSince(srcDate) > 90;
           return `کنترل ${esc(faAgo(checked))}${srcOld ? ` · منبع: ${esc(faDate(srcDate))}` : ''}`;
@@ -545,7 +549,6 @@ export function compareHTML() {
   const inflation = store.indicators?.inflationAnnual?.value ?? null;
 
   // محاسبه بهترین مقدار هر ردیف برای برجسته‌سازی
-  const lowerIsBetter = new Set(['rate', 'installment', 'totalInterest']);
   const rows = [
     { key: 'score', label: 'امتیاز جذابیت', get: (p) => scoreOf(p.id), lowerIsBetter: false, fmt: (v) => fa(v) },
     { key: 'real', label: 'بازده/هزینه حقیقی', get: (p) => resultOf(p.id).realRate, lowerIsBetter: false, fmt: (v) => (v == null ? '—' : faSignedPercent(v)) },
@@ -555,7 +558,7 @@ export function compareHTML() {
     { key: 'term', label: 'مدت بازپرداخت', get: (p) => p.termMonths, lowerIsBetter: false, fmt: (v) => (v ? `${fa(v)} ماه` : '—') },
     { key: 'installment', label: 'قسط تقریبی (در سقف مجاز)', contingent: true, get: (p) => (isFinanced(p) ? scheduleFor(p, p.maxAmount, p.termMonths).installment : null), lowerIsBetter: true, fmt: (v) => faToman(v) },
     { key: 'interest', label: 'کل هزینه مالی (سود یا کارمزد)', contingent: true, get: (p) => (isFinanced(p) ? scheduleFor(p, p.maxAmount, p.termMonths).totalInterest : null), lowerIsBetter: true, fmt: (v) => faToman(v) },
-    { key: 'collateral', label: 'وثیقه / ضمانت', get: (p) => null, lowerIsBetter: false, fmt: (_, p) => fa(esc(p.collateral)) },
+    { key: 'collateral', label: 'وثیقه / ضمانت', get: (p) => null, lowerIsBetter: false, fmt: (_, p) => esc(fa(p.collateral)) },
     { key: 'digital', label: 'امتیاز دیجیتال', get: (p) => p.digital, lowerIsBetter: false, fmt: (v) => fa(Math.round(v)) },
     { key: 'friction', label: 'کمبود اصطکاک', get: (p) => p.friction, lowerIsBetter: false, fmt: (v) => fa(Math.round(v)) },
     { key: 'fresh', label: 'آخرین کنترل خط لوله', get: (p) => null, lowerIsBetter: false, fmt: (_, p) => (p.lastSeen || p.lastUpdated ? esc(faDate(p.lastSeen || p.lastUpdated)) : '—') },
@@ -695,7 +698,7 @@ export function chartsHTML(rows) {
       <div class="chart-head">
         <div>
           <h3>پوشش دسته‌ها</h3>
-          <p>توزیع ${fa(s.total)} محصول ثبت‌شده در چهار دسته اصلی</p>
+          <p>توزیع ${fa(s.total)} محصول ثبت‌شده در پنج دسته اصلی</p>
         </div>
       </div>
       <div class="donut-wrap">
@@ -741,6 +744,8 @@ export function detailHTML(p) {
   const meta = CATEGORY_META[p.category];
   const inflation = store.indicators?.inflationAnnual?.value ?? null;
   const isLoan = p.category === 'loans' || p.category === 'credit';
+  // همان ملاک موتور امتیازدهی و کارت: جدیدترین تاریخ بازبینی یا به‌روزرسانی منبع
+  const checked = mostRecent(p.lastUpdated, p.lastSeen);
 
   const spec = (k, v) => `<div class="spec"><span class="k">${esc(k)}</span><span class="v">${v}</span></div>`;
 
@@ -812,7 +817,7 @@ export function detailHTML(p) {
       </div>
       <h2>${esc(p.product)}</h2>
       <div style="font-size:var(--fs-2xs);color:var(--text-3);margin-block-start:3px">
-        ${fa(esc(p.bank))}${p.audience ? ` · ${fa(esc(p.audience))}` : ''}
+        ${esc(fa(p.bank))}${p.audience ? ` · ${esc(fa(p.audience))}` : ''}
       </div>
     </div>
     <button class="btn btn--icon btn--ghost" type="button" data-action="close-drawer" aria-label="بستن">✕</button>
@@ -827,19 +832,20 @@ export function detailHTML(p) {
       <div style="flex:1;text-align:end">
         ${scoreChip(result.score)}
         <div style="font-size:var(--fs-2xs);color:var(--text-4);margin-block-start:4px">
-          ${p.lastUpdated ? `آخرین کنترل: ${esc(faDate(p.lastUpdated))} (${esc(faAgo(p.lastUpdated))})` : 'تاریخ کنترل نامشخص'}
+          ${checked ? `آخرین کنترل: ${esc(faDate(checked))} (${esc(faAgo(checked))})` : 'تاریخ کنترل نامشخص'}
+          ${p.lastUpdated && p.lastUpdated !== checked ? ` · به‌روزرسانی منبع: ${esc(faDate(p.lastUpdated))}` : ''}
         </div>
       </div>
     </div>
 
     <div class="spec-grid">
       ${spec('نرخ / کارمزد', p.rateKind === 'none' ? 'غیرنرخ‌دار' : faPercent(p.rate))}
-      ${spec('سقف مبلغ', fa(esc(p.amountLabel || faToman(p.maxAmount))))}
+      ${spec('سقف مبلغ', esc(fa(p.amountLabel || faToman(p.maxAmount))))}
       ${p.multiPlan ? `<div><span class="k">توجه</span><span class="v" style="font-size:var(--fs-3xs);color:var(--text-3);line-height:1.9">این صفحه یک بسته چند طرح مستقل است؛ سقف و مدت بازپرداخت بین طرح‌ها متفاوت است و ارقام منفرد در جدول مقایسه آورده نمی‌شود.</span></div>` : ''}
       ${spec('حداقل مبلغ', esc(faToman(p.minAmount)))}
-      ${spec('مدت', fa(esc(p.termLabel || (p.termMonths ? `${fa(p.termMonths)} ماه` : 'نامشخص'))))}
+      ${spec('مدت', esc(fa(p.termLabel || (p.termMonths ? `${fa(p.termMonths)} ماه` : 'نامشخص'))))}
       ${isLoan ? spec('نوع عقد', `${esc(CONTRACT_META[p.contractType]?.label ?? 'نامشخص')}${CONTRACT_META[p.contractType]?.hint ? ` <span style="font-size:var(--fs-3xs);color:var(--text-4)">(${esc(CONTRACT_META[p.contractType].hint)})</span>` : ''}`) : ''}
-      ${spec('وثیقه / ضمانت', fa(esc(p.collateral)))}
+      ${spec('وثیقه / ضمانت', esc(fa(p.collateral)))}
       ${spec('نوع وثیقه', esc(collateralLabel[p.collateralKind] ?? 'نامشخص'))}
       ${spec('سطح اطمینان', esc((confChip[p.confidence] ?? confChip.medium)[1]))}
       ${spec(realLabel(p), result.realRate != null ? faSignedPercent(result.realRate) : '—')}
@@ -962,7 +968,6 @@ export function detailHTML(p) {
 export function dataModalHTML() {
   const s = summary();
   const sources = store.meta?.sources ?? [];
-  const counts = store.meta?.counts ?? {};
 
   return `
   <div class="modal-head">
@@ -1005,7 +1010,7 @@ export function dataModalHTML() {
     }
 
     <div class="section-title">به‌روزرسانی و همگام‌سازی زنده</div>
-    <div style="background:var(--surface-2);border:1px solid var(--border);border-radius:var(--rd-md);padding:var(--sp-3);margin-block-end:var(--sp-4)">
+    <div style="background:var(--surface-2);border:1px solid var(--hairline-strong);border-radius:var(--r-md);padding:var(--sp-3);margin-block-end:var(--sp-4)">
       <div style="display:flex;align-items:center;justify-content:space-between;gap:var(--sp-3);flex-wrap:wrap">
         <div>
           <div style="font-weight:700;font-size:var(--fs-sm);color:var(--text-1);margin-block-end:2px">استعلام فوری و بازخوانی آخرین داده‌ها</div>
@@ -1123,6 +1128,7 @@ export function footerHTML() {
   const sources = [
     ['بانک مرکزی جمهوری اسلامی ایران', 'https://www.cbi.ir'],
     ['رده — مقایسه خدمات بانکی', 'https://www.rade.ir/loan/'],
+    ['دیجی‌شهر — مقایسه نرخ سود سپرده بانکی', 'https://dgshahr.com/blog/best-banks-for-deposit-rates/'],
     ['مرکز آمار ایران', 'https://www.amar.org.ir'],
     ['بانک ملی ایران', 'https://bmi.ir'],
     ['بانک ملت', 'https://bankmellat.ir'],
@@ -1145,7 +1151,7 @@ export function footerHTML() {
         <h4>منابع اصلی داده</h4>
         <ul>
           ${sources
-            .slice(0, 4)
+            .slice(0, 5)
             .map(([name, url]) => `<li><a href="${safeUrl(url)}" target="_blank" rel="noopener noreferrer">${esc(name)}</a></li>`)
             .join('')}
           <li><a href="https://fipiran.ir" target="_blank" rel="noopener noreferrer">مرکز پردازش اطلاعات مالی ایران (فیپیران)</a></li>
@@ -1155,7 +1161,7 @@ export function footerHTML() {
         <h4>بانک‌های پایش‌شده</h4>
         <ul>
           ${sources
-            .slice(4)
+            .slice(5)
             .map(([name, url]) => `<li><a href="${safeUrl(url)}" target="_blank" rel="noopener noreferrer">${esc(name)}</a></li>`)
             .join('')}
         </ul>

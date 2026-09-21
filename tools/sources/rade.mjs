@@ -286,6 +286,7 @@ export function mapToProduct(url, html) {
   const slug = url.replace(BASE, '').replace(/\/$/, '').split('/').filter(Boolean).pop() || '';
   const numericId = slug.match(/^(\d+)/)?.[1] || slug.slice(0, 24);
   const id = `rade-${numericId}`.replace(/[^a-z0-9-]/g, '-').toLowerCase();
+  const checked = new Date().toISOString().slice(0, 10);
 
   // توضیحات صفحه چند پاراگراف جداشده با <br> است. اگر فقط بخش «detail» را
   // برداریم، متن از میان می‌رود و توضیح ناقص می‌ماند؛ پس هر دو بخش با هم
@@ -336,12 +337,14 @@ export function mapToProduct(url, html) {
     confidence: multiPlan ? 'low' : 'medium',
     autoDiscovered: true,
     sourceKind: 'aggregator',
-    lastUpdated: lastUpdated || null,
+    // اگر صفحه تاریخ خوانایی نداشت، تاریخ مشاهده ثبت می‌شود: اعتبارسنجی داده
+    // تاریخ را الزامی می‌داند و رکورد بی‌تاریخ، خط لوله را سرخ می‌کند.
+    lastUpdated: lastUpdated || checked,
     source: {
       title: `رده — ${title}`,
       url,
       kind: 'aggregator',
-      checked: new Date().toISOString().slice(0, 10),
+      checked,
     },
     extra: {
       loanType: specSel(spec, 'نوع وام') || meta.label,

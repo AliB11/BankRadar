@@ -99,7 +99,9 @@ export function rateLadder(rows, inflation) {
  */
 export function compareBars(rows, opts = {}) {
   if (!rows?.length) return '';
-  const max = opts.max ?? Math.max(...rows.map((r) => r.value)) ?? 1;
+  // کف ۱ برای پرهیز از تقسیم بر صفر وقتی همه مقادیر صفرند (NaN در عرض ستون)
+  const best = rows.length ? Math.max(...rows.map((r) => Number(r.value) || 0)) : 0;
+  const max = Math.max(1, opts.max ?? best);
 
   return `<div class="ladder">${rows
     .map((row) => {
