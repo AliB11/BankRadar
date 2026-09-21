@@ -17,7 +17,7 @@
  */
 
 const DEFAULT_UA =
-  'Mozilla/5.0 (compatible; BankRadarBot/2.0; +https://github.com/AliB11/-)';
+  'Mozilla/5.0 (compatible; BankRadarBot/2.0; +https://github.com/AliB11/BankRadar)';
 
 /** تأخیر ساده */
 export const sleep = (ms) => new Promise((r) => setTimeout(r, ms));

@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/AliB11/-/data/schema.json",
+  "$id": "https://github.com/AliB11/BankRadar/data/schema.json",
   "title": "بانک‌رادار — طرح‌واره داده محصولات بانکی",
   "description": "قرارداد داده برای فایل data/products.json. هر رکورد یک محصول بانکی/مالی واقعی با منبع قابل ردیابی است.",
   "type": "object",

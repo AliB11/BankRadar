@@ -92,7 +92,7 @@ function matchKey(p) {
  * ادغام محصولات تازه‌کشف‌شده در مجموعه موجود.
  * @param {object[]} existing
  * @param {object[]} incoming
- * @returns {{merged:object[], stats:{added:number, updated:number, unchanged:number, restored:number}}}
+ * @returns {{merged:object[], stats:{added:number, updated:number, unchanged:number}}}
  */
 /**
  * مقایسه ساختاری دو مقدار JSON-پذیر.
@@ -134,6 +134,12 @@ export function mergeProducts(existing, incoming) {
   for (const raw of incoming) {
     if (!raw || !raw.product) continue;
     const candidate = { ...raw };
+    // رکورد بی‌شناسه نباید روی کلید undefined روی هم بیفتد؛ شناسه پایدار و
+    // سازگار با الگوی مجاز (^[a-z0-9][a-z0-9-]*$) از کلید تطبیق ساخته می‌شود.
+    if (!candidate.id) {
+      const h = [...matchKey(candidate)].reduce((a, c) => (a * 31 + c.codePointAt(0)) >>> 0, 7);
+      candidate.id = `auto-${h.toString(36)}`;
+    }
     // رکورد دیده‌شده در این اجرا
     candidate.stale = false;
     candidate.lastSeen = today();
@@ -169,6 +175,13 @@ export function mergeProducts(existing, incoming) {
       if (frozen.includes(k)) continue;
       if (skipEmpty && (v === null || v === undefined || v === '')) continue;
       if (skipEmpty && Array.isArray(v) && v.length === 0) continue;
+      // تاریخ‌های کنترلی هرگز با مقدار تهی پاک نمی‌شوند: نبودِ تاریخ در تجزیه
+      // تازه یعنی «نامعلوم»، نه «حذف». پاک شدن lastUpdated رکورد معتبر را از
+      // اعتبار می‌اندازد (اعتبارسنجی، تاریخ را الزامی می‌داند) و کل خط لوله را
+      // به‌خاطر یک صفحه بدون تاریخ، سرخ می‌کند.
+      if ((k === 'lastUpdated' || k === 'lastSeen' || k === 'lastVerified') && (v === null || v === undefined || v === '')) {
+        continue;
+      }
       const prev = next[k];
       // مقایسه ارجاعی برای اشیای تودرتو («extra») همیشه «متفاوت» می‌داد و
       // هر رکورد خودکار در هر اجرا «به‌روزشده» شمرده می‌شد؛ آمار ادغام

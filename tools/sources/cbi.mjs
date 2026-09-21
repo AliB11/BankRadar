@@ -8,7 +8,7 @@
 
 import { get, runSource } from '../lib/http.mjs';
 import { normalizeText, stripTags, toNumber } from '../lib/parse.mjs';
-import { parseJalaliDate, todayJalali, formatJalali } from '../lib/jalali.mjs';
+import { todayJalali, PERSIAN_MONTHS } from '../lib/jalali.mjs';
 
 /** تبدیل ارقام لاتین به فارسی برای نمایش در رابط */
 function toPersianDigits(value) {
@@ -184,7 +184,9 @@ export async function collect(base, opts = {}) {
   if (inflationPeriod) {
     merged.period = toPersianDigits(inflationPeriod);
   } else if (!merged.period || /^[\d۰-۹]/.test(String(merged.period).trim())) {
-    merged.period = toPersianDigits(`شهریور ${j.jy}`);
+    // ماه دوره از تاریخ روز ساخته می‌شود — نه ماه ثابت. پیش‌تر «شهریور» هاردکد
+    // شده بود و برچسب دوره در ماه‌های دیگر سال نادرست از آب درمی‌آمد.
+    merged.period = toPersianDigits(`${PERSIAN_MONTHS[j.jm - 1] ?? ''} ${j.jy}`);
   }
 
   return {

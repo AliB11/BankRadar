@@ -154,9 +154,11 @@ export function irrAnnual(installment, months, netReceived) {
  * @param {number} principal
  * @param {number} months
  * @param {number} upfrontFee کارمزد کسرشده از اصل (درصد)
+ * @param {'standard'|'legacy'} [method] شیوه قسط‌بندی — باید با همان شیوه‌ای باشد
+ *   که قسط نمایش‌داده‌شده با آن محاسبه شده تا نرخ مؤثر با قسط هم‌خوان بماند
  */
-export function effectiveAnnualRate(product, principal, months, upfrontFee = 0) {
-  const { installment } = scheduleFor(product, principal, months);
+export function effectiveAnnualRate(product, principal, months, upfrontFee = 0, method = 'standard') {
+  const { installment } = scheduleFor(product, principal, months, method);
   const netReceived = principal * (1 - (upfrontFee || 0) / 100);
   return irrAnnual(installment, months, netReceived);
 }
@@ -225,7 +227,7 @@ export function loanSummary(product, opts = {}) {
   // کارمزد اضافی فقط برای تسهیلات سودمحور معنا دارد؛ در محصولات کارمزد‌محور
   // عدد rate خودش کارمزد است و افزودن دوباره آن، هزینه را دو برابر نشان می‌دهد.
   const upfrontFee = !isFee && product.rate >= 20 ? 4 : 0;
-  const effective = effectiveAnnualRate(product, principal, months, upfrontFee);
+  const effective = effectiveAnnualRate(product, principal, months, upfrontFee, method);
 
   return {
     principal,

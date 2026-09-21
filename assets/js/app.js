@@ -57,6 +57,12 @@ function renderFilters() {
   if (host) host.innerHTML = view.filtersHTML();
 }
 
+/** بخش قهرمان (آمار و شاخص‌های کلان) — پس از بارگذاری داده تازه باید بازسازی شود */
+function renderHero() {
+  const host = document.querySelector('#hero');
+  if (host) host.innerHTML = view.heroHTML();
+}
+
 function renderResults() {
   const rows = filtered();
   const root = document;
@@ -363,6 +369,9 @@ function importJSON() {
 function mergeLocal(rows) {
   const base = [...store.products];
   const index = new Map(base.map((p, i) => [p.id, i]));
+  // مقدار عددی معتبر — صفر هم مقدار قانونی است و نباید با fallback عوض شود
+  const numLike = (v, fallback) =>
+    v == null || v === '' || !Number.isFinite(Number(v)) ? fallback : Number(v);
   for (const raw of rows) {
     const normalized = {
       id: raw.id || `local-${Math.random().toString(36).slice(2, 9)}`,
@@ -370,17 +379,17 @@ function mergeLocal(rows) {
       product: raw.product || raw.name,
       category: CATEGORY_META[raw.category] ? raw.category : 'loans',
       subcategory: raw.subcategory || 'local',
-      rate: Number(raw.rate) || 0,
+      rate: numLike(raw.rate, 0),
       rateKind: raw.rateKind || 'profit',
-      benefit: Number(raw.benefit) || 55,
+      benefit: numLike(raw.benefit, 55),
       minAmount: raw.minAmount ?? null,
       maxAmount: raw.maxAmount ?? null,
       amountLabel: raw.amountLabel || '',
       termMonths: raw.termMonths ?? null,
       termLabel: raw.termLabel || '',
-      speed: Number(raw.speed) || 55,
-      digital: Number(raw.digital) || 55,
-      friction: Number(raw.friction) || 55,
+      speed: numLike(raw.speed, 55),
+      digital: numLike(raw.digital, 55),
+      friction: numLike(raw.friction, 55),
       collateral: raw.collateral || 'نامشخص',
       collateralKind: raw.collateralKind || 'mixed',
       audience: raw.audience || '',
@@ -448,8 +457,10 @@ async function manualRefresh() {
   btns.forEach((b) => b.removeAttribute('disabled'));
 
   if (reloadRes.ok) {
+    renderHero();
     renderFilters();
     renderSoon();
+    renderFooter();
     toast(
       serverSynced
         ? `✓ همگام‌سازی زنده سرور انجام شد (${fa(reloadRes.count)} محصول).`
@@ -604,8 +615,17 @@ function bindEvents() {
       else if ($('#method-modal').classList.contains('is-open')) closeModal('#method-modal');
       return;
     }
-    // میان‌بر جست‌وجو
-    if ((e.key === '/' || (e.key === 'k' && (e.metaKey || e.ctrlKey))) && document.activeElement !== search) {
+    // میان‌بر جست‌وجو — وقتی کاربر در حال تایپ در فیلدی است، کلید «/» باید
+    // همان نویسه وارد شود و کار نباید به جست‌وجو بپرد.
+    const ae = document.activeElement;
+    const typing =
+      !!ae &&
+      (ae.tagName === 'INPUT' || ae.tagName === 'TEXTAREA' || ae.tagName === 'SELECT' || ae.isContentEditable === true);
+    if ((e.key === 'k' && (e.metaKey || e.ctrlKey)) && document.activeElement !== search) {
+      e.preventDefault();
+      search.focus();
+      search.select();
+    } else if (e.key === '/' && document.activeElement !== search && !typing) {
       e.preventDefault();
       search.focus();
       search.select();
@@ -638,7 +658,8 @@ async function boot() {
   try {
     const ok = await loadData();
     if (!ok) {
-      loading.innerHTML = `
+      if (loading) {
+        loading.innerHTML = `
         <div class="empty-state">
           <span class="ic" aria-hidden="true">📭</span>
           <h3>داده‌ای برای نمایش وجود ندارد</h3>
@@ -646,10 +667,11 @@ async function boot() {
           <p>برای رفع مشکل، در ریشه پروژه دستور <code>npm run collect:offline</code> را اجرا کنید تا
           فایل <code>data/bundle.js</code> ساخته شود.</p>
         </div>`;
+      }
       return;
     }
 
-    document.querySelector('#hero').innerHTML = view.heroHTML();
+    renderHero();
     render();
     renderFooter();
     bindEvents();
@@ -665,7 +687,7 @@ async function boot() {
     loading?.remove();
     announceReady();
   } catch (err) {
-    loading.innerHTML = `
+    if (loading) loading.innerHTML = `
       <div class="empty-state">
         <span class="ic" aria-hidden="true">⚠️</span>
         <h3>خطا در راه‌اندازی سامانه</h3>
