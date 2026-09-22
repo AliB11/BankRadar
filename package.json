@@ -5,7 +5,7 @@
   "description": "رادار محصولات بانکی ایران — پایش، مقایسه و رتبه‌بندی محصولات منابعی، اعتباری، تسهیلاتی و امتیازی بانک‌ها با خط لوله داده خودکار",
   "type": "module",
   "engines": {
-    "node": ">=20"
+    "node": "22.x"
   },
   "scripts": {
     "collect": "node tools/collect.mjs",
@@ -15,7 +15,8 @@
     "sync:weekly:dry": "node tools/sync-weekly.mjs --dry-run",
     "sync:weekly:offline": "node tools/sync-weekly.mjs --offline",
     "bundle": "node tools/build-bundle.mjs",
-    "build": "npm run collect:offline && npm run validate",
+    "build:public": "node tools/build-public.mjs",
+    "build": "npm run collect:offline && npm run validate && npm run build:public",
     "validate": "node scripts/validate-data.mjs",
     "test": "node scripts/validate-data.mjs && node --test \"tests/*.test.mjs\"",
     "serve": "node tools/serve.mjs"

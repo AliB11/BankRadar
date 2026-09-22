@@ -4,6 +4,7 @@ package-lock.json
 
 # خروجی ساخت و انتشار
 dist/
+public/
 build/
 out/
 
