@@ -968,13 +968,98 @@ export function detailHTML(p) {
 export function dataModalHTML() {
   const s = summary();
   const sources = store.meta?.sources ?? [];
+  const changelog = store.changelog;
+  const history = store.history ?? [];
+  const transparency = store.transparency ?? [];
+  const weekly = store.weeklyReport;
+
+  const changelogSection = changelog
+    ? `<div class="section-title">تغییرات هفته — ${esc(fa(changelog.summary?.totalChanges ?? 0))} مورد</div>
+       <div class="spec-grid" style="margin-block-end:var(--sp-3)">
+         <div class="spec"><span class="k">افزوده‌شده</span><span class="v num" style="color:var(--brand)">${fa(changelog.summary?.added ?? 0)}</span></div>
+         <div class="spec"><span class="k">تغییر نرخ</span><span class="v num" style="color:var(--warn)">${fa(changelog.summary?.rateChanged ?? 0)}</span></div>
+         <div class="spec"><span class="k">تغییر سقف</span><span class="v num">${fa(changelog.summary?.amountChanged ?? 0)}</span></div>
+         <div class="spec"><span class="k">بازگشته از کهنگی</span><span class="v num" style="color:var(--brand)">${fa(changelog.summary?.revived ?? 0)}</span></div>
+         <div class="spec"><span class="k">کهنه‌شده</span><span class="v num" style="color:var(--danger)">${fa(changelog.summary?.staleNow ?? 0)}</span></div>
+       </div>
+       ${
+         changelog.added?.length
+           ? `<div style="margin-block-end:var(--sp-3)">
+               <div style="font-size:var(--fs-3xs);color:var(--text-4);margin-block-end:var(--sp-1)">محصولات جدید این هفته</div>
+               <ul class="req-list">
+                 ${changelog.added
+                   .slice(0, 5)
+                   .map((c) => `<li><b>${esc(c.bank)}</b> — ${esc(c.product)} <span class="num" style="color:var(--text-4)">(${faPercent(c.rate ?? 0)})</span></li>`)
+                   .join('')}
+               </ul>
+             </div>`
+           : ''
+       }
+       ${
+         changelog.rateChanged?.length
+           ? `<div style="margin-block-end:var(--sp-3)">
+               <div style="font-size:var(--fs-3xs);color:var(--text-4);margin-block-end:var(--sp-1)">تغییرات نرخ</div>
+               <ul class="req-list">
+                 ${changelog.rateChanged
+                   .slice(0, 5)
+                   .map((c) => `<li><b>${esc(c.bank)}</b> — ${esc(c.product)}: ${fa(c.oldRate)}٪ → <b style="color:${(c.newRate ?? 0) > (c.oldRate ?? 0) ? 'var(--brand)' : 'var(--danger)'}">${fa(c.newRate)}٪</b> ${c.diff != null ? `<span class="num">(${c.diff > 0 ? '+' : ''}${fa(c.diff)}٪)</span>` : ''}</li>`)
+                   .join('')}
+               </ul>
+             </div>`
+           : ''
+       }`
+    : `<div class="section-title">تغییرات هفتگی</div>
+       <p style="font-size:var(--fs-2xs);color:var(--text-3)">فایل <code>data/changelog.json</code> پس از نخستین اجرای هفتگی در دسترس خواهد بود. این فید تفاوت دو نسخه پایگاه داده را با جزئیات نرخ، سقف و وضعیت کهنگی گزارش می‌دهد.</p>`;
+
+  const transparencySection = transparency.length
+    ? `<div class="section-title">شاخص شفافیت بانک‌ها — ${fa(transparency.length)} بانک</div>
+       <div class="health-list" style="margin-block-end:var(--sp-3)">
+         ${transparency
+           .slice(0, 10)
+           .map(
+             (b) => `<div class="health-row">
+               <span class="lbl">${esc(b.bank)} <span class="num" style="color:var(--text-4)">(${fa(b.total)} محصول)</span></span>
+               <span class="chip ${b.transparencyScore >= 80 ? 'chip--good' : b.transparencyScore >= 60 ? 'chip--warn' : 'chip--bad'}">${fa(b.transparencyScore)}٪ شفافیت</span>
+             </div>`,
+           )
+           .join('')}
+       </div>
+       <p style="font-size:var(--fs-3xs);color:var(--text-4);line-height:1.9">امتیاز شفافیت بر پایه تازگی، نسبت اطمینان بالا، پوشش دیجیتال و عدم کهنگی محاسبه می‌شود. بانک‌هایی که داده‌هایشان را شفاف و به‌روز نگه می‌دارند امتیاز بالاتری می‌گیرند — مستقل از نرخ سود.</p>`
+    : '';
+
+  const historySection = history.length >= 2
+    ? `<div class="section-title">روند سلامت داده — ${fa(history.length)} هفته اخیر</div>
+       <div style="display:flex;gap:var(--sp-1);align-items:end;height:48px;margin-block:var(--sp-3);padding:var(--sp-2);background:var(--surface-2);border-radius:var(--r-md);border:1px solid var(--hairline)">
+         ${history
+           .slice(-20)
+           .map((h) => {
+             const health = h.stats?.healthScore ?? h.healthScore ?? 0;
+             const height = Math.max(4, Math.round((health / 100) * 40));
+             const color = health >= 90 ? 'var(--brand)' : health >= 70 ? 'var(--warn)' : 'var(--danger)';
+             return `<div title="${esc(h.date)} — سلامت ${fa(health)}٪" style="flex:1;background:${color};height:${height}px;border-radius:2px;min-width:4px"></div>`;
+           })
+           .join('')}
+       </div>
+       <div style="display:flex;justify-content:space-between;font-size:var(--fs-3xs);color:var(--text-4);margin-block-end:var(--sp-3)">
+         <span>${esc(history[0]?.date ?? '')}</span>
+         <span>${esc(history[history.length - 1]?.date ?? '')}</span>
+       </div>`
+    : weekly
+      ? `<div class="section-title">سلامت داده — امتیاز ${fa(weekly.stats?.healthScore ?? 0)} از ۱۰۰</div>
+         <div class="spec-grid" style="margin-block-end:var(--sp-3)">
+           <div class="spec"><span class="k">تازگی ۷ روزه</span><span class="v num">${fa(weekly.stats?.verifiedIn7Days ?? 0)} (${fa(weekly.stats?.freshnessPercent ?? 0)}٪)</span></div>
+           <div class="spec"><span class="k">کهنه</span><span class="v num" style="color:${(weekly.stats?.staleProducts ?? 0) ? 'var(--danger)' : 'var(--brand)'}">${fa(weekly.stats?.staleProducts ?? 0)}</span></div>
+           <div class="spec"><span class="k">تورم مرجع</span><span class="v num">${faPercent(weekly.macro?.inflationAnnual ?? 0)}</span></div>
+           <div class="spec"><span class="k">ناهنجاری</span><span class="v num">${fa(weekly.anomalies?.total ?? 0)}</span></div>
+         </div>`
+      : '';
 
   return `
   <div class="modal-head">
     <div>
       <h2>مرکز داده و منابع</h2>
       <p style="font-size:var(--fs-2xs);color:var(--text-4);margin:3px 0 0">
-        وضعیت خط لوله گردآوری خودکار و امکان بارگذاری داده دستی
+        وضعیت خط لوله، تغییرات هفتگی، شاخص شفافیت و فید باز داده
       </p>
     </div>
     <button class="btn btn--icon btn--ghost" type="button" data-action="close-data" aria-label="بستن">✕</button>
@@ -987,6 +1072,8 @@ export function dataModalHTML() {
       <div class="spec"><span class="k">مجموع محصولات</span><span class="v num">${fa(s.total)}</span></div>
       <div class="spec"><span class="k">گردآوری خودکار</span><span class="v num">${fa(s.auto)}</span></div>
     </div>
+
+    ${historySection}
 
     <div class="section-title">وضعیت منابع در آخرین اجرا</div>
     ${
@@ -1009,6 +1096,19 @@ export function dataModalHTML() {
           </p>`
     }
 
+    ${changelogSection}
+
+    ${transparencySection}
+
+    <div class="section-title">فید باز و API</div>
+    <div class="spec-grid" style="margin-block-end:var(--sp-3)">
+      <div class="spec"><span class="k">فید RSS تغییرات</span><span class="v"><a href="data/feed.xml" target="_blank" rel="noopener"><code>data/feed.xml</code></a></span></div>
+      <div class="spec"><span class="k">فید JSON تغییرات</span><span class="v"><a href="data/changelog.json" target="_blank" rel="noopener"><code>data/changelog.json</code></a></span></div>
+      <div class="spec"><span class="k">گزارش هفتگی کامل</span><span class="v"><a href="data/weekly-report.json" target="_blank" rel="noopener"><code>data/weekly-report.json</code></a></span></div>
+      <div class="spec"><span class="k">تاریخچه سلامت</span><span class="v"><a href="data/history/weekly-history.json" target="_blank" rel="noopener"><code>data/history/weekly-history.json</code></a></span></div>
+      <div class="spec"><span class="k">متن انسانی تغییرات</span><span class="v"><a href="data/changelog.md" target="_blank" rel="noopener"><code>data/changelog.md</code></a></span></div>
+    </div>
+
     <div class="section-title">به‌روزرسانی و همگام‌سازی زنده</div>
     <div style="background:var(--surface-2);border:1px solid var(--hairline-strong);border-radius:var(--r-md);padding:var(--sp-3);margin-block-end:var(--sp-4)">
       <div style="display:flex;align-items:center;justify-content:space-between;gap:var(--sp-3);flex-wrap:wrap">
@@ -1028,7 +1128,7 @@ export function dataModalHTML() {
     <div class="spec-grid" style="margin-block-end:var(--sp-3)">
       <div class="spec">
         <span class="k">پایش هفتگی خودکار</span>
-        <span class="v" style="color:var(--brand)">فعال (زمان‌بندی دوره‌ای)</span>
+        <span class="v" style="color:var(--brand)">فعال — شنبه ۰۴:۰۰ UTC</span>
       </div>
       <div class="spec">
         <span class="k">ممیزی رکوردهای پنج‌گانه</span>
@@ -1041,6 +1141,14 @@ export function dataModalHTML() {
       <div class="spec">
         <span class="k">درون‌ریزی خروجی سفارشی</span>
         <span class="v"><code>sync:weekly --input=&lt;فایل&gt;</code></span>
+      </div>
+      <div class="spec">
+        <span class="k">شاخص شفافیت بانک‌ها</span>
+        <span class="v"><code>data/weekly-report.json → transparency</code></span>
+      </div>
+      <div class="spec">
+        <span class="k">فید باز</span>
+        <span class="v"><code>feed.xml + changelog.json</code></span>
       </div>
     </div>
 

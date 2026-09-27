@@ -143,7 +143,11 @@ export function parseRates(text) {
 export function daysSince(iso, now = new Date()) {
   const m = String(iso ?? '').match(/^(\d{4})-(\d{2})-(\d{2})/);
   if (!m) return Infinity;
-  const target = Date.UTC(Number(m[1]), Number(m[2]) - 1, Number(m[3]));
+  const y = Number(m[1]);
+  const mo = Number(m[2]);
+  const d = Number(m[3]);
+  if (mo < 1 || mo > 12 || d < 1 || d > 31) return Infinity;
+  const target = Date.UTC(y, mo - 1, d);
   if (Number.isNaN(target)) return Infinity;
   const todayMs = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
   return Math.max(0, Math.floor((todayMs - target) / 86_400_000));

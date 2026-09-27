@@ -31,6 +31,8 @@ import * as dgshahr from './sources/dgshahr.mjs';
 import { buildBundle } from './build-bundle.mjs';
 import { sortDeep, mergeProducts, deepEqual } from './collect.mjs';
 import { signatureOf } from './data-signature.mjs';
+import { diffProducts, changelogToMarkdown, changelogToRSS } from './lib/changelog.mjs';
+import { bankTransparency } from './lib/transparency.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA = path.join(ROOT, 'data');
@@ -487,9 +489,17 @@ export async function syncWeekly(opts = {}) {
 
   // گام ۲: پایش هفتگی منابع وب (در صورت نبود پرچم offline)
   if (!offline && !inputFile) {
-    // رده
+    // رده — با چرخش بازبینی برای پوشش رکوردهای قدیمی (همان منطق collect.mjs)
+    const rotationQuota = Math.max(15, Math.round(limit / 3));
+    const refreshUrls = dataset.products
+      .filter((p) => p.autoDiscovered === true && p.source?.url)
+      .sort((a, b) => String(a.lastSeen || '').localeCompare(String(b.lastSeen || '')))
+      .slice(0, rotationQuota)
+      .map((p) => p.source.url);
+    vlog(`چرخش بازبینی هفتگی: ${refreshUrls.length} رکورد قدیمی در نوبت`);
+
     const radeResult = await runSource('rade-weekly', () =>
-      rade.collect({ limit, concurrency: 5, log: vlog }),
+      rade.collect({ limit, concurrency: 5, refreshUrls, log: vlog }),
     );
     if (radeResult.ok) {
       incoming = incoming.concat(radeResult.data.products);
@@ -592,12 +602,67 @@ export async function syncWeekly(opts = {}) {
     startedAt,
   });
 
+  // گام ۶.۵: تولید changelog هوشمند و شاخص شفافیت بانک‌ها
+  const changelogDiff = diffProducts(dataset.products, merged);
+  const transparency = bankTransparency(merged);
+  const changelogMd = changelogToMarkdown(changelogDiff, { date: today() });
+  const changelogRss = changelogToRSS(changelogDiff, { date: new Date().toISOString(), link: 'https://alib11.github.io/BankRadar/' });
+
+  // افزودن شفافیت و changelog به گزارش هفتگی
+  report.transparency = {
+    banks: transparency.slice(0, 20),
+    totalBanks: transparency.length,
+    avgScore: Math.round(transparency.reduce((a, b) => a + b.transparencyScore, 0) / Math.max(1, transparency.length)),
+  };
+  report.changelog = {
+    summary: changelogDiff.summary,
+    added: changelogDiff.added.slice(0, 20),
+    rateChanged: changelogDiff.rateChanged.slice(0, 20),
+    staleNow: changelogDiff.staleNow.slice(0, 20),
+  };
+
   if (!dryRun) {
     await writeJSON('products.json', productsOut);
     await writeJSON('indicators.json', indicators);
     await writeJSON(reportPath, report);
+
+    // نوشتن فیدهای باز
+    await writeJSON('changelog.json', changelogDiff);
+    await fs.writeFile(path.join(DATA, 'changelog.md'), `${changelogMd}\n`, 'utf8');
+    await fs.writeFile(path.join(DATA, 'feed.xml'), `${changelogRss}\n`, 'utf8');
+
+    // تاریخچه سلامت (۵۲ هفته)
+    await fs.mkdir(path.join(DATA, 'history'), { recursive: true });
+    const historyPath = path.join(DATA, 'history', 'weekly-history.json');
+    let history = [];
+    try {
+      const raw = await fs.readFile(historyPath, 'utf8');
+      history = JSON.parse(raw);
+      if (!Array.isArray(history)) history = [];
+    } catch {
+      history = [];
+    }
+    history.push({
+      date: today(),
+      generatedAt: report.generatedAt,
+      stats: report.stats,
+      macro: report.macro,
+      counts: report.counts,
+      anomalies: { total: report.anomalies?.total ?? anomalies.length },
+      changelogSummary: changelogDiff.summary,
+      transparencyAvg: report.transparency.avgScore,
+    });
+    if (history.length > 52) history = history.slice(-52);
+    await writeJSON(historyPath, history);
+    // برای دسترسی سریع در bundle
+    await writeJSON(path.join(DATA, 'history', 'latest.json'), {
+      date: today(),
+      report,
+      diffSummary: changelogDiff.summary,
+    });
+
     await buildBundle({ dataDir: DATA, log: vlog });
-    log('بسته داده و فایل‌های JSON با موفقیت بازسازی شدند');
+    log(`بسته داده، changelog و تاریخچه با موفقیت بازسازی شدند — تغییرات: ${changelogDiff.summary.totalChanges}`);
   }
 
   // گام ۷: ثبت خلاصه در گیت‌هاب اکشنز در صورت اجرا روی دونده

@@ -9,8 +9,8 @@
     "total": 221
   },
   "disclaimer": "هر رکورد دارای منبع و تاریخ کنترل است. نرخ‌های سود تابع مصوبات شورای پول و اعتبار و بخشنامه‌های بانک مرکزی است و بانک‌ها می‌توانند شرایط را تغییر دهند. پیش از اقدام، شرایط را از منبع رسمی بانک تأیید کنید.",
-  "generatedAt": "2026-09-21T20:06:28.344Z",
-  "generator": "tools/collect.mjs",
+  "generatedAt": "2026-09-27T04:31:35.289Z",
+  "generator": "tools/sync-weekly.mjs",
   "products": [
     {
       "amountLabel": "از ۱ میلیون تا مبالغ میلیاردی",
@@ -28,7 +28,7 @@
       "id": "ayandeh-shetab-23",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-06",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": null,
       "minAmount": 1000000,
       "product": "سپرده شتاب (۲۳٪ عمومی / تا ۲۵٪ برای مبالغ بالا)",
@@ -40,7 +40,7 @@
         "مانده میلیاردی برای نرخ ۲۵٪"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "bank",
         "title": "بانک آینده — طرح شتاب",
         "url": "https://ba24.ir"
@@ -71,7 +71,7 @@
       "id": "blu-deposit-digital",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-12",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": null,
       "minAmount": 0,
       "product": "سپرده دیجیتال و صندوق بلو",
@@ -82,7 +82,7 @@
         "تأیید هویت دیجیتال"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "bank",
         "title": "بلوبانک",
         "url": "https://blubank.com"
@@ -113,7 +113,7 @@
       "id": "cbi-deposit-1y-cap",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-15",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": null,
       "minAmount": 1000000,
       "product": "سپرده سرمایه‌گذاری بلندمدت یک‌ساله (نرخ مرجع مصوب)",
@@ -127,7 +127,7 @@
         "پذیرش حداقل موجودی بانک عامل"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "regulator",
         "title": "بانک مرکزی — مصوبه شورای پول و اعتبار نرخ سود سپرده",
         "url": "https://www.cbi.ir"
@@ -158,7 +158,7 @@
       "id": "certificate-deposit-special",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-10",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": null,
       "minAmount": 1000000,
       "product": "اوراق گواهی سپرده مدت‌دار ویژه (قابل معامله)",
@@ -171,7 +171,7 @@
         "خرید از بانک عامل یا بازار ثانویه"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "regulator",
         "title": "بانک مرکزی — اوراق گواهی سپرده مدت‌دار ویژه",
         "url": "https://www.cbi.ir"
@@ -248,7 +248,7 @@
       "id": "deposit-6m-special",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-15",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": null,
       "minAmount": 10000000,
       "product": "سپرده کوتاه‌مدت ویژه شش‌ماهه",
@@ -261,7 +261,7 @@
         "عدم برداشت تا سررسید"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "regulator",
         "title": "شورای پول و اعتبار — سپرده ویژه شش‌ماهه",
         "url": "https://www.cbi.ir"
@@ -291,7 +291,7 @@
       "id": "deposit-kootah-moddate-adi",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-15",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": null,
       "minAmount": 0,
       "product": "سپرده کوتاه‌مدت عادی (کارت بانکی / روزشمار)",
@@ -303,7 +303,7 @@
         "افتتاح حساب جاری/پس‌انداز"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "regulator",
         "title": "شورای پول و اعتبار — نرخ سود سپرده کوتاه‌مدت عادی",
         "url": "https://www.cbi.ir"
@@ -381,7 +381,7 @@
       "id": "en-sp-deposit-23",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-10",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": null,
       "minAmount": 200000000,
       "product": "سپرده ممتاز ۲۳٪ (حداقل موجودی ۲۰۰ میلیون تومان)",
@@ -393,7 +393,7 @@
         "ماندگاری منابع"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "bank",
         "title": "بانک اقتصاد نوین — سپرده‌ها",
         "url": "https://enbank.ir"
@@ -472,7 +472,7 @@
       "id": "iran-zamin-deposit-23",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-08",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": null,
       "minAmount": 100000000,
       "product": "سپرده ۲۳٪ (حداقل ۱۰۰ تا ۳۰۰ میلیون تومان برحسب طرح)",
@@ -483,7 +483,7 @@
         "حداقل موجودی برحسب طرح"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "bank",
         "title": "بانک ایران زمین",
         "url": "https://izbank.ir"
@@ -608,7 +608,7 @@
       "id": "karafarin-sp-deposit-23",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-10",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": null,
       "minAmount": 200000000,
       "product": "سپرده سرمایه‌گذاری ممتاز ۲۳٪",
@@ -619,7 +619,7 @@
         "حداقل موجودی ۲۰۰ میلیون تومان"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "bank",
         "title": "بانک کارآفرین — سپرده‌ها",
         "url": "https://karafarinbank.ir"
@@ -925,7 +925,7 @@
       "id": "melli-deposit-20",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-05",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": null,
       "minAmount": 1000000,
       "product": "سپرده سرمایه‌گذاری بلندمدت (سقف متعارف ۲۰٪)",
@@ -936,7 +936,7 @@
         "افتتاح حساب"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "bank",
         "title": "بانک ملی ایران — سپرده‌ها",
         "url": "https://bmi.ir"
@@ -1337,7 +1337,7 @@
       "id": "pasargad-sp-deposit-23",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-10",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": null,
       "minAmount": 200000000,
       "product": "سپرده بلندمدت پاسارگاد ۲۳٪ (حداقل ۲۰۰ میلیون تومان)",
@@ -1348,7 +1348,7 @@
         "حداقل موجودی ۲۰۰ میلیون تومان"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "bank",
         "title": "بانک پاسارگاد — سپرده‌ها",
         "url": "https://bpi.ir"
@@ -1379,7 +1379,7 @@
       "id": "refah-deposit-23",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-08",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": null,
       "minAmount": 500000000,
       "product": "سپرده ممتاز ۲۳٪ (حداقل ۵۰۰ میلیون تومان)",
@@ -1390,7 +1390,7 @@
         "حداقل موجودی ۵۰۰ میلیون تومان"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "bank",
         "title": "بانک رفاه کارگران",
         "url": "https://refah-bank.ir"
@@ -1645,7 +1645,7 @@
       "id": "saman-sp-deposit-23",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-05",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": null,
       "minAmount": 500000000,
       "product": "سپرده ممتاز ۲۳٪ (حداقل ۵۰۰ میلیون تومان)",
@@ -1656,7 +1656,7 @@
         "حداقل موجودی ۵۰۰ میلیون تومان"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "bank",
         "title": "بانک سامان — سپرده‌های سرمایه‌گذاری",
         "url": "https://sb24.ir"
@@ -1781,7 +1781,7 @@
       "id": "sarmayeh-deposit-23",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-08",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": null,
       "minAmount": 100000000,
       "product": "سپرده ۲۳٪ (حداقل ۱۰۰ میلیون تومان)",
@@ -1792,7 +1792,7 @@
         "حداقل موجودی ۱۰۰ میلیون تومان"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "bank",
         "title": "بانک سرمایه",
         "url": "https://sbank.ir"
@@ -1869,7 +1869,7 @@
       "id": "sepah-sp-deposit-23",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-08",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": null,
       "minAmount": 100000000,
       "product": "سپرده ۲۳٪ (حداقل ۱۰۰ میلیون تومان)",
@@ -1880,7 +1880,7 @@
         "حداقل موجودی ۱۰۰ میلیون تومان"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "bank",
         "title": "بانک سپه",
         "url": "https://banksepah.ir"
@@ -1959,7 +1959,7 @@
       "id": "sina-deposit-23",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-08",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": null,
       "minAmount": 1000000,
       "product": "سپرده ۲۳٪ با آستانه یک میلیون تومان",
@@ -1970,7 +1970,7 @@
         "حداقل موجودی ۱ میلیون تومان"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "bank",
         "title": "بانک سینا",
         "url": "https://sinabank.ir"
@@ -2095,7 +2095,7 @@
       "id": "tejarat-sp-deposit-23",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-10",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": null,
       "minAmount": 200000000,
       "product": "سپرده بلندمدت ۲۳٪ با شرط مانده ۲۰۰ میلیون تومان",
@@ -2106,7 +2106,7 @@
         "حداقل موجودی ۲۰۰ میلیون تومان"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "bank",
         "title": "بانک تجارت — سپرده‌های سرمایه‌گذاری",
         "url": "https://tejaratbank.ir"
@@ -2184,7 +2184,7 @@
       "id": "azkivam-credit",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-14",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": 75000000,
       "minAmount": 10000000,
       "product": "ازکی‌وام — خرید اقساطی تا ۷۵ میلیون تومان",
@@ -2197,7 +2197,7 @@
         "اعتبارسنجی"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "aggregator",
         "title": "الوقسطی — طرح ازکی‌وام",
         "url": "https://aloghesti.com/mag/best-loans-for-purchasing-goods/"
@@ -2228,7 +2228,7 @@
       "id": "baloon-blubank",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-14",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": 85000000,
       "minAmount": 10000000,
       "product": "بالون — اعتبار خرید تا ۸۵ میلیون تومان",
@@ -2241,7 +2241,7 @@
         "اعتبارسنجی موفق"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "aggregator",
         "title": "الوقسطی — طرح بالون",
         "url": "https://aloghesti.com/mag/best-loans-for-purchasing-goods/"
@@ -2273,7 +2273,7 @@
       "id": "blu-loan-beja",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-15",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": 400000000,
       "minAmount": 50000000,
       "product": "وام به‌جا — تسهیلات نقدی دیجیتال بدون ضامن",
@@ -2287,7 +2287,7 @@
         "تمبر مالیاتی ۷۵ هزار تومان"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "aggregator",
         "title": "رده — وام بهجا بلوبانک (جدول مشخصات کامل)",
         "url": "https://www.rade.ir/loan-instant-loan/706908-%D9%88%D8%A7%D9%85-%D8%A8%D9%87%E2%80%8C%D8%AC%D8%A7-%D8%A8%D9%84%D9%88%D8%A8%D8%A7%D9%86%DA%A9/"
@@ -2320,7 +2320,7 @@
       "id": "blu-loan-instant",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-12",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": 100000000,
       "minAmount": 3000000,
       "product": "وام فوری بلو — پله‌ای از ۳ تا ۱۰۰ میلیون تومان",
@@ -2333,7 +2333,7 @@
         "تسویه وام‌های قبلی"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "aggregator",
         "title": "رده (rade.ir) — وام بلوبانک",
         "url": "https://www.rade.ir/service/694259-%D9%88%D8%A7%D9%85-%D8%A8%D9%84%D9%88%D8%A8%D8%A7%D9%86%DA%A9/"
@@ -2366,7 +2366,7 @@
       "id": "bmi-kalapi",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-14",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": 200000000,
       "minAmount": 10000000,
       "product": "کالاپی — اعتبار خرید کالا",
@@ -2380,7 +2380,7 @@
         "اعتبارسنجی"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "aggregator",
         "title": "الوقسطی — مقایسه طرح‌های وام خرید کالا ۱۴۰۵",
         "url": "https://aloghesti.com/mag/best-loans-for-purchasing-goods/"
@@ -2412,7 +2412,7 @@
       "id": "bmi-nopi",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-14",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": 30000000,
       "minAmount": 3000000,
       "product": "نوپی — اعتبار گروهی سازمان‌ها",
@@ -2424,7 +2424,7 @@
         "کسر از حقوق"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "aggregator",
         "title": "الوقسطی — طرح نوپی بانک ملی",
         "url": "https://aloghesti.com/mag/best-loans-for-purchasing-goods/"
@@ -2456,7 +2456,7 @@
       "id": "digipay-credit",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-14",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": 100000000,
       "minAmount": 3000000,
       "product": "خرید اعتباری دیجی‌پی",
@@ -2469,7 +2469,7 @@
         "احراز هویت در اپلیکیشن"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "aggregator",
         "title": "الوقسطی — طرح‌های اعتباری فعال ۱۴۰۵",
         "url": "https://aloghesti.com/mag/best-loans-for-purchasing-goods/"
@@ -2500,7 +2500,7 @@
       "id": "jetvam-credit",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-14",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": 100000000,
       "minAmount": 5000000,
       "product": "جت‌وام — اعتبار خرد خرید کالا",
@@ -2513,7 +2513,7 @@
         "اعتبارسنجی پایه"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "aggregator",
         "title": "الوقسطی — طرح جت‌وام",
         "url": "https://aloghesti.com/mag/best-loans-for-purchasing-goods/"
@@ -2544,7 +2544,7 @@
       "id": "mellat-alopi",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-14",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": 100000000,
       "minAmount": 5000000,
       "product": "الوپی — خرید اقساطی با پشتوانه بانک ملت",
@@ -2557,7 +2557,7 @@
         "حساب در بانک ملت"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "aggregator",
         "title": "الوقسطی — طرح الوپی بانک ملت",
         "url": "https://aloghesti.com/mag/best-loans-for-purchasing-goods/"
@@ -2590,7 +2590,7 @@
       "id": "pasargad-credit-card",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-05",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": 500000000,
       "minAmount": 20000000,
       "product": "کارت اعتباری و اعتبار در حساب",
@@ -2603,7 +2603,7 @@
         "سابقه گردش حساب"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "bank",
         "title": "بانک پاسارگاد — کارت اعتباری",
         "url": "https://bpi.ir"
@@ -4640,7 +4640,7 @@
       "id": "refah-beta",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-14",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": 100000000,
       "minAmount": 5000000,
       "product": "بتا — کالاکارت بازنشستگان و مستمری‌بگیران",
@@ -4652,7 +4652,7 @@
         "اعتبارسنجی"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "aggregator",
         "title": "الوقسطی — طرح بتا بانک رفاه",
         "url": "https://aloghesti.com/mag/best-loans-for-purchasing-goods/"
@@ -4684,7 +4684,7 @@
       "id": "refah-jame-credit",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-14",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": 300000000,
       "minAmount": 5000000,
       "product": "مرابحه خرید کالا — سقف مصوب ۲۳٪",
@@ -4697,7 +4697,7 @@
         "فروشگاه طرف قرارداد"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "aggregator",
         "title": "الوقسطی — کالانو باجت",
         "url": "https://aloghesti.com/mag/best-loans-for-purchasing-goods/"
@@ -4728,7 +4728,7 @@
       "id": "refah-vibe",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-14",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": 200000000,
       "minAmount": 20000000,
       "product": "وایب — اعتبار ویژه بازنشستگان و کارکنان",
@@ -4740,7 +4740,7 @@
         "اعتبارسنجی"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "aggregator",
         "title": "الوقسطی — طرح وایب بانک رفاه",
         "url": "https://aloghesti.com/mag/best-loans-for-purchasing-goods/"
@@ -4772,7 +4772,7 @@
       "id": "saderat-ghasta",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-12",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": 20000000,
       "minAmount": 1000000,
       "product": "قسطا / قسطاکارت — اعتبار خرید خرد",
@@ -4785,7 +4785,7 @@
         "حساب در بانک صادرات"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "press",
         "title": "اندیشه معاصر — وام قسطا ۱۴۰۵",
         "url": "https://andishemoaser.ir/%D9%88%D8%A7%D9%85-%D9%82%D8%B3%D8%B7%D8%A7-%DB%B1%DB%B4%DB%B0%DB%B5-%D9%85%D8%A8%D9%84%D8%BA%D8%8C-%D8%B4%D8%B1%D8%A7%DB%8C%D8%B7-%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA%D8%8C-%D9%82%D8%B3%D8%B7%D8%A7/"
@@ -4818,7 +4818,7 @@
       "id": "saman-credit-card",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-05",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": 500000000,
       "minAmount": 20000000,
       "product": "کارت اعتباری خرید سامان",
@@ -4831,7 +4831,7 @@
         "حساب جاری"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "bank",
         "title": "بانک سامان — کارت اعتباری",
         "url": "https://sb24.ir"
@@ -4863,7 +4863,7 @@
       "id": "bazneshastegan-60",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-14",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": 60000000,
       "minAmount": 60000000,
       "product": "وام بازنشستگان تأمین اجتماعی — ۶۰ میلیون تومان",
@@ -4876,7 +4876,7 @@
         "نبود معوقات"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "press",
         "title": "اندیشه معاصر — ثبت‌نام غیرحضوری وام بازنشستگان تأمین اجتماعی ۱۴۰۵",
         "url": "https://andishemoaser.ir/"
@@ -4908,7 +4908,7 @@
       "id": "ezdevaj-300",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-14",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": 300000000,
       "minAmount": 300000000,
       "product": "وام قرض‌الحسنه ازدواج — سقف پایه هر نفر",
@@ -4924,7 +4924,7 @@
         "سفته"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "press",
         "title": "نبض قیمت — وام ازدواج ۱۴۰۵ مبلغ ۳۰۰ تا ۳۵۰ میلیون تومان",
         "url": "https://nabzgheymat.ir/%D9%88%D8%A7%D9%85-%D8%A7%D8%B2%D8%AF%D9%88%D8%A7%D8%AC-%DB%B1%DB%B4%DB%B0%DB%B5%D8%9B-%D9%85%D8%A8%D9%84%D8%BA-%DB%B3%DB%B0%DB%B0-%D8%AA%D8%A7-%DB%B3%DB%B5%DB%B0-%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86/"
@@ -4956,7 +4956,7 @@
       "id": "ezdevaj-350",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-14",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": 350000000,
       "minAmount": 350000000,
       "product": "وام ازدواج با تشویق سنی (زوجین جوان)",
@@ -4970,7 +4970,7 @@
         "ثبت درخواست در ve.cbi.ir"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "press",
         "title": "نبض قیمت — وام ازدواج ۱۴۰۵ جدول کامل",
         "url": "https://nabzgheymat.ir/%D9%88%D8%A7%D9%85-%D8%A7%D8%B2%D8%AF%D9%88%D8%A7%D8%AC-%D9%88-%D9%81%D8%B1%D8%B2%D9%86%D8%AF%D8%A2%D9%88%D8%B1%DB%8C-%DB%B1%DB%B4%DB%B0%DB%B5%D8%9B-%DB%B6%DB%B0%DB%B0-%D8%AA%D8%A7-%DB%B7%DB%B0%DB%B0/"
@@ -5001,7 +5001,7 @@
       "id": "ezdevaj-gardeshgari",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-12",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": 350000000,
       "minAmount": 300000000,
       "product": "وام ازدواج ۳۵۰ میلیون تومان با بازپرداخت ۱۲۰ ماهه",
@@ -5015,7 +5015,7 @@
         "سفته"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "press",
         "title": "دیجی‌شهر — شرایط وام ازدواج ۱۴۰۵",
         "url": "https://dgshahr.com/blog/new-terms-of-marriage-loan/"
@@ -5046,7 +5046,7 @@
       "id": "ezdevaj-saman",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-12",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": 350000000,
       "minAmount": 300000000,
       "product": "تسهیلات قرض‌الحسنه ازدواج (کارگزار شبکه بانکی)",
@@ -5059,7 +5059,7 @@
         "ثبت درخواست در ve.cbi.ir"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "aggregator",
         "title": "وام‌گرد — وام ازدواج بانک سامان ۱۴۰۵",
         "url": "https://vamgard.org/vam/vam-ezdevaj-bank-saman"
@@ -5090,7 +5090,7 @@
       "id": "farzandavari-220",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-14",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": 220000000,
       "minAmount": 220000000,
       "product": "تسهیلات قرض‌الحسنه فرزندآوری — فرزند پنجم و بیشتر",
@@ -5105,7 +5105,7 @@
         "ثبت‌نام در ve.cbi.ir"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "press",
         "title": "نبض قیمت — جدول کامل وام فرزندآوری ۱۴۰۵",
         "url": "https://nabzgheymat.ir/%D9%88%D8%A7%D9%85-%D9%81%D8%B1%D8%B2%D9%86%D8%AF%D8%A2%D9%88%D8%B1%DB%8C-%DB%B1%DB%B4%DB%B0%DB%B5%D8%9B-%D8%A7%D8%B2-%DB%B4%DB%B4-%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86-%D8%AA%D8%A7-%DB%B2%DB%B2%DB%B0/"
@@ -5137,7 +5137,7 @@
       "id": "farzandavari-44",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-14",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": 44000000,
       "minAmount": 44000000,
       "product": "تسهیلات قرض‌الحسنه فرزندآوری — فرزند اول",
@@ -5152,7 +5152,7 @@
         "ثبت‌نام در ve.cbi.ir"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "press",
         "title": "بانک مرکزی — دستورالعمل تسهیلات فرزندآوری ۱۴۰۵",
         "url": "https://andishemoaser.ir/%D8%AB%D8%A8%D8%AA%D9%86%D8%A7%D9%85-%D9%88%D8%A7%D9%85-%D9%81%D8%B1%D8%B2%D9%86%D8%AF%D8%A2%D9%88%D8%B1%DB%8C-%DB%B1%DB%B4%DB%B0%DB%B5-%D8%A2%D8%BA%D8%A7%D8%B2-%D8%B4%D8%AF-%D9%85%D8%A8/"
@@ -5185,7 +5185,7 @@
       "id": "mashak-javan",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-08",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": 4000000000,
       "minAmount": 500000000,
       "product": "تسهیلات مسکن جوانان / حساب پس‌انداز مسکن",
@@ -5199,7 +5199,7 @@
         "اعتبارسنجی"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "bank",
         "title": "بانک مسکن",
         "url": "https://bank-maskan.ir"
@@ -5231,7 +5231,7 @@
       "id": "mehr-iran-300",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-10",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": 300000000,
       "minAmount": 300000000,
       "product": "وام امتیازی ۳۰۰ میلیون تومان (معدل حساب)",
@@ -5243,7 +5243,7 @@
         "اعتبارسنجی"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "aggregator",
         "title": "دیجی‌وام — وام امتیازی مهر ایران",
         "url": "https://digivam.app/mehriran-bank/"
@@ -5275,7 +5275,7 @@
       "id": "mehr-iran-mehryar",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-10",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": 750000000,
       "minAmount": 100000000,
       "product": "طرح مهریار — تسهیلات قرض‌الحسنه اشخاص حقوقی",
@@ -5288,7 +5288,7 @@
         "حساب در بانک مهر ایران"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "aggregator",
         "title": "دیجی‌وام — انواع وام بانک مهر ایران",
         "url": "https://digivam.app/mehriran-bank/"
@@ -5320,7 +5320,7 @@
       "id": "mehr-iran-naghdi-400",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-10",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": 400000000,
       "minAmount": 400000000,
       "product": "وام نقدی ۴۰۰ میلیون تومان بدون مسدودی سپرده",
@@ -5333,7 +5333,7 @@
         "سهمیه طرح در شعبه"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "aggregator",
         "title": "دیجی‌وام — وام ۴۰۰ میلیون تومانی نقدی مهر ایران",
         "url": "https://digivam.app/mehriran-bank/"
@@ -5365,7 +5365,7 @@
       "id": "mehr-iran-payvand",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-10",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": 80000000,
       "minAmount": 20000000,
       "product": "طرح پیوند مهر و اندوخته اجتماعی",
@@ -5378,7 +5378,7 @@
         "معدل حساب در طرح اندوخته"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "aggregator",
         "title": "دیجی‌وام — طرح پیوند مهر و اندوخته اجتماعی",
         "url": "https://digivam.app/mehriran-bank/"
@@ -5411,7 +5411,7 @@
       "id": "melli-gharz",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-08",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": 200000000,
       "minAmount": 20000000,
       "product": "تسهیلات قرض‌الحسنه و طرح‌های حمایتی ملی",
@@ -5424,7 +5424,7 @@
         "میانگین حساب حسب طرح"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "bank",
         "title": "بانک ملی ایران — تسهیلات قرض‌الحسنه",
         "url": "https://bmi.ir"
@@ -5457,7 +5457,7 @@
       "id": "murabaha-khord-23",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-15",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": 500000000,
       "minAmount": 50000000,
       "product": "تسهیلات مرابحه خرد (سقف مصوب ۲۳٪)",
@@ -5471,7 +5471,7 @@
         "افتتاح پرونده"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "press",
         "title": "اندیشه معاصر — تفاوت نرخ سود ابلاغی و نرخ واقعی",
         "url": "https://andishemoaser.ir/%D9%85%D8%AD%D8%A7%D8%B3%D8%A8%D9%87-%D9%88%D8%A7%D9%85-%D8%A8%D8%A7%D9%86%DA%A9%DB%8C%D8%9B-%D9%81%D8%B1%D9%85%D9%88%D9%84-%D8%AF%D9%82%DB%8C%D9%82-%D8%A7%D9%82%D8%B3%D8%A7%D8%B7-%D9%85%D8%A7%D9%87/"
@@ -5504,7 +5504,7 @@
       "id": "pasargad-vipad-loan",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-08",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": 300000000,
       "minAmount": 10000000,
       "product": "تسهیلات خرد دیجیتال ویپاد",
@@ -5517,7 +5517,7 @@
         "گردش حساب"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "bank",
         "title": "ویپاد",
         "url": "https://vipad.ir"
@@ -10038,7 +10038,7 @@
       "id": "resalat-gharz",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-10",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": 200000000,
       "minAmount": 20000000,
       "product": "وام قرض‌الحسنه امتیازی دیجیتال",
@@ -10051,7 +10051,7 @@
         "سفته الکترونیکی"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "bank",
         "title": "بانک قرض‌الحسنه رسالت",
         "url": "https://rqbank.ir"
@@ -10084,7 +10084,7 @@
       "id": "saderat-deposit-based-loan",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-10",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": 2000000000,
       "minAmount": 50000000,
       "product": "تسهیلات مبتنی بر میانگین حساب (سپرده‌محور)",
@@ -10097,7 +10097,7 @@
         "اعتبارسنجی"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "bank",
         "title": "بانک صادرات ایران",
         "url": "https://bsi.ir"
@@ -10129,7 +10129,7 @@
       "id": "bam-melli-digital",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-05",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": null,
       "minAmount": 0,
       "product": "بام — بانکداری دیجیتال و باشگاه امتیاز",
@@ -10140,7 +10140,7 @@
         "حساب در بانک ملی"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "bank",
         "title": "بام — بانکداری دیجیتال بانک ملی ایران",
         "url": "https://bam.ir"
@@ -10172,7 +10172,7 @@
       "id": "blu-club",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-12",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": null,
       "minAmount": 0,
       "product": "باشگاه و جوایز بلوبانک",
@@ -10183,7 +10183,7 @@
         "ثبت‌نام در بلوبانک"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "bank",
         "title": "بلوبانک",
         "url": "https://blubank.com"
@@ -10215,7 +10215,7 @@
       "id": "bpi-club",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-03",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": null,
       "minAmount": 0,
       "product": "باشگاه مشتریان پاسارگاد و مزایای ویپاد",
@@ -10227,7 +10227,7 @@
         "گردش حساب"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "bank",
         "title": "بانک پاسارگاد",
         "url": "https://bpi.ir"
@@ -10258,7 +10258,7 @@
       "id": "bsi-sekeh-club",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-03",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": null,
       "minAmount": 0,
       "product": "باشگاه مشتریان بانک صادرات (سکه)",
@@ -10269,7 +10269,7 @@
         "مشتری بانک صادرات"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "bank",
         "title": "بانک صادرات ایران",
         "url": "https://bsi.ir"
@@ -10300,7 +10300,7 @@
       "id": "en-club",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-03",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": null,
       "minAmount": 0,
       "product": "باشگاه مشتریان و خدمات مشتریان ویژه اقتصاد نوین",
@@ -10311,7 +10311,7 @@
         "مشتری بانک اقتصاد نوین"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "bank",
         "title": "بانک اقتصاد نوین",
         "url": "https://enbank.ir"
@@ -10342,7 +10342,7 @@
       "id": "mehr-club",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-10",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": null,
       "minAmount": 0,
       "product": "باشگاه مشتریان و امتیاز اعتباری مهر ایران",
@@ -10354,7 +10354,7 @@
         "گردش حساب"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "bank",
         "title": "بانک قرض‌الحسنه مهر ایران",
         "url": "https://qmb.ir"
@@ -10385,7 +10385,7 @@
       "id": "mellat-club",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-01",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": null,
       "minAmount": 0,
       "product": "باشگاه مشتریان بانک ملت",
@@ -10397,7 +10397,7 @@
         "مشتری بانک ملت"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "bank",
         "title": "باشگاه مشتریان بانک ملت",
         "url": "https://club.bankmellat.ir"
@@ -10429,7 +10429,7 @@
       "id": "refah-club",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-03",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": null,
       "minAmount": 0,
       "product": "باشگاه مشتریان و مزایای سازمانی رفاه",
@@ -10440,7 +10440,7 @@
         "مشتری بانک رفاه"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "bank",
         "title": "بانک رفاه کارگران",
         "url": "https://refah-bank.ir"
@@ -10471,7 +10471,7 @@
       "id": "saman-club",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-05",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": null,
       "minAmount": 0,
       "product": "باشگاه مشتریان سامان (سامان‌کلاب)",
@@ -10483,7 +10483,7 @@
         "استفاده از خدمات بانک"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "bank",
         "title": "بانک سامان",
         "url": "https://sb24.ir"
@@ -10515,7 +10515,7 @@
       "id": "tejarat-club",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-03",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": null,
       "minAmount": 0,
       "product": "باشگاه مشتریان بانک تجارت",
@@ -10526,7 +10526,7 @@
         "مشتری بانک تجارت"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "bank",
         "title": "بانک تجارت",
         "url": "https://tejaratbank.ir"
@@ -10557,7 +10557,7 @@
       "id": "fund-afran-toranj",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-15",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": null,
       "minAmount": 100000,
       "product": "صندوق درآمد ثابت افرا نماد پایدار (ETF - افران)",
@@ -10569,7 +10569,7 @@
         "کد بورسی (سجام)"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "aggregator",
         "title": "فیپیران / مدیریت فناوری بورس",
         "url": "https://fipiran.ir"
@@ -10602,7 +10602,7 @@
       "id": "fund-amin-ashna",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-15",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": null,
       "minAmount": 100000,
       "product": "صندوق با درآمد ثابت امین آشنا ایرانیان (صدور و ابطالی)",
@@ -10615,7 +10615,7 @@
         "ورود به سامانه صندوق امین آشنا"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "aggregator",
         "title": "تارنمای صندوق امین آشنا ایرانیان",
         "url": "https://fa.ashena.ir"
@@ -10647,7 +10647,7 @@
       "id": "fund-ganjineh-zarrin-shahr",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-15",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": null,
       "minAmount": 100000,
       "product": "صندوق سرمایه‌گذاری گنجینه زرین شهر (صدور و ابطال / آی‌بی‌شاپ)",
@@ -10660,7 +10660,7 @@
         "احراز هویت سجامی"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "bank",
         "title": "تأمین سرمایه تمدن — صندوق گنجینه زرین شهر",
         "url": "https://ibshop.ir"
@@ -10693,7 +10693,7 @@
       "id": "fund-kara-charisma",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-15",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": null,
       "minAmount": 100000,
       "product": "صندوق درآمد ثابت نوع دوم کارا (ETF - کارا)",
@@ -10706,7 +10706,7 @@
         "سامانه معاملاتی کارگزاری"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "aggregator",
         "title": "مرکز پردازش اطلاعات مالی ایران (فیپیران) / بورس تهران",
         "url": "https://fipiran.ir"
@@ -10739,7 +10739,7 @@
       "id": "fund-labkhand-farabi",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-15",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": null,
       "minAmount": 100000,
       "product": "صندوق درآمد ثابت لبخند فارابی (ETF - لبخند)",
@@ -10752,7 +10752,7 @@
         "ثبت سفارش از طریق سامانه‌های معاملاتی کارگزاری"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "aggregator",
         "title": "مرکز پردازش اطلاعات مالی ایران (فیپیران) / فارابی",
         "url": "https://fipiran.ir"
@@ -10785,7 +10785,7 @@
       "id": "fund-lotus-parsian",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-15",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": null,
       "minAmount": 110000,
       "product": "صندوق سرمایه‌گذاری لوتوس پارسیان (صدور و ابطالی)",
@@ -10798,7 +10798,7 @@
         "پرتال آنلاین لوتوس یا شعب بانک پارسیان"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "bank",
         "title": "تأمین سرمایه لوتوس پارسیان",
         "url": "https://lotusib.ir"
@@ -10830,7 +10830,7 @@
       "id": "fund-omid-sepah",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-15",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": null,
       "minAmount": 100000,
       "product": "صندوق سرمایه‌گذاری گنجینه امید ایرانیان (صدور و ابطالی بانک سپه)",
@@ -10842,7 +10842,7 @@
         "حساب در بانک سپه یا ثبت‌نام آنلاین در تارنمای صندوق"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "bank",
         "title": "مدیریت دارایی امید — بانک سپه",
         "url": "https://omidfund.com"
@@ -10874,7 +10874,7 @@
       "id": "fund-yaghoot-agah",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-15",
-      "lastVerified": "2026-09-19",
+      "lastVerified": "2026-09-27",
       "maxAmount": null,
       "minAmount": 100000,
       "product": "صندوق درآمد ثابت یاقوت آگاه (ETF - یاقوت)",
@@ -10886,7 +10886,7 @@
         "کد بورسی"
       ],
       "source": {
-        "checked": "2026-09-19",
+        "checked": "2026-09-27",
         "kind": "aggregator",
         "title": "مرکز پردازش اطلاعات مالی ایران (فیپیران)",
         "url": "https://fipiran.ir"

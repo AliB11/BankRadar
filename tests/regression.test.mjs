@@ -59,7 +59,9 @@ test('daysSince با تاریخ نامعتبر، کهنه/نامشخص حکم م
   const { daysSince } = await import('../assets/js/util.js');
   assert.equal(daysSince('2026-19-99'), Infinity, 'ماه/روز نامعتبر نباید با سرریز Date.UTC «تازه» شود');
   assert.equal(daysSince('garbage'), Infinity);
-  assert.equal(daysSince('2026-09-21'), daysSince(new Date().toISOString().slice(0, 10)));
+  const todayISO = new Date().toISOString().slice(0, 10);
+  assert.equal(daysSince(todayISO), 0, 'امروز باید فاصله صفر روز داشته باشد');
+  assert.ok(Number.isFinite(daysSince('2026-09-21')), 'تاریخ معتبر باید فاصله متناهی بدهد');
 });
 
 /* ---------- ادغام: تاریخ‌های کنترلی با مقدار تهی پاک نمی‌شوند ---------- */

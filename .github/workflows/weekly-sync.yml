@@ -1,0 +1,325 @@
+name: ممیزی هفتگی جامع
+
+on:
+  schedule:
+    # هر شنبه ساعت ۰۴:۰۰ UTC (۰۷:۳۰ به وقت تهران) — ممیزی عمیق هفتگی
+    - cron: '0 4 * * 6'
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: 'حداکثر تعداد صفحات وام برای ممیزی عمیق (پیش‌فرض: ۱۵۰)'
+        required: false
+        default: '150'
+        type: string
+      dry_run:
+        description: 'اجرای آزمایشی بدون نوشتن داده'
+        required: false
+        default: false
+        type: boolean
+      input_file:
+        description: 'فایل ورودی خارجی JSON/CSV برای درون‌ریزی (اختیاری)'
+        required: false
+        default: ''
+        type: string
+      offline:
+        description: 'اجرای برون‌خط (بدون شبکه) برای ممیزی داده‌های موجود'
+        required: false
+        default: false
+        type: boolean
+
+concurrency:
+  group: weekly-sync
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  weekly-audit:
+    name: ممیزی، ادغام و گزارش هفتگی
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+
+    defaults:
+      run:
+        shell: bash
+
+    outputs:
+      changed: ${{ steps.diff.outputs.changed }}
+      health: ${{ steps.report.outputs.health }}
+      signature_before: ${{ steps.before.outputs.signature }}
+      signature_after: ${{ steps.diff.outputs.signature }}
+
+    steps:
+      - name: دریافت مخزن
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 1
+          persist-credentials: true
+
+      - name: راه‌اندازی Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+
+      - name: وضعیت پیش از اجرا
+        id: before
+        run: |
+          SIG=$(node tools/data-signature.mjs --field=signature)
+          COUNT=$(node tools/data-signature.mjs --field=products)
+          echo "signature=$SIG" >> "$GITHUB_OUTPUT"
+          echo "count=$COUNT" >> "$GITHUB_OUTPUT"
+          echo "branch=${GITHUB_REF_NAME}" >> "$GITHUB_OUTPUT"
+          echo "پیش از اجرا: $COUNT محصول، امضا $SIG، شاخه ${GITHUB_REF_NAME}"
+
+      - name: ممیزی هفتگی جامع
+        id: sync
+        env:
+          LIMIT: ${{ inputs.limit || '150' }}
+          INPUT_FILE: ${{ inputs.input_file || '' }}
+        run: |
+          ARGS="--limit=$LIMIT --verbose"
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            ARGS="$ARGS --dry-run"
+          fi
+          if [ "${{ inputs.offline }}" = "true" ]; then
+            ARGS="$ARGS --offline"
+          fi
+          if [ -n "$INPUT_FILE" ]; then
+            if [ ! -f "$INPUT_FILE" ]; then
+              echo "::error::فایل ورودی $INPUT_FILE یافت نشد"
+              exit 1
+            fi
+            ARGS="$ARGS --input=$INPUT_FILE"
+          fi
+
+          echo "[weekly] اجرای: node tools/sync-weekly.mjs $ARGS"
+          node tools/sync-weekly.mjs $ARGS 2>&1 | tee weekly-collect.log
+
+          {
+            echo "### سلامت منابع (weekly)"
+            echo ""
+            echo '```'
+            grep -E "^\[(weekly-sync|collect|verbose)\]" weekly-collect.log | head -80 || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: بررسی سلامت لینک‌ها (شفافیت)
+        if: ${{ inputs.offline != true && inputs.dry_run != true }}
+        run: |
+          node tools/check-links.mjs --limit=40 --concurrency=4 2>&1 | tee link-check.log
+          if [ -f data/link-health.json ]; then
+            cat data/link-health.json | python3 -c "import json,sys; d=json.load(open('data/link-health.json')); print(f\"سلامت لینک: {d['ok']}/{d['total']} ({d['healthPercent']}%)\")"
+          fi
+
+      - name: اعتبارسنجی داده
+        run: node scripts/validate-data.mjs
+
+      - name: اجرای آزمون‌ها
+        run: node --test "tests/*.test.mjs"
+
+      - name: بازسازی بسته داده (در صورت نیاز)
+        if: ${{ inputs.dry_run != true }}
+        run: |
+          # sync-weekly خودش bundle را می‌سازد، اما برای اطمینان
+          if [ ! -f data/bundle.js ]; then
+            node tools/build-bundle.mjs
+          fi
+          ls -lh data/
+          ls -lh data/history/ 2>/dev/null || true
+
+      - name: بررسی تغییرات محتوایی
+        id: diff
+        run: |
+          SIG=$(node tools/data-signature.mjs --field=signature)
+          COUNT=$(node tools/data-signature.mjs --field=products)
+          BEFORE="${{ steps.before.outputs.signature }}"
+          echo "signature=$SIG" >> "$GITHUB_OUTPUT"
+          echo "count=$COUNT" >> "$GITHUB_OUTPUT"
+
+          if [ "$SIG" = "$BEFORE" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "محتوای داده تغییر نکرد؛ کامیتی ساخته نمی‌شود."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "محتوای داده تغییر کرد: $BEFORE → $SIG"
+          fi
+          git diff --stat -- data/ || true
+
+      - name: استخراج سلامت از گزارش هفتگی
+        id: report
+        if: always()
+        run: |
+          if [ -f data/weekly-report.json ]; then
+            HEALTH=$(node -e "const r=require('./data/weekly-report.json'); console.log(r.stats?.healthScore ?? 'نامشخص')")
+            FRESH=$(node -e "const r=require('./data/weekly-report.json'); console.log(r.stats?.freshnessPercent ?? '0')")
+            ANOM=$(node -e "const r=require('./data/weekly-report.json'); console.log(r.anomalies?.total ?? 0)")
+            echo "health=$HEALTH" >> "$GITHUB_OUTPUT"
+            echo "fresh=$FRESH" >> "$GITHUB_OUTPUT"
+            echo "anomalies=$ANOM" >> "$GITHUB_OUTPUT"
+            echo "گزارش هفتگی: سلامت $HEALTH، تازگی $FRESH٪، ناهنجاری $ANOM"
+          else
+            echo "health=نامشخص" >> "$GITHUB_OUTPUT"
+            echo "fresh=0" >> "$GITHUB_OUTPUT"
+            echo "anomalies=0" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: ثبت تغییرات هفتگی
+        if: ${{ steps.diff.outputs.changed == 'true' && inputs.dry_run != true }}
+        env:
+          BEFORE_COUNT: ${{ steps.before.outputs.count }}
+          AFTER_COUNT: ${{ steps.diff.outputs.count }}
+          SIG_BEFORE: ${{ steps.before.outputs.signature }}
+          SIG_AFTER: ${{ steps.diff.outputs.signature }}
+          BRANCH: ${{ steps.before.outputs.branch }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          # گزارش‌های هفتگی قدیمی را هم اگر در docs/ نگهداری می‌کنیم
+          git add docs/ || true
+
+          git commit -m "chore(data): ممیزی هفتگی خودکار — به‌روزرسانی محصولات" -m "محصولات: ${BEFORE_COUNT} → ${AFTER_COUNT}
+          امضای داده: ${SIG_BEFORE} → ${SIG_AFTER}
+          حالت: weekly-sync (sync-weekly.mjs)
+          اجرا: ${RUN_URL}"
+
+          git pull --rebase origin "$BRANCH"
+          git push origin "HEAD:$BRANCH"
+
+      - name: بارگذاری گزارش تشخیصی
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: weekly-report
+          path: |
+            weekly-collect.log
+            link-check.log
+            data/meta.json
+            data/weekly-report.json
+            data/products.json
+            data/changelog.json
+            data/changelog.md
+            data/feed.xml
+            data/link-health.json
+            data/history/weekly-history.json
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: خلاصه ممیزی هفتگی
+        if: always()
+        env:
+          CHANGED: ${{ steps.diff.outputs.changed }}
+          SIG_BEFORE: ${{ steps.before.outputs.signature }}
+          SIG_AFTER: ${{ steps.diff.outputs.signature }}
+          COUNT_BEFORE: ${{ steps.before.outputs.count }}
+          COUNT_AFTER: ${{ steps.diff.outputs.count }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          JOB_STATUS: ${{ job.status }}
+          HEALTH: ${{ steps.report.outputs.health }}
+          FRESH: ${{ steps.report.outputs.fresh }}
+          ANOM: ${{ steps.report.outputs.anomalies }}
+        run: |
+          MODE="هفتگی جامع"
+          if [ "$DRY_RUN" = "true" ]; then MODE="هفتگی آزمایشی"; fi
+          if [ "$CHANGED" = "true" ]; then CHANGE_TEXT="بله — کامیت شد"; else CHANGE_TEXT="خیر — فقط مهر زمانی"; fi
+
+          {
+            echo "# 📊 گزارش ممیزی هفتگی بانک‌رادار"
+            echo ""
+            echo "| شاخص | مقدار |"
+            echo "| --- | --- |"
+            echo "| حالت اجرا | ${MODE} |"
+            echo "| شاخه | ${GITHUB_REF_NAME} |"
+            echo "| محصولات پیش از اجرا | ${COUNT_BEFORE:-—} |"
+            echo "| محصولات پس از اجرا | ${COUNT_AFTER:-—} |"
+            echo "| امضای داده | ${SIG_BEFORE:-—} → ${SIG_AFTER:-—} |"
+            echo "| تغییر محتوایی | ${CHANGE_TEXT} |"
+            echo "| سلامت داده | ${HEALTH:-—} / ۱۰۰ |"
+            echo "| تازگی ۷ روزه | ${FRESH:-—}٪ |"
+            echo "| ناهنجاری‌ها | ${ANOM:-—} |"
+            echo "| نتیجه | ${JOB_STATUS} |"
+            echo ""
+            if [ -f data/weekly-report.json ]; then
+              echo "### جزئیات ناهنجاری‌ها (۱۰ مورد نخست)"
+              echo ""
+              node -e "
+                const r=require('./data/weekly-report.json');
+                const items=(r.anomalies?.items||[]).slice(0,10);
+                if(!items.length){ console.log('✓ هیچ ناهنجاری بحرانی یافت نشد.'); }
+                else {
+                  for(const a of items){
+                    console.log(\`- [\${a.severity}] \${a.title}: \${a.detail?.slice(0,180)}\`);
+                  }
+                }
+              "
+            fi
+            echo ""
+            echo "> این گزارش توسط سازوکار خودکار هفتگی تولید شده است. داده‌ها شامل ممیزی رکوردهای پنج‌گانه (سپرده، صندوق، تسهیلات، اعتباری، امتیازی) و تشخیص انحراف از سقف‌های مصوب بانک مرکزی است."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: گزارش لاگ در شکست
+        if: failure()
+        run: |
+          if [ -f weekly-collect.log ]; then
+            {
+              echo "### آخرین خطوط لاگ ممیزی هفتگی"
+              echo ""
+              echo '```'
+              tail -60 weekly-collect.log
+              echo '```'
+            } >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: اطلاع‌رسانی شکست ممیزی هفتگی
+        if: failure()
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const wanted = [
+              { name: 'data-pipeline', color: 'd93f0b', description: 'خرابی خط لوله گردآوری داده' },
+              { name: 'weekly-audit', color: '0e8a16', description: 'ممیزی هفتگی' },
+              { name: 'automated', color: 'ededed', description: 'ثبت خودکار' },
+            ];
+            const usable = [];
+            for (const label of wanted) {
+              try {
+                await github.rest.issues.getLabel({ owner, repo, name: label.name });
+                usable.push(label.name);
+              } catch {
+                try {
+                  await github.rest.issues.createLabel({ owner, repo, ...label });
+                  usable.push(label.name);
+                } catch (err) {
+                  core.warning(`ساخت برچسب «${label.name}» ناموفق: ${err.message}`);
+                }
+              }
+            }
+            const runUrl = `${context.serverUrl}/${owner}/${repo}/actions/runs/${context.runId}`;
+            const title = '⚠️ ممیزی هفتگی بانک‌رادار شکست خورد';
+            const body = [
+              `اجرای هفتگی [${context.runId}](${runUrl}) ناموفق بود.`,
+              '',
+              `- رویداد: \`${context.eventName}\``,
+              `- شاخه: \`${process.env.GITHUB_REF_NAME || context.ref}\``,
+              `- کاربر: \`${context.actor}\``,
+              '',
+              'تا رفع مشکل، سامانه با آخرین داده معتبر کار می‌کند.',
+              'گزارش \`weekly-report\` در اجرای ناموفق برای بارگیری موجود است.',
+            ].join('\n');
+            try {
+              const existing = await github.rest.issues.listForRepo({ owner, repo, state: 'open', labels: 'data-pipeline' });
+              if (existing.data.length === 0) {
+                const created = await github.rest.issues.create({ owner, repo, title, body, labels: usable });
+                core.info(`ایشو ${created.data.number} ساخته شد`);
+              } else {
+                await github.rest.issues.createComment({ owner, repo, issue_number: existing.data[0].number, body });
+                core.info(`به ایشو ${existing.data[0].number} نظر افزوده شد`);
+              }
+            } catch (err) {
+              core.warning(`ثبت ایشو ناموفق: ${err.message}`);
+            }

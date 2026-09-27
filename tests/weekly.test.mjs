@@ -166,10 +166,12 @@ test('auditCuratedProducts تاریخ کنترل رکوردهای دست‌نو�
 /* ---------- ۶) گزارش ممیزی هفتگی ---------- */
 
 test('generateWeeklyReport ساختار گزارش کامل با امتیاز سلامت تولید می‌کند', () => {
+  // تاریخ امروز برای تازگی ۱۰۰٪ — آزمون نباید به تاریخ تقویم وابسته باشد
+  const todayISO = new Date().toISOString().slice(0, 10);
   const report = generateWeeklyReport({
     products: [
-      { id: '1', category: 'deposits', autoDiscovered: false, lastVerified: '2026-09-19' },
-      { id: '2', category: 'loans', autoDiscovered: true, lastSeen: '2026-09-19' },
+      { id: '1', category: 'deposits', autoDiscovered: false, lastVerified: todayISO, lastSeen: todayISO },
+      { id: '2', category: 'loans', autoDiscovered: true, lastSeen: todayISO, lastVerified: todayISO },
     ],
     indicators: {
       indicators: { inflationAnnual: { value: 65 }, depositCap1y: { value: 23 } },
@@ -180,9 +182,12 @@ test('generateWeeklyReport ساختار گزارش کامل با امتیاز س
 
   assert.equal(report.version, 2);
   assert.equal(report.counts.total, 2);
+  // هر دو محصول امروز بازبینی شده‌اند → تازگی ۱۰۰٪ و سلامت ۱۰۰
+  assert.equal(report.stats.verifiedIn7Days, 2);
+  assert.equal(report.stats.freshnessPercent, 100);
   assert.equal(report.stats.healthScore, 100);
   assert.equal(report.macro.inflationAnnual, 65);
-  assert.ok(report.period.includes('۱۴۰۵'));
+  assert.ok(report.period);
 });
 
 /* ---------- ۷) آزمون‌های شبیه‌ساز مالی خلاقانه ---------- */
