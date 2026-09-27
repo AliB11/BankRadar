@@ -8,20 +8,15 @@
     "loyalty": 10,
     "total": 221
   },
-  "lastRun": "2026-09-21T20:06:28.403Z",
-  "lastRunDurationMs": 59,
-  "lastRunMode": "only:dgshahr",
+  "lastRun": "2026-09-27T09:27:37.852Z",
+  "lastRunDurationMs": 233898,
+  "lastRunMode": "full",
   "sources": [
     {
-      "attempted": 121,
-      "discovered": 550,
-      "failures": 0,
-      "fresh": 120,
-      "ms": 13141,
+      "error": "پایان مهلت درخواست — https://www.rade.ir/loan-sitemap.xml",
+      "ms": 91922,
       "name": "rade.ir",
-      "ok": true,
-      "parsed": 121,
-      "rotated": 1
+      "ok": false
     },
     {
       "detail": [
@@ -36,6 +31,12 @@
           "ok": true,
           "rates": [],
           "url": "https://www.cbi.ir/simplelist/1466.aspx"
+        },
+        {
+          "id": "saman",
+          "ok": true,
+          "rates": [],
+          "url": "https://www.sb24.ir/"
         },
         {
           "error": "HTTP 403 Forbidden (HTTP 403) — https://bmi.ir/fa/deposit",
@@ -84,12 +85,6 @@
           "id": "pasargad",
           "ok": false,
           "url": "https://www.bpi.ir/"
-        },
-        {
-          "error": "شبکه در دسترس نبود — https://www.sb24.ir/",
-          "id": "saman",
-          "ok": false,
-          "url": "https://www.sb24.ir/"
         },
         {
           "error": "شبکه در دسترس نبود — https://www.refah-bank.ir/",
@@ -146,21 +141,21 @@
           "url": "https://vipad.ir/"
         }
       ],
-      "ms": 85459,
+      "ms": 85555,
       "name": "bank-sites",
       "ok": true,
-      "reachable": 2,
+      "reachable": 3,
       "targets": 20
     },
     {
-      "ms": 6147,
+      "ms": 54475,
       "name": "macro-indicators",
       "ok": true,
-      "sourcesOk": 2,
+      "sourcesOk": 1,
       "touched": []
     },
     {
-      "ms": 15,
+      "ms": 1890,
       "name": "dgshahr.com",
       "ok": true,
       "parsed": 31,
