@@ -88,6 +88,10 @@ export const store = {
   derived: {},
   meta: {},
   period: '',
+  weeklyReport: null,
+  changelog: null,
+  history: [],
+  transparency: [],
 
   filters: {
     query: '',
@@ -190,6 +194,38 @@ async function fetchFresh(baseGeneratedAt) {
   }
 }
 
+async function fetchOptionalJSON(url) {
+  try {
+    const res = await fetch(`${url}?_t=${Date.now()}`, { cache: 'no-store' });
+    if (!res.ok) return null;
+    return await res.json();
+  } catch {
+    return null;
+  }
+}
+
+function computeTransparencyLocal(products) {
+  // محاسبه محلی شفافیت اگر weekly-report در دسترس نباشد
+  const byBank = new Map();
+  for (const p of products) {
+    const key = p.bank || 'نامشخص';
+    if (!byBank.has(key)) byBank.set(key, []);
+    byBank.get(key).push(p);
+  }
+  const out = [];
+  for (const [bank, list] of byBank) {
+    const total = list.length;
+    const high = list.filter((x) => x.confidence === 'high').length;
+    const stale = list.filter((x) => x.stale).length;
+    const avgDigital = list.reduce((a, x) => a + (x.digital ?? 50), 0) / Math.max(1, total);
+    const score = Math.round(
+      (high / Math.max(1, total)) * 50 + (1 - stale / Math.max(1, total)) * 30 + (avgDigital / 100) * 20,
+    );
+    out.push({ bank, bankId: list[0]?.bankId || null, total, highConfidence: high, stale, transparencyScore: score });
+  }
+  return out.sort((a, b) => b.transparencyScore - a.transparencyScore);
+}
+
 /** بازخوانی اجباری آخرین نسخه داده‌ها از مخزن با شکستن حافظه نهان */
 export async function reloadFreshData() {
   try {
@@ -217,6 +253,15 @@ export async function reloadFreshData() {
     } catch {
       // استفاده از شاخص‌های موجود
     }
+
+    // فیدهای هفتگی اختیاری
+    const weekly = await fetchOptionalJSON('data/weekly-report.json');
+    if (weekly) store.weeklyReport = weekly;
+    const changelog = await fetchOptionalJSON('data/changelog.json');
+    if (changelog) store.changelog = changelog;
+    const history = await fetchOptionalJSON('data/history/weekly-history.json');
+    if (Array.isArray(history)) store.history = history;
+    store.transparency = weekly?.transparency?.banks || computeTransparencyLocal(store.products);
 
     recalculate();
     return { ok: true, count: store.products.length };
@@ -281,6 +326,20 @@ export async function loadData() {
   }
 
   recalculate();
+
+  // فیدهای هفتگی اختیاری — در file:// شکست می‌خورد و نادیده گرفته می‌شود
+  try {
+    const weekly = await fetchOptionalJSON('data/weekly-report.json');
+    if (weekly) store.weeklyReport = weekly;
+    const changelog = await fetchOptionalJSON('data/changelog.json');
+    if (changelog) store.changelog = changelog;
+    const history = await fetchOptionalJSON('data/history/weekly-history.json');
+    if (Array.isArray(history)) store.history = history;
+    store.transparency = weekly?.transparency?.banks || computeTransparencyLocal(store.products);
+  } catch {
+    store.transparency = computeTransparencyLocal(store.products);
+  }
+
   return true;
 }
 

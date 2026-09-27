@@ -53,6 +53,13 @@ jobs:
           mkdir -p dist/data
           cp data/products.json data/banks.json data/indicators.json data/meta.json data/bundle.js data/schema.json dist/data/
           cp data/weekly-report.json dist/data/ 2>/dev/null || true
+          cp data/changelog.json dist/data/ 2>/dev/null || true
+          cp data/changelog.md dist/data/ 2>/dev/null || true
+          cp data/feed.xml dist/data/ 2>/dev/null || true
+          cp data/link-health.json dist/data/ 2>/dev/null || true
+          mkdir -p dist/data/history
+          cp data/history/weekly-history.json dist/data/history/ 2>/dev/null || true
+          cp data/history/latest.json dist/data/history/ 2>/dev/null || true
           touch dist/.nojekyll
           echo "محتوای بسته انتشار:"
           find dist -type f | sort

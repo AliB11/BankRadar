@@ -90,25 +90,37 @@ jobs:
       # مرحله واکشی: هر منبع مستقل شکست می‌خورد و کل اجرا متوقف نمی‌شود
       # (runSource در tools/lib/http.mjs). اما شکست سختِ خودِ collect — مثل نبود
       # داده پایه — باید اجرا را سرخ کند؛ pipefail بالا همین را تضمین می‌کند.
+      # حالت weekly اکنون سازوکار جامع sync-weekly.mjs را فراخوانی می‌کند که
+      # شامل ممیزی پنج‌گانه، تشخیص ناهنجاری و گزارش هفتگی است.
       - name: واکشی داده از منابع
         id: collect
         env:
           LIMIT: ${{ inputs.limit || '120' }}
+          MODE: ${{ inputs.mode || 'daily' }}
         run: |
-          if [ "${{ inputs.dry_run }}" = "true" ]; then
-            node tools/collect.mjs --limit="$LIMIT" --dry-run --verbose 2>&1 | tee collect.log
+          if [ "$MODE" = "weekly" ]; then
+            echo "حالت هفتگی: اجرای sync-weekly.mjs"
+            if [ "${{ inputs.dry_run }}" = "true" ]; then
+              node tools/sync-weekly.mjs --limit="$LIMIT" --dry-run --verbose 2>&1 | tee collect.log
+            else
+              node tools/sync-weekly.mjs --limit="$LIMIT" --verbose 2>&1 | tee collect.log
+            fi
           else
-            node tools/collect.mjs --limit="$LIMIT" --verbose 2>&1 | tee collect.log
+            if [ "${{ inputs.dry_run }}" = "true" ]; then
+              node tools/collect.mjs --limit="$LIMIT" --dry-run --verbose 2>&1 | tee collect.log
+            else
+              node tools/collect.mjs --limit="$LIMIT" --verbose 2>&1 | tee collect.log
+            fi
           fi
 
           # خلاصه سلامت منابع در صفحه اجرا — تا خرابی یک منبع بدون خواندن
           # کل لاگ دیده شود. `|| true` چون grep بدون تطابق با کد ۱ برمی‌گردد و
           # با pipefail فعال، مرحله را بی‌دلیل سرخ می‌کرد.
           {
-            echo "### سلامت منابع"
+            echo "### سلامت منابع ($MODE)"
             echo ""
             echo '```'
-            grep -E "^\[(collect|verbose)\]" collect.log | head -60 || true
+            grep -E "^\[(collect|verbose|weekly-sync)\]" collect.log | head -80 || true
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
 
@@ -177,6 +189,10 @@ jobs:
             collect.log
             data/meta.json
             data/weekly-report.json
+            data/changelog.json
+            data/changelog.md
+            data/feed.xml
+            data/history/weekly-history.json
           if-no-files-found: warn
           retention-days: 14
 

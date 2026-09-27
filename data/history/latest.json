@@ -1,0 +1,593 @@
+{
+  "date": "2026-09-27",
+  "diffSummary": {
+    "added": 0,
+    "amountChanged": 0,
+    "confidenceChanged": 0,
+    "rateChanged": 0,
+    "removed": 0,
+    "revived": 0,
+    "staleNow": 0,
+    "termChanged": 0,
+    "totalChanges": 0
+  },
+  "report": {
+    "anomalies": {
+      "errors": 0,
+      "items": [
+        {
+          "bank": "بانک آینده",
+          "detail": "محصول «سپرده شتاب (۲۳٪ عمومی / تا ۲۵٪ برای مبالغ بالا)» (بانک آینده — ayandeh-shetab-23): نرخ 25٪ بالاتر از سقف مصوب 23٪ بانک مرکزی است.",
+          "id": "cbi-deposit-cap-exceeded",
+          "productId": "ayandeh-shetab-23",
+          "rate": 25,
+          "severity": "warn",
+          "title": "نرخ سود سپرده بالاتر از سقف مصوب"
+        },
+        {
+          "bank": "بانک دی",
+          "detail": "محصول «سپرده با سود ترجیحی بانک دی (پلکانی ۲۷ تا ۳۰٪ بر اساس مانده)» (بانک دی — day-deposit-pref-30): نرخ 30٪ بالاتر از سقف مصوب 23٪ بانک مرکزی است.",
+          "id": "cbi-deposit-cap-exceeded",
+          "productId": "day-deposit-pref-30",
+          "rate": 30,
+          "severity": "warn",
+          "title": "نرخ سود سپرده بالاتر از سقف مصوب"
+        },
+        {
+          "bank": "بانک اقتصاد نوین",
+          "detail": "محصول «سپرده با سود ترجیحی بانک اقتصاد نوین (پلکانی ۲۵ تا ۳۰٪ بر اساس مانده)» (بانک اقتصاد نوین — eghtesad-novin-deposit-pref-30): نرخ 30٪ بالاتر از سقف مصوب 23٪ بانک مرکزی است.",
+          "id": "cbi-deposit-cap-exceeded",
+          "productId": "eghtesad-novin-deposit-pref-30",
+          "rate": 30,
+          "severity": "warn",
+          "title": "نرخ سود سپرده بالاتر از سقف مصوب"
+        },
+        {
+          "bank": "بانک گردشگری",
+          "detail": "محصول «سپرده با سود ترجیحی بانک گردشگری (سقف ۳۱٪ برای مبالغ بالا)» (بانک گردشگری — gardeshgari-deposit-pref-28): نرخ 31٪ بالاتر از سقف مصوب 23٪ بانک مرکزی است.",
+          "id": "cbi-deposit-cap-exceeded",
+          "productId": "gardeshgari-deposit-pref-28",
+          "rate": 31,
+          "severity": "warn",
+          "title": "نرخ سود سپرده بالاتر از سقف مصوب"
+        },
+        {
+          "bank": "بانک ایران زمین",
+          "detail": "محصول «سپرده با سود ترجیحی بانک ایران زمین (پلکانی ۲۵ تا ۳۰٪ بر اساس مانده)» (بانک ایران زمین — iran-zamin-deposit-pref-30): نرخ 30٪ بالاتر از سقف مصوب 23٪ بانک مرکزی است.",
+          "id": "cbi-deposit-cap-exceeded",
+          "productId": "iran-zamin-deposit-pref-30",
+          "rate": 30,
+          "severity": "warn",
+          "title": "نرخ سود سپرده بالاتر از سقف مصوب"
+        },
+        {
+          "bank": "بانک کارآفرین",
+          "detail": "محصول «سپرده با سود ترجیحی بانک کارآفرین (پلکانی ۲۷ تا ۲۹.۵٪ بر اساس مانده)» (بانک کارآفرین — karafarin-deposit-pref-30): نرخ 29.5٪ بالاتر از سقف مصوب 23٪ بانک مرکزی است.",
+          "id": "cbi-deposit-cap-exceeded",
+          "productId": "karafarin-deposit-pref-30",
+          "rate": 29.5,
+          "severity": "warn",
+          "title": "نرخ سود سپرده بالاتر از سقف مصوب"
+        },
+        {
+          "bank": "بانک مسکن",
+          "detail": "محصول «سپرده با سود ترجیحی بانک مسکن (سقف ۲۸٪ برای مبالغ بالا)» (بانک مسکن — maskan-sp-deposit-pref-28): نرخ 28٪ بالاتر از سقف مصوب 23٪ بانک مرکزی است.",
+          "id": "cbi-deposit-cap-exceeded",
+          "productId": "maskan-sp-deposit-pref-28",
+          "rate": 28,
+          "severity": "warn",
+          "title": "نرخ سود سپرده بالاتر از سقف مصوب"
+        },
+        {
+          "bank": "مؤسسه اعتباری ملل",
+          "detail": "محصول «سپرده با سود ترجیحی مؤسسه اعتباری ملل (سقف ۳۰.۵٪ برای مبالغ بالا)» (مؤسسه اعتباری ملل — mellal-deposit-pref-26): نرخ 30.5٪ بالاتر از سقف مصوب 23٪ بانک مرکزی است.",
+          "id": "cbi-deposit-cap-exceeded",
+          "productId": "mellal-deposit-pref-26",
+          "rate": 30.5,
+          "severity": "warn",
+          "title": "نرخ سود سپرده بالاتر از سقف مصوب"
+        },
+        {
+          "bank": "مؤسسه اعتباری ملل",
+          "detail": "محصول «سپرده ویژه (بلندمدت)» (مؤسسه اعتباری ملل — mellal-vijehe): نرخ 27٪ بالاتر از سقف مصوب 23٪ بانک مرکزی است.",
+          "id": "cbi-deposit-cap-exceeded",
+          "productId": "mellal-vijehe",
+          "rate": 27,
+          "severity": "warn",
+          "title": "نرخ سود سپرده بالاتر از سقف مصوب"
+        },
+        {
+          "bank": "بانک ملت",
+          "detail": "محصول «سپرده با سود ترجیحی بانک ملت (پلکانی ۲۷ تا ۲۹.۹٪ بر اساس مانده)» (بانک ملت — mellat-deposit-pref-30): نرخ 29.9٪ بالاتر از سقف مصوب 23٪ بانک مرکزی است.",
+          "id": "cbi-deposit-cap-exceeded",
+          "productId": "mellat-deposit-pref-30",
+          "rate": 29.9,
+          "severity": "warn",
+          "title": "نرخ سود سپرده بالاتر از سقف مصوب"
+        },
+        {
+          "bank": "بانک ملی ایران",
+          "detail": "محصول «سپرده با سود ترجیحی بانک ملی ایران (پلکانی ۲۲ تا ۲۹٪ بر اساس مانده)» (بانک ملی ایران — melli-deposit-pref-29): نرخ 29٪ بالاتر از سقف مصوب 23٪ بانک مرکزی است.",
+          "id": "cbi-deposit-cap-exceeded",
+          "productId": "melli-deposit-pref-29",
+          "rate": 29,
+          "severity": "warn",
+          "title": "نرخ سود سپرده بالاتر از سقف مصوب"
+        },
+        {
+          "bank": "بانک پارسیان",
+          "detail": "محصول «سپرده با سود ترجیحی بانک پارسیان (پلکانی ۲۶.۵ تا ۲۷٪ بر اساس مانده)» (بانک پارسیان — parsian-deposit-pref-27): نرخ 27٪ بالاتر از سقف مصوب 23٪ بانک مرکزی است.",
+          "id": "cbi-deposit-cap-exceeded",
+          "productId": "parsian-deposit-pref-27",
+          "rate": 27,
+          "severity": "warn",
+          "title": "نرخ سود سپرده بالاتر از سقف مصوب"
+        },
+        {
+          "bank": "بانک پاسارگاد",
+          "detail": "محصول «سپرده با سود ترجیحی بانک پاسارگاد (پلکانی ۲۷ تا ۳۰٪ بر اساس مانده)» (بانک پاسارگاد — pasargad-deposit-pref-30): نرخ 30٪ بالاتر از سقف مصوب 23٪ بانک مرکزی است.",
+          "id": "cbi-deposit-cap-exceeded",
+          "productId": "pasargad-deposit-pref-30",
+          "rate": 30,
+          "severity": "warn",
+          "title": "نرخ سود سپرده بالاتر از سقف مصوب"
+        },
+        {
+          "bank": "بانک رفاه کارگران",
+          "detail": "محصول «سپرده با سود ترجیحی بانک رفاه کارگران (سقف ۲۸٪ برای مبالغ بالا)» (بانک رفاه کارگران — refah-deposit-pref-28): نرخ 28٪ بالاتر از سقف مصوب 23٪ بانک مرکزی است.",
+          "id": "cbi-deposit-cap-exceeded",
+          "productId": "refah-deposit-pref-28",
+          "rate": 28,
+          "severity": "warn",
+          "title": "نرخ سود سپرده بالاتر از سقف مصوب"
+        },
+        {
+          "bank": "بانک سامان",
+          "detail": "محصول «سپرده با سود ترجیحی بانک سامان (پلکانی ۲۴.۵ تا ۲۷٪ بر اساس مانده)» (بانک سامان — saman-sp-deposit-30): نرخ 27٪ بالاتر از سقف مصوب 23٪ بانک مرکزی است.",
+          "id": "cbi-deposit-cap-exceeded",
+          "productId": "saman-sp-deposit-30",
+          "rate": 27,
+          "severity": "warn",
+          "title": "نرخ سود سپرده بالاتر از سقف مصوب"
+        },
+        {
+          "bank": "بانک سپه",
+          "detail": "محصول «سپرده با سود ترجیحی بانک سپه (پلکانی ۲۶ تا ۲۷٪ بر اساس مانده)» (بانک سپه — sepah-deposit-pref-27): نرخ 27٪ بالاتر از سقف مصوب 23٪ بانک مرکزی است.",
+          "id": "cbi-deposit-cap-exceeded",
+          "productId": "sepah-deposit-pref-27",
+          "rate": 27,
+          "severity": "warn",
+          "title": "نرخ سود سپرده بالاتر از سقف مصوب"
+        },
+        {
+          "bank": "بانک شهر",
+          "detail": "محصول «سپرده با سود ترجیحی بانک شهر (پلکانی ۲۵ تا ۳۰٪ بر اساس مانده)» (بانک شهر — shahr-deposit-pref-26): نرخ 30٪ بالاتر از سقف مصوب 23٪ بانک مرکزی است.",
+          "id": "cbi-deposit-cap-exceeded",
+          "productId": "shahr-deposit-pref-26",
+          "rate": 30,
+          "severity": "warn",
+          "title": "نرخ سود سپرده بالاتر از سقف مصوب"
+        },
+        {
+          "bank": "بانک سینا",
+          "detail": "محصول «سپرده با سود ترجیحی بانک سینا (پلکانی ۲۶ تا ۲۸٪ بر اساس مانده)» (بانک سینا — sina-sp-deposit-pref-27): نرخ 28٪ بالاتر از سقف مصوب 23٪ بانک مرکزی است.",
+          "id": "cbi-deposit-cap-exceeded",
+          "productId": "sina-sp-deposit-pref-27",
+          "rate": 28,
+          "severity": "warn",
+          "title": "نرخ سود سپرده بالاتر از سقف مصوب"
+        },
+        {
+          "bank": "بانک تجارت",
+          "detail": "محصول «سپرده با سود ترجیحی بانک تجارت (پلکانی ۲۵.۵ تا ۲۹٪ بر اساس مانده)» (بانک تجارت — tejarat-deposit-pref-29): نرخ 29٪ بالاتر از سقف مصوب 23٪ بانک مرکزی است.",
+          "id": "cbi-deposit-cap-exceeded",
+          "productId": "tejarat-deposit-pref-29",
+          "rate": 29,
+          "severity": "warn",
+          "title": "نرخ سود سپرده بالاتر از سقف مصوب"
+        },
+        {
+          "bank": "بانک توسعه تعاون",
+          "detail": "محصول «سپرده با سود ترجیحی بانک توسعه تعاون (پلکانی ۲۲.۵ تا ۲۶٪ بر اساس مانده)» (بانک توسعه تعاون — tosee-taavon-deposit-pref-26): نرخ 26٪ بالاتر از سقف مصوب 23٪ بانک مرکزی است.",
+          "id": "cbi-deposit-cap-exceeded",
+          "productId": "tosee-taavon-deposit-pref-26",
+          "rate": 26,
+          "severity": "warn",
+          "title": "نرخ سود سپرده بالاتر از سقف مصوب"
+        },
+        {
+          "bank": "بانک ایران زمین",
+          "detail": "محصول «طرح تسهیلات ایران‌یار بانک ایران زمین» (بانک ایران زمین — rade-704680): صفحه منبع 284 روز است که به‌روزرسانی نشده است.",
+          "id": "stale-source-risk",
+          "productId": "rade-704680",
+          "severity": "info",
+          "title": "بیش از ۶ ماه از به‌روزرسانی صفحه منبع گذشته است"
+        },
+        {
+          "bank": "بانک ایران زمین",
+          "detail": "محصول «وام غیرحضوری فرازبانک ایران زمین» (بانک ایران زمین — rade-705630): صفحه منبع 264 روز است که به‌روزرسانی نشده است.",
+          "id": "stale-source-risk",
+          "productId": "rade-705630",
+          "severity": "info",
+          "title": "بیش از ۶ ماه از به‌روزرسانی صفحه منبع گذشته است"
+        },
+        {
+          "bank": "بانک گردشگری",
+          "detail": "محصول «طرح بای کارت بانک گردشگری» (بانک گردشگری — rade-705742): صفحه منبع 272 روز است که به‌روزرسانی نشده است.",
+          "id": "stale-source-risk",
+          "productId": "rade-705742",
+          "severity": "info",
+          "title": "بیش از ۶ ماه از به‌روزرسانی صفحه منبع گذشته است"
+        },
+        {
+          "bank": "بانک شهر",
+          "detail": "محصول «وام خرید تاکسی‌های برقی بانک شهر» (بانک شهر — rade-704697): صفحه منبع 319 روز است که به‌روزرسانی نشده است.",
+          "id": "stale-source-risk",
+          "productId": "rade-704697",
+          "severity": "info",
+          "title": "بیش از ۶ ماه از به‌روزرسانی صفحه منبع گذشته است"
+        },
+        {
+          "bank": "بانک شهر",
+          "detail": "محصول «وام وزین شهر بانک شهر» (بانک شهر — rade-704744): صفحه منبع 293 روز است که به‌روزرسانی نشده است.",
+          "id": "stale-source-risk",
+          "productId": "rade-704744",
+          "severity": "info",
+          "title": "بیش از ۶ ماه از به‌روزرسانی صفحه منبع گذشته است"
+        },
+        {
+          "bank": "بانک رفاه کارگران",
+          "detail": "محصول «وام افق بانک رفاه کارگران» (بانک رفاه کارگران — rade-704787): صفحه منبع 281 روز است که به‌روزرسانی نشده است.",
+          "id": "stale-source-risk",
+          "productId": "rade-704787",
+          "severity": "info",
+          "title": "بیش از ۶ ماه از به‌روزرسانی صفحه منبع گذشته است"
+        },
+        {
+          "bank": "بانک پارسیان",
+          "detail": "محصول «وام پارس‌وام بانک پارسیان» (بانک پارسیان — rade-705509): صفحه منبع 286 روز است که به‌روزرسانی نشده است.",
+          "id": "stale-source-risk",
+          "productId": "rade-705509",
+          "severity": "info",
+          "title": "بیش از ۶ ماه از به‌روزرسانی صفحه منبع گذشته است"
+        },
+        {
+          "bank": "بانک سینا",
+          "detail": "محصول «وام ماه‌یار بانک سینا» (بانک سینا — rade-705536): صفحه منبع 293 روز است که به‌روزرسانی نشده است.",
+          "id": "stale-source-risk",
+          "productId": "rade-705536",
+          "severity": "info",
+          "title": "بیش از ۶ ماه از به‌روزرسانی صفحه منبع گذشته است"
+        },
+        {
+          "bank": "بانک رفاه کارگران",
+          "detail": "محصول «طرح ارزبان بانک رفاه کارگران» (بانک رفاه کارگران — rade-705623): صفحه منبع 281 روز است که به‌روزرسانی نشده است.",
+          "id": "stale-source-risk",
+          "productId": "rade-705623",
+          "severity": "info",
+          "title": "بیش از ۶ ماه از به‌روزرسانی صفحه منبع گذشته است"
+        },
+        {
+          "bank": "بانک صادرات",
+          "detail": "محصول «طرح جاری زندگی بانک صادرات ایران» (بانک صادرات — rade-706215): صفحه منبع 232 روز است که به‌روزرسانی نشده است.",
+          "id": "stale-source-risk",
+          "productId": "rade-706215",
+          "severity": "info",
+          "title": "بیش از ۶ ماه از به‌روزرسانی صفحه منبع گذشته است"
+        },
+        {
+          "bank": "بانک صادرات ایران",
+          "detail": "محصول «تسهیلات مبتنی بر میانگین حساب (سپرده‌محور)» (بانک صادرات ایران — saderat-deposit-based-loan): مسدودی سپرده در نرخ ۲۳٪، نرخ مؤثر واقعی را به بیش از ۳۵٪ افزایش می‌دهد.",
+          "id": "hidden-opportunity-cost-trap",
+          "productId": "saderat-deposit-based-loan",
+          "rate": 23,
+          "severity": "info",
+          "title": "تله مسدودی سپرده همراه با سود تجاری"
+        }
+      ],
+      "notices": 11,
+      "total": 31,
+      "warnings": 20
+    },
+    "changelog": {
+      "added": [],
+      "rateChanged": [],
+      "staleNow": [],
+      "summary": {
+        "added": 0,
+        "amountChanged": 0,
+        "confidenceChanged": 0,
+        "rateChanged": 0,
+        "removed": 0,
+        "revived": 0,
+        "staleNow": 0,
+        "termChanged": 0,
+        "totalChanges": 0
+      }
+    },
+    "counts": {
+      "credit": 53,
+      "deposits": 48,
+      "funds": 8,
+      "loans": 102,
+      "loyalty": 10,
+      "total": 221
+    },
+    "durationMs": 73,
+    "generatedAt": "2026-09-27T04:31:35.362Z",
+    "macro": {
+      "depositCap1y": 23,
+      "inflationAnnual": 69.9,
+      "interbankRate": 24,
+      "loanRateCeiling": 23,
+      "realDepositReturn": -46.9
+    },
+    "merge": {
+      "added": 0,
+      "baseline": 221,
+      "incoming": 0,
+      "unchanged": 0,
+      "updated": 0
+    },
+    "mode": "offline-audit",
+    "period": "هفته منتهی به ۵ مهر ۱۴۰۵",
+    "signature": "5a5ac46bd9fe3972",
+    "sources": [],
+    "stats": {
+      "autoProducts": 154,
+      "curatedProducts": 67,
+      "freshnessPercent": 70,
+      "healthScore": 85,
+      "staleProducts": 0,
+      "totalProducts": 221,
+      "verifiedIn7Days": 154
+    },
+    "transparency": {
+      "avgScore": 73,
+      "banks": [
+        {
+          "avgDigital": 97,
+          "avgFreshness": 99,
+          "bank": "ازکی‌وام",
+          "bankId": "azkivam",
+          "highConfidence": 1,
+          "regulatory": 0,
+          "stale": 0,
+          "tone": "good",
+          "total": 1,
+          "transparencyScore": 99
+        },
+        {
+          "avgDigital": 96,
+          "avgFreshness": 99,
+          "bank": "مشاور سرمایه‌گذاری ترنج",
+          "bankId": "toranj",
+          "highConfidence": 1,
+          "regulatory": 1,
+          "stale": 0,
+          "tone": "good",
+          "total": 1,
+          "transparencyScore": 99
+        },
+        {
+          "avgDigital": 96,
+          "avgFreshness": 99,
+          "bank": "گروه مالی کاریزما",
+          "bankId": "charisma",
+          "highConfidence": 1,
+          "regulatory": 1,
+          "stale": 0,
+          "tone": "good",
+          "total": 1,
+          "transparencyScore": 99
+        },
+        {
+          "avgDigital": 95,
+          "avgFreshness": 99,
+          "bank": "کاریزما / فارابی (سبدگردان فارابی)",
+          "bankId": "farabi",
+          "highConfidence": 1,
+          "regulatory": 1,
+          "stale": 0,
+          "tone": "good",
+          "total": 1,
+          "transparencyScore": 99
+        },
+        {
+          "avgDigital": 95,
+          "avgFreshness": 99,
+          "bank": "سبدگردان آگاه",
+          "bankId": "agah",
+          "highConfidence": 1,
+          "regulatory": 1,
+          "stale": 0,
+          "tone": "good",
+          "total": 1,
+          "transparencyScore": 99
+        },
+        {
+          "avgDigital": 90,
+          "avgFreshness": 99,
+          "bank": "بانک شهر / تأمین سرمایه تمدن",
+          "bankId": "shahr",
+          "highConfidence": 1,
+          "regulatory": 1,
+          "stale": 0,
+          "tone": "good",
+          "total": 1,
+          "transparencyScore": 98
+        },
+        {
+          "avgDigital": 85,
+          "avgFreshness": 99,
+          "bank": "بانک مرکزی جمهوری اسلامی ایران",
+          "bankId": "cbi",
+          "highConfidence": 1,
+          "regulatory": 1,
+          "stale": 0,
+          "tone": "good",
+          "total": 1,
+          "transparencyScore": 97
+        },
+        {
+          "avgDigital": 89,
+          "avgFreshness": 99,
+          "bank": "کارگزاری سهم آشنا / تأمین سرمایه آشنا",
+          "bankId": "ashna",
+          "highConfidence": 1,
+          "regulatory": 1,
+          "stale": 0,
+          "tone": "good",
+          "total": 1,
+          "transparencyScore": 97
+        },
+        {
+          "avgDigital": 88,
+          "avgFreshness": 99,
+          "bank": "بانک پارسیان / تأمین سرمایه لوتوس پارسیان",
+          "bankId": "parsian",
+          "highConfidence": 1,
+          "regulatory": 1,
+          "stale": 0,
+          "tone": "good",
+          "total": 1,
+          "transparencyScore": 97
+        },
+        {
+          "avgDigital": 82,
+          "avgFreshness": 99,
+          "bank": "بانک سپه / مدیریت دارایی امید",
+          "bankId": "sepah",
+          "highConfidence": 1,
+          "regulatory": 1,
+          "stale": 0,
+          "tone": "good",
+          "total": 1,
+          "transparencyScore": 96
+        },
+        {
+          "avgDigital": 69,
+          "avgFreshness": 99,
+          "bank": "شبکه بانکی (ثبت‌نام: بانک مرکزی)",
+          "bankId": "cbi",
+          "highConfidence": 4,
+          "regulatory": 4,
+          "stale": 0,
+          "tone": "good",
+          "total": 4,
+          "transparencyScore": 93
+        },
+        {
+          "avgDigital": 83,
+          "avgFreshness": 99,
+          "bank": "شبکه بانکی",
+          "bankId": "cbi",
+          "highConfidence": 3,
+          "regulatory": 3,
+          "stale": 0,
+          "tone": "good",
+          "total": 4,
+          "transparencyScore": 89
+        },
+        {
+          "avgDigital": 99,
+          "avgFreshness": 99,
+          "bank": "بلوبانک",
+          "bankId": "blubank",
+          "highConfidence": 3,
+          "regulatory": 0,
+          "stale": 0,
+          "tone": "good",
+          "total": 5,
+          "transparencyScore": 87
+        },
+        {
+          "avgDigital": 81,
+          "avgFreshness": 99,
+          "bank": "بانک ملی ایران",
+          "bankId": "melli",
+          "highConfidence": 1,
+          "regulatory": 0,
+          "stale": 0,
+          "tone": "warn",
+          "total": 6,
+          "transparencyScore": 71
+        },
+        {
+          "avgDigital": 76,
+          "avgFreshness": 99,
+          "bank": "بانک صادرات ایران",
+          "bankId": "saderat",
+          "highConfidence": 1,
+          "regulatory": 0,
+          "stale": 0,
+          "tone": "warn",
+          "total": 5,
+          "transparencyScore": 71
+        },
+        {
+          "avgDigital": 99,
+          "avgFreshness": 99,
+          "bank": "دیجی‌پی",
+          "bankId": "digipay",
+          "highConfidence": 0,
+          "regulatory": 0,
+          "stale": 0,
+          "tone": "warn",
+          "total": 1,
+          "transparencyScore": 69
+        },
+        {
+          "avgDigital": 95,
+          "avgFreshness": 99,
+          "bank": "ویپاد (بانک پاسارگاد)",
+          "bankId": "vipad",
+          "highConfidence": 0,
+          "regulatory": 0,
+          "stale": 0,
+          "tone": "warn",
+          "total": 1,
+          "transparencyScore": 69
+        },
+        {
+          "avgDigital": 92,
+          "avgFreshness": 99,
+          "bank": "جت‌وام",
+          "bankId": "azkivam",
+          "highConfidence": 0,
+          "regulatory": 0,
+          "stale": 0,
+          "tone": "warn",
+          "total": 1,
+          "transparencyScore": 68
+        },
+        {
+          "avgDigital": 88,
+          "avgFreshness": 99,
+          "bank": "شبکه بانکی / بازار سرمایه",
+          "bankId": "cbi",
+          "highConfidence": 0,
+          "regulatory": 1,
+          "stale": 0,
+          "tone": "warn",
+          "total": 1,
+          "transparencyScore": 67
+        },
+        {
+          "avgDigital": 67,
+          "avgFreshness": 100,
+          "bank": "بانک قرض‌الحسنه مهر ایران",
+          "bankId": null,
+          "highConfidence": 2,
+          "regulatory": 0,
+          "stale": 0,
+          "tone": "warn",
+          "total": 17,
+          "transparencyScore": 67
+        }
+      ],
+      "totalBanks": 50
+    },
+    "version": 2
+  }
+}

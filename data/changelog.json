@@ -1,0 +1,21 @@
+{
+  "added": [],
+  "amountChanged": [],
+  "confidenceChanged": [],
+  "rateChanged": [],
+  "removed": [],
+  "revived": [],
+  "staleNow": [],
+  "summary": {
+    "added": 0,
+    "amountChanged": 0,
+    "confidenceChanged": 0,
+    "rateChanged": 0,
+    "removed": 0,
+    "revived": 0,
+    "staleNow": 0,
+    "termChanged": 0,
+    "totalChanges": 0
+  },
+  "termChanged": []
+}
