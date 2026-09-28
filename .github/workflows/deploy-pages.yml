@@ -1,8 +1,11 @@
 name: انتشار روی GitHub Pages
 
 on:
-  # به‌روزرسانی خودکار داده روی همین شاخه commit می‌کند، پس همان push برای
-  # انتشار کافی است؛ افزودن workflow_run باعث دو انتشار هم‌زمان می‌شد.
+  # انتشار پس از هر push انسانی/ادغام PR روی main. توجه: pushهای
+  # github-actions[bot] (به‌روزرسانی خودکار داده) رویداد push برای این فایل
+  # راه نمی‌اندازند (سد بازگشتی GITHUB_TOKEN)؛ برای همین، جریان‌های
+  # refresh-data و weekly-sync پس از ثبت داده تازه، این جریان را با
+  # workflow_dispatch فرامی‌خوانند (triggerهای dispatch مستثنا هستند).
   push:
     branches: [main]
   workflow_dispatch:

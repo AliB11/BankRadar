@@ -25,6 +25,8 @@ import {
   rowDateToIso,
   fundPageUrl,
   shortFundName,
+  tidyFundTitle,
+  productTitle,
   tidyManager,
   faToman,
   faNavToman,
@@ -353,4 +355,26 @@ test('داده‌های فعلی products.json با خروجی برش هم‌خ�
     const isignal = p.extra?.isignalId ? p.extra : p.extra?.isignal;
     assert.equal(isignal?.isignalId, r.id, `فرادادهٔ آی‌سیگنال برای ${id}`);
   }
+});
+
+/* ---------- بهداشت نام صندوق‌ها ---------- */
+
+test('tidyFundTitle تکرار عبارت «درآمد ثابت» را می‌زداید', () => {
+  assert.equal(tidyFundTitle('صندوق درآمد ثابت ثابت آکام (ETF - آکام)'), 'صندوق درآمد ثابت آکام (ETF - آکام)');
+  assert.equal(tidyFundTitle('صندوق درآمد ثابت با درآمد ثابت کمند (ETF - کمند)'), 'صندوق درآمد ثابت کمند (ETF - کمند)');
+  assert.equal(tidyFundTitle('صندوق با درآمد ثابت امین آشنا ایرانیان (صدور و ابطالی)'), 'صندوق درآمد ثابت امین آشنا ایرانیان (صدور و ابطالی)');
+  assert.equal(tidyFundTitle('صندوق درآمد ثابت کیان (ETF - کیان)'), 'صندوق درآمد ثابت کیان (ETF - کیان)', 'نام سالم دست‌نخورده می‌ماند');
+});
+
+test('نام‌های تمام صندوق‌های products.json بدون تکرار قالبی‌اند', () => {
+  const funds = products.filter((p) => p.category === 'funds');
+  for (const f of funds) {
+    assert.ok(!/ثابت ثابت|درآمد ثابت با درآمد ثابت|صندوق با درآمد ثابت/.test(f.product), `نام مشکل‌دار: ${f.product}`);
+  }
+});
+
+test('productTitle خروجی همیشه سر راست دارد', () => {
+  const row = normalizeRow({ id: 553, name: 'با درآمد ثابت کیان', typeId: 43, manager: 'کارگزاری آگاه', oneYear: 30, date: '1405/07/05' });
+  const title = productTitle(row, {});
+  assert.ok(!/درآمد ثابت با درآمد ثابت|ثابت ثابت/.test(title), title);
 });

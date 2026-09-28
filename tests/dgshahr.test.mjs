@@ -21,6 +21,7 @@ import {
   mapToProducts,
   collect,
   faDigits,
+  normalizeRateText,
   DGSHAHR_URL,
 } from '../tools/sources/dgshahr.mjs';
 import { mergeProducts } from '../tools/collect.mjs';
@@ -197,4 +198,76 @@ test('بدون جدول نرخ، خطای روشن می‌دهد نه خروجی
 test('دیجی‌شهر در فهرست منابع پاصفحه ثبت شده است', async () => {
   const viewsSrc = await fs.readFile(path.join(ROOT, 'assets/js/views.js'), 'utf8');
   assert.ok(viewsSrc.includes('dgshahr.com/blog/best-banks-for-deposit-rates/'), 'پیوند منبع باید در پاصفحه باشد');
+});
+
+/* ---------- ۴) بهداشت متن: موجودیت HTML، «امتیاز» و درصد ---------- */
+
+test('موجودیت‌های HTML پیش از تبدیل ارقام رمزگشایی می‌شوند', () => {
+  // خطای واقعی نسخهٔ پیشین: faDigits موجودیت «&#8211;» را به «&#۸۲۱۱;»
+  // تبدیل می‌کرد و زبالهٔ متن مستقیم به برچسب‌ها می‌رفت.
+  const snippet = `<html><table>
+    <tr><th>بانک</th><th>نوع سپرده</th><th>نرخ سود</th><th>حداقل مدت</th><th>حداقل موجودی</th><th>برداشت پیش از موعد</th><th>مزایا</th></tr>
+    <tr><td>بانک آزمایشی</td><td>سپرده آزمون &#8211; نسخه دوم</td><td>٪۵ و با سقف سود ۱۷٪</td>
+    <td>&#8211;</td><td>۱۰۰ هزار تومان</td><td>بله</td><td>&#8211;</td></tr>
+  </table></html>`;
+  const { schemeRows } = parseDgshahrHtml(snippet);
+  assert.equal(schemeRows.length, 1);
+  const row = schemeRows[0];
+  assert.ok(!/&#/.test(JSON.stringify(row)), `موجودیت خام نباید بماند: ${JSON.stringify(row)}`);
+  assert.equal(row.termText, '–', 'موجودیت &#8211; باید به خط تیره رمزگشایی شده باشد');
+
+  const products = mapToProducts(parseDgshahrHtml(snippet), { existing: [], banks });
+  assert.equal(products.length, 1);
+  for (const k of ['product', 'desc', 'amountLabel', 'rateLabel', 'termLabel']) {
+    assert.ok(!/&#/.test(String(products[0][k])), `${k} موجودیت دارد: ${products[0][k]}`);
+  }
+  assert.equal(products[0].termLabel, 'بدون سررسید ثبت‌شده', 'خط تیرهٔ منبع نباید به‌عنوان مدت نمایش یابد');
+  assert.equal(products[0].rateLabel, '۵٪ و با سقف سود ۱۷٪', 'درصد باید بعد از عدد بیاید');
+});
+
+test('«حداقل موجودی ندارد» مبلغ صفر یا جمله نیست؛ بدون حداقل ثبت می‌شود', () => {
+  const snippet = `<html><table>
+    <tr><th>بانک</th><th>نوع سپرده</th><th>نرخ سود</th><th>حداقل مدت</th><th>حداقل موجودی</th><th>برداشت پیش از موعد</th><th>مزایا</th></tr>
+    <tr><td>بانک آزمایشی دوم</td><td>سپرده سبا آزمون</td><td>٪۱</td><td>–</td>
+    <td>این سپرده حداقل موجودی ندارد ولی به ازای هر ۱۰۰ هزار تومان در هر روز، ۴ امتیاز از باشگاه مشتریان دریافت می‌کنید.</td>
+    <td>بله</td><td>عضویت خودکار در باشگاه مشتریان</td></tr>
+  </table></html>`;
+  const products = mapToProducts(parseDgshahrHtml(snippet), { existing: [], banks });
+  assert.equal(products.length, 1);
+  const p = products[0];
+  assert.equal(p.minAmount, null, '«۴ امتیاز» نباید ۴ تومان خوانده شود');
+  assert.equal(p.amountLabel, 'بدون حداقل موجودی', 'جملهٔ باشگاه مشتریان جای برچسب «مبلغ» نیست');
+  assert.ok(p.requirements.includes('حداقل مبلغ: ندارد'));
+  assert.ok(!p.requirements.some((r) => r.includes('امتیاز از باشگاه') && r.startsWith('حداقل مبلغ')));
+});
+
+test('«امتیاز» باشگاه مشتریان مبلغ شمرده نمی‌شود', () => {
+  assert.deepEqual(parseBandAmount('به ازای هر ۱۰۰ هزار تومان در هر روز، ۴ امتیاز'), {
+    min: null,
+    max: null,
+  }, 'عددِ امتیاز نباید به‌عنوان مبلغ تومانی خوانده شود');
+});
+
+test('normalizeRateText درصد را بعد از عدد می‌گذارد', () => {
+  assert.equal(normalizeRateText('٪۵ و با سقف سود ۲۲.۵٪'), '۵٪ و با سقف سود ۲۲.۵٪');
+  assert.equal(normalizeRateText('۵ با سقف سود ۱۷٪'), '۵٪ با سقف سود ۱۷٪');
+  assert.equal(normalizeRateText('۲۷٪'), '۲۷٪');
+  assert.equal(normalizeRateText('&#8211;'), '–');
+});
+
+test('رکوردهای نگاشت‌شده هیچ موجودیت یا ارقام لاتین در متن نمایشی ندارند', () => {
+  const products = mapToProducts(parseDgshahrHtml(html), { existing: [], banks });
+  const displayFields = ['product', 'desc', 'amountLabel', 'rateLabel', 'termLabel', 'audience'];
+  for (const p of products) {
+    for (const k of displayFields) {
+      const v = p[k];
+      assert.ok(!/&#/.test(String(v)), `${p.id}.${k} موجودیت دارد: ${v}`);
+      assert.ok(!/[0-9]/.test(String(v)), `${p.id}.${k} ارقام لاتین دارد: ${v}`);
+    }
+    for (const list of [p.requirements || [], p.tags || []]) {
+      for (const r of list) {
+        assert.ok(!/&#/.test(String(r)), `${p.id} در لیست‌ها موجودیت دارد: ${r}`);
+      }
+    }
+  }
 });

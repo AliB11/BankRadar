@@ -10,6 +10,11 @@ import {
   daysSince,
   slugify,
   foldForMatch,
+  decodeEntities,
+  faDisplayDigits,
+  tidyPunct,
+  sanitizeDisplayText,
+  faDisplayText,
 } from '../tools/lib/parse.mjs';
 
 test('ارقام فارسی و عربی به لاتین تبدیل می‌شوند', () => {
@@ -104,4 +109,50 @@ test('مبالغ واقعی همچنان درست خوانده می‌شوند',
   assert.equal(parseTomanAmount('50 میلیون تومان'), 50_000_000, 'عدد ۵۰ با واحد مبلغ باید بماند');
   assert.equal(parseTomanAmount('نامشخص'), null);
   assert.equal(parseTomanAmount(''), null);
+});
+
+/* ---------- بهداشت متن نمایشی (موجودیت HTML، ارقام، نشانه‌گذاری) ---------- */
+
+test('decodeEntities موجودیت‌های نامی و عددی را رمزگشایی می‌کند', () => {
+  assert.equal(decodeEntities('&#8211;'), '–');
+  assert.equal(decodeEntities('&ndash;'), '–');
+  assert.equal(decodeEntities('&zwnj;'), '\u200c');
+  assert.equal(decodeEntities('الف&nbsp;ب'), 'الف\u00a0ب');
+  assert.equal(decodeEntities('&amp;ر'), '&ر');
+  // نویسه‌های خارج از بازه دست‌نخورده می‌مانند
+  assert.equal(decodeEntities('&#999999999;'), '&#999999999;');
+  assert.equal(decodeEntities('&unknownent;'), '&unknownent;');
+});
+
+test('decodeEntities موجودیت‌های خراب با ارقام فارسی را هم می‌شناسد', () => {
+  // میراث خطای پیشین: faDigits روی متن با موجودیت، «&#8211;» را «&#۸۲۱۱;» می‌کرد
+  assert.equal(decodeEntities('مدت &#۸۲۱۱;'), 'مدت –');
+  assert.equal(decodeEntities('&#۹۷;'), 'a');
+});
+
+test('faDisplayDigits ارقام را برای نمایش فارسی می‌کند', () => {
+  assert.equal(faDisplayDigits('100 میلیارد تومان'), '۱۰۰ میلیارد تومان');
+  assert.equal(faDisplayDigits('نرخ 22.5٪'), 'نرخ ۲۲.۵٪');
+  assert.equal(faDisplayDigits('ETF'), 'ETF');
+});
+
+test('tidyPunct نشانه‌گذاری را نظم می‌دهد بدون شکستن دامنه و اعشار', () => {
+  assert.equal(tidyPunct('سود ندارد.. نرخ‌ها طبق جدول'), 'سود ندارد. نرخ‌ها طبق جدول');
+  assert.equal(tidyPunct('حداقل مبلغ:  ۱۰۰ هزار'), 'حداقل مبلغ: ۱۰۰ هزار');
+  assert.equal(tidyPunct('سود ۲۲.۵٪'), 'سود ۲۲.۵٪', 'اعشار فارسی نباید فاصله بگیرد');
+  assert.equal(tidyPunct('سایت (sobatfund.navidfg.com) رسمی است'), 'سایت (sobatfund.navidfg.com) رسمی است');
+  assert.equal(tidyPunct('بر پایه https://example.com/x آمده.'), 'بر پایه https://example.com/x آمده.');
+});
+
+test('sanitizeDisplayText موجودیت خام منابع را پاک می‌کند', () => {
+  assert.equal(sanitizeDisplayText('مزایا: &#8211;'), 'مزایا: –');
+  assert.equal(sanitizeDisplayText('وام&nbsp;به‌جا'), 'وام به‌جا');
+});
+
+test('faDisplayText متن نمایشی نهایی یکدست می‌سازد', () => {
+  assert.equal(faDisplayText('100 میلیارد تومان سقف وام است.'), '۱۰۰ میلیارد تومان سقف وام است.');
+});
+
+test('stripTags موجودیت‌های HTML را نیز رمزگشایی می‌کند', () => {
+  assert.equal(stripTags('<td>الف&zwnj;ب&#8211;ج</td>'), 'الف\u200cب–ج');
 });

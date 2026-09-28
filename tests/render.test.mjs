@@ -316,3 +316,67 @@ test('خلاصه، بازبینی و تازگی منبع را جدا گزارش 
   assert.equal(s.sourceFresh30, 1, 'فقط یک منبع در ۳۰ روز اخیر به‌روز شده است');
   assert.ok(s.health > 0 && s.health <= 100, 'امتیاز سلامت در بازه معتبر باشد');
 });
+
+/* ---------- جهت درست «مقدار برتر» در جدول مقایسه ---------- */
+
+const { faPercent } = await import('../assets/js/util.js');
+
+function rateRowCells(html) {
+  const rateRow = html.split('<tr>').find((r) => r.includes('نرخ / کارمزد سالانه'));
+  assert.ok(rateRow, 'ردیف نرخ باید در جدول باشد');
+  return [...rateRow.matchAll(/<td class="([^"]*)">([\s\S]*?)<\/td>/g)].map((m) => ({ cls: m[1], body: m[2] }));
+}
+
+test('کم‌ترین نرخ در دو وام «برتر» شمرده می‌شود، نه بیش‌ترین', async () => {
+  // آزمون پیشین، فهرست محصولات را با برش کوچک عوض می‌کند؛ داده کامل بازیابی می‌شود
+  if (store.store.products.length < 50) await store.loadData();
+  const loans = store.store.products
+    .filter((p) => p.category === 'loans' && p.rate > 0 && p.rateKind !== 'none' && !p.ceilingContingent)
+    .sort((a, b) => a.rate - b.rate);
+  assert.ok(loans.length >= 2, 'دست‌کم دو وام نرخ‌دار لازم است');
+  const cheap = loans[0];
+  const dear = loans[loans.length - 1];
+
+  store.store.compare = new Set([cheap.id, dear.id]);
+  const html = views.compareHTML();
+  const cells = rateRowCells(html);
+  assert.equal(cells.length, 2);
+
+  const bestIdx = cells.findIndex((c) => c.cls.includes('best'));
+  assert.ok(bestIdx >= 0, 'دست‌کم یک سلول برتر باید سبز شود');
+  assert.ok(cells[bestIdx].body.includes(faPercent(cheap.rate)), 'برنده باید وام کم‌نرخ باشد');
+  assert.ok(!cells[1 - bestIdx].body.includes(faPercent(cheap.rate)) || dear.rate === cheap.rate);
+  store.store.compare = new Set();
+});
+
+test('مقایسه مختلط سپرده+وام: نرخ برتر سراسری سبز نمی‌شود', async () => {
+  if (store.store.products.length < 50) await store.loadData();
+  const deposit = store.store.products.find((p) => p.category === 'deposits' && p.rate > 0);
+  const loan = store.store.products.find((p) => p.category === 'loans' && p.rate > 0 && p.rateKind !== 'none');
+  assert.ok(deposit && loan);
+  store.store.compare = new Set([deposit.id, loan.id]);
+  const html = views.compareHTML();
+  const cells = rateRowCells(html);
+  assert.equal(cells.length, 2);
+  assert.ok(
+    cells.every((c) => !c.cls.includes('best')),
+    'هر خانواده فقط یک عضو دارد؛ هیچ سلولی نباید برتر شمرده شود',
+  );
+  store.store.compare = new Set();
+});
+
+test('دو سپرده: بالاترین نرخ «برتر» است', async () => {
+  if (store.store.products.length < 50) await store.loadData();
+  const deposits = store.store.products
+    .filter((p) => p.category === 'deposits' && p.rate > 0)
+    .sort((a, b) => a.rate - b.rate);
+  const low = deposits[0];
+  const high = deposits[deposits.length - 1];
+  store.store.compare = new Set([low.id, high.id]);
+  const html = views.compareHTML();
+  const cells = rateRowCells(html);
+  const bestIdx = cells.findIndex((c) => c.cls.includes('best'));
+  assert.ok(bestIdx >= 0);
+  assert.ok(cells[bestIdx].body.includes(faPercent(high.rate)), 'در سپرده، نرخ بالاتر برتر است');
+  store.store.compare = new Set();
+});

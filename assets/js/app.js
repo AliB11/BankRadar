@@ -215,9 +215,12 @@ function updateCalculator(scope) {
   const monthsEl = calc.querySelector('[data-calc-input="months"]');
   const rateEl = calc.querySelector('[data-calc-input="rate"]');
 
-  const amount = (Number(amountEl.value) || 0) * 1e6;
-  const months = Math.max(1, Number(monthsEl.value) || 12);
-  const rate = Math.max(0, Number(rateEl.value) || 0);
+  // محدودسازی دستی مقادیر تایپ‌شده: ویژگی‌های min/max فقط روی دکمه‌های چرخان
+  // اثر دارند و کاربر می‌تواند با تایپ آزاد، عدد منفی یا ماهِ ۹۹۹ وارد کند؛
+  // محاسبه باید روی همان بازهٔ معتبر انجام شود.
+  const amount = Math.max(0, Number(amountEl.value) || 0) * 1e6;
+  const months = Math.min(360, Math.max(1, Math.round(Number(monthsEl.value) || 12)));
+  const rate = Math.min(100, Math.max(0, Number(rateEl.value) || 0));
 
   // شیوه محاسبه از خود محصول می‌آید، نه از نرخ عددی: در وام‌های قرض‌الحسنه
   // عدد ۴ یک کارمزد یک‌بار است و اگر نرخ سالانه فرض شود، هزینه چند برابر
@@ -240,6 +243,17 @@ function updateCalculator(scope) {
   const costLabel = isFee ? 'کل کارمزد' : 'کل سود پرداختی';
   const firstLabel = isFee ? 'قسط ماهانه' : 'قسط ماهانه (روش جدید)';
 
+  // یادآوری محدوده: مبلغ خارج از سقف/حداقل واقعی محصول، برآورد را از واقعیت
+  // دور می‌کند؛ پیام کوتاه، کاربر را درجا آگاه می‌کند.
+  const rangeNote = [
+    product.minAmount && amount < product.minAmount
+      ? `<div style="grid-column:1/-1;font-size:var(--fs-3xs);color:var(--warn)">⚠️ مبلغ واردشده کمتر از حداقل این محصول (${esc(faToman(product.minAmount))}) است.</div>`
+      : '',
+    product.maxAmount && amount > product.maxAmount
+      ? `<div style="grid-column:1/-1;font-size:var(--fs-3xs);color:var(--warn)">⚠️ مبلغ واردشده بیش از سقف این محصول (${esc(faToman(product.maxAmount))}) است.</div>`
+      : '',
+  ].join('');
+
   out.innerHTML = `
     <div><span class="k">${firstLabel}</span><span class="v num" style="color:var(--brand)">${faToman(std.installment)}</span></div>
     ${isFee ? '' : `<div><span class="k">قسط ماهانه (روش قدیمی)</span><span class="v num">${faToman(leg.installment)}</span></div>`}
@@ -247,6 +261,7 @@ function updateCalculator(scope) {
     <div><span class="k">مجموع بازپرداخت</span><span class="v num">${faToman(std.totalPayment)}</span></div>
     <div><span class="k">نرخ مؤثر سالانه${upfrontFee ? ` (با کارمزد ${fa(upfrontFee)}٪)` : ''}</span><span class="v num" style="color:var(--warn)">${faPercent(eff)}</span></div>
     ${real != null ? `<div><span class="k">هزینه حقیقی در برابر تورم</span><span class="v num" style="color:${real < 0 ? 'var(--brand)' : 'var(--danger)'}">${faPercent(real)}</span></div>` : ''}
+    ${rangeNote}
   `;
 
 }
@@ -464,7 +479,7 @@ async function manualRefresh() {
     toast(
       serverSynced
         ? `✓ همگام‌سازی زنده سرور انجام شد (${fa(reloadRes.count)} محصول).`
-        : `✓ داده‌ها با موفقیت از مخزن بازخوانی شدند (${fa(reloadRes.count)} محصول).`,
+        : `✓ بازخوانی از آخرین نسخه منتشرشده انجام شد (${fa(reloadRes.count)} محصول) — همگام‌سازی زنده سرور در این محیط فعال نیست.`,
       'good',
     );
   } else {

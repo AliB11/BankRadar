@@ -531,6 +531,11 @@ export function isContingent(p) {
   return p?.ceilingContingent === true;
 }
 
+/** خانوادهٔ «بازده‌محور»: هرچه نرخ بالاتر، برای مشتری بهتر (در برابر خانوادهٔ «هزینه‌محور») */
+function isYieldFamily(p) {
+  return p.category === 'deposits' || p.category === 'funds';
+}
+
 export function compareHTML() {
   const items = store.products.filter((p) => store.compare.has(p.id));
 
@@ -548,37 +553,67 @@ export function compareHTML() {
 
   const inflation = store.indicators?.inflationAnnual?.value ?? null;
 
-  // محاسبه بهترین مقدار هر ردیف برای برجسته‌سازی
-  const rows = [
-    { key: 'score', label: 'امتیاز جذابیت', get: (p) => scoreOf(p.id), lowerIsBetter: false, fmt: (v) => fa(v) },
-    { key: 'real', label: 'بازده/هزینه حقیقی', get: (p) => resultOf(p.id).realRate, lowerIsBetter: false, fmt: (v) => (v == null ? '—' : faSignedPercent(v)) },
-    { key: 'rate', label: 'نرخ / کارمزد سالانه', get: (p) => (p.rateKind === 'none' ? null : p.rate), lowerIsBetter: true, fmt: (v) => faPercent(v) },
-    { key: 'max', label: 'سقف مبلغ', contingent: true, get: (p) => p.maxAmount, lowerIsBetter: false, fmt: (v) => (v == null ? '—' : faToman(v)) },
-    { key: 'min', label: 'حداقل مبلغ', get: (p) => p.minAmount, lowerIsBetter: true, fmt: (v) => faToman(v) },
-    { key: 'term', label: 'مدت بازپرداخت', get: (p) => p.termMonths, lowerIsBetter: false, fmt: (v) => (v ? `${fa(v)} ماه` : '—') },
-    { key: 'installment', label: 'قسط تقریبی (در سقف مجاز)', contingent: true, get: (p) => (isFinanced(p) ? scheduleFor(p, p.maxAmount, p.termMonths).installment : null), lowerIsBetter: true, fmt: (v) => faToman(v) },
-    { key: 'interest', label: 'کل هزینه مالی (سود یا کارمزد)', contingent: true, get: (p) => (isFinanced(p) ? scheduleFor(p, p.maxAmount, p.termMonths).totalInterest : null), lowerIsBetter: true, fmt: (v) => faToman(v) },
-    { key: 'collateral', label: 'وثیقه / ضمانت', get: (p) => null, lowerIsBetter: false, fmt: (_, p) => esc(fa(p.collateral)) },
-    { key: 'digital', label: 'امتیاز دیجیتال', get: (p) => p.digital, lowerIsBetter: false, fmt: (v) => fa(Math.round(v)) },
-    { key: 'friction', label: 'کمبود اصطکاک', get: (p) => p.friction, lowerIsBetter: false, fmt: (v) => fa(Math.round(v)) },
-    { key: 'fresh', label: 'آخرین کنترل خط لوله', get: (p) => null, lowerIsBetter: false, fmt: (_, p) => (p.lastSeen || p.lastUpdated ? esc(faDate(p.lastSeen || p.lastUpdated)) : '—') },
-    { key: 'srcFresh', label: 'به‌روزرسانی منبع', get: (p) => null, lowerIsBetter: false, fmt: (_, p) => (p.lastUpdated ? esc(faDate(p.lastUpdated)) : '—') },
-    { key: 'conf', label: 'اطمینان منبع', get: (p) => null, lowerIsBetter: false, fmt: (_, p) => esc((confChip[p.confidence] ?? confChip.medium)[1]) },
-  ];
-
   // انتخاب «مقدار برتر» هر ردیف.
+  //
+  // جهتِ «بهتر» برای همه ردیف‌ها یکی نیست و درست نبودن آن، سبزِ گمراه‌کننده
+  // می‌سازد:
+  //   • نرخ و بازده/هزینه حقیقی — به خانوادهٔ محصول وابسته است: در سپرده و
+  //     صندوق «بالاترین نرخ» برتر است، در تسهیلات و اعتبار «کم‌ترین هزینه».
+  //     مقایسه فقط درون هر خانواده انجام می‌شود تا برنده یک خانواده، ردیف را
+  //     از خانوادهٔ دیگر دزدیده نشود.
+  //   • قسط، کل هزینه مالی، حداقل مبلغ — کمتر بهتر است.
+  //   • مدت بازپرداخت — برای همه به یک معنا نیست (کمتر = هزینه کمتر ولی بار
+  //     ماهانه سنگین‌تر)؛ بدون داوری، رنگ سبز نمی‌گیرد.
   //
   // در ردیف‌های وابسته به سقف (قسط، سقف مبلغ، کل هزینه مالی)، محصولی که سقفش
   // مشروط به سپرده یا امتیاز است کنار گذاشته می‌شود؛ در غیر این صورت محصولی با
   // سقف ۴ میلیاردیِ فرضی، برنده «کم‌ترین قسط» می‌شود و مقایسه بی‌معنا می‌گردد.
+  const rows = [
+    { key: 'score', label: 'امتیاز جذابیت', dir: 'max', get: (p) => scoreOf(p.id), fmt: (v) => fa(v) },
+    { key: 'real', label: 'بازده/هزینه حقیقی', dir: 'family', get: (p) => resultOf(p.id).realRate, fmt: (v) => (v == null ? '—' : faSignedPercent(v)) },
+    { key: 'rate', label: 'نرخ / کارمزد سالانه', dir: 'family', get: (p) => (p.rateKind === 'none' ? null : p.rate), fmt: (v) => faPercent(v) },
+    { key: 'max', label: 'سقف مبلغ', dir: 'max', contingent: true, get: (p) => p.maxAmount, fmt: (v) => (v == null ? '—' : faToman(v)) },
+    { key: 'min', label: 'حداقل مبلغ', dir: 'min', get: (p) => p.minAmount, fmt: (v) => faToman(v) },
+    { key: 'term', label: 'مدت بازپرداخت', get: (p) => p.termMonths, fmt: (v) => (v ? `${fa(v)} ماه` : '—') },
+    { key: 'installment', label: 'قسط تقریبی (در سقف مجاز)', dir: 'min', contingent: true, get: (p) => (isFinanced(p) ? scheduleFor(p, p.maxAmount, p.termMonths).installment : null), fmt: (v) => faToman(v) },
+    { key: 'interest', label: 'کل هزینه مالی (سود یا کارمزد)', dir: 'min', contingent: true, get: (p) => (isFinanced(p) ? scheduleFor(p, p.maxAmount, p.termMonths).totalInterest : null), fmt: (v) => faToman(v) },
+    { key: 'collateral', label: 'وثیقه / ضمانت', get: (p) => null, fmt: (_, p) => esc(fa(p.collateral)) },
+    { key: 'digital', label: 'امتیاز دیجیتال', dir: 'max', get: (p) => p.digital, fmt: (v) => fa(Math.round(v)) },
+    { key: 'friction', label: 'کمبود اصطکاک', dir: 'max', get: (p) => p.friction, fmt: (v) => fa(Math.round(v)) },
+    { key: 'fresh', label: 'آخرین کنترل خط لوله', get: (p) => null, fmt: (_, p) => (p.lastSeen || p.lastUpdated ? esc(faDate(p.lastSeen || p.lastUpdated)) : '—') },
+    { key: 'srcFresh', label: 'به‌روزرسانی منبع', get: (p) => null, fmt: (_, p) => (p.lastUpdated ? esc(faDate(p.lastUpdated)) : '—') },
+    { key: 'conf', label: 'اطمینان منبع', get: (p) => null, fmt: (_, p) => esc((confChip[p.confidence] ?? confChip.medium)[1]) },
+  ];
+
+  // bestByRow: کلید ردیف → شناسه محصولاتی که در محدوده (خانواده) خودشان برترند
   const bestByRow = new Map();
+  const markBest = (key, p) => {
+    if (!bestByRow.has(key)) bestByRow.set(key, new Set());
+    bestByRow.get(key).add(p.id);
+  };
   for (const row of rows) {
+    if (!row.dir) continue;
     const eligible = row.contingent ? items.filter((p) => !p.ceilingContingent) : items;
-    const values = eligible.map((p) => row.get(p)).filter((v) => typeof v === 'number' && Number.isFinite(v));
-    if (!values.length) continue;
-    const best = row.lowerIsBetter ? Math.min(...values) : Math.max(...values);
-    bestByRow.set(row.key, best);
+    const withVals = eligible
+      .map((p) => [p, row.get(p)])
+      .filter(([, v]) => typeof v === 'number' && Number.isFinite(v));
+
+    if (row.dir === 'family') {
+      for (const family of [true, false]) {
+        const group = withVals.filter(([p]) => isYieldFamily(p) === family);
+        if (group.length < 2) continue;
+        const vals = group.map(([, v]) => v);
+        const best = family ? Math.max(...vals) : Math.min(...vals);
+        for (const [p, v] of group) if (v === best) markBest(row.key, p);
+      }
+    } else {
+      if (withVals.length < 2) continue;
+      const vals = withVals.map(([, v]) => v);
+      const best = row.dir === 'min' ? Math.min(...vals) : Math.max(...vals);
+      for (const [p, v] of withVals) if (v === best) markBest(row.key, p);
+    }
   }
+  const mixedFamilies = items.some(isYieldFamily) && items.some((p) => !isYieldFamily(p));
 
   return `
   <section class="panel panel-pad" style="margin-block-start:var(--sp-5)" id="compare-section" aria-label="جدول مقایسه">
@@ -587,6 +622,7 @@ export function compareHTML() {
         <h3 style="font-size:var(--fs-sm);margin:0">جدول مقایسه انتخابی</h3>
         <p style="font-size:var(--fs-3xs);color:var(--text-4);margin:2px 0 0">
           ${fa(items.length)} محصول · مقادیر برتر هر ردیف با رنگ سبز مشخص شده‌اند${inflation != null ? ` · نرخ حقیقی با تورم ${faPercent(inflation)} محاسبه شده` : ''}
+          ${mixedFamilies ? '<br>در ردیف‌های نرخ و بازده/هزینه حقیقی، برترین مقدار درون هر خانواده (سپرده/صندوق در برابر تسهیلات/اعتبار) جداگانه مشخص می‌شود' : ''}
           ${items.some((p) => p.ceilingContingent) ? '<br>≈ سقف مشروط به سپرده، امتیاز یا مصوبه اعتباری — محاسبه در این سقف فرضی است و در انتخاب مقدار برتر لحاظ نشده' : ''}
         </p>
       </div>
@@ -610,7 +646,6 @@ export function compareHTML() {
         <tbody>
           ${rows
             .map((row) => {
-              const best = bestByRow.get(row.key);
               return `<tr>
                 <th scope="row">${esc(row.label)}</th>
                 ${items
@@ -620,7 +655,7 @@ export function compareHTML() {
                     const isBest =
                       !hypothetical &&
                       typeof v === 'number' && Number.isFinite(v) &&
-                      best != null && v === best && items.length > 1;
+                      bestByRow.get(row.key)?.has(p.id) === true;
 
                     const content = row.fmt(v, p);
                     const cell = hypothetical
@@ -771,7 +806,7 @@ export function detailHTML(p) {
             value="${p.termMonths || 36}" />
         </label>
         <label class="field" style="flex:1;min-width:120px">
-          <span class="field-label">${p.rateKind === 'fee' ? 'کارمزد یک‌بار (٪)' : 'نرخ سود سالانه (٪)'}</span>
+          <span class="field-label"${p.rate ? '' : ' title="نرخ این محصول در داده ثبت نشده است؛ ۲۳ درصد پیش‌فرض سامانه برای برآورد است"'}>${p.rateKind === 'fee' ? 'کارمزد یک‌بار (٪)' : 'نرخ سود سالانه (٪)'}${p.rate ? '' : ' — پیش‌فرض'}</span>
           <input type="number" data-calc-input="rate" min="0" max="60" step="0.1"
             value="${p.rate || 23}" />
         </label>
@@ -1233,16 +1268,24 @@ export function methodModalHTML() {
 
 export function footerHTML() {
   const s = summary();
+  // «منابع اصلی داده» — مراجع گردآوری. ستون «بانک‌های پایش‌شده» از خود داده
+  // ساخته می‌شود، نه فهرست ثابت؛ در غیر این صورت پایش‌شده‌ها با داده هم‌گام
+  // نمی‌ماند و فقط چند بانک خوش‌نام را نشان می‌داد.
   const sources = [
     ['بانک مرکزی جمهوری اسلامی ایران', 'https://www.cbi.ir'],
     ['رده — مقایسه خدمات بانکی', 'https://www.rade.ir/loan/'],
     ['دیجی‌شهر — مقایسه نرخ سود سپرده بانکی', 'https://dgshahr.com/blog/best-banks-for-deposit-rates/'],
+    ['آی‌سیگنال — صندوق‌های درآمد ثابت', 'https://isignal.ir'],
     ['مرکز آمار ایران', 'https://www.amar.org.ir'],
-    ['بانک ملی ایران', 'https://bmi.ir'],
-    ['بانک ملت', 'https://bankmellat.ir'],
-    ['بلوبانک', 'https://blubank.com'],
-    ['بانک قرض‌الحسنه مهر ایران', 'https://qmb.ir'],
   ];
+
+  const bankCounts = new Map();
+  for (const p of store.products) {
+    bankCounts.set(p.bank, (bankCounts.get(p.bank) || 0) + 1);
+  }
+  const banksRanked = [...bankCounts.entries()].sort((a, b) => b[1] - a[1]);
+  const topBanks = banksRanked.slice(0, 6);
+  const restBanks = Math.max(0, banksRanked.length - topBanks.length);
 
   return `
   <footer class="footer">
@@ -1268,10 +1311,10 @@ export function footerHTML() {
       <div>
         <h4>بانک‌های پایش‌شده</h4>
         <ul>
-          ${sources
-            .slice(5)
-            .map(([name, url]) => `<li><a href="${safeUrl(url)}" target="_blank" rel="noopener noreferrer">${esc(name)}</a></li>`)
+          ${topBanks
+            .map(([name, n]) => `<li>${esc(name)} <span class="num" style="color:var(--text-4)">(${fa(n)} محصول)</span></li>`)
             .join('')}
+          ${restBanks > 0 ? `<li style="color:var(--text-4)">و ${fa(restBanks)} بانک و مؤسسه دیگر…</li>` : ''}
         </ul>
       </div>
       <div>

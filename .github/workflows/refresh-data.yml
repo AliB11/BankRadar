@@ -34,6 +34,7 @@ concurrency:
 permissions:
   contents: write
   issues: write
+  actions: write
 
 jobs:
   collect:
@@ -96,7 +97,10 @@ jobs:
         id: collect
         env:
           LIMIT: ${{ inputs.limit || '120' }}
-          MODE: ${{ inputs.mode || 'daily' }}
+          # رویداد زمان‌بندی‌شده ورودی (inputs) ندارد؛ پنجشنبه‌ها («0 5 * * 4»)
+          # باید ممیزی هفتگی جامع اجرا شود، پس از خود عبارت cron تشخیص داده
+          # می‌شود. بدون این، پنجشنبه بی‌صدا در حالت روزانه اجرا می‌شد.
+          MODE: ${{ github.event.schedule == '0 5 * * 4' && 'weekly' || inputs.mode || 'daily' }}
         run: |
           if [ "$MODE" = "weekly" ]; then
             echo "حالت هفتگی: اجرای sync-weekly.mjs"
@@ -179,6 +183,18 @@ jobs:
           # و ایشو اطلاع‌رسانی ساخته می‌شود — بهتر از force push و از دست رفتن داده.
           git pull --rebase origin "$BRANCH"
           git push origin "HEAD:$BRANCH"
+
+      # کامیت‌های github-actions[bot] رویداد «push» برای سایر workflowها
+      # راه نمی‌اندازد (سد بازگشتی GitHub)؛ بدون این مرحله، به‌روزرسانی روزانه
+      # روی مخزن می‌نشیند اما سایت منتشرشده کهنه می‌ماند. workflow_dispatch
+      # از طریق GITHUB_TOKEN مستثناست و انتشاری تازه می‌سازد.
+      - name: به‌روزرسانی سایت منتشرشده پس از تغییر داده
+        if: ${{ steps.diff.outputs.changed == 'true' && inputs.dry_run != true && github.ref_name == 'main' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh workflow run deploy-pages.yml --ref main
+          echo "انتشار Pages برای بازسازی سایت با داده تازه آغاز شد."
 
       - name: بارگذاری گزارش تشخیصی
         if: always()
