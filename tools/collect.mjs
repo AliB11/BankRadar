@@ -21,7 +21,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { runSource } from './lib/http.mjs';
-import { foldForMatch, daysSince, today, slugify } from './lib/parse.mjs';
+import { foldForMatch, daysSince, today, slugify, faDisplayText, sanitizeDisplayText } from './lib/parse.mjs';
 import * as rade from './sources/rade.mjs';
 import * as banks from './sources/banks.mjs';
 import * as cbi from './sources/cbi.mjs';
@@ -93,6 +93,35 @@ function sortDeep(value) {
 /** کلید تطبیق پایدار برای تشخیص یک محصول تکراری */
 function matchKey(p) {
   return `${slugify(p.bank)}::${foldForMatch(p.product).slice(0, 50)}`;
+}
+
+/**
+ * پاک‌ساز یکسان متن‌های نمایشی محصول.
+ *
+ * منابع متن خام می‌دهند: بعضی موجودیت HTML باقی می‌گذارند («&zwnj;»،
+ * «&#۸۲۱۱؛»)، بعضی ارقام لاتین در متن فارسی می‌نویسند («100 میلیارد») و
+ * بعضی نشانه‌گذاری تکراری دارند («ندارد..»). این متن‌ها مستقیم در کارت‌ها و
+ * جزئیات نمایش داده می‌شوند، پس در یک نقطهٔ مرکزی — پیش از ذخیره — یکدست
+ * می‌شوند: رمزگشایی موجودیت، نظم نشانه‌گذاری، ارقام فارسی.
+ *
+ * فیلدهای غیرمتنی (id، url، تاریخ‌ها، enum‌ها) هرگز دست نمی‌خورند.
+ * @param {object} p
+ * @returns {object} همان محصول (بازنویسی‌شده درجا)
+ */
+export function sanitizeProductTextFields(p) {
+  const TEXT_FIELDS = ['product', 'desc', 'amountLabel', 'rateLabel', 'termLabel', 'audience', 'collateral', 'benefitNote'];
+  for (const k of TEXT_FIELDS) {
+    if (typeof p[k] === 'string' && p[k]) p[k] = faDisplayText(p[k]);
+  }
+  if (Array.isArray(p.tags)) p.tags = p.tags.map((t) => (typeof t === 'string' ? faDisplayText(t) : t));
+  if (Array.isArray(p.requirements)) {
+    p.requirements = p.requirements
+      .map((r) => (typeof r === 'string' ? faDisplayText(r) : r))
+      // پس از رمزگشایی، سلول خالی منبع «–» می‌شود؛ سطر بی‌محتوا حذف می‌شود
+      .filter((r) => typeof r !== 'string' || !/^(مزایا|حداقل مبلغ|برداشت پیش از موعد)?\s*[:：]?\s*[–—-]\s*$/.test(r.trim()));
+  }
+  if (typeof p.bank === 'string' && p.bank) p.bank = sanitizeDisplayText(p.bank);
+  return p;
 }
 
 /**
@@ -232,12 +261,14 @@ export function mergeProducts(existing, incoming) {
     }
   }
 
-  const merged = [...byId.values()].sort((a, b) => {
-    const order = { deposits: 0, credit: 1, loans: 2, loyalty: 3, funds: 4 };
-    const c = (order[a.category] ?? 9) - (order[b.category] ?? 9);
-    if (c !== 0) return c;
-    return String(a.id).localeCompare(String(b.id));
-  });
+  const merged = [...byId.values()]
+    .map(sanitizeProductTextFields)
+    .sort((a, b) => {
+      const order = { deposits: 0, credit: 1, loans: 2, loyalty: 3, funds: 4 };
+      const c = (order[a.category] ?? 9) - (order[b.category] ?? 9);
+      if (c !== 0) return c;
+      return String(a.id).localeCompare(String(b.id));
+    });
 
   return { merged, stats: { added, updated, unchanged } };
 }

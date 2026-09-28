@@ -195,3 +195,24 @@ test('انتشار صفحات فقط از شاخه اصلی و با بسته ک�
     assert.ok(source.includes(asset), `${asset} باید در بسته انتشار باشد`);
   }
 });
+
+/* ---------- زنجیره به‌روزرسانی هفتگی و انتشار ---------- */
+
+test('push رباتِ داده، انتشار Pages را با workflow_dispatch راه می‌اندازد', () => {
+  // کامیت‌های github-actions[bot] رویداد «push» برای سایر workflowها راه
+  // نمی‌اندازد؛ اگر این زنجیره نباشد، به‌روزرسانی خودکار هرگز به سایت منتشرشده
+  // نمی‌رسد (خطای واقعی نسخهٔ پیشین).
+  for (const file of ['refresh-data.yml', 'weekly-sync.yml']) {
+    const source = fs.readFileSync(path.join(WORKFLOWS, file), 'utf8');
+    assert.match(source, /gh workflow run deploy-pages\.yml --ref main/, `${file} باید Pages را فراخوانی کند`);
+    assert.match(source, /actions:\s*write/, `${file} برای workflow_dispatch به actions:write نیاز دارد`);
+    assert.match(source, /changed == 'true'/, 'فراخوانی انتشار فقط در تغییر واقعی داده باشد');
+  }
+});
+
+test('کرون پنجشنبه refresh-data در حالت هفتگی اجرا می‌شود نه روزانه', () => {
+  // رویداد schedule ورودی (inputs) ندارد؛ حالت باید از خود عبارت cron
+  // تشخیص داده شود وگرنه ممیزی جامع هفتگی بی‌صدا به واکشی روزانه ساده تنزل می‌یابد.
+  const source = fs.readFileSync(path.join(WORKFLOWS, 'refresh-data.yml'), 'utf8');
+  assert.match(source, /github\.event\.schedule == '0 5 \* \* 4' && 'weekly'/);
+});

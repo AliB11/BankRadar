@@ -34,6 +34,7 @@ concurrency:
 permissions:
   contents: write
   issues: write
+  actions: write
 
 jobs:
   weekly-audit:
@@ -188,6 +189,16 @@ jobs:
 
           git pull --rebase origin "$BRANCH"
           git push origin "HEAD:$BRANCH"
+
+      # همان سد بازگشتی GitHub: کامیت ربات، «انتشار روی GitHub Pages» را
+      # خودبه‌خود راه نمی‌اندازد؛ انتشار با workflow_dispatch آغاز می‌شود.
+      - name: به‌روزرسانی سایت منتشرشده پس از ممیزی هفتگی
+        if: ${{ steps.diff.outputs.changed == 'true' && inputs.dry_run != true && github.ref_name == 'main' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh workflow run deploy-pages.yml --ref main
+          echo "انتشار Pages برای بازسازی سایت با داده ممیزی‌شده آغاز شد."
 
       - name: بارگذاری گزارش تشخیصی
         if: always()

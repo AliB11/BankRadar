@@ -28,6 +28,8 @@ import {
   today,
   matchBank,
   makeLatinId,
+  decodeEntities,
+  sanitizeDisplayText,
 } from '../lib/parse.mjs';
 import { benefitFromRate } from './rade.mjs';
 
@@ -50,13 +52,36 @@ const WORD_NUMS = {
   شش: 6, هفت: 7, هشت: 8, نه: 9, ده: 10,
 };
 
-/** حذف تگ‌ها و فشرده‌سازی فاصله؛ ارقام فارسی حفظ می‌شوند (برای برچسب‌های نمایشی) */
+/**
+ * حذف تگ‌ها و فشرده‌سازی فاصله؛ ارقام فارسی حفظ می‌شوند (برای برچسب‌های نمایشی).
+ * موجودیت‌های HTML (&#8211; ، &zwnj; ، &nbsp; …) پیش از هر چیز رمزگشایی می‌شوند؛
+ * در غیر این صورت faDigits موجودیت‌های عددی را («&#8211;» → «&#۸۲۱۱;») خراب
+ * می‌کند و متن زباله به رابط کاربری می‌رسد.
+ */
 export function cellText(html) {
-  return String(html || '')
-    .replace(/<br\s*\/?>/gi, ' ')
-    .replace(/<[^>]+>/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim();
+  return decodeEntities(
+    String(html || '')
+      .replace(/<br\s*\/?>/gi, ' ')
+      .replace(/<[^>]+>/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim(),
+  );
+}
+
+/**
+ * نرمال‌سازی متن سلول نرخ برای نمایش.
+ *
+ * دو خطای رایج صفحهٔ منبع اینجا رفع می‌شود:
+ *   ۱. «٪۵» → «۵٪» — علامت درصد در فارسی بعد از عدد می‌آید.
+ *   ۲. عدد ابتدای سلول بدون درصد («۵ با سقف سود ۱۷٪») → «۵٪ با سقف سود ۱۷٪»؛
+ *      در غیر این صورت برچسب «نرخ» بدون واحد نمایش داده می‌شود.
+ */
+export function normalizeRateText(text) {
+  const D = '[\\u06f0-\\u06f90-9]';
+  let t = sanitizeDisplayText(cellText(text));
+  t = t.replace(new RegExp(`^٪\\s*(${D}+(?:[.,]${D}+)?)`), '$1٪'); // «٪۵ …» → «۵٪ …»
+  t = t.replace(new RegExp(`^(${D}+(?:[.,]${D}+)?)(?!\\s*٪)(\\s|$)`), '$1٪$2'); // «۵ …» → «۵٪ …»
+  return t.trim();
 }
 
 function numTokens(text) {
@@ -77,11 +102,18 @@ function numTokens(text) {
  * «یک میلیارد تومان و بیش‌تر» → {min: 1e9, max: null}
  * «کم‌تر از ۵ میلیارد تومان» → {min: null, max: 5e9}
  * «۲-۵ میلیارد تومان» → {min: 2e9, max: 5e9}
+ *
+ * «امتیاز» مبلغ نیست: در سلول‌هایی مثل «به ازای هر ۱۰۰ هزار تومان، ۴ امتیاز
+ * می‌گیرید» عدد ۴ امتیاز باشگاه است، نه ۴ تومان؛ پیش از تجزیه حذف می‌شود.
  */
 export function parseBandAmount(text) {
   const raw = String(text || '');
   const t = normalizeText(raw).replace(/,/g, '');
   if (!t || t === '–' || t === '-') return { min: null, max: null };
+
+  // سلولی که دربارهٔ «امتیاز» است مبلغ نیست (حتی اگر عدد و «هزار تومان»
+  // در توضیح امتیازدهی بیاید): «به ازای هر ۱۰۰ هزار تومان، ۴ امتیاز».
+  if (/امتیاز/.test(t)) return { min: null, max: null };
 
   // هر عدد با واحد خودش؛ اگر واحد نداشت، از عددِ دارای واحد بعدی به ارث می‌برد
   // («۵۰ تا ۱۰۰ میلیون» → هر دو بر مبنای میلیون).
@@ -466,16 +498,59 @@ export function mapToProducts(parsed, opts = {}) {
       id = `${idBank}-${makeLatinId('sch', nameHead)}`.replace(/[^a-z0-9-]/g, '').slice(0, 60);
     }
 
-    const capStyle = /سقف/.test(row.rateText);
+    // نرخ نمایشی: «٪۵ با سقف سود ۱۷٪» → «۵٪ با سقف سود ۱۷٪» (درصد بعد از عدد)
+    const rateTextDisplay = normalizeRateText(row.rateText);
+    const capStyle = /سقف/.test(rateTextDisplay);
     const rateLabel = capStyle
-      ? faDigits(row.rateText).replace(/^٪/, '')
-      : faDigits(row.rateText);
+      ? rateTextDisplay.replace(/^٪/, '')
+      : rateTextDisplay;
     const subcategory = /سبا|وین|جاری|قرعه/.test(row.name) ? 'current' : 'premium';
+
+    // «حداقل موجودی ندارد» مبلغ نیست؛ جملهٔ توضیحی هم جای برچسب «مبلغ» نیست.
+    // سلول‌های بلندِ توضیحی به بازهٔ مبلغی فشرده می‌شوند تا جای «سقف/دامنه»
+    // کارت، جملهٔ باشگاه مشتریان نشان داده نشود.
+    const noMinimum = /حداقل موجودی ندارد|بدون حداقل/.test(row.minText || '');
+    const minSentenceLike = !noMinimum && (row.minText || '').length > 48;
+    const bandLabel = row.minAmount && row.maxAmount
+      ? `${faTomanUnit(row.minAmount)} تا ${faTomanUnit(row.maxAmount)} تومان`
+      : row.minAmount
+        ? `از ${faTomanUnit(row.minAmount)} تومان`
+        : row.maxAmount
+          ? `تا ${faTomanUnit(row.maxAmount)} تومان`
+          : 'نامشخص';
+    const amountLabel = noMinimum
+      ? 'بدون حداقل موجودی'
+      : minSentenceLike
+        ? bandLabel
+        : row.minText
+          ? sanitizeDisplayText(row.minText)
+          : 'نامشخص';
+
     const requirements = [
-      row.minText && faDigits(row.minText) !== '–' ? `حداقل مبلغ: ${faDigits(row.minText)}` : null,
-      row.withdrawal && row.withdrawal !== '–' ? `برداشت پیش از موعد: ${faDigits(row.withdrawal)}` : null,
-      row.perks && row.perks !== '–' ? `مزایا: ${faDigits(row.perks)}` : null,
+      noMinimum
+        ? 'حداقل مبلغ: ندارد'
+        : row.minText && sanitizeDisplayText(row.minText) !== '–'
+          ? `حداقل مبلغ: ${sanitizeDisplayText(row.minText)}`
+          : null,
+      row.withdrawal && sanitizeDisplayText(row.withdrawal) !== '–'
+        ? `برداشت پیش از موعد: ${sanitizeDisplayText(row.withdrawal)}`
+        : null,
+      row.perks && sanitizeDisplayText(row.perks) !== '–'
+        ? `مزایا: ${sanitizeDisplayText(row.perks)}`
+        : null,
     ].filter(Boolean);
+
+    // متن توضیح از قطعه‌های پاک‌سازیده ساخته می‌شود؛ «مدت –» و نقطهٔ تکراری
+    // («… ندارد.. نرخ‌ها») اینجا حذف می‌شوند تا پیام کارت خوانا بماند.
+    const hasTerm = row.termText && sanitizeDisplayText(row.termText) !== '–';
+    const hasWithdrawal = row.withdrawal && sanitizeDisplayText(row.withdrawal) !== '–';
+    const descParts = [
+      `${sanitizeDisplayText(row.name)} — ${bank.name}`,
+      rateTextDisplay,
+      hasTerm ? `مدت ${sanitizeDisplayText(row.termText)}` : null,
+      hasWithdrawal ? `برداشت پیش از موعد: ${sanitizeDisplayText(row.withdrawal)}` : null,
+    ].filter(Boolean);
+    const desc = `${descParts.join('؛ ')}. نرخ‌ها و شرایط طبق جدول مقایسه‌ای دیجی‌شهر و قابل تغییر توسط بانک است.`.slice(0, 700);
 
     products.push({
       id,
@@ -488,18 +563,18 @@ export function mapToProducts(parsed, opts = {}) {
       rateKind: 'profit',
       rateLabel,
       benefit: benefitFromRate(row.rate, 'deposits'),
-      minAmount: row.minAmount,
-      maxAmount: row.maxAmount,
-      amountLabel: row.minText ? faDigits(row.minText) : 'نامشخص',
+      minAmount: noMinimum ? null : row.minAmount,
+      maxAmount: noMinimum ? null : row.maxAmount,
+      amountLabel,
       termMonths: row.termMonths,
-      termLabel: row.termText && row.termText !== '–' ? faDigits(row.termText) : 'بدون سررسید ثبت‌شده',
+      termLabel: hasTerm ? faDigits(sanitizeDisplayText(row.termText)) : 'بدون سررسید ثبت‌شده',
       speed: 65,
       digital: /آنلاین|الکترونیکی|موبایل/.test(`${row.withdrawal} ${row.perks}`) ? 85 : 65,
       friction: 80,
       collateral: 'ندارد',
       collateralKind: 'none',
       audience: subcategory === 'current' ? 'مدیریت نقدینگی روزمره' : 'سپرده‌گذاران متقاضی طرح‌های ویژه',
-      desc: `${faDigits(row.name)} — ${bank.name}. ${faDigits(row.rateText)}${row.termText && row.termText !== '–' ? `؛ مدت ${faDigits(row.termText)}` : ''}${row.withdrawal && row.withdrawal !== '–' ? `؛ برداشت پیش از موعد: ${faDigits(row.withdrawal)}` : ''}. نرخ‌ها و شرایط طبق جدول مقایسه‌ای دیجی‌شهر و قابل تغییر توسط بانک است.`.slice(0, 700),
+      desc,
       tags: ['طرح ویژه سپرده‌گذاری', bank.name],
       requirements,
       confidence: 'medium',

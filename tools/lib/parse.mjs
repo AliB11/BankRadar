@@ -41,13 +41,91 @@ export function foldForMatch(input) {
     .toLowerCase();
 }
 
+const NAMED_ENTITIES = {
+  amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: '\u00a0',
+  zwnj: '\u200c', zwj: '\u200d', lrm: '\u200e', rlm: '\u200f',
+  ndash: '\u2013', mdash: '\u2014', hellip: '…', raquo: '»', laquo: '«',
+};
+
+/**
+ * رمزگشایی موجودیت‌های HTML به نویسهٔ اصلی.
+ *
+ * چرا ضروری است: صفحهٔ منبع پر از «&zwnj;» و «&#8211;» است. اگر موجودیت‌ها
+ * رمزگشایی نشوند، متنِ خام موجودیت با esc() در رابط کاربری به‌صورت زبالهٔ
+ * «&zwnj;» و «&#۸۲۱۱;» نمایش داده می‌شود. بدتر آنکه تبدیل ارقام فارسی باید
+ * «بعد از» رمزگشایی انجام شود؛ در غیر این صورت «&#8211;» به «&#۸۲۱۱;»
+ * تبدیل می‌شود و دیگر هیچ رمزگشایی‌ای آن را نمی‌شناسد (خطای واقعی نسخهٔ
+ * پیشین منبع دیجی‌شهر).
+ *
+ * موجودیت‌های عددی با ارقام فارسی/عربی (میراث همان خطا) هم پشتیبانی می‌شوند.
+ * @param {string} input
+ * @returns {string}
+ */
+export function decodeEntities(input) {
+  let t = String(input ?? '');
+  // ارقام فارسی/عربی داخل موجودیت عددی را به لاتین برمی‌گردانیم تا قابل رمزگشایی باشد
+  t = t.replace(/&#([۰-۹٠-٩]+);/g, (_, digits) =>
+    `&#${digits.replace(/[۰-۹]/g, (d) => String(PERSIAN_DIGITS.indexOf(d))).replace(/[٠-٩]/g, (d) => String(ARABIC_DIGITS.indexOf(d)))};`,
+  );
+  return t
+    .replace(/&#x([0-9a-fA-F]+);/g, (_, hex) => {
+      const code = Number.parseInt(hex, 16);
+      return Number.isFinite(code) && code > 0 && code <= 0x10ffff ? String.fromCodePoint(code) : _;
+    })
+    .replace(/&#(\d+);/g, (_, dec) => {
+      const code = Number.parseInt(dec, 10);
+      return Number.isFinite(code) && code > 0 && code <= 0x10ffff ? String.fromCodePoint(code) : _;
+    })
+    .replace(/&([a-zA-Z][a-zA-Z0-9]*);/g, (raw, name) => NAMED_ENTITIES[name.toLowerCase()] ?? raw);
+}
+
+/** ارقام لاتین/عربی به فارسی — قرارداد فیلدهای نمایشی رابط کاربری */
+export function faDisplayDigits(input) {
+  return String(input ?? '')
+    .replace(/[0-9]/g, (d) => PERSIAN_DIGITS[Number(d)])
+    .replace(/[٠-٩]/g, (d) => PERSIAN_DIGITS[ARABIC_DIGITS.indexOf(d)]);
+}
+
+/**
+ * نظم‌دهی نشانه‌گذاری متن نمایشی: نقطه‌های تکراری، فاصلهٔ پیش از سجاوندی،
+ * فاصله‌های تکراری. نیم‌فاصله (U+200C) دست‌نخورده می‌ماند.
+ */
+export function tidyPunct(input) {
+  return String(input ?? '')
+    .replace(/\u00a0/g, ' ')
+    .replace(/([،؛.!؟:])\1+/g, '$1') // «..» → «.» و «،،» → «،»
+    .replace(/\s+([،؛.!؟:])/g, '$1') // فاصلهٔ پیش از سجاوندی
+    // فاصلهٔ پس از سجاوندی — به‌جز داخل نام‌های لاتین (دامنه، نشانی):
+    // «sobatfund.navidfg.com» و «https://…» نباید شکته شوند.
+    .replace(/([،؛:.])(?=[^\s،؛:.!؟\d\u06f0-\u06f9\u0660-\u0669])/g, (punct, _name, offset, str) => {
+      const prev = offset > 0 ? str[offset - 1] : '';
+      if ((punct === '.' || punct === ':') && /[A-Za-z0-9)]/.test(prev)) return punct;
+      return `${punct} `;
+    })
+    .replace(/[ \t]{2,}/g, ' ')
+    .replace(/\s+\./g, '.')
+    .trim();
+}
+
+/** پاک‌سازی امن متن نمایشی: رمزگشایی موجودیت + نظم‌دهی (بدون تغییر ارقام) */
+export function sanitizeDisplayText(input) {
+  return tidyPunct(decodeEntities(input));
+}
+
+/** متن نمایشی نهایی: پاک‌سازی + ارقام فارسی (قرارداد رابط کاربری) */
+export function faDisplayText(input) {
+  return faDisplayDigits(sanitizeDisplayText(input));
+}
+
 /** حذف تگ‌های HTML و فشرده‌سازی فاصله‌ها */
 export function stripTags(html) {
   return normalizeText(
-    String(html || '')
-      .replace(/<script[\s\S]*?<\/script>/gi, ' ')
-      .replace(/<style[\s\S]*?<\/style>/gi, ' ')
-      .replace(/<[^>]+>/g, ' '),
+    decodeEntities(
+      String(html || '')
+        .replace(/<script[\s\S]*?<\/script>/gi, ' ')
+        .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+        .replace(/<[^>]+>/g, ' '),
+    ),
   );
 }
 

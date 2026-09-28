@@ -205,6 +205,23 @@ export function shortFundName(name) {
     .trim();
 }
 
+/**
+ * نظم‌دهی نام نهایی صندوق؛ تکرار عبارت «درآمد ثابت» که از ترکیب نام خام
+ * آی‌سیگنال با الگوی نمایشی ساخته می‌شود حذف می‌کند:
+ *   «صندوق درآمد ثابت ثابت آکام»          → «صندوق درآمد ثابت آکام»
+ *   «صندوق درآمد ثابت با درآمد ثابت کمند» → «صندوق درآمد ثابت کمند»
+ *   «صندوق با درآمد ثابت امین آشنا…»      → «صندوق درآمد ثابت امین آشنا…»
+ * @param {string} title
+ */
+export function tidyFundTitle(title) {
+  return normalizeText(title)
+    .replace(/درآمد ثابت با درآمد ثابت/g, 'درآمد ثابت')
+    .replace(/درآمد ثابت ثابت/g, 'درآمد ثابت')
+    .replace(/صندوق با درآمد ثابت/g, 'صندوق درآمد ثابت')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 /** نشانی صفحهٔ صندوق در آی‌سیگنال: /fund/<عنوان با خط تیره>/ */
 export function fundPageUrl(name) {
   const slug = normalizeText(name).replace(/\s+/g, '-');
@@ -360,15 +377,18 @@ function bankDisplay(entity, row) {
   return manager || entity.name;
 }
 
-function productTitle(row, meta) {
+/** نام نمایشی محصول صندوق از ردیف خام آی‌سیگنال */
+export function productTitle(row, meta) {
   const short = shortFundName(row.name);
   const full = meta.fullName && foldForMatch(meta.fullName) !== foldForMatch(short) ? meta.fullName : null;
   if (row.etf) {
-    return full ? `صندوق درآمد ثابت ${full} (ETF - ${short})` : `صندوق درآمد ثابت ${short} (ETF)`;
+    return tidyFundTitle(
+      full ? `صندوق درآمد ثابت ${full} (ETF - ${short})` : `صندوق درآمد ثابت ${short} (ETF)`,
+    );
   }
   const isFixedPrefixed = /با درآمد ثابت|^ثابت\s/.test(normalizeText(row.name));
   const noun = isFixedPrefixed ? 'صندوق درآمد ثابت' : 'صندوق سرمایه‌گذاری';
-  return `${noun} ${short} (صدور و ابطالی)`;
+  return tidyFundTitle(`${noun} ${short} (صدور و ابطالی)`);
 }
 
 function returnsSentence(row) {
