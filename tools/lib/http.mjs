@@ -54,9 +54,10 @@ export function describeError(err) {
 }
 
 /**
- * یک درخواست GET با timeout و retry.
+ * یک درخواست HTTP (پیش‌فرض GET) با timeout و retry.
+ * با `method: 'POST'` و `body` (شیء → JSON) برای APIهای JSON هم قابل استفاده است.
  * @param {string} url
- * @param {{timeout?:number, retries?:number, headers?:Record<string,string>, as?:'text'|'json'|'response', accept?:string, signal?:AbortSignal}} [opts]
+ * @param {{timeout?:number, retries?:number, headers?:Record<string,string>, as?:'text'|'json'|'response', accept?:string, signal?:AbortSignal, method?:string, body?:any}} [opts]
  * @returns {Promise<string|any>}
  */
 export async function get(url, opts = {}) {
@@ -67,7 +68,15 @@ export async function get(url, opts = {}) {
     as = 'text',
     accept = 'text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8',
     signal,
+    method = 'GET',
+    body,
   } = opts;
+
+  // بدنهٔ شیء به JSON تبدیل می‌شود (برای APIهای POST مثل آی‌سیگنال)؛ رشته/بافر دست‌نخورده می‌رود
+  const payload = body == null || typeof body === 'string' || Buffer.isBuffer(body) ? body : JSON.stringify(body);
+  const bodyHeaders = payload != null && typeof body !== 'string' && !Buffer.isBuffer(body)
+    ? { 'Content-Type': 'application/json' }
+    : {};
 
   let lastError;
   for (let attempt = 0; attempt <= retries; attempt++) {
@@ -81,6 +90,7 @@ export async function get(url, opts = {}) {
 
     try {
       const res = await fetch(url, {
+        method,
         redirect: 'follow',
         signal: ctrl.signal,
         headers: {
@@ -88,8 +98,10 @@ export async function get(url, opts = {}) {
           Accept: accept,
           'Accept-Language': 'fa-IR,fa;q=0.9,en;q=0.8',
           'Cache-Control': 'no-cache',
+          ...bodyHeaders,
           ...headers,
         },
+        ...(payload != null ? { body: payload } : {}),
       });
       const ms = Date.now() - started;
 

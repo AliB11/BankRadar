@@ -1,16 +1,16 @@
 {
-  "autoDiscovered": 154,
+  "autoDiscovered": 213,
   "counts": {
     "credit": 53,
     "deposits": 48,
-    "funds": 8,
+    "funds": 67,
     "loans": 102,
     "loyalty": 10,
-    "total": 221
+    "total": 280
   },
-  "lastRun": "2026-09-27T09:27:37.852Z",
-  "lastRunDurationMs": 233898,
-  "lastRunMode": "full",
+  "lastRun": "2026-09-28T08:26:08.924Z",
+  "lastRunDurationMs": 70,
+  "lastRunMode": "only:isignal",
   "sources": [
     {
       "error": "پایان مهلت درخواست — https://www.rade.ir/loan-sitemap.xml",
@@ -162,6 +162,18 @@
       "schemes": 13,
       "standard": 6,
       "tiers": 51
+    },
+    {
+      "etf": 38,
+      "issuance": 29,
+      "ms": 14,
+      "name": "isignal.ir",
+      "ok": true,
+      "origin": "snapshot:tests/fixtures/isignal-funds-1405-07-05.json",
+      "parsed": 67,
+      "refreshed": 8,
+      "rows": 67,
+      "skipped": 0
     }
   ],
   "stale": 0,
