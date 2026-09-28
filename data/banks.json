@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "generatedAt": "2026-09-15T00:00:00+03:30",
-  "note": "فهرست بانک‌ها و مؤسسات اعتباری دارای مجوز بانک مرکزی ج.ا.ا که در سامانه رصد می‌شوند.",
+  "generatedAt": "2026-09-28T00:00:00+03:30",
+  "note": "فهرست بانک‌ها و مؤسسات اعتباری دارای مجوز بانک مرکزی ج.ا.ا که در سامانه رصد می‌شوند، به‌همراه نهادهای مالی بورسی (سبدگردان/تأمین سرمایه/مشاور سرمایه‌گذاری) که مدیر صندوق‌های درآمد ثابت فهرست‌شده‌اند.",
   "banks": [
     {
       "id": "azkivam",
@@ -422,6 +422,310 @@
       "name": "گروه مالی کاریزما",
       "nameEn": "Charisma Financial Group",
       "site": "https://charisma.ir"
+    },
+    {
+      "id": "kian",
+      "name": "مشاور سرمایه‌گذاری پرتو آفتاب کیان",
+      "nameEn": "Kian Capital (Parto Aftab Kian)",
+      "kind": "مشاور سرمایه‌گذاری (مدیر صندوق)",
+      "site": "http://kianfunds1.ir",
+      "aliases": [
+        "پرتو آفتاب کیان",
+        "صندوق کیان"
+      ]
+    },
+    {
+      "id": "amin-ib",
+      "name": "تأمین سرمایه امین",
+      "nameEn": "Amin Investment Bank",
+      "kind": "تأمین سرمایه (مدیر صندوق)",
+      "site": "https://aminib.com",
+      "aliases": [
+        "تامین سرمایه امین",
+        "امین یکم",
+        "گنجین",
+        "امین انصار"
+      ]
+    },
+    {
+      "id": "hummers",
+      "name": "سبدگردان هامرز",
+      "nameEn": "Hummers Asset Management",
+      "kind": "سبدگردان (مدیر صندوق)",
+      "site": "https://hummers.ir",
+      "aliases": [
+        "هامرز",
+        "نشان"
+      ]
+    },
+    {
+      "id": "etebar",
+      "name": "سبدگردان اعتبار",
+      "nameEn": "Etebar Asset Management",
+      "kind": "سبدگردان (مدیر صندوق)",
+      "site": "http://etebaretf2.com",
+      "aliases": [
+        "سبدگردان اعتبار",
+        "اعتبار آفرین"
+      ]
+    },
+    {
+      "id": "meyar",
+      "name": "مشاور سرمایه‌گذاری معیار",
+      "nameEn": "Meyar Investment Advisory",
+      "kind": "مشاور سرمایه‌گذاری (مدیر صندوق)",
+      "site": "http://mahoormeyar.ir",
+      "aliases": [
+        "مشاور سرمایه‌گذاری معیار",
+        "ماهور"
+      ]
+    },
+    {
+      "id": "rabin",
+      "name": "سبدگردان هوشمند رابین",
+      "nameEn": "Rabin Smart Asset Management",
+      "kind": "سبدگردان (مدیر صندوق)",
+      "site": "http://rabinetf.ir",
+      "aliases": [
+        "رابین"
+      ]
+    },
+    {
+      "id": "karamad",
+      "name": "سبدگردان کارآمد",
+      "nameEn": "Karamad Asset Management",
+      "kind": "سبدگردان (مدیر صندوق)",
+      "site": "http://karamadfund.ir",
+      "aliases": [
+        "کارآمد"
+      ]
+    },
+    {
+      "id": "arman-eghtesad",
+      "name": "سبدگردان آرمان اقتصاد",
+      "nameEn": "Arman Eghtesad Asset Management",
+      "kind": "سبدگردان (مدیر صندوق)",
+      "site": "http://ettehadfund.ir",
+      "aliases": [
+        "آرمان اقتصاد",
+        "آسود",
+        "اتحاد آرمان اقتصاد"
+      ]
+    },
+    {
+      "id": "vista",
+      "name": "سبدگردان ویستا",
+      "nameEn": "Vista Asset Management",
+      "kind": "سبدگردان (مدیر صندوق)",
+      "site": "http://sobatvista.ir",
+      "aliases": [
+        "ویستا",
+        "ثبات ویستا",
+        "آکام"
+      ]
+    },
+    {
+      "id": "eghtesad-bidar",
+      "name": "سبدگردان اقتصاد بیدار",
+      "nameEn": "Eghtesad Bidar Asset Management",
+      "kind": "سبدگردان (مدیر صندوق)",
+      "site": "https://ebb.ir",
+      "aliases": [
+        "اقتصاد بیدار",
+        "سپر سرمایه بیدار"
+      ]
+    },
+    {
+      "id": "firouzeh",
+      "name": "سبدگردان توسعه فیروزه",
+      "nameEn": "Firouzeh Asset Management",
+      "kind": "سبدگردان (مدیر صندوق)",
+      "site": "http://firouzehfixetf.ir",
+      "aliases": [
+        "توسعه فیروزه",
+        "فیروزا"
+      ]
+    },
+    {
+      "id": "isatis",
+      "name": "سبدگردان ایساتیس پویا کیش",
+      "nameEn": "Isatis Pooya Asset Management",
+      "kind": "سبدگردان (مدیر صندوق)",
+      "site": "https://isatispm.com",
+      "aliases": [
+        "ایساتیس پویا",
+        "خاتم ایساتیس"
+      ]
+    },
+    {
+      "id": "damavand-ib",
+      "name": "تأمین سرمایه دماوند",
+      "nameEn": "Damavand Investment Bank",
+      "kind": "تأمین سرمایه (مدیر صندوق)",
+      "site": "http://sepiddamavandfund.ir",
+      "aliases": [
+        "تامین سرمایه دماوند",
+        "نیلی دماوند",
+        "سپیدما"
+      ]
+    },
+    {
+      "id": "dariush",
+      "name": "سبدگردان داریوش",
+      "nameEn": "Dariush Asset Management",
+      "kind": "سبدگردان (مدیر صندوق)",
+      "site": "https://dariush.fund",
+      "aliases": [
+        "داریوش",
+        "اندوخته داریوش"
+      ]
+    },
+    {
+      "id": "mani",
+      "name": "سبدگردان مانی",
+      "nameEn": "Mani Asset Management",
+      "kind": "سبدگردان (مدیر صندوق)",
+      "site": "http://manifunds.ir",
+      "aliases": [
+        "سبدگردان مانی"
+      ]
+    },
+    {
+      "id": "sina-amc",
+      "name": "سبدگردان سینا",
+      "nameEn": "Sina Asset Management",
+      "kind": "سبدگردان (مدیر صندوق)",
+      "site": "http://sinaetf.ir",
+      "aliases": [
+        "سبدگردان سینا",
+        "سیناد",
+        "رویش ثروت سینا"
+      ]
+    },
+    {
+      "id": "arman-ati",
+      "name": "سبدگردان آرمان آتی",
+      "nameEn": "Arman Ati Asset Management",
+      "kind": "سبدگردان (مدیر صندوق)",
+      "site": "http://aaketf.com",
+      "aliases": [
+        "آرمان آتی",
+        "آکورد",
+        "گلبرگ"
+      ]
+    },
+    {
+      "id": "nikan-afagh",
+      "name": "امین نیکان آفاق",
+      "nameEn": "Amin Nikan Afagh",
+      "kind": "مشاور سرمایه‌گذاری (مدیر صندوق)",
+      "site": "http://khobregan-etf.com",
+      "aliases": [
+        "نیکان آفاق",
+        "سخند",
+        "سپهر خبرگان نفت"
+      ]
+    },
+    {
+      "id": "tamadon-ib",
+      "name": "تأمین سرمایه تمدن",
+      "nameEn": "Tamadon Investment Bank",
+      "kind": "تأمین سرمایه (مدیر صندوق)",
+      "site": "http://tadavomtamadon.ir",
+      "aliases": [
+        "تامین سرمایه تمدن",
+        "سپاس"
+      ]
+    },
+    {
+      "id": "aria",
+      "name": "سبدگردان آریا",
+      "nameEn": "Aria Asset Management",
+      "kind": "سبدگردان (مدیر صندوق)",
+      "site": "https://ariaamc.ir",
+      "aliases": [
+        "سبدگردان آریا",
+        "یارا"
+      ]
+    },
+    {
+      "id": "hiwa",
+      "name": "سبدگردان هیوا",
+      "nameEn": "Hiwa Asset Management",
+      "kind": "سبدگردان (مدیر صندوق)",
+      "site": "https://hiwapm.ir",
+      "aliases": [
+        "هیوا",
+        "اطمینان هیوا"
+      ]
+    },
+    {
+      "id": "navid",
+      "name": "سبدگردان نوید",
+      "nameEn": "Navid Asset Management",
+      "kind": "سبدگردان (مدیر صندوق)",
+      "site": "https://navidfg.com",
+      "aliases": [
+        "سبدگردان نوید",
+        "ثبات نوید"
+      ]
+    },
+    {
+      "id": "aseman",
+      "name": "سبدگردان آسمان",
+      "nameEn": "Aseman Asset Management",
+      "kind": "سبدگردان (مدیر صندوق)",
+      "site": "http://asmfund.ir",
+      "aliases": [
+        "سبدگردان آسمان",
+        "آسمان سهند"
+      ]
+    },
+    {
+      "id": "algorithm",
+      "name": "سبدگردان الگوریتم",
+      "nameEn": "Algorithm Asset Management",
+      "kind": "سبدگردان (مدیر صندوق)",
+      "site": "http://rasafund.ir",
+      "aliases": [
+        "الگوریتم",
+        "راسا الگوریتم"
+      ]
+    },
+    {
+      "id": "mofid",
+      "name": "سبدگردان مفید",
+      "nameEn": "Mofid Asset Management",
+      "kind": "سبدگردان (مدیر صندوق)",
+      "site": "https://www.emofid.com",
+      "aliases": [
+        "سبدگردان مفید",
+        "حامی مفید"
+      ]
+    },
+    {
+      "id": "fintech-noafarin",
+      "name": "مشاور سرمایه‌گذاری فراز ایده نوآفرین تک",
+      "nameEn": "Faraz Ideh Noafarin Tech (Fintech) Investment Advisory",
+      "kind": "مشاور سرمایه‌گذاری (مدیر صندوق)",
+      "site": "http://psnfund.com",
+      "aliases": [
+        "فاینتک",
+        "نوآفرین تک",
+        "پیشگامان سرمایه نوآفرین"
+      ]
+    },
+    {
+      "id": "aban",
+      "name": "سبدگردان آبان",
+      "nameEn": "Aban Asset Management",
+      "kind": "سبدگردان (مدیر صندوق)",
+      "site": "http://kosar1fund.ir",
+      "aliases": [
+        "سبدگردان آبان",
+        "کوثر یکم",
+        "روند پایدار آبان"
+      ]
     }
   ]
 }

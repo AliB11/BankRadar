@@ -16,6 +16,7 @@
  *   node tools/sync-weekly.mjs --input=output.csv    # درون‌ریزی خروجی CSV منابع معتبر
  *   node tools/sync-weekly.mjs --limit=150           # سقف واکشی صفحات برای ممیزی عمیق
  *   DGSHAHR_HTML_FILE=… (برای تغذیه آفلاین منبع دیجی‌شهر در اجرای خط لوله)
+ *   ISIGNAL_JSON_FILE=… (برش برون‌خط صندوق‌های درآمد ثابت آی‌سیگنال)
  */
 
 import fs from 'node:fs/promises';
@@ -28,6 +29,7 @@ import * as rade from './sources/rade.mjs';
 import * as banks from './sources/banks.mjs';
 import * as cbi from './sources/cbi.mjs';
 import * as dgshahr from './sources/dgshahr.mjs';
+import * as isignal from './sources/isignal.mjs';
 import { buildBundle } from './build-bundle.mjs';
 import { sortDeep, mergeProducts, deepEqual } from './collect.mjs';
 import { signatureOf } from './data-signature.mjs';
@@ -559,6 +561,28 @@ export async function syncWeekly(opts = {}) {
     } else {
       sourcesLog.push({ name: 'dgshahr.com', ok: false, error: dgResult.error, ms: dgResult.ms });
       log(`دیجی‌شهر: ناموفق — ${dgResult.error}`);
+    }
+
+    // آی‌سیگنال — کارنامهٔ صندوق‌های درآمد ثابت (بازدهی یک‌ساله، قیمت صدور/ابطال)
+    const isResult = await runSource('isignal-weekly', () =>
+      isignal.collect({ existing: dataset.products, banks: banksData?.banks ?? [], log: vlog }),
+    );
+    if (isResult.ok) {
+      incoming = incoming.concat(isResult.data.products);
+      sourcesLog.push({
+        name: 'isignal.ir (weekly-audit)',
+        ok: true,
+        origin: isResult.data.origin,
+        parsed: isResult.data.products.length,
+        etf: isResult.data.etf,
+        issuance: isResult.data.issuance,
+        refreshed: isResult.data.refreshed,
+        ms: isResult.ms,
+      });
+      log(`آی‌سیگنال: ${isResult.data.products.length} صندوق درآمد ثابت در ممیزی هفتگی`);
+    } else {
+      sourcesLog.push({ name: 'isignal.ir', ok: false, error: isResult.error, ms: isResult.ms });
+      log(`آی‌سیگنال: ناموفق — ${isResult.error}`);
     }
   }
 

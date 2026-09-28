@@ -14,6 +14,7 @@
  *   node tools/collect.mjs --offline    # بدون شبکه (فقط بازسازی bundle و اعتبارسنجی)
  *   node tools/collect.mjs --limit=60   # محدودکردن تعداد صفحات وام
  *   node tools/collect.mjs --only=dgshahr  # فقط منبع دیجی‌شهر (برای درون‌ریزی آفلاین: DGSHAHR_HTML_FILE)
+ *   node tools/collect.mjs --only=isignal  # فقط صندوق‌های درآمد ثابت آی‌سیگنال (برون‌خط: ISIGNAL_JSON_FILE)
  */
 
 import fs from 'node:fs/promises';
@@ -25,6 +26,7 @@ import * as rade from './sources/rade.mjs';
 import * as banks from './sources/banks.mjs';
 import * as cbi from './sources/cbi.mjs';
 import * as dgshahr from './sources/dgshahr.mjs';
+import * as isignal from './sources/isignal.mjs';
 import { buildBundle } from './build-bundle.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -372,6 +374,35 @@ async function main() {
       } else {
         report.sources.push({ name: 'dgshahr.com', ok: false, error: dgResult.error, ms: dgResult.ms });
         log(`دیجی‌شهر: ناموفق — ${dgResult.error}`);
+      }
+    }
+
+    // ۵) آی‌سیگنال — صندوق‌های درآمد ثابت (ETF و صدور/ابطالی) با بازدهی محقق‌شده
+    if (runs('isignal')) {
+      const banksData = await readJSON('banks.json', { banks: [] });
+      const isResult = await runSource('isignal', () =>
+        isignal.collect({ existing: dataset.products, banks: banksData?.banks ?? [], log: vlog }),
+      );
+      if (isResult.ok) {
+        incoming = incoming.concat(isResult.data.products);
+        report.sources.push({
+          name: 'isignal.ir',
+          ok: true,
+          origin: isResult.data.origin,
+          rows: isResult.data.rows,
+          parsed: isResult.data.products.length,
+          etf: isResult.data.etf,
+          issuance: isResult.data.issuance,
+          refreshed: isResult.data.refreshed,
+          skipped: isResult.data.skipped.length,
+          ms: isResult.ms,
+        });
+        log(
+          `آی‌سیگنال: ${isResult.data.products.length} صندوق درآمد ثابت (${isResult.data.etf} ETF + ${isResult.data.issuance} صدور/ابطالی؛ ${isResult.data.refreshed} به‌روزرسانی دست‌نویس)`,
+        );
+      } else {
+        report.sources.push({ name: 'isignal.ir', ok: false, error: isResult.error, ms: isResult.ms });
+        log(`آی‌سیگنال: ناموفق — ${isResult.error}`);
       }
     }
 
