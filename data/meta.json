@@ -1,22 +1,27 @@
 {
-  "autoDiscovered": 213,
+  "autoDiscovered": 216,
   "counts": {
     "credit": 53,
     "deposits": 48,
     "funds": 67,
-    "loans": 102,
+    "loans": 105,
     "loyalty": 10,
-    "total": 280
+    "total": 283
   },
-  "lastRun": "2026-09-28T10:04:04.913Z",
-  "lastRunDurationMs": 270235,
+  "lastRun": "2026-09-29T10:01:36.282Z",
+  "lastRunDurationMs": 134280,
   "lastRunMode": "full",
   "sources": [
     {
-      "error": "پایان مهلت درخواست — https://www.rade.ir/loan-sitemap.xml",
-      "ms": 92000,
+      "attempted": 122,
+      "discovered": 550,
+      "failures": 0,
+      "fresh": 120,
+      "ms": 9057,
       "name": "rade.ir",
-      "ok": false
+      "ok": true,
+      "parsed": 122,
+      "rotated": 2
     },
     {
       "detail": [
@@ -141,21 +146,21 @@
           "url": "https://vipad.ir/"
         }
       ],
-      "ms": 85982,
+      "ms": 85894,
       "name": "bank-sites",
       "ok": true,
       "reachable": 3,
       "targets": 20
     },
     {
-      "ms": 57073,
+      "ms": 4494,
       "name": "macro-indicators",
       "ok": true,
-      "sourcesOk": 1,
+      "sourcesOk": 2,
       "touched": []
     },
     {
-      "ms": 1570,
+      "ms": 1143,
       "name": "dgshahr.com",
       "ok": true,
       "parsed": 31,
@@ -165,7 +170,7 @@
     },
     {
       "error": "شبکه در دسترس نبود — https://advancedchart.isignal.ir/service/signalData@4.0.0/list",
-      "ms": 33548,
+      "ms": 33609,
       "name": "isignal.ir",
       "ok": false
     }
