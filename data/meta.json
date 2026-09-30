@@ -8,20 +8,15 @@
     "loyalty": 10,
     "total": 283
   },
-  "lastRun": "2026-09-29T10:01:36.282Z",
-  "lastRunDurationMs": 134280,
+  "lastRun": "2026-09-30T09:55:36.434Z",
+  "lastRunDurationMs": 285823,
   "lastRunMode": "full",
   "sources": [
     {
-      "attempted": 122,
-      "discovered": 550,
-      "failures": 0,
-      "fresh": 120,
-      "ms": 9057,
+      "error": "پایان مهلت درخواست — https://www.rade.ir/loan-sitemap.xml",
+      "ms": 91971,
       "name": "rade.ir",
-      "ok": true,
-      "parsed": 122,
-      "rotated": 2
+      "ok": false
     },
     {
       "detail": [
@@ -146,21 +141,21 @@
           "url": "https://vipad.ir/"
         }
       ],
-      "ms": 85894,
+      "ms": 101069,
       "name": "bank-sites",
       "ok": true,
       "reachable": 3,
       "targets": 20
     },
     {
-      "ms": 4494,
+      "ms": 57439,
       "name": "macro-indicators",
       "ok": true,
-      "sourcesOk": 2,
+      "sourcesOk": 1,
       "touched": []
     },
     {
-      "ms": 1143,
+      "ms": 1548,
       "name": "dgshahr.com",
       "ok": true,
       "parsed": 31,
@@ -170,7 +165,7 @@
     },
     {
       "error": "شبکه در دسترس نبود — https://advancedchart.isignal.ir/service/signalData@4.0.0/list",
-      "ms": 33609,
+      "ms": 33717,
       "name": "isignal.ir",
       "ok": false
     }
