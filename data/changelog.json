@@ -1,5 +1,22 @@
 {
-  "added": [],
+  "added": [
+    {
+      "bank": "بانک صادرات",
+      "category": "loans",
+      "id": "rade-708864",
+      "maxAmount": 400000000,
+      "product": "وام طرح سکو بانک صادرات ایران",
+      "rate": 23
+    },
+    {
+      "bank": "پست بانک",
+      "category": "loans",
+      "id": "rade-708871",
+      "maxAmount": null,
+      "product": "وام طرح زرین پست بانک",
+      "rate": 15
+    }
+  ],
   "amountChanged": [],
   "confidenceChanged": [],
   "rateChanged": [],
@@ -7,7 +24,7 @@
   "revived": [],
   "staleNow": [],
   "summary": {
-    "added": 0,
+    "added": 2,
     "amountChanged": 0,
     "confidenceChanged": 0,
     "rateChanged": 0,
@@ -15,7 +32,7 @@
     "revived": 0,
     "staleNow": 0,
     "termChanged": 0,
-    "totalChanges": 0
+    "totalChanges": 2
   },
   "termChanged": []
 }
