@@ -1,16 +1,16 @@
 {
-  "autoDiscovered": 218,
+  "autoDiscovered": 241,
   "counts": {
     "credit": 53,
     "deposits": 48,
     "funds": 67,
-    "loans": 107,
+    "loans": 130,
     "loyalty": 10,
-    "total": 285
+    "total": 308
   },
   "disclaimer": "هر رکورد دارای منبع و تاریخ کنترل است. نرخ‌های سود تابع مصوبات شورای پول و اعتبار و بخشنامه‌های بانک مرکزی است و بانک‌ها می‌توانند شرایط را تغییر دهند. پیش از اقدام، شرایط را از منبع رسمی بانک تأیید کنید.",
-  "generatedAt": "2026-10-03T09:17:44.312Z",
-  "generator": "tools/collect.mjs",
+  "generatedAt": "2026-10-03T09:38:28.760Z",
+  "generator": "tools/sync-weekly.mjs",
   "products": [
     {
       "amountLabel": "از ۱ میلیون تا مبالغ میلیاردی",
@@ -28,7 +28,7 @@
       "id": "ayandeh-shetab-23",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-06",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": null,
       "minAmount": 1000000,
       "product": "سپرده شتاب (۲۳٪ عمومی / تا ۲۵٪ برای مبالغ بالا)",
@@ -40,7 +40,7 @@
         "مانده میلیاردی برای نرخ ۲۵٪"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "bank",
         "title": "بانک آینده — طرح شتاب",
         "url": "https://ba24.ir"
@@ -71,7 +71,7 @@
       "id": "blu-deposit-digital",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-12",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": null,
       "minAmount": 0,
       "product": "سپرده دیجیتال و صندوق بلو",
@@ -82,7 +82,7 @@
         "تأیید هویت دیجیتال"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "bank",
         "title": "بلوبانک",
         "url": "https://blubank.com"
@@ -113,7 +113,7 @@
       "id": "cbi-deposit-1y-cap",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-15",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": null,
       "minAmount": 1000000,
       "product": "سپرده سرمایه‌گذاری بلندمدت یک‌ساله (نرخ مرجع مصوب)",
@@ -127,7 +127,7 @@
         "پذیرش حداقل موجودی بانک عامل"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "regulator",
         "title": "بانک مرکزی — مصوبه شورای پول و اعتبار نرخ سود سپرده",
         "url": "https://www.cbi.ir"
@@ -158,7 +158,7 @@
       "id": "certificate-deposit-special",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-10",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": null,
       "minAmount": 1000000,
       "product": "اوراق گواهی سپرده مدت‌دار ویژه (قابل معامله)",
@@ -171,7 +171,7 @@
         "خرید از بانک عامل یا بازار ثانویه"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "regulator",
         "title": "بانک مرکزی — اوراق گواهی سپرده مدت‌دار ویژه",
         "url": "https://www.cbi.ir"
@@ -248,7 +248,7 @@
       "id": "deposit-6m-special",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-15",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": null,
       "minAmount": 10000000,
       "product": "سپرده کوتاه‌مدت ویژه شش‌ماهه",
@@ -261,7 +261,7 @@
         "عدم برداشت تا سررسید"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "regulator",
         "title": "شورای پول و اعتبار — سپرده ویژه شش‌ماهه",
         "url": "https://www.cbi.ir"
@@ -291,7 +291,7 @@
       "id": "deposit-kootah-moddate-adi",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-15",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": null,
       "minAmount": 0,
       "product": "سپرده کوتاه‌مدت عادی (کارت بانکی / روزشمار)",
@@ -303,7 +303,7 @@
         "افتتاح حساب جاری/پس‌انداز"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "regulator",
         "title": "شورای پول و اعتبار — نرخ سود سپرده کوتاه‌مدت عادی",
         "url": "https://www.cbi.ir"
@@ -381,7 +381,7 @@
       "id": "en-sp-deposit-23",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-10",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": null,
       "minAmount": 200000000,
       "product": "سپرده ممتاز ۲۳٪ (حداقل موجودی ۲۰۰ میلیون تومان)",
@@ -393,7 +393,7 @@
         "ماندگاری منابع"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "bank",
         "title": "بانک اقتصاد نوین — سپرده‌ها",
         "url": "https://enbank.ir"
@@ -472,7 +472,7 @@
       "id": "iran-zamin-deposit-23",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-08",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": null,
       "minAmount": 100000000,
       "product": "سپرده ۲۳٪ (حداقل ۱۰۰ تا ۳۰۰ میلیون تومان برحسب طرح)",
@@ -483,7 +483,7 @@
         "حداقل موجودی برحسب طرح"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "bank",
         "title": "بانک ایران زمین",
         "url": "https://izbank.ir"
@@ -608,7 +608,7 @@
       "id": "karafarin-sp-deposit-23",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-10",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": null,
       "minAmount": 200000000,
       "product": "سپرده سرمایه‌گذاری ممتاز ۲۳٪",
@@ -619,7 +619,7 @@
         "حداقل موجودی ۲۰۰ میلیون تومان"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "bank",
         "title": "بانک کارآفرین — سپرده‌ها",
         "url": "https://karafarinbank.ir"
@@ -925,7 +925,7 @@
       "id": "melli-deposit-20",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-05",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": null,
       "minAmount": 1000000,
       "product": "سپرده سرمایه‌گذاری بلندمدت (سقف متعارف ۲۰٪)",
@@ -936,7 +936,7 @@
         "افتتاح حساب"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "bank",
         "title": "بانک ملی ایران — سپرده‌ها",
         "url": "https://bmi.ir"
@@ -1337,7 +1337,7 @@
       "id": "pasargad-sp-deposit-23",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-10",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": null,
       "minAmount": 200000000,
       "product": "سپرده بلندمدت پاسارگاد ۲۳٪ (حداقل ۲۰۰ میلیون تومان)",
@@ -1348,7 +1348,7 @@
         "حداقل موجودی ۲۰۰ میلیون تومان"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "bank",
         "title": "بانک پاسارگاد — سپرده‌ها",
         "url": "https://bpi.ir"
@@ -1379,7 +1379,7 @@
       "id": "refah-deposit-23",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-08",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": null,
       "minAmount": 500000000,
       "product": "سپرده ممتاز ۲۳٪ (حداقل ۵۰۰ میلیون تومان)",
@@ -1390,7 +1390,7 @@
         "حداقل موجودی ۵۰۰ میلیون تومان"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "bank",
         "title": "بانک رفاه کارگران",
         "url": "https://refah-bank.ir"
@@ -1646,7 +1646,7 @@
       "id": "saman-sp-deposit-23",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-05",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": null,
       "minAmount": 500000000,
       "product": "سپرده ممتاز ۲۳٪ (حداقل ۵۰۰ میلیون تومان)",
@@ -1657,7 +1657,7 @@
         "حداقل موجودی ۵۰۰ میلیون تومان"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "bank",
         "title": "بانک سامان — سپرده‌های سرمایه‌گذاری",
         "url": "https://sb24.ir"
@@ -1782,7 +1782,7 @@
       "id": "sarmayeh-deposit-23",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-08",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": null,
       "minAmount": 100000000,
       "product": "سپرده ۲۳٪ (حداقل ۱۰۰ میلیون تومان)",
@@ -1793,7 +1793,7 @@
         "حداقل موجودی ۱۰۰ میلیون تومان"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "bank",
         "title": "بانک سرمایه",
         "url": "https://sbank.ir"
@@ -1870,7 +1870,7 @@
       "id": "sepah-sp-deposit-23",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-08",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": null,
       "minAmount": 100000000,
       "product": "سپرده ۲۳٪ (حداقل ۱۰۰ میلیون تومان)",
@@ -1881,7 +1881,7 @@
         "حداقل موجودی ۱۰۰ میلیون تومان"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "bank",
         "title": "بانک سپه",
         "url": "https://banksepah.ir"
@@ -1960,7 +1960,7 @@
       "id": "sina-deposit-23",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-08",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": null,
       "minAmount": 1000000,
       "product": "سپرده ۲۳٪ با آستانه یک میلیون تومان",
@@ -1971,7 +1971,7 @@
         "حداقل موجودی ۱ میلیون تومان"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "bank",
         "title": "بانک سینا",
         "url": "https://sinabank.ir"
@@ -2096,7 +2096,7 @@
       "id": "tejarat-sp-deposit-23",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-10",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": null,
       "minAmount": 200000000,
       "product": "سپرده بلندمدت ۲۳٪ با شرط مانده ۲۰۰ میلیون تومان",
@@ -2107,7 +2107,7 @@
         "حداقل موجودی ۲۰۰ میلیون تومان"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "bank",
         "title": "بانک تجارت — سپرده‌های سرمایه‌گذاری",
         "url": "https://tejaratbank.ir"
@@ -2185,7 +2185,7 @@
       "id": "azkivam-credit",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-14",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": 75000000,
       "minAmount": 10000000,
       "product": "ازکی‌وام — خرید اقساطی تا ۷۵ میلیون تومان",
@@ -2198,7 +2198,7 @@
         "اعتبارسنجی"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "aggregator",
         "title": "الوقسطی — طرح ازکی‌وام",
         "url": "https://aloghesti.com/mag/best-loans-for-purchasing-goods/"
@@ -2229,7 +2229,7 @@
       "id": "baloon-blubank",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-14",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": 85000000,
       "minAmount": 10000000,
       "product": "بالون — اعتبار خرید تا ۸۵ میلیون تومان",
@@ -2242,7 +2242,7 @@
         "اعتبارسنجی موفق"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "aggregator",
         "title": "الوقسطی — طرح بالون",
         "url": "https://aloghesti.com/mag/best-loans-for-purchasing-goods/"
@@ -2274,7 +2274,7 @@
       "id": "blu-loan-beja",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-15",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": 400000000,
       "minAmount": 50000000,
       "product": "وام به‌جا — تسهیلات نقدی دیجیتال بدون ضامن",
@@ -2288,7 +2288,7 @@
         "تمبر مالیاتی ۷۵ هزار تومان"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "aggregator",
         "title": "رده — وام بهجا بلوبانک (جدول مشخصات کامل)",
         "url": "https://www.rade.ir/loan-instant-loan/706908-%D9%88%D8%A7%D9%85-%D8%A8%D9%87%E2%80%8C%D8%AC%D8%A7-%D8%A8%D9%84%D9%88%D8%A8%D8%A7%D9%86%DA%A9/"
@@ -2321,7 +2321,7 @@
       "id": "blu-loan-instant",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-12",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": 100000000,
       "minAmount": 3000000,
       "product": "وام فوری بلو — پله‌ای از ۳ تا ۱۰۰ میلیون تومان",
@@ -2334,7 +2334,7 @@
         "تسویه وام‌های قبلی"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "aggregator",
         "title": "رده (rade.ir) — وام بلوبانک",
         "url": "https://www.rade.ir/service/694259-%D9%88%D8%A7%D9%85-%D8%A8%D9%84%D9%88%D8%A8%D8%A7%D9%86%DA%A9/"
@@ -2367,7 +2367,7 @@
       "id": "bmi-kalapi",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-14",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": 200000000,
       "minAmount": 10000000,
       "product": "کالاپی — اعتبار خرید کالا",
@@ -2381,7 +2381,7 @@
         "اعتبارسنجی"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "aggregator",
         "title": "الوقسطی — مقایسه طرح‌های وام خرید کالا ۱۴۰۵",
         "url": "https://aloghesti.com/mag/best-loans-for-purchasing-goods/"
@@ -2413,7 +2413,7 @@
       "id": "bmi-nopi",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-14",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": 30000000,
       "minAmount": 3000000,
       "product": "نوپی — اعتبار گروهی سازمان‌ها",
@@ -2425,7 +2425,7 @@
         "کسر از حقوق"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "aggregator",
         "title": "الوقسطی — طرح نوپی بانک ملی",
         "url": "https://aloghesti.com/mag/best-loans-for-purchasing-goods/"
@@ -2457,7 +2457,7 @@
       "id": "digipay-credit",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-14",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": 100000000,
       "minAmount": 3000000,
       "product": "خرید اعتباری دیجی‌پی",
@@ -2470,7 +2470,7 @@
         "احراز هویت در اپلیکیشن"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "aggregator",
         "title": "الوقسطی — طرح‌های اعتباری فعال ۱۴۰۵",
         "url": "https://aloghesti.com/mag/best-loans-for-purchasing-goods/"
@@ -2501,7 +2501,7 @@
       "id": "jetvam-credit",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-14",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": 100000000,
       "minAmount": 5000000,
       "product": "جت‌وام — اعتبار خرد خرید کالا",
@@ -2514,7 +2514,7 @@
         "اعتبارسنجی پایه"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "aggregator",
         "title": "الوقسطی — طرح جت‌وام",
         "url": "https://aloghesti.com/mag/best-loans-for-purchasing-goods/"
@@ -2545,7 +2545,7 @@
       "id": "mellat-alopi",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-14",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": 100000000,
       "minAmount": 5000000,
       "product": "الوپی — خرید اقساطی با پشتوانه بانک ملت",
@@ -2558,7 +2558,7 @@
         "حساب در بانک ملت"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "aggregator",
         "title": "الوقسطی — طرح الوپی بانک ملت",
         "url": "https://aloghesti.com/mag/best-loans-for-purchasing-goods/"
@@ -2591,7 +2591,7 @@
       "id": "pasargad-credit-card",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-05",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": 500000000,
       "minAmount": 20000000,
       "product": "کارت اعتباری و اعتبار در حساب",
@@ -2604,7 +2604,7 @@
         "سابقه گردش حساب"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "bank",
         "title": "بانک پاسارگاد — کارت اعتباری",
         "url": "https://bpi.ir"
@@ -2851,7 +2851,7 @@
       },
       "friction": 72,
       "id": "rade-704722",
-      "lastSeen": "2026-09-29",
+      "lastSeen": "2026-10-03",
       "lastUpdated": "2026-09-27",
       "maxAmount": 500000000,
       "minAmount": null,
@@ -2867,7 +2867,7 @@
         "قسط تقریبی: ۲۲,۷۲۷,۲۷۳ تومان"
       ],
       "source": {
-        "checked": "2026-09-29",
+        "checked": "2026-10-03",
         "kind": "aggregator",
         "title": "رده — وام کارت رفاهی بانک رفاه کارگران",
         "url": "https://www.rade.ir/loan-goods-loan/704722-%d9%88%d8%a7%d9%85-%da%a9%d8%a7%d8%b1%d8%aa-%d8%b1%d9%81%d8%a7%d9%87%db%8c-%d8%a8%d8%a7%d9%86%da%a9-%d8%b1%d9%81%d8%a7%d9%87-%da%a9%d8%a7%d8%b1%da%af%d8%b1%d8%a7%d9%86/"
@@ -2904,7 +2904,7 @@
       },
       "friction": 50,
       "id": "rade-704736",
-      "lastSeen": "2026-09-29",
+      "lastSeen": "2026-10-03",
       "lastUpdated": "2026-09-14",
       "maxAmount": 400000000,
       "minAmount": 75000000,
@@ -2920,7 +2920,7 @@
         "قسط تقریبی: ۲۴,۱۶۸,۵۹۲ تومان"
       ],
       "source": {
-        "checked": "2026-09-29",
+        "checked": "2026-10-03",
         "kind": "aggregator",
         "title": "رده — تسهیلات پیمان ویپاد بانک پاسارگاد",
         "url": "https://www.rade.ir/loan-no-guarantor-loans/704736-%d8%aa%d8%b3%d9%87%db%8c%d9%84%d8%a7%d8%aa-%d9%be%db%8c%d9%85%d8%a7%d9%86-%d9%88%db%8c%d9%be%d8%a7%d8%af-%d8%a8%d8%a7%d9%86%da%a9-%d9%be%d8%a7%d8%b3%d8%a7%d8%b1%da%af%d8%a7%d8%af/"
@@ -4641,7 +4641,7 @@
       "id": "refah-beta",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-14",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": 100000000,
       "minAmount": 5000000,
       "product": "بتا — کالاکارت بازنشستگان و مستمری‌بگیران",
@@ -4653,7 +4653,7 @@
         "اعتبارسنجی"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "aggregator",
         "title": "الوقسطی — طرح بتا بانک رفاه",
         "url": "https://aloghesti.com/mag/best-loans-for-purchasing-goods/"
@@ -4685,7 +4685,7 @@
       "id": "refah-jame-credit",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-14",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": 300000000,
       "minAmount": 5000000,
       "product": "مرابحه خرید کالا — سقف مصوب ۲۳٪",
@@ -4698,7 +4698,7 @@
         "فروشگاه طرف قرارداد"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "aggregator",
         "title": "الوقسطی — کالانو باجت",
         "url": "https://aloghesti.com/mag/best-loans-for-purchasing-goods/"
@@ -4729,7 +4729,7 @@
       "id": "refah-vibe",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-14",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": 200000000,
       "minAmount": 20000000,
       "product": "وایب — اعتبار ویژه بازنشستگان و کارکنان",
@@ -4741,7 +4741,7 @@
         "اعتبارسنجی"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "aggregator",
         "title": "الوقسطی — طرح وایب بانک رفاه",
         "url": "https://aloghesti.com/mag/best-loans-for-purchasing-goods/"
@@ -4773,7 +4773,7 @@
       "id": "saderat-ghasta",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-12",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": 20000000,
       "minAmount": 1000000,
       "product": "قسطا / قسطاکارت — اعتبار خرید خرد",
@@ -4786,7 +4786,7 @@
         "حساب در بانک صادرات"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "press",
         "title": "اندیشه معاصر — وام قسطا ۱۴۰۵",
         "url": "https://andishemoaser.ir/%D9%88%D8%A7%D9%85-%D9%82%D8%B3%D8%B7%D8%A7-%DB%B1%DB%B4%DB%B0%DB%B5-%D9%85%D8%A8%D9%84%D8%BA%D8%8C-%D8%B4%D8%B1%D8%A7%DB%8C%D8%B7-%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA%D8%8C-%D9%82%D8%B3%D8%B7%D8%A7/"
@@ -4819,7 +4819,7 @@
       "id": "saman-credit-card",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-05",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": 500000000,
       "minAmount": 20000000,
       "product": "کارت اعتباری خرید سامان",
@@ -4832,7 +4832,7 @@
         "حساب جاری"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "bank",
         "title": "بانک سامان — کارت اعتباری",
         "url": "https://sb24.ir"
@@ -4864,7 +4864,7 @@
       "id": "bazneshastegan-60",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-14",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": 60000000,
       "minAmount": 60000000,
       "product": "وام بازنشستگان تأمین اجتماعی — ۶۰ میلیون تومان",
@@ -4877,7 +4877,7 @@
         "نبود معوقات"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "press",
         "title": "اندیشه معاصر — ثبت‌نام غیرحضوری وام بازنشستگان تأمین اجتماعی ۱۴۰۵",
         "url": "https://andishemoaser.ir/"
@@ -4909,7 +4909,7 @@
       "id": "ezdevaj-300",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-14",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": 300000000,
       "minAmount": 300000000,
       "product": "وام قرض‌الحسنه ازدواج — سقف پایه هر نفر",
@@ -4925,7 +4925,7 @@
         "سفته"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "press",
         "title": "نبض قیمت — وام ازدواج ۱۴۰۵ مبلغ ۳۰۰ تا ۳۵۰ میلیون تومان",
         "url": "https://nabzgheymat.ir/%D9%88%D8%A7%D9%85-%D8%A7%D8%B2%D8%AF%D9%88%D8%A7%D8%AC-%DB%B1%DB%B4%DB%B0%DB%B5%D8%9B-%D9%85%D8%A8%D9%84%D8%BA-%DB%B3%DB%B0%DB%B0-%D8%AA%D8%A7-%DB%B3%DB%B5%DB%B0-%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86/"
@@ -4957,7 +4957,7 @@
       "id": "ezdevaj-350",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-14",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": 350000000,
       "minAmount": 350000000,
       "product": "وام ازدواج با تشویق سنی (زوجین جوان)",
@@ -4971,7 +4971,7 @@
         "ثبت درخواست در ve.cbi.ir"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "press",
         "title": "نبض قیمت — وام ازدواج ۱۴۰۵ جدول کامل",
         "url": "https://nabzgheymat.ir/%D9%88%D8%A7%D9%85-%D8%A7%D8%B2%D8%AF%D9%88%D8%A7%D8%AC-%D9%88-%D9%81%D8%B1%D8%B2%D9%86%D8%AF%D8%A2%D9%88%D8%B1%DB%8C-%DB%B1%DB%B4%DB%B0%DB%B5%D8%9B-%DB%B6%DB%B0%DB%B0-%D8%AA%D8%A7-%DB%B7%DB%B0%DB%B0/"
@@ -5002,7 +5002,7 @@
       "id": "ezdevaj-gardeshgari",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-12",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": 350000000,
       "minAmount": 300000000,
       "product": "وام ازدواج ۳۵۰ میلیون تومان با بازپرداخت ۱۲۰ ماهه",
@@ -5016,7 +5016,7 @@
         "سفته"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "press",
         "title": "دیجی‌شهر — شرایط وام ازدواج ۱۴۰۵",
         "url": "https://dgshahr.com/blog/new-terms-of-marriage-loan/"
@@ -5047,7 +5047,7 @@
       "id": "ezdevaj-saman",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-12",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": 350000000,
       "minAmount": 300000000,
       "product": "تسهیلات قرض‌الحسنه ازدواج (کارگزار شبکه بانکی)",
@@ -5060,7 +5060,7 @@
         "ثبت درخواست در ve.cbi.ir"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "aggregator",
         "title": "وام‌گرد — وام ازدواج بانک سامان ۱۴۰۵",
         "url": "https://vamgard.org/vam/vam-ezdevaj-bank-saman"
@@ -5091,7 +5091,7 @@
       "id": "farzandavari-220",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-14",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": 220000000,
       "minAmount": 220000000,
       "product": "تسهیلات قرض‌الحسنه فرزندآوری — فرزند پنجم و بیشتر",
@@ -5106,7 +5106,7 @@
         "ثبت‌نام در ve.cbi.ir"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "press",
         "title": "نبض قیمت — جدول کامل وام فرزندآوری ۱۴۰۵",
         "url": "https://nabzgheymat.ir/%D9%88%D8%A7%D9%85-%D9%81%D8%B1%D8%B2%D9%86%D8%AF%D8%A2%D9%88%D8%B1%DB%8C-%DB%B1%DB%B4%DB%B0%DB%B5%D8%9B-%D8%A7%D8%B2-%DB%B4%DB%B4-%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86-%D8%AA%D8%A7-%DB%B2%DB%B2%DB%B0/"
@@ -5138,7 +5138,7 @@
       "id": "farzandavari-44",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-14",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": 44000000,
       "minAmount": 44000000,
       "product": "تسهیلات قرض‌الحسنه فرزندآوری — فرزند اول",
@@ -5153,7 +5153,7 @@
         "ثبت‌نام در ve.cbi.ir"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "press",
         "title": "بانک مرکزی — دستورالعمل تسهیلات فرزندآوری ۱۴۰۵",
         "url": "https://andishemoaser.ir/%D8%AB%D8%A8%D8%AA%D9%86%D8%A7%D9%85-%D9%88%D8%A7%D9%85-%D9%81%D8%B1%D8%B2%D9%86%D8%AF%D8%A2%D9%88%D8%B1%DB%8C-%DB%B1%DB%B4%DB%B0%DB%B5-%D8%A2%D8%BA%D8%A7%D8%B2-%D8%B4%D8%AF-%D9%85%D8%A8/"
@@ -5186,7 +5186,7 @@
       "id": "mashak-javan",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-08",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": 4000000000,
       "minAmount": 500000000,
       "product": "تسهیلات مسکن جوانان / حساب پس‌انداز مسکن",
@@ -5200,7 +5200,7 @@
         "اعتبارسنجی"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "bank",
         "title": "بانک مسکن",
         "url": "https://bank-maskan.ir"
@@ -5232,7 +5232,7 @@
       "id": "mehr-iran-300",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-10",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": 300000000,
       "minAmount": 300000000,
       "product": "وام امتیازی ۳۰۰ میلیون تومان (معدل حساب)",
@@ -5244,7 +5244,7 @@
         "اعتبارسنجی"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "aggregator",
         "title": "دیجی‌وام — وام امتیازی مهر ایران",
         "url": "https://digivam.app/mehriran-bank/"
@@ -5276,7 +5276,7 @@
       "id": "mehr-iran-mehryar",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-10",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": 750000000,
       "minAmount": 100000000,
       "product": "طرح مهریار — تسهیلات قرض‌الحسنه اشخاص حقوقی",
@@ -5289,7 +5289,7 @@
         "حساب در بانک مهر ایران"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "aggregator",
         "title": "دیجی‌وام — انواع وام بانک مهر ایران",
         "url": "https://digivam.app/mehriran-bank/"
@@ -5321,7 +5321,7 @@
       "id": "mehr-iran-naghdi-400",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-10",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": 400000000,
       "minAmount": 400000000,
       "product": "وام نقدی ۴۰۰ میلیون تومان بدون مسدودی سپرده",
@@ -5334,7 +5334,7 @@
         "سهمیه طرح در شعبه"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "aggregator",
         "title": "دیجی‌وام — وام ۴۰۰ میلیون تومانی نقدی مهر ایران",
         "url": "https://digivam.app/mehriran-bank/"
@@ -5366,7 +5366,7 @@
       "id": "mehr-iran-payvand",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-10",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": 80000000,
       "minAmount": 20000000,
       "product": "طرح پیوند مهر و اندوخته اجتماعی",
@@ -5379,7 +5379,7 @@
         "معدل حساب در طرح اندوخته"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "aggregator",
         "title": "دیجی‌وام — طرح پیوند مهر و اندوخته اجتماعی",
         "url": "https://digivam.app/mehriran-bank/"
@@ -5412,7 +5412,7 @@
       "id": "melli-gharz",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-08",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": 200000000,
       "minAmount": 20000000,
       "product": "تسهیلات قرض‌الحسنه و طرح‌های حمایتی ملی",
@@ -5425,7 +5425,7 @@
         "میانگین حساب حسب طرح"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "bank",
         "title": "بانک ملی ایران — تسهیلات قرض‌الحسنه",
         "url": "https://bmi.ir"
@@ -5458,7 +5458,7 @@
       "id": "murabaha-khord-23",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-15",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": 500000000,
       "minAmount": 50000000,
       "product": "تسهیلات مرابحه خرد (سقف مصوب ۲۳٪)",
@@ -5472,7 +5472,7 @@
         "افتتاح پرونده"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "press",
         "title": "اندیشه معاصر — تفاوت نرخ سود ابلاغی و نرخ واقعی",
         "url": "https://andishemoaser.ir/%D9%85%D8%AD%D8%A7%D8%B3%D8%A8%D9%87-%D9%88%D8%A7%D9%85-%D8%A8%D8%A7%D9%86%DA%A9%DB%8C%D8%9B-%D9%81%D8%B1%D9%85%D9%88%D9%84-%D8%AF%D9%82%DB%8C%D9%82-%D8%A7%D9%82%D8%B3%D8%A7%D8%B7-%D9%85%D8%A7%D9%87/"
@@ -5505,7 +5505,7 @@
       "id": "pasargad-vipad-loan",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-08",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": 300000000,
       "minAmount": 10000000,
       "product": "تسهیلات خرد دیجیتال ویپاد",
@@ -5518,7 +5518,7 @@
         "گردش حساب"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "bank",
         "title": "ویپاد",
         "url": "https://vipad.ir"
@@ -5555,7 +5555,7 @@
       },
       "friction": 50,
       "id": "rade-704651",
-      "lastSeen": "2026-10-01",
+      "lastSeen": "2026-10-03",
       "lastUpdated": "2026-05-20",
       "maxAmount": 300000000,
       "minAmount": 5000000,
@@ -5571,7 +5571,7 @@
         "قسط تقریبی: ۱۱,۴۵۷,۱۳۶ تومان"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "aggregator",
         "title": "رده — وام همپا موسسه اعتباری ملل",
         "url": "https://www.rade.ir/loan-cash-loan/704651-%d9%88%d8%a7%d9%85-%d9%87%d9%85%d9%be%d8%a7-%d9%85%d9%88%d8%b3%d8%b3%d9%87-%d8%a7%d8%b9%d8%aa%d8%a8%d8%a7%d8%b1%db%8c-%d9%85%d9%84%d9%84/"
@@ -5608,7 +5608,7 @@
       },
       "friction": 72,
       "id": "rade-704652",
-      "lastSeen": "2026-10-01",
+      "lastSeen": "2026-10-03",
       "lastUpdated": "2026-07-07",
       "maxAmount": 500000000,
       "minAmount": null,
@@ -5624,7 +5624,7 @@
         "قسط تقریبی: ۱۵,۱۵۱,۵۱۵ تومان"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "aggregator",
         "title": "رده — وام طرح کرامت (مهریار سازمان‌های اجتماعی) بانک مهر ایران",
         "url": "https://www.rade.ir/loan-interest-free-loan/704652-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%da%a9%d8%b1%d8%a7%d9%85%d8%aa-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%87%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
@@ -5714,7 +5714,7 @@
       },
       "friction": 72,
       "id": "rade-704654",
-      "lastSeen": "2026-10-01",
+      "lastSeen": "2026-10-03",
       "lastUpdated": "2026-09-19",
       "maxAmount": 1000000000,
       "minAmount": null,
@@ -5730,7 +5730,7 @@
         "قسط تقریبی: ۴۵,۴۵۴,۵۴۵ تومان"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "aggregator",
         "title": "رده — وام طرح توسکا (مهریار اصناف) بانک مهر ایران",
         "url": "https://www.rade.ir/loan-interest-free-loan/704654-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%d8%aa%d9%88%d8%b3%da%a9%d8%a7-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%87%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
@@ -5767,7 +5767,7 @@
       },
       "friction": 50,
       "id": "rade-704655",
-      "lastSeen": "2026-09-29",
+      "lastSeen": "2026-10-03",
       "lastUpdated": "2026-09-19",
       "maxAmount": 1000000000,
       "minAmount": null,
@@ -5783,7 +5783,7 @@
         "قسط تقریبی: ۱۸,۱۸۱,۸۱۸ تومان"
       ],
       "source": {
-        "checked": "2026-09-29",
+        "checked": "2026-10-03",
         "kind": "aggregator",
         "title": "رده — وام طرح نارون بانک مهر ایران",
         "url": "https://www.rade.ir/loan-interest-free-loan/704655-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%d9%86%d8%a7%d8%b1%d9%88%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%87%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
@@ -5906,6 +5906,110 @@
       "termMonths": 60
     },
     {
+      "amountLabel": "۵۰ میلیارد تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک توسعه صادرات",
+      "benefit": 62,
+      "category": "loans",
+      "ceilingContingent": false,
+      "collateral": "اعتبار شغلی",
+      "collateralKind": "credit-score",
+      "confidence": "medium",
+      "desc": "وام واحدهای تولیدی و طرح های سرمایه گذاری بانک توسعه صادرات ایران",
+      "digital": 60,
+      "extra": {
+        "installment": null,
+        "loanType": "وام نقدی",
+        "totalInterest": null,
+        "totalWithInterest": null
+      },
+      "friction": 72,
+      "id": "rade-704659",
+      "lastSeen": "2026-10-03",
+      "lastUpdated": "2025-11-12",
+      "maxAmount": 50000000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "وام واحدهای تولیدی و طرح های سرمایه گذاری بانک توسعه صادرات ایران",
+      "rate": 19.5,
+      "rateKind": "profit",
+      "rateLabel": "سود ۱۹.۵٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: اعتبار شغلی"
+      ],
+      "source": {
+        "checked": "2026-10-03",
+        "kind": "aggregator",
+        "title": "رده — وام واحدهای تولیدی و طرح های سرمایه گذاری بانک توسعه صادرات ایران",
+        "url": "https://www.rade.ir/loan-cash-loan/704659-%d9%88%d8%a7%d9%85-%d9%88%d8%a7%d8%ad%d8%af%d9%87%d8%a7%db%8c-%d8%aa%d9%88%d9%84%db%8c%d8%af%db%8c-%d9%88-%d8%b7%d8%b1%d8%ad-%d9%87%d8%a7%db%8c-%d8%b3%d8%b1%d9%85%d8%a7%db%8c%d9%87-%da%af%d8%b0%d8%a7/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "cash",
+      "tags": [
+        "وام نقدی",
+        "توسعه صادرات"
+      ],
+      "termLabel": "متغیر",
+      "termMonths": null
+    },
+    {
+      "amountLabel": "۳۰۰ میلیون تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک سپه",
+      "benefit": 59,
+      "category": "loans",
+      "ceilingContingent": true,
+      "collateral": "ضامن رسمی, اعتبارسنجی در چارچوب ضوابط و مقررات اعتباری بانک",
+      "collateralKind": "guarantor",
+      "confidence": "medium",
+      "desc": "وام طرح نوید ۲ بانک سپه",
+      "digital": 60,
+      "extra": {
+        "installment": 9289708,
+        "loanType": "وام نقدی",
+        "totalInterest": 145906007,
+        "totalWithInterest": 445906007
+      },
+      "friction": 50,
+      "id": "rade-704661",
+      "lastSeen": "2026-10-03",
+      "lastUpdated": "2026-07-08",
+      "maxAmount": 300000000,
+      "minAmount": 1800000,
+      "multiPlan": false,
+      "product": "وام طرح نوید ۲ بانک سپه",
+      "rate": 21,
+      "rateKind": "profit",
+      "rateLabel": "سود ۲۱٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: ضامن رسمی, اعتبارسنجی در چارچوب ضوابط و مقررات اعتباری بانک",
+        "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام \r\n مبلغ عضویت ماهانه حداقل ۱۰۰ هزار تومان و حداکثر ۲ میلیون تومان باید پرداخت شود.",
+        "قسط تقریبی: ۹,۲۸۹,۷۰۸ تومان"
+      ],
+      "source": {
+        "checked": "2026-10-03",
+        "kind": "aggregator",
+        "title": "رده — وام طرح نوید 2 بانک سپه",
+        "url": "https://www.rade.ir/loan-cash-loan/704661-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%d9%86%d9%88%db%8c%d8%af-2-%d8%a8%d8%a7%d9%86%da%a9-%d8%b3%d9%be%d9%87/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "cash",
+      "tags": [
+        "وام نقدی",
+        "سپه"
+      ],
+      "termLabel": "۴۸ ماه تعداد اقساط انتخابی ۸، ۲۴ و ۴۸ ماه است.",
+      "termMonths": 48
+    },
+    {
       "amountLabel": "۱ میلیارد تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
@@ -6010,6 +6114,163 @@
       ],
       "termLabel": "۶۰ ماه",
       "termMonths": 60
+    },
+    {
+      "amountLabel": "۳۰۰ میلیون تومان سقف این تسهیلات برای نیروگاه‌های خورشیدی خانگی (انشعابی) ۵ و ۱۰ کیلوواتی، ۳۰۰ میلیون تومان و برای نیروگاه‌های تا ظرفیت ۱۰ مگاوات، حداکثر ۲۰۰ میلیارد تومان تعیین شده است.",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک ملت",
+      "benefit": 73,
+      "category": "loans",
+      "ceilingContingent": false,
+      "collateral": "ضامن رسمی, اعتبار شغلی, سند ملکی, اعتبارسنجی",
+      "collateralKind": "guarantor",
+      "confidence": "medium",
+      "desc": "وام نیروگاه خورشیدی خانگی بانک ملت",
+      "digital": 60,
+      "extra": {
+        "installment": null,
+        "loanType": "وام نقدی",
+        "totalInterest": null,
+        "totalWithInterest": null
+      },
+      "friction": 50,
+      "id": "rade-704668",
+      "lastSeen": "2026-10-03",
+      "lastUpdated": "2026-09-15",
+      "maxAmount": 300000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "وام نیروگاه خورشیدی خانگی بانک ملت",
+      "rate": 14,
+      "rateKind": "profit",
+      "rateLabel": "سود ۱۴٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: ضامن رسمی, اعتبار شغلی, سند ملکی, اعتبارسنجی"
+      ],
+      "source": {
+        "checked": "2026-10-03",
+        "kind": "aggregator",
+        "title": "رده — وام نیروگاه خورشیدی خانگی بانک ملت",
+        "url": "https://www.rade.ir/loan-cash-loan/704668-%d9%88%d8%a7%d9%85-%d9%86%db%8c%d8%b1%d9%88%da%af%d8%a7%d9%87-%d8%ae%d9%88%d8%b1%d8%b4%db%8c%d8%af%db%8c-%d8%ae%d8%a7%d9%86%da%af%db%8c-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%84%d8%aa/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "cash",
+      "tags": [
+        "وام نقدی",
+        "ملت"
+      ],
+      "termLabel": "متغیر",
+      "termMonths": null
+    },
+    {
+      "amountLabel": "۲ میلیارد تومان سقف تسهیلات برای اشخاص حقوقی ۲ میلیارد تومان و برای پرسنل زیر مجموعه ایشان ۵۰۰ میلیون تومان است.",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک مسکن",
+      "benefit": 82,
+      "category": "loans",
+      "ceilingContingent": false,
+      "collateral": "ضامن رسمی, اعتبار شغلی, اعتبارسنجی",
+      "collateralKind": "guarantor",
+      "confidence": "medium",
+      "desc": "وام طرح سپید بانک مسکن",
+      "digital": 60,
+      "extra": {
+        "installment": 41516710,
+        "loanType": "وام نقدی",
+        "totalInterest": 491002627,
+        "totalWithInterest": 2491002627
+      },
+      "friction": 50,
+      "id": "rade-704671",
+      "lastSeen": "2026-10-03",
+      "lastUpdated": "2026-08-10",
+      "maxAmount": 2000000000,
+      "minAmount": 10000000,
+      "multiPlan": false,
+      "product": "وام طرح سپید بانک مسکن",
+      "rate": 9,
+      "rateKind": "profit",
+      "rateLabel": "سود ۹٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: ضامن رسمی, اعتبار شغلی, اعتبارسنجی",
+        "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
+        "قسط تقریبی: ۴۱,۵۱۶,۷۱۰ تومان"
+      ],
+      "source": {
+        "checked": "2026-10-03",
+        "kind": "aggregator",
+        "title": "رده — وام طرح سپید بانک مسکن",
+        "url": "https://www.rade.ir/loan-cash-loan/704671-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%d8%b3%d9%be%db%8c%d8%af-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d8%b3%da%a9%d9%86/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "cash",
+      "tags": [
+        "وام نقدی",
+        "مسکن"
+      ],
+      "termLabel": "۶۰ ماه دوره بازپرداخت بین ۱۲ تا ۶۰ ماه است که البته براساس آن ضریب برابری ماهانه نسبت به متوسط موجودی (درصد) متفاوت خواهد بود.",
+      "termMonths": 60
+    },
+    {
+      "amountLabel": "۳ میلیارد تومان این تسهیلات حداکثر معادل دو برابر واریزی شاپرکی ماهانه (ماه منتهی به تاریخ درخواست تسهیلات) و تا سقف سه میلیارد تومان است",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک پارسیان",
+      "benefit": 55,
+      "category": "loans",
+      "ceilingContingent": true,
+      "collateral": "ضامن رسمی, اعتبار شغلی, اعتبارسنجی",
+      "collateralKind": "guarantor",
+      "confidence": "medium",
+      "desc": "وام طرح فرصت بانک پارسیان",
+      "digital": 60,
+      "extra": {
+        "installment": 198643139,
+        "loanType": "وام نقدی",
+        "totalInterest": 575576497,
+        "totalWithInterest": 3575576497
+      },
+      "friction": 50,
+      "id": "rade-704675",
+      "lastSeen": "2026-10-03",
+      "lastUpdated": "2025-11-12",
+      "maxAmount": 3000000000,
+      "minAmount": 300000000,
+      "multiPlan": false,
+      "product": "وام طرح فرصت بانک پارسیان",
+      "rate": 23,
+      "rateKind": "profit",
+      "rateLabel": "سود ۲۳٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: ضامن رسمی, اعتبار شغلی, اعتبارسنجی",
+        "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
+        "قسط تقریبی: ۱۹۸,۶۴۳,۱۳۹ تومان"
+      ],
+      "source": {
+        "checked": "2026-10-03",
+        "kind": "aggregator",
+        "title": "رده — وام طرح فرصت بانک پارسیان",
+        "url": "https://www.rade.ir/loan-cash-loan/704675-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%d9%81%d8%b1%d8%b5%d8%aa-%d8%a8%d8%a7%d9%86%da%a9-%d9%be%d8%a7%d8%b1%d8%b3%db%8c%d8%a7%d9%86/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "cash",
+      "tags": [
+        "وام نقدی",
+        "پارسیان"
+      ],
+      "termLabel": "۱۸ ماه",
+      "termMonths": 18
     },
     {
       "amountLabel": "۱۵ میلیارد تومان مبلغ وام مازاد بر مبلغ ۱۵ میلیارد تومان، طبق حدود اختیارات سیاست اعتباری بانک است.",
@@ -6118,6 +6379,216 @@
       "termMonths": 60
     },
     {
+      "amountLabel": "متغیر",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک گردشگری",
+      "benefit": 57,
+      "category": "loans",
+      "ceilingContingent": true,
+      "collateral": "اعتبار شغلی, اعتبارسنجی",
+      "collateralKind": "credit-score",
+      "confidence": "medium",
+      "desc": "وام آژانس‌یار بانک گردشگری",
+      "digital": 60,
+      "extra": {
+        "installment": null,
+        "loanType": "وام نقدی",
+        "totalInterest": null,
+        "totalWithInterest": null
+      },
+      "friction": 72,
+      "id": "rade-704682",
+      "lastSeen": "2026-10-03",
+      "lastUpdated": "2026-07-29",
+      "maxAmount": null,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "وام آژانس‌یار بانک گردشگری",
+      "rate": 22,
+      "rateKind": "profit",
+      "rateLabel": "سود ۲۲٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: اعتبار شغلی, اعتبارسنجی",
+        "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام"
+      ],
+      "source": {
+        "checked": "2026-10-03",
+        "kind": "aggregator",
+        "title": "رده — وام آژانس‌یار بانک گردشگری",
+        "url": "https://www.rade.ir/loan-cash-loan/704682-%d9%88%d8%a7%d9%85-%d8%a2%da%98%d8%a7%d9%86%d8%b3%db%8c%d8%a7%d8%b1-%d8%a8%d8%a7%d9%86%da%a9-%da%af%d8%b1%d8%af%d8%b4%da%af%d8%b1%db%8c/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "cash",
+      "tags": [
+        "وام نقدی",
+        "گردشگری"
+      ],
+      "termLabel": "۲ ماه حداکثر مدت بازپرداخت ۱-۲ ماه است.",
+      "termMonths": 2
+    },
+    {
+      "amountLabel": "۳ میلیارد تومان سقف مبلغ تسهیلات برای اشخاص حقیقی ۳ میلیارد تومان و برای افراد حقوقی بدون سقف با رعایت سقف فردی ۳۰۰ میلیون تومان است.",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک آینده",
+      "benefit": 55,
+      "category": "loans",
+      "ceilingContingent": true,
+      "collateral": "ضامن رسمی, اعتبار شغلی, اعتبارسنجی",
+      "collateralKind": "guarantor",
+      "confidence": "medium",
+      "desc": "طرح تسهیلاتی الماس بانک آینده",
+      "digital": 60,
+      "extra": {
+        "installment": 132419795,
+        "loanType": "وام نقدی",
+        "totalInterest": 972593863,
+        "totalWithInterest": 3972593863
+      },
+      "friction": 50,
+      "id": "rade-704684",
+      "lastSeen": "2026-10-03",
+      "lastUpdated": "2026-01-05",
+      "maxAmount": 3000000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "طرح تسهیلاتی الماس بانک آینده",
+      "rate": 23,
+      "rateKind": "profit",
+      "rateLabel": "سود ۲۳٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: ضامن رسمی, اعتبار شغلی, اعتبارسنجی",
+        "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
+        "قسط تقریبی: ۱۳۲,۴۱۹,۷۹۵ تومان"
+      ],
+      "source": {
+        "checked": "2026-10-03",
+        "kind": "aggregator",
+        "title": "رده — طرح تسهیلاتی الماس بانک آینده",
+        "url": "https://www.rade.ir/loan-cash-loan/704684-%d8%b7%d8%b1%d8%ad-%d8%aa%d8%b3%d9%87%db%8c%d9%84%d8%a7%d8%aa%db%8c-%d8%a7%d9%84%d9%85%d8%a7%d8%b3-%d8%a8%d8%a7%d9%86%da%a9-%d8%a2%db%8c%d9%86%d8%af%d9%87/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "cash",
+      "tags": [
+        "وام نقدی",
+        "آینده"
+      ],
+      "termLabel": "۳۰ ماه شرایط بازپرداخت ۲۴، ‌۱۲ و ۳۰ ماهه اقساطی است",
+      "termMonths": 30
+    },
+    {
+      "amountLabel": "متغیر",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک توسعه تعاون",
+      "benefit": 55,
+      "category": "loans",
+      "ceilingContingent": true,
+      "collateral": "اعتبار شغلی, سند ملکی, اعتبارسنجی",
+      "collateralKind": "credit-score",
+      "confidence": "medium",
+      "desc": "وام رویان بانک توسعه تعاون",
+      "digital": 60,
+      "extra": {
+        "installment": null,
+        "loanType": "وام نقدی",
+        "totalInterest": null,
+        "totalWithInterest": null
+      },
+      "friction": 72,
+      "id": "rade-704691",
+      "lastSeen": "2026-10-03",
+      "lastUpdated": "2026-07-11",
+      "maxAmount": null,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "وام رویان بانک توسعه تعاون",
+      "rate": 23,
+      "rateKind": "profit",
+      "rateLabel": "سود ۲۳٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: اعتبار شغلی, سند ملکی, اعتبارسنجی",
+        "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام"
+      ],
+      "source": {
+        "checked": "2026-10-03",
+        "kind": "aggregator",
+        "title": "رده — وام رویان بانک توسعه تعاون",
+        "url": "https://www.rade.ir/loan-cash-loan/704691-%d9%88%d8%a7%d9%85-%d8%b1%d9%88%db%8c%d8%a7%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d8%aa%d9%88%d8%b3%d8%b9%d9%87-%d8%aa%d8%b9%d8%a7%d9%88%d9%86/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "cash",
+      "tags": [
+        "وام نقدی",
+        "توسعه تعاون"
+      ],
+      "termLabel": "۹ ماه حداکثر زمان بازپرداخت اقساطی و یا یکجا طی دوره‌های ۳ الی ۹ ماهه است.",
+      "termMonths": 9
+    },
+    {
+      "amountLabel": "۳۰۰ میلیون تومان سقف وام برای اشخاص حقوقی ۷۵۰ میلیون تومان است",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "موسسه اعتباری ملل",
+      "benefit": 92,
+      "category": "loans",
+      "ceilingContingent": true,
+      "collateral": "ضامن رسمی, اعتبارسنجی تضامین اشخاص حقیقی:\r\nبا توجه به رتبه اعتباری تا ۵۰ میلیون تومان بدون ضامن/از ۵۰ تا ۳۰۰ میلیون تومان با یک ضامن\r\n\r\nتضامین اشخاص حقوقی: \r\nتا ۵۰۰ میلیون تومان بدون ضامن/ بیش از ۵۰۰ میلیون تومان با یک ضامن معتبر",
+      "collateralKind": "guarantor",
+      "confidence": "medium",
+      "desc": "وام قرض‌الحسنه نوید ملل موسسه اعتباری ملل",
+      "digital": 60,
+      "extra": {
+        "installment": 5454545,
+        "loanType": "وام نقدی",
+        "totalInterest": 36000000,
+        "totalWithInterest": 336000000
+      },
+      "friction": 50,
+      "id": "rade-704693",
+      "lastSeen": "2026-10-03",
+      "lastUpdated": "2026-05-20",
+      "maxAmount": 300000000,
+      "minAmount": 5000000,
+      "multiPlan": false,
+      "product": "وام قرض‌الحسنه نوید ملل موسسه اعتباری ملل",
+      "rate": 4,
+      "rateKind": "fee",
+      "rateLabel": "سود ۴٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: ضامن رسمی, اعتبارسنجی تضامین اشخاص حقیقی:\r\nبا توجه به رتبه اعتباری تا ۵۰ میلیون تومان بدون ضامن/از ۵۰ تا ۳۰۰ میلیون تومان با یک ضامن\r\n\r\nتضامین اشخاص حقوقی: \r\nتا ۵۰۰ میلیون تومان بدون ضامن/ بیش از ۵۰۰ میلیون تومان با یک ضامن معتبر",
+        "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
+        "قسط تقریبی: ۵,۴۵۴,۵۴۵ تومان"
+      ],
+      "source": {
+        "checked": "2026-10-03",
+        "kind": "aggregator",
+        "title": "رده — وام قرض‌الحسنه نوید ملل موسسه اعتباری ملل",
+        "url": "https://www.rade.ir/loan-cash-loan/704693-%d9%88%d8%a7%d9%85-%d9%82%d8%b1%d8%b6%d8%a7%d9%84%d8%ad%d8%b3%d9%86%d9%87-%d9%86%d9%88%db%8c%d8%af-%d9%85%d9%84%d9%84-%d9%85%d9%88%d8%b3%d8%b3%d9%87-%d9%85%d9%84%d9%84/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "cash",
+      "tags": [
+        "وام نقدی",
+        "موسسه اعتباری ملل"
+      ],
+      "termLabel": "۶۰ ماه",
+      "termMonths": 60
+    },
+    {
       "amountLabel": "۲ میلیارد تومان با تودیع مبلغ ۳۰۰ میلیون تا ۱ میلیارد تومان تا سقف ۲ میلیارد تومان وام دریافت کنید. (مبلغ ۲ میلیارد تومان برای کسبه دارای دسته چک و پوز همزمان با حمایت ۱۰۰ درصدی بانک است. )",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
@@ -6191,7 +6662,7 @@
       },
       "friction": 72,
       "id": "rade-704697",
-      "lastSeen": "2026-09-29",
+      "lastSeen": "2026-10-03",
       "lastUpdated": "2025-11-12",
       "maxAmount": 1200000000,
       "minAmount": null,
@@ -6207,7 +6678,7 @@
         "قسط تقریبی: ۹,۰۰۰,۰۰۰ تومان"
       ],
       "source": {
-        "checked": "2026-09-29",
+        "checked": "2026-10-03",
         "kind": "aggregator",
         "title": "رده — وام خرید تاکسی‌های برقی بانک شهر",
         "url": "https://www.rade.ir/loan-car-loan/704697-%d9%88%d8%a7%d9%85-%d8%ae%d8%b1%db%8c%d8%af-%d8%aa%d8%a7%da%a9%d8%b3%db%8c%d9%87%d8%a7%db%8c-%d8%a8%d8%b1%d9%82%db%8c-%d8%a8%d8%a7%d9%86%da%a9-%d8%b4%d9%87%d8%b1/"
@@ -6222,6 +6693,59 @@
       ],
       "termLabel": "۶۰ ماه",
       "termMonths": 60
+    },
+    {
+      "amountLabel": "۲۵ میلیارد تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک رفاه کارگران",
+      "benefit": 55,
+      "category": "loans",
+      "ceilingContingent": false,
+      "collateral": "اعتبار شغلی, اعتبارسنجی وثایق لازم جهت دریافت این تسهیلات از سوی ریاست شعب تعیین می‌شود.",
+      "collateralKind": "credit-score",
+      "confidence": "medium",
+      "desc": "وام نفیس بانک رفاه کارگران",
+      "digital": 60,
+      "extra": {
+        "installment": 2351908033,
+        "loanType": "وام نقدی",
+        "totalInterest": 3222896401,
+        "totalWithInterest": 28222896401
+      },
+      "friction": 72,
+      "id": "rade-704702",
+      "lastSeen": "2026-10-03",
+      "lastUpdated": "2026-07-15",
+      "maxAmount": 25000000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "وام نفیس بانک رفاه کارگران",
+      "rate": 23,
+      "rateKind": "profit",
+      "rateLabel": "سود ۲۳٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: اعتبار شغلی, اعتبارسنجی وثایق لازم جهت دریافت این تسهیلات از سوی ریاست شعب تعیین می‌شود.",
+        "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
+        "قسط تقریبی: ۲,۳۵۱,۹۰۸,۰۳۳ تومان"
+      ],
+      "source": {
+        "checked": "2026-10-03",
+        "kind": "aggregator",
+        "title": "رده — وام نفیس بانک رفاه کارگران",
+        "url": "https://www.rade.ir/loan-cash-loan/704702-%d9%88%d8%a7%d9%85-%d9%86%d9%81%db%8c%d8%b3-%d8%a8%d8%a7%d9%86%da%a9-%d8%b1%d9%81%d8%a7%d9%87-%da%a9%d8%a7%d8%b1%da%af%d8%b1%d8%a7%d9%86/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "cash",
+      "tags": [
+        "وام نقدی",
+        "رفاه کارگران"
+      ],
+      "termLabel": "۱۲ ماه برای میانگین حساب یک‌ماهه حداکثر دوره بازپرداخت ۱۲ ماه است. دوره بازپرداخت و ضرایب پرداخت تسهیلات برای میانگین حساب‌های ۲ تا ۶ ماهه متفاوت خواهد بود.",
+      "termMonths": 12
     },
     {
       "amountLabel": "۵۰۰ میلیون تومان",
@@ -6275,6 +6799,59 @@
       ],
       "termLabel": "۵۰ ماه تعداد اقساط تسهیلات دریافتی به مبلغ تسهیلات وابسته بوده و بین ۲۰ تا ۵۰ ماه متغیر است",
       "termMonths": 50
+    },
+    {
+      "amountLabel": "۳ میلیارد تومان سقف تسهیلات حداکثر به میزان یک میلیارد تومان برای اشخاص حقیقی و حداکثر به میزان ۳ میلیارد تومان برای اشخاص حقوقی است.",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک رفاه کارگران",
+      "benefit": 55,
+      "category": "loans",
+      "ceilingContingent": false,
+      "collateral": "ضامن رسمی, اعتبارسنجی",
+      "collateralKind": "guarantor",
+      "confidence": "medium",
+      "desc": "وام ربیع رفاه بانک رفاه کارگران",
+      "digital": 60,
+      "extra": {
+        "installment": 116129165,
+        "loanType": "وام نقدی",
+        "totalInterest": 1180649928,
+        "totalWithInterest": 4180649928
+      },
+      "friction": 50,
+      "id": "rade-704705",
+      "lastSeen": "2026-10-03",
+      "lastUpdated": "2026-09-26",
+      "maxAmount": 3000000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "وام ربیع رفاه بانک رفاه کارگران",
+      "rate": 23,
+      "rateKind": "profit",
+      "rateLabel": "سود ۲۳٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: ضامن رسمی, اعتبارسنجی",
+        "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
+        "قسط تقریبی: ۱۱۶,۱۲۹,۱۶۵ تومان"
+      ],
+      "source": {
+        "checked": "2026-10-03",
+        "kind": "aggregator",
+        "title": "رده — وام ربیع رفاه بانک رفاه کارگران",
+        "url": "https://www.rade.ir/loan-cash-loan/704705-%d9%88%d8%a7%d9%85-%d8%b1%d8%a8%db%8c%d8%b9-%d8%b1%d9%81%d8%a7%d9%87-%d8%a8%d8%a7%d9%86%da%a9-%d8%b1%d9%81%d8%a7%d9%87-%da%a9%d8%a7%d8%b1%da%af%d8%b1%d8%a7%d9%86/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "cash",
+      "tags": [
+        "وام نقدی",
+        "رفاه کارگران"
+      ],
+      "termLabel": "۳۶ ماه مدت زمان بازپرداخت اقساط، بسته به مدت سپرده گذاری، از ۶ ماه تا ۳۶ ماه متغیر است.",
+      "termMonths": 36
     },
     {
       "amountLabel": "۲ میلیارد تومان سقف وام برای پذیرندگان پایانه‌های فروشگاهی و پذیرندگان درگاه‌های پرداخت اینترنتی ۵ میلیارد تومان است",
@@ -6381,6 +6958,58 @@
       ],
       "termLabel": "۶۰ ماه مدت زمان بازپرداخت تسهیلات بین ۱۸ تا ۶۰ ماه است.",
       "termMonths": 60
+    },
+    {
+      "amountLabel": "۳۰۰ میلیون تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک ملت",
+      "benefit": 92,
+      "category": "loans",
+      "ceilingContingent": true,
+      "collateral": "ضامن رسمی, اعتبارسنجی",
+      "collateralKind": "guarantor",
+      "confidence": "medium",
+      "desc": "وام گردونه بانک ملت",
+      "digital": 60,
+      "extra": {
+        "installment": 13636364,
+        "loanType": "وام نقدی",
+        "totalInterest": 18000000,
+        "totalWithInterest": 318000000
+      },
+      "friction": 50,
+      "id": "rade-704709",
+      "lastSeen": "2026-10-03",
+      "lastUpdated": "2026-09-15",
+      "maxAmount": 300000000,
+      "minAmount": 50000000,
+      "multiPlan": false,
+      "product": "وام گردونه بانک ملت",
+      "rate": 4,
+      "rateKind": "fee",
+      "rateLabel": "سود ۴٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: ضامن رسمی, اعتبارسنجی",
+        "قسط تقریبی: ۱۳,۶۳۶,۳۶۴ تومان"
+      ],
+      "source": {
+        "checked": "2026-10-03",
+        "kind": "aggregator",
+        "title": "رده — وام گردونه بانک ملت",
+        "url": "https://www.rade.ir/loan-cash-loan/704709-%d9%88%d8%a7%d9%85-%da%af%d8%b1%d8%af%d9%88%d9%86%d9%87-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%84%d8%aa/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "cash",
+      "tags": [
+        "وام نقدی",
+        "ملت"
+      ],
+      "termLabel": "۲۴ ماه",
+      "termMonths": 24
     },
     {
       "amountLabel": "۵ میلیارد تومان حداکثر مبلغ وام برای اشخاص حقیقی ۵ میلیارد تومان و اشخاص حقوقی ۱۰ میلیارد تومان است.",
@@ -7389,6 +8018,467 @@
       "termMonths": 36
     },
     {
+      "amountLabel": "۱۰۰ میلیون تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک سامان",
+      "benefit": 65,
+      "category": "loans",
+      "ceilingContingent": false,
+      "collateral": "سند ملکی",
+      "collateralKind": "credit-score",
+      "confidence": "medium",
+      "desc": "وام خرید خودرو بانک سامان",
+      "digital": 60,
+      "extra": {
+        "installment": 3615240,
+        "loanType": "وام خودرو",
+        "totalInterest": 33148624,
+        "totalWithInterest": 131205000
+      },
+      "friction": 72,
+      "id": "rade-705066",
+      "lastSeen": "2026-10-03",
+      "lastUpdated": "2026-08-03",
+      "maxAmount": 100000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "وام خرید خودرو بانک سامان",
+      "rate": 18,
+      "rateKind": "profit",
+      "rateLabel": "سود ۱۸٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: سند ملکی",
+        "هزینه جانبی: ۳ میلیون و ۵۰۰ هزار تومان شامل: حق کارشناسی، کارمزد وام، تشکیل پرونده و. است",
+        "قسط تقریبی: ۳,۶۱۵,۲۴۰ تومان"
+      ],
+      "source": {
+        "checked": "2026-10-03",
+        "kind": "aggregator",
+        "title": "رده — وام خرید خودرو بانک سامان",
+        "url": "https://www.rade.ir/loan-car-loan/705066-%d9%88%d8%a7%d9%85-%d8%ae%d8%b1%db%8c%d8%af-%d8%ae%d9%88%d8%af%d8%b1%d9%88-%d8%a8%d8%a7%d9%86%da%a9-%d8%b3%d8%a7%d9%85%d8%a7%d9%86/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "car",
+      "tags": [
+        "وام خودرو",
+        "سامان"
+      ],
+      "termLabel": "۳۶ ماه",
+      "termMonths": 36
+    },
+    {
+      "amountLabel": "۱۵ میلیون تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک سپه",
+      "benefit": 65,
+      "category": "loans",
+      "ceilingContingent": false,
+      "collateral": "ضامن رسمی",
+      "collateralKind": "guarantor",
+      "confidence": "medium",
+      "desc": "وام خودرو بانک سپه",
+      "digital": 60,
+      "extra": {
+        "installment": null,
+        "loanType": "وام خودرو",
+        "totalInterest": null,
+        "totalWithInterest": null
+      },
+      "friction": 50,
+      "id": "rade-705111",
+      "lastSeen": "2026-10-03",
+      "lastUpdated": "2026-08-03",
+      "maxAmount": 15000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "وام خودرو بانک سپه",
+      "rate": 18,
+      "rateKind": "profit",
+      "rateLabel": "سود ۱۸٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: ضامن رسمی"
+      ],
+      "source": {
+        "checked": "2026-10-03",
+        "kind": "aggregator",
+        "title": "رده — وام خودرو بانک سپه",
+        "url": "https://www.rade.ir/loan-car-loan/705111-%d9%88%d8%a7%d9%85-%d8%ae%d9%88%d8%af%d8%b1%d9%88-%d8%a8%d8%a7%d9%86%da%a9-%d8%b3%d9%be%d9%87/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "car",
+      "tags": [
+        "وام خودرو",
+        "سپه"
+      ],
+      "termLabel": "۳۶ ماه",
+      "termMonths": 36
+    },
+    {
+      "amountLabel": "۱۵ میلیون تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "پست بانک",
+      "benefit": 65,
+      "category": "loans",
+      "ceilingContingent": false,
+      "collateral": "ضامن رسمی",
+      "collateralKind": "guarantor",
+      "confidence": "medium",
+      "desc": "وام خودرو پست بانک",
+      "digital": 60,
+      "extra": {
+        "installment": null,
+        "loanType": "وام خودرو",
+        "totalInterest": null,
+        "totalWithInterest": null
+      },
+      "friction": 50,
+      "id": "rade-705125",
+      "lastSeen": "2026-10-03",
+      "lastUpdated": "2026-08-03",
+      "maxAmount": 15000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "وام خودرو پست بانک",
+      "rate": 18,
+      "rateKind": "profit",
+      "rateLabel": "سود ۱۸٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: ضامن رسمی"
+      ],
+      "source": {
+        "checked": "2026-10-03",
+        "kind": "aggregator",
+        "title": "رده — وام خودرو پست بانک",
+        "url": "https://www.rade.ir/loan-car-loan/705125-%d9%88%d8%a7%d9%85-%d8%ae%d9%88%d8%af%d8%b1%d9%88-%d9%be%d8%b3%d8%aa-%d8%a8%d8%a7%d9%86%da%a9/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "car",
+      "tags": [
+        "وام خودرو",
+        "پست بانک"
+      ],
+      "termLabel": "۳۶ ماه",
+      "termMonths": 36
+    },
+    {
+      "amountLabel": "۱۵ میلیون تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک آینده",
+      "benefit": 65,
+      "category": "loans",
+      "ceilingContingent": false,
+      "collateral": "ضامن رسمی",
+      "collateralKind": "guarantor",
+      "confidence": "medium",
+      "desc": "وام خودرو بانک آینده",
+      "digital": 60,
+      "extra": {
+        "installment": null,
+        "loanType": "وام خودرو",
+        "totalInterest": null,
+        "totalWithInterest": null
+      },
+      "friction": 50,
+      "id": "rade-705146",
+      "lastSeen": "2026-10-03",
+      "lastUpdated": "2026-08-03",
+      "maxAmount": 15000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "وام خودرو بانک آینده",
+      "rate": 18,
+      "rateKind": "profit",
+      "rateLabel": "سود ۱۸٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: ضامن رسمی"
+      ],
+      "source": {
+        "checked": "2026-10-03",
+        "kind": "aggregator",
+        "title": "رده — وام خودرو بانک آینده",
+        "url": "https://www.rade.ir/loan-car-loan/705146-%d9%88%d8%a7%d9%85-%d8%ae%d9%88%d8%af%d8%b1%d9%88-%d8%a8%d8%a7%d9%86%da%a9-%d8%a2%db%8c%d9%86%d8%af%d9%87/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "car",
+      "tags": [
+        "وام خودرو",
+        "آینده"
+      ],
+      "termLabel": "۳۶ ماه",
+      "termMonths": 36
+    },
+    {
+      "amountLabel": "۱۵ میلیون تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک گردشگری",
+      "benefit": 65,
+      "category": "loans",
+      "ceilingContingent": false,
+      "collateral": "ضامن رسمی",
+      "collateralKind": "guarantor",
+      "confidence": "medium",
+      "desc": "وام خودرو بانک گردشگری",
+      "digital": 60,
+      "extra": {
+        "installment": null,
+        "loanType": "وام خودرو",
+        "totalInterest": null,
+        "totalWithInterest": null
+      },
+      "friction": 50,
+      "id": "rade-705149",
+      "lastSeen": "2026-10-03",
+      "lastUpdated": "2026-08-03",
+      "maxAmount": 15000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "وام خودرو بانک گردشگری",
+      "rate": 18,
+      "rateKind": "profit",
+      "rateLabel": "سود ۱۸٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: ضامن رسمی"
+      ],
+      "source": {
+        "checked": "2026-10-03",
+        "kind": "aggregator",
+        "title": "رده — وام خودرو بانک گردشگری",
+        "url": "https://www.rade.ir/loan-car-loan/705149-%d9%88%d8%a7%d9%85-%d8%ae%d9%88%d8%af%d8%b1%d9%88-%d8%a8%d8%a7%d9%86%da%a9-%da%af%d8%b1%d8%af%d8%b4%da%af%d8%b1%db%8c/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "car",
+      "tags": [
+        "وام خودرو",
+        "گردشگری"
+      ],
+      "termLabel": "۳۶ ماه",
+      "termMonths": 36
+    },
+    {
+      "amountLabel": "۲۰ میلیون تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک صادرات",
+      "benefit": 65,
+      "category": "loans",
+      "ceilingContingent": false,
+      "collateral": "ضامن رسمی",
+      "collateralKind": "guarantor",
+      "confidence": "medium",
+      "desc": "وام خودرو بانک صادرات",
+      "digital": 60,
+      "extra": {
+        "installment": null,
+        "loanType": "وام خودرو",
+        "totalInterest": null,
+        "totalWithInterest": null
+      },
+      "friction": 50,
+      "id": "rade-705157",
+      "lastSeen": "2026-10-03",
+      "lastUpdated": "2026-08-03",
+      "maxAmount": 20000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "وام خودرو بانک صادرات",
+      "rate": 18,
+      "rateKind": "profit",
+      "rateLabel": "سود ۱۸٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: ضامن رسمی"
+      ],
+      "source": {
+        "checked": "2026-10-03",
+        "kind": "aggregator",
+        "title": "رده — وام خودرو بانک صادرات",
+        "url": "https://www.rade.ir/loan-car-loan/705157-%d9%88%d8%a7%d9%85-%d8%ae%d9%88%d8%af%d8%b1%d9%88-%d8%a8%d8%a7%d9%86%da%a9-%d8%b5%d8%a7%d8%af%d8%b1%d8%a7%d8%aa/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "car",
+      "tags": [
+        "وام خودرو",
+        "صادرات"
+      ],
+      "termLabel": "۳۶ ماه",
+      "termMonths": 36
+    },
+    {
+      "amountLabel": "۱۵ میلیون تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک ملی",
+      "benefit": 65,
+      "category": "loans",
+      "ceilingContingent": false,
+      "collateral": "ضامن رسمی",
+      "collateralKind": "guarantor",
+      "confidence": "medium",
+      "desc": "وام خودرو بانک ملی",
+      "digital": 60,
+      "extra": {
+        "installment": null,
+        "loanType": "وام خودرو",
+        "totalInterest": null,
+        "totalWithInterest": null
+      },
+      "friction": 50,
+      "id": "rade-705160",
+      "lastSeen": "2026-10-03",
+      "lastUpdated": "2026-08-03",
+      "maxAmount": 15000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "وام خودرو بانک ملی",
+      "rate": 18,
+      "rateKind": "profit",
+      "rateLabel": "سود ۱۸٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: ضامن رسمی"
+      ],
+      "source": {
+        "checked": "2026-10-03",
+        "kind": "aggregator",
+        "title": "رده — وام خودرو بانک ملی",
+        "url": "https://www.rade.ir/loan-car-loan/705160-%d9%88%d8%a7%d9%85-%d8%ae%d9%88%d8%af%d8%b1%d9%88-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%84%db%8c/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "car",
+      "tags": [
+        "وام خودرو",
+        "ملی"
+      ],
+      "termLabel": "۳۶ ماه",
+      "termMonths": 36
+    },
+    {
+      "amountLabel": "۱۵ میلیون تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک تجارت",
+      "benefit": 65,
+      "category": "loans",
+      "ceilingContingent": false,
+      "collateral": "ضامن رسمی",
+      "collateralKind": "guarantor",
+      "confidence": "medium",
+      "desc": "وام خودرو بانک تجارت",
+      "digital": 60,
+      "extra": {
+        "installment": null,
+        "loanType": "وام خودرو",
+        "totalInterest": null,
+        "totalWithInterest": null
+      },
+      "friction": 50,
+      "id": "rade-705161",
+      "lastSeen": "2026-10-03",
+      "lastUpdated": "2026-08-03",
+      "maxAmount": 15000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "وام خودرو بانک تجارت",
+      "rate": 18,
+      "rateKind": "profit",
+      "rateLabel": "سود ۱۸٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: ضامن رسمی"
+      ],
+      "source": {
+        "checked": "2026-10-03",
+        "kind": "aggregator",
+        "title": "رده — وام خودرو بانک تجارت",
+        "url": "https://www.rade.ir/loan-car-loan/705161-%d9%88%d8%a7%d9%85-%d8%ae%d9%88%d8%af%d8%b1%d9%88-%d8%a8%d8%a7%d9%86%da%a9-%d8%aa%d8%ac%d8%a7%d8%b1%d8%aa/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "car",
+      "tags": [
+        "وام خودرو",
+        "تجارت"
+      ],
+      "termLabel": "۳۶ ماه",
+      "termMonths": 36
+    },
+    {
+      "amountLabel": "۱۵ میلیون تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک پارسیان",
+      "benefit": 65,
+      "category": "loans",
+      "ceilingContingent": false,
+      "collateral": "ضامن رسمی",
+      "collateralKind": "guarantor",
+      "confidence": "medium",
+      "desc": "وام خودرو بانک پارسیان",
+      "digital": 60,
+      "extra": {
+        "installment": null,
+        "loanType": "وام خودرو",
+        "totalInterest": null,
+        "totalWithInterest": null
+      },
+      "friction": 50,
+      "id": "rade-705163",
+      "lastSeen": "2026-10-03",
+      "lastUpdated": "2026-08-03",
+      "maxAmount": 15000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "وام خودرو بانک پارسیان",
+      "rate": 18,
+      "rateKind": "profit",
+      "rateLabel": "سود ۱۸٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: ضامن رسمی"
+      ],
+      "source": {
+        "checked": "2026-10-03",
+        "kind": "aggregator",
+        "title": "رده — وام خودرو بانک پارسیان",
+        "url": "https://www.rade.ir/loan-car-loan/705163-%d9%88%d8%a7%d9%85-%d8%ae%d9%88%d8%af%d8%b1%d9%88-%d8%a8%d8%a7%d9%86%da%a9-%d9%be%d8%a7%d8%b1%d8%b3%db%8c%d8%a7%d9%86/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "car",
+      "tags": [
+        "وام خودرو",
+        "پارسیان"
+      ],
+      "termLabel": "۳۶ ماه",
+      "termMonths": 36
+    },
+    {
       "amountLabel": "۵۰۰ میلیون تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
@@ -7440,6 +8530,108 @@
       ],
       "termLabel": "۶۰ ماه ۶۰ ماه برای وام به میزان ۲۰ % معدل حساب ۴۸ ماه برای وام به میزان ۴۰ % معدل حساب ۳۶ ماه برای وام به میزان ۶۰ % معدل حساب ۲۴ ماه برای وام به میزان ۸۰ % معدل حساب ۱۲ ماه برای وام به میزان ۱۰۰ % معدل حساب هر ماه اضافه‌تر خواب سپرده ۲ ماه به میزان بازپرداخت اقساط افزوده می‌شود.",
       "termMonths": 60
+    },
+    {
+      "amountLabel": "۱۵ میلیون تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک دی",
+      "benefit": 65,
+      "category": "loans",
+      "ceilingContingent": false,
+      "collateral": "ضامن رسمی",
+      "collateralKind": "guarantor",
+      "confidence": "medium",
+      "desc": "وام خودرو بانک دی",
+      "digital": 60,
+      "extra": {
+        "installment": null,
+        "loanType": "وام خودرو",
+        "totalInterest": null,
+        "totalWithInterest": null
+      },
+      "friction": 50,
+      "id": "rade-705181",
+      "lastSeen": "2026-10-03",
+      "lastUpdated": "2026-08-03",
+      "maxAmount": 15000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "وام خودرو بانک دی",
+      "rate": 18,
+      "rateKind": "profit",
+      "rateLabel": "سود ۱۸٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: ضامن رسمی"
+      ],
+      "source": {
+        "checked": "2026-10-03",
+        "kind": "aggregator",
+        "title": "رده — وام خودرو بانک دی",
+        "url": "https://www.rade.ir/loan-car-loan/705181-%d9%88%d8%a7%d9%85-%d8%ae%d9%88%d8%af%d8%b1%d9%88-%d8%a8%d8%a7%d9%86%da%a9-%d8%af%db%8c/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "car",
+      "tags": [
+        "وام خودرو",
+        "دی"
+      ],
+      "termLabel": "۳۶ ماه",
+      "termMonths": 36
+    },
+    {
+      "amountLabel": "۱۵ میلیون تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک ایران زمین",
+      "benefit": 57,
+      "category": "loans",
+      "ceilingContingent": false,
+      "collateral": "ضامن رسمی",
+      "collateralKind": "guarantor",
+      "confidence": "medium",
+      "desc": "وام خودرو بانک ایران زمین",
+      "digital": 60,
+      "extra": {
+        "installment": null,
+        "loanType": "وام خودرو",
+        "totalInterest": null,
+        "totalWithInterest": null
+      },
+      "friction": 50,
+      "id": "rade-705184",
+      "lastSeen": "2026-10-03",
+      "lastUpdated": "2026-08-03",
+      "maxAmount": 15000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "وام خودرو بانک ایران زمین",
+      "rate": 22,
+      "rateKind": "profit",
+      "rateLabel": "سود ۲۲٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: ضامن رسمی"
+      ],
+      "source": {
+        "checked": "2026-10-03",
+        "kind": "aggregator",
+        "title": "رده — وام خودرو بانک ایران زمین",
+        "url": "https://www.rade.ir/loan-car-loan/705184-%d9%88%d8%a7%d9%85-%d8%ae%d9%88%d8%af%d8%b1%d9%88-%d8%a8%d8%a7%d9%86%da%a9-%d8%a7%db%8c%d8%b1%d8%a7%d9%86-%d8%b2%d9%85%db%8c%d9%86/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "car",
+      "tags": [
+        "وام خودرو",
+        "ایران زمین"
+      ],
+      "termLabel": "۳۶ ماه",
+      "termMonths": 36
     },
     {
       "amountLabel": "۳۶۵ میلیون تومان کلانشهر تهران: ۳۶۵ میلیون تومان سایر کلانشهرها (مراکز استان‌ها): ۲۸۰ میلیون تومان سایر شهرهای بالای ۲۰۰ هزار نفر: ۱۸۵ میلیون تومان روستاها: ۷۵ میلیون تومان",
@@ -10301,7 +11493,7 @@
       "id": "resalat-gharz",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-10",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": 200000000,
       "minAmount": 20000000,
       "product": "وام قرض‌الحسنه امتیازی دیجیتال",
@@ -10314,7 +11506,7 @@
         "سفته الکترونیکی"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "bank",
         "title": "بانک قرض‌الحسنه رسالت",
         "url": "https://rqbank.ir"
@@ -10347,7 +11539,7 @@
       "id": "saderat-deposit-based-loan",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-10",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": 2000000000,
       "minAmount": 50000000,
       "product": "تسهیلات مبتنی بر میانگین حساب (سپرده‌محور)",
@@ -10360,7 +11552,7 @@
         "اعتبارسنجی"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "bank",
         "title": "بانک صادرات ایران",
         "url": "https://bsi.ir"
@@ -10392,7 +11584,7 @@
       "id": "bam-melli-digital",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-05",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": null,
       "minAmount": 0,
       "product": "بام — بانکداری دیجیتال و باشگاه امتیاز",
@@ -10403,7 +11595,7 @@
         "حساب در بانک ملی"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "bank",
         "title": "بام — بانکداری دیجیتال بانک ملی ایران",
         "url": "https://bam.ir"
@@ -10435,7 +11627,7 @@
       "id": "blu-club",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-12",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": null,
       "minAmount": 0,
       "product": "باشگاه و جوایز بلوبانک",
@@ -10446,7 +11638,7 @@
         "ثبت‌نام در بلوبانک"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "bank",
         "title": "بلوبانک",
         "url": "https://blubank.com"
@@ -10478,7 +11670,7 @@
       "id": "bpi-club",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-03",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": null,
       "minAmount": 0,
       "product": "باشگاه مشتریان پاسارگاد و مزایای ویپاد",
@@ -10490,7 +11682,7 @@
         "گردش حساب"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "bank",
         "title": "بانک پاسارگاد",
         "url": "https://bpi.ir"
@@ -10521,7 +11713,7 @@
       "id": "bsi-sekeh-club",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-03",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": null,
       "minAmount": 0,
       "product": "باشگاه مشتریان بانک صادرات (سکه)",
@@ -10532,7 +11724,7 @@
         "مشتری بانک صادرات"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "bank",
         "title": "بانک صادرات ایران",
         "url": "https://bsi.ir"
@@ -10563,7 +11755,7 @@
       "id": "en-club",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-03",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": null,
       "minAmount": 0,
       "product": "باشگاه مشتریان و خدمات مشتریان ویژه اقتصاد نوین",
@@ -10574,7 +11766,7 @@
         "مشتری بانک اقتصاد نوین"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "bank",
         "title": "بانک اقتصاد نوین",
         "url": "https://enbank.ir"
@@ -10605,7 +11797,7 @@
       "id": "mehr-club",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-10",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": null,
       "minAmount": 0,
       "product": "باشگاه مشتریان و امتیاز اعتباری مهر ایران",
@@ -10617,7 +11809,7 @@
         "گردش حساب"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "bank",
         "title": "بانک قرض‌الحسنه مهر ایران",
         "url": "https://qmb.ir"
@@ -10648,7 +11840,7 @@
       "id": "mellat-club",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-01",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": null,
       "minAmount": 0,
       "product": "باشگاه مشتریان بانک ملت",
@@ -10660,7 +11852,7 @@
         "مشتری بانک ملت"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "bank",
         "title": "باشگاه مشتریان بانک ملت",
         "url": "https://club.bankmellat.ir"
@@ -10692,7 +11884,7 @@
       "id": "refah-club",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-03",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": null,
       "minAmount": 0,
       "product": "باشگاه مشتریان و مزایای سازمانی رفاه",
@@ -10703,7 +11895,7 @@
         "مشتری بانک رفاه"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "bank",
         "title": "بانک رفاه کارگران",
         "url": "https://refah-bank.ir"
@@ -10734,7 +11926,7 @@
       "id": "saman-club",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-05",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": null,
       "minAmount": 0,
       "product": "باشگاه مشتریان سامان (سامان‌کلاب)",
@@ -10746,7 +11938,7 @@
         "استفاده از خدمات بانک"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "bank",
         "title": "بانک سامان",
         "url": "https://sb24.ir"
@@ -10778,7 +11970,7 @@
       "id": "tejarat-club",
       "lastSeen": "2026-09-19",
       "lastUpdated": "2026-09-03",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": null,
       "minAmount": 0,
       "product": "باشگاه مشتریان بانک تجارت",
@@ -10789,7 +11981,7 @@
         "مشتری بانک تجارت"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "bank",
         "title": "بانک تجارت",
         "url": "https://tejaratbank.ir"
@@ -10913,7 +12105,7 @@
       "id": "fund-afran-toranj",
       "lastSeen": "2026-09-28",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": null,
       "minAmount": 100000,
       "product": "صندوق درآمد ثابت افرا نماد پایدار (ETF - افران)",
@@ -10925,7 +12117,7 @@
         "کد بورسی (سجام)"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "aggregator",
         "title": "فیپیران / مدیریت فناوری بورس",
         "url": "https://fipiran.ir"
@@ -11121,7 +12313,7 @@
       "id": "fund-amin-ashna",
       "lastSeen": "2026-09-28",
       "lastUpdated": "2026-09-26",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": null,
       "minAmount": 100000,
       "product": "صندوق درآمد ثابت امین آشنا ایرانیان (صدور و ابطالی)",
@@ -11134,7 +12326,7 @@
         "ورود به سامانه صندوق امین آشنا"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "aggregator",
         "title": "تارنمای صندوق امین آشنا ایرانیان",
         "url": "https://fa.ashena.ir"
@@ -12369,7 +13561,7 @@
       "id": "fund-ganjineh-zarrin-shahr",
       "lastSeen": "2026-09-28",
       "lastUpdated": "2026-09-26",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": null,
       "minAmount": 100000,
       "product": "صندوق سرمایه‌گذاری گنجینه زرین شهر (صدور و ابطال / آی‌بی‌شاپ)",
@@ -12382,7 +13574,7 @@
         "احراز هویت سجامی"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "bank",
         "title": "تأمین سرمایه تمدن — صندوق گنجینه زرین شهر",
         "url": "https://ibshop.ir"
@@ -13201,7 +14393,7 @@
       "id": "fund-kara-charisma",
       "lastSeen": "2026-09-28",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": null,
       "minAmount": 100000,
       "product": "صندوق درآمد ثابت نوع دوم کارا (ETF - کارا)",
@@ -13214,7 +14406,7 @@
         "سامانه معاملاتی کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "aggregator",
         "title": "مرکز پردازش اطلاعات مالی ایران (فیپیران) / بورس تهران",
         "url": "https://fipiran.ir"
@@ -13689,7 +14881,7 @@
       "id": "fund-labkhand-farabi",
       "lastSeen": "2026-09-28",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": null,
       "minAmount": 100000,
       "product": "صندوق درآمد ثابت لبخند فارابی (ETF - لبخند)",
@@ -13702,7 +14894,7 @@
         "ثبت سفارش از طریق سامانه‌های معاملاتی کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "aggregator",
         "title": "مرکز پردازش اطلاعات مالی ایران (فیپیران) / فارابی",
         "url": "https://fipiran.ir"
@@ -13760,7 +14952,7 @@
       "id": "fund-lotus-parsian",
       "lastSeen": "2026-09-28",
       "lastUpdated": "2026-09-26",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": null,
       "minAmount": 110000,
       "product": "صندوق سرمایه‌گذاری لوتوس پارسیان (صدور و ابطالی)",
@@ -13773,7 +14965,7 @@
         "پرتال آنلاین لوتوس یا شعب بانک پارسیان"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "bank",
         "title": "تأمین سرمایه لوتوس پارسیان",
         "url": "https://lotusib.ir"
@@ -14316,7 +15508,7 @@
       "id": "fund-omid-sepah",
       "lastSeen": "2026-09-28",
       "lastUpdated": "2026-09-26",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": null,
       "minAmount": 100000,
       "product": "صندوق سرمایه‌گذاری گنجینه امید ایرانیان (صدور و ابطالی بانک سپه)",
@@ -14328,7 +15520,7 @@
         "حساب در بانک سپه یا ثبت‌نام آنلاین در تارنمای صندوق"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "bank",
         "title": "مدیریت دارایی امید — بانک سپه",
         "url": "https://omidfund.com"
@@ -15359,7 +16551,7 @@
       "id": "fund-yaghoot-agah",
       "lastSeen": "2026-09-28",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-01",
+      "lastVerified": "2026-10-03",
       "maxAmount": null,
       "minAmount": 100000,
       "product": "صندوق درآمد ثابت یاقوت آگاه (ETF - یاقوت)",
@@ -15371,7 +16563,7 @@
         "کد بورسی"
       ],
       "source": {
-        "checked": "2026-10-01",
+        "checked": "2026-10-03",
         "kind": "aggregator",
         "title": "مرکز پردازش اطلاعات مالی ایران (فیپیران)",
         "url": "https://fipiran.ir"
