@@ -8,35 +8,40 @@
     "loyalty": 10,
     "total": 285
   },
-  "lastRun": "2026-10-02T10:00:23.699Z",
-  "lastRunDurationMs": 273280,
+  "lastRun": "2026-10-03T09:20:43.938Z",
+  "lastRunDurationMs": 179626,
   "lastRunMode": "full",
   "sources": [
     {
-      "error": "پایان مهلت درخواست — https://www.rade.ir/loan-sitemap.xml",
-      "ms": 92228,
+      "attempted": 120,
+      "discovered": 552,
+      "failures": 0,
+      "fresh": 120,
+      "ms": 49165,
       "name": "rade.ir",
-      "ok": false
+      "ok": true,
+      "parsed": 120,
+      "rotated": 0
     },
     {
       "detail": [
+        {
+          "id": "cbi-rates",
+          "ok": true,
+          "rates": [],
+          "url": "https://www.cbi.ir/simplelist/2088.aspx"
+        },
+        {
+          "id": "cbi-circulars",
+          "ok": true,
+          "rates": [],
+          "url": "https://www.cbi.ir/simplelist/1466.aspx"
+        },
         {
           "id": "saman",
           "ok": true,
           "rates": [],
           "url": "https://www.sb24.ir/"
-        },
-        {
-          "error": "شبکه در دسترس نبود — https://www.cbi.ir/simplelist/2088.aspx",
-          "id": "cbi-rates",
-          "ok": false,
-          "url": "https://www.cbi.ir/simplelist/2088.aspx"
-        },
-        {
-          "error": "شبکه در دسترس نبود — https://www.cbi.ir/simplelist/1466.aspx",
-          "id": "cbi-circulars",
-          "ok": false,
-          "url": "https://www.cbi.ir/simplelist/1466.aspx"
         },
         {
           "error": "HTTP 403 Forbidden (HTTP 403) — https://bmi.ir/fa/deposit",
@@ -141,21 +146,21 @@
           "url": "https://vipad.ir/"
         }
       ],
-      "ms": 89314,
+      "ms": 86009,
       "name": "bank-sites",
       "ok": true,
-      "reachable": 1,
+      "reachable": 3,
       "targets": 20
     },
     {
-      "ms": 54239,
+      "ms": 8976,
       "name": "macro-indicators",
       "ok": true,
-      "sourcesOk": 1,
+      "sourcesOk": 2,
       "touched": []
     },
     {
-      "ms": 3709,
+      "ms": 1912,
       "name": "dgshahr.com",
       "ok": true,
       "parsed": 31,
@@ -165,7 +170,7 @@
     },
     {
       "error": "شبکه در دسترس نبود — https://advancedchart.isignal.ir/service/signalData@4.0.0/list",
-      "ms": 33562,
+      "ms": 33502,
       "name": "isignal.ir",
       "ok": false
     }
