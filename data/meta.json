@@ -1,15 +1,15 @@
 {
-  "autoDiscovered": 218,
+  "autoDiscovered": 241,
   "counts": {
     "credit": 53,
     "deposits": 48,
     "funds": 67,
-    "loans": 107,
+    "loans": 130,
     "loyalty": 10,
-    "total": 285
+    "total": 308
   },
-  "lastRun": "2026-10-03T09:20:43.938Z",
-  "lastRunDurationMs": 179626,
+  "lastRun": "2026-10-04T10:00:25.275Z",
+  "lastRunDurationMs": 182231,
   "lastRunMode": "full",
   "sources": [
     {
@@ -17,7 +17,7 @@
       "discovered": 552,
       "failures": 0,
       "fresh": 120,
-      "ms": 49165,
+      "ms": 45698,
       "name": "rade.ir",
       "ok": true,
       "parsed": 120,
@@ -146,21 +146,21 @@
           "url": "https://vipad.ir/"
         }
       ],
-      "ms": 86009,
+      "ms": 85954,
       "name": "bank-sites",
       "ok": true,
       "reachable": 3,
       "targets": 20
     },
     {
-      "ms": 8976,
+      "ms": 8081,
       "name": "macro-indicators",
       "ok": true,
       "sourcesOk": 2,
       "touched": []
     },
     {
-      "ms": 1912,
+      "ms": 8970,
       "name": "dgshahr.com",
       "ok": true,
       "parsed": 31,
@@ -170,7 +170,7 @@
     },
     {
       "error": "شبکه در دسترس نبود — https://advancedchart.isignal.ir/service/signalData@4.0.0/list",
-      "ms": 33502,
+      "ms": 33439,
       "name": "isignal.ir",
       "ok": false
     }
