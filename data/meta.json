@@ -8,8 +8,8 @@
     "loyalty": 10,
     "total": 309
   },
-  "lastRun": "2026-10-05T10:44:32.571Z",
-  "lastRunDurationMs": 235812,
+  "lastRun": "2026-10-06T10:37:06.286Z",
+  "lastRunDurationMs": 161185,
   "lastRunMode": "full",
   "sources": [
     {
@@ -17,7 +17,7 @@
       "discovered": 553,
       "failures": 0,
       "fresh": 120,
-      "ms": 27376,
+      "ms": 31482,
       "name": "rade.ir",
       "ok": true,
       "parsed": 120,
@@ -26,22 +26,22 @@
     {
       "detail": [
         {
+          "id": "cbi-rates",
+          "ok": true,
+          "rates": [],
+          "url": "https://www.cbi.ir/simplelist/2088.aspx"
+        },
+        {
+          "id": "cbi-circulars",
+          "ok": true,
+          "rates": [],
+          "url": "https://www.cbi.ir/simplelist/1466.aspx"
+        },
+        {
           "id": "saman",
           "ok": true,
           "rates": [],
           "url": "https://www.sb24.ir/"
-        },
-        {
-          "error": "پایان مهلت درخواست — https://www.cbi.ir/simplelist/2088.aspx",
-          "id": "cbi-rates",
-          "ok": false,
-          "url": "https://www.cbi.ir/simplelist/2088.aspx"
-        },
-        {
-          "error": "پایان مهلت درخواست — https://www.cbi.ir/simplelist/1466.aspx",
-          "id": "cbi-circulars",
-          "ok": false,
-          "url": "https://www.cbi.ir/simplelist/1466.aspx"
         },
         {
           "error": "HTTP 403 Forbidden (HTTP 403) — https://bmi.ir/fa/deposit",
@@ -146,21 +146,21 @@
           "url": "https://vipad.ir/"
         }
       ],
-      "ms": 111062,
+      "ms": 85601,
       "name": "bank-sites",
       "ok": true,
-      "reachable": 1,
+      "reachable": 3,
       "targets": 20
     },
     {
-      "ms": 56945,
+      "ms": 8848,
       "name": "macro-indicators",
       "ok": true,
-      "sourcesOk": 1,
+      "sourcesOk": 2,
       "touched": []
     },
     {
-      "ms": 6874,
+      "ms": 1518,
       "name": "dgshahr.com",
       "ok": true,
       "parsed": 31,
@@ -170,7 +170,7 @@
     },
     {
       "error": "شبکه در دسترس نبود — https://advancedchart.isignal.ir/service/signalData@4.0.0/list",
-      "ms": 33503,
+      "ms": 33650,
       "name": "isignal.ir",
       "ok": false
     }
