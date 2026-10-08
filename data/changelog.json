@@ -1,190 +1,5 @@
 {
-  "added": [
-    {
-      "bank": "بانک توسعه صادرات",
-      "category": "loans",
-      "id": "rade-704659",
-      "maxAmount": 50000000000,
-      "product": "وام واحدهای تولیدی و طرح های سرمایه گذاری بانک توسعه صادرات ایران",
-      "rate": 19.5
-    },
-    {
-      "bank": "بانک سپه",
-      "category": "loans",
-      "id": "rade-704661",
-      "maxAmount": 300000000,
-      "product": "وام طرح نوید ۲ بانک سپه",
-      "rate": 21
-    },
-    {
-      "bank": "بانک ملت",
-      "category": "loans",
-      "id": "rade-704668",
-      "maxAmount": 300000000,
-      "product": "وام نیروگاه خورشیدی خانگی بانک ملت",
-      "rate": 14
-    },
-    {
-      "bank": "بانک مسکن",
-      "category": "loans",
-      "id": "rade-704671",
-      "maxAmount": 2000000000,
-      "product": "وام طرح سپید بانک مسکن",
-      "rate": 9
-    },
-    {
-      "bank": "بانک پارسیان",
-      "category": "loans",
-      "id": "rade-704675",
-      "maxAmount": 3000000000,
-      "product": "وام طرح فرصت بانک پارسیان",
-      "rate": 23
-    },
-    {
-      "bank": "بانک گردشگری",
-      "category": "loans",
-      "id": "rade-704682",
-      "maxAmount": null,
-      "product": "وام آژانس‌یار بانک گردشگری",
-      "rate": 22
-    },
-    {
-      "bank": "بانک آینده",
-      "category": "loans",
-      "id": "rade-704684",
-      "maxAmount": 3000000000,
-      "product": "طرح تسهیلاتی الماس بانک آینده",
-      "rate": 23
-    },
-    {
-      "bank": "بانک توسعه تعاون",
-      "category": "loans",
-      "id": "rade-704691",
-      "maxAmount": null,
-      "product": "وام رویان بانک توسعه تعاون",
-      "rate": 23
-    },
-    {
-      "bank": "موسسه اعتباری ملل",
-      "category": "loans",
-      "id": "rade-704693",
-      "maxAmount": 300000000,
-      "product": "وام قرض‌الحسنه نوید ملل موسسه اعتباری ملل",
-      "rate": 4
-    },
-    {
-      "bank": "بانک رفاه کارگران",
-      "category": "loans",
-      "id": "rade-704702",
-      "maxAmount": 25000000000,
-      "product": "وام نفیس بانک رفاه کارگران",
-      "rate": 23
-    },
-    {
-      "bank": "بانک رفاه کارگران",
-      "category": "loans",
-      "id": "rade-704705",
-      "maxAmount": 3000000000,
-      "product": "وام ربیع رفاه بانک رفاه کارگران",
-      "rate": 23
-    },
-    {
-      "bank": "بانک ملت",
-      "category": "loans",
-      "id": "rade-704709",
-      "maxAmount": 300000000,
-      "product": "وام گردونه بانک ملت",
-      "rate": 4
-    },
-    {
-      "bank": "بانک سامان",
-      "category": "loans",
-      "id": "rade-705066",
-      "maxAmount": 100000000,
-      "product": "وام خرید خودرو بانک سامان",
-      "rate": 18
-    },
-    {
-      "bank": "بانک سپه",
-      "category": "loans",
-      "id": "rade-705111",
-      "maxAmount": 15000000,
-      "product": "وام خودرو بانک سپه",
-      "rate": 18
-    },
-    {
-      "bank": "پست بانک",
-      "category": "loans",
-      "id": "rade-705125",
-      "maxAmount": 15000000,
-      "product": "وام خودرو پست بانک",
-      "rate": 18
-    },
-    {
-      "bank": "بانک آینده",
-      "category": "loans",
-      "id": "rade-705146",
-      "maxAmount": 15000000,
-      "product": "وام خودرو بانک آینده",
-      "rate": 18
-    },
-    {
-      "bank": "بانک گردشگری",
-      "category": "loans",
-      "id": "rade-705149",
-      "maxAmount": 15000000,
-      "product": "وام خودرو بانک گردشگری",
-      "rate": 18
-    },
-    {
-      "bank": "بانک صادرات",
-      "category": "loans",
-      "id": "rade-705157",
-      "maxAmount": 20000000,
-      "product": "وام خودرو بانک صادرات",
-      "rate": 18
-    },
-    {
-      "bank": "بانک ملی",
-      "category": "loans",
-      "id": "rade-705160",
-      "maxAmount": 15000000,
-      "product": "وام خودرو بانک ملی",
-      "rate": 18
-    },
-    {
-      "bank": "بانک تجارت",
-      "category": "loans",
-      "id": "rade-705161",
-      "maxAmount": 15000000,
-      "product": "وام خودرو بانک تجارت",
-      "rate": 18
-    },
-    {
-      "bank": "بانک پارسیان",
-      "category": "loans",
-      "id": "rade-705163",
-      "maxAmount": 15000000,
-      "product": "وام خودرو بانک پارسیان",
-      "rate": 18
-    },
-    {
-      "bank": "بانک دی",
-      "category": "loans",
-      "id": "rade-705181",
-      "maxAmount": 15000000,
-      "product": "وام خودرو بانک دی",
-      "rate": 18
-    },
-    {
-      "bank": "بانک ایران زمین",
-      "category": "loans",
-      "id": "rade-705184",
-      "maxAmount": 15000000,
-      "product": "وام خودرو بانک ایران زمین",
-      "rate": 22
-    }
-  ],
+  "added": [],
   "amountChanged": [],
   "confidenceChanged": [],
   "rateChanged": [],
@@ -192,7 +7,7 @@
   "revived": [],
   "staleNow": [],
   "summary": {
-    "added": 23,
+    "added": 0,
     "amountChanged": 0,
     "confidenceChanged": 0,
     "rateChanged": 0,
@@ -200,7 +15,7 @@
     "revived": 0,
     "staleNow": 0,
     "termChanged": 0,
-    "totalChanges": 23
+    "totalChanges": 0
   },
   "termChanged": []
 }
