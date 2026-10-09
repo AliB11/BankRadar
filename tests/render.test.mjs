@@ -54,10 +54,15 @@ test('همه محصولات امتیاز عددی معتبر می‌گیرند',
   }
 });
 
-test('قالب بخش قهرمان بدون خطا ساخته می‌شود', () => {
+test('قالب بخش قهرمان بدون خطا ساخته می‌شود و لیبل پایش تاریخ دوره ندارد', () => {
+  const previousPeriod = store.store.period;
+  store.store.period = 'مرداد ۱۴۰۵';
   const out = views.heroHTML();
   assert.ok(out.includes('رادار محصولات بانکی ایران'));
+  assert.ok(out.includes('پایش زنده محصولات بانکی'));
+  assert.ok(!out.includes('مرداد ۱۴۰۵'), 'برچسب پایش نباید به ماه یا دوره ثابت وابسته باشد');
   assert.ok(out.includes('macro-cell'), 'نوار شاخص‌های کلان باید رندر شود');
+  store.store.period = previousPeriod;
 });
 
 test('قالب فیلترها و برگه‌های دسته‌بندی ساخته می‌شود', () => {

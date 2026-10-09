@@ -55,7 +55,7 @@ export function heroHTML() {
   return `
   <section class="hero panel" aria-labelledby="hero-title">
     <div>
-      <span class="pill-live"><span class="live-dot"></span> پایش زنده محصولات بانکی · ${esc(store.period || 'دوره جاری')}</span>
+      <span class="pill-live"><span class="live-dot"></span> پایش زنده محصولات بانکی</span>
       <h1 id="hero-title">رادار محصولات بانکی ایران</h1>
       <p class="hero-lead">
         ${fa(s.total)} محصول مالی از ${fa(s.banks)} بانک و مؤسسه اعتباری، با امتیازدهی شفاف از دید مشتری.
