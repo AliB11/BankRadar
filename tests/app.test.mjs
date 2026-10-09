@@ -70,6 +70,7 @@ test('راه‌انداز سامانه روی پوسته واقعی بدون خ�
   const timers = installDOM();
 
   const memory = new Map();
+  memory.set('bankradar.v2.filters', JSON.stringify({ query: 'بلو', category: 'deposits' }));
   globalThis.localStorage = {
     getItem: (k) => (memory.has(k) ? memory.get(k) : null),
     setItem: (k, v) => memory.set(k, String(v)),
@@ -86,7 +87,7 @@ test('راه‌انداز سامانه روی پوسته واقعی بدون خ�
   const shellIds = [
     'hero', 'tabs', 'filters', 'toolbar', 'cards', 'rank', 'compare', 'charts',
     'footer', 'loading', 'result-count', 'nav-compare-count', 'boot-status',
-    'global-search', 'drawer', 'drawer-backdrop', 'data-modal', 'method-modal', 'toast-stack',
+    'global-search', 'search-suggestions', 'drawer', 'drawer-backdrop', 'data-modal', 'method-modal', 'toast-stack',
   ];
   doc.body.innerHTML = '';
   for (const id of shellIds) {
@@ -113,6 +114,11 @@ test('راه‌انداز سامانه روی پوسته واقعی بدون خ�
   assert.ok(doc.getElementById('charts').innerHTML.includes('<svg'), 'نمودارها رندر نشدند');
   assert.ok(doc.getElementById('footer').innerHTML.length > 100, 'پانویس رندر نشد');
   assert.equal(doc.getElementById('result-count').textContent.length > 0, true, 'شمارنده نتیجه پر نشد');
+  const searchInput = doc.getElementById('global-search');
+  assert.equal(searchInput.value, 'بلو', 'عبارت جست‌وجوی ذخیره‌شده باید در ورودی بازیابی شود');
+  app.store.filters.query = '';
+  searchInput.value = '';
+  app.renderResults();
 
   // ۳) نوار ابزار باید کنترل مرتب‌سازی داشته باشد و پنل فیلتر همه فیلترهای پایه را
   const toolbarHTML = doc.getElementById('toolbar').innerHTML;
@@ -164,6 +170,41 @@ test('راه‌انداز سامانه روی پوسته واقعی بدون خ�
   app.store.filters.category = 'deposits';
   assert.deepEqual(app.filtered().map((p) => p.id).sort(), depositsIds, 'بازگشت به دسته منابعی ناموفق بود');
 
-  // ۶) شمارش کل محصولات تغییری نکرده است
+  // ۶) جست‌وجوی مستقیم باید محصول دسته‌ای دیگر را نیز پیشنهاد و باز کند
+  const suggestionList = doc.getElementById('search-suggestions');
+  searchInput.value = 'وام ازدواج';
+  searchInput.dispatchEvent(makeEvent('input', { target: searchInput }));
+  assert.equal(searchInput.getAttribute('aria-expanded'), 'true', 'فهرست پیشنهادهای جست‌وجو باید باز شود');
+  assert.match(suggestionList.innerHTML, /data-action="search-open"/, 'پیشنهاد مستقیم باید کنش بازکردن محصول داشته باشد');
+  const firstProductId = suggestionList.innerHTML.match(/data-id="([^"]+)"/)?.[1];
+  assert.ok(firstProductId, 'پیشنهاد باید شناسه محصول داشته باشد');
+
+  const directResult = new Element('button');
+  directResult.setAttribute('data-action', 'search-open');
+  directResult.setAttribute('data-id', firstProductId);
+  doc.body.append(directResult);
+  directResult.dispatchEvent(makeEvent('click', { target: directResult }));
+
+  const selectedProduct = app.store.products.find((p) => p.id === firstProductId);
+  assert.ok(selectedProduct, 'محصول پیشنهادی باید در داده موجود باشد');
+  assert.ok(doc.getElementById('drawer').classList.contains('is-open'), 'انتخاب پیشنهاد باید جزئیات محصول را باز کند');
+  assert.ok(doc.getElementById('drawer').innerHTML.includes(selectedProduct.product));
+  assert.equal(searchInput.getAttribute('aria-expanded'), 'false', 'با انتخاب محصول فهرست پیشنهاد باید بسته شود');
+
+  const closeDirectResult = new Element('button');
+  closeDirectResult.setAttribute('data-action', 'close-drawer');
+  doc.body.append(closeDirectResult);
+  closeDirectResult.dispatchEvent(makeEvent('click', { target: closeDirectResult }));
+  assert.equal(doc.getElementById('drawer').classList.contains('is-open'), false, 'بستن جزئیات مستقیم باید کار کند');
+  assert.equal(doc.activeElement, searchInput, 'پس از بستن جزئیات، تمرکز باید به جست‌وجو برگردد');
+
+  searchInput.dispatchEvent(makeEvent('focus', { target: searchInput }));
+  searchInput.dispatchEvent(makeEvent('keydown', { target: searchInput, key: 'ArrowDown' }));
+  assert.equal(searchInput.getAttribute('aria-activedescendant'), 'search-option-0', 'کلید جهت‌نما باید پیشنهاد فعال بسازد');
+  searchInput.dispatchEvent(makeEvent('keydown', { target: searchInput, key: 'Enter' }));
+  assert.equal(doc.getElementById('drawer').classList.contains('is-open'), true, 'Enter باید محصول پیشنهادی فعال را باز کند');
+  closeDirectResult.dispatchEvent(makeEvent('click', { target: closeDirectResult }));
+
+  // ۷) شمارش کل محصولات تغییری نکرده است
   assert.equal(app.store.products.length, products, 'تعداد محصولات تغییر کرده است');
 });

@@ -10,7 +10,7 @@ import {
   $, esc, fa, faNum, faToman, faPercent, debounce, storage, todayISO,
 } from './util.js';
 import {
-  store, loadData, reloadFreshData, recalculate, filtered, summary, saveFilters, saveWeights,
+  store, loadData, reloadFreshData, recalculate, filtered, searchProducts, summary, saveFilters, saveWeights,
   saveCompare, applyPreset, availableBanksIn, CATEGORY_META, CONTRACT_META, deriveContractType,
 } from './store.js';
 import { DEFAULT_WEIGHTS, WEIGHT_META, PRESETS } from './score.js';
@@ -132,6 +132,81 @@ function setFilter(key, value) {
   renderSoon();
 }
 
+const SEARCH_RESULT_LIMIT = 6;
+let directSearchMatches = [];
+let activeSearchIndex = -1;
+
+function hideSearchSuggestions() {
+  const input = $('#global-search');
+  const list = $('#search-suggestions');
+  directSearchMatches = [];
+  activeSearchIndex = -1;
+  if (list) {
+    list.innerHTML = '';
+    list.setAttribute('hidden', '');
+  }
+  if (input) {
+    input.setAttribute('aria-expanded', 'false');
+    input.removeAttribute('aria-activedescendant');
+  }
+}
+
+function renderSearchSuggestions(query) {
+  const input = $('#global-search');
+  const list = $('#search-suggestions');
+  if (!input || !list) return;
+
+  const q = String(query ?? '').trim();
+  if (Array.from(q.replace(/\s/g, '')).length < 2) {
+    hideSearchSuggestions();
+    return;
+  }
+
+  directSearchMatches = searchProducts(q, { limit: SEARCH_RESULT_LIMIT });
+  activeSearchIndex = -1;
+  list.innerHTML = directSearchMatches.length
+    ? directSearchMatches.map((p, index) => {
+        const category = CATEGORY_META[p.category];
+        const rate = p.rate > 0
+          ? `${p.rateKind === 'fee' ? 'کارمزد' : 'نرخ'} ${faPercent(p.rate)}`
+          : 'اطلاعات نرخ ندارد';
+        return `<button class="search-suggestion" type="button" role="option"
+          id="search-option-${index}" data-action="search-open" data-id="${esc(p.id)}"
+          data-index="${index}" tabindex="-1" aria-selected="false">
+          <span class="search-suggestion__main">
+            <span class="search-suggestion__name">${esc(p.product)}</span>
+            <span class="search-suggestion__meta">${esc(p.bank)} · ${esc(category?.title ?? 'محصول بانکی')}</span>
+          </span>
+          <span class="search-suggestion__side">
+            <span class="search-suggestion__rate">${esc(rate)}</span>
+            <span class="search-suggestion__category">${esc(category?.short ?? '')}</span>
+          </span>
+        </button>`;
+      }).join('')
+    : '<div class="search-suggestions__empty" role="option" aria-disabled="true">محصولی با این عبارت پیدا نشد.</div>';
+  list.removeAttribute('hidden');
+  input.setAttribute('aria-expanded', 'true');
+  input.removeAttribute('aria-activedescendant');
+}
+
+function setActiveSearchSuggestion(nextIndex) {
+  if (!directSearchMatches.length) return;
+  const count = directSearchMatches.length;
+  activeSearchIndex = (nextIndex + count) % count;
+  const input = $('#global-search');
+  input?.setAttribute('aria-activedescendant', `search-option-${activeSearchIndex}`);
+  document.querySelectorAll('.search-suggestion').forEach((option, index) => {
+    option.setAttribute('aria-selected', String(index === activeSearchIndex));
+  });
+}
+
+function selectSearchProduct(productId) {
+  const product = store.products.find((p) => p.id === productId);
+  if (!product) return;
+  hideSearchSuggestions();
+  openDrawer(product.id, $('#global-search'));
+}
+
 function resetFilters() {
   const category = store.filters.category;
   store.filters = {
@@ -149,6 +224,7 @@ function resetFilters() {
   };
   const input = $('#global-search');
   if (input) input.value = '';
+  hideSearchSuggestions();
   saveFilters();
   render();
   toast('فیلترها پاک شد. وزن‌های امتیازدهی دست‌نخورده ماند.');
@@ -183,10 +259,12 @@ function toggleCompare(id) {
 
 const drawer = () => $('#drawer');
 const backdrop = () => $('#drawer-backdrop');
+let drawerReturnFocus = null;
 
-function openDrawer(id) {
+function openDrawer(id, returnFocus = document.activeElement) {
   const p = store.products.find((x) => x.id === id);
   if (!p) return;
+  if (!drawer().classList.contains('is-open')) drawerReturnFocus = returnFocus;
   drawer().innerHTML = view.detailHTML(p);
   drawer().classList.add('is-open');
   drawer().setAttribute('aria-hidden', 'false');
@@ -203,6 +281,9 @@ function closeDrawer() {
   drawer().setAttribute('aria-hidden', 'true');
   backdrop().classList.remove('is-open');
   document.body.style.overflow = '';
+  const returnFocus = drawerReturnFocus;
+  drawerReturnFocus = null;
+  returnFocus?.focus?.();
 }
 
 /* ---------- ماشین‌حساب ---------- */
@@ -490,14 +571,36 @@ async function manualRefresh() {
 /* ---------- رویدادها ---------- */
 
 function bindEvents() {
-  // جست‌وجوی سراسری
+  // جست‌وجوی مستقیم در همه دسته‌ها + فیلتر زنده فهرست جاری
   const search = $('#global-search');
-  search.addEventListener(
-    'input',
-    debounce((e) => {
-      setFilter('query', e.target.value);
-    }, 220),
-  );
+  const applySearchFilter = debounce((query) => setFilter('query', query), 220);
+  search.value = store.filters.query || '';
+  search.addEventListener('input', (e) => {
+    renderSearchSuggestions(e.target.value);
+    applySearchFilter(e.target.value);
+  });
+  search.addEventListener('focus', () => renderSearchSuggestions(search.value));
+  search.addEventListener('blur', () => {
+    setTimeout(() => {
+      if (!document.activeElement?.closest?.('.topbar-search')) hideSearchSuggestions();
+    }, 0);
+  });
+  search.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowDown' && directSearchMatches.length) {
+      e.preventDefault();
+      setActiveSearchSuggestion(activeSearchIndex < 0 ? 0 : activeSearchIndex + 1);
+    } else if (e.key === 'ArrowUp' && directSearchMatches.length) {
+      e.preventDefault();
+      setActiveSearchSuggestion(activeSearchIndex < 0 ? directSearchMatches.length - 1 : activeSearchIndex - 1);
+    } else if (e.key === 'Enter' && directSearchMatches.length) {
+      e.preventDefault();
+      const selected = directSearchMatches[activeSearchIndex < 0 ? 0 : activeSearchIndex];
+      selectSearchProduct(selected.id);
+    } else if (e.key === 'Escape' && search.getAttribute('aria-expanded') === 'true') {
+      e.preventDefault();
+      hideSearchSuggestions();
+    }
+  });
 
   // تغییر فیلترها و وزن‌ها
   document.addEventListener('change', (e) => {
@@ -536,6 +639,7 @@ function bindEvents() {
 
   // کلیک‌ها
   document.addEventListener('click', (e) => {
+    if (!e.target.closest('.topbar-search')) hideSearchSuggestions();
     const actionEl = e.target.closest('[data-action]');
 
     // بستن کشو با کلیک روی پس‌زمینه
@@ -570,6 +674,9 @@ function bindEvents() {
         break;
       case 'detail':
         openDrawer(id);
+        break;
+      case 'search-open':
+        selectSearchProduct(id);
         break;
       case 'close-drawer':
         closeDrawer();

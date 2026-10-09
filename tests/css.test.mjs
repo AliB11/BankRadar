@@ -103,6 +103,14 @@ test('سند راست‌به‌چپ و فارسی است', () => {
   assert.match(html, /<html[^>]*dir="rtl"/, 'dir باید rtl باشد');
 });
 
+test('جست‌وجوی مستقیم، combobox دسترس‌پذیر و فهرست پیشنهاد دارای استایل دارد', () => {
+  assert.match(html, /id="global-search"[^>]*role="combobox"/s);
+  assert.match(html, /aria-controls="search-suggestions"/);
+  assert.match(html, /id="search-suggestions"[^>]*role="listbox"/);
+  assert.ok(findRule('.search-suggestions'), 'فهرست پیشنهادها باید استایل مستقل داشته باشد');
+  assert.ok(rules.some((rule) => rule.selector.includes('.search-suggestion[aria-selected="true"]')), 'گزینه فعال باید حالت قابل‌مشاهده داشته باشد');
+});
+
 /* ---------- ۲) هندسه کشو در حالت بسته ---------- */
 
 /**

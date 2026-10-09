@@ -54,14 +54,22 @@
 
     <div class="topbar-search">
       <span class="icon" aria-hidden="true">⌕</span>
-      <label class="visually-hidden" for="global-search">جست‌وجو در بانک، محصول، توضیحات</label>
+      <label class="visually-hidden" for="global-search">جست‌وجوی مستقیم محصول، بانک یا توضیحات</label>
       <input
         id="global-search"
-        type="text"
-        placeholder="جست‌وجو: وام ازدواج، سپرده ۲۳٪، قرض‌الحسنه، بلوبانک…"
+        type="search"
+        role="combobox"
+        aria-autocomplete="list"
+        aria-haspopup="listbox"
+        aria-controls="search-suggestions"
+        aria-expanded="false"
+        aria-describedby="search-hint"
+        placeholder="جست‌وجوی مستقیم: وام ازدواج، سپرده ۲۳٪، بلوبانک…"
         autocomplete="off"
         spellcheck="false"
       />
+      <span class="visually-hidden" id="search-hint">نام محصول یا بانک را وارد کنید؛ با کلیدهای جهت‌نما پیشنهادها را مرور و با Enter محصول را باز کنید.</span>
+      <div class="search-suggestions" id="search-suggestions" role="listbox" aria-label="پیشنهاد محصولات" hidden></div>
     </div>
 
     <div class="topbar-actions">

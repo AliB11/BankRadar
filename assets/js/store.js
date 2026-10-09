@@ -374,7 +374,7 @@ export const resultOf = (id) => store.scored.get(id) ?? { score: 0, parts: {}, r
 
 /* ---------- فیلتر و مرتب‌سازی ---------- */
 
-const normSearch = (s) =>
+export const normalizeSearchText = (s) =>
   String(s ?? '')
     .replace(/[\u200c\u200d]/g, ' ')
     .replace(/[۰-۹]/g, (d) => String('۰۱۲۳۴۵۶۷۸۹'.indexOf(d)))
@@ -384,12 +384,65 @@ const normSearch = (s) =>
     .toLowerCase()
     .trim();
 
+function searchableText(p) {
+  const category = CATEGORY_META[p.category];
+  return normalizeSearchText(
+    [
+      p.bank,
+      p.product,
+      p.desc,
+      p.audience,
+      p.collateral,
+      p.subcategory,
+      p.rate,
+      p.rateLabel,
+      p.minAmount,
+      p.maxAmount,
+      p.amountLabel,
+      p.termMonths,
+      p.termLabel,
+      category?.title,
+      category?.short,
+      (p.tags || []).join(' '),
+    ].join(' '),
+  );
+}
+
 function matchesQuery(p, q) {
   if (!q) return true;
-  const haystack = normSearch(
-    [p.bank, p.product, p.desc, p.audience, p.collateral, (p.tags || []).join(' ')].join(' '),
-  );
+  const haystack = searchableText(p);
   return q.split(/\s+/).every((token) => haystack.includes(token));
+}
+
+/**
+ * جست‌وجوی مستقیم در کل کاتالوگ، مستقل از دسته و فیلترهای جاری.
+ * تطبیق نام دقیق/آغاز نام محصول را جلوتر از تطبیق توضیحات قرار می‌دهد تا
+ * پیشنهاد نخست برای انتخاب مستقیم، نزدیک‌ترین محصول به عبارت کاربر باشد.
+ */
+export function searchProducts(query, { limit = 8 } = {}) {
+  const q = normalizeSearchText(query);
+  if (!q) return [];
+
+  const tokens = q.split(/\s+/).filter(Boolean);
+  const rank = (p) => {
+    const name = normalizeSearchText(p.product);
+    const bank = normalizeSearchText(p.bank);
+    if (name === q) return 1000;
+    if (name.startsWith(q)) return 800;
+    if (bank === q) return 700;
+    if (bank.startsWith(q)) return 600;
+    if (tokens.every((token) => name.includes(token))) return 500;
+    if (tokens.every((token) => bank.includes(token))) return 400;
+    return 0;
+  };
+
+  const max = Number.isFinite(Number(limit)) ? Math.max(0, Math.trunc(Number(limit))) : 8;
+  return store.products
+    .map((product, index) => ({ product, index, rank: rank(product), text: searchableText(product) }))
+    .filter(({ text }) => tokens.every((token) => text.includes(token)))
+    .sort((a, b) => b.rank - a.rank || a.index - b.index)
+    .slice(0, max)
+    .map(({ product }) => product);
 }
 
 /**
@@ -398,7 +451,7 @@ function matchesQuery(p, q) {
  */
 export function filtered(opts = {}) {
   const f = store.filters;
-  const q = normSearch(f.query);
+  const q = normalizeSearchText(f.query);
 
   // «کنترل‌شده بودن» یک رکورد یعنی خط لوله آن را دیده باشد — ملاک، جدیدترین
   // تاریخ بازبینی (lastSeen) یا به‌روزرسانی منبع (lastUpdated) است. اگر فقط
