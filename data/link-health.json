@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-03T09:42:27.644Z",
+  "generatedAt": "2026-10-10T10:26:40.880Z",
   "total": 17,
-  "ok": 11,
-  "dead": 6,
-  "healthPercent": 65,
+  "ok": 12,
+  "dead": 5,
+  "healthPercent": 71,
   "deadLinks": [
     {
       "productId": "fund-amin-ashna",
@@ -13,7 +13,7 @@
       "ok": false,
       "status": 0,
       "error": "fetch failed",
-      "checkedAt": "2026-10-03T09:42:09.340Z"
+      "checkedAt": "2026-10-10T10:26:31.148Z"
     },
     {
       "productId": "fund-omid-sepah",
@@ -23,7 +23,7 @@
       "ok": false,
       "status": 0,
       "error": "fetch failed",
-      "checkedAt": "2026-10-03T09:42:10.051Z"
+      "checkedAt": "2026-10-10T10:26:31.490Z"
     },
     {
       "productId": "fund-yaghoot-agah",
@@ -33,7 +33,7 @@
       "ok": false,
       "status": 0,
       "error": "This operation was aborted",
-      "checkedAt": "2026-10-03T09:42:16.906Z"
+      "checkedAt": "2026-10-10T10:26:38.757Z"
     },
     {
       "productId": "fund-ganjineh-zarrin-shahr",
@@ -43,7 +43,7 @@
       "ok": false,
       "status": 0,
       "error": "This operation was aborted",
-      "checkedAt": "2026-10-03T09:42:16.941Z"
+      "checkedAt": "2026-10-10T10:26:38.791Z"
     },
     {
       "productId": "fund-lotus-parsian",
@@ -53,17 +53,7 @@
       "ok": false,
       "status": 0,
       "error": "This operation was aborted",
-      "checkedAt": "2026-10-03T09:42:16.943Z"
-    },
-    {
-      "productId": "refah-vibe",
-      "bank": "بانک رفاه کارگران",
-      "product": "وایب — اعتبار ویژه بازنشستگان و کارکنان",
-      "url": "https://aloghesti.com/mag/best-loans-for-purchasing-goods/",
-      "ok": false,
-      "status": 0,
-      "error": "This operation was aborted",
-      "checkedAt": "2026-10-03T09:42:19.486Z"
+      "checkedAt": "2026-10-10T10:26:38.792Z"
     }
   ],
   "all": [
@@ -75,7 +65,7 @@
       "ok": false,
       "status": 0,
       "error": "fetch failed",
-      "checkedAt": "2026-10-03T09:42:09.340Z"
+      "checkedAt": "2026-10-10T10:26:31.148Z"
     },
     {
       "productId": "fund-omid-sepah",
@@ -85,7 +75,7 @@
       "ok": false,
       "status": 0,
       "error": "fetch failed",
-      "checkedAt": "2026-10-03T09:42:10.051Z"
+      "checkedAt": "2026-10-10T10:26:31.490Z"
     },
     {
       "productId": "deposit-kootah-moddate-adi",
@@ -94,7 +84,52 @@
       "url": "https://www.cbi.ir",
       "ok": true,
       "status": 200,
-      "checkedAt": "2026-10-03T09:42:11.486Z"
+      "checkedAt": "2026-10-10T10:26:32.269Z"
+    },
+    {
+      "productId": "refah-vibe",
+      "bank": "بانک رفاه کارگران",
+      "product": "وایب — اعتبار ویژه بازنشستگان و کارکنان",
+      "url": "https://aloghesti.com/mag/best-loans-for-purchasing-goods/",
+      "ok": true,
+      "status": 200,
+      "checkedAt": "2026-10-10T10:26:33.852Z"
+    },
+    {
+      "productId": "blu-loan-beja",
+      "bank": "بلوبانک",
+      "product": "وام به‌جا — تسهیلات نقدی دیجیتال بدون ضامن",
+      "url": "https://www.rade.ir/loan-instant-loan/706908-%D9%88%D8%A7%D9%85-%D8%A8%D9%87%E2%80%8C%D8%AC%D8%A7-%D8%A8%D9%84%D9%88%D8%A8%D8%A7%D9%86%DA%A9/",
+      "ok": true,
+      "status": 200,
+      "checkedAt": "2026-10-10T10:26:35.187Z"
+    },
+    {
+      "productId": "blu-loan-instant",
+      "bank": "بلوبانک",
+      "product": "وام فوری بلو — پله‌ای از ۳ تا ۱۰۰ میلیون تومان",
+      "url": "https://www.rade.ir/service/694259-%D9%88%D8%A7%D9%85-%D8%A8%D9%84%D9%88%D8%A8%D8%A7%D9%86%DA%A9/",
+      "ok": true,
+      "status": 200,
+      "checkedAt": "2026-10-10T10:26:36.276Z"
+    },
+    {
+      "productId": "saderat-ghasta",
+      "bank": "بانک صادرات ایران",
+      "product": "قسطا / قسطاکارت — اعتبار خرید خرد",
+      "url": "https://andishemoaser.ir/%D9%88%D8%A7%D9%85-%D9%82%D8%B3%D8%B7%D8%A7-%DB%B1%DB%B4%DB%B0%DB%B5-%D9%85%D8%A8%D9%84%D8%BA%D8%8C-%D8%B4%D8%B1%D8%A7%DB%8C%D8%B7-%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA%D8%8C-%D9%82%D8%B3%D8%B7%D8%A7/",
+      "ok": true,
+      "status": 200,
+      "checkedAt": "2026-10-10T10:26:37.170Z"
+    },
+    {
+      "productId": "ezdevaj-300",
+      "bank": "شبکه بانکی (ثبت‌نام: بانک مرکزی)",
+      "product": "وام قرض‌الحسنه ازدواج — سقف پایه هر نفر",
+      "url": "https://nabzgheymat.ir/%D9%88%D8%A7%D9%85-%D8%A7%D8%B2%D8%AF%D9%88%D8%A7%D8%AC-%DB%B1%DB%B4%DB%B0%DB%B5%D8%9B-%D9%85%D8%A8%D9%84%D8%BA-%DB%B3%DB%B0%DB%B0-%D8%AA%D8%A7-%DB%B3%DB%B5%DB%B0-%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86/",
+      "ok": true,
+      "status": 200,
+      "checkedAt": "2026-10-10T10:26:38.668Z"
     },
     {
       "productId": "fund-yaghoot-agah",
@@ -104,7 +139,7 @@
       "ok": false,
       "status": 0,
       "error": "This operation was aborted",
-      "checkedAt": "2026-10-03T09:42:16.906Z"
+      "checkedAt": "2026-10-10T10:26:38.757Z"
     },
     {
       "productId": "fund-ganjineh-zarrin-shahr",
@@ -114,7 +149,7 @@
       "ok": false,
       "status": 0,
       "error": "This operation was aborted",
-      "checkedAt": "2026-10-03T09:42:16.941Z"
+      "checkedAt": "2026-10-10T10:26:38.791Z"
     },
     {
       "productId": "fund-lotus-parsian",
@@ -124,71 +159,7 @@
       "ok": false,
       "status": 0,
       "error": "This operation was aborted",
-      "checkedAt": "2026-10-03T09:42:16.943Z"
-    },
-    {
-      "productId": "saderat-ghasta",
-      "bank": "بانک صادرات ایران",
-      "product": "قسطا / قسطاکارت — اعتبار خرید خرد",
-      "url": "https://andishemoaser.ir/%D9%88%D8%A7%D9%85-%D9%82%D8%B3%D8%B7%D8%A7-%DB%B1%DB%B4%DB%B0%DB%B5-%D9%85%D8%A8%D9%84%D8%BA%D8%8C-%D8%B4%D8%B1%D8%A7%DB%8C%D8%B7-%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA%D8%8C-%D9%82%D8%B3%D8%B7%D8%A7/",
-      "ok": true,
-      "status": 200,
-      "checkedAt": "2026-10-03T09:42:19.012Z"
-    },
-    {
-      "productId": "blu-loan-instant",
-      "bank": "بلوبانک",
-      "product": "وام فوری بلو — پله‌ای از ۳ تا ۱۰۰ میلیون تومان",
-      "url": "https://www.rade.ir/service/694259-%D9%88%D8%A7%D9%85-%D8%A8%D9%84%D9%88%D8%A8%D8%A7%D9%86%DA%A9/",
-      "ok": true,
-      "status": 200,
-      "checkedAt": "2026-10-03T09:42:19.248Z"
-    },
-    {
-      "productId": "refah-vibe",
-      "bank": "بانک رفاه کارگران",
-      "product": "وایب — اعتبار ویژه بازنشستگان و کارکنان",
-      "url": "https://aloghesti.com/mag/best-loans-for-purchasing-goods/",
-      "ok": false,
-      "status": 0,
-      "error": "This operation was aborted",
-      "checkedAt": "2026-10-03T09:42:19.486Z"
-    },
-    {
-      "productId": "ezdevaj-300",
-      "bank": "شبکه بانکی (ثبت‌نام: بانک مرکزی)",
-      "product": "وام قرض‌الحسنه ازدواج — سقف پایه هر نفر",
-      "url": "https://nabzgheymat.ir/%D9%88%D8%A7%D9%85-%D8%A7%D8%B2%D8%AF%D9%88%D8%A7%D8%AC-%DB%B1%DB%B4%DB%B0%DB%B5%D8%9B-%D9%85%D8%A8%D9%84%D8%BA-%DB%B3%DB%B0%DB%B0-%D8%AA%D8%A7-%DB%B3%DB%B5%DB%B0-%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86/",
-      "ok": true,
-      "status": 200,
-      "checkedAt": "2026-10-03T09:42:20.293Z"
-    },
-    {
-      "productId": "ezdevaj-350",
-      "bank": "شبکه بانکی (ثبت‌نام: بانک مرکزی)",
-      "product": "وام ازدواج با تشویق سنی (زوجین جوان)",
-      "url": "https://nabzgheymat.ir/%D9%88%D8%A7%D9%85-%D8%A7%D8%B2%D8%AF%D9%88%D8%A7%D8%AC-%D9%88-%D9%81%D8%B1%D8%B2%D9%86%D8%AF%D8%A2%D9%88%D8%B1%DB%8C-%DB%B1%DB%B4%DB%B0%DB%B5%D8%9B-%DB%B6%DB%B0%DB%B0-%D8%AA%D8%A7-%DB%B7%DB%B0%DB%B0/",
-      "ok": true,
-      "status": 200,
-      "checkedAt": "2026-10-03T09:42:20.312Z"
-    },
-    {
-      "productId": "farzandavari-220",
-      "bank": "شبکه بانکی (ثبت‌نام: بانک مرکزی)",
-      "product": "تسهیلات قرض‌الحسنه فرزندآوری — فرزند پنجم و بیشتر",
-      "url": "https://nabzgheymat.ir/%D9%88%D8%A7%D9%85-%D9%81%D8%B1%D8%B2%D9%86%D8%AF%D8%A2%D9%88%D8%B1%DB%8C-%DB%B1%DB%B4%DB%B0%DB%B5%D8%9B-%D8%A7%D8%B2-%DB%B4%DB%B4-%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86-%D8%AA%D8%A7-%DB%B2%DB%B2%DB%B0/",
-      "ok": true,
-      "status": 200,
-      "checkedAt": "2026-10-03T09:42:20.674Z"
-    },
-    {
-      "productId": "blu-loan-beja",
-      "bank": "بلوبانک",
-      "product": "وام به‌جا — تسهیلات نقدی دیجیتال بدون ضامن",
-      "url": "https://www.rade.ir/loan-instant-loan/706908-%D9%88%D8%A7%D9%85-%D8%A8%D9%87%E2%80%8C%D8%AC%D8%A7-%D8%A8%D9%84%D9%88%D8%A8%D8%A7%D9%86%DA%A9/",
-      "ok": true,
-      "status": 200,
-      "checkedAt": "2026-10-03T09:42:20.870Z"
+      "checkedAt": "2026-10-10T10:26:38.792Z"
     },
     {
       "productId": "mehr-iran-mehryar",
@@ -197,16 +168,7 @@
       "url": "https://digivam.app/mehriran-bank/",
       "ok": true,
       "status": 200,
-      "checkedAt": "2026-10-03T09:42:21.127Z"
-    },
-    {
-      "productId": "murabaha-khord-23",
-      "bank": "شبکه بانکی",
-      "product": "تسهیلات مرابحه خرد (سقف مصوب ۲۳٪)",
-      "url": "https://andishemoaser.ir/%D9%85%D8%AD%D8%A7%D8%B3%D8%A8%D9%87-%D9%88%D8%A7%D9%85-%D8%A8%D8%A7%D9%86%DA%A9%DB%8C%D8%9B-%D9%81%D8%B1%D9%85%D9%88%D9%84-%D8%AF%D9%82%DB%8C%D9%82-%D8%A7%D9%82%D8%B3%D8%A7%D8%B7-%D9%85%D8%A7%D9%87/",
-      "ok": true,
-      "status": 200,
-      "checkedAt": "2026-10-03T09:42:21.629Z"
+      "checkedAt": "2026-10-10T10:26:39.345Z"
     },
     {
       "productId": "farzandavari-44",
@@ -215,7 +177,16 @@
       "url": "https://andishemoaser.ir/%D8%AB%D8%A8%D8%AA%D9%86%D8%A7%D9%85-%D9%88%D8%A7%D9%85-%D9%81%D8%B1%D8%B2%D9%86%D8%AF%D8%A2%D9%88%D8%B1%DB%8C-%DB%B1%DB%B4%DB%B0%DB%B5-%D8%A2%D8%BA%D8%A7%D8%B2-%D8%B4%D8%AF-%D9%85%D8%A8/",
       "ok": true,
       "status": 200,
-      "checkedAt": "2026-10-03T09:42:21.661Z"
+      "checkedAt": "2026-10-10T10:26:39.814Z"
+    },
+    {
+      "productId": "murabaha-khord-23",
+      "bank": "شبکه بانکی",
+      "product": "تسهیلات مرابحه خرد (سقف مصوب ۲۳٪)",
+      "url": "https://andishemoaser.ir/%D9%85%D8%AD%D8%A7%D8%B3%D8%A8%D9%87-%D9%88%D8%A7%D9%85-%D8%A8%D8%A7%D9%86%DA%A9%DB%8C%D8%9B-%D9%81%D8%B1%D9%85%D9%88%D9%84-%D8%AF%D9%82%DB%8C%D9%82-%D8%A7%D9%82%D8%B3%D8%A7%D8%B7-%D9%85%D8%A7%D9%87/",
+      "ok": true,
+      "status": 200,
+      "checkedAt": "2026-10-10T10:26:40.217Z"
     },
     {
       "productId": "parsian-saba",
@@ -224,7 +195,25 @@
       "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/",
       "ok": true,
       "status": 200,
-      "checkedAt": "2026-10-03T09:42:27.644Z"
+      "checkedAt": "2026-10-10T10:26:40.470Z"
+    },
+    {
+      "productId": "farzandavari-220",
+      "bank": "شبکه بانکی (ثبت‌نام: بانک مرکزی)",
+      "product": "تسهیلات قرض‌الحسنه فرزندآوری — فرزند پنجم و بیشتر",
+      "url": "https://nabzgheymat.ir/%D9%88%D8%A7%D9%85-%D9%81%D8%B1%D8%B2%D9%86%D8%AF%D8%A2%D9%88%D8%B1%DB%8C-%DB%B1%DB%B4%DB%B0%DB%B5%D8%9B-%D8%A7%D8%B2-%DB%B4%DB%B4-%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86-%D8%AA%D8%A7-%DB%B2%DB%B2%DB%B0/",
+      "ok": true,
+      "status": 200,
+      "checkedAt": "2026-10-10T10:26:40.800Z"
+    },
+    {
+      "productId": "ezdevaj-350",
+      "bank": "شبکه بانکی (ثبت‌نام: بانک مرکزی)",
+      "product": "وام ازدواج با تشویق سنی (زوجین جوان)",
+      "url": "https://nabzgheymat.ir/%D9%88%D8%A7%D9%85-%D8%A7%D8%B2%D8%AF%D9%88%D8%A7%D8%AC-%D9%88-%D9%81%D8%B1%D8%B2%D9%86%D8%AF%D8%A2%D9%88%D8%B1%DB%8C-%DB%B1%DB%B4%DB%B0%DB%B5%D8%9B-%DB%B6%DB%B0%DB%B0-%D8%AA%D8%A7-%DB%B7%DB%B0%DB%B0/",
+      "ok": true,
+      "status": 200,
+      "checkedAt": "2026-10-10T10:26:40.880Z"
     }
   ]
 }
