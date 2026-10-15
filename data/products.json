@@ -9,7 +9,7 @@
     "total": 315
   },
   "disclaimer": "هر رکورد دارای منبع و تاریخ کنترل است. نرخ‌های سود تابع مصوبات شورای پول و اعتبار و بخشنامه‌های بانک مرکزی است و بانک‌ها می‌توانند شرایط را تغییر دهند. پیش از اقدام، شرایط را از منبع رسمی بانک تأیید کنید.",
-  "generatedAt": "2026-10-14T08:52:41.602Z",
+  "generatedAt": "2026-10-15T08:27:38.413Z",
   "generator": "tools/collect.mjs",
   "products": [
     {
@@ -201,9 +201,9 @@
       "digital": 70,
       "friction": 80,
       "id": "day-deposit-pref-30",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-14",
+      "lastVerified": "2026-10-15",
       "maxAmount": null,
       "minAmount": 5000000000,
       "product": "سپرده با سود ترجیحی بانک دی (پلکانی ۲۷ تا ۳۰٪ بر اساس مانده)",
@@ -216,7 +216,7 @@
         "نرخ شکست: در صورتی که حساب خود را زودتر از حداقل مدت سپرده‌گذاری ببندید؛ سقف سود ۵ درصد است."
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -333,9 +333,9 @@
       "digital": 70,
       "friction": 80,
       "id": "eghtesad-novin-deposit-pref-30",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-14",
+      "lastVerified": "2026-10-15",
       "maxAmount": null,
       "minAmount": 1000000000,
       "product": "سپرده با سود ترجیحی بانک اقتصاد نوین (پلکانی ۲۵ تا ۳۰٪ بر اساس مانده)",
@@ -349,7 +349,7 @@
         "۱۰ میلیارد تومان و بیش‌تر: ۲۹ الی ۳۰٪"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -423,9 +423,9 @@
       "digital": 70,
       "friction": 80,
       "id": "gardeshgari-deposit-pref-28",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-14",
+      "lastVerified": "2026-10-15",
       "maxAmount": null,
       "minAmount": 10000000000,
       "product": "سپرده با سود ترجیحی بانک گردشگری (سقف ۳۱٪ برای مبالغ بالا)",
@@ -439,7 +439,7 @@
         "نرخ شکست: برای مدت‌زمان کم‌تر از یک ماه، نرخ شکست ندارد."
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -512,9 +512,9 @@
       "digital": 70,
       "friction": 80,
       "id": "iran-zamin-deposit-pref-30",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-14",
+      "lastVerified": "2026-10-15",
       "maxAmount": null,
       "minAmount": 1000000000,
       "product": "سپرده با سود ترجیحی بانک ایران زمین (پلکانی ۲۵ تا ۳۰٪ بر اساس مانده)",
@@ -528,7 +528,7 @@
         "نرخ شکست: در صورتی که حساب خود را زودتر از حداقل مدت سپرده‌گذاری ببندید؛ سقف سود ۰ است. / در صورتی که حساب خود را زودتر از حداقل مدت سپرده‌گذاری ببندید؛ سقف سود ۲۷٪ است."
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -559,9 +559,9 @@
       "digital": 70,
       "friction": 80,
       "id": "karafarin-deposit-pref-30",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-14",
+      "lastVerified": "2026-10-15",
       "maxAmount": null,
       "minAmount": 5000000000,
       "product": "سپرده با سود ترجیحی بانک کارآفرین (پلکانی ۲۷ تا ۲۹.۵٪ بر اساس مانده)",
@@ -576,7 +576,7 @@
         "نرخ شکست: نرخ شکست ندارد."
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -648,9 +648,9 @@
       "digital": 65,
       "friction": 80,
       "id": "keshavarzi-atiyeh-talayi",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-14",
+      "lastVerified": "2026-10-15",
       "maxAmount": null,
       "minAmount": 100000,
       "product": "سپرده آتیه طلایی (سپرده سرمایه‌گذاری کوتاه‌مدت)",
@@ -663,7 +663,7 @@
         "مزایا: دارای یک حساب کوتاه‌مدت عادی و یک حساب بلندمدت، امکان سرمایه‌گذاری مشتریان در دوره‌های کوتاه‌مدت و بهره‌مندی از ارزش حداکثری ایجاد شده برای مشتری در پایان دوره (بر اساس قوانین جاری بانک مرکزی) و مناسب برای گروه‌های مختلف مشتریان به‌ویژه خانواده‌ها(به‌منظور سرمایه‌گذاری برای فرزندان)، مستمری‌بگیران، افرادی که خدمات بازنشستگی مناسبی ندارند، سازمان‌ها، نهادها و موسسات خیریه، کمیته امداد و بهزیستی"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -693,9 +693,9 @@
       "digital": 85,
       "friction": 80,
       "id": "maskan-atiyeh-talayi-3",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-14",
+      "lastVerified": "2026-10-15",
       "maxAmount": null,
       "minAmount": 200000,
       "product": "سپرده آتیه طلایی ۳ (سرمایه‌گذاری کوتاه‌مدت عادی با قابلیت واریز و برداشت)",
@@ -708,7 +708,7 @@
         "مزایا: دارای ۲ حساب کوتاه‌مدت و بلندمدت برای واریز سود حساب بلندمدت به کوتاه‌مدت و امکان استفاده از سپرده با خدمات الکترونیکی بانک"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -738,9 +738,9 @@
       "digital": 70,
       "friction": 80,
       "id": "maskan-sp-deposit-pref-28",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-14",
+      "lastVerified": "2026-10-15",
       "maxAmount": null,
       "minAmount": 300000000,
       "product": "سپرده با سود ترجیحی بانک مسکن (سقف ۲۸٪ برای مبالغ بالا)",
@@ -753,7 +753,7 @@
         "حداقل مدت برای سقف سود: ۶ ماه اول ۲۷٪ و بعد از ۶ ماه ۲۸٪ (بعد از گذشت ۶ ماه، یک درصد سود مازاد ماه‌های گذشته هم به شما پرداخت می‌شود. )"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -784,9 +784,9 @@
       "digital": 70,
       "friction": 80,
       "id": "mellal-deposit-pref-26",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-14",
+      "lastVerified": "2026-10-15",
       "maxAmount": null,
       "minAmount": 1000000000,
       "product": "سپرده با سود ترجیحی مؤسسه اعتباری ملل (سقف ۳۰.۵٪ برای مبالغ بالا)",
@@ -800,7 +800,7 @@
         "نرخ شکست: در کم‌تر از یک ماه، معادل ۰.۵٪"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -831,9 +831,9 @@
       "digital": 65,
       "friction": 80,
       "id": "mellal-vijehe",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-14",
+      "lastVerified": "2026-10-15",
       "maxAmount": null,
       "minAmount": 1000000,
       "product": "سپرده ویژه (بلندمدت)",
@@ -845,7 +845,7 @@
         "برداشت پیش از موعد: بعد از ۳ ماه، نرخ شکست ندارد."
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -875,9 +875,9 @@
       "digital": 70,
       "friction": 80,
       "id": "mellat-deposit-pref-30",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-14",
+      "lastVerified": "2026-10-15",
       "maxAmount": null,
       "minAmount": 5000000000,
       "product": "سپرده با سود ترجیحی بانک ملت (پلکانی ۲۷ تا ۲۹.۹٪ بر اساس مانده)",
@@ -893,7 +893,7 @@
         "نرخ شکست: در صورتی که حساب خود را زودتر از حداقل مدت سپرده‌گذاری ببندید؛ سقف سود ۲۷٪ است. / در صورتی که حساب خود را زودتر از حداقل مدت سپرده‌گذاری ببندید؛ سقف سود ۲۹٪ است."
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -966,9 +966,9 @@
       "digital": 70,
       "friction": 80,
       "id": "melli-deposit-pref-29",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-14",
+      "lastVerified": "2026-10-15",
       "maxAmount": null,
       "minAmount": 50000000,
       "product": "سپرده با سود ترجیحی بانک ملی ایران (پلکانی ۲۲ تا ۲۹٪ بر اساس مانده)",
@@ -986,7 +986,7 @@
         "حداقل مدت برای سقف سود: ۳ ماه"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -1017,9 +1017,9 @@
       "digital": 70,
       "friction": 80,
       "id": "parsian-deposit-pref-27",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-14",
+      "lastVerified": "2026-10-15",
       "maxAmount": null,
       "minAmount": 5000000000,
       "product": "سپرده با سود ترجیحی بانک پارسیان (پلکانی ۲۶.۵ تا ۲۷٪ بر اساس مانده)",
@@ -1033,7 +1033,7 @@
         "نرخ شکست: نرخ شکست ندارد."
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -1064,9 +1064,9 @@
       "digital": 85,
       "friction": 80,
       "id": "parsian-saba",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-14",
+      "lastVerified": "2026-10-15",
       "maxAmount": null,
       "minAmount": null,
       "product": "سپرده سبا (سپرده سرمایه‌گذاری کوتاه‌مدت عادی)",
@@ -1079,7 +1079,7 @@
         "مزایا: امکان استفاده از تسهیلات، امکان شرکت در قرعه‌کشی دوره‌ای سبا، عضویت خودکار در باشگاه مشتریان بانک پارسیان، عضویت خودکار در باشگاه تخفیفی تاپیا با قابلیت تخفیف یک تا ۵۰٪ در لحظه، استفاده از جوایز و تخفیف‌های شرکای تجاری باشگاه و امکان افتتاح حساب آنلاین"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -1109,9 +1109,9 @@
       "digital": 65,
       "friction": 80,
       "id": "pasargad-bist-plus",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-14",
+      "lastVerified": "2026-10-15",
       "maxAmount": 10000000000,
       "minAmount": 1000000,
       "product": "طرح سرمایه‌گذاری بیست + ویپاد",
@@ -1124,7 +1124,7 @@
         "مزایا: امکان دریافت ۴ سکه (امتیاز تسهیلات) به‌ازای هر یک میلیون تومان در هر روز در وی‌کلاب و معاف از مالیات"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -1154,9 +1154,9 @@
       "digital": 65,
       "friction": 80,
       "id": "pasargad-danesh-amoozi",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-14",
+      "lastVerified": "2026-10-15",
       "maxAmount": null,
       "minAmount": 100000,
       "product": "سپرده سرمایه‌گذاری دانش‌آموزی",
@@ -1168,7 +1168,7 @@
         "مزایا: سپرده باید توسط مدیران ارشد مدارس ابتدائی و متوسطه به‌نام دانش‌آموز افتتاح شود."
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -1198,9 +1198,9 @@
       "digital": 70,
       "friction": 80,
       "id": "pasargad-deposit-pref-30",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-14",
+      "lastVerified": "2026-10-15",
       "maxAmount": null,
       "minAmount": 1000000000,
       "product": "سپرده با سود ترجیحی بانک پاسارگاد (پلکانی ۲۷ تا ۳۰٪ بر اساس مانده)",
@@ -1215,7 +1215,7 @@
         "نرخ شکست: در صورتی که حساب خود را زودتر از حداقل مدت سپرده‌گذاری ببندید؛ سقف سود ۰ است."
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -1246,9 +1246,9 @@
       "digital": 65,
       "friction": 80,
       "id": "pasargad-rasta",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-14",
+      "lastVerified": "2026-10-15",
       "maxAmount": 10000000000,
       "minAmount": 1000000,
       "product": "طرح سرمایه‌گذاری رستا ویپاد",
@@ -1261,7 +1261,7 @@
         "مزایا: امکان دریافت ۵ سکه (امتیاز تسهیلات) به‌ازای هر یک میلیون تومان در هر روز در وی‌کلاب و معاف از مالیات"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -1291,9 +1291,9 @@
       "digital": 65,
       "friction": 80,
       "id": "pasargad-rooyesh",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-14",
+      "lastVerified": "2026-10-15",
       "maxAmount": 10000000000,
       "minAmount": 1000000,
       "product": "طرح سرمایه‌گذاری رویش ویپاد (بلندمدت یک ساله)",
@@ -1306,7 +1306,7 @@
         "مزایا: پس از پایان دوره سرمایه‌گذاری، طرح رویش قابل تمدید نیست."
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -1420,9 +1420,9 @@
       "digital": 70,
       "friction": 80,
       "id": "refah-deposit-pref-28",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-14",
+      "lastVerified": "2026-10-15",
       "maxAmount": null,
       "minAmount": 500000000,
       "product": "سپرده با سود ترجیحی بانک رفاه کارگران (سقف ۲۸٪ برای مبالغ بالا)",
@@ -1434,7 +1434,7 @@
         "نرخ شکست: برای مدت‌زمان کم‌تر از یک ماه، نرخ شکست ندارد."
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -1465,9 +1465,9 @@
       "digital": 65,
       "friction": 80,
       "id": "refah-farda",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-14",
+      "lastVerified": "2026-10-15",
       "maxAmount": null,
       "minAmount": 100000,
       "product": "سپرده رفاه فردا (بلندمدت)",
@@ -1480,7 +1480,7 @@
         "مزایا: امکان استفاده از تسهیلات برای خرید کالا و خدمات مورد نیاز و خرید خودرو و امکان واگذاری امتیاز طرح به غیر (واریز سود مستمر ماهانه به حساب افراد دیگر)"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -1510,9 +1510,9 @@
       "digital": 65,
       "friction": 80,
       "id": "saderat-saheem-1",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-14",
+      "lastVerified": "2026-10-15",
       "maxAmount": null,
       "minAmount": 5000000,
       "product": "طرح سهیم یک (بلندمدت)",
@@ -1525,7 +1525,7 @@
         "مزایا: کل سود ۱۲ ماه خود را در پایان ماه اول دریافت می‌کنید."
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -1555,9 +1555,9 @@
       "digital": 65,
       "friction": 80,
       "id": "saderat-saheem-2",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-14",
+      "lastVerified": "2026-10-15",
       "maxAmount": null,
       "minAmount": 5000000,
       "product": "طرح سهیم ۲ (بلندمدت)",
@@ -1570,7 +1570,7 @@
         "مزایا: کل سود ۱۲ ماه خود را در پایان ماه اول و کل سود ۲۴ ماه خود را در پایان ماه سیزدهم دریافت می‌کنید."
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -1600,9 +1600,9 @@
       "digital": 65,
       "friction": 80,
       "id": "saman-atiyeh-plus",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-14",
+      "lastVerified": "2026-10-15",
       "maxAmount": null,
       "minAmount": 100000,
       "product": "سپرده آتیه پلاس",
@@ -1615,7 +1615,7 @@
         "مزایا: امکان افتتاح حساب به‌صورت مشترک"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -1687,9 +1687,9 @@
       "digital": 70,
       "friction": 80,
       "id": "saman-sp-deposit-30",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-14",
+      "lastVerified": "2026-10-15",
       "maxAmount": null,
       "minAmount": 2000000000,
       "product": "سپرده با سود ترجیحی بانک سامان (پلکانی ۲۴.۵ تا ۲۷٪ بر اساس مانده)",
@@ -1705,7 +1705,7 @@
         "نرخ شکست: در صورتی که حساب خود را زودتر از حداقل مدت سپرده‌گذاری ببندید؛ سقف سود در حالت‌های اول و دوم ۴٪ و در حالت سوم ۰ است."
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -1736,9 +1736,9 @@
       "digital": 85,
       "friction": 80,
       "id": "saman-win-card",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-14",
+      "lastVerified": "2026-10-15",
       "maxAmount": null,
       "minAmount": 10000,
       "product": "سپرده وین کارت",
@@ -1751,7 +1751,7 @@
         "مزایا: امکان شرکت در قرعه‌کشی ۴۰ میلیارد جوایز و امکان افتتاح حساب به‌صورت آنلاین"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -1822,9 +1822,9 @@
       "digital": 70,
       "friction": 80,
       "id": "sepah-deposit-pref-27",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-14",
+      "lastVerified": "2026-10-15",
       "maxAmount": null,
       "minAmount": 3000000000,
       "product": "سپرده با سود ترجیحی بانک سپه (پلکانی ۲۶ تا ۲۷٪ بر اساس مانده)",
@@ -1838,7 +1838,7 @@
         "نرخ شکست: در صورتی که حساب خود را زودتر از حداقل مدت سپرده‌گذاری ببندید؛ سقف سود ۴ الی ۵٪ است."
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -1911,9 +1911,9 @@
       "digital": 70,
       "friction": 80,
       "id": "shahr-deposit-pref-26",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-14",
+      "lastVerified": "2026-10-15",
       "maxAmount": null,
       "minAmount": 1000000000,
       "product": "سپرده با سود ترجیحی بانک شهر (پلکانی ۲۵ تا ۳۰٪ بر اساس مانده)",
@@ -1927,7 +1927,7 @@
         "نرخ شکست: نرخ شکست ندارد."
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -2001,9 +2001,9 @@
       "digital": 70,
       "friction": 80,
       "id": "sina-sp-deposit-pref-27",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-14",
+      "lastVerified": "2026-10-15",
       "maxAmount": null,
       "minAmount": 1000000000,
       "product": "سپرده با سود ترجیحی بانک سینا (پلکانی ۲۶ تا ۲۸٪ بر اساس مانده)",
@@ -2018,7 +2018,7 @@
         "نرخ شکست: برای مدت‌زمان کم‌تر از یک ماه، نرخ شکست ندارد."
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -2049,9 +2049,9 @@
       "digital": 70,
       "friction": 80,
       "id": "tejarat-deposit-pref-29",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-14",
+      "lastVerified": "2026-10-15",
       "maxAmount": null,
       "minAmount": 1500000000,
       "product": "سپرده با سود ترجیحی بانک تجارت (پلکانی ۲۵.۵ تا ۲۹٪ بر اساس مانده)",
@@ -2064,7 +2064,7 @@
         "۵ میلیارد تومان و بیش‌تر: ۲۸ الی ۲۹٪"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -2137,9 +2137,9 @@
       "digital": 70,
       "friction": 80,
       "id": "tosee-taavon-deposit-pref-26",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-14",
+      "lastVerified": "2026-10-15",
       "maxAmount": null,
       "minAmount": 1000000000,
       "product": "سپرده با سود ترجیحی بانک توسعه تعاون (پلکانی ۲۲.۵ تا ۲۶٪ بر اساس مانده)",
@@ -2153,7 +2153,7 @@
         "نرخ شکست: برای مدت‌زمان کم‌تر از یک ماه، نرخ شکست ندارد."
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -2627,8 +2627,8 @@
       "benefit": 55,
       "category": "credit",
       "ceilingContingent": false,
-      "collateral": "اعتبارسنجی, چک صیادی این وام نیازی به ضامن ندارد و با یک برگ چک می توانید آن را دریافت کنید. برای تکمیل مدارک در کنار چک صیادی، مدارکی همچون صورتحساب بانکی و فیش حقوقی یا جواز کسب (برای مشاغل آزاد) باید ارائه دهید.",
-      "collateralKind": "guarantor",
+      "collateral": "اعتبارسنجی, چک صیادی",
+      "collateralKind": "credit-score",
       "confidence": "medium",
       "desc": "وام اپلیکیشن ۷۲۴ بانک سامان",
       "digital": 60,
@@ -2638,9 +2638,9 @@
         "totalInterest": 19185884,
         "totalWithInterest": 119185884
       },
-      "friction": 50,
+      "friction": 72,
       "id": "rade-704667",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-07-27",
       "maxAmount": 100000000,
       "minAmount": 10000000,
@@ -2651,12 +2651,12 @@
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: اعتبارسنجی, چک صیادی این وام نیازی به ضامن ندارد و با یک برگ چک می توانید آن را دریافت کنید. برای تکمیل مدارک در کنار چک صیادی، مدارکی همچون صورتحساب بانکی و فیش حقوقی یا جواز کسب (برای مشاغل آزاد) باید ارائه دهید.",
+        "ضمانت: اعتبارسنجی, چک صیادی",
         "هزینه جانبی: کسب رتبه اعتباری جهت دریافت این وام ضروری است. بنابراین هزینه اعتبارسنجی ( فعلا ۲۵۰۰۰ تومان) از سوی متقاضی باید پرداخت شود.",
         "قسط تقریبی: ۶,۶۲۱,۴۳۸ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام اپلیکیشن 724 بانک سامان",
         "url": "https://www.rade.ir/loan-goods-loan/704667-%d9%88%d8%a7%d9%85-%d8%a7%d9%be%d9%84%db%8c%da%a9%db%8c%d8%b4%d9%86-724-%d8%a8%d8%a7%d9%86%da%a9-%d8%b3%d8%a7%d9%85%d8%a7%d9%86/"
@@ -2669,7 +2669,7 @@
         "وام کالا",
         "سامان"
       ],
-      "termLabel": "۱۸ ماه امکان بازپرداخت اقساطی ۶، ۱۲ و ۱۸ ماهه برای سقف‌های مختلف اعتباری وجود دارد.",
+      "termLabel": "۱۸ ماه",
       "termMonths": 18
     },
     {
@@ -2680,7 +2680,7 @@
       "benefit": 55,
       "category": "credit",
       "ceilingContingent": false,
-      "collateral": "ضامن رسمی, اعتبارسنجی وثایق و تضامین متناسب با رتبه اعتباری متقاضی در نظر گرفته می‌شود.",
+      "collateral": "ضامن رسمی, اعتبارسنجی",
       "collateralKind": "guarantor",
       "confidence": "medium",
       "desc": "وام نیروگاه خورشیدی خانگی بانک مسکن",
@@ -2693,7 +2693,7 @@
       },
       "friction": 50,
       "id": "rade-704674",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-10-11",
       "maxAmount": 300000000,
       "minAmount": null,
@@ -2704,12 +2704,12 @@
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: ضامن رسمی, اعتبارسنجی وثایق و تضامین متناسب با رتبه اعتباری متقاضی در نظر گرفته می‌شود.",
+        "ضمانت: ضامن رسمی, اعتبارسنجی",
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
         "قسط تقریبی: ۲۰,۱۹۲,۷۱۷ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام نیروگاه خورشیدی خانگی بانک مسکن",
         "url": "https://www.rade.ir/loan-instant-loan/704674-%d9%88%d8%a7%d9%85-%d9%86%db%8c%d8%b1%d9%88%da%af%d8%a7%d9%87-%d8%ae%d9%88%d8%b1%d8%b4%db%8c%d8%af%db%8c-%d8%ae%d8%a7%d9%86%da%af%db%8c-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d8%b3%da%a9%d9%86/"
@@ -2726,7 +2726,7 @@
       "termMonths": 48
     },
     {
-      "amountLabel": "۱۰۰ میلیارد تومان سقف تسهیلات در طرح‌های مختلف متفاوت است.",
+      "amountLabel": "۱۰۰ میلیارد تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک ایران زمین",
@@ -2746,7 +2746,7 @@
       },
       "friction": 50,
       "id": "rade-704680",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2025-12-17",
       "maxAmount": 100000000000,
       "minAmount": 5000000,
@@ -2761,7 +2761,7 @@
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — طرح تسهیلات ایران‌یار بانک ایران زمین",
         "url": "https://www.rade.ir/loan-goods-loan/704680-%d8%b7%d8%b1%d8%ad-%d8%aa%d8%b3%d9%87%db%8c%d9%84%d8%a7%d8%aa-%d8%a7%db%8c%d8%b1%d8%a7%d9%86%db%8c%d8%a7%d8%b1-%d8%a8%d8%a7%d9%86%da%a9-%d8%a7%db%8c%d8%b1%d8%a7%d9%86-%d8%b2%d9%85%db%8c%d9%86/"
@@ -2774,7 +2774,7 @@
         "وام کالا",
         "ایران زمین"
       ],
-      "termLabel": "۴۸ ماه طرح‌های مختلف این وام بین ۱۵ روز تا ۴۸ ماه بازپرداخت متناسب با نوع وام دارد",
+      "termLabel": "۴۸ ماه",
       "termMonths": 48
     },
     {
@@ -2785,7 +2785,7 @@
       "benefit": 69,
       "category": "credit",
       "ceilingContingent": false,
-      "collateral": "اعتبارسنجی چک یا سفته",
+      "collateral": "اعتبارسنجی",
       "collateralKind": "credit-score",
       "confidence": "medium",
       "desc": "وام نسیم خرید بانک سرمایه",
@@ -2798,7 +2798,7 @@
       },
       "friction": 72,
       "id": "rade-704689",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-05-20",
       "maxAmount": 200000000,
       "minAmount": null,
@@ -2809,12 +2809,12 @@
       "rateLabel": "سود ۱۶٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: اعتبارسنجی چک یا سفته",
+        "ضمانت: اعتبارسنجی",
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
         "قسط تقریبی: ۱۲,۵۷۱,۲۸۶ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام نسیم خرید بانک سرمایه",
         "url": "https://www.rade.ir/loan-goods-loan/704689-%d9%88%d8%a7%d9%85-%d9%86%d8%b3%db%8c%d9%85-%d8%ae%d8%b1%db%8c%d8%af-%d8%a8%d8%a7%d9%86%da%a9-%d8%b3%d8%b1%d9%85%d8%a7%db%8c%d9%87/"
@@ -2827,7 +2827,7 @@
         "وام کالا",
         "سرمایه"
       ],
-      "termLabel": "۱۸ ماه تعداد اقساط طرح نسیم خرید حداقل سه ماه و حداکثر ۱۸ ماه است.",
+      "termLabel": "۱۸ ماه",
       "termMonths": 18
     },
     {
@@ -2997,8 +2997,8 @@
       "benefit": 55,
       "category": "credit",
       "ceilingContingent": false,
-      "collateral": "اعتبارسنجی بدون چک، سفته، ضامن و وثیقه",
-      "collateralKind": "guarantor",
+      "collateral": "اعتبارسنجی",
+      "collateralKind": "credit-score",
       "confidence": "medium",
       "desc": "تسهیلات «پشتوانه» ویپاد بانک پاسارگاد",
       "digital": 60,
@@ -3008,9 +3008,9 @@
         "totalInterest": 5156634,
         "totalWithInterest": 45156634
       },
-      "friction": 50,
+      "friction": 72,
       "id": "rade-704766",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-14",
       "maxAmount": 40000000,
       "minAmount": 1000000,
@@ -3021,12 +3021,12 @@
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: اعتبارسنجی بدون چک، سفته، ضامن و وثیقه",
+        "ضمانت: اعتبارسنجی",
         "هزینه جانبی: هزینه‌های جانبی در زمان دریافت تسهیلات:",
         "قسط تقریبی: ۳,۷۶۳,۰۵۳ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — تسهیلات «پشتوانه» ویپاد بانک پاسارگاد",
         "url": "https://www.rade.ir/loan-no-guarantor-loans/704766-%d8%aa%d8%b3%d9%87%db%8c%d9%84%d8%a7%d8%aa-%d9%be%d8%b4%d8%aa%d9%88%d8%a7%d9%86%d9%87-%d9%88%db%8c%d9%be%d8%a7%d8%af-%d8%a8%d8%a7%d9%86%da%a9-%d9%be%d8%a7%d8%b3%d8%a7%d8%b1%da%af%d8%a7%d8%af/"
@@ -3039,7 +3039,7 @@
         "بدون ضامن",
         "پاسارگاد"
       ],
-      "termLabel": "۱۲ ماه بازپرداخت تسهیلات پشتوانه ۱۲ ماه برای سقف وام ۴۰ میلیون تومان و ۶ ماه برای مبالغ ۱۵ تا ۳۵ میلیون تومان , ۴ ماه برای مبالغ یک تا ۱۰ میلیون تومان است.",
+      "termLabel": "۱۲ ماه",
       "termMonths": 12
     },
     {
@@ -3063,7 +3063,7 @@
       },
       "friction": 72,
       "id": "rade-704788",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-21",
       "maxAmount": null,
       "minAmount": null,
@@ -3074,10 +3074,11 @@
       "rateLabel": "سود ۲٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: اعتبار شغلی"
+        "ضمانت: اعتبار شغلی",
+        "هزینه جانبی: —"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام سفرکارت بانک مهر ایران",
         "url": "https://www.rade.ir/loan-goods-loan/704788-%d9%88%d8%a7%d9%85-%d8%b3%d9%81%d8%b1-%da%a9%d8%a7%d8%b1%d8%aa-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%87%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
@@ -3090,7 +3091,7 @@
         "وام کالا",
         "قرض‌الحسنه مهر ایران"
       ],
-      "termLabel": "۶ ماه برای طرح حمایتی سفر حداکثر زمان بازپرداخت ۲۰ ماه است",
+      "termLabel": "۶ ماه",
       "termMonths": 6
     },
     {
@@ -3101,7 +3102,7 @@
       "benefit": 55,
       "category": "credit",
       "ceilingContingent": false,
-      "collateral": "اعتبارسنجی امکان دریافت کارت اعتباری با ارائه یک برگ چک به‌عنوان وثیقه وجود دارد.",
+      "collateral": "اعتبارسنجی",
       "collateralKind": "credit-score",
       "confidence": "medium",
       "desc": "وام خرید لوازم‌ خانگی بانک سامان (کارت اعتباری)",
@@ -3114,7 +3115,7 @@
       },
       "friction": 72,
       "id": "rade-705067",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-07-27",
       "maxAmount": 400000000,
       "minAmount": null,
@@ -3125,12 +3126,12 @@
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: اعتبارسنجی امکان دریافت کارت اعتباری با ارائه یک برگ چک به‌عنوان وثیقه وجود دارد.",
+        "ضمانت: اعتبارسنجی",
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
         "قسط تقریبی: ۱۱,۲۷۶,۱۸۸ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام خرید لوازم‌ خانگی بانک سامان (کارت اعتباری)",
         "url": "https://www.rade.ir/loan-goods-loan/705067-%d9%88%d8%a7%d9%85-%d8%ae%d8%b1%db%8c%d8%af-%d9%84%d9%88%d8%a7%d8%b2%d9%85-%d8%ae%d8%a7%d9%86%da%af%db%8c-%d8%a8%d8%a7%d9%86%da%a9-%d8%b3%d8%a7%d9%85%d8%a7%d9%86-%da%a9%d8%a7%d8%b1%d8%aa/"
@@ -3167,7 +3168,7 @@
       },
       "friction": 72,
       "id": "rade-705218",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-07-02",
       "maxAmount": 400000000,
       "minAmount": null,
@@ -3179,10 +3180,11 @@
       "regulatory": false,
       "requirements": [
         "ضمانت: اعتبارسنجی",
+        "هزینه جانبی: —",
         "قسط تقریبی: ۱۵,۴۸۳,۸۸۹ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام طرح جاری اعتبار",
         "url": "https://www.rade.ir/loan-goods-loan/705218-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%d8%ac%d8%a7%d8%b1%db%8c-%d8%a7%d8%b9%d8%aa%d8%a8%d8%a7%d8%b1-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d8%b1%da%a9%d8%b2%db%8c/"
@@ -3252,7 +3254,7 @@
       "termMonths": 10
     },
     {
-      "amountLabel": "۳۰۰ میلیون تومان سقف تسهیلات پرسنل سازمان معادل پیشنهاد شرکت تا مبلغ ۳۰۰ میلیون تومان است.",
+      "amountLabel": "۳۰۰ میلیون تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک سامان",
@@ -3272,7 +3274,7 @@
       },
       "friction": 72,
       "id": "rade-705549",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-07-27",
       "maxAmount": 300000000,
       "minAmount": null,
@@ -3284,10 +3286,11 @@
       "regulatory": false,
       "requirements": [
         "ضمانت: اعتبار شغلی, اعتبارسنجی, چک صیادی",
+        "هزینه جانبی: —",
         "قسط تقریبی: ۱۵,۷۱۱,۹۹۲ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام سازمانی بلوبانک",
         "url": "https://www.rade.ir/loan-instant-loan/705549-%d9%88%d8%a7%d9%85-%d8%b3%d8%a7%d8%b2%d9%85%d8%a7%d9%86%db%8c-%d8%a8%d9%84%d9%88%d8%a8%d8%a7%d9%86%da%a9/"
@@ -3304,14 +3307,14 @@
       "termMonths": 24
     },
     {
-      "amountLabel": "۵۰ میلیون تومان سقف وام برای افراد با رتبه اعتباری C، بیست میلیون تومان است.",
+      "amountLabel": "۵۰ میلیون تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک ایران زمین",
       "benefit": 55,
       "category": "credit",
       "ceilingContingent": false,
-      "collateral": "اعتبارسنجی جهت ضمانت این نوع وام نیاز به چک یا سفته الکترونیکی است.",
+      "collateral": "اعتبارسنجی",
       "collateralKind": "credit-score",
       "confidence": "medium",
       "desc": "وام غیرحضوری فرازبانک ایران زمین",
@@ -3324,7 +3327,7 @@
       },
       "friction": 72,
       "id": "rade-705630",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-28",
       "maxAmount": 50000000,
       "minAmount": 10000000,
@@ -3335,12 +3338,12 @@
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: اعتبارسنجی جهت ضمانت این نوع وام نیاز به چک یا سفته الکترونیکی است.",
+        "ضمانت: اعتبارسنجی",
         "هزینه جانبی: هزینه استعلامات گوناگون مثل استعلام‌های سامانه شاهکار، سامانه ثبت احوال، کدپستی، اعتبارسنجی مشتریان حقیقی و کارمزد اطلاعات اعتباری حقیقی حدود ۵۰ هزار تومان است که از حساب شما کسر می‌شود. \r\n هزینه گواهی امضا ۳۰ هزار تومان است که از حساب شما کسر می‌شود. \r\n ضمنا کارمزدهای نهایی دریافت وام را باید پرداخت کنید.",
         "قسط تقریبی: ۲,۶۱۸,۶۶۵ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام غیرحضوری فرازبانک ایران زمین",
         "url": "https://www.rade.ir/loan-no-guarantor-loans/705630-%d9%88%d8%a7%d9%85-%d8%ba%db%8c%d8%b1%d8%ad%d8%b6%d9%88%d8%b1%db%8c-%d9%81%d8%b1%d8%a7%d8%b2%d8%a8%d8%a7%d9%86%da%a9-%d8%a7%db%8c%d8%b1%d8%a7%d9%86-%d8%b2%d9%85%db%8c%d9%86/"
@@ -3353,19 +3356,19 @@
         "بدون ضامن",
         "ایران زمین"
       ],
-      "termLabel": "۲۴ ماه حداکثر زمان بازپرداخت برای میانگین حساب ۳ ماهه، ۲۴ ماه و برای میانگین حساب ۲ ماهه ۱۲ ماه است.",
+      "termLabel": "۲۴ ماه",
       "termMonths": 24
     },
     {
-      "amountLabel": "۲.۲۵ میلیارد تومان سقف وام حداکثر معادل سود یکسال سپرده است.",
+      "amountLabel": "۲.۲۵ میلیارد تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک سرمایه",
       "benefit": 80,
       "category": "credit",
       "ceilingContingent": true,
-      "collateral": "مسدودی سپرده, اعتبارسنجی با افتتاح حساب بلندمدت یکساله این وام بدون ضامن و صرفا با قرارداد لازم‌الاجرا ارائه می‌شود.",
-      "collateralKind": "guarantor",
+      "collateral": "مسدودی سپرده, اعتبارسنجی",
+      "collateralKind": "credit-score",
       "confidence": "medium",
       "desc": "وام ثروت سرمایه بانک سرمایه",
       "digital": 60,
@@ -3375,9 +3378,9 @@
         "totalInterest": 133428011,
         "totalWithInterest": 2383428011
       },
-      "friction": 50,
+      "friction": 72,
       "id": "rade-705737",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-16",
       "maxAmount": 2250000000,
       "minAmount": null,
@@ -3388,12 +3391,12 @@
       "rateLabel": "سود ۱۰٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: مسدودی سپرده, اعتبارسنجی با افتتاح حساب بلندمدت یکساله این وام بدون ضامن و صرفا با قرارداد لازم‌الاجرا ارائه می‌شود.",
+        "ضمانت: مسدودی سپرده, اعتبارسنجی",
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
         "قسط تقریبی: ۱۸۳,۳۴۰,۶۱۶ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام ثروت سرمایه بانک سرمایه",
         "url": "https://www.rade.ir/loan-no-guarantor-loans/705737-%d9%88%d8%a7%d9%85-%d8%ab%d8%b1%d9%88%d8%aa-%d8%b3%d8%b1%d9%85%d8%a7%db%8c%d9%87-%d8%a8%d8%a7%d9%86%da%a9-%d8%b3%d8%b1%d9%85%d8%a7%db%8c%d9%87/"
@@ -3410,7 +3413,7 @@
       "termMonths": 13
     },
     {
-      "amountLabel": "۲۰۰ میلیون تومان حداکثر وام قابل اعطا به هر شخص حقیقی در قالب طرح بای کارت مبلغ ۲۰۰ میلیون تومان است.",
+      "amountLabel": "۲۰۰ میلیون تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک گردشگری",
@@ -3430,7 +3433,7 @@
       },
       "friction": 72,
       "id": "rade-705742",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2025-12-29",
       "maxAmount": 200000000,
       "minAmount": null,
@@ -3442,10 +3445,11 @@
       "regulatory": false,
       "requirements": [
         "ضمانت: اعتبارسنجی",
+        "هزینه جانبی: —",
         "قسط تقریبی: ۷,۷۴۱,۹۴۴ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — طرح بای کارت بانک گردشگری",
         "url": "https://www.rade.ir/loan-instant-loan/705742-%d8%b7%d8%b1%d8%ad-%d8%a8%d8%a7%db%8c-%da%a9%d8%a7%d8%b1%d8%aa-%d8%a8%d8%a7%d9%86%da%a9-%da%af%d8%b1%d8%af%d8%b4%da%af%d8%b1%db%8c/"
@@ -3458,7 +3462,7 @@
         "وام فوری",
         "گردشگری"
       ],
-      "termLabel": "۳۶ ماه مدت بازپرداخت تسهیلات ۱۲، ۲۴ و ۳۶ ماه است.",
+      "termLabel": "۳۶ ماه",
       "termMonths": 36
     },
     {
@@ -3469,7 +3473,7 @@
       "benefit": 55,
       "category": "credit",
       "ceilingContingent": false,
-      "collateral": "ضامن رسمی, اعتبارسنجی تصویر گواهی کسر از حقوق بابت تضمین مورد نیاز است. پذیرش گواهی کسر از حقوق منوط به ارزیابی اعتبار گواهی و سازمان صادرکننده توسط بانک است.\r\nدر صورت ارائه چک به‌عنوان وثیقه می‌بایست تصویر چک خام متعلق به متقاضی یا ضامن در سامانه بارگذاری شود.",
+      "collateral": "ضامن رسمی, اعتبارسنجی",
       "collateralKind": "guarantor",
       "confidence": "medium",
       "desc": "تسهیلات کارت اعتباری توبانک بانک گردشگری",
@@ -3482,7 +3486,7 @@
       },
       "friction": 50,
       "id": "rade-705857",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-15",
       "maxAmount": 200000000,
       "minAmount": null,
@@ -3493,12 +3497,12 @@
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: ضامن رسمی, اعتبارسنجی تصویر گواهی کسر از حقوق بابت تضمین مورد نیاز است. پذیرش گواهی کسر از حقوق منوط به ارزیابی اعتبار گواهی و سازمان صادرکننده توسط بانک است.\r\nدر صورت ارائه چک به‌عنوان وثیقه می‌بایست تصویر چک خام متعلق به متقاضی یا ضامن در سامانه بارگذاری شود.",
+        "ضمانت: ضامن رسمی, اعتبارسنجی",
         "هزینه جانبی: کارمزد صدور کارت مبلغ ۱۰ هزار تومان و آبونمان سالیانه آن یک درصد مبلغ تسهیلات کارت اعتباری است.",
         "قسط تقریبی: ۷,۷۴۱,۹۴۴ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — تسهیلات کارت اعتباری توبانک بانک گردشگری",
         "url": "https://www.rade.ir/loan-goods-loan/705857-%d8%aa%d8%b3%d9%87%db%8c%d9%84%d8%a7%d8%aa-%da%a9%d8%a7%d8%b1%d8%aa-%d8%a7%d8%b9%d8%aa%d8%a8%d8%a7%d8%b1%db%8c-%d8%aa%d9%88%d8%a8%d8%a7%d9%86%da%a9-%d8%a8%d8%a7%d9%86%da%a9-%da%af%d8%b1%d8%af%d8%b4/"
@@ -3511,7 +3515,7 @@
         "وام کالا",
         "گردشگری"
       ],
-      "termLabel": "۳۶ ماه حداکثر زمان بازپرداخت بین ۱۲ تا ۳۶ ماه متغیر است.",
+      "termLabel": "۳۶ ماه",
       "termMonths": 36
     },
     {
@@ -3522,8 +3526,8 @@
       "benefit": 55,
       "category": "credit",
       "ceilingContingent": true,
-      "collateral": "اعتبارسنجی مشتریان دارای رتبه اعتباری برتر می‌توانند بدون ضامن و تنها با امضای قرارداد دیجیتال از وام نیترو بهره‌مند شوند.",
-      "collateralKind": "guarantor",
+      "collateral": "اعتبارسنجی",
+      "collateralKind": "credit-score",
       "confidence": "medium",
       "desc": "وام نیترو بانک صادرات ایران",
       "digital": 60,
@@ -3533,9 +3537,9 @@
         "totalInterest": 236129986,
         "totalWithInterest": 836129986
       },
-      "friction": 50,
+      "friction": 72,
       "id": "rade-706036",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-27",
       "maxAmount": 600000000,
       "minAmount": 10000000,
@@ -3546,12 +3550,12 @@
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: اعتبارسنجی مشتریان دارای رتبه اعتباری برتر می‌توانند بدون ضامن و تنها با امضای قرارداد دیجیتال از وام نیترو بهره‌مند شوند.",
+        "ضمانت: اعتبارسنجی",
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
         "قسط تقریبی: ۲۳,۲۲۵,۸۳۳ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام نیترو بانک صادرات ایران",
         "url": "https://www.rade.ir/loan-no-guarantor-loans/706036-%d9%88%d8%a7%d9%85-%d9%86%db%8c%d8%aa%d8%b1%d9%88-%d8%a8%d8%a7%d9%86%da%a9-%d8%b5%d8%a7%d8%af%d8%b1%d8%a7%d8%aa-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
@@ -3564,18 +3568,18 @@
         "بدون ضامن",
         "صادرات"
       ],
-      "termLabel": "۳۶ ماه مدت بازپرداخت اقساط بین ۶ تا ۳۶ ماه متغیر است.",
+      "termLabel": "۳۶ ماه",
       "termMonths": 36
     },
     {
-      "amountLabel": "۵۰ میلیون تومان میزان وام میکرولون از یک تا ۵۰ میلیون تومان است که به‌صورت پلکانی و براساس ۱.۵ برابر معدل حساب به متقاضی تعلق می گیرد.",
+      "amountLabel": "۵۰ میلیون تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک ملت",
       "benefit": 55,
       "category": "credit",
       "ceilingContingent": true,
-      "collateral": "اعتبارسنجی تسهیلات میکرولون براساس اعتبارسنجی فردی و به رتبه‌های اعتباری A، B و C تعلق می‌گیرد.",
+      "collateral": "اعتبارسنجی",
       "collateralKind": "credit-score",
       "confidence": "medium",
       "desc": "وام میکرولون بانک ملت",
@@ -3588,7 +3592,7 @@
       },
       "friction": 72,
       "id": "rade-706662",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-15",
       "maxAmount": 50000000,
       "minAmount": 1000000,
@@ -3599,12 +3603,12 @@
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: اعتبارسنجی تسهیلات میکرولون براساس اعتبارسنجی فردی و به رتبه‌های اعتباری A، B و C تعلق می‌گیرد.",
+        "ضمانت: اعتبارسنجی",
         "هزینه جانبی: هزینه اعتبارسنجی: ۲۶۸.۰۰۰ تومان \r\n کارمزد بانکی: ۱۰۰.۰۰۰ تومان",
         "قسط تقریبی: ۸,۹۰۱,۲۰۴ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام میکرولون بانک ملت",
         "url": "https://www.rade.ir/loan-no-guarantor-loans/706662-%d9%88%d8%a7%d9%85-%d9%85%db%8c%da%a9%d8%b1%d9%88%d9%84%d9%88%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%84%d8%aa/"
@@ -3617,7 +3621,7 @@
         "بدون ضامن",
         "ملت"
       ],
-      "termLabel": "۶ ماه بازپرداخت وام میکرولون با توجه به مبلغ وام بین یک تا ۶ ماه است.",
+      "termLabel": "۶ ماه",
       "termMonths": 6
     },
     {
@@ -3641,7 +3645,7 @@
       },
       "friction": 72,
       "id": "rade-706665",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-15",
       "maxAmount": 50000000,
       "minAmount": null,
@@ -3657,7 +3661,7 @@
         "قسط تقریبی: ۸,۹۰۱,۲۰۴ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام اعتباری کادر درمان بانک ملت",
         "url": "https://www.rade.ir/loan-goods-loan/706665-%d9%88%d8%a7%d9%85-%d8%a7%d8%b9%d8%aa%d8%a8%d8%a7%d8%b1%db%8c-%da%a9%d8%a7%d8%af%d8%b1-%d8%af%d8%b1%d9%85%d8%a7%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%84%d8%aa/"
@@ -3681,7 +3685,7 @@
       "benefit": 55,
       "category": "credit",
       "ceilingContingent": false,
-      "collateral": "اعتبارسنجی برای دریافت وام بازارگاه ایرانسل بعد از انجام فرآیند اعتبارسنجی، نیاز به یک چک صیادی است که به نام شخص وام‌گیرنده باشد. براساس وام سنجی انجام شده صرفا به افراد با رتبه وامی ایرانیان A, B و C وام تعلق می‌گیرد.",
+      "collateral": "اعتبارسنجی",
       "collateralKind": "credit-score",
       "confidence": "medium",
       "desc": "تسهیلات اعتباری ایرانسل (بانک ملت)",
@@ -3694,7 +3698,7 @@
       },
       "friction": 72,
       "id": "rade-706689",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-15",
       "maxAmount": 100000000,
       "minAmount": null,
@@ -3705,12 +3709,12 @@
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: اعتبارسنجی برای دریافت وام بازارگاه ایرانسل بعد از انجام فرآیند اعتبارسنجی، نیاز به یک چک صیادی است که به نام شخص وام‌گیرنده باشد. براساس وام سنجی انجام شده صرفا به افراد با رتبه وامی ایرانیان A, B و C وام تعلق می‌گیرد.",
+        "ضمانت: اعتبارسنجی",
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی، حق اشتراک و دریافت وام",
         "قسط تقریبی: ۹,۴۰۷,۶۳۲ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — تسهیلات اعتباری ایرانسل (بانک ملت)",
         "url": "https://www.rade.ir/loan-goods-loan/706689-%d8%aa%d8%b3%d9%87%db%8c%d9%84%d8%a7%d8%aa-%d8%a7%d8%b9%d8%aa%d8%a8%d8%a7%d8%b1%db%8c-%d8%a7%db%8c%d8%b1%d8%a7%d9%86%d8%b3%d9%84-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%84%d8%aa/"
@@ -3734,8 +3738,8 @@
       "benefit": 92,
       "category": "credit",
       "ceilingContingent": false,
-      "collateral": "اعتبارسنجی ارائه این وام برمبنای اعتبارسنجی و بدون نیاز به ارائه چک، سفته یا ضامن است.",
-      "collateralKind": "guarantor",
+      "collateral": "اعتبارسنجی",
+      "collateralKind": "credit-score",
       "confidence": "medium",
       "desc": "طرح رفاه کار بانک رفاه کارگران",
       "digital": 60,
@@ -3745,9 +3749,9 @@
         "totalInterest": 166944,
         "totalWithInterest": 20166944
       },
-      "friction": 50,
+      "friction": 72,
       "id": "rade-706711",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-27",
       "maxAmount": 20000000,
       "minAmount": 5000000,
@@ -3758,12 +3762,12 @@
       "rateLabel": "سود ۴٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: اعتبارسنجی ارائه این وام برمبنای اعتبارسنجی و بدون نیاز به ارائه چک، سفته یا ضامن است.",
+        "ضمانت: اعتبارسنجی",
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
         "قسط تقریبی: ۵,۰۴۱,۷۳۶ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — طرح رفاه کار بانک رفاه کارگران",
         "url": "https://www.rade.ir/loan-goods-loan/706711-%d8%b7%d8%b1%d8%ad-%d8%b1%d9%81%d8%a7%d9%87-%da%a9%d8%a7%d8%b1-%d8%a8%d8%a7%d9%86%da%a9-%d8%b1%d9%81%d8%a7%d9%87-%da%a9%d8%a7%d8%b1%da%af%d8%b1%d8%a7%d9%86/"
@@ -3800,7 +3804,7 @@
       },
       "friction": 72,
       "id": "rade-706733",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-05-03",
       "maxAmount": 50000000,
       "minAmount": null,
@@ -3816,7 +3820,7 @@
         "قسط تقریبی: ۴,۷۰۳,۸۱۶ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام طرح فرهنگ‌کارت بانک ملت",
         "url": "https://www.rade.ir/loan-goods-loan/706733-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%d9%81%d8%b1%d9%87%d9%86%da%af%da%a9%d8%a7%d8%b1%d8%aa-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%84%d8%aa/"
@@ -3853,7 +3857,7 @@
       },
       "friction": 72,
       "id": "rade-706758",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-21",
       "maxAmount": 100000000,
       "minAmount": null,
@@ -3869,7 +3873,7 @@
         "قسط تقریبی: ۹,۴۰۷,۶۳۲ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام کشاورزی بانک کشاورزی",
         "url": "https://www.rade.ir/loan-no-guarantor-loans/706758-%d9%88%d8%a7%d9%85-%da%a9%d8%b4%d8%a7%d9%88%d8%b1%d8%b2%db%8c-%d8%a8%d8%a7%d9%86%da%a9-%da%a9%d8%b4%d8%a7%d9%88%d8%b1%d8%b2%db%8c/"
@@ -3906,7 +3910,7 @@
       },
       "friction": 72,
       "id": "rade-707105",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-21",
       "maxAmount": 10000000,
       "minAmount": 5000000,
@@ -3918,10 +3922,11 @@
       "regulatory": false,
       "requirements": [
         "ضمانت: اعتبارسنجی",
+        "هزینه جانبی: —",
         "قسط تقریبی: ۲,۵۲۰,۸۶۸ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام اعتباری دیباکارت بانک دی",
         "url": "https://www.rade.ir/loan-goods-loan/707105-%d9%88%d8%a7%d9%85-%d8%a7%d8%b9%d8%aa%d8%a8%d8%a7%d8%b1%db%8c-%d8%af%db%8c%d8%a8%d8%a7-%da%a9%d8%a7%d8%b1%d8%aa-%d8%a8%d8%a7%d9%86%da%a9-%d8%af%db%8c/"
@@ -3934,7 +3939,7 @@
         "وام کالا",
         "دی"
       ],
-      "termLabel": "۴ ماه مدت زمان بازپرداخت برای دیباکارت اعتباری پایه دو ماه است.",
+      "termLabel": "۴ ماه",
       "termMonths": 4
     },
     {
@@ -3945,8 +3950,8 @@
       "benefit": 88,
       "category": "credit",
       "ceilingContingent": false,
-      "collateral": "اعتبارسنجی برای وام خرید موتورسیکلت از کویر موتور شما به ضامن، پیش‌پرداخت و چک نیازی ندارید و کسر اقساط مستقیما از حقوق انجام می‌شود.",
-      "collateralKind": "guarantor",
+      "collateral": "اعتبارسنجی",
+      "collateralKind": "credit-score",
       "confidence": "medium",
       "desc": "وام خرید موتورسیکلت بانک رفاه کارگران",
       "digital": 60,
@@ -3956,9 +3961,9 @@
         "totalInterest": 16398578,
         "totalWithInterest": 516398578
       },
-      "friction": 50,
+      "friction": 72,
       "id": "rade-707237",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-04",
       "maxAmount": 500000000,
       "minAmount": null,
@@ -3969,12 +3974,12 @@
       "rateLabel": "سود ۶٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: اعتبارسنجی برای وام خرید موتورسیکلت از کویر موتور شما به ضامن، پیش‌پرداخت و چک نیازی ندارید و کسر اقساط مستقیما از حقوق انجام می‌شود.",
+        "ضمانت: اعتبارسنجی",
         "هزینه جانبی: هزینه‌های مربوط به استعلامات بانکی، ‌ فرآیند دریافت کارت و فعال‌سازی اعتبار",
         "قسط تقریبی: ۴۳,۰۳۳,۲۱۵ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام خرید موتورسیکلت بانک رفاه کارگران",
         "url": "https://www.rade.ir/loan-goods-loan/707237-%d9%88%d8%a7%d9%85-%d8%ae%d8%b1%db%8c%d8%af-%d9%85%d9%88%d8%aa%d9%88%d8%b1%d8%b3%db%8c%da%a9%d9%84%d8%aa-%d8%a8%d8%a7%d9%86%da%a9-%d8%b1%d9%81%d8%a7%d9%87-%da%a9%d8%a7%d8%b1%da%af%d8%b1%d8%a7%d9%86/"
@@ -3987,7 +3992,7 @@
         "وام کالا",
         "رفاه کارگران"
       ],
-      "termLabel": "۱۲ ماه با توجه به استعلام‌های بانکی، مدت بازپرداخت حداکثر ۱۲ ماه است.",
+      "termLabel": "۱۲ ماه",
       "termMonths": 12
     },
     {
@@ -4011,7 +4016,7 @@
       },
       "friction": 50,
       "id": "rade-707412",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-04",
       "maxAmount": 400000000,
       "minAmount": 50000000,
@@ -4027,7 +4032,7 @@
         "قسط تقریبی: ۱۵,۴۸۳,۸۸۹ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — طرح تسهیلاتی سرو بانک کارآفرین",
         "url": "https://www.rade.ir/loan-instant-loan/707412-%d8%b7%d8%b1%d8%ad-%d8%aa%d8%b3%d9%87%db%8c%d9%84%d8%a7%d8%aa-%d8%b3%d8%b1%d9%88-%d8%a8%d8%a7%d9%86%da%a9-%da%a9%d8%a7%d8%b1%d8%a2%d9%81%d8%b1%db%8c%d9%86/"
@@ -4044,15 +4049,15 @@
       "termMonths": 36
     },
     {
-      "amountLabel": "۲۰۰ میلیون تومان با توجه به اعتبارسنجی فردی، سقف قابل دریافت هر شخص مشخص خواهد شد.",
+      "amountLabel": "۲۰۰ میلیون تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک رفاه کارگران",
       "benefit": 55,
       "category": "credit",
       "ceilingContingent": false,
-      "collateral": "اعتبارسنجی برای دریافت این وام نیازی به ضامن یا سفته الکترونیک نیست.",
-      "collateralKind": "guarantor",
+      "collateral": "اعتبارسنجی",
+      "collateralKind": "credit-score",
       "confidence": "medium",
       "desc": "وام رفاه پی بانک رفاه کارگران",
       "digital": 60,
@@ -4062,9 +4067,9 @@
         "totalInterest": 51391869,
         "totalWithInterest": 251391869
       },
-      "friction": 50,
+      "friction": 72,
       "id": "rade-707590",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-04",
       "maxAmount": 200000000,
       "minAmount": null,
@@ -4075,12 +4080,12 @@
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: اعتبارسنجی برای دریافت این وام نیازی به ضامن یا سفته الکترونیک نیست.",
+        "ضمانت: اعتبارسنجی",
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
         "قسط تقریبی: ۱۰,۴۷۴,۶۶۱ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام رفاه پی بانک رفاه کارگران",
         "url": "https://www.rade.ir/loan-goods-loan/707590-%d9%88%d8%a7%d9%85-%d8%b1%d9%81%d8%a7%d9%87%d9%be%db%8c-%d8%a8%d8%a7%d9%86%da%a9-%d8%b1%d9%81%d8%a7%d9%87-%da%a9%d8%a7%d8%b1%da%af%d8%b1%d8%a7%d9%86/"
@@ -4117,7 +4122,7 @@
       },
       "friction": 50,
       "id": "rade-707693",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-04",
       "maxAmount": 300000000,
       "minAmount": null,
@@ -4133,7 +4138,7 @@
         "قسط تقریبی: ۱۵,۷۱۱,۹۹۲ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — کارت اعتباری لِن‌کارت بانک ایران و ونزوئلا",
         "url": "https://www.rade.ir/loan-goods-loan/707693-%da%a9%d8%a7%d8%b1%d8%aa-%d8%a7%d8%b9%d8%aa%d8%a8%d8%a7%d8%b1%db%8c-%d9%84%d9%90%d9%86%da%a9%d8%a7%d8%b1%d8%aa-%d8%a8%d8%a7%d9%86%da%a9-%d8%a7%db%8c%d8%b1%d8%a7%d9%86-%d9%88-%d9%88%d9%86/"
@@ -4146,19 +4151,19 @@
         "وام کالا",
         "ایران و ونزوئلا"
       ],
-      "termLabel": "۲۴ ماه حداکثر زمان بازپرداخت اقساط ۱۲ و ۲۴ ماهه است.",
+      "termLabel": "۲۴ ماه",
       "termMonths": 24
     },
     {
-      "amountLabel": "۲۰۰ میلیون تومان سقف وام برای هر کاربر براساس امتیاز اعتباری آنها و میانگین مانده موجودی، متفاوت خواهد بود.",
+      "amountLabel": "۲۰۰ میلیون تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک سامان",
       "benefit": 61,
       "category": "credit",
       "ceilingContingent": false,
-      "collateral": "اعتبارسنجی وام بدون ضامن به‌جا بلوبانک، بدون ضامن، سفته و چک و تنها براساس رتبه اعتباری به کاربر تعلق می‌گیرد.",
-      "collateralKind": "guarantor",
+      "collateral": "اعتبارسنجی",
+      "collateralKind": "credit-score",
       "confidence": "medium",
       "desc": "وام به‌جا (بدون ضامن) بلوبانک",
       "digital": 60,
@@ -4168,9 +4173,9 @@
         "totalInterest": 22322814,
         "totalWithInterest": 222322814
       },
-      "friction": 50,
+      "friction": 72,
       "id": "rade-707696",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-31",
       "maxAmount": 200000000,
       "minAmount": 3000000,
@@ -4181,11 +4186,12 @@
       "rateLabel": "سود ۲۰٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: اعتبارسنجی وام بدون ضامن به‌جا بلوبانک، بدون ضامن، سفته و چک و تنها براساس رتبه اعتباری به کاربر تعلق می‌گیرد.",
+        "ضمانت: اعتبارسنجی",
+        "هزینه جانبی: —",
         "قسط تقریبی: ۱۸,۵۲۶,۹۰۱ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام به‌جا (بدون ضامن) بلوبانک",
         "url": "https://www.rade.ir/loan-no-guarantor-loans/707696-%d9%88%d8%a7%d9%85-%d8%a8%d9%87%d8%ac%d8%a7-%d8%a8%d8%af%d9%88%d9%86-%d8%b6%d8%a7%d9%85%d9%86-%d8%a8%d9%84%d9%88%d8%a8%d8%a7%d9%86%da%a9/"
@@ -4222,7 +4228,7 @@
       },
       "friction": 50,
       "id": "rade-707795",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-15",
       "maxAmount": 400000000,
       "minAmount": null,
@@ -4238,7 +4244,7 @@
         "قسط تقریبی: ۱۵,۴۸۳,۸۸۹ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — گردش کارتِ اعتباری بانک گردشگری",
         "url": "https://www.rade.ir/loan-goods-loan/707795-%da%af%d8%b1%d8%af%d8%b4-%da%a9%d8%a7%d8%b1%d8%aa%d9%90-%d8%a7%d8%b9%d8%aa%d8%a8%d8%a7%d8%b1%db%8c-%d8%a8%d8%a7%d9%86%da%a9-%da%af%d8%b1%d8%af%d8%b4%da%af%d8%b1%db%8c/"
@@ -4251,19 +4257,19 @@
         "وام کالا",
         "گردشگری"
       ],
-      "termLabel": "۳۶ ماه خرید خدمات سفر و گردشگری به‌صورت اعتباری با دوره بازپرداخت ۱۲ تا ۳۶ ماه است.",
+      "termLabel": "۳۶ ماه",
       "termMonths": 36
     },
     {
-      "amountLabel": "۵۰ میلیون تومان سقف فردی اعتبار در صورت تعهد بازپرداخت سازمانی، ۵۰ میلیون تومان و در صورت عدم تعهد بازپرداخت سازمانی، ۳۰ میلیون تومان است.",
+      "amountLabel": "۵۰ میلیون تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک تجارت",
       "benefit": 50,
       "category": "credit",
       "ceilingContingent": false,
-      "collateral": "اعتبارسنجی, چک صیادی درصورت تعهد بازپرداخت توسط سازمان نیازی به ارائه ضامن و وثیقه توسط پرسنل مربوطه نخواهد بود.",
-      "collateralKind": "guarantor",
+      "collateral": "اعتبارسنجی, چک صیادی",
+      "collateralKind": "credit-score",
       "confidence": "medium",
       "desc": "طرح روزنو بانک تجارت",
       "digital": 60,
@@ -4273,9 +4279,9 @@
         "totalInterest": null,
         "totalWithInterest": 50000000
       },
-      "friction": 50,
+      "friction": 72,
       "id": "rade-707839",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-04",
       "maxAmount": 50000000,
       "minAmount": null,
@@ -4286,11 +4292,12 @@
       "rateLabel": "نامشخص",
       "regulatory": false,
       "requirements": [
-        "ضمانت: اعتبارسنجی, چک صیادی درصورت تعهد بازپرداخت توسط سازمان نیازی به ارائه ضامن و وثیقه توسط پرسنل مربوطه نخواهد بود.",
+        "ضمانت: اعتبارسنجی, چک صیادی",
+        "هزینه جانبی: —",
         "قسط تقریبی: ۱۲,۵۰۰,۰۰۰ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — طرح روزنو بانک تجارت",
         "url": "https://www.rade.ir/loan-goods-loan/707839-%d8%b7%d8%b1%d8%ad-%d8%b1%d9%88%d8%b2%d9%86%d9%88-%d8%a8%d8%a7%d9%86%da%a9-%d8%aa%d8%ac%d8%a7%d8%b1%d8%aa/"
@@ -4303,19 +4310,19 @@
         "وام کالا",
         "تجارت"
       ],
-      "termLabel": "۴ ماه دوره بازپرداخت حداکثر طی ۴ قسط مساوی و متوالی است.",
+      "termLabel": "۴ ماه",
       "termMonths": 4
     },
     {
-      "amountLabel": "۳ میلیارد تومان در هر کدام از ۶ طرح کاریزماوام که شامل طرح‌های با پشتوانه طلا، نقره، مس، ملک و درآمدثابت یا استاکس کاریزما و بازپرداخت ۳، ۶، ۹ یا ۱۲ ماهه است، می‌توانید تا سقف ۵۰۰ میلیون تومان و در مجموع ۳ میلیارد تومان وام دریافت کنید.",
+      "amountLabel": "۳ میلیارد تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "غیر بانکی",
       "benefit": 55,
       "category": "credit",
       "ceilingContingent": false,
-      "collateral": "مسدودی سپرده, اعتبارسنجی طرح‌های کاریزماوام، سریع، بدون ضامن و با ضمانت دارایی طلا، نقره، مس، ملک، استاکس یا طرح درآمد ثابت است.",
-      "collateralKind": "guarantor",
+      "collateral": "مسدودی سپرده, اعتبارسنجی",
+      "collateralKind": "credit-score",
       "confidence": "medium",
       "desc": "وام فوری کاریزما",
       "digital": 60,
@@ -4325,9 +4332,9 @@
         "totalInterest": 386747568,
         "totalWithInterest": 3386747568
       },
-      "friction": 50,
+      "friction": 72,
       "id": "rade-707896",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-10-04",
       "maxAmount": 3000000000,
       "minAmount": 10000000,
@@ -4338,12 +4345,12 @@
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: مسدودی سپرده, اعتبارسنجی طرح‌های کاریزماوام، سریع، بدون ضامن و با ضمانت دارایی طلا، نقره، مس، ملک، استاکس یا طرح درآمد ثابت است.",
+        "ضمانت: مسدودی سپرده, اعتبارسنجی",
         "هزینه جانبی: کارمزد طرح‌های تسهیلاتی با پشتوانه طلا، نقره، مس، استاکس، ملک و درآمد ثابت با بازپرداخت ۳ الی ۱۲ ماه به‌ترتیب ۳.۵ الی ۱۲ درصد است.",
         "قسط تقریبی: ۲۸۲,۲۲۸,۹۶۴ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام فوری کاریزما",
         "url": "https://www.rade.ir/loan-instant-loan/707896-%d9%88%d8%a7%d9%85-%d9%81%d9%88%d8%b1%db%8c-%da%a9%d8%a7%d8%b1%db%8c%d8%b2%d9%85%d8%a7/"
@@ -4356,7 +4363,7 @@
         "وام فوری",
         "غیر بانکی"
       ],
-      "termLabel": "۱۲ ماه حداکثر زمان بازپرداخت در تمام طرح‌ها ۳، ۶، ۹ یا ۱۲ ماه است.",
+      "termLabel": "۱۲ ماه",
       "termMonths": 12
     },
     {
@@ -4380,7 +4387,7 @@
       },
       "friction": 50,
       "id": "rade-708468",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-26",
       "maxAmount": 500000000,
       "minAmount": 10000000,
@@ -4396,7 +4403,7 @@
         "قسط تقریبی: ۲۲,۶۷۰,۶۹۹ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — کارت اعتباری سفر سیمرغ بانک رفاه کارگران",
         "url": "https://www.rade.ir/loan-goods-loan/708468-%da%a9%d8%a7%d8%b1%d8%aa-%d8%a7%d8%b9%d8%aa%d8%a8%d8%a7%d8%b1%db%8c-%d8%b3%d9%81%d8%b1-%d8%b3%db%8c%d9%85%d8%b1%d8%ba-%d8%a8%d8%a7%d9%86%da%a9-%d8%b1%d9%81%d8%a7%d9%87-%da%a9%d8%a7%d8%b1%da%af%d8%b1/"
@@ -4409,11 +4416,11 @@
         "وام کالا",
         "رفاه کارگران"
       ],
-      "termLabel": "۲۴ ماه امکان انتخاب دوره‌های بازپرداخت ۴، ۱۲ و ۲۴ ماهه توسط متقاضی وجود دارد.",
+      "termLabel": "۲۴ ماه",
       "termMonths": 24
     },
     {
-      "amountLabel": "۵۰۰ میلیون تومان سقف مبلغ وام حداکثر ۵۰۰ میلیون تومان بنا به اعتبارسنجی و کنترل مانده بدهی است.",
+      "amountLabel": "۵۰۰ میلیون تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک شهر",
@@ -4433,7 +4440,7 @@
       },
       "friction": 50,
       "id": "rade-708480",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-25",
       "maxAmount": 500000000,
       "minAmount": null,
@@ -4449,7 +4456,7 @@
         "قسط تقریبی: ۲۶,۱۸۶,۶۵۳ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — کارت رفاهی اوراق گام بانک شهر",
         "url": "https://www.rade.ir/loan-goods-loan/708480-%da%a9%d8%a7%d8%b1%d8%aa-%d8%b1%d9%81%d8%a7%d9%87%db%8c-%d8%a7%d9%88%d8%b1%d8%a7%d9%82-%da%af%d8%a7%d9%85-%d8%a8%d8%a7%d9%86%da%a9-%d8%b4%d9%87%d8%b1/"
@@ -4462,19 +4469,19 @@
         "وام کالا",
         "شهر"
       ],
-      "termLabel": "۲۴ ماه مدت بازپرداخت اقساط ۲ الی ۲۴ ماه در اقساط مساوی و ماهیانه است.",
+      "termLabel": "۲۴ ماه",
       "termMonths": 24
     },
     {
-      "amountLabel": "۳۰۰ میلیون تومان دارندگان رتبه‌های اعتباری A و B تا سقف ۳۰۰ میلیون تومان و دارندگان رتبه‌های C و D می‌توانند تا سقف ۱۰۰ میلیون تومان اعتبار دریافت کنند.",
+      "amountLabel": "۳۰۰ میلیون تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک تجارت",
       "benefit": 94,
       "category": "credit",
       "ceilingContingent": false,
-      "collateral": "اعتبارسنجی, چک صیادی برای دریافت اعتبار ۳۰۰ میلیون تومان، نیاز به یک نفر ضامن معتبر با رتبه اعتباری مناسب (به‌جز رتبه E) و همچنین ارائه سفته الکترونیکی یا چک صیاد است.",
-      "collateralKind": "guarantor",
+      "collateral": "اعتبارسنجی, چک صیادی",
+      "collateralKind": "credit-score",
       "confidence": "medium",
       "desc": "وام کارت رفاهی اوراق گام بانک تجارت",
       "digital": 60,
@@ -4484,9 +4491,9 @@
         "totalInterest": 9000000,
         "totalWithInterest": 309000000
       },
-      "friction": 50,
+      "friction": 72,
       "id": "rade-708613",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-09",
       "maxAmount": 300000000,
       "minAmount": 5000000,
@@ -4497,12 +4504,12 @@
       "rateLabel": "سود ۳٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: اعتبارسنجی, چک صیادی برای دریافت اعتبار ۳۰۰ میلیون تومان، نیاز به یک نفر ضامن معتبر با رتبه اعتباری مناسب (به‌جز رتبه E) و همچنین ارائه سفته الکترونیکی یا چک صیاد است.",
+        "ضمانت: اعتبارسنجی, چک صیادی",
         "هزینه جانبی: هزینه خدمات دیجیتال به مبلغ ۳٬۵۶۱٬۰۰۰ تومان.",
         "قسط تقریبی: ۲۵,۷۵۰,۰۰۰ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام کارت رفاهی اوراق گام بانک تجارت",
         "url": "https://www.rade.ir/loan-goods-loan/708613-%d9%88%d8%a7%d9%85-%da%a9%d8%a7%d8%b1%d8%aa-%d8%b1%d9%81%d8%a7%d9%87%db%8c-%d9%85%d8%aa%d8%b5%d9%84-%d8%a8%d9%87-%d8%a7%d9%88%d8%b1%d8%a7%d9%82-%da%af%d8%a7%d9%85-%d8%a8%d8%a7%d9%86%da%a9-%d8%aa%d8%ac/"
@@ -4519,7 +4526,7 @@
       "termMonths": 12
     },
     {
-      "amountLabel": "۳۰ میلیون تومان مبلغ تسهیلات ۵ تا ۳۰ میلیون تومان به صورت شانسی است.",
+      "amountLabel": "۳۰ میلیون تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک سامان",
@@ -4539,7 +4546,7 @@
       },
       "friction": 72,
       "id": "rade-708655",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-09",
       "maxAmount": 30000000,
       "minAmount": 5000000,
@@ -4555,7 +4562,7 @@
         "قسط تقریبی: ۷,۵۰۰,۰۰۰ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام بلوجونیور بانک سامان",
         "url": "https://www.rade.ir/loan-goods-loan/708655-%d9%88%d8%a7%d9%85-%d8%a8%d9%84%d9%88%d8%ac%d9%88%d9%86%db%8c%d9%88%d8%b1/"
@@ -4572,7 +4579,7 @@
       "termMonths": 4
     },
     {
-      "amountLabel": "۱۰ میلیارد تومان سقف مبلغ وام حداکثر تا ۱۰ میلیارد تومان برای صاحبان کسب‌وکار و برای اشخاص حقوقی براساس شرایط پرونده و ضوابط بانکی تعیین شده است.",
+      "amountLabel": "۱۰ میلیارد تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک صادرات",
@@ -4592,7 +4599,7 @@
       },
       "friction": 72,
       "id": "rade-708715",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-10-12",
       "maxAmount": 10000000000,
       "minAmount": 100000000,
@@ -4608,7 +4615,7 @@
         "قسط تقریبی: ۴۶۱,۴۴۹,۲۶۳ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام طرح شمیم 75 بانک صادرات ایران",
         "url": "https://www.rade.ir/loan-instant-loan/708715-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%d8%b4%d9%85%db%8c%d9%85-75-%d8%a8%d8%a7%d9%86%da%a9-%d8%b5%d8%a7%d8%af%d8%b1%d8%a7%d8%aa-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
@@ -4621,11 +4628,11 @@
         "وام فوری",
         "صادرات"
       ],
-      "termLabel": "۲۴ ماه بازپرداخت ۳ تا ۲۴ ماهه",
+      "termLabel": "۲۴ ماه",
       "termMonths": 24
     },
     {
-      "amountLabel": "۱۰۰ میلیون تومان سقف مبلغ وام بر اساس رتبه اعتباری متقاضی تعیین می‌شود؛ برای رتبه اعتباری A، سقف وام ۱۰۰ میلیون تومان است.",
+      "amountLabel": "۱۰۰ میلیون تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک گردشگری",
@@ -4645,7 +4652,7 @@
       },
       "friction": 72,
       "id": "rade-708732",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-16",
       "maxAmount": 100000000,
       "minAmount": null,
@@ -4661,7 +4668,7 @@
         "قسط تقریبی: ۹,۴۰۷,۶۳۲ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام میکاکارت توبانک بانک گردشگری",
         "url": "https://www.rade.ir/loan-goods-loan/708732-%d9%88%d8%a7%d9%85-%d9%85%db%8c%da%a9%d8%a7%da%a9%d8%a7%d8%b1%d8%aa-%d8%aa%d9%88%d8%a8%d8%a7%d9%86%da%a9-%d8%a8%d8%a7%d9%86%da%a9-%da%af%d8%b1%d8%af%d8%b4%da%af%d8%b1%db%8c/"
@@ -4678,7 +4685,7 @@
       "termMonths": 12
     },
     {
-      "amountLabel": "۴۰۰ میلیون تومان میزان اعتبار هر فرد بر اساس حقوق ثبت‌شده (حداقل دو ماه متوالی) و تعهدات و اقساط جاری او محاسبه می‌شود، به‌طوری که مبلغ هر قسط حداکثر ۶۰ درصد حقوق ماهانه‌اش باشد و داشتن اقساط معوق می‌تواند این مبلغ را کاهش دهد یا مانع دریافت اعتبار شود.",
+      "amountLabel": "۴۰۰ میلیون تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک رفاه کارگران",
@@ -4698,7 +4705,7 @@
       },
       "friction": 72,
       "id": "rade-708930",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-10-05",
       "maxAmount": 400000000,
       "minAmount": null,
@@ -4710,10 +4717,11 @@
       "regulatory": false,
       "requirements": [
         "ضمانت: اعتبارسنجی",
+        "هزینه جانبی: —",
         "قسط تقریبی: ۳۶,۴۸۱,۹۰۱ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام سامانه بتا بانک رفاه کارگران",
         "url": "https://www.rade.ir/loan-no-guarantor-loans/708930-%d9%88%d8%a7%d9%85-%d8%a7%d9%84%d9%85%d8%a7%d8%b3-%d8%b1%d9%81%d8%a7%d9%87-%d8%ae%d8%b1%db%8c%d8%af-%d8%a7%d9%82%d8%b3%d8%a7%d8%b7%db%8c-%d8%a8%d8%af%d9%88%d9%86-%d8%b6%d8%a7%d9%85%d9%86-%d8%a8/"
@@ -4726,7 +4734,7 @@
         "بدون ضامن",
         "رفاه کارگران"
       ],
-      "termLabel": "۱۲ ماه تعداد و مبلغ اقساط با توجه به طرح، اعتبار شما و شرایط خرید، با هماهنگی شما و پذیرنده تعیین می‌شود.",
+      "termLabel": "۱۲ ماه",
       "termMonths": 12
     },
     {
@@ -4750,7 +4758,7 @@
       },
       "friction": 72,
       "id": "rade-708960",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-10-07",
       "maxAmount": 150000000,
       "minAmount": null,
@@ -4766,7 +4774,7 @@
         "قسط تقریبی: ۱۴,۱۱۱,۴۴۸ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام طب نو بانک تجارت",
         "url": "https://www.rade.ir/loan-goods-loan/708960-%d9%88%d8%a7%d9%85-%d8%b7%d8%a8-%d9%86%d9%88-%d8%a8%d8%a7%d9%86%da%a9-%d8%aa%d8%ac%d8%a7%d8%b1%d8%aa/"
@@ -4803,7 +4811,7 @@
       },
       "friction": 50,
       "id": "rade-708961",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-10-07",
       "maxAmount": 200000000,
       "minAmount": null,
@@ -4819,7 +4827,7 @@
         "قسط تقریبی: ۳,۵۹۳,۷۳۸ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام آسان‌خرید بانک تجارت",
         "url": "https://www.rade.ir/loan-goods-loan/708961-%d9%88%d8%a7%d9%85-%d8%a2%d8%b3%d8%a7%d9%86%d8%ae%d8%b1%db%8c%d8%af-%d8%a8%d8%a7%d9%86%da%a9-%d8%aa%d8%ac%d8%a7%d8%b1%d8%aa/"
@@ -4832,7 +4840,7 @@
         "وام کالا",
         "تجارت"
       ],
-      "termLabel": "۶۰ ماه بازپرداخت اقساط ۳ تا ۶۰ ماهه حسب توافق با فروشنده است.",
+      "termLabel": "۶۰ ماه",
       "termMonths": 60
     },
     {
@@ -5852,14 +5860,14 @@
       "termMonths": 36
     },
     {
-      "amountLabel": "۱ میلیارد تومان پرداخت تسهیلات قرض‌الحسنه به افراد معرفی‌شده از سوی اشخاص حقوقی، در چارچوب ضوابط بانک و تا سقف یک میلیارد تومان امکان‌پذیر است. سقف تسهیلات پرداختی به اصناف ۲ میلیارد تومان است.",
+      "amountLabel": "۱ میلیارد تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک قرض‌الحسنه مهر ایران",
       "benefit": 92,
       "category": "loans",
       "ceilingContingent": false,
-      "collateral": "اعتبار شغلی, اعتبارسنجی وثایق و تضامین در چارچوب ضوابط اعتباری بانک است.",
+      "collateral": "اعتبار شغلی, اعتبارسنجی",
       "collateralKind": "credit-score",
       "confidence": "medium",
       "desc": "وام طرح نصر تفاهم‌نامه‌ای بانک مهر ایران",
@@ -5872,7 +5880,7 @@
       },
       "friction": 72,
       "id": "rade-704653",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-21",
       "maxAmount": 1000000000,
       "minAmount": null,
@@ -5883,12 +5891,12 @@
       "rateLabel": "سود ۴٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: اعتبار شغلی, اعتبارسنجی وثایق و تضامین در چارچوب ضوابط اعتباری بانک است.",
+        "ضمانت: اعتبار شغلی, اعتبارسنجی",
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
         "قسط تقریبی: ۱۸,۱۸۱,۸۱۸ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام طرح نصر تفاهم‌نامه‌ای بانک مهر ایران",
         "url": "https://www.rade.ir/loan-interest-free-loan/704653-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%d9%86%d8%b5%d8%b1-%d8%ad%d9%82%d9%88%d9%82%db%8c-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%87%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
@@ -6011,14 +6019,14 @@
       "termMonths": 60
     },
     {
-      "amountLabel": "۱ میلیارد تومان در این طرح سقف مبلغ تسهیلات قرض‌الحسنه برای اشخاص حقیقی معرفی شده از سوی اصناف ۵۰۰ میلیون تومان و برای اصناف ۱ میلیارد تومان تعیین شده است.",
+      "amountLabel": "۱ میلیارد تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک قرض‌الحسنه مهر ایران",
       "benefit": 92,
       "category": "loans",
       "ceilingContingent": false,
-      "collateral": "اعتبار شغلی, اعتبارسنجی وثایق و تضامین در چارچوب ضوابط اعتباری بانک است.",
+      "collateral": "اعتبار شغلی, اعتبارسنجی",
       "collateralKind": "credit-score",
       "confidence": "medium",
       "desc": "وام طرح رضوان بانک مهر ایران",
@@ -6031,7 +6039,7 @@
       },
       "friction": 72,
       "id": "rade-704656",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-20",
       "maxAmount": 1000000000,
       "minAmount": null,
@@ -6042,12 +6050,12 @@
       "rateLabel": "سود ۴٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: اعتبار شغلی, اعتبارسنجی وثایق و تضامین در چارچوب ضوابط اعتباری بانک است.",
+        "ضمانت: اعتبار شغلی, اعتبارسنجی",
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
         "قسط تقریبی: ۱۸,۱۸۱,۸۱۸ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام طرح رضوان بانک مهر ایران",
         "url": "https://www.rade.ir/loan-interest-free-loan/704656-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%d8%b1%d8%b6%d9%88%d8%a7%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%87%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
@@ -6274,7 +6282,7 @@
       "termMonths": 60
     },
     {
-      "amountLabel": "۳ میلیارد تومان سقف تسهیلات برای اشخاص حقوقی ۳ میلیارد تومان و پرسنل زیرمجموعه اشخاص حقوقی یک میلیارد تومان است.",
+      "amountLabel": "۳ میلیارد تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک قرض‌الحسنه مهر ایران",
@@ -6294,7 +6302,7 @@
       },
       "friction": 50,
       "id": "rade-704664",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-20",
       "maxAmount": 3000000000,
       "minAmount": null,
@@ -6310,7 +6318,7 @@
         "قسط تقریبی: ۵۴,۵۴۵,۴۵۵ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام طرح الماس بانک مهر ایران",
         "url": "https://www.rade.ir/loan-interest-free-loan/704664-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%d8%a7%d9%84%d9%85%d8%a7%d8%b3-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%87%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
@@ -6484,7 +6492,7 @@
       "termMonths": 18
     },
     {
-      "amountLabel": "۱۵ میلیارد تومان مبلغ وام مازاد بر مبلغ ۱۵ میلیارد تومان، طبق حدود اختیارات سیاست اعتباری بانک است.",
+      "amountLabel": "۱۵ میلیارد تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک دی",
@@ -6504,7 +6512,7 @@
       },
       "friction": 50,
       "id": "rade-704676",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-07-20",
       "maxAmount": 15000000000,
       "minAmount": null,
@@ -6520,7 +6528,7 @@
         "قسط تقریبی: ۴۸۰,۷۷۲,۰۷۳ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام پزشک‌یار بانک دی",
         "url": "https://www.rade.ir/loan-cash-loan/704676-%d9%88%d8%a7%d9%85-%d9%be%d8%b2%d8%b4%da%a9%db%8c%d8%a7%d8%b1-%d8%a8%d8%a7%d9%86%da%a9-%d8%af%db%8c/"
@@ -6533,7 +6541,7 @@
         "وام نقدی",
         "دی"
       ],
-      "termLabel": "۴۸ ماه دوره بازپرداخت حداکثر تا ۴۸ ماه است.",
+      "termLabel": "۴۸ ماه",
       "termMonths": 48
     },
     {
@@ -6557,7 +6565,7 @@
       },
       "friction": 50,
       "id": "rade-704677",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-07-08",
       "maxAmount": 400000000,
       "minAmount": 10000000,
@@ -6573,7 +6581,7 @@
         "قسط تقریبی: ۱۱,۲۷۶,۱۸۸ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام نگین فراپویا بانک سپه",
         "url": "https://www.rade.ir/loan-cash-loan/704677-%d9%88%d8%a7%d9%85-%d9%86%da%af%db%8c%d9%86-%d9%81%d8%b1%d8%a7%d9%be%d9%88%db%8c%d8%a7-%d8%a8%d8%a7%d9%86%da%a9-%d8%b3%d9%be%d9%87/"
@@ -6586,7 +6594,7 @@
         "وام نقدی",
         "سپه"
       ],
-      "termLabel": "۶۰ ماه تعداد اقساط ۱۶، ۲۴، ۳۲، ۴۰، ۴۸، ۵۶ و ۶۰ ماه (اقساطی) است",
+      "termLabel": "۶۰ ماه",
       "termMonths": 60
     },
     {
@@ -6800,7 +6808,7 @@
       "termMonths": 60
     },
     {
-      "amountLabel": "۲ میلیارد تومان با تودیع مبلغ ۳۰۰ میلیون تا ۱ میلیارد تومان تا سقف ۲ میلیارد تومان وام دریافت کنید. (مبلغ ۲ میلیارد تومان برای کسبه دارای دسته چک و پوز همزمان با حمایت ۱۰۰ درصدی بانک است. )",
+      "amountLabel": "۲ میلیارد تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک قرض‌الحسنه مهر ایران",
@@ -6820,7 +6828,7 @@
       },
       "friction": 72,
       "id": "rade-704696",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-20",
       "maxAmount": 2000000000,
       "minAmount": 600000000,
@@ -6836,7 +6844,7 @@
         "قسط تقریبی: ۹۰,۹۰۹,۰۹۱ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — طرح سرو بانک مهر ایران",
         "url": "https://www.rade.ir/loan-interest-free-loan/704696-%d8%b7%d8%b1%d8%ad-%d8%b3%d8%b1%d9%88-%d8%a8%d8%a7%d9%86%da%a9-%d9%82%d8%b1%d8%b6%d8%a7%d9%84%d8%ad%d8%b3%d9%86%d9%87-%d9%85%d9%87%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
@@ -6849,7 +6857,7 @@
         "قرض‌الحسنه",
         "قرض‌الحسنه مهر ایران"
       ],
-      "termLabel": "۲۴ ماه مدت بازپرداخت براساس مبلغ صلح شده و سقف تسهیلات دریافتی بین ۷ تا ۲۴ ماه است.",
+      "termLabel": "۲۴ ماه",
       "termMonths": 24
     },
     {
@@ -6979,7 +6987,7 @@
       },
       "friction": 72,
       "id": "rade-704703",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-19",
       "maxAmount": 500000000,
       "minAmount": 200000000,
@@ -6995,7 +7003,7 @@
         "قسط تقریبی: ۱۱,۱۱۱,۱۱۱ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام ارکیده بانک مهر ایران + شرایط",
         "url": "https://www.rade.ir/loan-interest-free-loan/704703-%d9%88%d8%a7%d9%85-%d8%a7%d8%b1%da%a9%db%8c%d8%af%d9%87-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%87%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7%d9%86-%d8%b4%d8%b1%d8%a7%db%8c%d8%b7/"
@@ -7008,7 +7016,7 @@
         "قرض‌الحسنه",
         "قرض‌الحسنه مهر ایران"
       ],
-      "termLabel": "۵۰ ماه تعداد اقساط تسهیلات دریافتی به مبلغ تسهیلات وابسته بوده و بین ۲۰ تا ۵۰ ماه متغیر است",
+      "termLabel": "۵۰ ماه",
       "termMonths": 50
     },
     {
@@ -7065,14 +7073,14 @@
       "termMonths": 36
     },
     {
-      "amountLabel": "۲ میلیارد تومان سقف وام برای پذیرندگان پایانه‌های فروشگاهی و پذیرندگان درگاه‌های پرداخت اینترنتی ۵ میلیارد تومان است",
+      "amountLabel": "۲ میلیارد تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک اقتصاد نوین",
       "benefit": 55,
       "category": "loans",
       "ceilingContingent": true,
-      "collateral": "ضامن رسمی, اعتبار شغلی, اعتبارسنجی امکان دریافت تسهیلات آساوام یک میلیارد و ۵۰۰ میلیون تومان توسط پذیرندگان و یک میلیارد تومان توسط سپرده‌گذاران، تنها با ارائه دو ضامن معتبر و یک برگ چک صیادی (متعلق به تسهیلات گیرنده یا یکی از ضامنین)، وجود دارد.",
+      "collateral": "ضامن رسمی, اعتبار شغلی, اعتبارسنجی",
       "collateralKind": "guarantor",
       "confidence": "medium",
       "desc": "طرح آساوام بانک اقتصاد نوین",
@@ -7085,7 +7093,7 @@
       },
       "friction": 50,
       "id": "rade-704706",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-22",
       "maxAmount": 2000000000,
       "minAmount": 50000000,
@@ -7096,12 +7104,12 @@
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: ضامن رسمی, اعتبار شغلی, اعتبارسنجی امکان دریافت تسهیلات آساوام یک میلیارد و ۵۰۰ میلیون تومان توسط پذیرندگان و یک میلیارد تومان توسط سپرده‌گذاران، تنها با ارائه دو ضامن معتبر و یک برگ چک صیادی (متعلق به تسهیلات گیرنده یا یکی از ضامنین)، وجود دارد.",
+        "ضمانت: ضامن رسمی, اعتبار شغلی, اعتبارسنجی",
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
         "قسط تقریبی: ۷۷,۴۱۹,۴۴۳ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — طرح آساوام بانک اقتصاد نوین",
         "url": "https://www.rade.ir/loan-cash-loan/704706-%d8%b7%d8%b1%d8%ad-%d8%a2%d8%b3%d8%a7%d9%88%d8%a7%d9%85-%d8%a8%d8%a7%d9%86%da%a9-%d8%a7%d9%82%d8%aa%d8%b5%d8%a7%d8%af-%d9%86%d9%88%db%8c%d9%86/"
@@ -7114,7 +7122,7 @@
         "وام نقدی",
         "اقتصاد نوین"
       ],
-      "termLabel": "۳۶ ماه در طرح آساوام شرایط بازپرداخت انعطاف‌پذیر ۱۲، ۲۴ و ۳۶ ماهه وجود دارد.",
+      "termLabel": "۳۶ ماه",
       "termMonths": 36
     },
     {
@@ -7138,7 +7146,7 @@
       },
       "friction": 50,
       "id": "rade-704708",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-19",
       "maxAmount": 500000000,
       "minAmount": null,
@@ -7154,7 +7162,7 @@
         "قسط تقریبی: ۸,۳۳۳,۳۳۳ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام طرح نورا بانک مهر ایران (وام قرض الحسنه)",
         "url": "https://www.rade.ir/loan-interest-free-loan/704708-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%87%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7%d9%86-%d8%b7%d8%b1%d8%ad-%d9%86%d9%88%d8%b1%d8%a7-%d9%88%d8%a7%d9%85-%d9%82%d8%b1%d8%b6-%d8%a7%d9%84%d8%ad%d8%b3%d9%86%d9%87/"
@@ -7167,7 +7175,7 @@
         "قرض‌الحسنه",
         "قرض‌الحسنه مهر ایران"
       ],
-      "termLabel": "۶۰ ماه مدت زمان بازپرداخت تسهیلات بین ۱۸ تا ۶۰ ماه است.",
+      "termLabel": "۶۰ ماه",
       "termMonths": 60
     },
     {
@@ -7223,14 +7231,14 @@
       "termMonths": 24
     },
     {
-      "amountLabel": "۵ میلیارد تومان حداکثر مبلغ وام برای اشخاص حقیقی ۵ میلیارد تومان و اشخاص حقوقی ۱۰ میلیارد تومان است.",
+      "amountLabel": "۵ میلیارد تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک صنعت و معدن",
       "benefit": 55,
       "category": "loans",
       "ceilingContingent": false,
-      "collateral": "اعتبار شغلی, اعتبارسنجی وثایق برمبنای رتبه اعتباری در سامانه اعتبارسنجی بانکی ایرانیان مشخص و اعلام خواهد شد.",
+      "collateral": "اعتبار شغلی, اعتبارسنجی",
       "collateralKind": "credit-score",
       "confidence": "medium",
       "desc": "وام نوبان بانک صنعت و معدن",
@@ -7243,7 +7251,7 @@
       },
       "friction": 72,
       "id": "rade-704713",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-07-28",
       "maxAmount": 5000000000,
       "minAmount": null,
@@ -7254,12 +7262,12 @@
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: اعتبار شغلی, اعتبارسنجی وثایق برمبنای رتبه اعتباری در سامانه اعتبارسنجی بانکی ایرانیان مشخص و اعلام خواهد شد.",
+        "ضمانت: اعتبار شغلی, اعتبارسنجی",
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
         "قسط تقریبی: ۴۷۰,۳۸۱,۶۰۷ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام نوبان بانک صنعت و معدن",
         "url": "https://www.rade.ir/loan-cash-loan/704713-%d9%88%d8%a7%d9%85-%d9%86%d9%88%d8%a8%d8%a7%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d8%b5%d9%86%d8%b9%d8%aa-%d9%88-%d9%85%d8%b9%d8%af%d9%86/"
@@ -7283,7 +7291,7 @@
       "benefit": 65,
       "category": "loans",
       "ceilingContingent": true,
-      "collateral": "ضامن رسمی, اعتبارسنجی امکان اعطای وام به اشخاص حقیقی تا ۴۰۰ میلیون تومان حداکثر با یک ضامن و برای مشتریان واجد شرایط دارای رتبه اعتباری A,B, C تا مبلغ ۵۰ میلیون تومان بدون ضامن است.",
+      "collateral": "ضامن رسمی, اعتبارسنجی",
       "collateralKind": "guarantor",
       "confidence": "medium",
       "desc": "وام ملل‌یار موسسه اعتباری ملل",
@@ -7296,7 +7304,7 @@
       },
       "friction": 50,
       "id": "rade-704714",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-05-20",
       "maxAmount": 400000000,
       "minAmount": 5000000,
@@ -7307,12 +7315,12 @@
       "rateLabel": "سود ۱۸٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: ضامن رسمی, اعتبارسنجی امکان اعطای وام به اشخاص حقیقی تا ۴۰۰ میلیون تومان حداکثر با یک ضامن و برای مشتریان واجد شرایط دارای رتبه اعتباری A,B, C تا مبلغ ۵۰ میلیون تومان بدون ضامن است.",
+        "ضمانت: ضامن رسمی, اعتبارسنجی",
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
         "قسط تقریبی: ۱۴,۴۶۰,۹۵۸ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام ملل‌یار موسسه اعتباری ملل",
         "url": "https://www.rade.ir/loan-cash-loan/704714-%d9%88%d8%a7%d9%85-%d9%85%d9%84%d9%84%db%8c%d8%a7%d8%b1-%d9%85%d9%88%d8%b3%d8%b3%d9%87-%d9%85%d9%84%d9%84/"
@@ -7325,7 +7333,7 @@
         "وام نقدی",
         "موسسه اعتباری ملل"
       ],
-      "termLabel": "۳۶ ماه در وام ملل‌یار مدت بازپرداخت متنوع از ۱۲ ماه تا ۳۶ ماه وجود دارد.",
+      "termLabel": "۳۶ ماه",
       "termMonths": 36
     },
     {
@@ -7336,7 +7344,7 @@
       "benefit": 84,
       "category": "loans",
       "ceilingContingent": false,
-      "collateral": "ضامن رسمی, اعتبارسنجی برای دریافت تسهیلات بیشتر از ۵۰۰ میلیون تومان، به دو یا سه ضامن نیاز دارید.",
+      "collateral": "ضامن رسمی, اعتبارسنجی",
       "collateralKind": "guarantor",
       "confidence": "medium",
       "desc": "وام ماهان بانک دی",
@@ -7349,7 +7357,7 @@
       },
       "friction": 50,
       "id": "rade-704717",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-07-20",
       "maxAmount": 1000000000,
       "minAmount": null,
@@ -7360,12 +7368,12 @@
       "rateLabel": "سود ۸٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: ضامن رسمی, اعتبارسنجی برای دریافت تسهیلات بیشتر از ۵۰۰ میلیون تومان، به دو یا سه ضامن نیاز دارید.",
+        "ضمانت: ضامن رسمی, اعتبارسنجی",
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
         "قسط تقریبی: ۲۰,۲۷۶,۳۹۴ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام ماهان بانک دی",
         "url": "https://www.rade.ir/loan-cash-loan/704717-%d9%88%d8%a7%d9%85-%d9%85%d8%a7%d9%87%d8%a7%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d8%af%db%8c/"
@@ -7378,11 +7386,11 @@
         "وام نقدی",
         "دی"
       ],
-      "termLabel": "۶۰ ماه مدت زمان بازپرداخت این تسهیلات بین ۶ تا ۶۰ ماه قابل انتخاب توسط خود مشتری است.",
+      "termLabel": "۶۰ ماه",
       "termMonths": 60
     },
     {
-      "amountLabel": "۷۰۰ میلیون تومان سقف وام به دو صورت است: قرض الحسنه اشخاص حقیقی ۳۰۰ میلیون تومان و اصناف ۷۵۰ میلیون تومان مرابحه اشخاص حقیقی ۷۰۰ میلیون تومان و اصناف ۵ میلیارد تومان",
+      "amountLabel": "۷۰۰ میلیون تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک تجارت",
@@ -7392,7 +7400,7 @@
       "collateral": "ضامن رسمی, اعتبار شغلی, اعتبارسنجی, چک صیادی",
       "collateralKind": "guarantor",
       "confidence": "medium",
-      "desc": "وام ممتاز بانک تجارت",
+      "desc": "وام ممتاز طلائی بانک تجارت",
       "digital": 60,
       "extra": {
         "installment": 19733330,
@@ -7402,12 +7410,12 @@
       },
       "friction": 50,
       "id": "rade-704734",
-      "lastSeen": "2026-10-14",
-      "lastUpdated": "2026-10-13",
+      "lastSeen": "2026-10-15",
+      "lastUpdated": "2026-10-14",
       "maxAmount": 700000000,
       "minAmount": 300000000,
       "multiPlan": false,
-      "product": "وام ممتاز بانک تجارت",
+      "product": "وام ممتاز طلائی بانک تجارت",
       "rate": 23,
       "rateKind": "profit",
       "rateLabel": "سود ۲۳٪",
@@ -7418,9 +7426,9 @@
         "قسط تقریبی: ۱۹,۷۳۳,۳۳۰ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
-        "title": "رده — وام ممتاز بانک تجارت",
+        "title": "رده — وام ممتاز طلائی بانک تجارت",
         "url": "https://www.rade.ir/loan-cash-loan/704734-%d9%88%d8%a7%d9%85-%d9%85%d9%85%d8%aa%d8%a7%d8%b2-%d8%a8%d8%a7%d9%86%da%a9-%d8%aa%d8%ac%d8%a7%d8%b1%d8%aa/"
       },
       "sourceKind": "aggregator",
@@ -7431,7 +7439,7 @@
         "وام نقدی",
         "تجارت"
       ],
-      "termLabel": "۶۰ ماه انتخاب بازپرداخت از ۶ تا ۶۰ ماه متناسب با شرایط مالی متقاضی است.",
+      "termLabel": "۶۰ ماه",
       "termMonths": 60
     },
     {
@@ -7508,7 +7516,7 @@
       },
       "friction": 50,
       "id": "rade-704748",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-10-13",
       "maxAmount": 600000000,
       "minAmount": 5000000,
@@ -7524,7 +7532,7 @@
         "قسط تقریبی: ۲۳,۲۲۵,۹۰۰ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام سپینو بانک صادرات ایران",
         "url": "https://www.rade.ir/loan-interest-free-loan/704748-%d9%88%d8%a7%d9%85-%d8%b3%d9%be%db%8c%d9%86%d9%88-%d8%a8%d8%a7%d9%86%da%a9-%d8%b5%d8%a7%d8%af%d8%b1%d8%a7%d8%aa-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
@@ -7537,11 +7545,11 @@
         "قرض‌الحسنه",
         "صادرات"
       ],
-      "termLabel": "۳۶ ماه بازپرداخت تسهیلات ۱۲ تا ۳۶ ماه است.",
+      "termLabel": "۳۶ ماه",
       "termMonths": 36
     },
     {
-      "amountLabel": "۳۰۰ میلیون تومان مبلغ تسهیلات برای اشخاص حقیقی خانوار تا سقف ۳۰۰ میلیون تومان، فعالان اقتصادی حقیقی تا سقف ۵۰۰ میلیون تومان و اشخاص حقوقی تا سقف ۲ میلیارد تومان است.",
+      "amountLabel": "۳۰۰ میلیون تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک سرمایه",
@@ -7561,7 +7569,7 @@
       },
       "friction": 50,
       "id": "rade-704786",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-01",
       "maxAmount": 300000000,
       "minAmount": null,
@@ -7577,7 +7585,7 @@
         "قسط تقریبی: ۸,۴۵۷,۱۴۱ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام مهر بانک سرمایه",
         "url": "https://www.rade.ir/loan-cash-loan/704786-%d9%88%d8%a7%d9%85-%d9%85%d9%87%d8%b1-%d8%a8%d8%a7%d9%86%da%a9-%d8%b3%d8%b1%d9%85%d8%a7%db%8c%d9%87/"
@@ -7590,11 +7598,11 @@
         "وام نقدی",
         "سرمایه"
       ],
-      "termLabel": "۶۰ ماه مدت بازپرداخت تسهیلات، برای اشخاص حقیقی خانوار تا حداکثر ۶۰ ماه، فعالان اقتصادی حقیقی تا حداکثر ۳۶ ماه و اشخاص حقوقی تا حداکثر ۱۲ ماه است.",
+      "termLabel": "۶۰ ماه",
       "termMonths": 60
     },
     {
-      "amountLabel": "۷۵۰ میلیون تومان برای اشخاص حقیقی ۳۰۰ میلیون تومان است.",
+      "amountLabel": "۷۵۰ میلیون تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک رفاه کارگران",
@@ -7614,7 +7622,7 @@
       },
       "friction": 50,
       "id": "rade-704787",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-27",
       "maxAmount": 750000000,
       "minAmount": null,
@@ -7630,7 +7638,7 @@
         "قسط تقریبی: ۱۳,۶۳۶,۳۶۴ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام افق بانک رفاه کارگران",
         "url": "https://www.rade.ir/loan-interest-free-loan/704787-%d9%88%d8%a7%d9%85-%d8%a7%d9%81%d9%82-%d8%a8%d8%a7%d9%86%da%a9-%d8%b1%d9%81%d8%a7%d9%87-%da%a9%d8%a7%d8%b1%da%af%d8%b1%d8%a7%d9%86/"
@@ -7643,7 +7651,7 @@
         "قرض‌الحسنه",
         "رفاه کارگران"
       ],
-      "termLabel": "۶۰ ماه دوره بازپرداخت حداقل ۶ و حداکثر ۶۰ ماه است.",
+      "termLabel": "۶۰ ماه",
       "termMonths": 60
     },
     {
@@ -7654,7 +7662,7 @@
       "benefit": 55,
       "category": "loans",
       "ceilingContingent": true,
-      "collateral": "ضامن رسمی, سند ملکی, اعتبارسنجی اشخاص حقیقی: امکان اخذ تسهیلات تا مبلغ پنجاه میلیون تومان بدون ضامن و تا مبلغ سیصد میلیون تومان حداکثر با یک ضامن و بر اساس رتبه اعتباری\r\n اشخاص حقوقی: امکان اخذ تسهیلات تا مبلغ هفتصد و پنجاه میلیون تومان بدون اخذ وثیقه ملکی",
+      "collateral": "ضامن رسمی, سند ملکی, اعتبارسنجی",
       "collateralKind": "guarantor",
       "confidence": "medium",
       "desc": "وام یاقوت نوین موسسه اعتباری ملل",
@@ -7667,7 +7675,7 @@
       },
       "friction": 50,
       "id": "rade-704789",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-05-20",
       "maxAmount": 2000000000,
       "minAmount": 5000000,
@@ -7678,12 +7686,12 @@
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: ضامن رسمی, سند ملکی, اعتبارسنجی اشخاص حقیقی: امکان اخذ تسهیلات تا مبلغ پنجاه میلیون تومان بدون ضامن و تا مبلغ سیصد میلیون تومان حداکثر با یک ضامن و بر اساس رتبه اعتباری\r\n اشخاص حقوقی: امکان اخذ تسهیلات تا مبلغ هفتصد و پنجاه میلیون تومان بدون اخذ وثیقه ملکی",
+        "ضمانت: ضامن رسمی, سند ملکی, اعتبارسنجی",
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
         "قسط تقریبی: ۶۴,۱۰۲,۹۴۳ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام یاقوت نوین موسسه اعتباری ملل",
         "url": "https://www.rade.ir/loan-cash-loan/704789-%d9%88%d8%a7%d9%85-%db%8c%d8%a7%d9%82%d9%88%d8%aa-%d9%85%d9%84%d9%84-%d9%85%d9%88%d8%b3%d8%b3%d9%87-%d9%85%d9%84%d9%84/"
@@ -7696,7 +7704,7 @@
         "وام نقدی",
         "موسسه اعتباری ملل"
       ],
-      "termLabel": "۴۸ ماه برای اشخاص حقیقی و حقوقی ۴۸ ماه است.",
+      "termLabel": "۴۸ ماه",
       "termMonths": 48
     },
     {
@@ -7707,7 +7715,7 @@
       "benefit": 92,
       "category": "loans",
       "ceilingContingent": true,
-      "collateral": "ضامن رسمی, اعتبارسنجی با توجه به رتبه اعتباری تا ۵۰ میلیون تومان بدون ضامن و از ۵۰ تا ۳۰۰ میلیون تومان حداکثر با یک ضامن",
+      "collateral": "ضامن رسمی, اعتبارسنجی",
       "collateralKind": "guarantor",
       "confidence": "medium",
       "desc": "وام نیکان نوین موسسه اعتباری ملل",
@@ -7720,7 +7728,7 @@
       },
       "friction": 50,
       "id": "rade-704796",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-05-20",
       "maxAmount": 300000000,
       "minAmount": 5000000,
@@ -7731,12 +7739,12 @@
       "rateLabel": "سود ۴٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: ضامن رسمی, اعتبارسنجی با توجه به رتبه اعتباری تا ۵۰ میلیون تومان بدون ضامن و از ۵۰ تا ۳۰۰ میلیون تومان حداکثر با یک ضامن",
+        "ضمانت: ضامن رسمی, اعتبارسنجی",
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
         "قسط تقریبی: ۵,۴۵۴,۵۴۵ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام نیکان نوین موسسه اعتباری ملل",
         "url": "https://www.rade.ir/loan-interest-free-loan/704796-%d9%88%d8%a7%d9%85-%d9%86%db%8c%da%a9%d8%a7%d9%86-%d9%85%d9%88%d8%b3%d8%b3%d9%87-%d9%85%d9%84%d9%84/"
@@ -7773,7 +7781,7 @@
       },
       "friction": 50,
       "id": "rade-704797",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-05-20",
       "maxAmount": 750000000,
       "minAmount": 5000000,
@@ -7789,7 +7797,7 @@
         "قسط تقریبی: ۱۳,۶۳۶,۳۶۴ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام نیکان ملل حقوقی موسسه اعتباری ملل",
         "url": "https://www.rade.ir/loan-interest-free-loan/704797-%d9%88%d8%a7%d9%85-%d9%86%db%8c%da%a9%d8%a7%d9%86-%d8%ad%d9%82%d9%88%d9%82%db%8c-%d9%85%d9%88%d8%b3%d8%b3%d9%87-%d9%85%d9%84%d9%84/"
@@ -7813,7 +7821,7 @@
       "benefit": 92,
       "category": "loans",
       "ceilingContingent": false,
-      "collateral": "ضامن رسمی, اعتبارسنجی این وام بدون ارائه چک، سفته و گواهی کسر از حقوق تنها با معرفی یک ضامن ارائه می‌شود.",
+      "collateral": "ضامن رسمی, اعتبارسنجی",
       "collateralKind": "guarantor",
       "confidence": "medium",
       "desc": "وام مهربانی بانک ملی",
@@ -7826,7 +7834,7 @@
       },
       "friction": 50,
       "id": "rade-704810",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-26",
       "maxAmount": 300000000,
       "minAmount": null,
@@ -7837,12 +7845,12 @@
       "rateLabel": "سود ۴٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: ضامن رسمی, اعتبارسنجی این وام بدون ارائه چک، سفته و گواهی کسر از حقوق تنها با معرفی یک ضامن ارائه می‌شود.",
+        "ضمانت: ضامن رسمی, اعتبارسنجی",
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
         "قسط تقریبی: ۵,۴۵۴,۵۴۵ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام مهربانی بانک ملی",
         "url": "https://www.rade.ir/loan-interest-free-loan/704810-%d9%88%d8%a7%d9%85-%d9%85%d9%87%d8%b1%d8%a8%d8%a7%d9%86%db%8c-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%84%db%8c/"
@@ -7855,7 +7863,7 @@
         "قرض‌الحسنه",
         "ملی"
       ],
-      "termLabel": "۶۰ ماه مدت بازپرداخت بین ۶ تا ۶۰ ماه است.",
+      "termLabel": "۶۰ ماه",
       "termMonths": 60
     },
     {
@@ -7879,7 +7887,7 @@
       },
       "friction": 72,
       "id": "rade-704812",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-07-14",
       "maxAmount": 400000000,
       "minAmount": null,
@@ -7895,7 +7903,7 @@
         "قسط تقریبی: ۱۸,۱۸۱,۸۱۸ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — طرح کارگشا بانک رفاه کارگران",
         "url": "https://www.rade.ir/loan-cash-loan/704812-%d8%b7%d8%b1%d8%ad-%da%a9%d8%a7%d8%b1%da%af%d8%b4%d8%a7-%d8%a8%d8%a7%d9%86%da%a9-%d8%b1%d9%81%d8%a7%d9%87-%da%a9%d8%a7%d8%b1%da%af%d8%b1%d8%a7%d9%86/"
@@ -7912,7 +7920,7 @@
       "termMonths": 24
     },
     {
-      "amountLabel": "۹۵۰ میلیون تومان سقف فردی تسهیلات برای کلیه پرسنل ۵۰۰ میلیون تومان و برای ۱۰ درصد پرسنل ۹۵۰ میلیون تومان است.",
+      "amountLabel": "۹۵۰ میلیون تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک تجارت",
@@ -7932,7 +7940,7 @@
       },
       "friction": 50,
       "id": "rade-704820",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-10-07",
       "maxAmount": 950000000,
       "minAmount": null,
@@ -7948,7 +7956,7 @@
         "قسط تقریبی: ۳۶,۷۷۴,۲۳۵ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — طرح کارنووام بانک تجارت",
         "url": "https://www.rade.ir/loan-cash-loan/704820-%d8%b7%d8%b1%d8%ad-%da%a9%d8%a7%d8%b1%d9%86%d9%88%d9%88%d8%a7%d9%85-%d8%a8%d8%a7%d9%86%da%a9-%d8%aa%d8%ac%d8%a7%d8%b1%d8%aa/"
@@ -7961,7 +7969,7 @@
         "وام نقدی",
         "تجارت"
       ],
-      "termLabel": "۳۶ ماه مدت زمان بازپرداخت به‌صورت اقساط ۱۲، ۲۴ و ۳۶ ماهه است.",
+      "termLabel": "۳۶ ماه",
       "termMonths": 36
     },
     {
@@ -7985,7 +7993,7 @@
       },
       "friction": 50,
       "id": "rade-704876",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-10-13",
       "maxAmount": 600000000,
       "minAmount": 10000000,
@@ -8001,7 +8009,7 @@
         "قسط تقریبی: ۲۳,۲۲۵,۸۳۳ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — طرح سنا 2 بانک صادرات",
         "url": "https://www.rade.ir/loan-cash-loan/704876-%d8%b7%d8%b1%d8%ad-%d8%b3%d9%86%d8%a7-2-%d8%a8%d8%a7%d9%86%da%a9-%d8%b5%d8%a7%d8%af%d8%b1%d8%a7%d8%aa/"
@@ -8014,18 +8022,18 @@
         "وام نقدی",
         "صادرات"
       ],
-      "termLabel": "۳۶ ماه مدت زمان بازپرداخت ۳ الی ۳۶ ماه است.",
+      "termLabel": "۳۶ ماه",
       "termMonths": 36
     },
     {
-      "amountLabel": "۴ میلیارد تومان سقف فردی تسهیلات خرد مصرفی ۷۰۰ میلیون تومان است. مشتریان حقیقی می‌توانند امتیاز اکتسابی خود را در قالب تسهیلات خرد تا سقف جمعی دو میلیارد تومان به اقارب یا پرسنل بیمه شده خود منتقل کنند. مشتریان حقوقی می‌توانند امتیاز اکتسابی خود را در قالب تسهیلات خرد تا سقف جمعی ۴ میلیارد تومان به پرسنل بیمه شده خود منتقل کنند.",
+      "amountLabel": "۴ میلیارد تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک ملت",
       "benefit": 55,
       "category": "loans",
       "ceilingContingent": true,
-      "collateral": "اعتبار شغلی, سند ملکی, اعتبارسنجی وثایق مجاز طبق سیاست‌های اعتباری سالیانه (سفته و قرارداد، غیرمنقول و شبه نقد و غیره )",
+      "collateral": "اعتبار شغلی, سند ملکی, اعتبارسنجی",
       "collateralKind": "credit-score",
       "confidence": "medium",
       "desc": "طرح پذیرندگان بانک ملت",
@@ -8038,7 +8046,7 @@
       },
       "friction": 72,
       "id": "rade-704884",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-15",
       "maxAmount": 4000000000,
       "minAmount": null,
@@ -8049,12 +8057,12 @@
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: اعتبار شغلی, سند ملکی, اعتبارسنجی وثایق مجاز طبق سیاست‌های اعتباری سالیانه (سفته و قرارداد، غیرمنقول و شبه نقد و غیره )",
+        "ضمانت: اعتبار شغلی, سند ملکی, اعتبارسنجی",
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
         "قسط تقریبی: ۷۱۲,۰۹۶,۲۸۶ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — طرح پذیرندگان بانک ملت",
         "url": "https://www.rade.ir/loan-cash-loan/704884-%d8%b7%d8%b1%d8%ad-%d9%be%d8%b0%db%8c%d8%b1%d9%86%d8%af%da%af%d8%a7%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%84%d8%aa/"
@@ -8067,18 +8075,18 @@
         "وام نقدی",
         "ملت"
       ],
-      "termLabel": "۶ ماه مدت بازپرداخت برحسب رتبه اعتباری و ضریب برابری تسهیلات فواصل یک، سه و شش ماهه است.",
+      "termLabel": "۶ ماه",
       "termMonths": 6
     },
     {
-      "amountLabel": "۴۰۰ میلیون تومان حداکثر مبلغ تسهیلات برای مشتریان ویژه ۴۰۰ میلیون تومان و برای مشتریان خاص دو میلیارد تومان است.",
+      "amountLabel": "۴۰۰ میلیون تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک سامان",
       "benefit": 55,
       "category": "loans",
       "ceilingContingent": true,
-      "collateral": "ضامن رسمی, اعتبارسنجی, چک صیادی مشتریان ویژه با سابقه عضویت بیش از ۲۴ ماه تنها با ارائه یک برگ چک می‌توانند این تسهیلات را دریافت کنند و در صورت سابقه عضویت بیش از ۱۸ ماه و کمتر از ۲۴ ماه علاوه بر ارائه یک برگ چک با معرفی یک ضامن می‌توانند این تسهیلات را دریافت کنند.\r\nمشتریان خاص با سابقه عضویت بیش از ۱۸ ماه با ارائه یک برگ چک می‌توانند این تسهیلات را دریافت کنند.",
+      "collateral": "ضامن رسمی, اعتبارسنجی, چک صیادی",
       "collateralKind": "guarantor",
       "confidence": "medium",
       "desc": "تسهیلات اعتباری سپرده‌گذاران بانک سامان",
@@ -8091,7 +8099,7 @@
       },
       "friction": 50,
       "id": "rade-704897",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-07-27",
       "maxAmount": 400000000,
       "minAmount": null,
@@ -8102,12 +8110,12 @@
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: ضامن رسمی, اعتبارسنجی, چک صیادی مشتریان ویژه با سابقه عضویت بیش از ۲۴ ماه تنها با ارائه یک برگ چک می‌توانند این تسهیلات را دریافت کنند و در صورت سابقه عضویت بیش از ۱۸ ماه و کمتر از ۲۴ ماه علاوه بر ارائه یک برگ چک با معرفی یک ضامن می‌توانند این تسهیلات را دریافت کنند.\r\nمشتریان خاص با سابقه عضویت بیش از ۱۸ ماه با ارائه یک برگ چک می‌توانند این تسهیلات را دریافت کنند.",
+        "ضمانت: ضامن رسمی, اعتبارسنجی, چک صیادی",
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
         "قسط تقریبی: ۳۷,۶۳۰,۵۲۹ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — تسهیلات اعتباری سپرده‌گذاران بانک سامان",
         "url": "https://www.rade.ir/loan-cash-loan/704897-%d8%aa%d8%b3%d9%87%db%8c%d9%84%d8%a7%d8%aa-%d8%a7%d8%b9%d8%aa%d8%a8%d8%a7%d8%b1%db%8c-%d8%b3%d9%be%d8%b1%d8%af%d9%87%da%af%d8%b0%d8%a7%d8%b1%d8%a7%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d8%b3%d8%a7/"
@@ -8120,7 +8128,7 @@
         "وام نقدی",
         "سامان"
       ],
-      "termLabel": "۱۲ ماه امکان تسویه این تسهیلات با توجه به تمایل مشتری به صورت یکجا و حداکثر ظرف مدت ۶ ماه یا به صورت قسطی ظرف مدت ۱۲ ماه وجود دارد.",
+      "termLabel": "۱۲ ماه",
       "termMonths": 12
     },
     {
@@ -8131,7 +8139,7 @@
       "benefit": 55,
       "category": "loans",
       "ceilingContingent": false,
-      "collateral": "ضامن رسمی, اعتبار شغلی, اعتبارسنجی ۲ ضامن و فیش حقوقی",
+      "collateral": "ضامن رسمی, اعتبار شغلی, اعتبارسنجی",
       "collateralKind": "guarantor",
       "confidence": "medium",
       "desc": "وام طرح کرامت بانک رفاه کارگران",
@@ -8144,7 +8152,7 @@
       },
       "friction": 50,
       "id": "rade-704914",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-27",
       "maxAmount": 300000000,
       "minAmount": null,
@@ -8155,12 +8163,12 @@
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: ضامن رسمی, اعتبار شغلی, اعتبارسنجی ۲ ضامن و فیش حقوقی",
+        "ضمانت: ضامن رسمی, اعتبار شغلی, اعتبارسنجی",
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
         "قسط تقریبی: ۹,۶۱۵,۴۴۱ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام طرح کرامت بانک رفاه کارگران",
         "url": "https://www.rade.ir/loan-cash-loan/704914-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%da%a9%d8%b1%d8%a7%d9%85%d8%aa-%d8%a8%d8%a7%d9%86%da%a9-%d8%b1%d9%81%d8%a7%d9%87-%da%a9%d8%a7%d8%b1%da%af%d8%b1%d8%a7%d9%86/"
@@ -8173,7 +8181,7 @@
         "وام نقدی",
         "رفاه کارگران"
       ],
-      "termLabel": "۴۸ ماه براساس مدت زمان میانگین سپرده امکان بازپرداخت ۲۴، ۳۶ و ۴۸ ماه وجود دارد.",
+      "termLabel": "۴۸ ماه",
       "termMonths": 48
     },
     {
@@ -8197,7 +8205,7 @@
       },
       "friction": 50,
       "id": "rade-704919",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-15",
       "maxAmount": 2000000000,
       "minAmount": null,
@@ -8213,7 +8221,7 @@
         "قسط تقریبی: ۶۴,۱۰۲,۹۴۳ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام طرح شایان بانک ملت",
         "url": "https://www.rade.ir/loan-cash-loan/704919-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%d8%b4%d8%a7%db%8c%d8%a7%d9%86-%db%8c%da%a9-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%84%d8%aa/"
@@ -8226,11 +8234,11 @@
         "وام نقدی",
         "ملت"
       ],
-      "termLabel": "۴۸ ماه بازپرداخت تسهیلات به انتخاب مشتری تا ۴۸ ماه است.",
+      "termLabel": "۴۸ ماه",
       "termMonths": 48
     },
     {
-      "amountLabel": "۵ میلیارد تومان سقف وام برای اشخاص حقیقی ـ تسهیلات خرد ۳۰۰ میلیون تومان، اشخاص حقیقی ـ تسهیلات تجاری ۱.۵ میلیارد تومان و برای اشخاص حقوقی ـ تسهیلات تجاری ۵ میلیارد تومان است.",
+      "amountLabel": "۵ میلیارد تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک رفاه کارگران",
@@ -8250,7 +8258,7 @@
       },
       "friction": 50,
       "id": "rade-704935",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-28",
       "maxAmount": 5000000000,
       "minAmount": null,
@@ -8266,7 +8274,7 @@
         "قسط تقریبی: ۱۹۰,۹۵۲,۲۶۶ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — طرح حرکت بانک رفاه کارگران",
         "url": "https://www.rade.ir/loan-cash-loan/704935-%d8%b7%d8%b1%d8%ad-%d8%ad%d8%b1%da%a9%d8%aa-%d8%a8%d8%a7%d9%86%da%a9-%d8%b1%d9%81%d8%a7%d9%87-%da%a9%d8%a7%d8%b1%da%af%d8%b1%d8%a7%d9%86/"
@@ -8279,7 +8287,7 @@
         "وام نقدی",
         "رفاه کارگران"
       ],
-      "termLabel": "۳۶ ماه حداکثر زمان بازپرداخت از ۱۲ تا ۳۶ ماه متغیر است.",
+      "termLabel": "۳۶ ماه",
       "termMonths": 36
     },
     {
@@ -8290,7 +8298,7 @@
       "benefit": 55,
       "category": "loans",
       "ceilingContingent": false,
-      "collateral": "ضامن رسمی, اعتبار شغلی, اعتبارسنجی, چک صیادی ارائه حداقل یک برگ چک صیادی به نام متقاضی برای دریافت این تسهیلات الزامی است؛ حتی در مواردی که تسهیلات بدون ضامن اعطا می‌شود.",
+      "collateral": "ضامن رسمی, اعتبار شغلی, اعتبارسنجی, چک صیادی",
       "collateralKind": "guarantor",
       "confidence": "medium",
       "desc": "تسهیلات ویژه دارندگان دستگاه کارتخوان بانک سامان",
@@ -8303,7 +8311,7 @@
       },
       "friction": 50,
       "id": "rade-704939",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-07-27",
       "maxAmount": null,
       "minAmount": 50000000,
@@ -8314,11 +8322,11 @@
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: ضامن رسمی, اعتبار شغلی, اعتبارسنجی, چک صیادی ارائه حداقل یک برگ چک صیادی به نام متقاضی برای دریافت این تسهیلات الزامی است؛ حتی در مواردی که تسهیلات بدون ضامن اعطا می‌شود.",
+        "ضمانت: ضامن رسمی, اعتبار شغلی, اعتبارسنجی, چک صیادی",
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — تسهیلات ویژه دارندگان دستگاه کارتخوان بانک سامان",
         "url": "https://www.rade.ir/loan-cash-loan/704939-%d8%aa%d8%b3%d9%87%db%8c%d9%84%d8%a7%d8%aa-%d9%88%db%8c%da%98%d9%87-%d8%af%d8%a7%d8%b1%d9%86%d8%af%da%af%d8%a7%d9%86-%d8%af%d8%b3%d8%aa%da%af%d8%a7%d9%87-%da%a9%d8%a7%d8%b1%d8%aa%d8%ae%d9%88%d8%a7/"
@@ -8331,7 +8339,7 @@
         "وام نقدی",
         "سامان"
       ],
-      "termLabel": "۳۶ ماه امکان دریافت وام با سررسیدهای ۱، ۲ و ۳ ساله با قابلیت انتخاب براساس نیاز شما وجود دارد.",
+      "termLabel": "۳۶ ماه",
       "termMonths": 36
     },
     {
@@ -8951,7 +8959,7 @@
       "termMonths": 36
     },
     {
-      "amountLabel": "۳۶۵ میلیون تومان کلانشهر تهران: ۳۶۵ میلیون تومان سایر کلانشهرها (مراکز استان‌ها): ۲۸۰ میلیون تومان سایر شهرهای بالای ۲۰۰ هزار نفر: ۱۸۵ میلیون تومان روستاها: ۷۵ میلیون تومان",
+      "amountLabel": "۳۶۵ میلیون تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک مرکزی",
@@ -8971,8 +8979,8 @@
       },
       "friction": 50,
       "id": "rade-705216",
-      "lastSeen": "2026-10-14",
-      "lastUpdated": "2026-07-13",
+      "lastSeen": "2026-10-15",
+      "lastUpdated": "2026-10-14",
       "maxAmount": 365000000,
       "minAmount": null,
       "multiPlan": false,
@@ -8983,10 +8991,11 @@
       "regulatory": false,
       "requirements": [
         "ضمانت: ضامن رسمی, اعتبارسنجی",
+        "هزینه جانبی: —",
         "قسط تقریبی: ۱۰,۲۸۹,۵۲۲ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام ودیعه مسکن",
         "url": "https://www.rade.ir/loan-cash-loan/705216-%d9%88%d8%a7%d9%85-%d9%88%d8%af%db%8c%d8%b9%d9%87-%d9%85%d8%b3%da%a9%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d8%b1%da%a9%d8%b2%db%8c/"
@@ -9003,7 +9012,7 @@
       "termMonths": 60
     },
     {
-      "amountLabel": "۳۵۰ میلیون تومان - دانشجویان ساکن شهر تهران: ۳۵۰ میلیون تومان - دانشجویان شهرهای با بیش از ۵۰۰ هزار نفر جمعیت، شامل: مشهد، اصفهان، کرج، شیراز، تبریز، قم، اهواز، کرمانشاه، ارومیه، رشت، زاهدان، همدان، کرمان، یزد، اردبیل، بندرعباس، اراک: ۳۰۰ میلیون تومان - دانشجویان سایر شهرها (شهرهای با جمعیت کمتر از ۵۰۰ هزار نفر): ۲۵۰ میلیون تومان",
+      "amountLabel": "۳۵۰ میلیون تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک مرکزی",
@@ -9023,7 +9032,7 @@
       },
       "friction": 72,
       "id": "rade-705217",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-07-02",
       "maxAmount": 350000000,
       "minAmount": null,
@@ -9035,10 +9044,11 @@
       "regulatory": false,
       "requirements": [
         "ضمانت: اعتبارسنجی",
+        "هزینه جانبی: —",
         "قسط تقریبی: ۳۵۶,۷۰۸,۳۳۳ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام ودیعه مسکن دانشجویی",
         "url": "https://www.rade.ir/loan-cash-loan/705217-%d9%88%d8%a7%d9%85-%d9%88%d8%af%db%8c%d8%b9%d9%87-%d9%85%d8%b3%da%a9%d9%86-%d8%af%d8%a7%d9%86%d8%b4%d8%ac%d9%88%db%8c%db%8c-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d8%b1%da%a9%d8%b2%db%8c/"
@@ -9051,18 +9061,18 @@
         "وام نقدی",
         "مرکزی"
       ],
-      "termLabel": "۱ ماه مطابق ضوابط آیین نامه، بازپرداخت این وام به‌صورت یکجا پرداخت است که ضروری است از سوی دانشگاه اطلاع‌رسانی لازم در این زمینه صورت پذیرد.",
+      "termLabel": "۱ ماه",
       "termMonths": 1
     },
     {
-      "amountLabel": "۲۰۰ میلیون تومان در سال ۱۴۰۴، سقف این وام برای افراد به ۲۰۰ میلیون تومان با نرخ سود ۴ درصد و برای مشاغل پشتیبان (که تا ۴۰ نفر را به کار می‌گیرند) تا ۵ میلیارد تومان تعیین شده است.",
+      "amountLabel": "۲۰۰ میلیون تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک مرکزی",
       "benefit": 92,
       "category": "loans",
       "ceilingContingent": false,
-      "collateral": "ضامن رسمی, اعتبارسنجی برای وام تا ۲۰۰ میلیون تومان: معمولاً یک ضامن معتبر (کارمند رسمی با گواهی کسر از حقوق) یا سفته کافی است\r\nبرای مبالغ بالاتر (مشاغل پشتیبان): ممکن است دو ضامن یا وثیقه ملکی مورد نیاز باشد.\r\nنکته: برخی بانک‌ها با اعتبارسنجی قوی متقاضی، ضامن را حذف و فقط سفته قبول می‌کنند.",
+      "collateral": "ضامن رسمی, اعتبارسنجی",
       "collateralKind": "guarantor",
       "confidence": "medium",
       "desc": "وام مشاغل خانگی",
@@ -9075,7 +9085,7 @@
       },
       "friction": 50,
       "id": "rade-705262",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-07-02",
       "maxAmount": 200000000,
       "minAmount": null,
@@ -9086,11 +9096,12 @@
       "rateLabel": "سود ۴٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: ضامن رسمی, اعتبارسنجی برای وام تا ۲۰۰ میلیون تومان: معمولاً یک ضامن معتبر (کارمند رسمی با گواهی کسر از حقوق) یا سفته کافی است\r\nبرای مبالغ بالاتر (مشاغل پشتیبان): ممکن است دو ضامن یا وثیقه ملکی مورد نیاز باشد.\r\nنکته: برخی بانک‌ها با اعتبارسنجی قوی متقاضی، ضامن را حذف و فقط سفته قبول می‌کنند.",
+        "ضمانت: ضامن رسمی, اعتبارسنجی",
+        "هزینه جانبی: —",
         "قسط تقریبی: ۳,۶۸۳,۳۰۴ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام مشاغل خانگی",
         "url": "https://www.rade.ir/loan-cash-loan/705262-%d9%88%d8%a7%d9%85-%d9%85%d8%b4%d8%a7%d8%ba%d9%84-%d8%ae%d8%a7%d9%86%da%af%db%8c-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d8%b1%da%a9%d8%b2%db%8c/"
@@ -9167,7 +9178,7 @@
       "benefit": 65,
       "category": "loans",
       "ceilingContingent": false,
-      "collateral": "ضامن رسمی, اعتبار شغلی, اعتبارسنجی سند خودرو تا تسویه کامل در رهن بانک باقی می‌ماند.",
+      "collateral": "ضامن رسمی, اعتبار شغلی, اعتبارسنجی",
       "collateralKind": "guarantor",
       "confidence": "medium",
       "desc": "وام خودرو فرهنگیان بانک ملی",
@@ -9180,7 +9191,7 @@
       },
       "friction": 50,
       "id": "rade-705319",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-23",
       "maxAmount": 700000000,
       "minAmount": 300000000,
@@ -9191,11 +9202,12 @@
       "rateLabel": "سود ۱۸٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: ضامن رسمی, اعتبار شغلی, اعتبارسنجی سند خودرو تا تسویه کامل در رهن بانک باقی می‌ماند.",
+        "ضمانت: ضامن رسمی, اعتبار شغلی, اعتبارسنجی",
+        "هزینه جانبی: —",
         "قسط تقریبی: ۱۴,۷۱۲,۴۸۷ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام خودرو فرهنگیان بانک ملی",
         "url": "https://www.rade.ir/loan-car-loan/705319-%d9%88%d8%a7%d9%85-%d8%ae%d9%88%d8%af%d8%b1%d9%88-%d9%81%d8%b1%d9%87%d9%86%da%af%db%8c%d8%a7%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%84%db%8c/"
@@ -9208,7 +9220,7 @@
         "وام خودرو",
         "ملی"
       ],
-      "termLabel": "۸۴ ماه زمان بازپرداخت با توجه به نوع خودرو و سقف وام بین ۶۰ تا ۸۴ ماه است.",
+      "termLabel": "۸۴ ماه",
       "termMonths": 84
     },
     {
@@ -9265,7 +9277,7 @@
       "termMonths": 36
     },
     {
-      "amountLabel": "۵ میلیارد تومان سقف مبلغ وام براساس مبلغ سپرده‌گذاری شما و مدت زمان آن متفاوت است. به‌عنوان مثال برای دریافت وام ۵ میلیارد تومانی با سود ۱۴ ٪ و بازپرداخت ۱۲ ماهه شما نیاز دارید تا مبلغ حدودی ۲ میلیارد و ۸۵۰ میلیون تومان را برای ۱۲ ماه سپرده‌گذاری کنید.",
+      "amountLabel": "۵ میلیارد تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک کشاورزی",
@@ -9285,7 +9297,7 @@
       },
       "friction": 72,
       "id": "rade-705455",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-07-20",
       "maxAmount": 5000000000,
       "minAmount": null,
@@ -9301,7 +9313,7 @@
         "قسط تقریبی: ۴۴۸,۹۳۵,۵۸۸ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام طرح نویان بانک کشاورزی",
         "url": "https://www.rade.ir/loan-cash-loan/705455-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%d9%86%d9%88%db%8c%d8%a7%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%da%a9%d8%b4%d8%a7%d9%88%d8%b1%d8%b2%db%8c/"
@@ -9314,18 +9326,18 @@
         "وام نقدی",
         "کشاورزی"
       ],
-      "termLabel": "۱۲ ماه دوره بازپرداخت بین ۳ تا ۱۲ ماه است.",
+      "termLabel": "۱۲ ماه",
       "termMonths": 12
     },
     {
-      "amountLabel": "۷۰۰ میلیون تومان حداکثر مبلغ وام برای سرمایه در گردش تا ۵۰۰ میلیون تومان و برای خرید تجهیزات و ماشین‌آلات تا ۷۰۰ میلیون تومان تعیین شده است.",
+      "amountLabel": "۷۰۰ میلیون تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "موسسه اعتباری ملل",
       "benefit": 55,
       "category": "loans",
       "ceilingContingent": true,
-      "collateral": "اعتبار شغلی, اعتبارسنجی در این طرح، نیازی به ارائه وثیقه ملکی نیست و تضامین طبق ضوابط موسسه دریافت می‌شود.",
+      "collateral": "اعتبار شغلی, اعتبارسنجی",
       "collateralKind": "credit-score",
       "confidence": "medium",
       "desc": "وام اصناف موسسه اعتباری ملل",
@@ -9338,7 +9350,7 @@
       },
       "friction": 72,
       "id": "rade-705503",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-07-21",
       "maxAmount": 700000000,
       "minAmount": null,
@@ -9349,12 +9361,12 @@
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: اعتبار شغلی, اعتبارسنجی در این طرح، نیازی به ارائه وثیقه ملکی نیست و تضامین طبق ضوابط موسسه دریافت می‌شود.",
+        "ضمانت: اعتبار شغلی, اعتبارسنجی",
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
         "قسط تقریبی: ۴۶,۳۵۰,۰۶۶ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام اصناف موسسه اعتباری ملل",
         "url": "https://www.rade.ir/loan-cash-loan/705503-%d9%88%d8%a7%d9%85-%d9%88%db%8c%da%98%d9%87-%d8%a7%d8%b5%d9%86%d8%a7%d9%81-%d9%85%d9%88%d8%b3%d8%b3%d9%87-%d8%a7%d8%b9%d8%aa%d8%a8%d8%a7%d8%b1%db%8c-%d9%85%d9%84%d9%84/"
@@ -9367,7 +9379,7 @@
         "وام نقدی",
         "موسسه اعتباری ملل"
       ],
-      "termLabel": "۱۸ ماه بازپرداخت تسهیلات سرمایه در گردش حداکثر سه ماهه و خرید تجهیزات حداکثر ۱۸ ماهه است.",
+      "termLabel": "۱۸ ماه",
       "termMonths": 18
     },
     {
@@ -9378,7 +9390,7 @@
       "benefit": 55,
       "category": "loans",
       "ceilingContingent": true,
-      "collateral": "ضامن رسمی, اعتبارسنجی - تا سقف ۱۵۰ میلیون تومان رتبه اعتباری A‌ بدون ضامن\r\n- تا سقف ۵۰ میلیون تومان رتبه اعتباری B بدون ضامن\r\n- تا سقف ۳۰۰ میلیون تومان رتبه‌های اعتباری A و B با اخذ ضامن",
+      "collateral": "ضامن رسمی, اعتبارسنجی",
       "collateralKind": "guarantor",
       "confidence": "medium",
       "desc": "وام پارس‌وام بانک پارسیان",
@@ -9391,7 +9403,7 @@
       },
       "friction": 50,
       "id": "rade-705509",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2025-12-15",
       "maxAmount": 300000000,
       "minAmount": null,
@@ -9402,12 +9414,12 @@
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: ضامن رسمی, اعتبارسنجی - تا سقف ۱۵۰ میلیون تومان رتبه اعتباری A‌ بدون ضامن\r\n- تا سقف ۵۰ میلیون تومان رتبه اعتباری B بدون ضامن\r\n- تا سقف ۳۰۰ میلیون تومان رتبه‌های اعتباری A و B با اخذ ضامن",
+        "ضمانت: ضامن رسمی, اعتبارسنجی",
         "هزینه جانبی: هزینه‌های مربوط به استعلام‌های متقاضی تسهیلات (استعلام‌های سن مشتری، ثبت احوال، چک برگشتی، ‌تسهیلات غیرجاری و نظام وظیفه) و در صورت نیاز تسهیلات به ضامن، ‌هزینه‌های مربوط به استعلام ضامن",
         "قسط تقریبی: ۱۱,۶۱۲,۹۱۶ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام پارس‌وام بانک پارسیان",
         "url": "https://www.rade.ir/loan-cash-loan/705509-%d9%88%d8%a7%d9%85-%d9%be%d8%a7%d8%b1%d8%b3%d9%88%d8%a7%d9%85-%d8%a8%d8%a7%d9%86%da%a9-%d9%be%d8%a7%d8%b1%d8%b3%db%8c%d8%a7%d9%86/"
@@ -9420,7 +9432,7 @@
         "وام نقدی",
         "پارسیان"
       ],
-      "termLabel": "۳۶ ماه حداکثر زمان بازپرداخت با توجه به انتخاب متقاضی ۱۲، ۲۴ و ۳۶ ماه است.",
+      "termLabel": "۳۶ ماه",
       "termMonths": 36
     },
     {
@@ -9444,7 +9456,7 @@
       },
       "friction": 72,
       "id": "rade-705536",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2025-12-08",
       "maxAmount": 300000000,
       "minAmount": null,
@@ -9460,7 +9472,7 @@
         "قسط تقریبی: ۱۱,۶۱۲,۹۱۶ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام ماه‌یار بانک سینا",
         "url": "https://www.rade.ir/loan-cash-loan/705536-%d9%88%d8%a7%d9%85-%d9%85%d8%a7%d9%87%db%8c%d8%a7%d8%b1-%d8%a8%d8%a7%d9%86%da%a9-%d8%b3%db%8c%d9%86%d8%a7/"
@@ -9497,7 +9509,7 @@
       },
       "friction": 72,
       "id": "rade-705537",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-27",
       "maxAmount": 6000000000,
       "minAmount": null,
@@ -9513,7 +9525,7 @@
         "قسط تقریبی: ۱۹۲,۳۰۸,۸۲۹ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام جهش مهر سلامت بانک رفاه کارگران",
         "url": "https://www.rade.ir/loan-cash-loan/705537-%d9%88%d8%a7%d9%85-%d8%ac%d9%87%d8%b4-%d9%85%d9%87%d8%b1-%d8%b3%d9%84%d8%a7%d9%85%d8%aa-%d8%a8%d8%a7%d9%86%da%a9-%d8%b1%d9%81%d8%a7%d9%87-%da%a9%d8%a7%d8%b1%da%af%d8%b1%d8%a7%d9%86/"
@@ -9530,7 +9542,7 @@
       "termMonths": 48
     },
     {
-      "amountLabel": "۵۰۰ میلیون تومان سقف مبلغ وام برای موتورسیکلت‌های بنزینی ۴۰۰ میلیون تومان و موتورسیکلت‌های برقی ۵۰۰ میلیون تومان است.",
+      "amountLabel": "۵۰۰ میلیون تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک مرکزی",
@@ -9550,7 +9562,7 @@
       },
       "friction": 72,
       "id": "rade-705554",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-10-11",
       "maxAmount": 500000000,
       "minAmount": 200000000,
@@ -9566,7 +9578,7 @@
         "قسط تقریبی: ۱۶,۹۶۷,۶۴۴ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام جایگزینی موتورسیکلت‌های فرسوده",
         "url": "https://www.rade.ir/loan-car-loan/705554-%d9%88%d8%a7%d9%85-%d9%85%d9%88%d8%aa%d9%88%d8%b1%d8%b3%db%8c%da%a9%d9%84%d8%aa-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d8%b1%da%a9%d8%b2%db%8c/"
@@ -9590,7 +9602,7 @@
       "benefit": 55,
       "category": "loans",
       "ceilingContingent": false,
-      "collateral": "اعتبار شغلی, اعتبارسنجی تضامین طبق ضوابط و مقررات شعب توسط ریاست شعب تعیین خواهد شد.",
+      "collateral": "اعتبار شغلی, اعتبارسنجی",
       "collateralKind": "credit-score",
       "confidence": "medium",
       "desc": "طرح ارزبان بانک رفاه کارگران",
@@ -9603,7 +9615,7 @@
       },
       "friction": 72,
       "id": "rade-705623",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-28",
       "maxAmount": null,
       "minAmount": null,
@@ -9614,10 +9626,11 @@
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: اعتبار شغلی, اعتبارسنجی تضامین طبق ضوابط و مقررات شعب توسط ریاست شعب تعیین خواهد شد."
+        "ضمانت: اعتبار شغلی, اعتبارسنجی",
+        "هزینه جانبی: —"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — طرح ارزبان بانک رفاه کارگران",
         "url": "https://www.rade.ir/loan-cash-loan/705623-%d8%b7%d8%b1%d8%ad-%d8%a7%d8%b1%d8%b2%d8%a8%d8%a7%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d8%b1%d9%81%d8%a7%d9%87-%da%a9%d8%a7%d8%b1%da%af%d8%b1%d8%a7%d9%86/"
@@ -9630,7 +9643,7 @@
         "وام نقدی",
         "رفاه کارگران"
       ],
-      "termLabel": "۱ ماه به‌صورت یک ماه و یکجا و تسویه تسهیلات قبل از صدور حواله ارزی انجام شود.",
+      "termLabel": "۱ ماه",
       "termMonths": 1
     },
     {
@@ -9654,7 +9667,7 @@
       },
       "friction": 72,
       "id": "rade-705685",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-07-20",
       "maxAmount": 15000000000,
       "minAmount": null,
@@ -9670,7 +9683,7 @@
         "قسط تقریبی: ۴۸۰,۷۷۲,۰۷۳ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — طرح کسب‌و‌کار 2 بانک دی",
         "url": "https://www.rade.ir/loan-cash-loan/705685-%d8%b7%d8%b1%d8%ad-%da%a9%d8%b3%d8%a8-%d9%88-%da%a9%d8%a7%d8%b1-%d8%a8%d8%a7%d9%86%da%a9-%d8%af%db%8c/"
@@ -9687,14 +9700,14 @@
       "termMonths": 48
     },
     {
-      "amountLabel": "۳۰۰ میلیون تومان سقف وام برای اشخاص حقوقی ۷۰۰ میلیون تومان است.",
+      "amountLabel": "۳۰۰ میلیون تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "موسسه اعتباری ملل",
       "benefit": 92,
       "category": "loans",
       "ceilingContingent": true,
-      "collateral": "ضامن رسمی, اعتبارسنجی امکان اعطای وام به اشخاص حقیقی تا ۳۰۰ میلیون تومان حداکثر با یک ضامن و برای مشتریان واجد شرایط دارای رتبه اعتباری A,B, C تا مبلغ ۱۰۰ میلیون تومان بدون ضامن است.",
+      "collateral": "ضامن رسمی, اعتبارسنجی",
       "collateralKind": "guarantor",
       "confidence": "medium",
       "desc": "وام همای ملل موسسه اعتباری ملل",
@@ -9707,7 +9720,7 @@
       },
       "friction": 50,
       "id": "rade-705746",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-07-21",
       "maxAmount": 300000000,
       "minAmount": 5000000,
@@ -9718,12 +9731,12 @@
       "rateLabel": "سود ۴٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: ضامن رسمی, اعتبارسنجی امکان اعطای وام به اشخاص حقیقی تا ۳۰۰ میلیون تومان حداکثر با یک ضامن و برای مشتریان واجد شرایط دارای رتبه اعتباری A,B, C تا مبلغ ۱۰۰ میلیون تومان بدون ضامن است.",
+        "ضمانت: ضامن رسمی, اعتبارسنجی",
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
         "قسط تقریبی: ۵,۴۵۴,۵۴۵ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام همای ملل موسسه اعتباری ملل",
         "url": "https://www.rade.ir/loan-interest-free-loan/705746-%d9%88%d8%a7%d9%85-%d9%87%d9%85%d8%a7%db%8c-%d9%85%d9%84%d9%84-%d9%85%d9%88%d8%b3%d8%b3%d9%87-%d8%a7%d8%b9%d8%aa%d8%a8%d8%a7%d8%b1%db%8c-%d9%85%d9%84%d9%84/"
@@ -9736,7 +9749,7 @@
         "قرض‌الحسنه",
         "موسسه اعتباری ملل"
       ],
-      "termLabel": "۶۰ ماه حداکثر زمان بازپرداخت اشخاص حقیقی بین ۶ الی ۶۰ ماه و اشخاص حقوقی تا ۲۴ ماه است.",
+      "termLabel": "۶۰ ماه",
       "termMonths": 60
     },
     {
@@ -9747,7 +9760,7 @@
       "benefit": 55,
       "category": "loans",
       "ceilingContingent": true,
-      "collateral": "ضامن رسمی, اعتبارسنجی امکان اعطای تسهیلات به افراد تا ۴۰۰ میلیون تومان حداکثر با یک ضامن و برای مشتریان واجد شرایط دارای رتبه اعتباری A,B, C تا مبلغ ۱۰۰ میلیون تومان بدون ضامن وجود دارد.",
+      "collateral": "ضامن رسمی, اعتبارسنجی",
       "collateralKind": "guarantor",
       "confidence": "medium",
       "desc": "وام شکوفایی ملل موسسه اعتباری ملل",
@@ -9760,7 +9773,7 @@
       },
       "friction": 50,
       "id": "rade-705749",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-07-21",
       "maxAmount": 400000000,
       "minAmount": 5000000,
@@ -9771,12 +9784,12 @@
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: ضامن رسمی, اعتبارسنجی امکان اعطای تسهیلات به افراد تا ۴۰۰ میلیون تومان حداکثر با یک ضامن و برای مشتریان واجد شرایط دارای رتبه اعتباری A,B, C تا مبلغ ۱۰۰ میلیون تومان بدون ضامن وجود دارد.",
+        "ضمانت: ضامن رسمی, اعتبارسنجی",
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
         "قسط تقریبی: ۱۵,۴۸۳,۸۸۹ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام شکوفایی ملل موسسه اعتباری ملل",
         "url": "https://www.rade.ir/loan-cash-loan/705749-%d9%88%d8%a7%d9%85-%d8%b4%da%a9%d9%88%d9%81%d8%a7%db%8c%db%8c-%d9%85%d9%84%d9%84-%d9%85%d9%88%d8%b3%d8%b3%d9%87-%d8%a7%d8%b9%d8%aa%d8%a8%d8%a7%d8%b1%db%8c-%d9%85%d9%84%d9%84/"
@@ -9789,7 +9802,7 @@
         "وام نقدی",
         "موسسه اعتباری ملل"
       ],
-      "termLabel": "۳۶ ماه مدت بازپرداخت متنوع از ۱۲ تا ۳۶ ماه است.",
+      "termLabel": "۳۶ ماه",
       "termMonths": 36
     },
     {
@@ -9800,7 +9813,7 @@
       "benefit": 92,
       "category": "loans",
       "ceilingContingent": true,
-      "collateral": "ضامن رسمی, اعتبارسنجی امکان اعطای وام به اشخاص حقیقی تا ۳۰۰ میلیون تومان حداکثر با یک ضامن و برای مشتریان واجد شرایط دارای رتبه اعتباری A,B, C تا مبلغ ۵۰ میلیون تومان بدون ضامن است.",
+      "collateral": "ضامن رسمی, اعتبارسنجی",
       "collateralKind": "guarantor",
       "confidence": "medium",
       "desc": "وام یاری‌رسان ملل موسسه اعتباری ملل",
@@ -9813,7 +9826,7 @@
       },
       "friction": 50,
       "id": "rade-705753",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-05-20",
       "maxAmount": 300000000,
       "minAmount": null,
@@ -9824,12 +9837,12 @@
       "rateLabel": "سود ۴٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: ضامن رسمی, اعتبارسنجی امکان اعطای وام به اشخاص حقیقی تا ۳۰۰ میلیون تومان حداکثر با یک ضامن و برای مشتریان واجد شرایط دارای رتبه اعتباری A,B, C تا مبلغ ۵۰ میلیون تومان بدون ضامن است.",
+        "ضمانت: ضامن رسمی, اعتبارسنجی",
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
         "قسط تقریبی: ۹,۰۹۰,۹۰۹ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام یاری‌رسان ملل موسسه اعتباری ملل",
         "url": "https://www.rade.ir/loan-interest-free-loan/705753-%d9%88%d8%a7%d9%85-%db%8c%d8%a7%d8%b1%db%8c%d8%b1%d8%b3%d8%a7%d9%86-%d9%85%d9%84%d9%84-%d9%85%d9%88%d8%b3%d8%b3%d9%87-%d8%a7%d8%b9%d8%aa%d8%a8%d8%a7%d8%b1%db%8c-%d9%85%d9%84%d9%84/"
@@ -9842,7 +9855,7 @@
         "قرض‌الحسنه",
         "موسسه اعتباری ملل"
       ],
-      "termLabel": "۳۶ ماه حداکثر زمان بازپرداخت بین ۱۲ الی ۳۶ ماه است.",
+      "termLabel": "۳۶ ماه",
       "termMonths": 36
     },
     {
@@ -9853,7 +9866,7 @@
       "benefit": 57,
       "category": "loans",
       "ceilingContingent": true,
-      "collateral": "ضامن رسمی, اعتبارسنجی امکان اعطای وام به اشخاص حقیقی تا ۴۰۰ میلیون تومان حداکثر با یک ضامن و برای مشتریان واجد شرایط دارای رتبه اعتباری A,B, C تا مبلغ ۵۰ میلیون تومان بدون ضامن است.",
+      "collateral": "ضامن رسمی, اعتبارسنجی",
       "collateralKind": "guarantor",
       "confidence": "medium",
       "desc": "وام همگام موسسه اعتباری ملل",
@@ -9866,7 +9879,7 @@
       },
       "friction": 50,
       "id": "rade-705756",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-05-20",
       "maxAmount": 400000000,
       "minAmount": null,
@@ -9877,12 +9890,12 @@
       "rateLabel": "سود ۲۲٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: ضامن رسمی, اعتبارسنجی امکان اعطای وام به اشخاص حقیقی تا ۴۰۰ میلیون تومان حداکثر با یک ضامن و برای مشتریان واجد شرایط دارای رتبه اعتباری A,B, C تا مبلغ ۵۰ میلیون تومان بدون ضامن است.",
+        "ضمانت: ضامن رسمی, اعتبارسنجی",
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
         "قسط تقریبی: ۱۵,۲۷۶,۱۸۱ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام همگام موسسه اعتباری ملل",
         "url": "https://www.rade.ir/loan-cash-loan/705756-%d9%88%d8%a7%d9%85-%d9%87%d9%85%da%af%d8%a7%d9%85-%d9%85%d9%88%d8%b3%d8%b3%d9%87-%d8%a7%d8%b9%d8%aa%d8%a8%d8%a7%d8%b1%db%8c-%d9%85%d9%84%d9%84/"
@@ -9895,7 +9908,7 @@
         "وام نقدی",
         "موسسه اعتباری ملل"
       ],
-      "termLabel": "۳۶ ماه حداکثر زمان بازپرداخت بین ۶ الی ۳۶ ماه است.",
+      "termLabel": "۳۶ ماه",
       "termMonths": 36
     },
     {
@@ -9919,7 +9932,7 @@
       },
       "friction": 50,
       "id": "rade-705775",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-07-21",
       "maxAmount": 2000000000,
       "minAmount": null,
@@ -9935,7 +9948,7 @@
         "قسط تقریبی: ۶۴,۱۰۲,۹۴۳ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام الماس ویژه اشخاص حقوقی و صاحبان کسب و کار موسسه اعتباری ملل",
         "url": "https://www.rade.ir/loan-cash-loan/705775-%d9%88%d8%a7%d9%85-%d8%a7%d9%84%d9%85%d8%a7%d8%b3-%d9%88%db%8c%da%98%d9%87-%d8%b5%d8%a7%d8%ad%d8%a8%d8%a7%d9%86-%da%a9%d8%b3%d8%a8-%d9%88-%da%a9%d8%a7%d8%b1-%d9%85%d9%88%d8%b3%d8%b3%d9%87-%d8%a7%d8%b9/"
@@ -9948,7 +9961,7 @@
         "وام نقدی",
         "موسسه اعتباری ملل"
       ],
-      "termLabel": "۴۸ ماه حداکثر زمان بازپرداخت بین ۱۲ الی ۴۸ ماه متناسب با ظرفیت اعتباری و توان بازپرداخت مشتریان است.",
+      "termLabel": "۴۸ ماه",
       "termMonths": 48
     },
     {
@@ -9959,7 +9972,7 @@
       "benefit": 55,
       "category": "loans",
       "ceilingContingent": false,
-      "collateral": "ضامن رسمی, اعتبار شغلی, اعتبارسنجی با توجه به رتبه اعتباری شما تعداد ضامن‌های مورد نیاز مشخص می‌شود. ارائه مستندات شغلی متناسب با نوع شغل ضروری است. ارائه سفته الکترونیک برای دریافت وام ضروری است.",
+      "collateral": "ضامن رسمی, اعتبار شغلی, اعتبارسنجی",
       "collateralKind": "guarantor",
       "confidence": "medium",
       "desc": "وام باجت بانک تجارت",
@@ -9972,7 +9985,7 @@
       },
       "friction": 50,
       "id": "rade-705795",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-10-10",
       "maxAmount": 100000000,
       "minAmount": null,
@@ -9983,12 +9996,12 @@
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: ضامن رسمی, اعتبار شغلی, اعتبارسنجی با توجه به رتبه اعتباری شما تعداد ضامن‌های مورد نیاز مشخص می‌شود. ارائه مستندات شغلی متناسب با نوع شغل ضروری است. ارائه سفته الکترونیک برای دریافت وام ضروری است.",
+        "ضمانت: ضامن رسمی, اعتبار شغلی, اعتبارسنجی",
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
         "قسط تقریبی: ۵,۲۳۷,۳۳۱ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام باجت بانک تجارت",
         "url": "https://www.rade.ir/loan-cash-loan/705795-%d9%88%d8%a7%d9%85-%d8%a8%d8%a7%d8%ac%d8%aa-%d8%a8%d8%a7%d9%86%da%a9-%d8%aa%d8%ac%d8%a7%d8%b1%d8%aa/"
@@ -10001,7 +10014,7 @@
         "وام نقدی",
         "تجارت"
       ],
-      "termLabel": "۲۴ ماه دوره بازپرداخت وام، به‌صورت ۱۲، ۱۸ و ۲۴ ماه است.",
+      "termLabel": "۲۴ ماه",
       "termMonths": 24
     },
     {
@@ -10025,7 +10038,7 @@
       },
       "friction": 72,
       "id": "rade-705807",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-07-15",
       "maxAmount": null,
       "minAmount": null,
@@ -10036,10 +10049,11 @@
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: اعتبار شغلی, اعتبارسنجی"
+        "ضمانت: اعتبار شغلی, اعتبارسنجی",
+        "هزینه جانبی: —"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — طرح ارزیار بانک رفاه کارگران",
         "url": "https://www.rade.ir/loan-cash-loan/705807-%d8%b7%d8%b1%d8%ad-%d8%a7%d8%b1%d8%b2%db%8c%d8%a7%d8%b1-%d8%a8%d8%a7%d9%86%da%a9-%d8%b1%d9%81%d8%a7%d9%87-%da%a9%d8%a7%d8%b1%da%af%d8%b1%d8%a7%d9%86/"
@@ -10052,7 +10066,7 @@
         "وام نقدی",
         "رفاه کارگران"
       ],
-      "termLabel": "۳ ماه بازپرداخت حداکثر سه ماه و به‌صورت یکجا است.",
+      "termLabel": "۳ ماه",
       "termMonths": 3
     },
     {
@@ -10076,7 +10090,7 @@
       },
       "friction": 50,
       "id": "rade-705924",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-07-28",
       "maxAmount": 35000000000,
       "minAmount": null,
@@ -10092,7 +10106,7 @@
         "قسط تقریبی: ۱۸,۰۰۴,۷۱۶,۹۴۹ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — طرح صنعت ارز بانک صنعت و معدن",
         "url": "https://www.rade.ir/loan-cash-loan/705924-%d8%b7%d8%b1%d8%ad-%d8%b5%d9%86%d8%b9%d8%aa-%d8%a7%d8%b1%d8%b2-%d8%a8%d8%a7%d9%86%da%a9-%d8%b5%d9%86%d8%b9%d8%aa-%d9%88-%d9%85%d8%b9%d8%af%d9%86/"
@@ -10105,11 +10119,11 @@
         "وام نقدی",
         "صنعت و معدن"
       ],
-      "termLabel": "۲ ماه مدت زمان بازپرداخت این طرح یک و دو ماه است.",
+      "termLabel": "۲ ماه",
       "termMonths": 2
     },
     {
-      "amountLabel": "۳۰۰ میلیون تومان سقف وام قرض‌الحسنه طرح نسیم برای اشخاص حقیقی ۳۰۰ میلیون تومان و برای اشخاص حقوقی ۷۵۰ میلیون تومان است.",
+      "amountLabel": "۳۰۰ میلیون تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک توسعه تعاون",
@@ -10129,7 +10143,7 @@
       },
       "friction": 50,
       "id": "rade-706040",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-07-11",
       "maxAmount": 300000000,
       "minAmount": null,
@@ -10145,7 +10159,7 @@
         "قسط تقریبی: ۵,۴۵۴,۵۴۵ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — طرح نسیم بانک توسعه تعاون",
         "url": "https://www.rade.ir/loan-interest-free-loan/706040-%d8%b7%d8%b1%d8%ad-%d9%86%d8%b3%db%8c%d9%85-%d8%a8%d8%a7%d9%86%da%a9-%d8%aa%d9%88%d8%b3%d8%b9%d9%87-%d8%aa%d8%b9%d8%a7%d9%88%d9%86/"
@@ -10158,7 +10172,7 @@
         "قرض‌الحسنه",
         "توسعه تعاون"
       ],
-      "termLabel": "۶۰ ماه زمان بازپرداخت انعطاف‌پذیر تا ۶۰ ماه است. ضمنا امکان بازپرداخت یکجا برای مشاغل فصلی وجود دارد.",
+      "termLabel": "۶۰ ماه",
       "termMonths": 60
     },
     {
@@ -10169,7 +10183,7 @@
       "benefit": 92,
       "category": "loans",
       "ceilingContingent": false,
-      "collateral": "اعتبارسنجی در طرح «افق ۲» فرآیند تأمین تضامین تسهیل شده و بنابر ضوابط اعلامی، وثایق شغلی و هویتی از متقاضیان دریافت نمی‌شود.",
+      "collateral": "اعتبارسنجی",
       "collateralKind": "credit-score",
       "confidence": "medium",
       "desc": "طرح افق ۲ بانک رفاه کارگران",
@@ -10182,7 +10196,7 @@
       },
       "friction": 72,
       "id": "rade-706193",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-06-02",
       "maxAmount": 100000000,
       "minAmount": 10000000,
@@ -10193,12 +10207,12 @@
       "rateLabel": "سود ۴٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: اعتبارسنجی در طرح «افق ۲» فرآیند تأمین تضامین تسهیل شده و بنابر ضوابط اعلامی، وثایق شغلی و هویتی از متقاضیان دریافت نمی‌شود.",
+        "ضمانت: اعتبارسنجی",
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
         "قسط تقریبی: ۸,۵۱۴,۹۹۰ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — طرح افق 2 بانک رفاه کارگران",
         "url": "https://www.rade.ir/loan-interest-free-loan/706193-%d8%b7%d8%b1%d8%ad-%d8%a7%d9%81%d9%82-2-%d8%a8%d8%a7%d9%86%da%a9-%d8%b1%d9%81%d8%a7%d9%87-%da%a9%d8%a7%d8%b1%da%af%d8%b1%d8%a7%d9%86/"
@@ -10235,7 +10249,7 @@
       },
       "friction": 50,
       "id": "rade-706215",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-27",
       "maxAmount": 10000000000,
       "minAmount": 100000000,
@@ -10251,7 +10265,7 @@
         "قسط تقریبی: ۹۴۰,۷۶۳,۲۱۳ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — طرح جاری زندگی بانک صادرات ایران",
         "url": "https://www.rade.ir/loan-cash-loan/706215-%d8%b7%d8%b1%d8%ad-%d8%ac%d8%a7%d8%b1%db%8c-%d8%b2%d9%86%d8%af%da%af%db%8c-%d8%a8%d8%a7%d9%86%da%a9-%d8%b5%d8%a7%d8%af%d8%b1%d8%a7%d8%aa-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
@@ -10264,11 +10278,11 @@
         "وام نقدی",
         "صادرات"
       ],
-      "termLabel": "۱۲ ماه امکان بازپرداخت دفعی نیز برای متقاضیان وجود دارد.",
+      "termLabel": "۱۲ ماه",
       "termMonths": 12
     },
     {
-      "amountLabel": "۲۲۰ میلیون تومان حداکثر سقف وام فرزندآوری به شرح زیر است: - فرزند اول ۴۴ میلیون تومان - فرزند دوم ۸۸ میلیون تومان - فرزند سوم ۱۳۲ میلیون تومان - فرزند چهارم ۱۶۵ میلیون تومان - فرزند پنجم و بیشتر ۲۲۰ میلیون تومان",
+      "amountLabel": "۲۲۰ میلیون تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک مرکزی",
@@ -10288,7 +10302,7 @@
       },
       "friction": 50,
       "id": "rade-706317",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-07",
       "maxAmount": 220000000,
       "minAmount": 44000000,
@@ -10304,7 +10318,7 @@
         "قسط تقریبی: ۱,۳۳۳,۳۳۳ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام فرزندآوری",
         "url": "https://www.rade.ir/loan-interest-free-loan/706317-%d9%88%d8%a7%d9%85-%d9%81%d8%b1%d8%b2%d9%86%d8%af%d8%a2%d9%88%d8%b1%db%8c-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d8%b1%da%a9%d8%b2%db%8c/"
@@ -10317,11 +10331,11 @@
         "قرض‌الحسنه",
         "مرکزی"
       ],
-      "termLabel": "۳۶ ماه حداکثر زمان بازپرداخت وام فرزندآوری به شرح زیر است: - فرزند اول بازپرداخت ۳۶ ماه - فرزند دوم بازپرداخت ۴۸ ماه - فرزند سوم بازپرداخت ۶۰ ماه - فرزند چهارم بازپرداخت ۷۲ ماه - فرزند پنجم و بیشتر بازپرداخت ۸۴ ماه",
+      "termLabel": "۳۶ ماه",
       "termMonths": 36
     },
     {
-      "amountLabel": "۷۰۰ میلیون تومان سقف تسهیلات قرض الحسنه ودیعه مسکن موقت جنگ رمضان: روستاها ۳۰۰ میلیون تومان شهرهای با جمعیت کمتر از ۲۵ هزار نفر ۴۰۰ میلیون تومان‌ شهرهای با جمعیت بالای ۲۵ هزار نفر ۶۰۰ میلیون تومان ساکنان مراکز استان‌ها به جز کلان شهرها ۷۰۰ میلیون تومان",
+      "amountLabel": "۷۰۰ میلیون تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک مسکن",
@@ -10341,7 +10355,7 @@
       },
       "friction": 72,
       "id": "rade-706570",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-04-12",
       "maxAmount": 700000000,
       "minAmount": 300000000,
@@ -10356,7 +10370,7 @@
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام قرض‌الحسنه ودیعه مسکن جنگ رمضان بانک مسکن",
         "url": "https://www.rade.ir/loan-interest-free-loan/706570-%d9%88%d8%a7%d9%85-%d9%82%d8%b1%d8%b6%d8%a7%d9%84%d8%ad%d8%b3%d9%86%d9%87-%d9%88%d8%af%db%8c%d8%b9%d9%87-%d9%85%d8%b3%da%a9%d9%86-%d8%ac%d9%86%da%af-%d8%b1%d9%85%d8%b6%d8%a7%d9%86-%d8%a8/"
@@ -10369,7 +10383,7 @@
         "قرض‌الحسنه",
         "مسکن"
       ],
-      "termLabel": "۲۴ ماه مدت بازپرداخت برای واحدهایی که نیاز به تعمیر دارند حداکثر ۱۲ ماه و برای واحدهای نیازمند احداث و مقاوم‌سازی حداکثر ۲۴ ماه در نظر گرفته شده است که بازپرداخت آن به صورت یکجا و پس از پایان مدت قرارداد خواهد بود.",
+      "termLabel": "۲۴ ماه",
       "termMonths": 24
     },
     {
@@ -10393,7 +10407,7 @@
       },
       "friction": 50,
       "id": "rade-706640",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-15",
       "maxAmount": 10000000000,
       "minAmount": null,
@@ -10409,7 +10423,7 @@
         "قسط تقریبی: ۹۴۰,۷۶۳,۲۱۳ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام طرح برنا بانک ملت",
         "url": "https://www.rade.ir/loan-cash-loan/706640-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%d8%a8%d8%b1%d9%86%d8%a7-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%84%d8%aa/"
@@ -10422,7 +10436,7 @@
         "وام نقدی",
         "ملت"
       ],
-      "termLabel": "۱۲ ماه امکان انتخاب دوره بازپرداخت ۶،۳ و ۱۲ ماهه از سوی مشتری در بخش تولید و کشاورزی و دوره بازپرداخت ۳ و ۶ ماهه در بخش بازرگانی و خدمات از جمله مزایای طرح برنای بانک ملت است.",
+      "termLabel": "۱۲ ماه",
       "termMonths": 12
     },
     {
@@ -10446,7 +10460,7 @@
       },
       "friction": 50,
       "id": "rade-706675",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-04-25",
       "maxAmount": 300000000,
       "minAmount": null,
@@ -10462,7 +10476,7 @@
         "قسط تقریبی: ۱۰,۵۴۷,۱۱۰ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام طرح چکامه پست بانک ایران",
         "url": "https://www.rade.ir/loan-cash-loan/706675-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%da%86%da%a9%d8%a7%d9%85%d9%87-%d9%be%d8%b3%d8%aa-%d8%a8%d8%a7%d9%86%da%a9-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
@@ -10475,11 +10489,11 @@
         "وام نقدی",
         "پست بانک"
       ],
-      "termLabel": "۳۶ ماه دوره بازپرداخت برای عقد مرابحه ۶، ۱۲، ۲۴ و ۳۶ ماه است. این زمان برای تسهیلات سرمایه در گردش دفعتا واحده ۳، ۶ و ۹ ماه است.",
+      "termLabel": "۳۶ ماه",
       "termMonths": 36
     },
     {
-      "amountLabel": "۲ میلیارد تومان سقف تسهیلات طرح حامی قرض‌الحسنه: اشخاص حقیقی: ۳۰۰ میلیون تومان اشخاص حقوقی: ۷۵۰ میلیون تومان سقف تسهیلات طرح حامی سرمایه‌گذاری: اشخاص حقیقی: ۵۰۰ میلیون تومان اشخاص حقوقی: ۲ میلیارد تومان",
+      "amountLabel": "۲ میلیارد تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک مسکن",
@@ -10499,7 +10513,7 @@
       },
       "friction": 50,
       "id": "rade-706682",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-04-26",
       "maxAmount": 2000000000,
       "minAmount": null,
@@ -10515,7 +10529,7 @@
         "قسط تقریبی: ۶۴,۱۰۲,۹۴۳ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام طرح حامی بانک مسکن",
         "url": "https://www.rade.ir/loan-cash-loan/706682-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%d8%ad%d8%a7%d9%85%db%8c-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d8%b3%da%a9%d9%86/"
@@ -10552,7 +10566,7 @@
       },
       "friction": 50,
       "id": "rade-706753",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-07-02",
       "maxAmount": 500000000,
       "minAmount": null,
@@ -10568,7 +10582,7 @@
         "قسط تقریبی: ۲,۲۷۲,۷۲۷ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — تسهیلات مسکن محرومین",
         "url": "https://www.rade.ir/loan-interest-free-loan/706753-%d8%aa%d8%b3%d9%87%db%8c%d9%84%d8%a7%d8%aa-%d9%85%d8%b3%da%a9%d9%86-%d9%85%d8%ad%d8%b1%d9%88%d9%85%db%8c%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d8%b1%da%a9%d8%b2%db%8c/"
@@ -10585,7 +10599,7 @@
       "termMonths": 240
     },
     {
-      "amountLabel": "۲۲ میلیون تومان مبلغ تسهیلات اعطایی به ازای هر فرد شاغل در بنگاه (مطابق لیست بیمه دی ۱۴۰۴) معادل ۲۲ میلیون تومان (تقریبا معادل حداقل حقوق پایه و مزایای مستمر یک ماه) است.",
+      "amountLabel": "۲۲ میلیون تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک رفاه کارگران",
@@ -10605,7 +10619,7 @@
       },
       "friction": 72,
       "id": "rade-706769",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-05-06",
       "maxAmount": 22000000,
       "minAmount": null,
@@ -10621,7 +10635,7 @@
         "قسط تقریبی: ۳,۹۱۶,۵۳۰ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — تسهیلات بنگاه‌های آسیب‌دیده در جنگ بانک رفاه کارگران",
         "url": "https://www.rade.ir/loan-cash-loan/706769-%d8%aa%d8%b3%d9%87%db%8c%d9%84%d8%a7%d8%aa-%d8%a8%d9%86%da%af%d8%a7%d9%87%d9%87%d8%a7%db%8c-%d8%a2%d8%b3%db%8c%d8%a8%d8%af%db%8c%d8%af%d9%87-%d8%af%d8%b1-%d8%ac%d9%86%da%af-%d8%a8/"
@@ -10638,7 +10652,7 @@
       "termMonths": 6
     },
     {
-      "amountLabel": "۴۴ میلیون تومان سقف وام دریافتی هر کارگر در مجموع ۴۴ میلیون تومان است. بنابراین میزان اعتبار نهایی با توجه به تعداد کارگران هر بنگاه تولیدی، متغیر است.",
+      "amountLabel": "۴۴ میلیون تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک صادرات",
@@ -10658,7 +10672,7 @@
       },
       "friction": 72,
       "id": "rade-706829",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-05-16",
       "maxAmount": 44000000,
       "minAmount": null,
@@ -10674,7 +10688,7 @@
         "قسط تقریبی: ۱۱,۵۳۲,۰۸۶ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — تسهیلات کسب‌وکارهای آسیب‌دیده در جنگ رمضان بانک صادرات",
         "url": "https://www.rade.ir/loan-cash-loan/706829-%d8%aa%d8%b3%d9%87%db%8c%d9%84%d8%a7%d8%aa-%da%a9%d8%b3%d8%a8%d9%88%da%a9%d8%a7%d8%b1%d9%87%d8%a7%db%8c-%d8%a2%d8%b3%db%8c%d8%a8%d8%af%db%8c%d8%af%d9%87-%d8%af%d8%b1-%d8%ac%d9%86/"
@@ -10687,7 +10701,7 @@
         "وام نقدی",
         "صادرات"
       ],
-      "termLabel": "۶ ماه صاحبان کسب‌وکارها حداکثر ۶ ماه فرصت دارند تا وام دریافتی را در ۲ تا ۴ قسط تسویه کنند.",
+      "termLabel": "۶ ماه",
       "termMonths": 6
     },
     {
@@ -10711,7 +10725,7 @@
       },
       "friction": 72,
       "id": "rade-706844",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-26",
       "maxAmount": 75000000,
       "minAmount": null,
@@ -10727,7 +10741,7 @@
         "قسط تقریبی: ۲,۲۷۲,۷۲۷ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام بازنشستگان کشوری بانک صادرات",
         "url": "https://www.rade.ir/loan-interest-free-loan/706844-%d9%88%d8%a7%d9%85-%d8%a8%d8%a7%d8%b2%d9%86%d8%b4%d8%b3%d8%aa%da%af%d8%a7%d9%86-%da%a9%d8%b4%d9%88%d8%b1%db%8c-%d8%a8%d8%a7%d9%86%da%a9-%d8%b5%d8%a7%d8%af%d8%b1%d8%a7%d8%aa/"
@@ -10764,7 +10778,7 @@
       },
       "friction": 72,
       "id": "rade-706845",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-06-15",
       "maxAmount": 60000000,
       "minAmount": null,
@@ -10780,7 +10794,7 @@
         "قسط تقریبی: ۲,۷۲۷,۲۷۳ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام بازنشستگان تامین اجتماعی بانک رفاه کارگران",
         "url": "https://www.rade.ir/loan-interest-free-loan/706845-%d9%88%d8%a7%d9%85-%d8%a8%d8%a7%d8%b2%d9%86%d8%b4%d8%b3%d8%aa%da%af%d8%a7%d9%86-%d8%aa%d8%a7%d9%85%db%8c%d9%86-%d8%a7%d8%ac%d8%aa%d9%85%d8%a7%d8%b9%db%8c-%d8%a8%d8%a7%d9%86%da%a9-%d8%b1%d9%81%d8%a7/"
@@ -10797,14 +10811,14 @@
       "termMonths": 24
     },
     {
-      "amountLabel": "۲ میلیارد تومان سقف مبلغ وام ۲ برابر مبلغ صلح‌شده تا سقف ۲ میلیارد تومان است.",
+      "amountLabel": "۲ میلیارد تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک قرض‌الحسنه مهر ایران",
       "benefit": 92,
       "category": "loans",
       "ceilingContingent": true,
-      "collateral": "ضامن رسمی, اعتبار شغلی, اعتبارسنجی وثایق و تضامین در چارچوب ضوابط اعتباری بانک دریافت می‌شود.",
+      "collateral": "ضامن رسمی, اعتبار شغلی, اعتبارسنجی",
       "collateralKind": "guarantor",
       "confidence": "medium",
       "desc": "وام طرح سرو تفاهم‌نامه‌ای بانک مهر ایران",
@@ -10817,7 +10831,7 @@
       },
       "friction": 50,
       "id": "rade-706859",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-19",
       "maxAmount": 2000000000,
       "minAmount": null,
@@ -10828,12 +10842,12 @@
       "rateLabel": "سود ۴٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: ضامن رسمی, اعتبار شغلی, اعتبارسنجی وثایق و تضامین در چارچوب ضوابط اعتباری بانک دریافت می‌شود.",
+        "ضمانت: ضامن رسمی, اعتبار شغلی, اعتبارسنجی",
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
         "قسط تقریبی: ۹۰,۹۰۹,۰۹۱ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام طرح سرو تفاهم‌نامه‌ای بانک مهر ایران",
         "url": "https://www.rade.ir/loan-interest-free-loan/706859-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%d8%b3%d8%b1%d9%88-%d8%aa%d9%81%d8%a7%d9%87%d9%85%d9%86%d8%a7%d9%85%d9%87%d8%a7%db%8c-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%87%d8%b1-%d8%a7%db%8c/"
@@ -10846,7 +10860,7 @@
         "قرض‌الحسنه",
         "قرض‌الحسنه مهر ایران"
       ],
-      "termLabel": "۲۴ ماه تعداد اقساط ۱۲ الی ۲۴ ماه است.",
+      "termLabel": "۲۴ ماه",
       "termMonths": 24
     },
     {
@@ -10857,7 +10871,7 @@
       "benefit": 55,
       "category": "loans",
       "ceilingContingent": true,
-      "collateral": "ضامن رسمی, اعتبار شغلی, اعتبارسنجی وام آنی‌پوز تا مبلغ ۳۰۰ میلیون تومان با چک و دو ضامن ارائه می‌شود. ارائه وام از ۳۰۰ تا ۷۰۰ میلیون تومان طبق اعتبارسنجی و ضوابط داخلی بانک است.",
+      "collateral": "ضامن رسمی, اعتبار شغلی, اعتبارسنجی",
       "collateralKind": "guarantor",
       "confidence": "medium",
       "desc": "وام آنی‌پوز بانک ایران و ونزوئلا",
@@ -10870,7 +10884,7 @@
       },
       "friction": 50,
       "id": "rade-706888",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-05-23",
       "maxAmount": 700000000,
       "minAmount": null,
@@ -10881,12 +10895,12 @@
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: ضامن رسمی, اعتبار شغلی, اعتبارسنجی وام آنی‌پوز تا مبلغ ۳۰۰ میلیون تومان با چک و دو ضامن ارائه می‌شود. ارائه وام از ۳۰۰ تا ۷۰۰ میلیون تومان طبق اعتبارسنجی و ضوابط داخلی بانک است.",
+        "ضمانت: ضامن رسمی, اعتبار شغلی, اعتبارسنجی",
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
         "قسط تقریبی: ۶۵,۸۵۳,۴۲۵ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام آنی‌پوز بانک ایران و ونزوئلا",
         "url": "https://www.rade.ir/loan-cash-loan/706888-%d9%88%d8%a7%d9%85-%d8%a2%d9%86%db%8c%d9%be%d9%88%d8%b2-%d8%a8%d8%a7%d9%86%da%a9-%d8%a7%db%8c%d8%b1%d8%a7%d9%86-%d9%88-%d9%88%d9%86%d8%b2%d9%88%d8%a6%d9%84%d8%a7/"
@@ -10910,7 +10924,7 @@
       "benefit": 55,
       "category": "loans",
       "ceilingContingent": true,
-      "collateral": "اعتبارسنجی به غیر از توثیق سهام نیاز به ارائه تضامین یا وثایق دیگری نیست.",
+      "collateral": "اعتبارسنجی",
       "collateralKind": "credit-score",
       "confidence": "medium",
       "desc": "طرح نقدینه وام با توثیق سهام",
@@ -10923,7 +10937,7 @@
       },
       "friction": 72,
       "id": "rade-706902",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-07-02",
       "maxAmount": 200000000,
       "minAmount": null,
@@ -10934,11 +10948,12 @@
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: اعتبارسنجی به غیر از توثیق سهام نیاز به ارائه تضامین یا وثایق دیگری نیست.",
+        "ضمانت: اعتبارسنجی",
+        "هزینه جانبی: —",
         "قسط تقریبی: ۱۰,۴۷۴,۶۶۱ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — طرح نقدینه وام با توثیق سهام",
         "url": "https://www.rade.ir/loan-cash-loan/706902-%d9%88%d8%a7%d9%85-%d8%a8%d8%a7-%d8%aa%d9%88%d8%ab%db%8c%d9%82-%d8%b3%d9%87%d8%a7%d9%85-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d8%b1%da%a9%d8%b2%db%8c/"
@@ -10955,14 +10970,14 @@
       "termMonths": 24
     },
     {
-      "amountLabel": "۴۰۰ میلیون تومان سقف وام برای هر کاربر براساس امتیاز اعتباری آنها و میانگین مانده موجودی، متفاوت خواهد بود. این مبلغ به تعداد اقساط پرداخت شده در وام نقدی بلو مرتبط است.",
+      "amountLabel": "۴۰۰ میلیون تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک سامان",
       "benefit": 61,
       "category": "loans",
       "ceilingContingent": false,
-      "collateral": "ضامن رسمی, اعتبارسنجی برای ضمانت نیاز به ضامن با رتبه‌ی اعتباری بالای B۲ است.",
+      "collateral": "ضامن رسمی, اعتبارسنجی",
       "collateralKind": "guarantor",
       "confidence": "medium",
       "desc": "وام به‌جا (با ضامن) بلوبانک",
@@ -10975,7 +10990,7 @@
       },
       "friction": 50,
       "id": "rade-706908",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-06",
       "maxAmount": 400000000,
       "minAmount": 3000000,
@@ -10986,12 +11001,12 @@
       "rateLabel": "سود ۲۰٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: ضامن رسمی, اعتبارسنجی برای ضمانت نیاز به ضامن با رتبه‌ی اعتباری بالای B۲ است.",
+        "ضمانت: ضامن رسمی, اعتبارسنجی",
         "هزینه جانبی: علاوه بر نرخ سود و کارمزد این وام، مبلغ ۷۵ هزار تومان هزینه تمبر مالیاتی است که به‌صورت جداگانه در لحظه واریز وام، از حساب شما کسر می‌شود.",
         "قسط تقریبی: ۳۷,۰۵۳,۸۰۲ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام به‌جا (با ضامن) بلوبانک",
         "url": "https://www.rade.ir/loan-cash-loan/706908-%d9%88%d8%a7%d9%85-%d8%a8%d9%87%d8%ac%d8%a7-%d8%a8%d9%84%d9%88%d8%a8%d8%a7%d9%86%da%a9/"
@@ -11004,7 +11019,7 @@
         "وام نقدی",
         "سامان"
       ],
-      "termLabel": "۱۲ ماه در صورتی‌‌که مدت بازپرداخت را «یک ماه» انتخاب کنید، مبلغی بابت سود پرداخت نخواهید کرد.",
+      "termLabel": "۱۲ ماه",
       "termMonths": 12
     },
     {
@@ -11028,7 +11043,7 @@
       },
       "friction": 50,
       "id": "rade-706964",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-06-06",
       "maxAmount": 10000000000,
       "minAmount": null,
@@ -11044,7 +11059,7 @@
         "قسط تقریبی: ۳۲۰,۵۱۴,۷۱۵ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام طرح شهرآسا بانک شهر",
         "url": "https://www.rade.ir/loan-cash-loan/706964-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%d8%b4%d9%87%d8%b1%d8%a2%d8%b3%d8%a7-%d8%a8%d8%a7%d9%86%da%a9-%d8%b4%d9%87%d8%b1/"
@@ -11057,18 +11072,18 @@
         "وام نقدی",
         "شهر"
       ],
-      "termLabel": "۴۸ ماه کلیه پذیرندگان در طبقه کارآمد می‌توانند از تسهیلات ویژه با مدت بازپرداخت ۱۲، ۱۸ و ۲۴ ماهه بهره‌مند شوند.",
+      "termLabel": "۴۸ ماه",
       "termMonths": 48
     },
     {
-      "amountLabel": "۵ میلیارد تومان میزان تسهیلات تعلق گرفته به متقاضی براساس اعتبارسنجی شخص و توان بازپرداخت آن مشخص می‌شود.",
+      "amountLabel": "۵ میلیارد تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "غیر بانکی",
       "benefit": 55,
       "category": "loans",
       "ceilingContingent": false,
-      "collateral": "ضامن رسمی, اعتبارسنجی, چک صیادی برای دریافت وام خرید خودروی همراه مکانیک اعتبارسنجی و چک صیادی بنفش مورد نیاز است. برای برخی مبالغ وام، ضامن هم مورد نیاز نیست.",
+      "collateral": "ضامن رسمی, اعتبارسنجی, چک صیادی",
       "collateralKind": "guarantor",
       "confidence": "medium",
       "desc": "وام خرید خودرو همراه مکانیک",
@@ -11081,7 +11096,7 @@
       },
       "friction": 50,
       "id": "rade-706969",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-10-05",
       "maxAmount": 5000000000,
       "minAmount": 200000000,
@@ -11092,11 +11107,11 @@
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: ضامن رسمی, اعتبارسنجی, چک صیادی برای دریافت وام خرید خودروی همراه مکانیک اعتبارسنجی و چک صیادی بنفش مورد نیاز است. برای برخی مبالغ وام، ضامن هم مورد نیاز نیست.",
+        "ضمانت: ضامن رسمی, اعتبارسنجی, چک صیادی",
         "هزینه جانبی: تمامی هزینه‌ها در قالب هزینه عملیات خرید خودرو دریافت می‌شود."
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام خرید خودرو همراه مکانیک",
         "url": "https://www.rade.ir/loan-car-loan/706969-%d9%88%d8%a7%d9%85-%d8%ae%d8%b1%db%8c%d8%af-%d8%ae%d9%88%d8%af%d8%b1%d9%88-%d9%87%d9%85%d8%b1%d8%a7%d9%87-%d9%85%da%a9%d8%a7%d9%86%db%8c%da%a9/"
@@ -11113,14 +11128,14 @@
       "termMonths": 60
     },
     {
-      "amountLabel": "۵۰۰ میلیون تومان در صورتیکه پذیرنده یا بستگان درجه یک آنها شامل پدر، مادر، فرزند یا همسر، فرهنگی باشند، سقف تسهیلات قابل پرداخت تا ۲۰ درصد و حداکثر تا ۶۰۰ میلیون تومان افزایش می‌یابد و پاداش پذیرنده نیز با شرایط ویژه محاسبه خواهد شد.",
+      "amountLabel": "۵۰۰ میلیون تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک سرمایه",
       "benefit": 55,
       "category": "loans",
       "ceilingContingent": false,
-      "collateral": "ضامن رسمی, اعتبار شغلی, اعتبارسنجی ضمانت‌ها براساس قوانین شعبه از شما دریافت خواهد شد.",
+      "collateral": "ضامن رسمی, اعتبار شغلی, اعتبارسنجی",
       "collateralKind": "guarantor",
       "confidence": "medium",
       "desc": "وام طرح سرمایه پایدار بانک سرمایه",
@@ -11133,7 +11148,7 @@
       },
       "friction": 50,
       "id": "rade-707016",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-04",
       "maxAmount": 500000000,
       "minAmount": null,
@@ -11144,12 +11159,12 @@
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: ضامن رسمی, اعتبار شغلی, اعتبارسنجی ضمانت‌ها براساس قوانین شعبه از شما دریافت خواهد شد.",
+        "ضمانت: ضامن رسمی, اعتبار شغلی, اعتبارسنجی",
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
         "قسط تقریبی: ۱۳۱,۰۴۶,۴۳۵ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام طرح سرمایه پایدار بانک سرمایه",
         "url": "https://www.rade.ir/loan-cash-loan/707016-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%d8%b3%d8%b1%d9%85%d8%a7%db%8c%d9%87-%d9%be%d8%a7%db%8c%d8%af%d8%a7%d8%b1-%d8%a8%d8%a7%d9%86%da%a9-%d8%b3%d8%b1%d9%85%d8%a7%db%8c%d9%87/"
@@ -11166,7 +11181,7 @@
       "termMonths": 4
     },
     {
-      "amountLabel": "۷۵۰ میلیون تومان سقف پرداخت وام رحمت ۴ برای مشتریان حقیقی ۳۰۰ میلیون تومان و مشتریان حقوقی ۷۵۰ میلیون تومان است.",
+      "amountLabel": "۷۵۰ میلیون تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "پست بانک",
@@ -11186,7 +11201,7 @@
       },
       "friction": 72,
       "id": "rade-707100",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-04",
       "maxAmount": 750000000,
       "minAmount": null,
@@ -11202,7 +11217,7 @@
         "قسط تقریبی: ۱۷,۰۴۵,۴۵۵ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام رحمت 4 پست بانک ایران",
         "url": "https://www.rade.ir/loan-interest-free-loan/707100-%d9%88%d8%a7%d9%85-%d8%b1%d8%ad%d9%85%d8%aa-4-%d9%be%d8%b3%d8%aa-%d8%a8%d8%a7%d9%86%da%a9-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
@@ -11215,7 +11230,7 @@
         "قرض‌الحسنه",
         "پست بانک"
       ],
-      "termLabel": "۴۸ ماه دوره‌های بازپرداخت به‌صورت ماهیانه و در بازه‌های ۶، ۱۲، ۲۴، ۳۶ و ۴۸ ماهه است.",
+      "termLabel": "۴۸ ماه",
       "termMonths": 48
     },
     {
@@ -11226,7 +11241,7 @@
       "benefit": 55,
       "category": "loans",
       "ceilingContingent": false,
-      "collateral": "ضامن رسمی, اعتبارسنجی متناسب با رتبه اعتباری متقاضی وثایق و تضامین لازم دریافت می‌شود.",
+      "collateral": "ضامن رسمی, اعتبارسنجی",
       "collateralKind": "guarantor",
       "confidence": "medium",
       "desc": "وام طرح توران بانک شهر",
@@ -11239,7 +11254,7 @@
       },
       "friction": 50,
       "id": "rade-707125",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-04",
       "maxAmount": 300000000,
       "minAmount": null,
@@ -11250,12 +11265,12 @@
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: ضامن رسمی, اعتبارسنجی متناسب با رتبه اعتباری متقاضی وثایق و تضامین لازم دریافت می‌شود.",
+        "ضمانت: ضامن رسمی, اعتبارسنجی",
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
         "قسط تقریبی: ۹,۶۱۵,۴۴۱ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام طرح توران بانک شهر",
         "url": "https://www.rade.ir/loan-cash-loan/707125-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%d8%aa%d9%88%d8%b1%d8%a7%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d8%b4%d9%87%d8%b1/"
@@ -11268,7 +11283,7 @@
         "وام نقدی",
         "شهر"
       ],
-      "termLabel": "۴۸ ماه بازپرداخت اقساط حداکثر تا ۴۸ ماه است.",
+      "termLabel": "۴۸ ماه",
       "termMonths": 48
     },
     {
@@ -11292,7 +11307,7 @@
       },
       "friction": 50,
       "id": "rade-707167",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-04",
       "maxAmount": 1000000000,
       "minAmount": null,
@@ -11308,7 +11323,7 @@
         "قسط تقریبی: ۳۲,۰۵۱,۴۷۲ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام طرح شاهد بانک دی",
         "url": "https://www.rade.ir/loan-cash-loan/707167-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%d8%b4%d8%a7%d9%87%d8%af-%d8%a8%d8%a7%d9%86%da%a9-%d8%af%db%8c/"
@@ -11325,7 +11340,7 @@
       "termMonths": 48
     },
     {
-      "amountLabel": "۴۰ میلیارد تومان حداکثر مبلغ وام ۴۰ میلیارد تومان به ازای هر مگاوات است.",
+      "amountLabel": "۴۰ میلیارد تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "پست بانک",
@@ -11345,7 +11360,7 @@
       },
       "friction": 72,
       "id": "rade-707260",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-21",
       "maxAmount": 40000000000,
       "minAmount": null,
@@ -11361,7 +11376,7 @@
         "قسط تقریبی: ۹۳۰,۷۳۰,۰۳۴ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام احداث نیروگاه‌های خورشیدی پست بانک ایران",
         "url": "https://www.rade.ir/loan-cash-loan/707260-%d9%88%d8%a7%d9%85-%d8%a7%d8%ad%d8%af%d8%a7%d8%ab-%d9%86%db%8c%d8%b1%d9%88%da%af%d8%a7%d9%87%d9%87%d8%a7%db%8c-%d8%ae%d9%88%d8%b1%d8%b4%db%8c%d8%af%db%8c-%d9%be%d8%b3%d8%aa-%d8%a8%d8%a7%d9%86/"
@@ -11374,11 +11389,11 @@
         "وام نقدی",
         "پست بانک"
       ],
-      "termLabel": "۶۰ ماه حداکثر زمان بازپرداخت ۶۰ ماه است. (با در نظر گرفتن دوره مشارکت و تنفس ۱۲ ماهه)",
+      "termLabel": "۶۰ ماه",
       "termMonths": 60
     },
     {
-      "amountLabel": "۵۰ میلیارد تومان این عدد سقف وام لیزینگ محصولات و خدمات دانش‌بنیان، خلاق و فناور است. جزئیات بیشتر سقف وام‌های مختلف دانش‌بنیان را در توضیحات ببینید!",
+      "amountLabel": "۵۰ میلیارد تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک پارسیان",
@@ -11398,7 +11413,7 @@
       },
       "friction": 50,
       "id": "rade-707290",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-04",
       "maxAmount": 50000000000,
       "minAmount": 150000000,
@@ -11410,10 +11425,11 @@
       "regulatory": false,
       "requirements": [
         "ضمانت: ضامن رسمی, اعتبار شغلی, سند ملکی, اعتبارسنجی",
+        "هزینه جانبی: —",
         "قسط تقریبی: ۱,۹۳۵,۴۸۶,۰۷۸ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام شرکت‌های دانش‌بنیان بانک پارسیان",
         "url": "https://www.rade.ir/loan-cash-loan/707290-%d9%88%d8%a7%d9%85-%d8%b4%d8%b1%da%a9%d8%aa%d9%87%d8%a7%db%8c-%d8%af%d8%a7%d9%86%d8%b4%d8%a8%d9%86%db%8c%d8%a7%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d9%be%d8%a7%d8%b1%d8%b3%db%8c%d8%a7/"
@@ -11426,11 +11442,11 @@
         "وام نقدی",
         "پارسیان"
       ],
-      "termLabel": "۳۶ ماه این عدد مدت زمان بازپرداخت وام لیزینگ محصولات و خدمات دانش‌بنیان، خلاق و فناور است. جزئیات بیشتر بازپرداخت وام‌های مختلف دانش‌بنیان را در توضیحات ببینید!",
+      "termLabel": "۳۶ ماه",
       "termMonths": 36
     },
     {
-      "amountLabel": "۱.۲ میلیارد تومان سقف وام برای افرادی که خودروی خود را با خودروی برقی جایگزین می‌کنند، یک میلیارد و ۲۰۰ میلیون تومان است.",
+      "amountLabel": "۱.۲ میلیارد تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک مرکزی",
@@ -11450,7 +11466,7 @@
       },
       "friction": 72,
       "id": "rade-708112",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-17",
       "maxAmount": 1200000000,
       "minAmount": 400000000,
@@ -11462,10 +11478,11 @@
       "regulatory": false,
       "requirements": [
         "ضمانت: اعتبارسنجی",
+        "هزینه جانبی: —",
         "قسط تقریبی: ۲۲,۰۹۹,۸۲۶ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام نوسازی خودروهای فرسوده",
         "url": "https://www.rade.ir/loan-car-loan/708112-%d9%88%d8%a7%d9%85-%d9%86%d9%88%d8%b3%d8%a7%d8%b2%db%8c-%d8%ae%d9%88%d8%af%d8%b1%d9%88%d9%87%d8%a7%db%8c-%d9%81%d8%b1%d8%b3%d9%88%d8%af%d9%87/"
@@ -11482,14 +11499,14 @@
       "termMonths": 60
     },
     {
-      "amountLabel": "متغیر سقف تسهیلات براساس نوع خودرو (داخلی یا وارداتی) و رتبه اعتباری شما تعیین می‌شود. ضمن اینکه سقف وام دریافتی معادل ۵۰ درصد قیمت خودرو خواهد بود.",
+      "amountLabel": "متغیر",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "غیر بانکی",
       "benefit": 55,
       "category": "loans",
       "ceilingContingent": false,
-      "collateral": "ضامن رسمی, اعتبارسنجی, چک صیادی در خرید اقساطی کارنامه، اکثر تسهیلات بدون نیاز به ضامن و تنها با ارائه چک صیادی انجام می‌شود. ارائه ضامن تنها در صورت پایین بودن رتبه اعتباری و مبالغ بالا ضروری است.",
+      "collateral": "ضامن رسمی, اعتبارسنجی, چک صیادی",
       "collateralKind": "guarantor",
       "confidence": "medium",
       "desc": "وام خرید خودرو کارنامه",
@@ -11502,7 +11519,7 @@
       },
       "friction": 50,
       "id": "rade-708122",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-10-05",
       "maxAmount": null,
       "minAmount": 100000000,
@@ -11513,10 +11530,11 @@
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: ضامن رسمی, اعتبارسنجی, چک صیادی در خرید اقساطی کارنامه، اکثر تسهیلات بدون نیاز به ضامن و تنها با ارائه چک صیادی انجام می‌شود. ارائه ضامن تنها در صورت پایین بودن رتبه اعتباری و مبالغ بالا ضروری است."
+        "ضمانت: ضامن رسمی, اعتبارسنجی, چک صیادی",
+        "هزینه جانبی: —"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام خرید خودرو کارنامه",
         "url": "https://www.rade.ir/loan-car-loan/708122-%d9%88%d8%a7%d9%85-%d8%ae%d8%b1%db%8c%d8%af-%d8%ae%d9%88%d8%af%d8%b1%d9%88-%da%a9%d8%a7%d8%b1%d9%86%d8%a7%d9%85%d9%87/"
@@ -11529,7 +11547,7 @@
         "وام خودرو",
         "غیر بانکی"
       ],
-      "termLabel": "۴۸ ماه امکان انتخاب بازه زمانی بازپرداخت از ۱۲ تا ۴۸ ماه برای شما فراهم است.",
+      "termLabel": "۴۸ ماه",
       "termMonths": 48
     },
     {
@@ -11553,7 +11571,7 @@
       },
       "friction": 50,
       "id": "rade-708190",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-08-15",
       "maxAmount": 100000000,
       "minAmount": null,
@@ -11565,10 +11583,11 @@
       "regulatory": false,
       "requirements": [
         "ضمانت: ضامن رسمی, اعتبارسنجی",
+        "هزینه جانبی: —",
         "قسط تقریبی: ۱,۸۱۸,۱۸۲ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام زنان دهک‌های یک تا 5",
         "url": "https://www.rade.ir/loan-interest-free-loan/708190-%d9%88%d8%a7%d9%85-%d8%b2%d9%86%d8%a7%d9%86-%d8%af%d9%87%da%a9%d9%87%d8%a7%db%8c-%db%8c%da%a9-%d8%aa%d8%a7-5/"
@@ -11585,14 +11604,14 @@
       "termMonths": 60
     },
     {
-      "amountLabel": "۲۰ میلیارد تومان مبلغ تسهیلات در طرح «هم‌پی‌مان پرداخت حقوق»، بر اساس تعداد پرسنل مجموعه تعیین می‌شود.",
+      "amountLabel": "۲۰ میلیارد تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک اقتصاد نوین",
       "benefit": 55,
       "category": "loans",
       "ceilingContingent": false,
-      "collateral": "اعتبار شغلی, سند ملکی, اعتبارسنجی, چک صیادی پس از مراجعه به بانک و بررسی صورت‌های مالی و اعتبارسنجی متقاضی، نوع تضامین مورد نیاز مشخص خواهد شد. این تضامین می‌توانند شامل چک‌های بانکی، سند ملک یا سایر وثیقه‌های قانونی باشند.",
+      "collateral": "اعتبار شغلی, سند ملکی, اعتبارسنجی, چک صیادی",
       "collateralKind": "credit-score",
       "confidence": "medium",
       "desc": "وام هم‌پی بانک اقتصاد نوین",
@@ -11605,7 +11624,7 @@
       },
       "friction": 72,
       "id": "rade-708528",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-02",
       "maxAmount": 20000000000,
       "minAmount": null,
@@ -11616,12 +11635,12 @@
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: اعتبار شغلی, سند ملکی, اعتبارسنجی, چک صیادی پس از مراجعه به بانک و بررسی صورت‌های مالی و اعتبارسنجی متقاضی، نوع تضامین مورد نیاز مشخص خواهد شد. این تضامین می‌توانند شامل چک‌های بانکی، سند ملک یا سایر وثیقه‌های قانونی باشند.",
+        "ضمانت: اعتبار شغلی, سند ملکی, اعتبارسنجی, چک صیادی",
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
         "قسط تقریبی: ۲۰,۳۸۳,۳۳۳,۳۳۳ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام هم‌پی بانک اقتصاد نوین",
         "url": "https://www.rade.ir/loan-cash-loan/708528-%d9%88%d8%a7%d9%85-%d9%87%d9%85%d9%be%db%8c-%d8%a8%d8%a7%d9%86%da%a9-%d8%a7%d9%82%d8%aa%d8%b5%d8%a7%d8%af-%d9%86%d9%88%db%8c%d9%86/"
@@ -11638,14 +11657,14 @@
       "termMonths": 1
     },
     {
-      "amountLabel": "۱.۴ میلیارد تومان مبلغ وام شما بر اساس نوع و ارزش وثیقه ارائه‌شده (طلا یا بیگ‌باکس) تعیین می‌شود.",
+      "amountLabel": "۱.۴ میلیارد تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
       "bank": "بانک سامان",
       "benefit": 55,
       "category": "loans",
       "ceilingContingent": false,
-      "collateral": "اعتبارسنجی وثیقه‌های قابل قبول برای این وام، طلای بلو یا بیگ‌باکس است.",
+      "collateral": "اعتبارسنجی",
       "collateralKind": "credit-score",
       "confidence": "medium",
       "desc": "وام با وثیقه بلوبانک",
@@ -11658,7 +11677,7 @@
       },
       "friction": 72,
       "id": "rade-708652",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-26",
       "maxAmount": 1400000000,
       "minAmount": null,
@@ -11669,12 +11688,12 @@
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: اعتبارسنجی وثیقه‌های قابل قبول برای این وام، طلای بلو یا بیگ‌باکس است.",
+        "ضمانت: اعتبارسنجی",
         "هزینه جانبی: هزینه زیرساخت و اعتبارسنجی برای سقف ۱.۴ میلیارد تومان حدود ۷۰ میلیون تومان است.",
         "قسط تقریبی: ۱۳۱,۷۰۶,۸۵۰ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام با وثیقه بلوبانک",
         "url": "https://www.rade.ir/loan-cash-loan/708652-%d9%88%d8%a7%d9%85-%d8%a8%d8%a7-%d9%88%d8%ab%db%8c%d9%82%d9%87-%d8%a8%d9%84%d9%88%d8%a8%d8%a7%d9%86%da%a9/"
@@ -11711,7 +11730,7 @@
       },
       "friction": 50,
       "id": "rade-708864",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-29",
       "maxAmount": 400000000,
       "minAmount": null,
@@ -11723,10 +11742,11 @@
       "regulatory": false,
       "requirements": [
         "ضمانت: ضامن رسمی, اعتبار شغلی",
+        "هزینه جانبی: —",
         "قسط تقریبی: ۲۰,۹۴۹,۳۲۲ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام طرح سکو بانک صادرات ایران",
         "url": "https://www.rade.ir/loan-cash-loan/708864-%d9%88%d8%a7%d9%85-%d8%b3%da%a9%d9%88-%d8%a8%d8%a7%d9%86%da%a9-%d8%b5%d8%a7%d8%af%d8%b1%d8%a7%d8%aa-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
@@ -11739,7 +11759,7 @@
         "وام نقدی",
         "صادرات"
       ],
-      "termLabel": "۲۴ ماه مدت بازپرداخت ۲۴ ماه برای کارکنان و ۶ تا ۱۲ ماه برای شرکت‌ها است.",
+      "termLabel": "۲۴ ماه",
       "termMonths": 24
     },
     {
@@ -11750,7 +11770,7 @@
       "benefit": 71,
       "category": "loans",
       "ceilingContingent": false,
-      "collateral": "اعتبار شغلی تضمین این تسهیلات، سپرده‌های نقدی متقاضی است که نزد پست‌بانک به عنوان ضمانت‌نامه بلوکه شده است.",
+      "collateral": "اعتبار شغلی",
       "collateralKind": "credit-score",
       "confidence": "medium",
       "desc": "وام طرح زرین پست بانک",
@@ -11763,7 +11783,7 @@
       },
       "friction": 72,
       "id": "rade-708871",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-09-30",
       "maxAmount": null,
       "minAmount": null,
@@ -11774,10 +11794,11 @@
       "rateLabel": "سود ۱۵٪",
       "regulatory": false,
       "requirements": [
-        "ضمانت: اعتبار شغلی تضمین این تسهیلات، سپرده‌های نقدی متقاضی است که نزد پست‌بانک به عنوان ضمانت‌نامه بلوکه شده است."
+        "ضمانت: اعتبار شغلی",
+        "هزینه جانبی: —"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام طرح زرین پست بانک",
         "url": "https://www.rade.ir/loan-cash-loan/708871-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%d8%b2%d8%b1%db%8c%d9%86-%d9%be%d8%b3%d8%aa-%d8%a8%d8%a7%d9%86%da%a9/"
@@ -11790,7 +11811,7 @@
         "وام نقدی",
         "پست بانک"
       ],
-      "termLabel": "۱۲ ماه مدت بازپرداخت ۱۲ ماه و بصورت ماهانه ۳ ماهه یا ۶ ماهه است.",
+      "termLabel": "۱۲ ماه",
       "termMonths": 12
     },
     {
@@ -11814,7 +11835,7 @@
       },
       "friction": 50,
       "id": "rade-709111",
-      "lastSeen": "2026-10-14",
+      "lastSeen": "2026-10-15",
       "lastUpdated": "2026-10-13",
       "maxAmount": 2000000000,
       "minAmount": 300000000,
@@ -11830,7 +11851,7 @@
         "قسط تقریبی: ۶۴,۱۰۲,۹۴۳ تومان"
       ],
       "source": {
-        "checked": "2026-10-14",
+        "checked": "2026-10-15",
         "kind": "aggregator",
         "title": "رده — وام خرید خودرو ویکی",
         "url": "https://www.rade.ir/loan-car-loan/709111-%d9%88%d8%a7%d9%85-%d8%ae%d8%b1%db%8c%d8%af-%d8%ae%d9%88%d8%af%d8%b1%d9%88-%d9%88%db%8c%da%a9%db%8c/"
@@ -11843,7 +11864,7 @@
         "وام خودرو",
         "غیر بانکی"
       ],
-      "termLabel": "۴۸ ماه بازپرداخت تسهیلات به‌صورت اقساط ۱۲، ۲۴، ۳۶ و ۴۸ ماهه است.",
+      "termLabel": "۴۸ ماه",
       "termMonths": 48
     },
     {
