@@ -153,9 +153,9 @@ jobs:
         if: always()
         run: |
           if [ -f data/weekly-report.json ]; then
-            HEALTH=$(node -e "const r=require('./data/weekly-report.json'); console.log(r.stats?.healthScore ?? 'نامشخص')")
-            FRESH=$(node -e "const r=require('./data/weekly-report.json'); console.log(r.stats?.freshnessPercent ?? '0')")
-            ANOM=$(node -e "const r=require('./data/weekly-report.json'); console.log(r.anomalies?.total ?? 0)")
+            HEALTH=$(node --input-type=module -e "import fs from 'node:fs'; const r=JSON.parse(fs.readFileSync('./data/weekly-report.json','utf8')); console.log(r.stats?.healthScore ?? 'نامشخص')")
+            FRESH=$(node --input-type=module -e "import fs from 'node:fs'; const r=JSON.parse(fs.readFileSync('./data/weekly-report.json','utf8')); console.log(r.stats?.freshnessPercent ?? '0')")
+            ANOM=$(node --input-type=module -e "import fs from 'node:fs'; const r=JSON.parse(fs.readFileSync('./data/weekly-report.json','utf8')); console.log(r.anomalies?.total ?? 0)")
             echo "health=$HEALTH" >> "$GITHUB_OUTPUT"
             echo "fresh=$FRESH" >> "$GITHUB_OUTPUT"
             echo "anomalies=$ANOM" >> "$GITHUB_OUTPUT"

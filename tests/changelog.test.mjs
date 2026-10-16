@@ -40,9 +40,9 @@ describe('ابزار changelog هوشمند', () => {
     assert.ok(md.includes('22') || md.includes('۲۲'), 'باید نرخ 22 در markdown باشد');
   });
 
-  it('changelogToRSS فید XML معتبر تولید می‌کند', () => {
+  it('changelogToRSS فید XML معتبر و قطعی (deterministic) تولید می‌کند', () => {
     const diff = {
-      added: [],
+      added: [{ id: 'p1', bank: 'بانک الف', product: 'وام الف', category: 'loans', rate: 23 }],
       removed: [],
       rateChanged: [],
       amountChanged: [],
@@ -50,10 +50,12 @@ describe('ابزار changelog هوشمند', () => {
       confidenceChanged: [],
       revived: [],
       staleNow: [],
-      summary: { added: 0, removed: 0, rateChanged: 0, amountChanged: 0, termChanged: 0, confidenceChanged: 0, revived: 0, staleNow: 0, totalChanges: 0 },
+      summary: { added: 1, removed: 0, rateChanged: 0, amountChanged: 0, termChanged: 0, confidenceChanged: 0, revived: 0, staleNow: 0, totalChanges: 1 },
     };
-    const rss = changelogToRSS(diff, { date: '2026-09-27T00:00:00.000Z' });
-    assert.match(rss, /<rss/);
-    assert.match(rss, /<channel>/);
+    const rss1 = changelogToRSS(diff, { date: '2026-09-27T00:00:00.000Z' });
+    const rss2 = changelogToRSS(diff, { date: '2026-09-27T00:00:00.000Z' });
+    assert.match(rss1, /<rss/);
+    assert.match(rss1, /<channel>/);
+    assert.equal(rss1, rss2, 'خروجی RSS با ورودی یکسان باید کاملاً قطعی باشد');
   });
 });

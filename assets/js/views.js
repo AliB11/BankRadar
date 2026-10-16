@@ -580,7 +580,7 @@ export function compareHTML() {
     { key: 'collateral', label: 'وثیقه / ضمانت', get: (p) => null, fmt: (_, p) => esc(fa(p.collateral)) },
     { key: 'digital', label: 'امتیاز دیجیتال', dir: 'max', get: (p) => p.digital, fmt: (v) => fa(Math.round(v)) },
     { key: 'friction', label: 'کمبود اصطکاک', dir: 'max', get: (p) => p.friction, fmt: (v) => fa(Math.round(v)) },
-    { key: 'fresh', label: 'آخرین کنترل خط لوله', get: (p) => null, fmt: (_, p) => (p.lastSeen || p.lastUpdated ? esc(faDate(p.lastSeen || p.lastUpdated)) : '—') },
+    { key: 'fresh', label: 'آخرین کنترل خط لوله', get: (p) => null, fmt: (_, p) => { const c = mostRecent(p.lastSeen, p.lastVerified, p.source?.checked, p.lastUpdated); return c ? esc(faDate(c)) : '—'; } },
     { key: 'srcFresh', label: 'به‌روزرسانی منبع', get: (p) => null, fmt: (_, p) => (p.lastUpdated ? esc(faDate(p.lastUpdated)) : '—') },
     { key: 'conf', label: 'اطمینان منبع', get: (p) => null, fmt: (_, p) => esc((confChip[p.confidence] ?? confChip.medium)[1]) },
   ];

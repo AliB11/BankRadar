@@ -149,7 +149,7 @@ export function normalizeProduct(raw, index) {
     autoDiscovered: raw.autoDiscovered === true,
     stale: raw.stale === true,
     lastUpdated: raw.lastUpdated || null,
-    lastSeen: raw.lastSeen || null,
+    lastSeen: mostRecent(raw.lastSeen, raw.lastVerified, raw.source?.checked) || null,
     lastVerified: raw.lastVerified || null,
     source: raw.source || null,
     extra: raw.extra || {},
@@ -248,7 +248,8 @@ export async function reloadFreshData() {
       const indRes = await fetch(`data/indicators.json?_t=${Date.now()}`, { cache: 'no-store' });
       if (indRes.ok) {
         const indJson = await indRes.json();
-        if (indJson?.inflationAnnual) store.indicators = indJson;
+        const indMap = indJson?.indicators || indJson;
+        if (indMap?.inflationAnnual) store.indicators = indMap;
       }
     } catch {
       // استفاده از شاخص‌های موجود

@@ -144,8 +144,8 @@ test('صندوق‌های غیر درآمد ثابت، نوپا یا بدون ب
 /* نگاشت به رکورد                                                      */
 /* ------------------------------------------------------------------ */
 
-test('برش ثابت ۶۷ صندوق درآمد ثابت دارد و همهٔ شناسه‌ها در جدول شناخت هستند', () => {
-  assert.equal(snapshot.rows.length, 67);
+test('برش ثابت ۷۳ صندوق درآمد ثابت دارد و همهٔ شناسه‌ها در جدول شناخت هستند', () => {
+  assert.equal(snapshot.rows.length, 73);
   const ids = snapshot.rows.map((r) => r.id);
   assert.equal(new Set(ids).size, ids.length, 'شناسهٔ تکراری در برش');
   for (const r of snapshot.rows) {
@@ -293,15 +293,15 @@ test('تاریخ آیندهٔ منبع به امروز محدود می‌شود 
 /* جمع‌آوری از برش و ادغام کامل                                        */
 /* ------------------------------------------------------------------ */
 
-test('collect با برش: ۶۷ محصول، ۳۸ ETF، ۸ به‌روزرسانی دست‌نویس، بدون شناسهٔ تکراری', async () => {
+test('collect با برش: ۷۳ محصول، ۴۳ ETF، ۸ به‌روزرسانی دست‌نویس، بدون شناسهٔ تکراری', async () => {
   const logs = [];
   const result = await collect({ existing: curatedBase, banks, snapshot: FIXTURE, today: TODAY, log: (m) => logs.push(m) });
   assert.equal(result.source, 'isignal.ir');
   assert.match(result.origin, /^snapshot:/);
-  assert.equal(result.rows, 67);
-  assert.equal(result.products.length, 67);
-  assert.equal(result.etf, 38);
-  assert.equal(result.issuance, 29);
+  assert.equal(result.rows, 73);
+  assert.equal(result.products.length, 73);
+  assert.equal(result.etf, 43);
+  assert.equal(result.issuance, 30);
   assert.equal(result.refreshed, 8);
   assert.equal(result.skipped.length, 0);
   assert.ok(logs.some((m) => m.includes('آی‌سیگنال')));
@@ -315,13 +315,13 @@ test('collect با برش: ۶۷ محصول، ۳۸ ETF، ۸ به‌روزرسان
     assert.match(p.rateLabel, /بازدهی یک‌ساله/);
   }
 
-  // ادغام روی پایگاه دست‌نویس: ۵۹ افزوده + ۸ به‌روزرسانی، مجموع صندوق‌ها ۶۷
+  // ادغام روی پایگاه دست‌نویس: ۶۵ افزوده + ۸ به‌روزرسانی، مجموع صندوق‌ها ۷۳
   const { merged, stats } = mergeProducts(curatedBase, result.products);
-  assert.equal(stats.added, 59);
+  assert.equal(stats.added, 65);
   // ۸ رکورد دست‌نویس یا به‌روز می‌شوند یا (اگر داده‌های فعلی همین برش باشد) بی‌تغییر می‌مانند
   assert.equal(stats.updated + stats.unchanged, 8);
   const funds = merged.filter((p) => p.category === 'funds');
-  assert.equal(funds.length, 67);
+  assert.equal(funds.length, 73);
   const bankIds = new Set(banks.map((b) => b.id));
   for (const f of funds) {
     assert.ok(bankIds.has(f.bankId), `bankId «${f.bankId}» برای ${f.id} در banks.json نیست`);
@@ -342,9 +342,9 @@ test('اجرای دوباره روی همان برش، تغییری ایجاد �
   assert.ok(stats.unchanged >= 59, `انتظار ≥۵۹ بی‌تغییر، دریافت ${stats.unchanged}`);
 });
 
-test('داده‌های فعلی products.json با خروجی برش هم‌خوان است (۶۷ صندوق، همان نرخ‌ها)', () => {
+test('داده‌های فعلی products.json با خروجی برش هم‌خوان است (۷۳ صندوق، همان نرخ‌ها)', () => {
   const funds = products.filter((p) => p.category === 'funds');
-  assert.equal(funds.length, 67);
+  assert.equal(funds.length, 73);
   for (const r of snapshot.rows) {
     const meta = KNOWN_FUNDS[r.id];
     const id = meta.existingId || `fund-${meta.slug}`;

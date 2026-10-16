@@ -249,3 +249,10 @@ test('کلاس‌های لایه‌ای پوسته هم در HTML و هم در C
     assert.ok(css.includes(`.${cls}`), `کلاس ${cls} در app.css تعریف نشده است`);
   }
 });
+
+test('شبکه برگه‌های دسته‌بندی دسکتاپ ۵ ستونه است تا هر ۵ دسته در یک ردیف بنشینند', () => {
+  const r = findRule('.cat-tabs');
+  assert.ok(r, 'قاعده .cat-tabs یافت نشد');
+  assert.match(r.decls['grid-template-columns'] || '', /repeat\(\s*5\s*,/, 'باید ۵ ستون برای ۵ دسته محصول داشته باشد');
+});
+

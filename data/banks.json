@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": "2026-09-28T00:00:00+03:30",
+  "generatedAt": "2026-10-16T09:00:00+03:30",
   "note": "فهرست بانک‌ها و مؤسسات اعتباری دارای مجوز بانک مرکزی ج.ا.ا که در سامانه رصد می‌شوند، به‌همراه نهادهای مالی بورسی (سبدگردان/تأمین سرمایه/مشاور سرمایه‌گذاری) که مدیر صندوق‌های درآمد ثابت فهرست‌شده‌اند.",
   "banks": [
     {
@@ -725,6 +725,123 @@
         "سبدگردان آبان",
         "کوثر یکم",
         "روند پایدار آبان"
+      ]
+    },
+    {
+      "id": "vira",
+      "name": "سبدگردان نو ویرا",
+      "nameEn": "Novira Asset Management",
+      "kind": "سبدگردان (مدیر صندوق)",
+      "site": "https://noviraamc.ir",
+      "aliases": [
+        "سبدگردان نو ویرا",
+        "نو ویرا",
+        "کاج"
+      ]
+    },
+    {
+      "id": "iran-venezuela",
+      "name": "بانک مشترک ایران و ونزوئلا",
+      "nameEn": "Iran-Venezuela Bi-National Bank",
+      "kind": "تخصصی",
+      "site": "https://ivbb.ir",
+      "aliases": [
+        "بانک ایران و ونزوئلا",
+        "ایران و ونزوئلا"
+      ]
+    },
+    {
+      "id": "omid-fund",
+      "name": "صندوق کارآفرینی امید",
+      "nameEn": "Omid Entrepreneurship Fund",
+      "kind": "صندوق قرض‌الحسنه دولتی",
+      "site": "https://karafariniomid.ir",
+      "aliases": [
+        "کارآفرینی امید",
+        "صندوق امید",
+        "غیر بانکی"
+      ]
+    },
+    {
+      "id": "bankino",
+      "name": "بانکینو (بانک خاورمیانه)",
+      "nameEn": "Bankino",
+      "kind": "نئوبانک (خاورمیانه)",
+      "site": "https://bankino.digital",
+      "aliases": [
+        "بانکینو",
+        "وامینو"
+      ]
+    },
+    {
+      "id": "tobank",
+      "name": "توبانک (بانک گردشگری)",
+      "nameEn": "ToBank",
+      "kind": "نئوبانک (گردشگری)",
+      "site": "https://tobank.ir",
+      "aliases": [
+        "توبانک"
+      ]
+    },
+    {
+      "id": "snapppay",
+      "name": "اسنپ‌پی",
+      "nameEn": "SnappPay",
+      "kind": "فین‌تک لندتک",
+      "site": "https://snapppay.ir",
+      "aliases": [
+        "اسنپ پی"
+      ]
+    },
+    {
+      "id": "tara",
+      "name": "تارا",
+      "nameEn": "Tara360",
+      "kind": "فین‌تک لندتک",
+      "site": "https://tara360.ir",
+      "aliases": [
+        "تارا۳۶۰"
+      ]
+    },
+    {
+      "id": "alopay",
+      "name": "الوپی",
+      "nameEn": "AloPay",
+      "kind": "فین‌تک لندتک",
+      "site": "https://alopay.ir",
+      "aliases": [
+        "الوقسطی",
+        "الو پی"
+      ]
+    },
+    {
+      "id": "ewano",
+      "name": "اوانو",
+      "nameEn": "Ewano",
+      "kind": "فین‌تک پرداخت",
+      "site": "https://ewano.ir",
+      "aliases": [
+        "اوانو همراه اول"
+      ]
+    },
+    {
+      "id": "bakala",
+      "name": "باکالا",
+      "nameEn": "BaKala",
+      "kind": "فین‌تک لندتک",
+      "site": "https://balakamarket.com",
+      "aliases": [
+        "باکالا مارکت"
+      ]
+    },
+    {
+      "id": "1xvam",
+      "name": "وان ایکس وام",
+      "nameEn": "1xVam",
+      "kind": "فین‌تک لندتک",
+      "site": "https://1xvam.com",
+      "aliases": [
+        "1xvam"
       ]
     }
   ]

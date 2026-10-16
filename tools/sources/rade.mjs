@@ -8,56 +8,82 @@
  */
 
 import { get, pool, runSource, unwrapPool } from '../lib/http.mjs';
-import { foldForMatch, normalizeText, parseRates, parseTomanAmount, stripTags, toNumber } from '../lib/parse.mjs';
+import { foldForMatch, normalizeText, parseRates, parseTomanAmount, slugify, stripTags, toNumber } from '../lib/parse.mjs';
 import { parseJalaliDate } from '../lib/jalali.mjs';
 
 export const BASE = 'https://www.rade.ir';
 const SITEMAP = `${BASE}/loan-sitemap.xml`;
 
-/** نگاشت نوع وام رده به دسته‌بندی سامانه */
+/** نگاشت نوع وام، سپرده و خرید اقساطی رده به دسته‌بندی سامانه */
 const CATEGORY_MAP = {
   'loan-interest-free-loan': { category: 'loans', subcategory: 'qarz', label: 'قرض‌الحسنه' },
+  'loan-qarz-ol-hasaneh-loan': { category: 'loans', subcategory: 'qarz', label: 'قرض‌الحسنه' },
   'loan-cash-loan': { category: 'loans', subcategory: 'cash', label: 'وام نقدی' },
+  'loan-cash-facility': { category: 'loans', subcategory: 'cash', label: 'وام نقدی' },
   'loan-instant-loan': { category: 'credit', subcategory: 'digital-loan', label: 'وام فوری' },
   'loan-no-guarantor-loans': { category: 'credit', subcategory: 'no-guarantor', label: 'بدون ضامن' },
   'loan-goods-loan': { category: 'credit', subcategory: 'bnpl', label: 'وام کالا' },
+  'loan-consumer-loan': { category: 'credit', subcategory: 'bnpl', label: 'خرید کالا و خدمات' },
+  'loan-credit-card': { category: 'credit', subcategory: 'credit-card', label: 'کارت اعتباری' },
+  'loan-deposit-facility': { category: 'loans', subcategory: 'deposit-backed', label: 'وام با سپرده' },
   'loan-car-loan': { category: 'loans', subcategory: 'car', label: 'وام خودرو' },
   'loan-home-repair-loans': { category: 'loans', subcategory: 'housing', label: 'تعمیر مسکن' },
   'loan-housing-loans': { category: 'loans', subcategory: 'mortgage', label: 'مسکن' },
+  'loan-mortgage': { category: 'loans', subcategory: 'mortgage', label: 'وام مسکن' },
+  'loan-marriage-loan': { category: 'loans', subcategory: 'marriage', label: 'وام ازدواج' },
+  'loan-self-employment-loan': { category: 'loans', subcategory: 'self-employment', label: 'وام خوداشتغالی' },
+  'loan-student-loan': { category: 'loans', subcategory: 'student', label: 'وام دانشجویی' },
+  'bank-account-certificate-deposit': { category: 'deposits', subcategory: 'certificate', label: 'گواهی سپرده' },
+  'bank-account-special-deposit': { category: 'deposits', subcategory: 'premium', label: 'سپرده ویژه' },
+  'bank-account-time-deposit': { category: 'deposits', subcategory: 'term', label: 'سپرده بلندمدت' },
+  'bank-account-short-savings': { category: 'deposits', subcategory: 'short-term', label: 'سپرده کوتاه‌مدت' },
+  'bank-account-account-passive': { category: 'deposits', subcategory: 'qarz', label: 'سپرده قرض‌الحسنه پس‌انداز' },
+  'bank-account-checking-account': { category: 'deposits', subcategory: 'current', label: 'سپرده جاری' },
+  installment: { category: 'credit', subcategory: 'bnpl', label: 'خرید اقساطی' },
 };
 
 /** برچسب‌های جدول مشخصات که باید استخراج شوند */
 const LABELS = [
-  'نرخ سود سپرده پس از وام',
-  'هزینه فرصت مسدودی',
-  'نسبت مبلغ وام به میزان سپرده',
-  'حساب سپرده لازم',
-  'مدت زمان مسدودی سپرده',
-  'مدت زمان خواب سپرده',
   'نام وام',
+  'نام حساب',
+  'نام',
   'بانک',
+  'نام بانک',
   'نوع وام',
   'نرخ سود وام',
+  'سقف سود',
+  'سود',
+  'نرخ موثر',
   'مجموع سود وام',
   'کف وام',
+  'حداقل اعتبار',
+  'حداقل موجودی',
   'سقف وام',
+  'حداکثر اعتبار',
   'مبلغ قسط',
   'مجموع وام و سود',
   'حداکثر زمان بازپرداخت',
+  'حداکثر دوره بازپرداخت',
+  'مدت سپرده‌گذاری',
   'نیاز به سپرده',
   'نیاز به سپرده جداگانه',
+  'نوع حساب سپرده',
   'ثبت‌نام آنلاین',
   'ثبت نام آنلاین',
+  'امکان گشایش غیرحضوری',
+  'قابلیت برداشت',
   'مسدودی سپرده',
   'مدت زمان مسدودی سپرده',
   'مدت زمان خواب سپرده',
   'حداقل مبلغ سپرده',
   'نرخ سود سپرده',
   'نرخ سود سپرده پس از وام',
+  'هزینه فرصت مسدودی',
   'نسبت مبلغ وام به میزان سپرده',
   'حساب سپرده لازم',
   'نوع ضمانت',
   'هزینه‌های جانبی',
+  'سایر شرایط',
   'وضعیت',
   'توضیحات',
 ];
@@ -227,22 +253,38 @@ export function benefitFromRate(rate, category) {
  */
 export function mapToProduct(url, html) {
   const spec = extractSpecTable(html);
-  if (!specSel(spec, 'نام وام') && !specSel(spec, 'بانک')) return null;
+  const productTitle = specSel(spec, 'نام وام') || specSel(spec, 'نام حساب') || specSel(spec, 'نام');
+  const bankField = specSel(spec, 'بانک') || specSel(spec, 'نام بانک');
+  if (!productTitle && !bankField) return null;
 
   const meta = categoryFromUrl(url);
-  const title = specSel(spec, 'نام وام') || extractTitle(html);
-  const bank = specSel(spec, 'بانک') || 'نامشخص';
+  const title = productTitle || extractTitle(html);
+  const bank = bankField || (meta.category === 'credit' && productTitle ? productTitle : 'نامشخص');
+  const rawBankId = slugify(bank);
+  const bankId = /^[a-z0-9][a-z0-9-]*$/.test(rawBankId) ? rawBankId : undefined;
 
-  const rateList = parseRates(specSel(spec, 'نرخ سود وام', 'raw'));
-  const rate = rateList.length ? rateList[0] : null;
+  const rateRaw =
+    specSel(spec, 'نرخ سود وام', 'raw') ||
+    specSel(spec, 'سقف سود', 'raw') ||
+    specSel(spec, 'سود', 'raw') ||
+    specSel(spec, 'نرخ موثر', 'raw');
+  const rateList = parseRates(rateRaw);
+  const rate = rateList.length ? rateList[0] : /ندارد|صفر|بدون\s*سود/.test(rateRaw) ? 0 : null;
 
-  const maxAmount = parseTomanAmount(specSel(spec, 'سقف وام'));
-  const minAmount = parseTomanAmount(specSel(spec, 'کف وام'));
+  const maxRaw = specSel(spec, 'سقف وام') || specSel(spec, 'حداکثر اعتبار');
+  const minRaw = specSel(spec, 'کف وام') || specSel(spec, 'حداقل موجودی') || specSel(spec, 'حداقل اعتبار');
+  const termRaw =
+    specSel(spec, 'حداکثر زمان بازپرداخت') ||
+    specSel(spec, 'حداکثر دوره بازپرداخت') ||
+    specSel(spec, 'مدت سپرده‌گذاری');
+
+  const maxAmount = parseTomanAmount(maxRaw);
+  const minAmount = parseTomanAmount(minRaw);
   const installment = parseTomanAmount(specSel(spec, 'مبلغ قسط'));
-  const termMonths = parseTermMonths(specSel(spec, 'حداکثر زمان بازپرداخت'));
+  const termMonths = parseTermMonths(termRaw);
   const depositRate = parseRates(specSel(spec, 'نرخ سود سپرده', 'raw'));
 
-  const maxDetail = specSel(spec, 'سقف وام', 'detail');
+  const maxDetail = specSel(spec, 'سقف وام', 'detail') || specSel(spec, 'حداکثر اعتبار', 'detail');
   const guarantee = specSel(spec, 'نوع ضمانت');
   const hasGuarantor = /ضامن/.test(guarantee);
   const needsDeposit = /بله|دارد|الزام/.test(specSel(spec, 'نیاز به سپرده'));
@@ -295,9 +337,13 @@ export function mapToProduct(url, html) {
     .map(normalizeText)
     .filter(Boolean);
 
+  const isDeposit = meta.category === 'deposits';
+  const onlineOpening = specSel(spec, 'امکان گشایش غیرحضوری');
+
   return {
     id,
     bank,
+    ...(bankId ? { bankId } : {}),
     product: title,
     category: meta.category,
     subcategory: meta.subcategory,
@@ -307,24 +353,24 @@ export function mapToProduct(url, html) {
     // این تفکیک تعیین می‌کند که موتور مالی عدد rate را سالانه مرکب حساب کند یا
     // کارمزد یک‌بار روی کل اصل. تشخیص بر پایه سه نشانه است، نه فقط عدد نرخ:
     // مسیر قرض‌الحسنه در نشانی، واژه قرض‌الحسنه در عنوان، و نرخ پایین غیرمتعارف.
-    rateKind: isFeeBased(url, title, meta, rate) ? 'fee' : 'profit',
+    rateKind: isDeposit ? (rate === 0 ? 'none' : 'profit') : isFeeBased(url, title, meta, rate) ? 'fee' : 'profit',
     rateLabel: rate != null ? `سود ${rate}٪` : 'نامشخص',
     regulatory: false,
     benefit: benefitFromRate(rate, meta.category),
     minAmount: multiPlan ? null : minAmount,
     maxAmount: amountIsMeaningful ? maxAmount : null,
-    amountLabel: tidyLabel(specSel(spec, 'سقف وام')) || 'نامشخص',
+    amountLabel: tidyLabel(maxRaw || minRaw) || 'نامشخص',
     // در بسته چند‌طرحی، مدت بازپرداخت هم بین طرح‌ها متفاوت است
     termMonths: multiPlan ? null : termMonths,
-    termLabel: tidyLabel(specSel(spec, 'حداکثر زمان بازپرداخت')) || 'نامشخص',
+    termLabel: tidyLabel(termRaw) || 'نامشخص',
     ceilingContingent: ceilingContingent || multiPlan,
     multiPlan,
     speed: 60,
-    digital: /آنلاین|اپلیکیشن|غیرحضوری/.test(descParts.join(' ')) ? 85 : 60,
-    friction: hasGuarantor ? 50 : needsDeposit ? 60 : 72,
-    collateral: guarantee || specSel(spec, 'نوع ضمانت', 'detail') || 'نامشخص',
-    collateralKind: hasGuarantor ? 'guarantor' : needsDeposit ? 'deposit-block' : 'credit-score',
-    audience: 'متقاضیان تسهیلات بانکی',
+    digital: /دارد|آنلاین|اپلیکیشن|غیرحضوری/.test(onlineOpening + ' ' + descParts.join(' ')) ? 85 : 60,
+    friction: isDeposit ? 85 : hasGuarantor ? 50 : needsDeposit ? 60 : 72,
+    collateral: isDeposit ? 'بدون وثیقه' : guarantee || specSel(spec, 'نوع ضمانت', 'detail') || 'نامشخص',
+    collateralKind: isDeposit ? 'none' : hasGuarantor ? 'guarantor' : needsDeposit ? 'deposit-block' : 'credit-score',
+    audience: isDeposit ? 'سپرده‌گذاران بانکی' : 'متقاضیان تسهیلات بانکی',
     desc: (descParts.join(' ') || title).slice(0, 700),
     tags: [meta.label, bank.replace(/^بانک\s*/, '')].filter(Boolean),
     requirements: [

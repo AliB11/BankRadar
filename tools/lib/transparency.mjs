@@ -11,7 +11,7 @@
  * همچنین بررسی لینک مرده (اختیاری، با شبکه) می‌تواند امتیاز را تعدیل کند.
  */
 
-import { daysSince } from './parse.mjs';
+import { daysSince, mostRecentDate, slugify } from './parse.mjs';
 
 function freshnessScore(iso) {
   const d = daysSince(iso);
@@ -36,7 +36,11 @@ export function bankTransparency(products = []) {
     const total = list.length;
     const high = list.filter((p) => p.confidence === 'high').length;
     const stale = list.filter((p) => p.stale).length;
-    const avgFresh = list.reduce((a, p) => a + freshnessScore(p.lastSeen || p.lastUpdated), 0) / Math.max(1, total);
+    const avgFresh =
+      list.reduce(
+        (a, p) => a + freshnessScore(mostRecentDate(p.lastSeen, p.lastVerified, p.source?.checked, p.lastUpdated)),
+        0,
+      ) / Math.max(1, total);
     const avgDigital = list.reduce((a, p) => a + (p.digital ?? 50), 0) / Math.max(1, total);
     const regulatory = list.filter((p) => p.regulatory).length;
 
@@ -47,9 +51,10 @@ export function bankTransparency(products = []) {
         (1 - stale / Math.max(1, total)) * 20,
     );
 
+    const resolvedId = list.find((p) => p.bankId)?.bankId || slugify(bank);
     result.push({
       bank,
-      bankId: list[0]?.bankId || null,
+      bankId: /^[a-z0-9][a-z0-9-]*$/.test(resolvedId) ? resolvedId : null,
       total,
       highConfidence: high,
       stale,

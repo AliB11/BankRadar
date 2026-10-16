@@ -34,7 +34,12 @@ export const TARGETS = [
   { id: 'mehr-iran', label: 'بانک قرض‌الحسنه مهر ایران', url: 'https://www.qmb.ir/', kind: 'bank', expect: [1, 35] },
   { id: 'resalat', label: 'بانک قرض‌الحسنه رسالت', url: 'https://www.rqbank.ir/', kind: 'bank', expect: [1, 35] },
   { id: 'blubank', label: 'بلوبانک', url: 'https://blubank.com/', kind: 'bank', expect: [1, 35] },
-  { id: 'vipad', label: 'ویپاد', url: 'https://vipad.ir/', kind: 'bank', expect: [1, 35] },
+  { id: 'vipad', label: 'ویپاد', url: 'https://wepod.ir/', kind: 'bank', expect: [1, 35] },
+  { id: 'middle-east', label: 'بانک خاورمیانه', url: 'https://www.mebank.ir/', kind: 'bank', expect: [1, 35] },
+  { id: 'keshavarzi', label: 'بانک کشاورزی', url: 'https://www.bki.ir/', kind: 'bank', expect: [1, 35] },
+  { id: 'gardeshgari', label: 'بانک گردشگری', url: 'https://www.gardeshgari-bank.com/', kind: 'bank', expect: [1, 35] },
+  { id: 'bankino', label: 'بانکینو', url: 'https://bankino.digital/', kind: 'bank', expect: [1, 35] },
+  { id: 'tobank', label: 'توبانک', url: 'https://tobank.ir/', kind: 'bank', expect: [1, 35] },
 ];
 
 /**

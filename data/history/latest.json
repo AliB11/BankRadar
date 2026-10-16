@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-15",
+  "date": "2026-10-16",
   "diffSummary": {
     "added": 0,
     "amountChanged": 0,
@@ -197,7 +197,7 @@
         },
         {
           "bank": "بانک ایران زمین",
-          "detail": "محصول «طرح تسهیلات ایران‌یار بانک ایران زمین» (بانک ایران زمین — rade-704680): صفحه منبع 302 روز است که به‌روزرسانی نشده است.",
+          "detail": "محصول «طرح تسهیلات ایران‌یار بانک ایران زمین» (بانک ایران زمین — rade-704680): صفحه منبع 303 روز است که به‌روزرسانی نشده است.",
           "id": "stale-source-risk",
           "productId": "rade-704680",
           "severity": "info",
@@ -205,15 +205,15 @@
         },
         {
           "bank": "بانک گردشگری",
-          "detail": "محصول «طرح بای کارت بانک گردشگری» (بانک گردشگری — rade-705742): صفحه منبع 290 روز است که به‌روزرسانی نشده است.",
+          "detail": "محصول «طرح بای کارت بانک گردشگری» (بانک گردشگری — rade-705742): صفحه منبع 291 روز است که به‌روزرسانی نشده است.",
           "id": "stale-source-risk",
           "productId": "rade-705742",
           "severity": "info",
           "title": "بیش از ۶ ماه از به‌روزرسانی صفحه منبع گذشته است"
         },
         {
-          "bank": "بانک توسعه صادرات",
-          "detail": "محصول «وام واحدهای تولیدی و طرح های سرمایه گذاری بانک توسعه صادرات ایران» (بانک توسعه صادرات — rade-704659): صفحه منبع 337 روز است که به‌روزرسانی نشده است.",
+          "bank": "بانک توسعه صادرات ایران",
+          "detail": "محصول «وام واحدهای تولیدی و طرح های سرمایه گذاری بانک توسعه صادرات ایران» (بانک توسعه صادرات ایران — rade-704659): صفحه منبع 338 روز است که به‌روزرسانی نشده است.",
           "id": "stale-source-risk",
           "productId": "rade-704659",
           "severity": "info",
@@ -221,7 +221,7 @@
         },
         {
           "bank": "بانک پارسیان",
-          "detail": "محصول «وام طرح فرصت بانک پارسیان» (بانک پارسیان — rade-704675): صفحه منبع 337 روز است که به‌روزرسانی نشده است.",
+          "detail": "محصول «وام طرح فرصت بانک پارسیان» (بانک پارسیان — rade-704675): صفحه منبع 338 روز است که به‌روزرسانی نشده است.",
           "id": "stale-source-risk",
           "productId": "rade-704675",
           "severity": "info",
@@ -229,7 +229,7 @@
         },
         {
           "bank": "بانک آینده",
-          "detail": "محصول «طرح تسهیلاتی الماس بانک آینده» (بانک آینده — rade-704684): صفحه منبع 283 روز است که به‌روزرسانی نشده است.",
+          "detail": "محصول «طرح تسهیلاتی الماس بانک آینده» (بانک آینده — rade-704684): صفحه منبع 284 روز است که به‌روزرسانی نشده است.",
           "id": "stale-source-risk",
           "productId": "rade-704684",
           "severity": "info",
@@ -237,7 +237,7 @@
         },
         {
           "bank": "بانک شهر",
-          "detail": "محصول «وام خرید تاکسی‌های برقی بانک شهر» (بانک شهر — rade-704697): صفحه منبع 337 روز است که به‌روزرسانی نشده است.",
+          "detail": "محصول «وام خرید تاکسی‌های برقی بانک شهر» (بانک شهر — rade-704697): صفحه منبع 338 روز است که به‌روزرسانی نشده است.",
           "id": "stale-source-risk",
           "productId": "rade-704697",
           "severity": "info",
@@ -245,7 +245,7 @@
         },
         {
           "bank": "بانک شهر",
-          "detail": "محصول «وام وزین شهر بانک شهر» (بانک شهر — rade-704744): صفحه منبع 311 روز است که به‌روزرسانی نشده است.",
+          "detail": "محصول «وام وزین شهر بانک شهر» (بانک شهر — rade-704744): صفحه منبع 312 روز است که به‌روزرسانی نشده است.",
           "id": "stale-source-risk",
           "productId": "rade-704744",
           "severity": "info",
@@ -253,7 +253,7 @@
         },
         {
           "bank": "بانک پارسیان",
-          "detail": "محصول «وام پارس‌وام بانک پارسیان» (بانک پارسیان — rade-705509): صفحه منبع 304 روز است که به‌روزرسانی نشده است.",
+          "detail": "محصول «وام پارس‌وام بانک پارسیان» (بانک پارسیان — rade-705509): صفحه منبع 305 روز است که به‌روزرسانی نشده است.",
           "id": "stale-source-risk",
           "productId": "rade-705509",
           "severity": "info",
@@ -261,7 +261,7 @@
         },
         {
           "bank": "بانک سینا",
-          "detail": "محصول «وام ماه‌یار بانک سینا» (بانک سینا — rade-705536): صفحه منبع 311 روز است که به‌روزرسانی نشده است.",
+          "detail": "محصول «وام ماه‌یار بانک سینا» (بانک سینا — rade-705536): صفحه منبع 312 روز است که به‌روزرسانی نشده است.",
           "id": "stale-source-risk",
           "productId": "rade-705536",
           "severity": "info",
@@ -269,7 +269,7 @@
         },
         {
           "bank": "بانک مسکن",
-          "detail": "محصول «وام قرض‌الحسنه ودیعه مسکن جنگ رمضان بانک مسکن» (بانک مسکن — rade-706570): صفحه منبع 186 روز است که به‌روزرسانی نشده است.",
+          "detail": "محصول «وام قرض‌الحسنه ودیعه مسکن جنگ رمضان بانک مسکن» (بانک مسکن — rade-706570): صفحه منبع 187 روز است که به‌روزرسانی نشده است.",
           "id": "stale-source-risk",
           "productId": "rade-706570",
           "severity": "info",
@@ -306,156 +306,60 @@
       }
     },
     "counts": {
-      "credit": 57,
-      "deposits": 48,
-      "funds": 67,
-      "loans": 133,
-      "loyalty": 10,
-      "total": 315
+      "credit": 63,
+      "deposits": 53,
+      "funds": 73,
+      "loans": 138,
+      "loyalty": 14,
+      "total": 341
     },
-    "durationMs": 144594,
-    "generatedAt": "2026-10-15T09:31:32.746Z",
+    "durationMs": 61,
+    "generatedAt": "2026-10-16T18:49:37.758Z",
     "macro": {
       "depositCap1y": 23,
-      "inflationAnnual": 69.9,
+      "inflationAnnual": 73.6,
       "interbankRate": 24,
       "loanRateCeiling": 23,
-      "realDepositReturn": -46.9
+      "realDepositReturn": -50.6
     },
     "merge": {
       "added": 0,
-      "baseline": 315,
-      "incoming": 151,
-      "unchanged": 26,
-      "updated": 125
+      "baseline": 341,
+      "incoming": 0,
+      "unchanged": 0,
+      "updated": 0
     },
-    "mode": "weekly-sync",
-    "period": "هفته منتهی به ۲۳ مهر ۱۴۰۵",
-    "signature": "66b4e05525a0f6bd",
-    "sources": [
-      {
-        "attempted": 120,
-        "discovered": 555,
-        "ms": 18709,
-        "name": "rade.ir (weekly-audit)",
-        "ok": true,
-        "parsed": 120
-      },
-      {
-        "ms": 4435,
-        "name": "macro-indicators",
-        "ok": true,
-        "touched": []
-      },
-      {
-        "ms": 86183,
-        "name": "bank-sites",
-        "ok": true,
-        "reachable": 3,
-        "targets": 20
-      },
-      {
-        "ms": 1639,
-        "name": "dgshahr.com (weekly-audit)",
-        "ok": true,
-        "parsed": 31,
-        "schemes": 13,
-        "tiers": 51
-      },
-      {
-        "error": "شبکه در دسترس نبود — https://advancedchart.isignal.ir/service/signalData@4.0.0/list",
-        "ms": 33576,
-        "name": "isignal.ir",
-        "ok": false
-      }
-    ],
+    "mode": "offline-audit",
+    "period": "هفته منتهی به ۲۴ مهر ۱۴۰۵",
+    "signature": "dcc809892c3a870b",
+    "sources": [],
     "stats": {
-      "autoProducts": 248,
-      "curatedProducts": 67,
-      "freshnessPercent": 58,
-      "healthScore": 79,
+      "autoProducts": 270,
+      "curatedProducts": 71,
+      "freshnessPercent": 100,
+      "healthScore": 100,
       "staleProducts": 0,
-      "totalProducts": 315,
-      "verifiedIn7Days": 184
+      "totalProducts": 341,
+      "verifiedIn7Days": 341
     },
     "transparency": {
-      "avgScore": 67,
+      "avgScore": 70,
       "banks": [
         {
-          "avgDigital": 96,
-          "avgFreshness": 88,
-          "bank": "مشاور سرمایه‌گذاری ترنج",
-          "bankId": "toranj",
+          "avgDigital": 99,
+          "avgFreshness": 100,
+          "bank": "ویپاد",
+          "bankId": "vipad",
           "highConfidence": 1,
-          "regulatory": 1,
+          "regulatory": 0,
           "stale": 0,
           "tone": "good",
           "total": 1,
-          "transparencyScore": 96
-        },
-        {
-          "avgDigital": 96,
-          "avgFreshness": 88,
-          "bank": "گروه مالی کاریزما",
-          "bankId": "charisma",
-          "highConfidence": 1,
-          "regulatory": 1,
-          "stale": 0,
-          "tone": "good",
-          "total": 1,
-          "transparencyScore": 96
-        },
-        {
-          "avgDigital": 95,
-          "avgFreshness": 88,
-          "bank": "کاریزما / فارابی (سبدگردان فارابی)",
-          "bankId": "farabi",
-          "highConfidence": 1,
-          "regulatory": 1,
-          "stale": 0,
-          "tone": "good",
-          "total": 1,
-          "transparencyScore": 95
-        },
-        {
-          "avgDigital": 89,
-          "avgFreshness": 88,
-          "bank": "کارگزاری سهم آشنا / تأمین سرمایه آشنا",
-          "bankId": "ashna",
-          "highConfidence": 1,
-          "regulatory": 1,
-          "stale": 0,
-          "tone": "good",
-          "total": 1,
-          "transparencyScore": 94
-        },
-        {
-          "avgDigital": 90,
-          "avgFreshness": 88,
-          "bank": "بانک شهر / تأمین سرمایه تمدن",
-          "bankId": "shahr",
-          "highConfidence": 1,
-          "regulatory": 1,
-          "stale": 0,
-          "tone": "good",
-          "total": 1,
-          "transparencyScore": 94
-        },
-        {
-          "avgDigital": 82,
-          "avgFreshness": 88,
-          "bank": "بانک سپه / مدیریت دارایی امید",
-          "bankId": "sepah",
-          "highConfidence": 1,
-          "regulatory": 1,
-          "stale": 0,
-          "tone": "good",
-          "total": 1,
-          "transparencyScore": 93
+          "transparencyScore": 100
         },
         {
           "avgDigital": 97,
-          "avgFreshness": 77,
+          "avgFreshness": 100,
           "bank": "ازکی‌وام",
           "bankId": "azkivam",
           "highConfidence": 1,
@@ -463,23 +367,71 @@
           "stale": 0,
           "tone": "good",
           "total": 1,
-          "transparencyScore": 92
+          "transparencyScore": 99
         },
         {
-          "avgDigital": 85,
-          "avgFreshness": 77,
-          "bank": "بانک مرکزی جمهوری اسلامی ایران",
-          "bankId": "cbi",
+          "avgDigital": 96,
+          "avgFreshness": 100,
+          "bank": "مشاور سرمایه‌گذاری ترنج",
+          "bankId": "toranj",
           "highConfidence": 1,
           "regulatory": 1,
           "stale": 0,
           "tone": "good",
           "total": 1,
-          "transparencyScore": 90
+          "transparencyScore": 99
+        },
+        {
+          "avgDigital": 95,
+          "avgFreshness": 100,
+          "bank": "کاریزما / فارابی (سبدگردان فارابی)",
+          "bankId": "farabi",
+          "highConfidence": 1,
+          "regulatory": 1,
+          "stale": 0,
+          "tone": "good",
+          "total": 1,
+          "transparencyScore": 99
+        },
+        {
+          "avgDigital": 89,
+          "avgFreshness": 100,
+          "bank": "کارگزاری سهم آشنا / تأمین سرمایه آشنا",
+          "bankId": "ashna",
+          "highConfidence": 1,
+          "regulatory": 1,
+          "stale": 0,
+          "tone": "good",
+          "total": 1,
+          "transparencyScore": 98
+        },
+        {
+          "avgDigital": 90,
+          "avgFreshness": 100,
+          "bank": "بانک شهر / تأمین سرمایه تمدن",
+          "bankId": "shahr",
+          "highConfidence": 1,
+          "regulatory": 1,
+          "stale": 0,
+          "tone": "good",
+          "total": 1,
+          "transparencyScore": 98
+        },
+        {
+          "avgDigital": 82,
+          "avgFreshness": 100,
+          "bank": "بانک سپه / مدیریت دارایی امید",
+          "bankId": "sepah",
+          "highConfidence": 1,
+          "regulatory": 1,
+          "stale": 0,
+          "tone": "good",
+          "total": 1,
+          "transparencyScore": 96
         },
         {
           "avgDigital": 69,
-          "avgFreshness": 77,
+          "avgFreshness": 100,
           "bank": "شبکه بانکی (ثبت‌نام: بانک مرکزی)",
           "bankId": "cbi",
           "highConfidence": 4,
@@ -487,11 +439,11 @@
           "stale": 0,
           "tone": "good",
           "total": 4,
-          "transparencyScore": 87
+          "transparencyScore": 94
         },
         {
           "avgDigital": 83,
-          "avgFreshness": 77,
+          "avgFreshness": 100,
           "bank": "شبکه بانکی",
           "bankId": "cbi",
           "highConfidence": 3,
@@ -499,11 +451,11 @@
           "stale": 0,
           "tone": "good",
           "total": 4,
-          "transparencyScore": 82
+          "transparencyScore": 89
         },
         {
           "avgDigital": 99,
-          "avgFreshness": 77,
+          "avgFreshness": 100,
           "bank": "بلوبانک",
           "bankId": "blubank",
           "highConfidence": 3,
@@ -511,23 +463,35 @@
           "stale": 0,
           "tone": "good",
           "total": 5,
-          "transparencyScore": 81
+          "transparencyScore": 88
         },
         {
-          "avgDigital": 92,
-          "avgFreshness": 88,
-          "bank": "بانک پارسیان / تأمین سرمایه لوتوس پارسیان",
-          "bankId": "parsian",
+          "avgDigital": 96,
+          "avgFreshness": 100,
+          "bank": "بانک خاورمیانه",
+          "bankId": "middle-east",
           "highConfidence": 1,
-          "regulatory": 2,
+          "regulatory": 1,
           "stale": 0,
           "tone": "good",
           "total": 2,
-          "transparencyScore": 80
+          "transparencyScore": 84
+        },
+        {
+          "avgDigital": 96,
+          "avgFreshness": 100,
+          "bank": "گروه مالی کاریزما",
+          "bankId": "charisma",
+          "highConfidence": 1,
+          "regulatory": 1,
+          "stale": 0,
+          "tone": "good",
+          "total": 2,
+          "transparencyScore": 84
         },
         {
           "avgDigital": 95,
-          "avgFreshness": 88,
+          "avgFreshness": 100,
           "bank": "سبدگردان آگاه",
           "bankId": "agah",
           "highConfidence": 1,
@@ -535,47 +499,59 @@
           "stale": 0,
           "tone": "good",
           "total": 2,
-          "transparencyScore": 80
+          "transparencyScore": 84
         },
         {
-          "avgDigital": 76,
-          "avgFreshness": 86,
-          "bank": "بانک صادرات ایران",
-          "bankId": "saderat",
+          "avgDigital": 92,
+          "avgFreshness": 100,
+          "bank": "بانک پارسیان / تأمین سرمایه لوتوس پارسیان",
+          "bankId": "parsian",
           "highConfidence": 1,
-          "regulatory": 0,
+          "regulatory": 2,
           "stale": 0,
-          "tone": "warn",
-          "total": 5,
-          "transparencyScore": 67
+          "tone": "good",
+          "total": 2,
+          "transparencyScore": 83
         },
         {
-          "avgDigital": 81,
-          "avgFreshness": 81,
-          "bank": "بانک ملی ایران",
-          "bankId": "melli",
-          "highConfidence": 1,
+          "avgDigital": 99,
+          "avgFreshness": 100,
+          "bank": "دیجی‌پی",
+          "bankId": "digipay",
+          "highConfidence": 0,
           "regulatory": 0,
           "stale": 0,
           "tone": "warn",
-          "total": 6,
-          "transparencyScore": 65
-        },
-        {
-          "avgDigital": 67,
-          "avgFreshness": 93,
-          "bank": "بانک قرض‌الحسنه مهر ایران",
-          "bankId": null,
-          "highConfidence": 2,
-          "regulatory": 0,
-          "stale": 0,
-          "tone": "warn",
-          "total": 17,
-          "transparencyScore": 65
+          "total": 1,
+          "transparencyScore": 70
         },
         {
           "avgDigital": 95,
-          "avgFreshness": 88,
+          "avgFreshness": 100,
+          "bank": "اوانو",
+          "bankId": "ewano",
+          "highConfidence": 0,
+          "regulatory": 0,
+          "stale": 0,
+          "tone": "warn",
+          "total": 1,
+          "transparencyScore": 69
+        },
+        {
+          "avgDigital": 95,
+          "avgFreshness": 100,
+          "bank": "ویپاد (بانک پاسارگاد)",
+          "bankId": "vipad",
+          "highConfidence": 0,
+          "regulatory": 0,
+          "stale": 0,
+          "tone": "warn",
+          "total": 1,
+          "transparencyScore": 69
+        },
+        {
+          "avgDigital": 95,
+          "avgFreshness": 100,
           "bank": "سبدگردان ویستا",
           "bankId": "vista",
           "highConfidence": 0,
@@ -583,23 +559,11 @@
           "stale": 0,
           "tone": "warn",
           "total": 2,
-          "transparencyScore": 65
-        },
-        {
-          "avgDigital": 92,
-          "avgFreshness": 88,
-          "bank": "تأمین سرمایه امین",
-          "bankId": "amin-ib",
-          "highConfidence": 0,
-          "regulatory": 3,
-          "stale": 0,
-          "tone": "warn",
-          "total": 3,
-          "transparencyScore": 65
+          "transparencyScore": 69
         },
         {
           "avgDigital": 95,
-          "avgFreshness": 88,
+          "avgFreshness": 100,
           "bank": "سبدگردان داریوش",
           "bankId": "dariush",
           "highConfidence": 0,
@@ -607,11 +571,11 @@
           "stale": 0,
           "tone": "warn",
           "total": 1,
-          "transparencyScore": 65
+          "transparencyScore": 69
         },
         {
           "avgDigital": 95,
-          "avgFreshness": 88,
+          "avgFreshness": 100,
           "bank": "بانک اقتصاد نوین / تأمین سرمایه نوین",
           "bankId": "eghtesad-novin",
           "highConfidence": 0,
@@ -619,10 +583,10 @@
           "stale": 0,
           "tone": "warn",
           "total": 1,
-          "transparencyScore": 65
+          "transparencyScore": 69
         }
       ],
-      "totalBanks": 92
+      "totalBanks": 98
     },
     "version": 2
   }

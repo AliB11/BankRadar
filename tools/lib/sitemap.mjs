@@ -45,7 +45,6 @@ export function parseUrlset(xml) {
     out.push({
       url: unescapeXml(loc[0].replace(/<\/?loc>/gi, '')),
       lastmod: mod ? unescapeXml(mod[0].replace(/<\/?lastmod>/gi, '')) : null,
-      _locIndex: block.indexOf('</loc>'),
     });
   }
   // اگر ساختار بلوکی به هم ریخته بود، به حالت خطی برگرد تا داده از دست نرود.

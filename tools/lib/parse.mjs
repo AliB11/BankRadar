@@ -237,13 +237,29 @@ export function today(offsetHours = 3.5) {
   return d.toISOString().slice(0, 10);
 }
 
+/** جدیدترین تاریخ ISO از میان چند مقدار */
+export function mostRecentDate(...dates) {
+  let best = null;
+  for (const d of dates) {
+    if (!d || typeof d !== 'string') continue;
+    const iso = d.slice(0, 10);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(iso)) continue;
+    if (!best || iso > best) best = iso;
+  }
+  return best;
+}
+
 /** شناسه امن از متن فارسی */
 export function slugify(input) {
   const t = foldForMatch(input);
   const known = {
-    'بانک ملی ایران': 'melli',
-    'بانک ملت': 'mellat',
+    'بانک توسعه صادرات ایران': 'tosee-saderat',
+    'بانک توسعه صادرات': 'tosee-saderat',
     'بانک صادرات ایران': 'saderat',
+    'بانک صادرات': 'saderat',
+    'بانک ملی ایران': 'melli',
+    'بانک ملی': 'melli',
+    'بانک ملت': 'mellat',
     'بانک تجارت': 'tejarat',
     'بانک سپه': 'sepah',
     'بانک پاسارگاد': 'pasargad',
@@ -252,10 +268,49 @@ export function slugify(input) {
     'بانک اقتصاد نوین': 'eghtesad-novin',
     'بانک کارآفرین': 'karafarin',
     'بانک رفاه کارگران': 'refah',
+    'بانک رفاه': 'refah',
     'بانک مسکن': 'maskan',
     'بانک کشاورزی': 'keshavarzi',
+    'بانک شهر': 'shahr',
+    'بانک سینا': 'sina',
+    'بانک دی': 'day',
+    'بانک آینده': 'ayandeh',
+    'بانک گردشگری': 'gardeshgari',
+    'بانک ایران زمین': 'iran-zamin',
+    'بانک خاورمیانه': 'middle-east',
+    'بانک سرمایه': 'sarmayeh',
+    'بانک قرض الحسنه رسالت': 'resalat',
+    'بانک رسالت': 'resalat',
+    'بانک قرض الحسنه مهر ایران': 'mehr-iran',
+    'بانک مهر ایران': 'mehr-iran',
+    'بانک توسعه تعاون': 'tosee-taavon',
+    'بانک صنعت و معدن': 'sanat-madan',
+    'پست بانک ایران': 'post',
+    'پست بانک': 'post',
+    'بانک مشترک ایران و ونزوئلا': 'iran-venezuela',
+    'بانک ایران و ونزوئلا': 'iran-venezuela',
+    'موسسه اعتباری ملل': 'mellal',
+    'مؤسسه اعتباری ملل': 'mellal',
+    'موسسه اعتباری نور': 'noor',
+    'مؤسسه اعتباری نور': 'noor',
+    'بانک مرکزی جمهوری اسلامی ایران': 'cbi',
+    'بانک مرکزی': 'cbi',
     'بلوبانک': 'blubank',
     'ویپاد': 'vipad',
+    'بانکینو': 'bankino',
+    'توبانک': 'tobank',
+    'ازکی وام': 'azkivam',
+    'دیجی پی': 'digipay',
+    'اسنپ پی': 'snapppay',
+    'کاریزماپی': 'charisma',
+    'کاریزما': 'charisma',
+    'الوپی': 'alopay',
+    'اوانو': 'ewano',
+    'باکالا': 'bakala',
+    'وان ایکس وام': '1xvam',
+    'گرین پی': 'keshavarzi',
+    'صندوق کارآفرینی امید': 'omid-fund',
+    'غیر بانکی': 'omid-fund',
   };
   const folded = foldForMatch(input);
   for (const [fa, id] of Object.entries(known)) {

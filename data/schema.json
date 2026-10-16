@@ -152,6 +152,7 @@
             "guarantor",
             "deposit-block",
             "collateral",
+            "promissory",
             "mixed"
           ]
         },

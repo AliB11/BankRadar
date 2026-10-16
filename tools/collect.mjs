@@ -309,7 +309,7 @@ async function main() {
     // بازبینی می‌گیرند و مقدارهای نادرست قدیمی اصلاح می‌شوند.
     const rotationQuota = Math.max(10, Math.round(LIMIT / 4));
     const refreshUrls = dataset.products
-      .filter((p) => p.autoDiscovered === true && p.source?.url)
+      .filter((p) => p.autoDiscovered === true && p.source?.url?.startsWith(rade.BASE))
       .sort((a, b) => String(a.lastSeen || '').localeCompare(String(b.lastSeen || '')))
       .slice(0, rotationQuota)
       .map((p) => p.source.url);

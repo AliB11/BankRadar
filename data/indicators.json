@@ -1,10 +1,10 @@
 {
   "derived": {
     "note": "نرخ سود واقعی = نرخ سود سپرده یک‌ساله منهای تورم. مقدار منفی به معنای کاهش قدرت خرید سپرده‌گذار است و باید در مقایسه محصولات منابعی لحاظ شود.",
-    "realDepositReturnAnnual": -46.9,
-    "realDepositReturnCbi": -42
+    "realDepositReturnAnnual": -50.6,
+    "realDepositReturnCbi": -45.4
   },
-  "generatedAt": "2026-10-16T08:22:10.481Z",
+  "generatedAt": "2026-10-16T09:00:00.000Z",
   "generator": "tools/collect.mjs",
   "indicators": {
     "certificateRate": {
@@ -85,59 +85,65 @@
       "value": 5
     },
     "inflationAnnual": {
+      "changedAt": "2026-09-23T08:00:00.000Z",
       "label": "تورم سالانه (مرکز آمار ایران)",
-      "period": "مرداد ۱۴۰۵",
+      "period": "شهریور ۱۴۰۵",
+      "previousValue": 69.9,
       "source": {
         "kind": "press",
         "title": "مرکز آمار ایران / اقتصاد آنلاین",
         "url": "https://www.eghtesadonline.com/fa/news/2159686/"
       },
       "unit": "%",
-      "value": 69.9
+      "value": 73.6
     },
     "inflationCbiAnnual": {
+      "changedAt": "2026-09-25T08:00:00.000Z",
       "label": "تورم سالانه برآورد بانک مرکزی",
-      "period": "مرداد ۱۴۰۵",
+      "period": "شهریور ۱۴۰۵",
+      "previousValue": 65,
       "source": {
         "kind": "regulator",
         "title": "روابط عمومی بانک مرکزی / اکوایران",
         "url": "https://ecoiran.com/بخش-اقتصاد-کلان-186/150832"
       },
       "unit": "%",
-      "value": 65
+      "value": 68.4
     },
     "inflationHousing": {
       "label": "تورم سالانه بخش مسکن",
-      "period": "مرداد ۱۴۰۵",
+      "period": "شهریور ۱۴۰۵",
       "source": {
         "kind": "regulator",
         "title": "مرکز آمار ایران",
         "url": "https://www.amar.org.ir"
       },
       "unit": "%",
-      "value": 32.7
+      "value": 34.2
     },
     "inflationMonthly": {
       "label": "تورم ماهانه",
-      "period": "مرداد ۱۴۰۵",
+      "period": "شهریور ۱۴۰۵",
       "source": {
         "kind": "regulator",
         "title": "مرکز آمار ایران",
         "url": "https://www.amar.org.ir"
       },
       "unit": "%",
-      "value": 3.4
+      "value": 4.2
     },
     "inflationPointToPoint": {
+      "changedAt": "2026-09-23T08:00:00.000Z",
       "label": "تورم نقطه‌به‌نقطه",
-      "period": "مرداد ۱۴۰۵",
+      "period": "شهریور ۱۴۰۵",
+      "previousValue": 89,
       "source": {
         "kind": "press",
         "title": "مرکز آمار ایران / خبرآنلاین",
         "url": "https://www.khabaronline.ir/news/2266047/"
       },
       "unit": "%",
-      "value": 89
+      "value": 89.8
     },
     "interbankRate": {
       "label": "نرخ سود بازار بین‌بانکی",
@@ -185,7 +191,7 @@
     }
   },
   "note": "شاخص‌های کلان و نرخ‌های مرجع نظام بانکی. مبنای محاسبه «نرخ واقعی» در سامانه.",
-  "period": "مرداد ۱۴۰۵",
+  "period": "شهریور ۱۴۰۵",
   "ranges": {
     "depositCaps": [
       {

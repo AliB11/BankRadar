@@ -32,20 +32,44 @@ async function readJSON(name, fallback = null) {
   }
 }
 
+const DEFAULT_UA =
+  'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 BankRadar-LinkCheck/2.0';
+
 async function checkUrl(url, timeout = 8000) {
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), timeout);
+  const headers = {
+    'User-Agent': DEFAULT_UA,
+    Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+    'Accept-Language': 'fa-IR,fa;q=0.9,en;q=0.7',
+  };
   try {
-    // ابتدا HEAD، در صورت شکست GET سبک
-    let res = await fetch(url, { method: 'HEAD', signal: controller.signal, redirect: 'follow' });
-    if (!res.ok && res.status === 405) {
-      res = await fetch(url, { method: 'GET', signal: controller.signal, redirect: 'follow', headers: { Range: 'bytes=0-1024' } });
+    // ابتدا HEAD، در صورت شکست یا مسدودسازی (403/405/5xx) GET سبک با تایم‌اوت تازه
+    let res = await fetch(url, {
+      method: 'HEAD',
+      signal: AbortSignal.timeout(timeout),
+      redirect: 'follow',
+      headers,
+    });
+    if (!res.ok && (res.status === 405 || res.status === 403 || res.status >= 500)) {
+      res = await fetch(url, {
+        method: 'GET',
+        signal: AbortSignal.timeout(timeout),
+        redirect: 'follow',
+        headers: { ...headers, Range: 'bytes=0-1024' },
+      });
     }
-    clearTimeout(timer);
     return { ok: res.ok, status: res.status, url };
   } catch (err) {
-    clearTimeout(timer);
-    return { ok: false, status: 0, error: err.message, url };
+    try {
+      const res = await fetch(url, {
+        method: 'GET',
+        signal: AbortSignal.timeout(timeout),
+        redirect: 'follow',
+        headers: { ...headers, Range: 'bytes=0-1024' },
+      });
+      return { ok: res.ok, status: res.status, url };
+    } catch (err2) {
+      return { ok: false, status: 0, error: err2?.message || err?.message, url };
+    }
   }
 }
 
@@ -96,6 +120,7 @@ async function main() {
 
   const workers = Array.from({ length: concurrency }, () => worker());
   await Promise.all(workers);
+  results.sort((a, b) => String(a.url).localeCompare(String(b.url)));
   console.log('\n');
 
   const okCount = results.filter((r) => r.ok).length;

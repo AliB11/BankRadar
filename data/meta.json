@@ -1,14 +1,14 @@
 {
-  "autoDiscovered": 248,
+  "autoDiscovered": 270,
   "counts": {
-    "credit": 57,
-    "deposits": 48,
-    "funds": 67,
-    "loans": 133,
-    "loyalty": 10,
-    "total": 315
+    "credit": 63,
+    "deposits": 53,
+    "funds": 73,
+    "loans": 138,
+    "loyalty": 14,
+    "total": 341
   },
-  "lastRun": "2026-10-16T08:22:45.453Z",
+  "lastRun": "2026-10-16T18:49:37.758Z",
   "lastRunDurationMs": 145470,
   "lastRunMode": "full",
   "sources": [
