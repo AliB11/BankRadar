@@ -167,10 +167,14 @@ export async function collect(base, opts = {}) {
 
   // بازمحاسبه نرخ واقعی
   const inflation = merged.indicators.inflationAnnual.value;
+  const cbiInflation = merged.indicators.inflationCbiAnnual?.value;
   const deposit = merged.indicators.depositCap1y.value;
   merged.derived = {
     ...merged.derived,
     realDepositReturnAnnual: Number((deposit - inflation).toFixed(1)),
+    ...(Number.isFinite(cbiInflation)
+      ? { realDepositReturnCbi: Number((deposit - cbiInflation).toFixed(1)) }
+      : {}),
   };
 
   const j = todayJalali();

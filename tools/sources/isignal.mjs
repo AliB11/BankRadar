@@ -22,9 +22,16 @@
  */
 
 import fs from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { get } from '../lib/http.mjs';
 import { normalizeText, foldForMatch, toNumber, today, matchBank, makeLatinId } from '../lib/parse.mjs';
 import { jalaliToGregorian } from '../lib/jalali.mjs';
+
+const DEFAULT_SNAPSHOT_PATH = path.resolve(
+  path.dirname(fileURLToPath(import.meta.url)),
+  '../../tests/fixtures/isignal-funds-1405-07-05.json',
+);
 
 export const ISIGNAL_FUND_LIST_URL = 'https://isignal.ir/fund/';
 export const ISIGNAL_API_BASE = 'https://advancedchart.isignal.ir/service/signalData@4.0.0';
@@ -118,6 +125,11 @@ export const KNOWN_FUNDS = Object.freeze({
   5104: { slug: 'sepidma-damavand', bankId: 'damavand-ib', fullName: 'سپید دماوند', payout: 'none' },
   5141: { slug: 'yara-aria', bankId: 'aria', payout: 'none' },
   5313: { slug: 'etminan-hiwa', bankId: 'hiwa', payout: 'none' },
+  5380: { slug: 'pasargad-etf', bankId: 'pasargad', fullName: 'نوع دوم پاسارگاد', payout: 'none' },
+  5381: { slug: 'tadavom-tamadon', bankId: 'tamadon-ib', fullName: 'تداوم اطمینان تمدن', payout: 'none' },
+  5382: { slug: 'kaj-vira', bankId: 'vira', fullName: 'پایدار نو ویرا', payout: 'none' },
+  5383: { slug: 'avand-mofid', bankId: 'mofid', fullName: 'ثابت آوند مفید', payout: 'none' },
+  5384: { slug: 'negin-saman', bankId: 'saman', fullName: 'نگین سامان', payout: 'monthly' },
   // ---- صدور و ابطالی ----
   5247: { slug: 'sobat-navid', bankId: 'navid', payout: 'none' },
   5138: { slug: 'aseman-sahand', bankId: 'aseman', payout: 'monthly' },
@@ -148,6 +160,7 @@ export const KNOWN_FUNDS = Object.freeze({
   328: { slug: 'omid-sepah', existingId: 'fund-omid-sepah', bankId: 'sepah', payout: 'monthly' },
   569: { slug: 'etemad-melli', bankId: 'melli', payout: 'monthly' },
   255: { slug: 'andookhteh-sepehr', bankId: 'saderat', payout: 'monthly' },
+  5385: { slug: 'andookhteh-mellat', bankId: 'mellat', fullName: 'اندوخته ملت', payout: 'monthly' },
 });
 
 /* ------------------------------------------------------------------ */
@@ -621,8 +634,15 @@ export async function collect({ existing = [], banks = [], snapshot, log = () =>
     origin = typeof snapshotPath === 'string' ? `snapshot:${snapshotPath}` : 'snapshot:inline';
     log(`آی‌سیگنال: ${rawRows.length} ردیف از برش برون‌خط (${loaded.meta?.dataDate || '?'}) بارگذاری شد`);
   } else {
-    rawRows = await fetchFundList({ log });
-    origin = 'api';
+    try {
+      rawRows = await fetchFundList({ log });
+      origin = 'api';
+    } catch (err) {
+      const loaded = await loadSnapshot(DEFAULT_SNAPSHOT_PATH);
+      rawRows = loaded.rows;
+      origin = `fallback:${path.basename(DEFAULT_SNAPSHOT_PATH)}`;
+      log(`آی‌سیگنال: API در دسترس نبود (${err.message})؛ ${rawRows.length} ردیف از برش پشتیبان بارگذاری شد`);
+    }
   }
 
   const skipped = [];

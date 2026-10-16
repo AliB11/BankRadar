@@ -344,7 +344,7 @@ export function auditCuratedProducts(products = [], opts = {}) {
       return {
         ...p,
         lastVerified: auditDate,
-        lastSeen: p.lastSeen || auditDate,
+        lastSeen: auditDate,
         source: {
           ...p.source,
           checked: auditDate,
@@ -494,7 +494,7 @@ export async function syncWeekly(opts = {}) {
     // رده — با چرخش بازبینی برای پوشش رکوردهای قدیمی (همان منطق collect.mjs)
     const rotationQuota = Math.max(15, Math.round(limit / 3));
     const refreshUrls = dataset.products
-      .filter((p) => p.autoDiscovered === true && p.source?.url)
+      .filter((p) => p.autoDiscovered === true && p.source?.url?.startsWith(rade.BASE))
       .sort((a, b) => String(a.lastSeen || '').localeCompare(String(b.lastSeen || '')))
       .slice(0, rotationQuota)
       .map((p) => p.source.url);
@@ -649,6 +649,14 @@ export async function syncWeekly(opts = {}) {
     await writeJSON('products.json', productsOut);
     await writeJSON('indicators.json', indicators);
     await writeJSON(reportPath, report);
+
+    const existingMeta = (await readJSON('meta.json')) || {};
+    await writeJSON('meta.json', {
+      ...existingMeta,
+      lastRun: report.generatedAt,
+      counts: productsOut.counts,
+      autoDiscovered: merged.filter((p) => p.autoDiscovered).length,
+    });
 
     // نوشتن فیدهای باز
     await writeJSON('changelog.json', changelogDiff);

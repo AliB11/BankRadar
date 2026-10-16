@@ -806,7 +806,7 @@ input[type='range']::-moz-range-thumb {
 /* ---------- ۱۰. برگه‌های دسته‌بندی ---------- */
 .cat-tabs {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: var(--sp-2);
   margin-block-end: var(--sp-4);
 }

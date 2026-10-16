@@ -12,6 +12,7 @@
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { execSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { diffProducts, changelogToMarkdown, changelogToRSS } from './lib/changelog.mjs';
 
@@ -32,6 +33,20 @@ async function readJSON(file) {
   }
 }
 
+function readGitHeadProducts() {
+  try {
+    const raw = execSync('git show HEAD:data/products.json', {
+      cwd: ROOT,
+      encoding: 'utf8',
+      stdio: ['ignore', 'pipe', 'ignore'],
+    });
+    const parsed = JSON.parse(raw);
+    return parsed?.products ?? [];
+  } catch {
+    return [];
+  }
+}
+
 async function main() {
   const oldPath = OPT('old');
   const newPath = OPT('new', path.join(DATA, 'products.json'));
@@ -45,7 +60,7 @@ async function main() {
     const oldData = await readJSON(oldPath);
     oldProducts = oldData?.products ?? [];
   } else {
-    // تلاش برای یافتن آخرین تاریخچه
+    // تلاش برای یافتن آخرین تاریخچه یا نسخه git HEAD
     try {
       const hist = await readJSON(path.join(DATA, 'history', 'weekly-history.json'));
       if (Array.isArray(hist) && hist.length) {
@@ -54,6 +69,9 @@ async function main() {
       }
     } catch {
       // نادیده
+    }
+    if (!oldProducts.length) {
+      oldProducts = readGitHeadProducts();
     }
   }
 

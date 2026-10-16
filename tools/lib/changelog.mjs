@@ -180,17 +180,21 @@ export function changelogToMarkdown(diff, opts = {}) {
 
 export function changelogToRSS(diff, opts = {}) {
   const date = opts.date || new Date().toISOString();
+  const dateShort = String(date).slice(0, 10);
   const link = opts.link || 'https://alib11.github.io/BankRadar/';
   const items = [
     ...diff.added.map((it) => ({
+      id: `added-${it.id || ''}`,
       title: `جدید: ${it.bank} — ${it.product}`,
       desc: `محصول جدید در دسته ${it.category} با نرخ ${it.rate ?? '—'}٪`,
     })),
     ...diff.rateChanged.map((it) => ({
+      id: `rate-${it.id || ''}-${it.to ?? ''}`,
       title: `تغییر نرخ: ${it.bank} — ${it.product}`,
       desc: `نرخ از ${it.from}٪ به ${it.to}٪ تغییر کرد (${it.delta > 0 ? '+' : ''}${it.delta}٪)`,
     })),
     ...diff.staleNow.map((it) => ({
+      id: `stale-${it.id || ''}`,
       title: `نیازمند بازبینی: ${it.bank} — ${it.product}`,
       desc: `این محصول در آخرین واکشی دیده نشد`,
     })),
@@ -198,13 +202,13 @@ export function changelogToRSS(diff, opts = {}) {
 
   const rssItems = items
     .map(
-      (it) => `
+      (it, idx) => `
     <item>
       <title><![CDATA[${it.title}]]></title>
       <description><![CDATA[${it.desc}]]></description>
       <link>${link}</link>
       <pubDate>${new Date(date).toUTCString()}</pubDate>
-      <guid>${link}#${Date.now()}-${Math.random().toString(36).slice(2)}</guid>
+      <guid>${link}#${dateShort}-${it.id || idx}</guid>
     </item>`,
     )
     .join('');

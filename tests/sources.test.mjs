@@ -212,3 +212,48 @@ test('خروجی منبع رده در ادغام، واقعاً ثبت می‌ش
 test('mapToProduct صفحه بدون جدول مشخصات را رد می‌کند', () => {
   assert.equal(mapToProduct('https://www.rade.ir/loan/loan-cash-loan/1', '<html><body>بدون جدول</body></html>'), null);
 });
+
+test('mapToProduct صفحات سپرده و خرید اقساطی رده را با bankId استخراج می‌کند', () => {
+  const depositHtml = `
+    <html><body>
+      <table>
+        <tr><td>نام حساب</td><td>طرح سرمایه‌گذاری بیست+ ویپاد بانک پاسارگاد</td></tr>
+        <tr><td>نام بانک</td><td>بانک پاسارگاد</td></tr>
+        <tr><td>سود</td><td>20 ٪</td></tr>
+        <tr><td>حداقل موجودی</td><td>1 میلیون تومان</td></tr>
+        <tr><td>مدت سپرده‌گذاری</td><td>1 ماه</td></tr>
+        <tr><td>امکان گشایش غیرحضوری</td><td>دارد</td></tr>
+        <tr><td>توضیحات</td><td>سود ۲۰٪ سالانه با سکه وی‌کلاب</td></tr>
+      </table>
+    </body></html>`;
+  const dep = mapToProduct('https://www.rade.ir/bank-account-special-deposit/707740-bist-plus/', depositHtml);
+  assert.ok(dep);
+  assert.equal(dep.id, 'rade-707740');
+  assert.equal(dep.category, 'deposits');
+  assert.equal(dep.subcategory, 'premium');
+  assert.equal(dep.bankId, 'pasargad');
+  assert.equal(dep.rate, 20);
+  assert.equal(dep.minAmount, 1_000_000);
+  assert.equal(dep.digital, 85);
+
+  const installmentHtml = `
+    <html><body>
+      <table>
+        <tr><td>نام</td><td>کاریزماپی</td></tr>
+        <tr><td>حداکثر اعتبار</td><td>20 میلیون تومان</td></tr>
+        <tr><td>نرخ موثر</td><td>23 درصد</td></tr>
+        <tr><td>حداکثر دوره بازپرداخت</td><td>6 ماه</td></tr>
+        <tr><td>نوع ضمانت</td><td>بر اساس رتبه اعتباری</td></tr>
+        <tr><td>توضیحات</td><td>وام نقدی نردبان اعتبار کاریزما</td></tr>
+      </table>
+    </body></html>`;
+  const inst = mapToProduct('https://www.rade.ir/installment/708922-charismapay/', installmentHtml);
+  assert.ok(inst);
+  assert.equal(inst.id, 'rade-708922');
+  assert.equal(inst.category, 'credit');
+  assert.equal(inst.subcategory, 'bnpl');
+  assert.equal(inst.bankId, 'charisma');
+  assert.equal(inst.maxAmount, 20_000_000);
+  assert.equal(inst.termMonths, 6);
+});
+

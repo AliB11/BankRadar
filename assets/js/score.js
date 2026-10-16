@@ -66,11 +66,15 @@ export function freshnessScore(input) {
   return Math.max(5, 24 - (d - 180) * (19 / 240));
 }
 
-/** جدیدترین تاریخ از میان دو مقدار (به شکل ISO) */
-export function mostRecent(a, b) {
-  if (!a) return b ?? null;
-  if (!b) return a;
-  return String(a) >= String(b) ? a : b;
+/** جدیدترین تاریخ از میان چند مقدار (به شکل ISO) */
+export function mostRecent(...dates) {
+  let best = null;
+  for (const d of dates) {
+    if (!d) continue;
+    const s = String(d);
+    if (best === null || s >= best) best = s;
+  }
+  return best;
 }
 
 /**

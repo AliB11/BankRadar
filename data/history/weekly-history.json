@@ -299,5 +299,153 @@
       "verifiedIn7Days": 184
     },
     "transparencyAvg": 67
+  },
+  {
+    "anomalies": {
+      "total": 31
+    },
+    "changelogSummary": {
+      "added": 0,
+      "amountChanged": 0,
+      "confidenceChanged": 0,
+      "rateChanged": 0,
+      "removed": 0,
+      "revived": 0,
+      "staleNow": 0,
+      "termChanged": 0,
+      "totalChanges": 0
+    },
+    "counts": {
+      "credit": 63,
+      "deposits": 53,
+      "funds": 73,
+      "loans": 138,
+      "loyalty": 14,
+      "total": 341
+    },
+    "date": "2026-10-16",
+    "generatedAt": "2026-10-16T18:47:07.973Z",
+    "macro": {
+      "depositCap1y": 23,
+      "inflationAnnual": 73.6,
+      "interbankRate": 24,
+      "loanRateCeiling": 23,
+      "realDepositReturn": -50.6
+    },
+    "stats": {
+      "autoProducts": 270,
+      "curatedProducts": 71,
+      "freshnessPercent": 100,
+      "healthScore": 100,
+      "staleProducts": 0,
+      "totalProducts": 341,
+      "verifiedIn7Days": 341
+    },
+    "transparencyAvg": 70
+  },
+  {
+    "anomalies": {
+      "total": 31
+    },
+    "counts": {
+      "credit": 63,
+      "deposits": 53,
+      "funds": 73,
+      "loans": 138,
+      "loyalty": 14,
+      "total": 341
+    },
+    "date": "2026-10-16",
+    "generatedAt": "2026-10-16T18:47:07.973Z",
+    "macro": {
+      "depositCap1y": 23,
+      "inflationAnnual": 73.6,
+      "interbankRate": 24,
+      "loanRateCeiling": 23,
+      "realDepositReturn": -50.6
+    },
+    "stats": {
+      "autoProducts": 270,
+      "curatedProducts": 71,
+      "freshnessPercent": 100,
+      "healthScore": 100,
+      "staleProducts": 0,
+      "totalProducts": 341,
+      "verifiedIn7Days": 341
+    }
+  },
+  {
+    "anomalies": {
+      "total": 31
+    },
+    "changelogSummary": {
+      "added": 0,
+      "amountChanged": 0,
+      "confidenceChanged": 0,
+      "rateChanged": 0,
+      "removed": 0,
+      "revived": 0,
+      "staleNow": 0,
+      "termChanged": 0,
+      "totalChanges": 0
+    },
+    "counts": {
+      "credit": 63,
+      "deposits": 53,
+      "funds": 73,
+      "loans": 138,
+      "loyalty": 14,
+      "total": 341
+    },
+    "date": "2026-10-16",
+    "generatedAt": "2026-10-16T18:49:37.758Z",
+    "macro": {
+      "depositCap1y": 23,
+      "inflationAnnual": 73.6,
+      "interbankRate": 24,
+      "loanRateCeiling": 23,
+      "realDepositReturn": -50.6
+    },
+    "stats": {
+      "autoProducts": 270,
+      "curatedProducts": 71,
+      "freshnessPercent": 100,
+      "healthScore": 100,
+      "staleProducts": 0,
+      "totalProducts": 341,
+      "verifiedIn7Days": 341
+    },
+    "transparencyAvg": 70
+  },
+  {
+    "date": "2026-10-16",
+    "generatedAt": "2026-10-16T18:49:37.758Z",
+    "stats": {
+      "autoProducts": 270,
+      "curatedProducts": 71,
+      "freshnessPercent": 100,
+      "healthScore": 100,
+      "staleProducts": 0,
+      "totalProducts": 341,
+      "verifiedIn7Days": 341
+    },
+    "macro": {
+      "depositCap1y": 23,
+      "inflationAnnual": 73.6,
+      "interbankRate": 24,
+      "loanRateCeiling": 23,
+      "realDepositReturn": -50.6
+    },
+    "counts": {
+      "credit": 63,
+      "deposits": 53,
+      "funds": 73,
+      "loans": 138,
+      "loyalty": 14,
+      "total": 341
+    },
+    "anomalies": {
+      "total": 31
+    }
   }
 ]

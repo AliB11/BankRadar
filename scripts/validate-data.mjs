@@ -73,7 +73,10 @@ function checkProduct(p, index) {
   //   lastUpdated — آخرین باری که خود منبع (صفحه بانک) به‌روز شد
   // اگر این دو یکی گرفته شوند، رکوردی که به‌تازگی واکشی شده ولی صفحه‌اش ماه‌ها
   // دست‌نخورده مانده، «کنترل‌نشده» گزارش می‌شود و هشدار بی‌معنا می‌شود.
-  const lastChecked = p.lastSeen || p.lastVerified || p.source?.checked || p.lastUpdated;
+  const candidateDates = [p.lastSeen, p.lastVerified, p.source?.checked, p.lastUpdated].filter(
+    (d) => typeof d === 'string' && ISO_RE.test(d),
+  );
+  const lastChecked = candidateDates.sort().pop() || p.lastSeen || p.lastVerified || p.source?.checked || p.lastUpdated;
   if (lastChecked) {
     const checkedAge = daysSince(lastChecked);
     if (checkedAge > 14) {
