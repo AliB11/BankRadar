@@ -1,27 +1,27 @@
 {
-  "autoDiscovered": 270,
+  "autoDiscovered": 278,
   "counts": {
     "credit": 63,
     "deposits": 53,
     "funds": 73,
-    "loans": 138,
+    "loans": 146,
     "loyalty": 14,
-    "total": 341
+    "total": 349
   },
-  "lastRun": "2026-10-16T18:49:37.758Z",
-  "lastRunDurationMs": 145470,
+  "lastRun": "2026-10-17T07:58:40.824Z",
+  "lastRunDurationMs": 164683,
   "lastRunMode": "full",
   "sources": [
     {
-      "attempted": 120,
-      "discovered": 555,
+      "attempted": 133,
+      "discovered": 612,
       "failures": 0,
       "fresh": 120,
-      "ms": 17470,
+      "ms": 24372,
       "name": "rade.ir",
       "ok": true,
-      "parsed": 120,
-      "rotated": 0
+      "parsed": 133,
+      "rotated": 13
     },
     {
       "detail": [
@@ -42,6 +42,12 @@
           "ok": true,
           "rates": [],
           "url": "https://www.sb24.ir/"
+        },
+        {
+          "id": "bankino",
+          "ok": true,
+          "rates": [],
+          "url": "https://bankino.digital/"
         },
         {
           "error": "HTTP 403 Forbidden (HTTP 403) — https://bmi.ir/fa/deposit",
@@ -140,27 +146,51 @@
           "url": "https://blubank.com/"
         },
         {
-          "error": "شبکه در دسترس نبود — https://vipad.ir/",
+          "error": "شبکه در دسترس نبود — https://wepod.ir/",
           "id": "vipad",
           "ok": false,
-          "url": "https://vipad.ir/"
+          "url": "https://wepod.ir/"
+        },
+        {
+          "error": "شبکه در دسترس نبود — https://www.mebank.ir/",
+          "id": "middle-east",
+          "ok": false,
+          "url": "https://www.mebank.ir/"
+        },
+        {
+          "error": "شبکه در دسترس نبود — https://www.bki.ir/",
+          "id": "keshavarzi",
+          "ok": false,
+          "url": "https://www.bki.ir/"
+        },
+        {
+          "error": "شبکه در دسترس نبود — https://www.gardeshgari-bank.com/",
+          "id": "gardeshgari",
+          "ok": false,
+          "url": "https://www.gardeshgari-bank.com/"
+        },
+        {
+          "error": "HTTP 403 Forbidden (HTTP 403) — https://tobank.ir/",
+          "id": "tobank",
+          "ok": false,
+          "url": "https://tobank.ir/"
         }
       ],
-      "ms": 85524,
+      "ms": 94916,
       "name": "bank-sites",
       "ok": true,
-      "reachable": 3,
-      "targets": 20
+      "reachable": 4,
+      "targets": 25
     },
     {
-      "ms": 7471,
+      "ms": 9881,
       "name": "macro-indicators",
       "ok": true,
       "sourcesOk": 2,
       "touched": []
     },
     {
-      "ms": 1291,
+      "ms": 1829,
       "name": "dgshahr.com",
       "ok": true,
       "parsed": 31,
@@ -169,10 +199,16 @@
       "tiers": 51
     },
     {
-      "error": "شبکه در دسترس نبود — https://advancedchart.isignal.ir/service/signalData@4.0.0/list",
-      "ms": 33630,
+      "etf": 43,
+      "issuance": 30,
+      "ms": 33499,
       "name": "isignal.ir",
-      "ok": false
+      "ok": true,
+      "origin": "fallback:isignal-funds-1405-07-05.json",
+      "parsed": 73,
+      "refreshed": 8,
+      "rows": 73,
+      "skipped": 0
     }
   ],
   "stale": 0,
