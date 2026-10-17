@@ -5,189 +5,49 @@
   <link>https://alib11.github.io/BankRadar/</link>
   <description>تغییرات محصولات بانکی ایران — افزوده، تغییر نرخ، نیازمند بازبینی</description>
   <language>fa-IR</language>
-  <lastBuildDate>Fri, 16 Oct 2026 18:49:37 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 17 Oct 2026 08:16:53 GMT</lastBuildDate>
   
     <item>
-      <title><![CDATA[جدید: بانک اقتصاد نوین — سپرده قرض‌الحسنه جاری وینگر بانک اقتصاد نوین]]></title>
-      <description><![CDATA[محصول جدید در دسته deposits با نرخ 0٪]]></description>
+      <title><![CDATA[جدید: بانک ملی — وام مسکن بانک ملی (تملی)]]></title>
+      <description><![CDATA[محصول جدید در دسته loans با نرخ 22.5٪]]></description>
       <link>https://alib11.github.io/BankRadar/</link>
-      <pubDate>Fri, 16 Oct 2026 18:49:37 GMT</pubDate>
-      <guid>https://alib11.github.io/BankRadar/#2026-10-16-added-rade-704361</guid>
+      <pubDate>Sat, 17 Oct 2026 08:16:53 GMT</pubDate>
+      <guid>https://alib11.github.io/BankRadar/#2026-10-17-added-rade-705091</guid>
     </item>
     <item>
-      <title><![CDATA[جدید: بانک رفاه کارگران — سپرده ویژه رفاه فردا بانک رفاه کارگران (مستمری مادام‌العمر)]]></title>
-      <description><![CDATA[محصول جدید در دسته deposits با نرخ 16٪]]></description>
-      <link>https://alib11.github.io/BankRadar/</link>
-      <pubDate>Fri, 16 Oct 2026 18:49:37 GMT</pubDate>
-      <guid>https://alib11.github.io/BankRadar/#2026-10-16-added-rade-705203</guid>
-    </item>
-    <item>
-      <title><![CDATA[جدید: بانک خاورمیانه — سپرده سرمایه‌گذاری بلندمدت دومینو بانک خاورمیانه (بانکینو)]]></title>
-      <description><![CDATA[محصول جدید در دسته deposits با نرخ 22.5٪]]></description>
-      <link>https://alib11.github.io/BankRadar/</link>
-      <pubDate>Fri, 16 Oct 2026 18:49:37 GMT</pubDate>
-      <guid>https://alib11.github.io/BankRadar/#2026-10-16-added-rade-705678</guid>
-    </item>
-    <item>
-      <title><![CDATA[جدید: بانک پاسارگاد — طرح سرمایه‌گذاری رستا ویپاد بانک پاسارگاد]]></title>
-      <description><![CDATA[محصول جدید در دسته deposits با نرخ 14٪]]></description>
-      <link>https://alib11.github.io/BankRadar/</link>
-      <pubDate>Fri, 16 Oct 2026 18:49:37 GMT</pubDate>
-      <guid>https://alib11.github.io/BankRadar/#2026-10-16-added-rade-707739</guid>
-    </item>
-    <item>
-      <title><![CDATA[جدید: بانک پاسارگاد — طرح سرمایه‌گذاری بیست+ ویپاد بانک پاسارگاد]]></title>
-      <description><![CDATA[محصول جدید در دسته deposits با نرخ 20٪]]></description>
-      <link>https://alib11.github.io/BankRadar/</link>
-      <pubDate>Fri, 16 Oct 2026 18:49:37 GMT</pubDate>
-      <guid>https://alib11.github.io/BankRadar/#2026-10-16-added-rade-707740</guid>
-    </item>
-    <item>
-      <title><![CDATA[جدید: بانک کشاورزی — طرح اعتباری گندم و چای گرین‌پی (بانک کشاورزی)]]></title>
-      <description><![CDATA[محصول جدید در دسته credit با نرخ 23٪]]></description>
-      <link>https://alib11.github.io/BankRadar/</link>
-      <pubDate>Fri, 16 Oct 2026 18:49:37 GMT</pubDate>
-      <guid>https://alib11.github.io/BankRadar/#2026-10-16-added-rade-706960</guid>
-    </item>
-    <item>
-      <title><![CDATA[جدید: وان ایکس وام — اعتبار خرید اقساطی وان ایکس وام (تا ۳۰۰ میلیون تومان)]]></title>
-      <description><![CDATA[محصول جدید در دسته credit با نرخ 14٪]]></description>
-      <link>https://alib11.github.io/BankRadar/</link>
-      <pubDate>Fri, 16 Oct 2026 18:49:37 GMT</pubDate>
-      <guid>https://alib11.github.io/BankRadar/#2026-10-16-added-rade-707734</guid>
-    </item>
-    <item>
-      <title><![CDATA[جدید: باکالا — اعتبار خرید اقساطی باکالا (طرح‌های چکالا، مبتا و حبصا)]]></title>
-      <description><![CDATA[محصول جدید در دسته credit با نرخ 42٪]]></description>
-      <link>https://alib11.github.io/BankRadar/</link>
-      <pubDate>Fri, 16 Oct 2026 18:49:37 GMT</pubDate>
-      <guid>https://alib11.github.io/BankRadar/#2026-10-16-added-rade-707969</guid>
-    </item>
-    <item>
-      <title><![CDATA[جدید: الوپی — اعتبار خرید اقساطی الوپی (الوقسطی — تا ۴۰۰ میلیون تومان)]]></title>
-      <description><![CDATA[محصول جدید در دسته credit با نرخ 23٪]]></description>
-      <link>https://alib11.github.io/BankRadar/</link>
-      <pubDate>Fri, 16 Oct 2026 18:49:37 GMT</pubDate>
-      <guid>https://alib11.github.io/BankRadar/#2026-10-16-added-rade-708359</guid>
-    </item>
-    <item>
-      <title><![CDATA[جدید: اوانو — اعتبار خرید اقساطی اوانو (همراه اول — BNPL یک و چهار قسطه)]]></title>
-      <description><![CDATA[محصول جدید در دسته credit با نرخ 30٪]]></description>
-      <link>https://alib11.github.io/BankRadar/</link>
-      <pubDate>Fri, 16 Oct 2026 18:49:37 GMT</pubDate>
-      <guid>https://alib11.github.io/BankRadar/#2026-10-16-added-rade-708812</guid>
-    </item>
-    <item>
-      <title><![CDATA[جدید: گروه مالی کاریزما — کاریزماپی — وام نقدی نردبان اعتبار کاریزما (واریز به بلوبانک)]]></title>
-      <description><![CDATA[محصول جدید در دسته credit با نرخ 23٪]]></description>
-      <link>https://alib11.github.io/BankRadar/</link>
-      <pubDate>Fri, 16 Oct 2026 18:49:37 GMT</pubDate>
-      <guid>https://alib11.github.io/BankRadar/#2026-10-16-added-rade-708922</guid>
-    </item>
-    <item>
-      <title><![CDATA[جدید: بانک مرکزی جمهوری اسلامی ایران — وام مسکن روستایی (طرح ویژه بهسازی و نوسازی مسکن روستایی)]]></title>
-      <description><![CDATA[محصول جدید در دسته loans با نرخ 5٪]]></description>
-      <link>https://alib11.github.io/BankRadar/</link>
-      <pubDate>Fri, 16 Oct 2026 18:49:37 GMT</pubDate>
-      <guid>https://alib11.github.io/BankRadar/#2026-10-16-added-rade-704686</guid>
-    </item>
-    <item>
-      <title><![CDATA[جدید: بانک صادرات ایران — وام ازدواج فرزندان بازنشستگان کشوری بانک صادرات ایران]]></title>
-      <description><![CDATA[محصول جدید در دسته loans با نرخ 5٪]]></description>
-      <link>https://alib11.github.io/BankRadar/</link>
-      <pubDate>Fri, 16 Oct 2026 18:49:37 GMT</pubDate>
-      <guid>https://alib11.github.io/BankRadar/#2026-10-16-added-rade-708495</guid>
-    </item>
-    <item>
-      <title><![CDATA[جدید: بانک مرکزی جمهوری اسلامی ایران — وام ۱۵۰ میلیونی خوداشتغالی سربازی (سامانه سماسو)]]></title>
+      <title><![CDATA[جدید: بانک سرمایه — وام ازدواج بانک سرمایه]]></title>
       <description><![CDATA[محصول جدید در دسته loans با نرخ 4٪]]></description>
       <link>https://alib11.github.io/BankRadar/</link>
-      <pubDate>Fri, 16 Oct 2026 18:49:37 GMT</pubDate>
-      <guid>https://alib11.github.io/BankRadar/#2026-10-16-added-rade-708514</guid>
+      <pubDate>Sat, 17 Oct 2026 08:16:53 GMT</pubDate>
+      <guid>https://alib11.github.io/BankRadar/#2026-10-17-added-rade-705229</guid>
     </item>
     <item>
-      <title><![CDATA[جدید: صندوق کارآفرینی امید — وام اشتغال‌زایی جوانان در صندوق کارآفرینی امید]]></title>
-      <description><![CDATA[محصول جدید در دسته loans با نرخ 15٪]]></description>
-      <link>https://alib11.github.io/BankRadar/</link>
-      <pubDate>Fri, 16 Oct 2026 18:49:37 GMT</pubDate>
-      <guid>https://alib11.github.io/BankRadar/#2026-10-16-added-rade-708649</guid>
-    </item>
-    <item>
-      <title><![CDATA[جدید: بانک مسکن — وام قرض‌الحسنه مسکن فرزند سوم و بیشتر بانک مسکن]]></title>
+      <title><![CDATA[جدید: بانک خاورمیانه — وام ازدواج بانک خاورمیانه]]></title>
       <description><![CDATA[محصول جدید در دسته loans با نرخ 4٪]]></description>
       <link>https://alib11.github.io/BankRadar/</link>
-      <pubDate>Fri, 16 Oct 2026 18:49:37 GMT</pubDate>
-      <guid>https://alib11.github.io/BankRadar/#2026-10-16-added-rade-708994</guid>
+      <pubDate>Sat, 17 Oct 2026 08:16:53 GMT</pubDate>
+      <guid>https://alib11.github.io/BankRadar/#2026-10-17-added-rade-705230</guid>
     </item>
     <item>
-      <title><![CDATA[جدید: بانک خاورمیانه — باشگاه امتیاز و وفاداری بانکینو (طرح امتیازی وامینو بانک خاورمیانه)]]></title>
-      <description><![CDATA[محصول جدید در دسته loyalty با نرخ 0٪]]></description>
+      <title><![CDATA[جدید: بانک ایران و ونزوئلا — وام ازدواج بانک ایران و ونزوئلا]]></title>
+      <description><![CDATA[محصول جدید در دسته loans با نرخ 4٪]]></description>
       <link>https://alib11.github.io/BankRadar/</link>
-      <pubDate>Fri, 16 Oct 2026 18:49:37 GMT</pubDate>
-      <guid>https://alib11.github.io/BankRadar/#2026-10-16-added-bankino-vamino-club</guid>
+      <pubDate>Sat, 17 Oct 2026 08:16:53 GMT</pubDate>
+      <guid>https://alib11.github.io/BankRadar/#2026-10-17-added-rade-705231</guid>
     </item>
     <item>
-      <title><![CDATA[جدید: بانک سپه — باشگاه مشتریان بانک سپه (نگین سپه و امیدبانک)]]></title>
-      <description><![CDATA[محصول جدید در دسته loyalty با نرخ 0٪]]></description>
+      <title><![CDATA[جدید: بانک صادرات — وام حمپاد بانک صادرات ایران]]></title>
+      <description><![CDATA[محصول جدید در دسته loans با نرخ 4٪]]></description>
       <link>https://alib11.github.io/BankRadar/</link>
-      <pubDate>Fri, 16 Oct 2026 18:49:37 GMT</pubDate>
-      <guid>https://alib11.github.io/BankRadar/#2026-10-16-added-sepah-negin-club</guid>
+      <pubDate>Sat, 17 Oct 2026 08:16:53 GMT</pubDate>
+      <guid>https://alib11.github.io/BankRadar/#2026-10-17-added-rade-705624</guid>
     </item>
     <item>
-      <title><![CDATA[جدید: بانک گردشگری — توبانک کلاب — باشگاه مشتریان دیجیتال بانک گردشگری]]></title>
-      <description><![CDATA[محصول جدید در دسته loyalty با نرخ 0٪]]></description>
+      <title><![CDATA[تغییر نرخ: اوانو — اوانو]]></title>
+      <description><![CDATA[نرخ از 30٪ به 0٪ تغییر کرد (-30٪)]]></description>
       <link>https://alib11.github.io/BankRadar/</link>
-      <pubDate>Fri, 16 Oct 2026 18:49:37 GMT</pubDate>
-      <guid>https://alib11.github.io/BankRadar/#2026-10-16-added-tobank-club</guid>
-    </item>
-    <item>
-      <title><![CDATA[جدید: ویپاد — وی‌کلاب — باشگاه مشتریان و سکه وفاداری ویپاد (ترابانک پاسارگاد)]]></title>
-      <description><![CDATA[محصول جدید در دسته loyalty با نرخ 0٪]]></description>
-      <link>https://alib11.github.io/BankRadar/</link>
-      <pubDate>Fri, 16 Oct 2026 18:49:37 GMT</pubDate>
-      <guid>https://alib11.github.io/BankRadar/#2026-10-16-added-vipad-weclub</guid>
-    </item>
-    <item>
-      <title><![CDATA[جدید: بانک ملت / تأمین سرمایه بانک ملت — صندوق سرمایه‌گذاری اندوخته ملت (صدور و ابطالی)]]></title>
-      <description><![CDATA[محصول جدید در دسته funds با نرخ 36٪]]></description>
-      <link>https://alib11.github.io/BankRadar/</link>
-      <pubDate>Fri, 16 Oct 2026 18:49:37 GMT</pubDate>
-      <guid>https://alib11.github.io/BankRadar/#2026-10-16-added-fund-andookhteh-mellat</guid>
-    </item>
-    <item>
-      <title><![CDATA[جدید: سبدگردان مفید — صندوق درآمد ثابت آوند مفید (ETF - آوند)]]></title>
-      <description><![CDATA[محصول جدید در دسته funds با نرخ 37٪]]></description>
-      <link>https://alib11.github.io/BankRadar/</link>
-      <pubDate>Fri, 16 Oct 2026 18:49:37 GMT</pubDate>
-      <guid>https://alib11.github.io/BankRadar/#2026-10-16-added-fund-avand-mofid</guid>
-    </item>
-    <item>
-      <title><![CDATA[جدید: سبدگردان نو ویرا — صندوق درآمد ثابت پایدار نو ویرا (ETF - کاج)]]></title>
-      <description><![CDATA[محصول جدید در دسته funds با نرخ 40.97٪]]></description>
-      <link>https://alib11.github.io/BankRadar/</link>
-      <pubDate>Fri, 16 Oct 2026 18:49:37 GMT</pubDate>
-      <guid>https://alib11.github.io/BankRadar/#2026-10-16-added-fund-kaj-vira</guid>
-    </item>
-    <item>
-      <title><![CDATA[جدید: بانک سامان / سبدگردان سامان — صندوق درآمد ثابت نگین سامان (ETF)]]></title>
-      <description><![CDATA[محصول جدید در دسته funds با نرخ 38٪]]></description>
-      <link>https://alib11.github.io/BankRadar/</link>
-      <pubDate>Fri, 16 Oct 2026 18:49:37 GMT</pubDate>
-      <guid>https://alib11.github.io/BankRadar/#2026-10-16-added-fund-negin-saman</guid>
-    </item>
-    <item>
-      <title><![CDATA[جدید: بانک پاسارگاد / سبدگردان پاسارگاد — صندوق درآمد ثابت نوع دوم پاسارگاد (ETF - پاسارگاد)]]></title>
-      <description><![CDATA[محصول جدید در دسته funds با نرخ 40٪]]></description>
-      <link>https://alib11.github.io/BankRadar/</link>
-      <pubDate>Fri, 16 Oct 2026 18:49:37 GMT</pubDate>
-      <guid>https://alib11.github.io/BankRadar/#2026-10-16-added-fund-pasargad-etf</guid>
-    </item>
-    <item>
-      <title><![CDATA[جدید: تأمین سرمایه تمدن — صندوق درآمد ثابت تداوم اطمینان تمدن (ETF - تداوم)]]></title>
-      <description><![CDATA[محصول جدید در دسته funds با نرخ 40٪]]></description>
-      <link>https://alib11.github.io/BankRadar/</link>
-      <pubDate>Fri, 16 Oct 2026 18:49:37 GMT</pubDate>
-      <guid>https://alib11.github.io/BankRadar/#2026-10-16-added-fund-tadavom-tamadon</guid>
+      <pubDate>Sat, 17 Oct 2026 08:16:53 GMT</pubDate>
+      <guid>https://alib11.github.io/BankRadar/#2026-10-17-rate-rade-708812-0</guid>
     </item>
 </channel>
 </rss>

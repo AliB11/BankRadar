@@ -1,230 +1,150 @@
 {
   "added": [
     {
-      "id": "rade-704361",
-      "bank": "بانک اقتصاد نوین",
-      "product": "سپرده قرض‌الحسنه جاری وینگر بانک اقتصاد نوین",
-      "category": "deposits",
-      "rate": 0,
-      "maxAmount": null
+      "bank": "بانک ملی",
+      "category": "loans",
+      "id": "rade-705091",
+      "maxAmount": 400000000,
+      "product": "وام مسکن بانک ملی (تملی)",
+      "rate": 22.5
     },
     {
-      "id": "rade-705203",
-      "bank": "بانک رفاه کارگران",
-      "product": "سپرده ویژه رفاه فردا بانک رفاه کارگران (مستمری مادام‌العمر)",
-      "category": "deposits",
-      "rate": 16,
-      "maxAmount": null
+      "bank": "بانک سرمایه",
+      "category": "loans",
+      "id": "rade-705229",
+      "maxAmount": 350000000,
+      "product": "وام ازدواج بانک سرمایه",
+      "rate": 4
     },
     {
-      "id": "rade-705678",
       "bank": "بانک خاورمیانه",
-      "product": "سپرده سرمایه‌گذاری بلندمدت دومینو بانک خاورمیانه (بانکینو)",
-      "category": "deposits",
-      "rate": 22.5,
-      "maxAmount": null
+      "category": "loans",
+      "id": "rade-705230",
+      "maxAmount": 350000000,
+      "product": "وام ازدواج بانک خاورمیانه",
+      "rate": 4
     },
     {
-      "id": "rade-707739",
-      "bank": "بانک پاسارگاد",
-      "product": "طرح سرمایه‌گذاری رستا ویپاد بانک پاسارگاد",
-      "category": "deposits",
-      "rate": 14,
-      "maxAmount": 10000000000
+      "bank": "بانک ایران و ونزوئلا",
+      "category": "loans",
+      "id": "rade-705231",
+      "maxAmount": 350000000,
+      "product": "وام ازدواج بانک ایران و ونزوئلا",
+      "rate": 4
     },
     {
-      "id": "rade-707740",
-      "bank": "بانک پاسارگاد",
-      "product": "طرح سرمایه‌گذاری بیست+ ویپاد بانک پاسارگاد",
-      "category": "deposits",
-      "rate": 20,
-      "maxAmount": 10000000000
-    },
+      "bank": "بانک صادرات",
+      "category": "loans",
+      "id": "rade-705624",
+      "maxAmount": 15000000,
+      "product": "وام حمپاد بانک صادرات ایران",
+      "rate": 4
+    }
+  ],
+  "amountChanged": [
     {
-      "id": "rade-706960",
-      "bank": "بانک کشاورزی",
-      "product": "طرح اعتباری گندم و چای گرین‌پی (بانک کشاورزی)",
-      "category": "credit",
-      "rate": 23,
-      "maxAmount": 1000000000
-    },
-    {
-      "id": "rade-707734",
       "bank": "وان ایکس وام",
-      "product": "اعتبار خرید اقساطی وان ایکس وام (تا ۳۰۰ میلیون تومان)",
-      "category": "credit",
-      "rate": 14,
-      "maxAmount": 300000000
+      "from": {
+        "max": 300000000,
+        "min": 10000000
+      },
+      "id": "rade-707734",
+      "newMax": 300000000,
+      "oldMax": 300000000,
+      "product": "وان ایکس وام",
+      "to": {
+        "max": 300000000,
+        "min": null
+      }
     },
     {
-      "id": "rade-707969",
       "bank": "باکالا",
-      "product": "اعتبار خرید اقساطی باکالا (طرح‌های چکالا، مبتا و حبصا)",
-      "category": "credit",
-      "rate": 42,
-      "maxAmount": 200000000
+      "from": {
+        "max": 200000000,
+        "min": 10000000
+      },
+      "id": "rade-707969",
+      "newMax": 200000000,
+      "oldMax": 200000000,
+      "product": "باکالا",
+      "to": {
+        "max": 200000000,
+        "min": null
+      }
     },
     {
-      "id": "rade-708359",
       "bank": "الوپی",
-      "product": "اعتبار خرید اقساطی الوپی (الوقسطی — تا ۴۰۰ میلیون تومان)",
-      "category": "credit",
-      "rate": 23,
-      "maxAmount": 400000000
+      "from": {
+        "max": 400000000,
+        "min": 10000000
+      },
+      "id": "rade-708359",
+      "newMax": 400000000,
+      "oldMax": 400000000,
+      "product": "الوپی",
+      "to": {
+        "max": 400000000,
+        "min": null
+      }
     },
     {
-      "id": "rade-708812",
       "bank": "اوانو",
-      "product": "اعتبار خرید اقساطی اوانو (همراه اول — BNPL یک و چهار قسطه)",
-      "category": "credit",
-      "rate": 30,
-      "maxAmount": 20000000
+      "from": {
+        "max": 20000000,
+        "min": 2000000
+      },
+      "id": "rade-708812",
+      "newMax": 20000000,
+      "oldMax": 20000000,
+      "product": "اوانو",
+      "to": {
+        "max": 20000000,
+        "min": null
+      }
     },
     {
+      "bank": "کاریزماپی",
+      "from": {
+        "max": 20000000,
+        "min": 1000000
+      },
       "id": "rade-708922",
-      "bank": "گروه مالی کاریزما",
-      "product": "کاریزماپی — وام نقدی نردبان اعتبار کاریزما (واریز به بلوبانک)",
-      "category": "credit",
-      "rate": 23,
-      "maxAmount": 20000000
-    },
+      "newMax": 20000000,
+      "oldMax": 20000000,
+      "product": "کاریزماپی",
+      "to": {
+        "max": 20000000,
+        "min": null
+      }
+    }
+  ],
+  "confidenceChanged": [],
+  "rateChanged": [
     {
-      "id": "rade-704686",
-      "bank": "بانک مرکزی جمهوری اسلامی ایران",
-      "product": "وام مسکن روستایی (طرح ویژه بهسازی و نوسازی مسکن روستایی)",
-      "category": "loans",
-      "rate": 5,
-      "maxAmount": 1100000000
-    },
-    {
-      "id": "rade-708495",
-      "bank": "بانک صادرات ایران",
-      "product": "وام ازدواج فرزندان بازنشستگان کشوری بانک صادرات ایران",
-      "category": "loans",
-      "rate": 5,
-      "maxAmount": 80000000
-    },
-    {
-      "id": "rade-708514",
-      "bank": "بانک مرکزی جمهوری اسلامی ایران",
-      "product": "وام ۱۵۰ میلیونی خوداشتغالی سربازی (سامانه سماسو)",
-      "category": "loans",
-      "rate": 4,
-      "maxAmount": 150000000
-    },
-    {
-      "id": "rade-708649",
-      "bank": "صندوق کارآفرینی امید",
-      "product": "وام اشتغال‌زایی جوانان در صندوق کارآفرینی امید",
-      "category": "loans",
-      "rate": 15,
-      "maxAmount": 2000000000
-    },
-    {
-      "id": "rade-708994",
-      "bank": "بانک مسکن",
-      "product": "وام قرض‌الحسنه مسکن فرزند سوم و بیشتر بانک مسکن",
-      "category": "loans",
-      "rate": 4,
-      "maxAmount": 450000000
-    },
-    {
-      "id": "bankino-vamino-club",
-      "bank": "بانک خاورمیانه",
-      "product": "باشگاه امتیاز و وفاداری بانکینو (طرح امتیازی وامینو بانک خاورمیانه)",
-      "category": "loyalty",
-      "rate": 0,
-      "maxAmount": 300000000
-    },
-    {
-      "id": "sepah-negin-club",
-      "bank": "بانک سپه",
-      "product": "باشگاه مشتریان بانک سپه (نگین سپه و امیدبانک)",
-      "category": "loyalty",
-      "rate": 0,
-      "maxAmount": null
-    },
-    {
-      "id": "tobank-club",
-      "bank": "بانک گردشگری",
-      "product": "توبانک کلاب — باشگاه مشتریان دیجیتال بانک گردشگری",
-      "category": "loyalty",
-      "rate": 0,
-      "maxAmount": 200000000
-    },
-    {
-      "id": "vipad-weclub",
-      "bank": "ویپاد",
-      "product": "وی‌کلاب — باشگاه مشتریان و سکه وفاداری ویپاد (ترابانک پاسارگاد)",
-      "category": "loyalty",
-      "rate": 0,
-      "maxAmount": 400000000
-    },
-    {
-      "id": "fund-andookhteh-mellat",
-      "bank": "بانک ملت / تأمین سرمایه بانک ملت",
-      "product": "صندوق سرمایه‌گذاری اندوخته ملت (صدور و ابطالی)",
-      "category": "funds",
-      "rate": 36,
-      "maxAmount": null
-    },
-    {
-      "id": "fund-avand-mofid",
-      "bank": "سبدگردان مفید",
-      "product": "صندوق درآمد ثابت آوند مفید (ETF - آوند)",
-      "category": "funds",
-      "rate": 37,
-      "maxAmount": null
-    },
-    {
-      "id": "fund-kaj-vira",
-      "bank": "سبدگردان نو ویرا",
-      "product": "صندوق درآمد ثابت پایدار نو ویرا (ETF - کاج)",
-      "category": "funds",
-      "rate": 40.97,
-      "maxAmount": null
-    },
-    {
-      "id": "fund-negin-saman",
-      "bank": "بانک سامان / سبدگردان سامان",
-      "product": "صندوق درآمد ثابت نگین سامان (ETF)",
-      "category": "funds",
-      "rate": 38,
-      "maxAmount": null
-    },
-    {
-      "id": "fund-pasargad-etf",
-      "bank": "بانک پاسارگاد / سبدگردان پاسارگاد",
-      "product": "صندوق درآمد ثابت نوع دوم پاسارگاد (ETF - پاسارگاد)",
-      "category": "funds",
-      "rate": 40,
-      "maxAmount": null
-    },
-    {
-      "id": "fund-tadavom-tamadon",
-      "bank": "تأمین سرمایه تمدن",
-      "product": "صندوق درآمد ثابت تداوم اطمینان تمدن (ETF - تداوم)",
-      "category": "funds",
-      "rate": 40,
-      "maxAmount": null
+      "bank": "اوانو",
+      "delta": -30,
+      "diff": -30,
+      "from": 30,
+      "id": "rade-708812",
+      "newRate": 0,
+      "oldRate": 30,
+      "product": "اوانو",
+      "to": 0
     }
   ],
   "removed": [],
-  "rateChanged": [],
-  "amountChanged": [],
-  "termChanged": [],
-  "confidenceChanged": [],
   "revived": [],
   "staleNow": [],
   "summary": {
-    "added": 26,
-    "removed": 0,
-    "rateChanged": 0,
-    "amountChanged": 0,
-    "termChanged": 0,
+    "added": 5,
+    "amountChanged": 5,
     "confidenceChanged": 0,
+    "rateChanged": 1,
+    "removed": 0,
     "revived": 0,
     "staleNow": 0,
-    "totalChanges": 26
-  }
+    "termChanged": 0,
+    "totalChanges": 11
+  },
+  "termChanged": []
 }

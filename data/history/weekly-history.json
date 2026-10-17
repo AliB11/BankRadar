@@ -418,23 +418,8 @@
     "transparencyAvg": 70
   },
   {
-    "date": "2026-10-16",
-    "generatedAt": "2026-10-16T18:49:37.758Z",
-    "stats": {
-      "autoProducts": 270,
-      "curatedProducts": 71,
-      "freshnessPercent": 100,
-      "healthScore": 100,
-      "staleProducts": 0,
-      "totalProducts": 341,
-      "verifiedIn7Days": 341
-    },
-    "macro": {
-      "depositCap1y": 23,
-      "inflationAnnual": 73.6,
-      "interbankRate": 24,
-      "loanRateCeiling": 23,
-      "realDepositReturn": -50.6
+    "anomalies": {
+      "total": 31
     },
     "counts": {
       "credit": 63,
@@ -444,8 +429,66 @@
       "loyalty": 14,
       "total": 341
     },
-    "anomalies": {
-      "total": 31
+    "date": "2026-10-16",
+    "generatedAt": "2026-10-16T18:49:37.758Z",
+    "macro": {
+      "depositCap1y": 23,
+      "inflationAnnual": 73.6,
+      "interbankRate": 24,
+      "loanRateCeiling": 23,
+      "realDepositReturn": -50.6
+    },
+    "stats": {
+      "autoProducts": 270,
+      "curatedProducts": 71,
+      "freshnessPercent": 100,
+      "healthScore": 100,
+      "staleProducts": 0,
+      "totalProducts": 341,
+      "verifiedIn7Days": 341
     }
+  },
+  {
+    "anomalies": {
+      "total": 37
+    },
+    "changelogSummary": {
+      "added": 5,
+      "amountChanged": 5,
+      "confidenceChanged": 0,
+      "rateChanged": 1,
+      "removed": 0,
+      "revived": 0,
+      "staleNow": 0,
+      "termChanged": 0,
+      "totalChanges": 11
+    },
+    "counts": {
+      "credit": 63,
+      "deposits": 53,
+      "funds": 73,
+      "loans": 151,
+      "loyalty": 14,
+      "total": 354
+    },
+    "date": "2026-10-17",
+    "generatedAt": "2026-10-17T08:16:53.369Z",
+    "macro": {
+      "depositCap1y": 23,
+      "inflationAnnual": 73.6,
+      "interbankRate": 24,
+      "loanRateCeiling": 23,
+      "realDepositReturn": -50.6
+    },
+    "stats": {
+      "autoProducts": 283,
+      "curatedProducts": 71,
+      "freshnessPercent": 100,
+      "healthScore": 100,
+      "staleProducts": 0,
+      "totalProducts": 354,
+      "verifiedIn7Days": 354
+    },
+    "transparencyAvg": 70
   }
 ]
