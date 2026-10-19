@@ -352,7 +352,13 @@ export function auditCuratedProducts(products = [], opts = {}) {
     if (!isCurated || !p.source?.url || !/^https?:\/\//.test(p.source.url)) return p;
     if (!verified.has(p.id)) {
       pending.push({ id: p.id, url: p.source.url, lastVerified: p.lastVerified || null });
-      return p;
+      // مهرهای «بازبینی» که خودِ ممیزی در اجراهای قبلی زده بود پاک می‌شوند؛
+      // نگه‌داشتنشان همان دروغی است که این تابع می‌ساخت. اگر رکورد در همین
+      // اجرا از منبع زنده تأیید شود، در ادغام دوباره مهر می‌گیرد.
+      const { lastVerified, lastSeen, ...rest } = p;
+      const source = { ...(p.source || {}) };
+      delete source.checked;
+      return { ...rest, source };
     }
     verifiedCount++;
     return {
@@ -673,11 +679,22 @@ export async function syncWeekly(opts = {}) {
     await writeJSON(reportPath, report);
 
     const existingMeta = (await readJSON('meta.json')) || {};
+    // وضعیت منابع باید از همین اجرا بیاید، نه از آخرین اجرای روزانه؛ وگرنه
+    // پنل «منابع داده» ساعتها (یا روزها) عقب می‌ماند. منابعی که این بار
+    // اجرا نشده‌اند، وضعیت قبلی خود را نگه می‌دارند.
+    const sourceByName = new Map((existingMeta.sources ?? []).map((s) => [s.name, s]));
+    for (const s of sourcesLog) {
+      const name = String(s.name).replace(/ \(weekly-audit\)$/, '');
+      sourceByName.set(name, { ...s, name });
+    }
     await writeJSON('meta.json', {
       ...existingMeta,
       lastRun: report.generatedAt,
+      lastRunMode: report.mode,
       counts: productsOut.counts,
+      stale: productsOut.stale,
       autoDiscovered: merged.filter((p) => p.autoDiscovered).length,
+      sources: [...sourceByName.values()],
     });
 
     // نوشتن فیدهای باز

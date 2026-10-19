@@ -172,6 +172,9 @@ export function deepEqual(a, b) {
  */
 export function isThinScrape(candidate, current) {
   if (!candidate || !current) return false;
+  // رکورد «به‌روزرسانی سبک» (مثل نگاشت صندوق دست‌نویس) اصلاً ادعای محتوا ندارد
+  // و نباید قربانی این محافظ شود؛ فقط رکوردی که واقعاً desc می‌فرستد سنجیده می‌شود.
+  if (!Object.hasOwn(candidate, 'desc')) return false;
   const nextLen = String(candidate.desc ?? '').trim().length;
   const prevLen = String(current.desc ?? '').trim().length;
   return nextLen < 40 && prevLen >= 40;
@@ -226,7 +229,7 @@ export function mergeProducts(existing, incoming) {
 
     // فیلدهای ساختاری که هرگز از منبع خودکار بازنویسی نمی‌شوند
     const frozen = isCurated
-      ? ['id', 'category', 'subcategory', 'rateKind', 'benefit', 'speed', 'digital', 'friction', 'collateralKind', 'confidence', 'regulatory', 'source', 'lastUpdated']
+      ? ['id', 'category', 'subcategory', 'rateKind', 'benefit', 'speed', 'digital', 'friction', 'collateralKind', 'confidence', 'regulatory', 'source']
       : [];
 
     const next = { ...current };
@@ -253,6 +256,9 @@ export function mergeProducts(existing, incoming) {
       // مقدار انسانی را با پوستهٔ خالی جایگزین کند. دو نشانهٔ دیده‌شده در
       // داده: نرخ صفر (به‌جای ۳۰٪) و توضیح ۵ نویسه‌ای (به‌جای ۲۵۰ نویسه).
       if (isCurated && k === 'rate' && (!Number(v) || Number(v) === 0) && Number(current.rate) > 0) continue;
+      // تاریخ دادهٔ منبع فقط می‌تواند جلو برود؛ عقب‌گرد یعنی دادهٔ قدیمی‌تر
+      // جای دادهٔ تازه را گرفته است.
+      if (isCurated && k === 'lastUpdated' && !(live && String(v) > String(current.lastUpdated || '1970-01-01'))) continue;
       if (
         isCurated &&
         k === 'desc' &&

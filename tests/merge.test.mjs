@@ -111,6 +111,45 @@ test('برداشت ناقص، محتوای رکورد را پاک نمی‌کن�
   assert.equal(p.lastSeen, new Date().toISOString().slice(0, 10), 'مشاهده ثبت می‌شود');
 });
 
+test('به‌روزرسانی سبک صندوق دست‌نویس با محافظ برداشت ناقص مسدود نمی‌شود', () => {
+  // نگاشت آی‌سیگنال برای صندوق دست‌نویس فقط rate/extra می‌فرستد و desc ندارد؛
+  // این رکورد نباید «برداشت ناقص» شمرده شود، وگرنه دادهٔ زنده هرگز اعمال نمی‌شد.
+  const existing = [
+    {
+      id: 'fund-x',
+      bank: 'سبدگردان ایکس',
+      product: 'صندوق درآمد ثابت ایکس',
+      category: 'funds',
+      autoDiscovered: false,
+      rate: 30,
+      lastUpdated: '2026-09-27',
+      desc: 'توضیح کامل و انسانی این صندوق که باید دست‌نخورده بماند و توسط به‌روزرسانی سبک پاک نشود.',
+      source: { title: 'منبع رسمی', url: 'https://bank.ir/fund', checked: '2026-09-27' },
+    },
+  ];
+  const incoming = [
+    {
+      id: 'fund-x',
+      bank: 'سبدگردان ایکس',
+      product: 'صندوق درآمد ثابت ایکس',
+      category: 'funds',
+      rate: 34.2,
+      rateLabel: 'بازدهی یک‌ساله ۳۴.۲٪',
+      extra: { isignal: { isignalId: 1 } },
+      lastUpdated: '2026-10-17',
+      lastSeen: '2026-10-19',
+      lastVerified: '2026-10-19',
+      live: true,
+    },
+  ];
+  const { merged, stats } = mergeProducts(existing, incoming);
+  assert.equal(stats.thinSkipped, 0);
+  assert.equal(merged[0].rate, 34.2, 'نرخ زنده اعمال می‌شود');
+  assert.equal(merged[0].lastUpdated, '2026-10-17', 'تاریخ داده جلو می‌رود');
+  assert.equal(merged[0].lastVerified, '2026-10-19');
+  assert.match(merged[0].desc, /توضیح کامل/, 'متن دست‌نویس حفظ می‌شود');
+});
+
 test('رکورد خودکارِ قدیمی حذف نمی‌شود بلکه stale می‌شود', () => {
   const existing = [
     { id: 'auto-1', bank: 'بانک ب', product: 'محصول قدیمی', category: 'loans', autoDiscovered: true, lastSeen: '2026-01-01' },

@@ -160,8 +160,10 @@ test('auditCuratedProducts بدون تأیید واقعی هیچ مهری نمی
   const plain = auditCuratedProducts(products, { date: '2026-09-19' });
   assert.equal(plain.verifiedCount, 0);
   assert.equal(plain.pending.length, 1);
-  assert.equal(plain.audited[0].lastVerified, '2026-08-01', 'تاریخ قبلی دست‌نخورده می‌ماند');
-  assert.equal(plain.audited[0].source.checked, '2026-08-01');
+  // مهر «بازبینی»ِ اجراهای قبلی پاک می‌شود؛ تاریخ خودِ منبع دست‌نخورده می‌ماند.
+  assert.equal(plain.audited[0].lastVerified, undefined, 'مهر ممیزی قدیمی پاک می‌شود');
+  assert.equal(plain.audited[0].source.checked, undefined);
+  assert.equal(plain.audited[0].lastUpdated, '2026-08-01');
   assert.equal(plain.audited[1].lastVerified, undefined, 'رکورد خودکار دست‌نخورده می‌ماند');
 
   // فقط شناسه‌ای که واقعاً بررسی شده مهر می‌گیرد
