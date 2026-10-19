@@ -60,7 +60,12 @@ export function diffProducts(oldProducts = [], newProducts = []) {
       });
     }
 
-    if (op.maxAmount !== np.maxAmount || op.minAmount !== np.minAmount) {
+    // قیمت هر واحد صندوق (minAmount) هر روز با NAV بالا/پایین می‌رود؛ این
+    // «تغییر سقف مبلغ محصول» نیست و گزارش هفتگی را با ده‌ها تغییر بی‌معنا پر
+    // می‌کند. برای صندوق‌ها فقط تغییر سقف (که وجود ندارد) دیده می‌شود.
+    const fundUnitPriceOnly =
+      np.category === 'funds' && op.maxAmount === np.maxAmount && op.minAmount !== np.minAmount;
+    if (!fundUnitPriceOnly && (op.maxAmount !== np.maxAmount || op.minAmount !== np.minAmount)) {
       amountChanged.push({
         id,
         bank: np.bank,

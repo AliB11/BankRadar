@@ -20,7 +20,9 @@ import {
   normalizeRow,
   rejectReason,
   mapFundToProduct,
+  canonicalJalali,
   collect,
+  extractRows,
   fundBenefit,
   rowDateToIso,
   fundPageUrl,
@@ -129,6 +131,100 @@ test('ردیف API (return.oneYear / buyPrice / typeId) و ردیف برش هر 
   assert.equal(snap.oneYear, api.oneYear);
   assert.equal(snap.site, 'https://fund1.ariaamc.ir');
   assert.equal(snap.guarantor, null, '«ندارد» باید به null تبدیل شود');
+});
+
+test('پاسخ سرویس با پوشش {data:{data:[…]}} و فیلدهای تخت خوانده می‌شود', () => {
+  // شکل واقعی سرویس (نمونهٔ ۱۴۰۵/۰۷/۲۵): ردیف‌ها داخل data.data و نام
+  // پراپرتی‌های تودرتو به‌صورت تخت («return.oneYear»).
+  const live = {
+    data: {
+      market: 'fund',
+      totalLength: 2,
+      data: [
+        {
+          id: 5247,
+          name: 'ثبات نوید',
+          date: '14050725',
+          'return.oneYear': 34.6,
+          'return.oneMonth': 2.47,
+          buyPrice: 2332274,
+          sellPrice: 2330065,
+          manager: 'سبدگردان نوید',
+          typeId: 30,
+          isETF: 0,
+          totalNAV: 448395489379,
+          startDate: '14020705',
+          site: 'http://sobatfund.navidfg.com',
+          rasamUrl: 'https://sobatfund.irasam.ir/#/login',
+        },
+      ],
+    },
+    meta: { shamsiDate: '14050727104822935' },
+  };
+  const rows = extractRows(live);
+  assert.equal(rows.length, 1);
+  assert.equal(extractRows([{ id: 1 }]).length, 1);
+  assert.equal(extractRows({ data: [{ id: 1 }] }).length, 1);
+  assert.equal(extractRows({ nope: true }).length, 0);
+
+  const row = normalizeRow(rows[0]);
+  assert.equal(row.id, 5247);
+  assert.equal(row.oneYear, 34.6);
+  assert.equal(row.oneMonth, 2.47);
+  assert.equal(row.issuePrice, 2332274);
+  assert.equal(row.redeemPrice, 2330065);
+  assert.equal(row.navBillionRial, 448.4, 'totalNAV ریالی به میلیارد ریال تبدیل می‌شود');
+  assert.equal(row.started, '1402/07/05');
+  assert.equal(row.date, '1405/07/25');
+  assert.equal(row.etf, false);
+  assert.equal(rowDateToIso(row.date), '2026-10-17');
+  assert.equal(rejectReason(row), null);
+});
+
+test('تاریخ فشردهٔ سرویس (14050725) در همهٔ تبدیل‌ها پذیرفته می‌شود', () => {
+  assert.equal(rowDateToIso('14050725'), '2026-10-17');
+  assert.equal(rowDateToIso('۱۴۰۵۰۷۲۵'), '2026-10-17');
+  assert.equal(canonicalJalali('14050725'), '1405/07/25');
+  // تاریخ بی‌معنا نباید به برچسب تبدیل شود
+  assert.equal(rowDateToIso('1405'), null);
+  assert.equal(canonicalJalali(''), null);
+});
+
+test('برش ذخیره‌شده مهر بازبینی نمی‌گیرد و برچسب snapshot دارد', async () => {
+  const result = await collect({ existing: curatedBase, banks, snapshot: FIXTURE, today: TODAY, probePage: false });
+  assert.equal(result.live, false);
+  assert.match(result.origin, /^snapshot:/);
+  for (const p of result.products) {
+    assert.equal(p.lastVerified, undefined, `${p.id}: برش نباید lastVerified بگیرد`);
+    if (p.autoDiscovered) {
+      assert.equal(p.source.kind, 'snapshot');
+      assert.equal(p.source.checked, undefined);
+    }
+  }
+  const { merged } = mergeProducts(curatedBase, result.products);
+  const fund = merged.find((p) => p.id === 'fund-yara-aria');
+  assert.equal(fund.lastVerified, undefined, 'ادغام هم مهر نمی‌زند');
+});
+
+test('نگاشت زندهٔ همان صندوق، مهر بازبینی و منبع aggregator می‌گیرد', () => {
+  const row = normalizeRow({
+    id: 5141,
+    name: 'یارا',
+    date: '14050725',
+    'return.oneYear': 42.79,
+    'return.oneMonth': 3.36,
+    buyPrice: 36267,
+    manager: 'سبد گردان آریا',
+    typeId: 43,
+    isETF: 1,
+  });
+  const p = mapFundToProduct(row, { banks, existing: curatedBase, today: '2026-10-19', live: true });
+  assert.equal(p.lastVerified, '2026-10-19');
+  assert.equal(p.source.kind, 'aggregator');
+  assert.equal(p.source.checked, '2026-10-19');
+  assert.equal(p.lastUpdated, '2026-10-17');
+  assert.equal(p.lastSeen, '2026-10-19');
+  assert.equal(p.live, true);
 });
 
 test('صندوق‌های غیر درآمد ثابت، نوپا یا بدون بازدهی رد می‌شوند', () => {
@@ -342,19 +438,21 @@ test('اجرای دوباره روی همان برش، تغییری ایجاد �
   assert.ok(stats.unchanged >= 59, `انتظار ≥۵۹ بی‌تغییر، دریافت ${stats.unchanged}`);
 });
 
-test('داده‌های فعلی products.json با خروجی برش هم‌خوان است (۷۳ صندوق، همان نرخ‌ها)', () => {
+test('داده‌های فعلی products.json برای هر صندوق فرادادهٔ آی‌سیگنال سازگار دارد', () => {
+  // پس از زنده‌شدن منبع، تعداد و نرخ‌ها از برش ثابت جلو می‌زنند؛ آزمون
+  // به‌جای برابری با برش، سازگاری درونی رکوردها را می‌سنجد.
   const funds = products.filter((p) => p.category === 'funds');
-  assert.equal(funds.length, 73);
-  for (const r of snapshot.rows) {
-    const meta = KNOWN_FUNDS[r.id];
-    const id = meta.existingId || `fund-${meta.slug}`;
-    const p = funds.find((f) => f.id === id);
-    assert.ok(p, `صندوق ${id} در products.json نیست`);
-    assert.equal(p.rate, Math.round(r.oneYear * 100) / 100, `نرخ ${id}`);
-    assert.equal(p.subcategory, FIXED_INCOME_TYPES[r.typeId]);
+  assert.ok(funds.length >= 73, `تعداد صندوق‌ها ${funds.length}`);
+  for (const p of funds) {
     const isignal = p.extra?.isignalId ? p.extra : p.extra?.isignal;
-    assert.equal(isignal?.isignalId, r.id, `فرادادهٔ آی‌سیگنال برای ${id}`);
+    assert.ok(isignal, `${p.id}: فرادادهٔ آی‌سیگنال ندارد`);
+    assert.ok(Number.isInteger(isignal.isignalId), `${p.id}: شناسهٔ آی‌سیگنال نامعتبر`);
+    assert.ok(['etf', 'issuance-redemption'].includes(p.subcategory), `${p.id}: زیردسته ${p.subcategory}`);
+    // نرخ نمایش‌داده‌شده باید همان بازدهی یک‌سالهٔ ذخیره‌شده باشد (گرد به ۲ رقم)
+    assert.equal(p.rate, Math.round(isignal.returns.oneYear * 100) / 100, `${p.id}: نرخ با فراداده نمی‌خواند`);
   }
+  const ids = funds.map((p) => (p.extra?.isignalId ?? p.extra?.isignal?.isignalId));
+  assert.equal(new Set(ids).size, ids.length, 'شناسهٔ تکراری آی‌سیگنال');
 });
 
 /* ---------- بهداشت نام صندوق‌ها ---------- */

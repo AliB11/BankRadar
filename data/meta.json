@@ -8,207 +8,53 @@
     "loyalty": 14,
     "total": 354
   },
-  "lastRun": "2026-10-19T09:10:37.502Z",
-  "lastRunDurationMs": 188429,
-  "lastRunMode": "full",
+  "lastRun": "2026-10-19T07:40:31.710Z",
+  "lastRunDurationMs": 169915,
+  "lastRunMode": "weekly-sync",
   "sources": [
     {
-      "attempted": 150,
+      "attempted": 161,
       "discovered": 612,
-      "failures": 0,
-      "fresh": 120,
-      "ms": 21412,
+      "ms": 109273,
       "name": "rade.ir",
       "ok": true,
-      "parsed": 150,
-      "rotated": 30
+      "parsed": 143
     },
     {
-      "detail": [
-        {
-          "id": "cbi-rates",
-          "ok": true,
-          "rates": [],
-          "url": "https://www.cbi.ir/simplelist/2088.aspx"
-        },
-        {
-          "id": "cbi-circulars",
-          "ok": true,
-          "rates": [],
-          "url": "https://www.cbi.ir/simplelist/1466.aspx"
-        },
-        {
-          "id": "saman",
-          "ok": true,
-          "rates": [],
-          "url": "https://www.sb24.ir/"
-        },
-        {
-          "id": "bankino",
-          "ok": true,
-          "rates": [],
-          "url": "https://bankino.digital/"
-        },
-        {
-          "error": "HTTP 403 Forbidden (HTTP 403) — https://bmi.ir/fa/deposit",
-          "id": "melli-deposit",
-          "ok": false,
-          "url": "https://bmi.ir/fa/deposit"
-        },
-        {
-          "error": "شبکه در دسترس نبود — https://bankmellat.ir/deposits",
-          "id": "mellat-deposit",
-          "ok": false,
-          "url": "https://bankmellat.ir/deposits"
-        },
-        {
-          "error": "شبکه در دسترس نبود — https://tejaratbank.ir/دپارتمان-حساب-سپرده",
-          "id": "tejarat-deposit",
-          "ok": false,
-          "url": "https://tejaratbank.ir/دپارتمان-حساب-سپرده"
-        },
-        {
-          "error": "شبکه در دسترس نبود — https://www.bsi.ir/Services/Deposits",
-          "id": "saderat-deposit",
-          "ok": false,
-          "url": "https://www.bsi.ir/Services/Deposits"
-        },
-        {
-          "error": "شبکه در دسترس نبود — https://banksepah.ir/سپرده",
-          "id": "sepah-deposit",
-          "ok": false,
-          "url": "https://banksepah.ir/سپرده"
-        },
-        {
-          "error": "شبکه در دسترس نبود — https://www.enbank.ir/",
-          "id": "eghtesad-novin",
-          "ok": false,
-          "url": "https://www.enbank.ir/"
-        },
-        {
-          "error": "شبکه در دسترس نبود — https://parsian-bank.ir/",
-          "id": "parsian",
-          "ok": false,
-          "url": "https://parsian-bank.ir/"
-        },
-        {
-          "error": "HTTP 403 Forbidden (HTTP 403) — https://www.bpi.ir/",
-          "id": "pasargad",
-          "ok": false,
-          "url": "https://www.bpi.ir/"
-        },
-        {
-          "error": "شبکه در دسترس نبود — https://www.refah-bank.ir/",
-          "id": "refah",
-          "ok": false,
-          "url": "https://www.refah-bank.ir/"
-        },
-        {
-          "error": "شبکه در دسترس نبود — https://www.bank-maskan.ir/",
-          "id": "maskan",
-          "ok": false,
-          "url": "https://www.bank-maskan.ir/"
-        },
-        {
-          "error": "شبکه در دسترس نبود — https://www.karafarinbank.ir/",
-          "id": "karafarin",
-          "ok": false,
-          "url": "https://www.karafarinbank.ir/"
-        },
-        {
-          "error": "شبکه در دسترس نبود — https://www.shahr-bank.ir/",
-          "id": "shahr",
-          "ok": false,
-          "url": "https://www.shahr-bank.ir/"
-        },
-        {
-          "error": "شبکه در دسترس نبود — https://www.sinabank.ir/",
-          "id": "sina",
-          "ok": false,
-          "url": "https://www.sinabank.ir/"
-        },
-        {
-          "error": "شبکه در دسترس نبود — https://www.qmb.ir/",
-          "id": "mehr-iran",
-          "ok": false,
-          "url": "https://www.qmb.ir/"
-        },
-        {
-          "error": "شبکه در دسترس نبود — https://www.rqbank.ir/",
-          "id": "resalat",
-          "ok": false,
-          "url": "https://www.rqbank.ir/"
-        },
-        {
-          "error": "شبکه در دسترس نبود — https://blubank.com/",
-          "id": "blubank",
-          "ok": false,
-          "url": "https://blubank.com/"
-        },
-        {
-          "error": "شبکه در دسترس نبود — https://wepod.ir/",
-          "id": "vipad",
-          "ok": false,
-          "url": "https://wepod.ir/"
-        },
-        {
-          "error": "شبکه در دسترس نبود — https://www.mebank.ir/",
-          "id": "middle-east",
-          "ok": false,
-          "url": "https://www.mebank.ir/"
-        },
-        {
-          "error": "شبکه در دسترس نبود — https://www.bki.ir/",
-          "id": "keshavarzi",
-          "ok": false,
-          "url": "https://www.bki.ir/"
-        },
-        {
-          "error": "شبکه در دسترس نبود — https://www.gardeshgari-bank.com/",
-          "id": "gardeshgari",
-          "ok": false,
-          "url": "https://www.gardeshgari-bank.com/"
-        },
-        {
-          "error": "HTTP 403 Forbidden (HTTP 403) — https://tobank.ir/",
-          "id": "tobank",
-          "ok": false,
-          "url": "https://tobank.ir/"
-        }
-      ],
-      "ms": 103671,
+      "ms": 111422,
       "name": "bank-sites",
       "ok": true,
       "reachable": 4,
       "targets": 25
     },
     {
-      "ms": 28209,
+      "ms": 27407,
       "name": "macro-indicators",
       "ok": true,
-      "sourcesOk": 2,
       "touched": []
     },
     {
-      "ms": 1532,
+      "error": "شبکه در دسترس نبود — https://dgshahr.com/blog/best-banks-for-deposit-rates/",
+      "ms": 33411,
       "name": "dgshahr.com",
-      "ok": true,
-      "parsed": 31,
-      "schemes": 13,
-      "standard": 6,
-      "tiers": 51
+      "ok": false
     },
     {
-      "etf": 43,
-      "issuance": 30,
-      "ms": 33504,
+      "etf": 38,
+      "issuance": 29,
+      "live": true,
+      "ms": 2271,
       "name": "isignal.ir",
       "ok": true,
-      "origin": "fallback:isignal-funds-1405-07-05.json",
-      "parsed": 73,
+      "origin": "api:signalpardazgroup.com",
+      "page": {
+        "bytes": 88517,
+        "ok": true,
+        "url": "https://isignal.ir/fund/"
+      },
+      "parsed": 67,
       "refreshed": 8,
-      "rows": 73,
-      "skipped": 0
+      "unmapped": 94
     }
   ],
   "stale": 0,
