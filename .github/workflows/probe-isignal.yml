@@ -18,12 +18,10 @@ jobs:
           mkdir -p .probe/api
           UA='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36'
           BASE='https://advancedchart.isignal.ir/service/signalData@4.0.0'
-          cat > .probe/api/old.json <<'JSON'
-          {"market":"fund","sortBy":{"key":"return.oneYear","order":"desc"},"selectProperties":{"properties":["id","name","date","return.oneYear","return.oneMonth","buyPrice","manager","typeId"]}}
-          JSON
-          cat > .probe/api/new.json <<'JSON'
-          {"market":"fund","sortBy":{"sortBy":"return.oneYear","desc":true},"property":["id","name","date","return.oneYear","return.sixMonth","return.threeMonth","return.oneMonth","return.oneWeek","buyPrice","manager","rasamUrl","typeId"]}
-          JSON
+          OLD='{"market":"fund","sortBy":{"key":"return.oneYear","order":"desc"},"selectProperties":{"properties":["id","name","date","return.oneYear","return.oneMonth","buyPrice","manager","typeId"]}}'
+          NEW='{"market":"fund","sortBy":{"sortBy":"return.oneYear","desc":true},"property":["id","name","date","return.oneYear","return.sixMonth","return.threeMonth","return.oneMonth","return.oneWeek","buyPrice","manager","rasamUrl","typeId"]}'
+          printf '%s' "$OLD" > .probe/api/old.json
+          printf '%s' "$NEW" > .probe/api/new.json
           call() {
             name="$1"; shift
             code=$(curl -sS --http1.1 -m 45 -A "$UA" -o ".probe/api/$name.out" -w '%{http_code}' "$@" 2>".probe/api/$name.err" || echo ERR)
@@ -49,6 +47,7 @@ jobs:
           " >> .probe/api/summary.txt 2>&1
           ls -la .probe/api
       - name: Commit probe output
+        if: always()
         run: |
           git config user.name 'probe-bot'
           git config user.email 'probe-bot@users.noreply.github.com'
