@@ -137,7 +137,7 @@ test('detectAnomalies انحرافات نرخ سپرده و سقف‌های تس
 
 /* ---------- ۵) ممیزی رکوردهای دست‌نویس ---------- */
 
-test('auditCuratedProducts تاریخ کنترل رکوردهای دست‌نویس را به‌روزرسانی می‌کند', () => {
+test('auditCuratedProducts بدون تأیید واقعی هیچ مهری نمی‌زند', () => {
   const products = [
     {
       id: 'curated-1',
@@ -145,6 +145,7 @@ test('auditCuratedProducts تاریخ کنترل رکوردهای دست‌نو�
       product: 'سپرده دستی',
       source: { url: 'https://bank.ir', checked: '2026-08-01' },
       lastUpdated: '2026-08-01',
+      lastVerified: '2026-08-01',
     },
     {
       id: 'auto-1',
@@ -155,12 +156,20 @@ test('auditCuratedProducts تاریخ کنترل رکوردهای دست‌نو�
     },
   ];
 
-  const { audited, verifiedCount } = auditCuratedProducts(products, { date: '2026-09-19' });
-  assert.equal(verifiedCount, 1);
-  assert.equal(audited[0].lastVerified, '2026-09-19');
-  assert.equal(audited[0].source.checked, '2026-09-19');
-  // رکورد خودکار دست‌نخورده می‌ماند
-  assert.equal(audited[1].lastVerified, undefined);
+  // بدون فهرست تأییدشده: هیچ رکوردی مهر تازه نمی‌خورد و همه در pending می‌آیند
+  const plain = auditCuratedProducts(products, { date: '2026-09-19' });
+  assert.equal(plain.verifiedCount, 0);
+  assert.equal(plain.pending.length, 1);
+  assert.equal(plain.audited[0].lastVerified, '2026-08-01', 'تاریخ قبلی دست‌نخورده می‌ماند');
+  assert.equal(plain.audited[0].source.checked, '2026-08-01');
+  assert.equal(plain.audited[1].lastVerified, undefined, 'رکورد خودکار دست‌نخورده می‌ماند');
+
+  // فقط شناسه‌ای که واقعاً بررسی شده مهر می‌گیرد
+  const verified = auditCuratedProducts(products, { date: '2026-09-19', verifiedIds: ['curated-1'] });
+  assert.equal(verified.verifiedCount, 1);
+  assert.equal(verified.audited[0].lastVerified, '2026-09-19');
+  assert.equal(verified.audited[0].source.checked, '2026-09-19');
+  assert.equal(verified.pending.length, 0);
 });
 
 /* ---------- ۶) گزارش ممیزی هفتگی ---------- */

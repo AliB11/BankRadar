@@ -8,13 +8,23 @@
  * صدور/ابطالی در کنار سپرده‌های بانکی به دست می‌دهد.
  *
  * دو مسیر ورودی:
- *   ۱) برخط: جدول آی‌سیگنال سمت کاربر رندر می‌شود و داده‌اش را از
- *      `advancedchart.isignal.ir/service/signalData@4.0.0/list` (POST) می‌گیرد.
- *      همان درخواست را با همان بدنهٔ اسکریپت سایت می‌فرستیم و فقط نوع‌های
- *      «درآمد ثابت» (typeId 30 = صدور و ابطالی، 43 = ETF) را نگه می‌داریم.
+ *   ۱) برخط: جدول آی‌سیگنال **سمت کاربر رندر می‌شود**؛ HTML صفحهٔ /fund/ هیچ
+ *      ردیفی ندارد و داده را جاوااسکریپتِ `fund-list.build.js` از سرویس
+ *      `signalData@4.0.0/list` (POST) می‌گیرد. همان درخواست را با همان بدنهٔ
+ *      اسکریپت سایت می‌فرستیم و فقط نوع‌های «درآمد ثابت» (typeId 30 = صدور و
+ *      ابطالی، 43 = ETF) را نگه می‌داریم.
+ *
+ *      مهم: میزبان `advancedchart.isignal.ir` از شبکهٔ اجراکننده‌های CI
+ *      (GitHub Actions) با timeout در سطح TCP مسدود است، ولی همان سرویس روی
+ *      میزبان فروشندهٔ داده `signalpardazgroup.com` (که خودِ باندل سایت به‌عنوان
+ *      BASEURL دوم می‌شناسد) پاسخ می‌دهد. ترتیب تلاش: signalpardazgroup، سپس
+ *      advancedchart. صفحهٔ /fund/ هم به‌صورت مستقل بررسی می‌شود تا وضعیت آن در
+ *      گزارش منبع دیده شود.
  *   ۲) برون‌خط: `ISIGNAL_JSON_FILE=…` یا `snapshot` — برش JSON از صفحهٔ
  *      مقایسهٔ آی‌سیگنال (tests/fixtures/isignal-funds-*.json) که در محیط‌های
  *      بدون دسترسی شبکه (CI محدود، سندباکس) همان نگاشت را تولید می‌کند.
+ *      رکوردهای برش هرگز «بازبینی‌شده» مهر نمی‌خورند؛ فقط دادهٔ زندهٔ شبکه
+ *      `lastVerified` می‌گیرد.
  *
  * اصل طراحی: این ماژول «چیزی حدس نمی‌زند». هرچه در ردیف نیست (سایت، ضامن،
  * NAV) در توضیحات حذف می‌شود؛ رکوردهای دست‌نویس (curated) فقط نرخ/برچسب/
@@ -35,6 +45,18 @@ const DEFAULT_SNAPSHOT_PATH = path.resolve(
 
 export const ISIGNAL_FUND_LIST_URL = 'https://isignal.ir/fund/';
 export const ISIGNAL_API_BASE = 'https://advancedchart.isignal.ir/service/signalData@4.0.0';
+/**
+ * میزبان‌های سرویس داده، به ترتیب تلاش.
+ *
+ * `signalpardazgroup.com` همان سرویسِ فروشندهٔ داده است (در باندل خود سایت
+ * به‌عنوان BASEURL دوم ثبت شده) و از شبکهٔ CI پاسخ می‌دهد؛
+ * `advancedchart.isignal.ir` میزبان اصلی صفحه است ولی برای درخواست‌های
+ * GitHub Actions مسیر شبکه ندارد (curl: timeout در TCP، بدون پاسخ HTTP).
+ */
+export const ISIGNAL_API_HOSTS = Object.freeze([
+  'https://signalpardazgroup.com/service/signalData@4.0.0',
+  ISIGNAL_API_BASE,
+]);
 export const ISIGNAL_SOURCE_NAME = 'isignal.ir';
 
 /** نوع‌های صندوق در آی‌سیگنال که «درآمد ثابت» به شمار می‌آیند */
@@ -46,27 +68,32 @@ export const FIXED_INCOME_TYPES = Object.freeze({
 /** بازهٔ معقول بازدهی یک‌سالهٔ صندوق درآمد ثابت؛ خارج از آن = دادهٔ ناقص/نوپا */
 export const SANE_RETURN_RANGE = Object.freeze({ min: 5, max: 70 });
 
-/** بدنهٔ درخواست فهرست — عیناً همان چیزی که اسکریپت fund-list سایت می‌فرستد */
+/**
+ * بدنهٔ درخواست فهرست — عیناً همان چیزی که اسکریپت fund-list سایت می‌فرستد.
+ *
+ * شکلِ درست از باندل سایت: `sortBy: {sortBy, desc}` و `property: [...]`
+ * (نه `sortBy: {key, order}` و `selectProperties` که شکل قدیمی و نامعتبر است).
+ * سرویس فعلاً همهٔ فیلدها را برمی‌گرداند، حتی اگر در `property` نیامده باشند؛
+ * فهرست زیر همان مجموعهٔ مورد استفادهٔ خود سایت است تا اگر روزی سرور آن را
+ * جدی گرفت، چیزی از دست نرود.
+ */
 export const LIST_PAYLOAD = Object.freeze({
   market: 'fund',
-  sortBy: { key: 'return.oneYear', order: 'desc' },
-  selectProperties: {
-    properties: [
-      'id',
-      'name',
-      'date',
-      'return.oneYear',
-      'return.sixMonth',
-      'return.threeMonth',
-      'return.oneMonth',
-      'return.oneWeek',
-      'buyPrice',
-      'sellPrice',
-      'manager',
-      'rasamUrl',
-      'typeId',
-    ],
-  },
+  sortBy: { sortBy: 'return.oneYear', desc: true },
+  property: [
+    'id',
+    'name',
+    'date',
+    'return.oneYear',
+    'return.sixMonth',
+    'return.threeMonth',
+    'return.oneMonth',
+    'return.oneWeek',
+    'buyPrice',
+    'manager',
+    'rasamUrl',
+    'typeId',
+  ],
 });
 
 /* ------------------------------------------------------------------ */
@@ -243,14 +270,15 @@ export function fundPageUrl(name) {
 
 /**
  * تبدیل تاریخ ردیف به ISO میلادی.
- * ورودی‌های پذیرفته: «1405/07/05»، «۱۴۰۵/۰۷/۰۵»، «1405-07-05»، «2026-09-27» (ISO).
+ * ورودی‌های پذیرفته: «1405/07/05»، «۱۴۰۵/۰۷/۰۵»، «1405-07-05»، «14050725»
+ * (شکل فشردهٔ سرویس داده) و «2026-09-27» (ISO).
  */
 export function rowDateToIso(value) {
   if (!value) return null;
   const t = normalizeText(value);
   const iso = t.match(/^(\d{4})-(\d{2})-(\d{2})/);
   if (iso && Number(iso[1]) >= 1900) return `${iso[1]}-${iso[2]}-${iso[3]}`;
-  const j = t.match(/^(\d{4})[/-](\d{1,2})[/-](\d{1,2})/);
+  const j = t.match(/^(\d{4})[/-](\d{1,2})[/-](\d{1,2})/) || t.match(/^(\d{4})(\d{2})(\d{2})$/);
   if (!j) return null;
   const jy = Number(j[1]);
   const jm = Number(j[2]);
@@ -260,10 +288,14 @@ export function rowDateToIso(value) {
   return `${gy}-${String(gm).padStart(2, '0')}-${String(gd).padStart(2, '0')}`;
 }
 
-/** تاریخ شمسی به شکل «1405/07/05» (ورودی ممکن است با ارقام فارسی یا خط تیره باشد) */
+/**
+ * تاریخ شمسی به شکل «1405/07/05».
+ * ورودی ممکن است با ارقام فارسی، خط تیره، یا شکل فشردهٔ سرویس («14050725») باشد.
+ */
 export function canonicalJalali(value) {
   if (!value) return null;
-  const j = normalizeText(value).match(/^(\d{4})[/-](\d{1,2})[/-](\d{1,2})/);
+  const t = normalizeText(value);
+  const j = t.match(/^(\d{4})[/-](\d{1,2})[/-](\d{1,2})/) || t.match(/^(\d{4})(\d{2})(\d{2})$/);
   if (!j) return null;
   return `${j[1]}/${j[2].padStart(2, '0')}/${j[3].padStart(2, '0')}`;
 }
@@ -272,9 +304,22 @@ export function canonicalJalali(value) {
 /* نرمال‌سازی ردیف‌ها                                                 */
 /* ------------------------------------------------------------------ */
 
+/**
+ * نخستین مقدار موجود از میان چند کلید.
+ *
+ * سرویس داده نام پراپرتی‌های تودرتو را **تخت** برمی‌گرداند (`"return.oneYear":
+ * 34.6`)، حال آنکه برش ذخیره‌شده آن‌ها را تودرتو دارد (`{return:{oneYear}}`).
+ * هر دو شکل باید یکسان خوانده شوند؛ در غیر این صورت همهٔ ردیف‌های زنده «بدون
+ * بازدهی» تلقی و دور ریخته می‌شدند.
+ */
 const pick = (obj, ...keys) => {
   for (const k of keys) {
-    const v = k.split('.').reduce((o, part) => (o == null ? undefined : o[part]), obj);
+    if (obj == null) return null;
+    const flat = obj[k];
+    const v =
+      flat !== undefined && flat !== null && flat !== ''
+        ? flat
+        : k.split('.').reduce((o, part) => (o == null ? undefined : o[part]), obj);
     if (v !== undefined && v !== null && v !== '') return v;
   }
   return null;
@@ -300,12 +345,21 @@ export function normalizeRow(raw) {
   if (!id || !name) return null;
 
   const typeId = num(pick(raw, 'typeId', 'type.id'));
+  // سرویس داده علاوه بر typeId، پرچم isETF (۰/۱) هم می‌دهد؛ هر دو باید
+  // یکسان خوانده شوند تا صندوق ETF صدور/ابطالی برچسب نخورد.
+  const etfFlag = num(pick(raw, 'isETF', 'etfFlag'));
   const etf =
     typeof raw.etf === 'boolean'
-      ? raw.etf
+      ? raw.etf || etfFlag === 1
       : typeId != null
-        ? typeId === 43
-        : /etf/i.test(String(pick(raw, 'type', 'typeName', 'kind') || ''));
+        ? typeId === 43 || etfFlag === 1
+        : etfFlag === 1 || /etf/i.test(String(pick(raw, 'type', 'typeName', 'kind') || ''));
+
+  // خالص ارزش دارایی: سرویس «totalNAV» را به ریال می‌دهد؛ faNavToman
+  // ورودی «میلیارد ریال» می‌خواهد. اگر مقدار آماده نبود، تقسیم انجام می‌شود.
+  const totalNavRial = num(pick(raw, 'totalNAV', 'totalNav'));
+  const navBillionRial = num(pick(raw, 'navBillionRial', 'navB', 'nav'))
+    ?? (totalNavRial != null && totalNavRial > 0 ? Math.round((totalNavRial / 1e9) * 10) / 10 : null);
 
   const guarantorRaw = normalizeText(pick(raw, 'guarantor', 'liquidityGuarantor') || '');
   const guarantor = guarantorRaw && !/^(ندارد|-|—)$/.test(guarantorRaw) ? guarantorRaw : null;
@@ -326,11 +380,13 @@ export function normalizeRow(raw) {
     oneWeek: num(pick(raw, 'oneWeek', 'return.oneWeek')),
     issuePrice: num(pick(raw, 'issuePrice', 'buyPrice', 'issue')),
     redeemPrice: num(pick(raw, 'redeemPrice', 'sellPrice', 'redeem')),
-    navBillionRial: num(pick(raw, 'navBillionRial', 'navB', 'nav')),
+    navBillionRial,
     guarantor,
     site,
     started: canonicalJalali(pick(raw, 'started', 'inception', 'startDate')),
-    date: canonicalJalali(pick(raw, 'date', 'updated', 'dataDate')) || pick(raw, 'date', 'updated', 'dataDate'),
+    // روز داده: سرویس «14050725» می‌دهد، برش «1405/07/05»؛ هر دو به قالب
+    // یکسان تبدیل می‌شوند تا برچسب و lastUpdated درست ساخته شوند.
+    date: canonicalJalali(pick(raw, 'date', 'updated', 'dataDate', 'asset.date')),
     rasamUrl: pick(raw, 'rasamUrl') || null,
   };
 }
@@ -482,6 +538,10 @@ export function mapFundToProduct(row, ctx = {}) {
   const banks = ctx.banks || [];
   const existing = ctx.existing || [];
   const now = ctx.today || today();
+  // فقط داده‌ای که همین حالا از شبکه آمده «بازبینی‌شده» است. برش ذخیره‌شده
+  // (snapshot) تاریخ کنترل نمی‌گیرد؛ وگرنه دادهٔ یک‌ماه‌پیش با مهر امروز در
+  // داشبورد «تازه» دیده می‌شود — همان خطایی که ممیزی گرفت.
+  const live = ctx.live !== false;
 
   const rate = round2(row.oneYear);
   const dataDateIso = rowDateToIso(row.date) || now;
@@ -505,7 +565,10 @@ export function mapFundToProduct(row, ctx = {}) {
       rateLabel,
       extra: { ...(curated.extra || {}), isignal: extra },
       lastUpdated,
-      lastSeen: now,
+      // در حالت برش، کلیدهای تاریخ کنترل اصلاً فرستاده نمی‌شوند تا مقدار
+      // واقعیِ قبلی پاک نشود؛ نبودشان یعنی «امروز چیزی تأیید نشد».
+      ...(live ? { lastSeen: now, lastVerified: now } : {}),
+      live,
     };
   }
 
@@ -579,13 +642,13 @@ export function mapFundToProduct(row, ctx = {}) {
     regulatory: true,
     autoDiscovered: true,
     lastUpdated,
-    lastSeen: now,
-    lastVerified: now,
+    ...(live ? { lastSeen: now, lastVerified: now } : {}),
+    live,
     source: {
       title: `آی‌سیگنال — صندوق ${short}`,
       url: fundPageUrl(row.name),
-      kind: 'aggregator',
-      checked: now,
+      kind: live ? 'aggregator' : 'snapshot',
+      ...(live ? { checked: now } : { note: 'برش ذخیره‌شده؛ سرویس زنده در دسترس نبود' }),
     },
     extra,
   };
@@ -596,20 +659,81 @@ export function mapFundToProduct(row, ctx = {}) {
 /* ------------------------------------------------------------------ */
 
 /** فهرست صندوق‌ها از API آی‌سیگنال (همان درخواستی که صفحهٔ /fund/ می‌فرستد) */
-export async function fetchFundList({ log = () => {} } = {}) {
-  const url = `${ISIGNAL_API_BASE}/list`;
-  const res = await get(url, {
-    method: 'POST',
-    body: LIST_PAYLOAD,
-    as: 'json',
-    accept: 'application/json',
-    headers: { 'gateway-system': 'signal', Referer: ISIGNAL_FUND_LIST_URL, Origin: 'https://isignal.ir' },
-    timeout: 25_000,
-  });
-  const rows = Array.isArray(res) ? res : res?.data ?? res?.items ?? res?.result ?? [];
-  if (!Array.isArray(rows)) throw new Error('پاسخ فهرست صندوق‌های آی‌سیگنال آرایه نبود');
-  log(`آی‌سیگنال: ${rows.length} ردیف از API دریافت شد`);
-  return rows;
+/**
+ * استخراج ردیف‌ها از پاسخ سرویس.
+ *
+ * پاسخ فعلی `{data:{market,data:[...],totalLength},meta:{...}}` است؛ شکل‌های
+ * قدیمی‌تر (آرایهٔ خالص یا `{data:[...]}`) هم پذیرفته می‌شوند تا تغییر
+ * پوشش پاسخ، منبع را یک‌باره از کار نیندازد.
+ */
+export function extractRows(res) {
+  if (Array.isArray(res)) return res;
+  const d = res?.data;
+  if (Array.isArray(d?.data)) return d.data;
+  if (Array.isArray(d)) return d;
+  for (const k of ['items', 'result', 'rows']) {
+    if (Array.isArray(res?.[k])) return res[k];
+    if (Array.isArray(d?.[k])) return d[k];
+  }
+  return [];
+}
+
+/**
+ * فهرست صندوق‌ها از سرویس داده (همان درخواستی که صفحهٔ /fund/ می‌فرستد).
+ * میزبان‌ها به ترتیب امتحان می‌شوند؛ اولین پاسخی که ردیف داشته باشد برنده است.
+ * @returns {Promise<{rows:Array, origin:string, attempts:Array}>}
+ */
+export async function fetchFundList({ log = () => {}, timeout = 25_000 } = {}) {
+  const attempts = [];
+  for (const base of ISIGNAL_API_HOSTS) {
+    const host = new URL(base).host;
+    try {
+      const res = await get(`${base}/list`, {
+        method: 'POST',
+        body: LIST_PAYLOAD,
+        as: 'json',
+        accept: 'application/json',
+        headers: { 'gateway-system': 'signal', Referer: ISIGNAL_FUND_LIST_URL, Origin: 'https://isignal.ir' },
+        timeout,
+        // بدون تلاش مجدد: اگر میزبان مسیر شبکه نداشته باشد (timeout)،
+        // تکرار فقط وقت اجرا را می‌بلعد؛ میزبان بعدی سریع امتحان می‌شود.
+        retries: 0,
+      });
+      const rows = extractRows(res);
+      if (!rows.length) throw new Error('پاسخ بدون ردیف');
+      log(`آی‌سیگنال: ${rows.length} ردیف از ${host} دریافت شد`);
+      return { rows, origin: `api:${host}`, attempts: [...attempts, { host, ok: true, rows: rows.length }] };
+    } catch (err) {
+      attempts.push({ host, ok: false, error: err.message });
+      log(`آی‌سیگنال: ${host} پاسخ نداد (${err.message})`);
+    }
+  }
+  const detail = attempts.map((a) => `${a.host}: ${a.error}`).join('؛ ');
+  throw new Error(`هیچ‌یک از میزبان‌های سرویس داده پاسخ نداد — ${detail}`);
+}
+
+/**
+ * بررسی مستقل صفحهٔ عمومی /fund/ (همان نشانی‌ای که کاربر داده است).
+ * این بررسی فقط برای «وضعیت صفحه» است؛ ردیف‌ها را از سرویس داده می‌خوانیم
+ * چون جدول در HTML نیست و جاوااسکریپت آن را می‌سازد. هرگز خطا پرتاب نمی‌کند.
+ */
+export async function probeFundPage({ log = () => {}, timeout = 15_000 } = {}) {
+  try {
+    const res = await get(ISIGNAL_FUND_LIST_URL, {
+      as: 'text',
+      accept: 'text/html',
+      headers: { 'user-agent': 'BankRadar/1.0 (+https://alib11.github.io/BankRadar/)' },
+      timeout,
+      retries: 0,
+    });
+    const html = String(res || '');
+    const ok = html.length > 1000 && /<html/i.test(html);
+    if (!ok) log(`آی‌سیگنال: صفحهٔ /fund/ پاسخ داد ولی HTML معتبر نبود (${html.length} بایت)`);
+    return { url: ISIGNAL_FUND_LIST_URL, ok, bytes: html.length };
+  } catch (err) {
+    log(`آی‌سیگنال: صفحهٔ /fund/ در دسترس نبود (${err.message})`);
+    return { url: ISIGNAL_FUND_LIST_URL, ok: false, error: err.message };
+  }
 }
 
 /** بارگذاری برش JSON (فایل یا شیء) */
@@ -622,30 +746,55 @@ export async function loadSnapshot(source) {
 
 /**
  * جمع‌آوری: ردیف‌ها (API یا برش) → محصولات آمادهٔ ادغام.
- * @param {{existing?:Array, banks?:Array, snapshot?:string|object, log?:Function, today?:string}} [opts]
+ *
+ * @param {{existing?:Array, banks?:Array, snapshot?:string|object, log?:Function,
+ *   today?:string, onlyKnown?:boolean, probePage?:boolean}} [opts]
+ * @returns {Promise<{source:string,url:string,origin:string,live:boolean,page:object|null,
+ *   attempts:Array,rows:number,products:Array,etf:number,issuance:number,refreshed:number,
+ *   skipped:Array,unmapped:Array}>}
  */
-export async function collect({ existing = [], banks = [], snapshot, log = () => {}, today: now } = {}) {
+export async function collect({
+  existing = [],
+  banks = [],
+  snapshot,
+  log = () => {},
+  today: now,
+  // فقط صندوق‌هایی که هویت پایدار (slug/bankId/payout) دارند وارد پایگاه
+  // می‌شوند. صندوق تازهٔ بی‌نگاشت، شناسه و «بانک» خودساخته می‌سازد و
+  // فهرست بانک‌ها را با ده‌ها سبدگردان ناشناس شلوغ می‌کند؛ به‌جایش در
+  // خروجی به‌صورت unmapped گزارش می‌شود تا نگاشت بعداً افزوده شود.
+  onlyKnown = true,
+  probePage = true,
+} = {}) {
   const snapshotPath = snapshot || process.env.ISIGNAL_JSON_FILE || null;
   let rawRows;
   let origin;
+  let live = false;
+  let page = null;
+  let attempts = [];
   if (snapshotPath) {
     const loaded = await loadSnapshot(snapshotPath);
     rawRows = loaded.rows;
-    origin = typeof snapshotPath === 'string' ? `snapshot:${snapshotPath}` : 'snapshot:inline';
-    log(`آی‌سیگنال: ${rawRows.length} ردیف از برش برون‌خط (${loaded.meta?.dataDate || '?'}) بارگذاری شد`);
+    origin = typeof snapshotPath === 'string' ? `snapshot:${path.basename(snapshotPath)}` : 'snapshot:inline';
+    log(`آی‌سیگنال: ${rawRows.length} ردیف از برش برون‌خط (${loaded.meta?.dataDate || '?'}) بارگذاری شد — مهر بازبینی زده نمی‌شود`);
   } else {
     try {
-      rawRows = await fetchFundList({ log });
-      origin = 'api';
+      const fetched = await fetchFundList({ log });
+      rawRows = fetched.rows;
+      origin = fetched.origin;
+      attempts = fetched.attempts;
+      live = true;
     } catch (err) {
       const loaded = await loadSnapshot(DEFAULT_SNAPSHOT_PATH);
       rawRows = loaded.rows;
-      origin = `fallback:${path.basename(DEFAULT_SNAPSHOT_PATH)}`;
-      log(`آی‌سیگنال: API در دسترس نبود (${err.message})؛ ${rawRows.length} ردیف از برش پشتیبان بارگذاری شد`);
+      origin = `snapshot:${path.basename(DEFAULT_SNAPSHOT_PATH)}`;
+      log(`آی‌سیگنال: سرویس داده در دسترس نبود (${err.message})؛ ${rawRows.length} ردیف از برش پشتیبان بارگذاری شد — داده کهنه است و مهر بازبینی نمی‌گیرد`);
     }
+    if (probePage) page = await probeFundPage({ log });
   }
 
   const skipped = [];
+  const unmapped = [];
   const products = [];
   const seen = new Set();
   let etf = 0;
@@ -660,7 +809,11 @@ export async function collect({ existing = [], banks = [], snapshot, log = () =>
     }
     if (seen.has(row.id)) continue;
     seen.add(row.id);
-    const product = mapFundToProduct(row, { banks, existing, today: now });
+    if (onlyKnown && !KNOWN_FUNDS[row.id]) {
+      unmapped.push({ id: row.id, name: row.name, manager: row.manager, typeId: row.typeId });
+      continue;
+    }
+    const product = mapFundToProduct(row, { banks, existing, today: now, live });
     if (!product) continue;
     products.push(product);
     if (row.etf) etf += 1;
@@ -669,18 +822,26 @@ export async function collect({ existing = [], banks = [], snapshot, log = () =>
   }
 
   log(
-    `آی‌سیگنال: ${products.length} صندوق درآمد ثابت (${etf} ETF، ${issuance} صدور/ابطالی؛ ${refreshed} به‌روزرسانی رکورد دست‌نویس)، ${skipped.length} رد شد`,
+    `آی‌سیگنال: ${products.length} صندوق درآمد ثابت (${etf} ETF، ${issuance} صدور/ابطالی؛ ${refreshed} به‌روزرسانی رکورد دست‌نویس)، ${skipped.length} رد شد` +
+      (unmapped.length ? `، ${unmapped.length} صندوق بی‌نگاشت` : ''),
   );
+  if (unmapped.length) {
+    log(`آی‌سیگنال: بی‌نگاشت (نیازمند افزودن به KNOWN_FUNDS): ${unmapped.slice(0, 8).map((u) => u.name).join('، ')}${unmapped.length > 8 ? ' …' : ''}`);
+  }
 
   return {
     source: ISIGNAL_SOURCE_NAME,
     url: ISIGNAL_FUND_LIST_URL,
     origin,
+    live,
+    page,
+    attempts,
     rows: rawRows.length,
     products,
     etf,
     issuance,
     refreshed,
     skipped,
+    unmapped,
   };
 }

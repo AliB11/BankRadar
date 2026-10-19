@@ -16,6 +16,7 @@ jobs:
       - name: Probe spg detail fields
         continue-on-error: true
         run: |
+          set -o pipefail
           mkdir -p .probe/api5
           UA='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36'
           B='https://signalpardazgroup.com/service/signalData@4.0.0'

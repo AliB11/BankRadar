@@ -4649,64 +4649,59 @@
       "termMonths": 12
     },
     {
-      "amountLabel": "۳۰۰,۰۰۰,۰۰۰ تومان",
-      "audience": "متقاضیان تسهیلات بانکی",
+      "amountLabel": "۱۰ تا ۳۰۰ میلیون تومان",
+      "audience": "متقاضیان خرید قسطی موبایل، لپ‌تاپ و لوازم خانگی با چک صیادی",
       "autoDiscovered": true,
       "bank": "وان ایکس وام",
       "bankId": "1xvam",
-      "benefit": 73,
+      "benefit": 68,
       "category": "credit",
-      "ceilingContingent": false,
-      "collateral": "نامشخص",
-      "collateralKind": "credit-score",
+      "ceilingContingent": true,
+      "collateral": "یک برگ چک صیادی بنفش به نام متقاضی",
+      "collateralKind": "collateral",
       "confidence": "medium",
       "cons": [
         "الزام به داشتن چک صیادی بنفش و رتبه اعتباری A یا B"
       ],
       "contractType": "morabehe",
-      "desc": "وان ایکس وام",
-      "digital": 60,
-      "extra": {
-        "installment": 10253289,
-        "loanType": "خرید اقساطی",
-        "totalInterest": null,
-        "totalWithInterest": null
-      },
-      "friction": 72,
+      "desc": "پلتفرم «وان ایکس وام» امکان دریافت اعتبار خرید اقساطی کالا از ۱۰ تا ۳۰۰ میلیون تومان با بازپرداخت ۱۲، ۱۸، ۲۴ و ۳۶ ماهه را با ارائه یک برگ چک صیادی بنفش و اعتبارسنجی آنلاین فراهم می‌کند.",
+      "digital": 88,
+      "friction": 74,
       "id": "rade-707734",
       "lastSeen": "2026-10-17",
-      "lastUpdated": "2026-10-17",
+      "lastUpdated": "2026-08-29",
       "lastVerified": "2026-10-16",
       "maxAmount": 300000000,
-      "minAmount": null,
-      "multiPlan": false,
-      "product": "وان ایکس وام",
+      "minAmount": 10000000,
+      "product": "اعتبار خرید اقساطی وان ایکس وام (تا ۳۰۰ میلیون تومان)",
       "pros": [
         "سقف اعتبار تا ۳۰۰ میلیون تومان",
         "امکان بازپرداخت تا ۳۶ ماه"
       ],
       "rate": 14,
       "rateKind": "profit",
-      "rateLabel": "سود ۱۴٪",
+      "rateLabel": "نرخ سود ۱۴٪ تا ۲۳٪ (بسته به بانک عامل و طرح انتخابی)",
       "regulatory": false,
       "requirements": [
-        "قسط تقریبی: ۱۰,۲۵۳,۲۸۹ تومان"
+        "رتبه اعتباری مناسب در سامانه اعتبارسنجی",
+        "یک برگ چک صیادی بنفش"
       ],
       "source": {
         "checked": "2026-10-17",
         "kind": "aggregator",
-        "title": "رده — وان ایکس وام",
+        "title": "رده — اعتبار خرید اقساطی وان ایکس وام",
         "url": "https://www.rade.ir/installment/707734-%d9%88%d8%a7%d9%86-%d8%a7%db%8c%da%a9%d8%b3-%d9%88%d8%a7%d9%85/"
       },
-      "sourceKind": "aggregator",
-      "speed": 60,
+      "speed": 80,
       "stale": false,
       "subcategory": "bnpl",
       "tags": [
         "خرید اقساطی",
-        "وان ایکس وام"
+        "وان ایکس وام",
+        "چک صیادی",
+        "لندتک"
       ],
-      "termLabel": "۳۶ ماه",
+      "termLabel": "۱۲ تا ۳۶ ماهه",
       "termMonths": 36
     },
     {
@@ -4875,125 +4870,115 @@
       "termMonths": 12
     },
     {
-      "amountLabel": "۲۰۰,۰۰۰,۰۰۰ تومان",
-      "audience": "متقاضیان تسهیلات بانکی",
+      "amountLabel": "۱۰ تا ۲۰۰ میلیون تومان",
+      "audience": "بازنشستگان تأمین اجتماعی و دارندگان چک صیادی متقاضی خرید اقساطی کالا",
       "autoDiscovered": true,
       "bank": "باکالا",
       "bankId": "bakala",
-      "benefit": 41,
+      "benefit": 48,
       "category": "credit",
-      "ceilingContingent": false,
-      "collateral": "نامشخص",
-      "collateralKind": "credit-score",
+      "ceilingContingent": true,
+      "collateral": "چک صیادی بنفش (طرح چکالا) یا کسر از حقوق بازنشستگان و مستمری‌بگیران",
+      "collateralKind": "collateral",
       "confidence": "medium",
       "cons": [
         "نرخ سود و کارمزد بالا (۴۲٪ اسمی / ۵۱.۱٪ مؤثر)"
       ],
       "contractType": "morabehe",
-      "desc": "باکالا",
-      "digital": 60,
-      "extra": {
-        "installment": 12454566,
-        "loanType": "خرید اقساطی",
-        "totalInterest": null,
-        "totalWithInterest": null
-      },
-      "friction": 72,
+      "desc": "سامانه خرید اقساطی «باکالا» در قالب طرح‌های «چکالا» (با چک صیادی)، «مبتا» (ویژه مستمری‌بگیران بانک رفاه بدون چک) و «حبصا» اعتبار خرید کالا تا ۲۰۰ میلیون تومان با بازپرداخت ۶ تا ۲۴ ماهه ارائه می‌دهد.",
+      "digital": 86,
+      "friction": 70,
       "id": "rade-707969",
       "lastSeen": "2026-10-17",
-      "lastUpdated": "2026-10-17",
+      "lastUpdated": "2026-09-02",
       "lastVerified": "2026-10-16",
       "maxAmount": 200000000,
-      "minAmount": null,
-      "multiPlan": false,
-      "product": "باکالا",
+      "minAmount": 10000000,
+      "product": "اعتبار خرید اقساطی باکالا (طرح‌های چکالا، مبتا و حبصا)",
       "pros": [
         "طرح ویژه بازنشستگان تأمین اجتماعی بدون نیاز به چک (کسر از حقوق)",
         "تنوع کالاهای دیجیتال و خانگی"
       ],
       "rate": 42,
       "rateKind": "profit",
-      "rateLabel": "سود ۴۲٪",
+      "rateLabel": "سود اسمی ۴۲٪ (نرخ مؤثر سالانه ۵۱.۱٪ در طرح‌های اعتباری)",
       "regulatory": false,
       "requirements": [
-        "قسط تقریبی: ۱۲,۴۵۴,۵۶۶ تومان"
+        "احراز هویت در باکالا",
+        "چک صیادی بنفش یا حقوق‌بگیر/مستمری‌بگیر بانک رفاه"
       ],
       "source": {
         "checked": "2026-10-17",
         "kind": "aggregator",
-        "title": "رده — باکالا",
+        "title": "رده — اعتبار خرید اقساطی باکالا",
         "url": "https://www.rade.ir/installment/707969-%d8%a8%d8%a7%da%a9%d8%a7%d9%84%d8%a7/"
       },
-      "sourceKind": "aggregator",
-      "speed": 60,
+      "speed": 80,
       "stale": false,
       "subcategory": "bnpl",
       "tags": [
         "خرید اقساطی",
-        "باکالا"
+        "باکالا",
+        "بازنشستگان",
+        "چک صیادی"
       ],
-      "termLabel": "۲۴ ماه",
+      "termLabel": "۶ تا ۲۴ ماهه",
       "termMonths": 24
     },
     {
-      "amountLabel": "۴۰۰,۰۰۰,۰۰۰ تومان",
-      "audience": "متقاضیان تسهیلات بانکی",
+      "amountLabel": "۱۰ تا ۴۰۰ میلیون تومان",
+      "audience": "متقاضیان خرید اقساطی کالای دیجیتال، لوازم خانگی و طلا با بازپرداخت تا ۳۶ ماه",
       "autoDiscovered": true,
       "bank": "الوپی",
       "bankId": "alopay",
-      "benefit": 55,
+      "benefit": 58,
       "category": "credit",
-      "ceilingContingent": false,
-      "collateral": "نامشخص",
-      "collateralKind": "credit-score",
+      "ceilingContingent": true,
+      "collateral": "یک برگ چک صیادی بنفش یا سفته الکترونیکی",
+      "collateralKind": "promissory",
       "confidence": "medium",
       "cons": [
         "هزینه کارمزد پلتفرم و اشتراک که نرخ مؤثر را افزایش می‌دهد"
       ],
       "contractType": "morabehe",
-      "desc": "الوپی",
-      "digital": 60,
-      "extra": {
-        "installment": 15483900,
-        "loanType": "خرید اقساطی",
-        "totalInterest": null,
-        "totalWithInterest": null
-      },
-      "friction": 72,
+      "desc": "پلتفرم لندتک «الوپی» (الوقسطی) با همکاری بانک‌های عامل، اعتبار خرید کالا و خدمات تا سقف ۴۰۰ میلیون تومان با بازپرداخت ۱۲ تا ۳۶ ماهه ارائه می‌دهد. فرآیند اعتبارسنجی آنلاین بوده و با ارائه چک صیادی یا سفته الکترونیکی بدون ضامن انجام می‌شود.",
+      "digital": 90,
+      "friction": 75,
       "id": "rade-708359",
       "lastSeen": "2026-10-17",
-      "lastUpdated": "2026-10-17",
+      "lastUpdated": "2026-09-12",
       "lastVerified": "2026-10-16",
       "maxAmount": 400000000,
-      "minAmount": null,
-      "multiPlan": false,
-      "product": "الوپی",
+      "minAmount": 10000000,
+      "product": "اعتبار خرید اقساطی الوپی (الوقسطی — تا ۴۰۰ میلیون تومان)",
       "pros": [
         "سقف اعتبار بالا تا ۴۰۰ میلیون تومان",
         "دوره بازپرداخت بلندمدت تا ۳۶ ماه"
       ],
       "rate": 23,
       "rateKind": "profit",
-      "rateLabel": "سود ۲۳٪",
+      "rateLabel": "سود اسمی ۲۳٪ بانکی (نرخ مؤثر سالانه ۵۱٪ با کارمزد پلتفرم)",
       "regulatory": false,
       "requirements": [
-        "قسط تقریبی: ۱۵,۴۸۳,۹۰۰ تومان"
+        "ثبت‌نام در سامانه الوپی و اعتبارسنجی بانکی",
+        "ارائه چک صیادی بنفش یا سفته الکترونیکی"
       ],
       "source": {
         "checked": "2026-10-17",
         "kind": "aggregator",
-        "title": "رده — الوپی",
+        "title": "رده — اعتبار خرید قسطی الوپی",
         "url": "https://www.rade.ir/installment/708359-%d8%a7%d9%84%d9%88%d9%be%db%8c/"
       },
-      "sourceKind": "aggregator",
-      "speed": 60,
+      "speed": 82,
       "stale": false,
       "subcategory": "bnpl",
       "tags": [
         "خرید اقساطی",
-        "الوپی"
+        "الوپی",
+        "الوقسطی",
+        "لندتک"
       ],
-      "termLabel": "۳۶ ماه",
+      "termLabel": "۱۲ تا ۳۶ ماهه",
       "termMonths": 36
     },
     {
@@ -5327,15 +5312,15 @@
       "termMonths": 12
     },
     {
-      "amountLabel": "۲۰,۰۰۰,۰۰۰ تومان",
-      "audience": "متقاضیان تسهیلات بانکی",
+      "amountLabel": "۲ تا ۲۰ میلیون تومان",
+      "audience": "مشترکان همراه اول و کاربران سوپراپلیکیشن اوانو",
       "autoDiscovered": true,
       "bank": "اوانو",
       "bankId": "ewano",
-      "benefit": 50,
+      "benefit": 68,
       "category": "credit",
-      "ceilingContingent": false,
-      "collateral": "نامشخص",
+      "ceilingContingent": true,
+      "collateral": "اعتبارسنجی سیم‌کارت دائمی همراه اول یا سفته الکترونیکی",
       "collateralKind": "credit-score",
       "confidence": "medium",
       "cons": [
@@ -5343,61 +5328,56 @@
         "کارمزد ۲.۵٪ ماهانه در بازپرداخت چهار قسطه"
       ],
       "contractType": "qarz",
-      "desc": "اوانو",
-      "digital": 60,
-      "extra": {
-        "installment": 5500000,
-        "loanType": "خرید اقساطی",
-        "totalInterest": null,
-        "totalWithInterest": null
-      },
-      "friction": 72,
+      "desc": "سرویس خرید اعتباری (BNPL) سوپراپلیکیشن «اوانو» وابسته به همراه اول، اعتبار ۲ تا ۲۰ میلیون تومانی برای خرید از فروشگاه‌های طرف قرارداد ارائه می‌دهد. تسویه پایان ماه کاملاً بدون سود و کارمزد بوده و در حالت ۴ قسطه (۲۵٪ پیش‌پرداخت و ۳ قسط ماهانه) کارمزد ۲.۵٪ در ماه اعمال می‌شود.",
+      "digital": 95,
+      "friction": 88,
       "id": "rade-708812",
       "lastSeen": "2026-10-17",
-      "lastUpdated": "2026-10-17",
+      "lastUpdated": "2026-09-29",
       "lastVerified": "2026-10-16",
       "maxAmount": 20000000,
-      "minAmount": null,
-      "multiPlan": false,
-      "product": "اوانو",
+      "minAmount": 2000000,
+      "product": "اعتبار خرید اقساطی اوانو (همراه اول — BNPL یک و چهار قسطه)",
       "pros": [
         "تسویه یک‌ماهه بدون سود و کارمزد",
         "فرآیند کاملاً دیجیتال در اپلیکیشن اوانو"
       ],
-      "rate": 0,
-      "rateKind": "profit",
-      "rateLabel": "نامشخص",
+      "rate": 30,
+      "rateKind": "fee",
+      "rateLabel": "خرید پایان ماه بدون کارمزد یا ۴ قسطه با کارمزد ۲.۵٪ ماهانه",
       "regulatory": false,
       "requirements": [
-        "قسط تقریبی: ۵,۵۰۰,۰۰۰ تومان"
+        "حساب کاربری در اپلیکیشن اوانو",
+        "اعتبارسنجی بانکی و سیم‌کارت به نام متقاضی"
       ],
       "source": {
         "checked": "2026-10-17",
         "kind": "aggregator",
-        "title": "رده — اوانو",
+        "title": "رده — اعتبار خرید اقساطی اوانو",
         "url": "https://www.rade.ir/installment/708812-%d8%a7%d9%88%d8%a7%d9%86%d9%88/"
       },
-      "sourceKind": "aggregator",
-      "speed": 60,
+      "speed": 92,
       "stale": false,
       "subcategory": "bnpl",
       "tags": [
         "خرید اقساطی",
-        "اوانو"
+        "اوانو",
+        "همراه اول",
+        "BNPL"
       ],
-      "termLabel": "۴ ماه",
+      "termLabel": "۱ ماهه (بدون کارمزد) یا ۴ قسط ماهانه",
       "termMonths": 4
     },
     {
-      "amountLabel": "۲۰,۰۰۰,۰۰۰ تومان",
-      "audience": "متقاضیان تسهیلات بانکی",
+      "amountLabel": "۱ تا ۲۰ میلیون تومان (پله‌ای در ۶ مرحله)",
+      "audience": "کاربران اپلیکیشن کاریزما و بلوبانک متقاضی وام نقدی خرد بدون ضامن و چک",
       "autoDiscovered": true,
-      "bank": "کاریزماپی",
+      "bank": "گروه مالی کاریزما",
       "bankId": "charisma",
-      "benefit": 55,
+      "benefit": 62,
       "category": "credit",
-      "ceilingContingent": false,
-      "collateral": "نامشخص",
+      "ceilingContingent": true,
+      "collateral": "بدون ضامن و بدون چک یا سفته (بر پایه رتبه اعتباری)",
       "collateralKind": "credit-score",
       "confidence": "medium",
       "cons": [
@@ -5405,33 +5385,28 @@
         "نرخ مؤثر بالا (۴۷.۳٪) با احتساب کارمزد خدمات"
       ],
       "contractType": "morabehe",
-      "desc": "کاریزماپی",
-      "digital": 60,
-      "extra": {
-        "installment": 3560481,
-        "loanType": "خرید اقساطی",
-        "totalInterest": null,
-        "totalWithInterest": null
-      },
-      "friction": 72,
+      "desc": "سرویس «کاریزماپی» گروه مالی کاریزما امکان دریافت وام نقدی خرد از ۱ تا ۲۰ میلیون تومان را در ۶ پله متوالی (پله اول ۱ میلیون و پله ششم ۲۰ میلیون تومان) بدون ضامن، چک یا سفته فراهم می‌کند. مبلغ وام مستقیماً به حساب بلوبانک متقاضی واریز شده و بازپرداخت آن ۴ تا ۶ ماهه است.",
+      "digital": 96,
+      "friction": 90,
       "id": "rade-708922",
       "lastSeen": "2026-10-17",
-      "lastUpdated": "2026-10-17",
+      "lastUpdated": "2026-10-04",
       "lastVerified": "2026-10-16",
       "maxAmount": 20000000,
-      "minAmount": null,
-      "multiPlan": false,
-      "product": "کاریزماپی",
+      "minAmount": 1000000,
+      "product": "کاریزماپی — وام نقدی نردبان اعتبار کاریزما (واریز به بلوبانک)",
       "pros": [
         "بدون نیاز به ضامن، چک یا سفته (صرفاً اعتبارسنجی آنلاین)",
         "واریز نقدی مستقیم به کارت بلوبانک"
       ],
       "rate": 23,
       "rateKind": "profit",
-      "rateLabel": "سود ۲۳٪",
+      "rateLabel": "سود اسمی ۲۳٪ (نرخ مؤثر سالانه ۴۷.۳٪ با کارمزد خدمات دیجیتال)",
       "regulatory": false,
       "requirements": [
-        "قسط تقریبی: ۳,۵۶۰,۴۸۱ تومان"
+        "نصب اپلیکیشن کاریزما",
+        "داشتن حساب فعال بلوبانک",
+        "رتبه اعتباری مجاز و نداشتن چک برگشتی یا قسط معوق"
       ],
       "source": {
         "checked": "2026-10-17",
@@ -5439,15 +5414,17 @@
         "title": "رده — کاریزماپی",
         "url": "https://www.rade.ir/installment/708922-%da%a9%d8%a7%d8%b1%db%8c%d8%b2%d9%85%d8%a7%d9%be%db%8c/"
       },
-      "sourceKind": "aggregator",
-      "speed": 60,
+      "speed": 92,
       "stale": false,
       "subcategory": "bnpl",
       "tags": [
         "خرید اقساطی",
-        "کاریزماپی"
+        "کاریزما",
+        "کاریزماپی",
+        "بلوبانک",
+        "بدون ضامن"
       ],
-      "termLabel": "۶ ماه",
+      "termLabel": "۴ تا ۶ ماهه",
       "termMonths": 6
     },
     {
@@ -14703,9 +14680,7 @@
       },
       "friction": 94,
       "id": "fund-accord-arman-ati",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 12549,
       "product": "صندوق درآمد ثابت آرمان آتی کوثر (ETF - آکورد)",
@@ -14718,7 +14693,6 @@
         "حساب معاملاتی نزد کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق آکورد",
         "url": "https://isignal.ir/fund/%D8%A2%DA%A9%D9%88%D8%B1%D8%AF/"
@@ -14843,9 +14817,7 @@
       },
       "friction": 94,
       "id": "fund-akam-vista",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 1013,
       "product": "صندوق درآمد ثابت آکام (ETF - آکام)",
@@ -14858,7 +14830,6 @@
         "حساب معاملاتی نزد کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق آکام",
         "url": "https://isignal.ir/fund/%D8%A2%DA%A9%D8%A7%D9%85/"
@@ -14912,9 +14883,7 @@
       },
       "friction": 88,
       "id": "fund-amin-ansar",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-26",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 102052,
       "product": "صندوق سرمایه‌گذاری امین انصار (صدور و ابطالی)",
@@ -14927,7 +14896,6 @@
         "صدور و ابطال از طریق تارنمای صندوق (aminansar.ir)"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق امین انصار",
         "url": "https://isignal.ir/fund/%D8%A7%D9%85%DB%8C%D9%86-%D8%A7%D9%86%D8%B5%D8%A7%D8%B1/"
@@ -15051,9 +15019,7 @@
       },
       "friction": 94,
       "id": "fund-amin-yekom-farda",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 1004,
       "product": "صندوق درآمد ثابت امین یکم فردا (ETF - امین یکم)",
@@ -15066,7 +15032,6 @@
         "حساب معاملاتی نزد کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق امین یکم",
         "url": "https://isignal.ir/fund/%D8%A7%D9%85%DB%8C%D9%86-%DB%8C%DA%A9%D9%85/"
@@ -15120,9 +15085,7 @@
       },
       "friction": 94,
       "id": "fund-andookhteh-dariush",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 1004,
       "product": "صندوق درآمد ثابت اندوخته داریوش (ETF)",
@@ -15135,7 +15098,6 @@
         "حساب معاملاتی نزد کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق اندوخته داریوش",
         "url": "https://isignal.ir/fund/%D8%A7%D9%86%D8%AF%D9%88%D8%AE%D8%AA%D9%87-%D8%AF%D8%A7%D8%B1%DB%8C%D9%88%D8%B4/"
@@ -15189,9 +15151,7 @@
       },
       "friction": 90,
       "id": "fund-andookhteh-mellat",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 100450,
       "product": "صندوق سرمایه‌گذاری اندوخته ملت (صدور و ابطالی)",
@@ -15204,7 +15164,6 @@
         "صدور و ابطال از طریق تارنمای صندوق (mellatib.ir)"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق اندوخته ملت",
         "url": "https://isignal.ir/fund/%D8%A7%D9%86%D8%AF%D9%88%D8%AE%D8%AA%D9%87-%D9%85%D9%84%D8%AA/"
@@ -15260,9 +15219,7 @@
       },
       "friction": 90,
       "id": "fund-andookhteh-sepehr",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-26",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 100925,
       "product": "صندوق سرمایه‌گذاری اندوخته پایدار سپهر (صدور و ابطالی)",
@@ -15275,7 +15232,6 @@
         "صدور و ابطال از طریق تارنمای صندوق (apsepehr.ir)"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق اندوخته پایدار سپهر",
         "url": "https://isignal.ir/fund/%D8%A7%D9%86%D8%AF%D9%88%D8%AE%D8%AA%D9%87-%D9%BE%D8%A7%DB%8C%D8%AF%D8%A7%D8%B1-%D8%B3%D9%BE%D9%87%D8%B1/"
@@ -15330,9 +15286,7 @@
       },
       "friction": 94,
       "id": "fund-armaghan-iranian",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-26",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 1016,
       "product": "صندوق درآمد ثابت ارمغان ایرانیان (ETF - ارمغان)",
@@ -15345,7 +15299,6 @@
         "حساب معاملاتی نزد کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق ارمغان",
         "url": "https://isignal.ir/fund/%D8%A7%D8%B1%D9%85%D8%BA%D8%A7%D9%86/"
@@ -15399,9 +15352,7 @@
       },
       "friction": 94,
       "id": "fund-asan-ganjineh-mehr",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-26",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 1348,
       "product": "صندوق درآمد ثابت مشترک گنجینه مهر (ETF - آسان)",
@@ -15414,7 +15365,6 @@
         "حساب معاملاتی نزد کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق آسان",
         "url": "https://isignal.ir/fund/%D8%A2%D8%B3%D8%A7%D9%86/"
@@ -15469,9 +15419,7 @@
       },
       "friction": 88,
       "id": "fund-aseman-sahand",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 1006,
       "product": "صندوق سرمایه‌گذاری مشترک آسمان سهند (صدور و ابطالی)",
@@ -15484,7 +15432,6 @@
         "صدور و ابطال از طریق تارنمای صندوق (asmfund.ir)"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق مشترک آسمان سهند",
         "url": "https://isignal.ir/fund/%D9%85%D8%B4%D8%AA%D8%B1%DA%A9-%D8%A2%D8%B3%D9%85%D8%A7%D9%86-%D8%B3%D9%87%D9%86%D8%AF/"
@@ -15538,9 +15485,7 @@
       },
       "friction": 94,
       "id": "fund-asood-arman-eghtesad",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 1659,
       "product": "صندوق درآمد ثابت آسود (ETF)",
@@ -15553,7 +15498,6 @@
         "حساب معاملاتی نزد کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق آسود",
         "url": "https://isignal.ir/fund/%D8%A2%D8%B3%D9%88%D8%AF/"
@@ -15607,9 +15551,7 @@
       },
       "friction": 94,
       "id": "fund-avand-mofid",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 1641,
       "product": "صندوق درآمد ثابت آوند مفید (ETF - آوند)",
@@ -15622,7 +15564,6 @@
         "حساب معاملاتی نزد کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق آوند",
         "url": "https://isignal.ir/fund/%D8%A2%D9%88%D9%86%D8%AF/"
@@ -15677,9 +15618,7 @@
       },
       "friction": 88,
       "id": "fund-charisma-fixed",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-26",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 100888,
       "product": "صندوق درآمد ثابت کاریزما (صدور و ابطالی)",
@@ -15692,7 +15631,6 @@
         "صدور و ابطال از طریق تارنمای صندوق (charismafixedincome.com)"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق کاریزما",
         "url": "https://isignal.ir/fund/%D8%AF%D8%B1-%D8%A7%D9%88%D8%B1%D8%A7%D9%82-%D8%A8%D9%87%D8%A7%D8%AF%D8%A7%D8%B1-%D8%A8%D8%A7-%D8%AF%D8%B1%D8%A2%D9%85%D8%AF-%D8%AB%D8%A7%D8%A8%D8%AA-%DA%A9%D8%A7%D8%B1%DB%8C%D8%B2%D9%85%D8%A7/"
@@ -15745,9 +15683,7 @@
       },
       "friction": 88,
       "id": "fund-etebar-afarin",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-08-21",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 10255,
       "product": "صندوق سرمایه‌گذاری اعتبار آفرین ایرانیان (صدور و ابطالی)",
@@ -15760,7 +15696,6 @@
         "صدور و ابطال از طریق تارنمای صندوق (etebarafarin.com)"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق اعتبار آفرین ایرانیان",
         "url": "https://isignal.ir/fund/%D8%A7%D8%B9%D8%AA%D8%A8%D8%A7%D8%B1-%D8%A2%D9%81%D8%B1%DB%8C%D9%86-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86%DB%8C%D8%A7%D9%86/"
@@ -15814,9 +15749,7 @@
       },
       "friction": 94,
       "id": "fund-etebar-etf",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 2960,
       "product": "صندوق درآمد ثابت اعتبار (ETF)",
@@ -15829,7 +15762,6 @@
         "حساب معاملاتی نزد کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق اعتبار",
         "url": "https://isignal.ir/fund/%D8%A7%D8%B9%D8%AA%D8%A8%D8%A7%D8%B1/"
@@ -15883,9 +15815,7 @@
       },
       "friction": 88,
       "id": "fund-etemad-melal",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 100571,
       "product": "صندوق درآمد ثابت اعتماد ملل (صدور و ابطالی)",
@@ -15898,7 +15828,6 @@
         "صدور و ابطال از طریق تارنمای صندوق (emelalfund.ir)"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق اعتماد ملل",
         "url": "https://isignal.ir/fund/%D8%AF%D8%B1-%D8%A7%D9%88%D8%B1%D8%A7%D9%82-%D8%A8%D9%87%D8%A7%D8%AF%D8%A7%D8%B1-%D8%A8%D8%A7-%D8%AF%D8%B1%D8%A2%D9%85%D8%AF-%D8%AB%D8%A7%D8%A8%D8%AA-%D8%A7%D8%B9%D8%AA%D9%85%D8%A7%D8%AF-%D9%85%D9%84%D9%84/"
@@ -15952,9 +15881,7 @@
       },
       "friction": 88,
       "id": "fund-etemad-melli",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-26",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 1018,
       "product": "صندوق سرمایه‌گذاری اعتماد کارگزاری بانک ملی ایران (صدور و ابطالی)",
@@ -15967,7 +15894,6 @@
         "صدور و ابطال از طریق تارنمای صندوق (etemadbmifund.com)"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق اعتماد کارگزاری بانک ملی ایران",
         "url": "https://isignal.ir/fund/%D8%A7%D8%B9%D8%AA%D9%85%D8%A7%D8%AF-%DA%A9%D8%A7%D8%B1%DA%AF%D8%B2%D8%A7%D8%B1%DB%8C-%D8%A8%D8%A7%D9%86%DA%A9-%D9%85%D9%84%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86/"
@@ -16021,9 +15947,7 @@
       },
       "friction": 94,
       "id": "fund-etemad-parsian",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 14175,
       "product": "صندوق درآمد ثابت اعتماد آفرین پارسیان (ETF - اعتماد)",
@@ -16036,7 +15960,6 @@
         "حساب معاملاتی نزد کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق اعتماد",
         "url": "https://isignal.ir/fund/%D8%A7%D8%B9%D8%AA%D9%85%D8%A7%D8%AF/"
@@ -16091,9 +16014,7 @@
       },
       "friction": 94,
       "id": "fund-etminan-hiwa",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 1855,
       "product": "صندوق درآمد ثابت اطمینان (ETF)",
@@ -16106,7 +16027,6 @@
         "حساب معاملاتی نزد کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق اطمینان",
         "url": "https://isignal.ir/fund/%D8%A7%D8%B7%D9%85%DB%8C%D9%86%D8%A7%D9%86/"
@@ -16161,9 +16081,7 @@
       },
       "friction": 88,
       "id": "fund-ettehad-arman-eghtesad",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 100991,
       "product": "صندوق سرمایه‌گذاری اتحاد آرمان اقتصاد (صدور و ابطالی)",
@@ -16176,7 +16094,6 @@
         "صدور و ابطال از طریق تارنمای صندوق (ettehadfund.ir)"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق اتحاد آرمان اقتصاد",
         "url": "https://isignal.ir/fund/%D8%A7%D8%AA%D8%AD%D8%A7%D8%AF-%D8%A2%D8%B1%D9%85%D8%A7%D9%86-%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF/"
@@ -16230,9 +16147,7 @@
       },
       "friction": 94,
       "id": "fund-firouza",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 9192,
       "product": "صندوق درآمد ثابت فیروزه آسیا (ETF - فیروزا)",
@@ -16245,7 +16160,6 @@
         "حساب معاملاتی نزد کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق فیروزا",
         "url": "https://isignal.ir/fund/%D9%81%DB%8C%D8%B1%D9%88%D8%B2%D8%A7/"
@@ -16300,9 +16214,7 @@
       },
       "friction": 94,
       "id": "fund-ganjin-avid",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 4305,
       "product": "صندوق درآمد ثابت گنجینه یکم آوید (ETF - گنجین)",
@@ -16315,7 +16227,6 @@
         "حساب معاملاتی نزد کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق گنجین",
         "url": "https://isignal.ir/fund/%DA%AF%D9%86%D8%AC%DB%8C%D9%86/"
@@ -16441,9 +16352,7 @@
       },
       "friction": 90,
       "id": "fund-gardeshgari",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-26",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 100430,
       "product": "صندوق سرمایه‌گذاری بانک گردشگری (صدور و ابطالی)",
@@ -16456,7 +16365,6 @@
         "صدور و ابطال از طریق تارنمای صندوق (gbifund.ir)"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق بانک گردشگری",
         "url": "https://isignal.ir/fund/%D8%A8%D8%A7%D9%86%DA%A9-%DA%AF%D8%B1%D8%AF%D8%B4%DA%AF%D8%B1%DB%8C/"
@@ -16511,9 +16419,7 @@
       },
       "friction": 88,
       "id": "fund-golbarg-arman-ati",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 1011,
       "product": "صندوق سرمایه‌گذاری ارزش آفرین گلبرگ (صدور و ابطالی)",
@@ -16526,7 +16432,6 @@
         "صدور و ابطال از طریق تارنمای صندوق (golrangfund.ir)"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق ارزش آفرین گلبرگ",
         "url": "https://isignal.ir/fund/%D8%A7%D8%B1%D8%B2%D8%B4-%D8%A2%D9%81%D8%B1%DB%8C%D9%86-%DA%AF%D9%84%D8%A8%D8%B1%DA%AF/"
@@ -16580,9 +16485,7 @@
       },
       "friction": 94,
       "id": "fund-hamgam-ashna",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 1251,
       "product": "صندوق درآمد ثابت همگام آشنا ایرانیان (ETF - همگام)",
@@ -16595,7 +16498,6 @@
         "حساب معاملاتی نزد کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق همگام",
         "url": "https://isignal.ir/fund/%D9%87%D9%85%DA%AF%D8%A7%D9%85/"
@@ -16649,9 +16551,7 @@
       },
       "friction": 88,
       "id": "fund-hami-1-mofid",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-26",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 13724,
       "product": "صندوق درآمد ثابت حامی یکم مفید (صدور و ابطالی)",
@@ -16664,7 +16564,6 @@
         "صدور و ابطال از طریق تارنمای صندوق (hamifund.ir)"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق حامی یکم مفید",
         "url": "https://isignal.ir/fund/%D8%AB%D8%A7%D8%A8%D8%AA-%D8%AD%D8%A7%D9%85%DB%8C-%DB%8C%DA%A9%D9%85-%D9%85%D9%81%DB%8C%D8%AF/"
@@ -16719,9 +16618,7 @@
       },
       "friction": 88,
       "id": "fund-hami-2-mofid",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-26",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 1821,
       "product": "صندوق درآمد ثابت حامی دوم مفید (صدور و ابطالی)",
@@ -16734,7 +16631,6 @@
         "صدور و ابطال از طریق تارنمای صندوق (namifund.ir)"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق حامی دوم مفید",
         "url": "https://isignal.ir/fund/%D8%AB%D8%A7%D8%A8%D8%AA-%D8%AD%D8%A7%D9%85%DB%8C-%D8%AF%D9%88%D9%85-%D9%85%D9%81%DB%8C%D8%AF/"
@@ -16788,9 +16684,7 @@
       },
       "friction": 88,
       "id": "fund-hekmat-ashna",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-26",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 101879,
       "product": "صندوق سرمایه‌گذاری حکمت آشنا ایرانیان (صدور و ابطالی)",
@@ -16803,7 +16697,6 @@
         "صدور و ابطال از طریق تارنمای صندوق (www.afund.ir)"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق حکمت آشنا ایرانیان",
         "url": "https://isignal.ir/fund/%D8%AD%DA%A9%D9%85%D8%AA-%D8%A2%D8%B4%D9%86%D8%A7-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86%DB%8C%D8%A7%D9%86/"
@@ -16857,9 +16750,7 @@
       },
       "friction": 94,
       "id": "fund-homay-agah",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 1004,
       "product": "صندوق درآمد ثابت همای آگاه (ETF - همای)",
@@ -16872,7 +16763,6 @@
         "حساب معاملاتی نزد کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق همای",
         "url": "https://isignal.ir/fund/%D9%87%D9%85%D8%A7%DB%8C/"
@@ -16926,9 +16816,7 @@
       },
       "friction": 94,
       "id": "fund-hummers-etemad",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 1019,
       "product": "صندوق درآمد ثابت اعتماد هامرز (ETF - هامرز)",
@@ -16941,7 +16829,6 @@
         "حساب معاملاتی نزد کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق هامرز",
         "url": "https://isignal.ir/fund/%D9%87%D8%A7%D9%85%D8%B1%D8%B2/"
@@ -16994,9 +16881,7 @@
       },
       "friction": 88,
       "id": "fund-iran-zamin",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-26",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 100524,
       "product": "صندوق سرمایه‌گذاری بانک ایران زمین (صدور و ابطالی)",
@@ -17009,7 +16894,6 @@
         "صدور و ابطال از طریق تارنمای صندوق (izfund.ir)"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق بانک ایران زمین",
         "url": "https://isignal.ir/fund/%D8%A8%D8%A7%D9%86%DA%A9-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%B2%D9%85%DB%8C%D9%86/"
@@ -17063,9 +16947,7 @@
       },
       "friction": 94,
       "id": "fund-kaj-vira",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 1523,
       "product": "صندوق درآمد ثابت پایدار نو ویرا (ETF - کاج)",
@@ -17078,7 +16960,6 @@
         "حساب معاملاتی نزد کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق کاج",
         "url": "https://isignal.ir/fund/%DA%A9%D8%A7%D8%AC/"
@@ -17133,9 +17014,7 @@
       },
       "friction": 94,
       "id": "fund-kamand-charisma",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 1019,
       "product": "صندوق درآمد ثابت کمند (ETF - کمند)",
@@ -17148,7 +17027,6 @@
         "حساب معاملاتی نزد کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق کمند",
         "url": "https://isignal.ir/fund/%DA%A9%D9%85%D9%86%D8%AF/"
@@ -17202,9 +17080,7 @@
       },
       "friction": 94,
       "id": "fund-kamyab-ashna",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 3904,
       "product": "صندوق درآمد ثابت کامیاب آشنا (ETF - کامیاب)",
@@ -17217,7 +17093,6 @@
         "حساب معاملاتی نزد کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق کامیاب",
         "url": "https://isignal.ir/fund/%DA%A9%D8%A7%D9%85%DB%8C%D8%A7%D8%A8/"
@@ -17343,9 +17218,7 @@
       },
       "friction": 94,
       "id": "fund-karamad",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 1852,
       "product": "صندوق درآمد ثابت کارآمد (ETF)",
@@ -17358,7 +17231,6 @@
         "حساب معاملاتی نزد کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق کارآمد",
         "url": "https://isignal.ir/fund/%DA%A9%D8%A7%D8%B1%D8%A2%D9%85%D8%AF/"
@@ -17412,9 +17284,7 @@
       },
       "friction": 90,
       "id": "fund-kardan-tejarat",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-26",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 101233,
       "product": "صندوق درآمد ثابت کاردان (صدور و ابطالی)",
@@ -17427,7 +17297,6 @@
         "صدور و ابطال از طریق تارنمای صندوق (iran-kfunds۱.ir)"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق کاردان",
         "url": "https://isignal.ir/fund/%D8%AF%D8%B1-%D8%A7%D9%88%D8%B1%D8%A7%D9%82-%D8%A8%D9%87%D8%A7%D8%AF%D8%A7%D8%B1-%D8%A8%D8%A7-%D8%AF%D8%B1%D8%A2%D9%85%D8%AF-%D8%AB%D8%A7%D8%A8%D8%AA-%DA%A9%D8%A7%D8%B1%D8%AF%D8%A7%D9%86/"
@@ -17481,9 +17350,7 @@
       },
       "friction": 88,
       "id": "fund-keshavarzi-1",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-26",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 100446,
       "product": "صندوق سرمایه‌گذاری یکم کارگزاری بانک کشاورزی (صدور و ابطالی)",
@@ -17496,7 +17363,6 @@
         "صدور و ابطال از طریق تارنمای صندوق (fund۱.bkisecurities.com)"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق یکم کارگزاری بانک کشاورزی",
         "url": "https://isignal.ir/fund/%DB%8C%DA%A9%D9%85-%DA%A9%D8%A7%D8%B1%DA%AF%D8%B2%D8%A7%D8%B1%DB%8C-%D8%A8%D8%A7%D9%86%DA%A9-%DA%A9%D8%B4%D8%A7%D9%88%D8%B1%D8%B2%DB%8C/"
@@ -17550,9 +17416,7 @@
       },
       "friction": 94,
       "id": "fund-khatam-isatis",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 4206,
       "product": "صندوق درآمد ثابت خاتم ایساتیس پویا (ETF - خاتم)",
@@ -17565,7 +17429,6 @@
         "حساب معاملاتی نزد کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق خاتم",
         "url": "https://isignal.ir/fund/%D8%AE%D8%A7%D8%AA%D9%85/"
@@ -17620,9 +17483,7 @@
       },
       "friction": 94,
       "id": "fund-kian",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 11239,
       "product": "صندوق درآمد ثابت کیان (ETF - کیان)",
@@ -17635,7 +17496,6 @@
         "حساب معاملاتی نزد کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق کیان",
         "url": "https://isignal.ir/fund/%DA%A9%DB%8C%D8%A7%D9%86/"
@@ -17690,9 +17550,7 @@
       },
       "friction": 88,
       "id": "fund-kosar-1-aban",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-26",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 100560,
       "product": "صندوق درآمد ثابت کوثر یکم (صدور و ابطالی)",
@@ -17705,7 +17563,6 @@
         "صدور و ابطال از طریق تارنمای صندوق (kosar۱fund.ir)"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق کوثر یکم",
         "url": "https://isignal.ir/fund/%D8%AF%D8%B1-%D8%A7%D9%88%D8%B1%D8%A7%D9%82-%D8%A8%D9%87%D8%A7%D8%AF%D8%A7%D8%B1-%D8%A8%D8%A7-%D8%AF%D8%B1%D8%A2%D9%85%D8%AF-%D8%AB%D8%A7%D8%A8%D8%AA-%DA%A9%D9%88%D8%AB%D8%B1-%DB%8C%DA%A9%D9%85/"
@@ -17901,9 +17758,7 @@
       },
       "friction": 94,
       "id": "fund-mahoor-meyar",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 2353,
       "product": "صندوق درآمد ثابت ماهور (ETF)",
@@ -17916,7 +17771,6 @@
         "حساب معاملاتی نزد کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق ماهور",
         "url": "https://isignal.ir/fund/%D9%85%D8%A7%D9%87%D9%88%D8%B1/"
@@ -17971,9 +17825,7 @@
       },
       "friction": 94,
       "id": "fund-mani",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 3425,
       "product": "صندوق درآمد ثابت مانی (ETF)",
@@ -17986,7 +17838,6 @@
         "حساب معاملاتی نزد کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق مانی",
         "url": "https://isignal.ir/fund/%D9%85%D8%A7%D9%86%DB%8C/"
@@ -18040,9 +17891,7 @@
       },
       "friction": 94,
       "id": "fund-negin-saman",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 1314,
       "product": "صندوق درآمد ثابت نگین سامان (ETF)",
@@ -18055,7 +17904,6 @@
         "حساب معاملاتی نزد کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق نگین سامان",
         "url": "https://isignal.ir/fund/%D9%86%DA%AF%DB%8C%D9%86-%D8%B3%D8%A7%D9%85%D8%A7%D9%86/"
@@ -18111,9 +17959,7 @@
       },
       "friction": 94,
       "id": "fund-neshan-hummers",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-08-30",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 3127,
       "product": "صندوق درآمد ثابت نشان (ETF)",
@@ -18126,7 +17972,6 @@
         "حساب معاملاتی نزد کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق نشان",
         "url": "https://isignal.ir/fund/%D9%86%D8%B4%D8%A7%D9%86/"
@@ -18181,9 +18026,7 @@
       },
       "friction": 94,
       "id": "fund-nili-damavand",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 1018,
       "product": "صندوق درآمد ثابت نیلی دماوند (ETF - نیلی)",
@@ -18196,7 +18039,6 @@
         "حساب معاملاتی نزد کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق نیلی",
         "url": "https://isignal.ir/fund/%D9%86%DB%8C%D9%84%DB%8C/"
@@ -18250,9 +18092,7 @@
       },
       "friction": 88,
       "id": "fund-noafarin-fintech",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-26",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 100918,
       "product": "صندوق سرمایه‌گذاری پیشگامان سرمایه نوآفرین (صدور و ابطالی)",
@@ -18265,7 +18105,6 @@
         "صدور و ابطال از طریق تارنمای صندوق (psnfund.com)"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق پیشگامان سرمایه نوآفرین",
         "url": "https://isignal.ir/fund/%D9%BE%DB%8C%D8%B4%DA%AF%D8%A7%D9%85%D8%A7%D9%86-%D8%B3%D8%B1%D9%85%D8%A7%DB%8C%D9%87-%D9%86%D9%88%D8%A2%D9%81%D8%B1%DB%8C%D9%86/"
@@ -18319,9 +18158,7 @@
       },
       "friction": 88,
       "id": "fund-ofogh-middle-east",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-26",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 101052,
       "product": "صندوق سرمایه‌گذاری مشترک افق کارگزاری بانک خاورمیانه (صدور و ابطالی)",
@@ -18334,7 +18171,6 @@
         "صدور و ابطال از طریق تارنمای صندوق (ofoghfund.mebbco.com)"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق مشترک افق کارگزاری بانک خاورمیانه",
         "url": "https://isignal.ir/fund/%D9%85%D8%B4%D8%AA%D8%B1%DA%A9-%D8%A7%D9%81%D9%82-%DA%A9%D8%A7%D8%B1%DA%AF%D8%B2%D8%A7%D8%B1%DB%8C-%D8%A8%D8%A7%D9%86%DA%A9-%D8%AE%D8%A7%D9%88%D8%B1%D9%85%DB%8C%D8%A7%D9%86%D9%87/"
@@ -18388,9 +18224,7 @@
       },
       "friction": 90,
       "id": "fund-omid-ansar",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-26",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 104580,
       "product": "صندوق درآمد ثابت امید انصار (صدور و ابطالی)",
@@ -18403,7 +18237,6 @@
         "صدور و ابطال از طریق تارنمای صندوق (omidansarfunds.ir)"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق امید انصار",
         "url": "https://isignal.ir/fund/%D8%AF%D8%B1-%D8%A7%D9%88%D8%B1%D8%A7%D9%82-%D8%A8%D9%87%D8%A7%D8%AF%D8%A7%D8%B1-%D8%A8%D8%A7-%D8%AF%D8%B1%D8%A2%D9%85%D8%AF-%D8%AB%D8%A7%D8%A8%D8%AA-%D8%A7%D9%85%DB%8C%D8%AF-%D8%A7%D9%86%D8%B5%D8%A7%D8%B1/"
@@ -18527,9 +18360,7 @@
       },
       "friction": 94,
       "id": "fund-parand-sepehr",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 1019,
       "product": "صندوق درآمد ثابت پارند پایدار سپهر (ETF - پارند)",
@@ -18542,7 +18373,6 @@
         "حساب معاملاتی نزد کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق پارند",
         "url": "https://isignal.ir/fund/%D9%BE%D8%A7%D8%B1%D9%86%D8%AF/"
@@ -18596,9 +18426,7 @@
       },
       "friction": 94,
       "id": "fund-pasargad-etf",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 1484,
       "product": "صندوق درآمد ثابت نوع دوم پاسارگاد (ETF - پاسارگاد)",
@@ -18611,7 +18439,6 @@
         "حساب معاملاتی نزد کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق پاسارگاد",
         "url": "https://isignal.ir/fund/%D9%BE%D8%A7%D8%B3%D8%A7%D8%B1%DA%AF%D8%A7%D8%AF/"
@@ -18665,9 +18492,7 @@
       },
       "friction": 94,
       "id": "fund-rabin",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 2812,
       "product": "صندوق درآمد ثابت رابین (ETF)",
@@ -18680,7 +18505,6 @@
         "حساب معاملاتی نزد کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق رابین",
         "url": "https://isignal.ir/fund/%D8%B1%D8%A7%D8%A8%DB%8C%D9%86/"
@@ -18735,9 +18559,7 @@
       },
       "friction": 88,
       "id": "fund-rasa-algorithm",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 1006,
       "product": "صندوق سرمایه‌گذاری راسا الگوریتم (صدور و ابطالی)",
@@ -18750,7 +18572,6 @@
         "صدور و ابطال از طریق تارنمای صندوق (rasafund.ir)"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق راسا الگوریتم",
         "url": "https://isignal.ir/fund/%D8%B1%D8%A7%D8%B3%D8%A7-%D8%A7%D9%84%DA%AF%D9%88%D8%B1%DB%8C%D8%AA%D9%85/"
@@ -18804,9 +18625,7 @@
       },
       "friction": 88,
       "id": "fund-ravand-aban",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 10112,
       "product": "صندوق سرمایه‌گذاری روند پایدار آبان (صدور و ابطالی)",
@@ -18819,7 +18638,6 @@
         "صدور و ابطال از طریق تارنمای صندوق (ravandfund.ir)"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق روند پایدار آبان",
         "url": "https://isignal.ir/fund/%D8%B1%D9%88%D9%86%D8%AF-%D9%BE%D8%A7%DB%8C%D8%AF%D8%A7%D8%B1-%D8%A2%D8%A8%D8%A7%D9%86/"
@@ -18873,9 +18691,7 @@
       },
       "friction": 88,
       "id": "fund-rooyesh-sina",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 1014,
       "product": "صندوق سرمایه‌گذاری رویش ثروت سینا (صدور و ابطالی)",
@@ -18888,7 +18704,6 @@
         "صدور و ابطال از طریق تارنمای صندوق (sinarouyesh.ir)"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق رویش ثروت سینا",
         "url": "https://isignal.ir/fund/%D8%B1%D9%88%DB%8C%D8%B4-%D8%AB%D8%B1%D9%88%D8%AA-%D8%B3%DB%8C%D9%86%D8%A7/"
@@ -18942,9 +18757,7 @@
       },
       "friction": 94,
       "id": "fund-sayand-ayandeh",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 3095,
       "product": "صندوق درآمد ثابت گنجینه آینده روشن (ETF - صایند)",
@@ -18957,7 +18770,6 @@
         "حساب معاملاتی نزد کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق صایند",
         "url": "https://isignal.ir/fund/%D8%B5%D8%A7%DB%8C%D9%86%D8%AF/"
@@ -19012,9 +18824,7 @@
       },
       "friction": 94,
       "id": "fund-separ-eghtesad-bidar",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 4722,
       "product": "صندوق درآمد ثابت سپر سرمایه بیدار (ETF - سپر)",
@@ -19027,7 +18837,6 @@
         "حساب معاملاتی نزد کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق سپر",
         "url": "https://isignal.ir/fund/%D8%B3%D9%BE%D8%B1/"
@@ -19082,9 +18891,7 @@
       },
       "friction": 94,
       "id": "fund-sepas-tamadon",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-26",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 2656,
       "product": "صندوق درآمد ثابت سپاس (ETF)",
@@ -19097,7 +18904,6 @@
         "حساب معاملاتی نزد کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق سپاس",
         "url": "https://isignal.ir/fund/%D8%B3%D9%BE%D8%A7%D8%B3/"
@@ -19152,9 +18958,7 @@
       },
       "friction": 94,
       "id": "fund-sepidma-damavand",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 3581,
       "product": "صندوق درآمد ثابت سپید دماوند (ETF - سپیدما)",
@@ -19167,7 +18971,6 @@
         "حساب معاملاتی نزد کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق سپیدما",
         "url": "https://isignal.ir/fund/%D8%B3%D9%BE%DB%8C%D8%AF%D9%85%D8%A7/"
@@ -19222,9 +19025,7 @@
       },
       "friction": 94,
       "id": "fund-sinad-sina",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 2730,
       "product": "صندوق درآمد ثابت سیناد (ETF)",
@@ -19237,7 +19038,6 @@
         "حساب معاملاتی نزد کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق سیناد",
         "url": "https://isignal.ir/fund/%D8%B3%DB%8C%D9%86%D8%A7%D8%AF/"
@@ -19292,9 +19092,7 @@
       },
       "friction": 88,
       "id": "fund-sobat-navid",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 229535,
       "product": "صندوق سرمایه‌گذاری ثبات نوید (صدور و ابطالی)",
@@ -19307,7 +19105,6 @@
         "صدور و ابطال از طریق تارنمای صندوق (sobatfund.navidfg.com)"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق ثبات نوید",
         "url": "https://isignal.ir/fund/%D8%AB%D8%A8%D8%A7%D8%AA-%D9%86%D9%88%DB%8C%D8%AF/"
@@ -19361,9 +19158,7 @@
       },
       "friction": 94,
       "id": "fund-sobat-vista",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 3783,
       "product": "صندوق درآمد ثابت ثبات ویستا (ETF - ثبات)",
@@ -19376,7 +19171,6 @@
         "حساب معاملاتی نزد کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق ثبات",
         "url": "https://isignal.ir/fund/%D8%AB%D8%A8%D8%A7%D8%AA/"
@@ -19431,9 +19225,7 @@
       },
       "friction": 94,
       "id": "fund-sokhand-khobregan",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-08-22",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 1179,
       "product": "صندوق درآمد ثابت سپهر خبرگان نفت (ETF - سخند)",
@@ -19446,7 +19238,6 @@
         "حساب معاملاتی نزد کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق سخند",
         "url": "https://isignal.ir/fund/%D8%B3%D8%AE%D9%86%D8%AF/"
@@ -19500,9 +19291,7 @@
       },
       "friction": 94,
       "id": "fund-tadavom-tamadon",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 1391,
       "product": "صندوق درآمد ثابت تداوم اطمینان تمدن (ETF - تداوم)",
@@ -19515,7 +19304,6 @@
         "حساب معاملاتی نزد کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق تداوم",
         "url": "https://isignal.ir/fund/%D8%AA%D8%AF%D8%A7%D9%88%D9%85/"
@@ -19570,9 +19358,7 @@
       },
       "friction": 90,
       "id": "fund-tosee-taavon-saba",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-26",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 100381,
       "product": "صندوق سرمایه‌گذاری توسعه تعاون صبا (صدور و ابطالی)",
@@ -19585,7 +19371,6 @@
         "صدور و ابطال از طریق تارنمای صندوق (stts.sababroker.ir)"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق توسعه تعاون صبا",
         "url": "https://isignal.ir/fund/%D8%AA%D9%88%D8%B3%D8%B9%D9%87-%D8%AA%D8%B9%D8%A7%D9%88%D9%86-%D8%B5%D8%A8%D8%A7/"
@@ -19710,9 +19495,7 @@
       },
       "friction": 94,
       "id": "fund-yara-aria",
-      "lastSeen": "2026-10-18",
       "lastUpdated": "2026-09-27",
-      "lastVerified": "2026-10-18",
       "maxAmount": null,
       "minAmount": 3623,
       "product": "صندوق درآمد ثابت یارا (ETF)",
@@ -19725,7 +19508,6 @@
         "حساب معاملاتی نزد کارگزاری"
       ],
       "source": {
-        "checked": "2026-10-18",
         "kind": "aggregator",
         "title": "آی‌سیگنال — صندوق یارا",
         "url": "https://isignal.ir/fund/%DB%8C%D8%A7%D8%B1%D8%A7/"

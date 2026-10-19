@@ -41,7 +41,74 @@ test('رکورد دست‌نویس با منبع خودکار بازنویسی �
   assert.equal(merged[0].category, 'loans', 'دسته دست‌نویس حفظ می‌شود');
   assert.equal(merged[0].source.url, 'https://example.com/original', 'منبع اصلی حفظ می‌شود');
   assert.equal(merged[0].rate, 23, 'نرخ تازه از منبع خودکار اعمال می‌شود');
-  assert.ok(merged[0].lastVerified, 'زمان آخرین تأیید ثبت می‌شود');
+  // رکورد دست‌نویس به‌خودی‌خود «تأییدشده» نمی‌شود: هیچ درخواست شبکه‌ای برای
+  // صفحه‌اش انجام نشده و منبع خودکار فقط یک ردیف آماری است. مهر بازبینی
+  // فقط وقتی می‌آید که خودِ رکورد تازه، تاریخ تأیید زنده داشته باشد.
+  assert.equal(merged[0].lastVerified, undefined, 'بدون تأیید زنده مهر نمی‌خورد');
+});
+
+test('رکورد خودکارِ زنده، مهر بازبینی را از ردیف تازه می‌گیرد', () => {
+  const existing = [
+    { id: 'a', bank: 'بانک الف', product: 'محصول ۱', category: 'loans', source: { url: 'https://example.com/a' } },
+  ];
+  const incoming = [
+    {
+      id: 'a',
+      bank: 'بانک الف',
+      product: 'محصول ۱',
+      category: 'loans',
+      rate: 22,
+      lastSeen: '2026-09-15',
+      lastVerified: '2026-09-15',
+      source: { title: 'منبع', url: 'https://example.com/a', checked: '2026-09-15' },
+    },
+  ];
+  const { merged } = mergeProducts(existing, incoming);
+  assert.equal(merged[0].lastVerified, '2026-09-15');
+});
+
+test('برداشت ناقص، محتوای رکورد را پاک نمی‌کند (محافظ F6)', () => {
+  const existing = [
+    {
+      id: 'rade-1',
+      bank: 'بانک الف',
+      product: 'اعتبار خرید اقساطی اوانو (همراه اول)',
+      category: 'credit',
+      autoDiscovered: true,
+      rate: 30,
+      rateKind: 'fee',
+      minAmount: 2_000_000,
+      desc: 'سرویس خرید اعتباری سوپراپلیکیشن اوانو با اعتبار ۲ تا ۲۰ میلیون تومان و بازپرداخت یک یا چهار قسطه.',
+      tags: ['خرید اقساطی', 'اوانو', 'همراه اول'],
+      source: { title: 'رده', url: 'https://www.rade.ir/installment/1-x/', checked: '2026-09-29' },
+    },
+  ];
+  const incoming = [
+    {
+      id: 'rade-1',
+      bank: 'اوانو',
+      product: 'اوانو',
+      category: 'credit',
+      autoDiscovered: true,
+      rate: 0,
+      rateKind: 'profit',
+      minAmount: null,
+      desc: 'اوانو',
+      tags: ['خرید اقساطی', 'اوانو'],
+      lastSeen: '2026-10-17',
+      source: { title: 'رده — اوانو', url: 'https://www.rade.ir/installment/1-x/', checked: '2026-10-17' },
+    },
+  ];
+  const { merged, stats } = mergeProducts(existing, incoming);
+  const p = merged[0];
+  assert.equal(stats.thinSkipped, 1);
+  assert.equal(p.rate, 30, 'نرخ صفر جای ۳۰ را نمی‌گیرد');
+  assert.equal(p.rateKind, 'fee');
+  assert.equal(p.minAmount, 2_000_000);
+  assert.match(p.desc, /سوپراپلیکیشن/);
+  assert.equal(p.product, 'اعتبار خرید اقساطی اوانو (همراه اول)');
+  assert.deepEqual(p.tags, ['خرید اقساطی', 'اوانو', 'همراه اول']);
+  assert.equal(p.lastSeen, new Date().toISOString().slice(0, 10), 'مشاهده ثبت می‌شود');
 });
 
 test('رکورد خودکارِ قدیمی حذف نمی‌شود بلکه stale می‌شود', () => {

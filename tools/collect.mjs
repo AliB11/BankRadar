@@ -158,6 +158,25 @@ export function deepEqual(a, b) {
   return ka.every((k, i) => k === kb[i] && deepEqual(a[k], b[k]));
 }
 
+/**
+ * آیا این به‌روزرسانی «برداشت ناقص» است؟
+ *
+ * نشانهٔ عینی: رکوردی که توضیح واقعی داشته، حالا با متنی کوتاه‌تر از ۴۰ نویسه
+ * می‌آید — یعنی صفحه نیمه‌کاره لود شده یا قالبش عوض شده و تجزیه‌گر فقط عنوان
+ * را دیده است. در این حالت محتوای قبلی حفظ می‌شود و فقط «دیده‌شدن» ثبت
+ * می‌گردد. نمونهٔ واقعی: پنج رکورد رده در ۱۰-۱۷ که توضیح ۱۸۵–۲۷۵ نویسه‌ای
+ * آن‌ها با «اوانو» و «باکالا» جایگزین و نرخ ۳۰٪ آن‌ها صفر شده بود.
+ *
+ * @param {object} candidate رکورد تازه از منبع
+ * @param {object} current رکورد موجود
+ */
+export function isThinScrape(candidate, current) {
+  if (!candidate || !current) return false;
+  const nextLen = String(candidate.desc ?? '').trim().length;
+  const prevLen = String(current.desc ?? '').trim().length;
+  return nextLen < 40 && prevLen >= 40;
+}
+
 export function mergeProducts(existing, incoming) {
   const byId = new Map(existing.map((p) => [p.id, { ...p }]));
   const byKey = new Map(existing.map((p) => [matchKey(p), p.id]));
@@ -165,6 +184,7 @@ export function mergeProducts(existing, incoming) {
   let added = 0;
   let updated = 0;
   let unchanged = 0;
+  let thinSkipped = 0;
   const seenIds = new Set();
 
   for (const raw of incoming) {
@@ -176,9 +196,13 @@ export function mergeProducts(existing, incoming) {
       const h = [...matchKey(candidate)].reduce((a, c) => (a * 31 + c.codePointAt(0)) >>> 0, 7);
       candidate.id = `auto-${h.toString(36)}`;
     }
-    // رکورد دیده‌شده در این اجرا
+    // آیا این رکورد همین حالا از شبکه خوانده شده است؟ منابع برون‌خط (برش
+    // ذخیره‌شده) با live:false می‌آیند و نباید مهر «دیده‌شده در این اجرا»
+    // بگیرند؛ وگرنه دادهٔ کهنه در گزارش تازگی، تازه شمرده می‌شود.
+    const live = candidate.live !== false;
+    delete candidate.live;
     candidate.stale = false;
-    candidate.lastSeen = today();
+    if (live) candidate.lastSeen = today();
 
     let targetId = byId.has(candidate.id) ? candidate.id : byKey.get(matchKey(candidate));
     seenIds.add(targetId ?? candidate.id);
@@ -192,10 +216,17 @@ export function mergeProducts(existing, incoming) {
 
     const current = byId.get(targetId);
     const isCurated = current.autoDiscovered !== true;
+    // برداشت ناقص: محتوا دست‌نخورده می‌ماند، فقط مشاهده ثبت می‌شود.
+    if (isThinScrape(candidate, current)) {
+      thinSkipped += 1;
+      byId.set(targetId, { ...current, ...(live ? { lastSeen: today() } : {}), stale: false });
+      unchanged += 1;
+      continue;
+    }
 
     // فیلدهای ساختاری که هرگز از منبع خودکار بازنویسی نمی‌شوند
     const frozen = isCurated
-      ? ['id', 'category', 'subcategory', 'benefit', 'speed', 'digital', 'friction', 'collateralKind', 'confidence', 'regulatory', 'source', 'lastUpdated']
+      ? ['id', 'category', 'subcategory', 'rateKind', 'benefit', 'speed', 'digital', 'friction', 'collateralKind', 'confidence', 'regulatory', 'source', 'lastUpdated']
       : [];
 
     const next = { ...current };
@@ -218,6 +249,19 @@ export function mergeProducts(existing, incoming) {
       if ((k === 'lastUpdated' || k === 'lastSeen' || k === 'lastVerified') && (v === null || v === undefined || v === '')) {
         continue;
       }
+      // محافظ «برداشت ناقص»: صفحه‌ای که نیمی از محتوایش لود نشده نباید
+      // مقدار انسانی را با پوستهٔ خالی جایگزین کند. دو نشانهٔ دیده‌شده در
+      // داده: نرخ صفر (به‌جای ۳۰٪) و توضیح ۵ نویسه‌ای (به‌جای ۲۵۰ نویسه).
+      if (isCurated && k === 'rate' && (!Number(v) || Number(v) === 0) && Number(current.rate) > 0) continue;
+      if (
+        isCurated &&
+        k === 'desc' &&
+        typeof v === 'string' &&
+        v.trim().length < 40 &&
+        String(current.desc || '').trim().length >= 40
+      ) {
+        continue;
+      }
       const prev = next[k];
       // مقایسه ارجاعی برای اشیای تودرتو («extra») همیشه «متفاوت» می‌داد و
       // هر رکورد خودکار در هر اجرا «به‌روزشده» شمرده می‌شد؛ آمار ادغام
@@ -232,14 +276,15 @@ export function mergeProducts(existing, incoming) {
       }
     }
 
-    // تاریخ کنترل: برای رکورد دست‌نویس از تاریخ منبع استفاده می‌کنیم
+    // تاریخ کنترل: برای رکورد دست‌نویس فقط «تاریخ مشاهدهٔ منبع» را ثبت
+    // می‌کنیم؛ مهر بازبینی دستی زده نمی‌شود. بازبینی یعنی داده همین حالا از
+    // منبع خوانده شده باشد — و رکورد دست‌نویس منبع ماشین‌خوان ندارد.
     if (isCurated) {
       const srcDate = candidate.lastUpdated;
       if (srcDate && daysSince(srcDate) < daysSince(current.lastUpdated || '1970-01-01')) {
         next.sourceObservedAt = srcDate;
         changed = true;
       }
-      next.lastVerified = today();
     }
 
     if (changed) {
@@ -270,7 +315,7 @@ export function mergeProducts(existing, incoming) {
       return String(a.id).localeCompare(String(b.id));
     });
 
-  return { merged, stats: { added, updated, unchanged } };
+  return { merged, stats: { added, updated, unchanged, thinSkipped } };
 }
 
 /* ------------------------------------------------------------------ */
@@ -416,16 +461,23 @@ async function main() {
       );
       if (isResult.ok) {
         incoming = incoming.concat(isResult.data.products);
+        // ok فقط وقتی true است که داده واقعاً از شبکه آمده باشد. پیش‌تر
+        // fallback به برش ذخیره‌شده هم ok:true می‌گرفت و در پنل، منبعِ مرده
+        // سبز دیده می‌شد (یافتهٔ F3).
+        const isLive = isResult.data.live === true;
         report.sources.push({
           name: 'isignal.ir',
-          ok: true,
+          ok: isLive,
+          ...(isLive ? {} : { degraded: true, note: 'برش ذخیره‌شده — سرویس زنده در دسترس نبود' }),
           origin: isResult.data.origin,
+          page: isResult.data.page,
           rows: isResult.data.rows,
           parsed: isResult.data.products.length,
           etf: isResult.data.etf,
           issuance: isResult.data.issuance,
           refreshed: isResult.data.refreshed,
           skipped: isResult.data.skipped.length,
+          unmapped: isResult.data.unmapped?.length ?? 0,
           ms: isResult.ms,
         });
         log(

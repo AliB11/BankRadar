@@ -334,27 +334,36 @@ export function detectAnomalies(products = [], indicators = {}) {
 
 export function auditCuratedProducts(products = [], opts = {}) {
   const auditDate = opts.date || today();
+  /**
+   * فقط رکوردهایی که **واقعاً** بررسی شده‌اند مهر می‌خورند.
+   *
+   * نسخهٔ قبلی هر رکورد دست‌نویسِ دارای نشانی را بی‌هیچ درخواست شبکه‌ای
+   * «بازبینی‌شده» مهر می‌زد؛ نتیجه: رکوردها با تاریخ امروز در حالی که هیچ
+   * صفحه‌ای خوانده نشده بود و «تازگی» داشبورد بی‌معنا شده بود (یافتهٔ F2 ممیزی).
+   * اکنون فقط شناسه‌هایی که فراخوان (مثلاً بررسی سلامت پیوندها) تأیید کرده
+   * مهر می‌گیرند و بقیه در فهرست pending گزارش می‌شوند.
+   */
+  const verified = new Set(Array.isArray(opts.verifiedIds) ? opts.verifiedIds : []);
   let verifiedCount = 0;
+  const pending = [];
 
   const audited = products.map((p) => {
-    // رکوردهایی که نشانی معتبر دارند و فعال هستند ممیزی می‌شوند
     const isCurated = p.autoDiscovered !== true;
-    if (isCurated && p.source?.url && /^https?:\/\//.test(p.source.url)) {
-      verifiedCount++;
-      return {
-        ...p,
-        lastVerified: auditDate,
-        lastSeen: auditDate,
-        source: {
-          ...p.source,
-          checked: auditDate,
-        },
-      };
+    if (!isCurated || !p.source?.url || !/^https?:\/\//.test(p.source.url)) return p;
+    if (!verified.has(p.id)) {
+      pending.push({ id: p.id, url: p.source.url, lastVerified: p.lastVerified || null });
+      return p;
     }
-    return p;
+    verifiedCount++;
+    return {
+      ...p,
+      lastVerified: auditDate,
+      lastSeen: auditDate,
+      source: { ...p.source, checked: auditDate },
+    };
   });
 
-  return { audited, verifiedCount };
+  return { audited, verifiedCount, pending };
 }
 
 /* ------------------------------------------------------------------ */
@@ -388,10 +397,15 @@ export function generateWeeklyReport(opts = {}) {
   const curated = products.filter((p) => p.autoDiscovered !== true).length;
   const auto = products.filter((p) => p.autoDiscovered === true).length;
   const stale = products.filter((p) => p.stale === true).length;
+  // «بازبینی» یعنی خط لوله یا منبع، همین اواخر داده را واقعاً خوانده باشد.
+  // lastSeen فقط در واکشی زنده ثبت می‌شود و lastUpdated تاریخ خودِ منبع است
+  // (ممکن است ماه‌ها کهنه باشد)؛ هیچ‌کدام جای مهر بازبینی را نمی‌گیرند.
+  const verifiedAt = (p) => p.lastVerified || p.source?.checked || null;
   const verifiedIn7Days = products.filter((p) => {
-    const d = p.lastSeen || p.lastVerified || p.source?.checked || p.lastUpdated;
-    return daysSince(d) <= 7;
+    const d = verifiedAt(p);
+    return d ? daysSince(d) <= 7 : false;
   }).length;
+  const snapshotProducts = products.filter((p) => p.source?.kind === 'snapshot').length;
 
   const ind = indicators.indicators ?? {};
   const inflationAnnual = ind.inflationAnnual?.value ?? 69.9;
@@ -411,6 +425,7 @@ export function generateWeeklyReport(opts = {}) {
       autoProducts: auto,
       staleProducts: stale,
       verifiedIn7Days,
+      snapshotProducts,
       freshnessPercent: total ? Math.round((verifiedIn7Days / total) * 100) : 0,
       healthScore: Math.max(0, Math.min(100, Math.round(
         (verifiedIn7Days / Math.max(1, total)) * 50 +
@@ -571,8 +586,13 @@ export async function syncWeekly(opts = {}) {
       incoming = incoming.concat(isResult.data.products);
       sourcesLog.push({
         name: 'isignal.ir (weekly-audit)',
-        ok: true,
+        // برش ذخیره‌شده «موفق» نیست؛ فقط دادهٔ شبکه‌ای موفق است.
+        ok: isResult.data.live === true,
+        ...(isResult.data.live === true ? {} : { degraded: true, note: 'برش ذخیره‌شده' }),
         origin: isResult.data.origin,
+        live: isResult.data.live === true,
+        page: isResult.data.page,
+        unmapped: isResult.data.unmapped?.length ?? 0,
         parsed: isResult.data.products.length,
         etf: isResult.data.etf,
         issuance: isResult.data.issuance,
@@ -587,8 +607,10 @@ export async function syncWeekly(opts = {}) {
   }
 
   // گام ۳: ممیزی رکوردهای دست‌نویس و ثبت تاریخ کنترل هفتگی
-  const { audited, verifiedCount } = auditCuratedProducts(dataset.products);
-  log(`ممیزی رکوردهای دست‌نویس: ${verifiedCount} محصول بازبینی و تأیید شد`);
+  const { audited, verifiedCount, pending } = auditCuratedProducts(dataset.products);
+  log(
+    `ممیزی رکوردهای دست‌نویس: ${verifiedCount} تأیید واقعی، ${pending.length} رکورد بدون بازبینی (مهر خودکار زده نشد)`,
+  );
 
   // گام ۴: ادغام محصولات تازه با پایگاه داده
   const { merged, stats } = mergeProducts(audited, incoming);
