@@ -1,0 +1,8 @@
+https://isignal.ir/wp-content/themes/signal/assets/dist/js/fund-landing.build.js?ver=1.73.0
+https://isignal.ir/wp-content/themes/signal/assets/dist/js/fund-list.build.js?ver=1.73.0
+https://isignal.ir/wp-content/themes/signal/assets/dist/js/header.build.js?ver=1.73.0
+https://isignal.ir/wp-content/themes/signal/assets/dist/js/react-vendors.build.js?ver=1.73.0
+https://isignal.ir/wp-content/themes/signal/assets/lib/js/audio.min.js?ver=1.73.0
+https://isignal.ir/wp-content/themes/signal/assets/lib/js/bootstrap.min.js?ver=1.73.0
+https://isignal.ir/wp-content/themes/signal/assets/lib/js/owl.carousel.min.js?ver=1.73.0
+https://isignal.ir/wp-content/themes/signal/assets/lib/js/popper.min.js?ver=1.73.0
