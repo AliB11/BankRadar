@@ -42,6 +42,8 @@ jobs:
           pathlib.Path('.probe/table.html').write_text('\n\n<!-- ===== -->\n\n'.join(out), 'utf-8')
           print('table chars', sum(len(x) for x in out))
           PY
+          curl -sSL --http1.1 -m 40 -A "$UA" -o .probe/fund-list.js "https://isignal.ir/wp-content/themes/signal/assets/dist/js/fund-list.build.js?ver=1.73.0" || true
+          curl -sSL --http1.1 -m 40 -A "$UA" -o .probe/fund-landing.js "https://isignal.ir/wp-content/themes/signal/assets/dist/js/fund-landing.build.js?ver=1.73.0" || true
           ls -la .probe
       - name: Commit probe output
         run: |
