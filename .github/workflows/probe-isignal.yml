@@ -13,37 +13,43 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: arena/ceda17b9-bankradar
-      - name: Probe isignal API contract
+      - name: Probe isignal endpoints
+        continue-on-error: true
         run: |
           mkdir -p .probe/api
           UA='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36'
-          BASE='https://advancedchart.isignal.ir/service/signalData@4.0.0'
-          OLD='{"market":"fund","sortBy":{"key":"return.oneYear","order":"desc"},"selectProperties":{"properties":["id","name","date","return.oneYear","return.oneMonth","buyPrice","manager","typeId"]}}'
-          NEW='{"market":"fund","sortBy":{"sortBy":"return.oneYear","desc":true},"property":["id","name","date","return.oneYear","return.sixMonth","return.threeMonth","return.oneMonth","return.oneWeek","buyPrice","manager","rasamUrl","typeId"]}'
-          printf '%s' "$OLD" > .probe/api/old.json
-          printf '%s' "$NEW" > .probe/api/new.json
+          S='https://isignal.ir'
           call() {
             name="$1"; shift
-            code=$(curl -sS --http1.1 -m 45 -A "$UA" -o ".probe/api/$name.out" -w '%{http_code}' "$@" 2>".probe/api/$name.err" || echo ERR)
-            echo "== $name -> $code bytes=$(wc -c < ".probe/api/$name.out")" >> .probe/api/summary.txt
-            head -c 400 ".probe/api/$name.out" >> .probe/api/summary.txt; echo >> .probe/api/summary.txt
-            head -c 200 ".probe/api/$name.err" >> .probe/api/summary.txt; echo >> .probe/api/summary.txt
+            code=$(curl -sS --http1.1 -m 40 -A "$UA" -H 'origin: https://isignal.ir' -o ".probe/api/$name.out" -w '%{http_code}' "$@" 2>".probe/api/$name.err") || code="000"
+            echo "== $name -> $code bytes=$(wc -c < ".probe/api/$name.out" 2>/dev/null || echo 0)" >> .probe/api/summary.txt
+            head -c 600 ".probe/api/$name.out" >> .probe/api/summary.txt; echo >> .probe/api/summary.txt
+            head -c 300 ".probe/api/$name.err" >> .probe/api/summary.txt; echo >> .probe/api/summary.txt
           }
-          call old-post -X POST "$BASE/list" -H 'content-type: application/json' -H 'gateway-system: signal' -H 'origin: https://isignal.ir' -H 'referer: https://isignal.ir/fund/' --data-binary @.probe/api/old.json
-          call new-post -X POST "$BASE/list" -H 'content-type: application/json' -H 'gateway-system: signal' -H 'origin: https://isignal.ir' -H 'referer: https://isignal.ir/fund/' --data-binary @.probe/api/new.json
-          call info -H 'gateway-system: signal' -H 'origin: https://isignal.ir' -H 'referer: https://isignal.ir/fund/' "$BASE/info?market=fund&symbolId=5247"
-          call fundtypes -H 'gateway-system: signal' -H 'origin: https://isignal.ir' "$BASE/fundTypes?market=fund"
-          call landing -H 'gateway-system: signal' -H 'origin: https://isignal.ir' "$BASE/landingFunds?market=fund"
-          call root -H 'gateway-system: signal' "$BASE/list"
+          echo '--- dns/routes ---' > .probe/api/summary.txt
+          getent hosts advancedchart.isignal.ir >> .probe/api/summary.txt 2>&1 || true
+          call wpjson "$S/wp-json/"
+          call types "$S/wp-json/wp/v2/types"
+          call fund3 "$S/wp-json/wp/v2/fund?per_page=3&_fields=symbolId,link,title,date"
+          call fundmeta "$S/wp-json/wp/v2/fund?per_page=1"
+          call posts "$S/wp-json/wp/v2/posts?per_page=1&_fields=id,link"
+          call jina "https://r.jina.ai/https://isignal.ir/fund/"
+          call apihost "https://advancedchart.isignal.ir/"
+          call apiping "https://advancedchart.isignal.ir/service/signalData@4.0.0/list"
           node -e "
             const fs=require('fs');
-            for (const f of ['old-post','new-post']) {
-              try { const j=JSON.parse(fs.readFileSync('.probe/api/'+f+'.out','utf8'));
-                const rows=Array.isArray(j)?j:(j.data||j.result||j.items||[]);
-                console.log(f,'array',Array.isArray(rows),'len',rows&&rows.length);
-                if(rows&&rows[0]) console.log(JSON.stringify(rows[0]).slice(0,600));
-              } catch(e){ console.log(f,'not-json',e.message); }
-            }
+            try { const j=JSON.parse(fs.readFileSync('.probe/api/wpjson.out','utf8'));
+              const out=[];
+              for (const [route,info] of Object.entries(j.routes||{})) if(/fund|signal|table|isignal|chart/i.test(route)) out.push(route+' '+JSON.stringify(info.methods));
+              console.log('ROUTES-FILTERED:'); console.log(out.join('\n'));
+            } catch(e){ console.log('wpjson parse fail', e.message); }
+            try { const t=JSON.parse(fs.readFileSync('.probe/api/types.out','utf8'));
+              console.log('TYPES:', Object.keys(t).join(','));
+              for (const [k,v] of Object.entries(t)) console.log(k, v.rest_base, JSON.stringify(v.supports||{}).slice(0,120));
+            } catch(e){ console.log('types parse fail', e.message); }
+            try { const f=JSON.parse(fs.readFileSync('.probe/api/fund3.out','utf8'));
+              console.log('FUND3 len', Array.isArray(f)&&f.length, JSON.stringify(f).slice(0,800));
+            } catch(e){ console.log('fund3 fail', e.message); }
           " >> .probe/api/summary.txt 2>&1
           ls -la .probe/api
       - name: Commit probe output
