@@ -13,38 +13,34 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: arena/ceda17b9-bankradar
-      - name: Probe api reachability and proxies
+      - name: Probe spg detail fields
         continue-on-error: true
         run: |
-          mkdir -p .probe/api4
+          mkdir -p .probe/api5
           UA='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36'
-          PAYLOAD='{"market":"fund","sortBy":{"sortBy":"return.oneYear","desc":true},"property":["id","name","date","return.oneYear","return.oneMonth","buyPrice","manager","typeId"]}'
+          B='https://signalpardazgroup.com/service/signalData@4.0.0'
           call() {
             name="$1"; shift
-            code=$(curl -sS --http1.1 -m 20 -A "$UA" -H 'origin: https://isignal.ir' -o ".probe/api4/$name.out" -w '%{http_code}' "$@" 2>".probe/api4/$name.err") || code="000"
-            echo "== $name -> $code bytes=$(wc -c < ".probe/api4/$name.out" 2>/dev/null || echo 0) err=$(head -c 120 ".probe/api4/$name.err" 2>/dev/null | tr '\n' ' ')" >> .probe/api4/summary.txt
-            { head -c 300 ".probe/api4/$name.out" 2>/dev/null || true; } >> .probe/api4/summary.txt; echo >> .probe/api4/summary.txt
+            code=$(curl -sS --http1.1 -m 30 -A "$UA" -H 'origin: https://isignal.ir' -H 'gateway-system: signal' -o ".probe/api5/$name.out" -w '%{http_code}' "$@" 2>".probe/api5/$name.err") || code="000"
+            echo "== $name -> $code bytes=$(wc -c < ".probe/api5/$name.out" 2>/dev/null || echo 0) err=$(head -c 120 ".probe/api5/$name.err" 2>/dev/null | tr '\n' ' ')" >> .probe/api5/summary.txt
+            { head -c 700 ".probe/api5/$name.out" 2>/dev/null || true; } >> .probe/api5/summary.txt; echo >> .probe/api5/summary.txt
           }
-          : > .probe/api4/summary.txt
-          ENC=$(node -e "console.log(encodeURIComponent('https://advancedchart.isignal.ir/service/signalData@4.0.0/list'))")
-          call direct-get -H 'gateway-system: signal' "https://advancedchart.isignal.ir/service/signalData@4.0.0/list?market=fund"
-          call direct-http -H 'gateway-system: signal' "http://advancedchart.isignal.ir/service/signalData@4.0.0/list?market=fund"
-          call same-origin -H 'gateway-system: signal' "https://isignal.ir/service/signalData@4.0.0/list?market=fund"
-          call spg-get -H 'gateway-system: signal' "https://signalpardazgroup.com/service/signalData@4.0.0/list?market=fund"
-          call spg-post -X POST "https://signalpardazgroup.com/service/signalData@4.0.0/list" -H 'content-type: application/json' -H 'gateway-system: signal' --data-binary "$PAYLOAD"
-          call allorigins "https://api.allorigins.win/raw?url=$ENC"
-          call allorigins2 "https://api.allorigins.win/get?url=$ENC"
-          call jina-api "https://r.jina.ai/https://advancedchart.isignal.ir/service/signalData@4.0.0/list?market=fund"
-          call corsproxy -X POST "https://corsproxy.io/?url=$ENC" -H 'content-type: application/json' --data-binary "$PAYLOAD"
-          call corsanywhere -X POST "https://cors-anywhere.herokuapp.com/https://advancedchart.isignal.ir/service/signalData@4.0.0/list" -H 'content-type: application/json' --data-binary "$PAYLOAD"
-          call thingproxy -X POST "https://thingproxy.freeboard.io/fetch/https://advancedchart.isignal.ir/service/signalData@4.0.0/list" -H 'content-type: application/json' --data-binary "$PAYLOAD"
-          call codetabs "https://api.codetabs.com/v1/proxy?quest=$ENC"
+          : > .probe/api5/summary.txt
+          OLD='{"market":"fund","sortBy":{"key":"return.oneYear","order":"desc"},"selectProperties":{"properties":["id","name","date","return.oneYear","return.oneMonth","buyPrice","manager","typeId"]}}'
+          EXTRA='{"market":"fund","sortBy":{"sortBy":"return.oneYear","desc":true},"property":["id","name","date","return.oneYear","return.sixMonth","return.threeMonth","return.oneMonth","return.oneWeek","buyPrice","sellPrice","manager","rasamUrl","typeId","guarantor","liquidityGuarantor","website","site","startDate","started","nav","navBillionRial","navB"]}'
+          call old -X POST "$B/list" -H 'content-type: application/json' --data-binary "$OLD"
+          call extra -X POST "$B/list" -H 'content-type: application/json' --data-binary "$EXTRA"
+          call info-5247 "$B/info?market=fund&symbolId=5247"
+          call info-5061 "$B/info?market=fund&symbolId=5061"
+          call types "$B/fundTypes?market=fund"
           node -e "
             const fs=require('fs');
-            for (const n of ['direct-get','same-origin','spg-get','spg-post','allorigins','allorigins2','jina-api','corsproxy','corsanywhere','thingproxy','codetabs']) {
-              try { const t=fs.readFileSync('.probe/api4/'+n+'.out','utf8'); console.log(n,'len',t.length,'head',JSON.stringify(t.slice(0,160))); } catch(e){ console.log(n,'missing'); }
-            }
-          " >> .probe/api4/summary.txt 2>&1
+            const rd=n=>{try{return JSON.parse(fs.readFileSync('.probe/api5/'+n+'.out','utf8'))}catch(e){return null}};
+            const o=rd('old'); console.log('old envelope', o&&Object.keys(o), o&&o.data&&o.data.totalLength);
+            const rows=o&&o.data&&o.data.data||[]; const r5=rows.find(r=>r.id===5247); console.log('old 5247', JSON.stringify(r5));
+            const e=rd('extra'); const er=e&&e.data&&e.data.data||[]; const e5=er.find(r=>r.id===5247); console.log('extra 5247 keys', e5&&Object.keys(e5).join(',')); console.log('extra 5247', JSON.stringify(e5).slice(0,900));
+            for (const n of ['info-5247','info-5061','types']) { const j=rd(n); console.log('##',n, j&&JSON.stringify(j).slice(0,1200)); }
+          " >> .probe/api5/summary.txt 2>&1
       - name: Commit probe output
         if: always()
         run: |
