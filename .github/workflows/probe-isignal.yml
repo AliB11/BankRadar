@@ -13,45 +13,46 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: arena/ceda17b9-bankradar
-      - name: Probe isignal endpoints
+      - name: Probe isignal data proxies
         continue-on-error: true
         run: |
-          mkdir -p .probe/api
+          mkdir -p .probe/api2
           UA='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36'
           S='https://isignal.ir'
+          PAYLOAD='{"market":"fund","sortBy":{"sortBy":"return.oneYear","desc":true},"property":["id","name","date","return.oneYear","return.sixMonth","return.threeMonth","return.oneMonth","return.oneWeek","buyPrice","manager","rasamUrl","typeId"]}'
           call() {
             name="$1"; shift
-            code=$(curl -sS --http1.1 -m 40 -A "$UA" -H 'origin: https://isignal.ir' -o ".probe/api/$name.out" -w '%{http_code}' "$@" 2>".probe/api/$name.err") || code="000"
-            echo "== $name -> $code bytes=$(wc -c < ".probe/api/$name.out" 2>/dev/null || echo 0)" >> .probe/api/summary.txt
-            head -c 600 ".probe/api/$name.out" >> .probe/api/summary.txt; echo >> .probe/api/summary.txt
-            head -c 300 ".probe/api/$name.err" >> .probe/api/summary.txt; echo >> .probe/api/summary.txt
+            code=$(curl -sS --http1.1 -m 40 -A "$UA" -H 'origin: https://isignal.ir' -H 'referer: https://isignal.ir/fund/' -o ".probe/api2/$name.out" -w '%{http_code}' "$@" 2>".probe/api2/$name.err") || code="000"
+            echo "== $name -> $code bytes=$(wc -c < ".probe/api2/$name.out" 2>/dev/null || echo 0)" >> .probe/api2/summary.txt
+            head -c 500 ".probe/api2/$name.out" >> .probe/api2/summary.txt; echo >> .probe/api2/summary.txt
+            head -c 200 ".probe/api2/$name.err" >> .probe/api2/summary.txt; echo >> .probe/api2/summary.txt
           }
-          echo '--- dns/routes ---' > .probe/api/summary.txt
-          getent hosts advancedchart.isignal.ir >> .probe/api/summary.txt 2>&1 || true
-          call wpjson "$S/wp-json/"
-          call types "$S/wp-json/wp/v2/types"
-          call fund3 "$S/wp-json/wp/v2/fund?per_page=3&_fields=symbolId,link,title,date"
-          call fundmeta "$S/wp-json/wp/v2/fund?per_page=1"
-          call posts "$S/wp-json/wp/v2/posts?per_page=1&_fields=id,link"
-          call jina "https://r.jina.ai/https://isignal.ir/fund/"
-          call apihost "https://advancedchart.isignal.ir/"
-          call apiping "https://advancedchart.isignal.ir/service/signalData@4.0.0/list"
+          : > .probe/api2/summary.txt
+          call sd-post -X POST "$S/wp-json/signal/v4/signal-data" -H 'content-type: application/json' --data-binary "$PAYLOAD"
+          call sd-get "$S/wp-json/signal/v4/signal-data?market=fund"
+          call sd-get2 "$S/wp-json/signal/v4/signal-data?market=fund&path=list&limit=5"
+          call detail-post -X POST "$S/wp-json/signal/v1/detail" -H 'content-type: application/json' --data-binary '{"market":"fund","symbolId":5247}'
+          call detail-get "$S/wp-json/signal/v1/detail?market=fund&symbolId=5247"
+          call data-post -X POST "$S/wp-json/signal/v4/data/fund" -H 'content-type: application/json' --data-binary "$PAYLOAD"
+          call data-get "$S/wp-json/signal/v4/data/fund?per_page=3"
+          call fundall "$S/wp-json/wp/v2/fund?per_page=100&page=1&_fields=symbolId,link,title,symbolFullName,modified"
+          call fundpages "$S/wp-json/wp/v2/fund?per_page=1"
+          # تعداد کل و صفحه‌ها
+          echo '--- headers ---' >> .probe/api2/summary.txt
+          curl -sSI --http1.1 -m 30 -A "$UA" "$S/wp-json/wp/v2/fund?per_page=100" | grep -iE 'x-wp-total|x-wp-totalpages|content-type' >> .probe/api2/summary.txt || true
+          # جینا: آیا جدول را رندر می‌کند؟
+          curl -sSL --http1.1 -m 60 -A "$UA" -o .probe/api2/jina.txt "https://r.jina.ai/https://isignal.ir/fund/" || true
+          echo "jina bytes=$(wc -c < .probe/api2/jina.txt)" >> .probe/api2/summary.txt
+          grep -n 'ثبات نوید\|قیمت صدور\|نام نماد' .probe/api2/jina.txt | head -5 >> .probe/api2/summary.txt || true
           node -e "
             const fs=require('fs');
-            try { const j=JSON.parse(fs.readFileSync('.probe/api/wpjson.out','utf8'));
-              const out=[];
-              for (const [route,info] of Object.entries(j.routes||{})) if(/fund|signal|table|isignal|chart/i.test(route)) out.push(route+' '+JSON.stringify(info.methods));
-              console.log('ROUTES-FILTERED:'); console.log(out.join('\n'));
-            } catch(e){ console.log('wpjson parse fail', e.message); }
-            try { const t=JSON.parse(fs.readFileSync('.probe/api/types.out','utf8'));
-              console.log('TYPES:', Object.keys(t).join(','));
-              for (const [k,v] of Object.entries(t)) console.log(k, v.rest_base, JSON.stringify(v.supports||{}).slice(0,120));
-            } catch(e){ console.log('types parse fail', e.message); }
-            try { const f=JSON.parse(fs.readFileSync('.probe/api/fund3.out','utf8'));
-              console.log('FUND3 len', Array.isArray(f)&&f.length, JSON.stringify(f).slice(0,800));
-            } catch(e){ console.log('fund3 fail', e.message); }
-          " >> .probe/api/summary.txt 2>&1
-          ls -la .probe/api
+            for (const n of ['sd-post','sd-get','sd-get2','detail-post','detail-get','data-post','data-get','fundall']) {
+              try { const t=fs.readFileSync('.probe/api2/'+n+'.out','utf8'); let j=null; try{j=JSON.parse(t)}catch(e){}
+                console.log(n, 'len', t.length, 'json', !!j, j&&Array.isArray(j)?'array':typeof j, j&&j.code!==undefined?('code '+j.code+' '+j.message):'');
+              } catch(e){ console.log(n,'missing'); }
+            }
+          " >> .probe/api2/summary.txt 2>&1
+          ls -la .probe/api2
       - name: Commit probe output
         if: always()
         run: |
