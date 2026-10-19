@@ -1,0 +1,5 @@
+1 200 97465 https://isignal.ir/fund/
+2 404 74202 https://isignal.ir/fund/page/2/
+3 404 74202 https://isignal.ir/fund/?paged=2
+4 200 97465 https://isignal.ir/fund/?page=2
+5 200 76323 https://isignal.ir/fund/%D8%AB%D8%A8%D8%A7%D8%AA-%D9%86%D9%88%DB%8C%D8%AF/
