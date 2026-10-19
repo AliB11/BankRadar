@@ -1063,7 +1063,7 @@ export function dataModalHTML() {
     : '';
 
   const historySection = history.length >= 2
-    ? `<div class="section-title">روند سلامت داده — ${fa(history.length)} هفته اخیر</div>
+    ? `<div class="section-title">روند سلامت داده — ${fa(history.length)} اجرای اخیر</div>
        <div style="display:flex;gap:var(--sp-1);align-items:end;height:48px;margin-block:var(--sp-3);padding:var(--sp-2);background:var(--surface-2);border-radius:var(--r-md);border:1px solid var(--hairline)">
          ${history
            .slice(-20)
