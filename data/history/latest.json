@@ -2,14 +2,14 @@
   "date": "2026-10-19",
   "diffSummary": {
     "added": 0,
-    "amountChanged": 58,
+    "amountChanged": 0,
     "confidenceChanged": 0,
-    "rateChanged": 55,
+    "rateChanged": 7,
     "removed": 0,
     "revived": 0,
     "staleNow": 0,
     "termChanged": 0,
-    "totalChanges": 113
+    "totalChanges": 7
   },
   "report": {
     "anomalies": {
@@ -341,237 +341,94 @@
       "added": [],
       "rateChanged": [
         {
-          "bank": "سبدگردان آرمان آتی",
-          "delta": -0.16,
-          "diff": -0.16,
-          "from": 38.6,
-          "id": "fund-accord-arman-ati",
-          "newRate": 38.44,
-          "oldRate": 38.6,
-          "product": "صندوق درآمد ثابت آرمان آتی کوثر (ETF - آکورد)",
-          "to": 38.44
+          "bank": "مشاور سرمایه‌گذاری ترنج",
+          "delta": 0.55,
+          "diff": 0.55,
+          "from": 41.97,
+          "id": "fund-afran-toranj",
+          "newRate": 42.52,
+          "oldRate": 41.97,
+          "product": "صندوق درآمد ثابت افرا نماد پایدار (ETF - افران)",
+          "to": 42.52
         },
         {
-          "bank": "سبدگردان ویستا",
-          "delta": -0.17,
-          "diff": -0.17,
-          "from": 30.13,
-          "id": "fund-akam-vista",
-          "newRate": 29.96,
-          "oldRate": 30.13,
-          "product": "صندوق درآمد ثابت آکام (ETF - آکام)",
-          "to": 29.96
+          "bank": "کارگزاری سهم آشنا / تأمین سرمایه آشنا",
+          "delta": -0.34,
+          "diff": -0.34,
+          "from": 30.01,
+          "id": "fund-amin-ashna",
+          "newRate": 29.67,
+          "oldRate": 30.01,
+          "product": "صندوق درآمد ثابت امین آشنا ایرانیان (صدور و ابطالی)",
+          "to": 29.67
         },
         {
-          "bank": "تأمین سرمایه امین",
-          "delta": 0.42,
-          "diff": 0.42,
-          "from": 31.39,
-          "id": "fund-amin-ansar",
-          "newRate": 31.81,
-          "oldRate": 31.39,
-          "product": "صندوق سرمایه‌گذاری امین انصار (صدور و ابطالی)",
-          "to": 31.81
+          "bank": "گروه مالی کاریزما",
+          "delta": 0.11,
+          "diff": 0.11,
+          "from": 38.47,
+          "id": "fund-kara-charisma",
+          "newRate": 38.58,
+          "oldRate": 38.47,
+          "product": "صندوق درآمد ثابت نوع دوم کارا (ETF - کارا)",
+          "to": 38.58
         },
         {
-          "bank": "تأمین سرمایه امین",
-          "delta": -0.26,
-          "diff": -0.26,
-          "from": 31.07,
-          "id": "fund-amin-yekom-farda",
-          "newRate": 30.81,
-          "oldRate": 31.07,
-          "product": "صندوق درآمد ثابت امین یکم فردا (ETF - امین یکم)",
-          "to": 30.81
-        },
-        {
-          "bank": "سبدگردان داریوش",
-          "delta": -0.46,
-          "diff": -0.46,
-          "from": 29.86,
-          "id": "fund-andookhteh-dariush",
-          "newRate": 29.4,
-          "oldRate": 29.86,
-          "product": "صندوق درآمد ثابت اندوخته داریوش (ETF)",
-          "to": 29.4
-        },
-        {
-          "bank": "بانک صادرات ایران / تأمین سرمایه سپهر",
-          "delta": 0.39,
-          "diff": 0.39,
-          "from": 29.12,
-          "id": "fund-andookhteh-sepehr",
-          "newRate": 29.51,
-          "oldRate": 29.12,
-          "product": "صندوق سرمایه‌گذاری اندوخته پایدار سپهر (صدور و ابطالی)",
-          "to": 29.51
-        },
-        {
-          "bank": "بانک اقتصاد نوین / تأمین سرمایه نوین",
-          "delta": 0.27,
-          "diff": 0.27,
-          "from": 30.61,
-          "id": "fund-armaghan-iranian",
-          "newRate": 30.88,
-          "oldRate": 30.61,
-          "product": "صندوق درآمد ثابت ارمغان ایرانیان (ETF - ارمغان)",
-          "to": 30.88
-        },
-        {
-          "bank": "بانک سپه / تأمین سرمایه امید",
-          "delta": -0.08,
-          "diff": -0.08,
-          "from": 28.5,
-          "id": "fund-asan-ganjineh-mehr",
-          "newRate": 28.42,
-          "oldRate": 28.5,
-          "product": "صندوق درآمد ثابت مشترک گنجینه مهر (ETF - آسان)",
-          "to": 28.42
-        },
-        {
-          "bank": "سبدگردان آسمان",
-          "delta": -0.45,
-          "diff": -0.45,
-          "from": 31.66,
-          "id": "fund-aseman-sahand",
-          "newRate": 31.21,
-          "oldRate": 31.66,
-          "product": "صندوق سرمایه‌گذاری مشترک آسمان سهند (صدور و ابطالی)",
-          "to": 31.21
-        },
-        {
-          "bank": "سبدگردان آرمان اقتصاد",
-          "delta": 0.84,
-          "diff": 0.84,
-          "from": 32.49,
-          "id": "fund-asood-arman-eghtesad",
-          "newRate": 33.33,
-          "oldRate": 32.49,
-          "product": "صندوق درآمد ثابت آسود (ETF)",
-          "to": 33.33
-        },
-        {
-          "bank": "سبدگردان کاریزما",
-          "delta": 0.48,
-          "diff": 0.48,
-          "from": 27.08,
-          "id": "fund-charisma-fixed",
-          "newRate": 27.56,
-          "oldRate": 27.08,
-          "product": "صندوق سرمایه‌گذاری در اوراق بهادار با در آمد ثابت کاریزما (صدور و ابطالی)",
-          "to": 27.56
-        },
-        {
-          "bank": "سبدگردان اعتبار",
-          "delta": -0.12,
-          "diff": -0.12,
-          "from": 38.56,
-          "id": "fund-etebar-etf",
-          "newRate": 38.44,
-          "oldRate": 38.56,
-          "product": "صندوق درآمد ثابت اعتبار (ETF)",
-          "to": 38.44
-        },
-        {
-          "bank": "مؤسسه اعتباری ملل / سبدگردان نوین نگر آسیا",
-          "delta": -0.18,
-          "diff": -0.18,
-          "from": 30.17,
-          "id": "fund-etemad-melal",
-          "newRate": 29.99,
-          "oldRate": 30.17,
-          "product": "صندوق درآمد ثابت اعتماد ملل (صدور و ابطالی)",
-          "to": 29.99
-        },
-        {
-          "bank": "بانک ملی ایران / کارگزاری بانک ملی ایران",
-          "delta": 0.28,
-          "diff": 0.28,
-          "from": 30.77,
-          "id": "fund-etemad-melli",
-          "newRate": 31.05,
-          "oldRate": 30.77,
-          "product": "صندوق سرمایه‌گذاری اعتماد کارگزاری بانک ملی ایران (صدور و ابطالی)",
-          "to": 31.05
+          "bank": "کاریزما / فارابی (سبدگردان فارابی)",
+          "delta": 0.23,
+          "diff": 0.23,
+          "from": 38.14,
+          "id": "fund-labkhand-farabi",
+          "newRate": 38.37,
+          "oldRate": 38.14,
+          "product": "صندوق درآمد ثابت لبخند فارابی (ETF - لبخند)",
+          "to": 38.37
         },
         {
           "bank": "بانک پارسیان / تأمین سرمایه لوتوس پارسیان",
-          "delta": 1.63,
-          "diff": 1.63,
-          "from": 38.05,
-          "id": "fund-etemad-parsian",
-          "newRate": 39.68,
-          "oldRate": 38.05,
-          "product": "صندوق درآمد ثابت اعتماد آفرین پارسیان (ETF - اعتماد)",
-          "to": 39.68
+          "delta": -0.15,
+          "diff": -0.15,
+          "from": 27.83,
+          "id": "fund-lotus-parsian",
+          "newRate": 27.68,
+          "oldRate": 27.83,
+          "product": "صندوق سرمایه‌گذاری لوتوس پارسیان (صدور و ابطالی)",
+          "to": 27.68
         },
         {
-          "bank": "سبدگردان هیوا",
-          "delta": 0.42,
-          "diff": 0.42,
-          "from": 36.35,
-          "id": "fund-etminan-hiwa",
-          "newRate": 36.77,
-          "oldRate": 36.35,
-          "product": "صندوق درآمد ثابت اطمینان (ETF)",
-          "to": 36.77
+          "bank": "بانک سپه / مدیریت دارایی امید",
+          "delta": 0.43,
+          "diff": 0.43,
+          "from": 27.84,
+          "id": "fund-omid-sepah",
+          "newRate": 28.27,
+          "oldRate": 27.84,
+          "product": "صندوق سرمایه‌گذاری گنجینه امید ایرانیان (صدور و ابطالی بانک سپه)",
+          "to": 28.27
         },
         {
-          "bank": "سبدگردان آرمان اقتصاد",
-          "delta": -0.44,
-          "diff": -0.44,
-          "from": 32.14,
-          "id": "fund-ettehad-arman-eghtesad",
-          "newRate": 31.7,
-          "oldRate": 32.14,
-          "product": "صندوق سرمایه‌گذاری اتحاد آرمان اقتصاد (صدور و ابطالی)",
-          "to": 31.7
-        },
-        {
-          "bank": "سبدگردان توسعه فیروزه",
-          "delta": 1.26,
-          "diff": 1.26,
-          "from": 38.27,
-          "id": "fund-firouza",
-          "newRate": 39.53,
-          "oldRate": 38.27,
-          "product": "صندوق درآمد ثابت فیروزه آسیا (ETF - فیروزا)",
-          "to": 39.53
-        },
-        {
-          "bank": "بانک گردشگری / سبدگردان لقمان",
-          "delta": -0.51,
-          "diff": -0.51,
-          "from": 27.23,
-          "id": "fund-gardeshgari",
-          "newRate": 26.72,
-          "oldRate": 27.23,
-          "product": "صندوق سرمایه‌گذاری بانک گردشگری (صدور و ابطالی)",
-          "to": 26.72
-        },
-        {
-          "bank": "سبدگردان آرمان آتی",
-          "delta": 2.85,
-          "diff": 2.85,
-          "from": 29.86,
-          "id": "fund-golbarg-arman-ati",
-          "newRate": 32.71,
-          "oldRate": 29.86,
-          "product": "صندوق سرمایه‌گذاری ارزش آفرین گلبرگ (صدور و ابطالی)",
-          "to": 32.71
+          "bank": "سبدگردان آگاه",
+          "delta": 0.15,
+          "diff": 0.15,
+          "from": 37.18,
+          "id": "fund-yaghoot-agah",
+          "newRate": 37.33,
+          "oldRate": 37.18,
+          "product": "صندوق درآمد ثابت یاقوت آگاه (ETF - یاقوت)",
+          "to": 37.33
         }
       ],
       "staleNow": [],
       "summary": {
         "added": 0,
-        "amountChanged": 58,
+        "amountChanged": 0,
         "confidenceChanged": 0,
-        "rateChanged": 55,
+        "rateChanged": 7,
         "removed": 0,
         "revived": 0,
         "staleNow": 0,
         "termChanged": 0,
-        "totalChanges": 113
+        "totalChanges": 7
       }
     },
     "counts": {
@@ -582,8 +439,8 @@
       "loyalty": 14,
       "total": 354
     },
-    "durationMs": 277781,
-    "generatedAt": "2026-10-19T07:31:22.245Z",
+    "durationMs": 283869,
+    "generatedAt": "2026-10-19T07:40:31.710Z",
     "macro": {
       "depositCap1y": 23,
       "inflationAnnual": 73.6,
@@ -594,49 +451,47 @@
     "merge": {
       "added": 0,
       "baseline": 354,
-      "incoming": 279,
-      "thinSkipped": 13,
-      "unchanged": 13,
-      "updated": 266
+      "incoming": 210,
+      "thinSkipped": 0,
+      "unchanged": 58,
+      "updated": 152
     },
     "mode": "weekly-sync",
     "period": "هفته منتهی به ۲۷ مهر ۱۴۰۵",
-    "signature": "498c3bc4a05d9ff3",
+    "signature": "d04500ff8776bf7e",
     "sources": [
       {
-        "attempted": 181,
+        "attempted": 161,
         "discovered": 612,
-        "ms": 167986,
+        "ms": 109273,
         "name": "rade.ir (weekly-audit)",
         "ok": true,
-        "parsed": 181
+        "parsed": 143
       },
       {
-        "ms": 11820,
+        "ms": 27407,
         "name": "macro-indicators",
         "ok": true,
         "touched": []
       },
       {
-        "ms": 93942,
+        "ms": 111422,
         "name": "bank-sites",
         "ok": true,
         "reachable": 4,
         "targets": 25
       },
       {
-        "ms": 1374,
-        "name": "dgshahr.com (weekly-audit)",
-        "ok": true,
-        "parsed": 31,
-        "schemes": 13,
-        "tiers": 51
+        "error": "شبکه در دسترس نبود — https://dgshahr.com/blog/best-banks-for-deposit-rates/",
+        "ms": 33411,
+        "name": "dgshahr.com",
+        "ok": false
       },
       {
         "etf": 38,
         "issuance": 29,
         "live": true,
-        "ms": 2582,
+        "ms": 2271,
         "name": "isignal.ir (weekly-audit)",
         "ok": true,
         "origin": "api:signalpardazgroup.com",
@@ -653,40 +508,16 @@
     "stats": {
       "autoProducts": 283,
       "curatedProducts": 71,
-      "freshnessPercent": 98,
-      "healthScore": 99,
+      "freshnessPercent": 81,
+      "healthScore": 90,
       "snapshotProducts": 0,
       "staleProducts": 0,
       "totalProducts": 354,
-      "verifiedIn7Days": 348
+      "verifiedIn7Days": 285
     },
     "transparency": {
-      "avgScore": 70,
+      "avgScore": 68,
       "banks": [
-        {
-          "avgDigital": 99,
-          "avgFreshness": 100,
-          "bank": "ویپاد",
-          "bankId": "vipad",
-          "highConfidence": 1,
-          "regulatory": 0,
-          "stale": 0,
-          "tone": "good",
-          "total": 1,
-          "transparencyScore": 100
-        },
-        {
-          "avgDigital": 97,
-          "avgFreshness": 100,
-          "bank": "ازکی‌وام",
-          "bankId": "azkivam",
-          "highConfidence": 1,
-          "regulatory": 0,
-          "stale": 0,
-          "tone": "good",
-          "total": 1,
-          "transparencyScore": 99
-        },
         {
           "avgDigital": 96,
           "avgFreshness": 100,
@@ -736,16 +567,16 @@
           "transparencyScore": 98
         },
         {
-          "avgDigital": 85,
-          "avgFreshness": 100,
-          "bank": "بانک مرکزی جمهوری اسلامی ایران",
-          "bankId": "cbi",
+          "avgDigital": 99,
+          "avgFreshness": 87,
+          "bank": "ویپاد",
+          "bankId": "vipad",
           "highConfidence": 1,
-          "regulatory": 1,
+          "regulatory": 0,
           "stale": 0,
           "tone": "good",
           "total": 1,
-          "transparencyScore": 97
+          "transparencyScore": 96
         },
         {
           "avgDigital": 82,
@@ -760,8 +591,32 @@
           "transparencyScore": 96
         },
         {
+          "avgDigital": 97,
+          "avgFreshness": 70,
+          "bank": "ازکی‌وام",
+          "bankId": "azkivam",
+          "highConfidence": 1,
+          "regulatory": 0,
+          "stale": 0,
+          "tone": "good",
+          "total": 1,
+          "transparencyScore": 90
+        },
+        {
+          "avgDigital": 85,
+          "avgFreshness": 70,
+          "bank": "بانک مرکزی جمهوری اسلامی ایران",
+          "bankId": "cbi",
+          "highConfidence": 1,
+          "regulatory": 1,
+          "stale": 0,
+          "tone": "good",
+          "total": 1,
+          "transparencyScore": 88
+        },
+        {
           "avgDigital": 69,
-          "avgFreshness": 100,
+          "avgFreshness": 70,
           "bank": "شبکه بانکی (ثبت‌نام: بانک مرکزی)",
           "bankId": "cbi",
           "highConfidence": 4,
@@ -769,31 +624,7 @@
           "stale": 0,
           "tone": "good",
           "total": 4,
-          "transparencyScore": 94
-        },
-        {
-          "avgDigital": 83,
-          "avgFreshness": 100,
-          "bank": "شبکه بانکی",
-          "bankId": "cbi",
-          "highConfidence": 3,
-          "regulatory": 3,
-          "stale": 0,
-          "tone": "good",
-          "total": 4,
-          "transparencyScore": 89
-        },
-        {
-          "avgDigital": 99,
-          "avgFreshness": 100,
-          "bank": "بلوبانک",
-          "bankId": "blubank",
-          "highConfidence": 3,
-          "regulatory": 0,
-          "stale": 0,
-          "tone": "good",
-          "total": 5,
-          "transparencyScore": 88
+          "transparencyScore": 85
         },
         {
           "avgDigital": 96,
@@ -832,8 +663,32 @@
           "transparencyScore": 83
         },
         {
+          "avgDigital": 83,
+          "avgFreshness": 70,
+          "bank": "شبکه بانکی",
+          "bankId": "cbi",
+          "highConfidence": 3,
+          "regulatory": 3,
+          "stale": 0,
+          "tone": "good",
+          "total": 4,
+          "transparencyScore": 80
+        },
+        {
+          "avgDigital": 99,
+          "avgFreshness": 69,
+          "bank": "بلوبانک",
+          "bankId": "blubank",
+          "highConfidence": 3,
+          "regulatory": 0,
+          "stale": 0,
+          "tone": "warn",
+          "total": 5,
+          "transparencyScore": 78
+        },
+        {
           "avgDigital": 72,
-          "avgFreshness": 100,
+          "avgFreshness": 97,
           "bank": "بانک خاورمیانه",
           "bankId": "middle-east",
           "highConfidence": 1,
@@ -842,42 +697,6 @@
           "tone": "warn",
           "total": 3,
           "transparencyScore": 74
-        },
-        {
-          "avgDigital": 81,
-          "avgFreshness": 100,
-          "bank": "بانک ملی ایران",
-          "bankId": "melli",
-          "highConfidence": 1,
-          "regulatory": 0,
-          "stale": 0,
-          "tone": "warn",
-          "total": 6,
-          "transparencyScore": 71
-        },
-        {
-          "avgDigital": 76,
-          "avgFreshness": 100,
-          "bank": "بانک صادرات ایران",
-          "bankId": "saderat",
-          "highConfidence": 1,
-          "regulatory": 0,
-          "stale": 0,
-          "tone": "warn",
-          "total": 5,
-          "transparencyScore": 71
-        },
-        {
-          "avgDigital": 99,
-          "avgFreshness": 100,
-          "bank": "دیجی‌پی",
-          "bankId": "digipay",
-          "highConfidence": 0,
-          "regulatory": 0,
-          "stale": 0,
-          "tone": "warn",
-          "total": 1,
-          "transparencyScore": 70
         },
         {
           "avgDigital": 95,
@@ -894,10 +713,46 @@
         {
           "avgDigital": 95,
           "avgFreshness": 100,
-          "bank": "ویپاد (بانک پاسارگاد)",
-          "bankId": "vipad",
+          "bank": "سبدگردان ویستا",
+          "bankId": "vista",
           "highConfidence": 0,
-          "regulatory": 0,
+          "regulatory": 2,
+          "stale": 0,
+          "tone": "warn",
+          "total": 2,
+          "transparencyScore": 69
+        },
+        {
+          "avgDigital": 95,
+          "avgFreshness": 100,
+          "bank": "سبدگردان داریوش",
+          "bankId": "dariush",
+          "highConfidence": 0,
+          "regulatory": 1,
+          "stale": 0,
+          "tone": "warn",
+          "total": 1,
+          "transparencyScore": 69
+        },
+        {
+          "avgDigital": 95,
+          "avgFreshness": 100,
+          "bank": "بانک اقتصاد نوین / تأمین سرمایه نوین",
+          "bankId": "eghtesad-novin",
+          "highConfidence": 0,
+          "regulatory": 1,
+          "stale": 0,
+          "tone": "warn",
+          "total": 1,
+          "transparencyScore": 69
+        },
+        {
+          "avgDigital": 95,
+          "avgFreshness": 100,
+          "bank": "سبدگردان هیوا",
+          "bankId": "hiwa",
+          "highConfidence": 0,
+          "regulatory": 1,
           "stale": 0,
           "tone": "warn",
           "total": 1,
