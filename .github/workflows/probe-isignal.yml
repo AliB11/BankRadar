@@ -13,38 +13,41 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: arena/ceda17b9-bankradar
-      - name: Fetch isignal pages
+      - name: Probe isignal API contract
         run: |
-          mkdir -p .probe
+          mkdir -p .probe/api
           UA='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36'
-          i=0
-          for u in \
-            "https://isignal.ir/fund/" \
-            "https://isignal.ir/fund/page/2/" \
-            "https://isignal.ir/fund/?paged=2" \
-            "https://isignal.ir/fund/?page=2" \
-            "https://isignal.ir/fund/%D8%AB%D8%A8%D8%A7%D8%AA-%D9%86%D9%88%DB%8C%D8%AF/" ; do
-            i=$((i+1))
-            code=$(curl -sSL --http1.1 -m 40 -A "$UA" -o ".probe/p$i.html" -w '%{http_code}' "$u" || echo ERR)
-            echo "$i $code $(wc -c < ".probe/p$i.html") $u" >> .probe/index.txt
-          done
-          # فقط بخش جدول صفحهٔ ۱ + ناوبری صفحه‌بندی + فیلترها
-          python3 - <<'PY'
-          import re, pathlib
-          src = pathlib.Path('.probe/p1.html').read_text('utf-8', 'replace')
-          out = []
-          for m in re.finditer(r'<table[\s\S]*?</table>', src, re.I):
-              out.append(m.group(0)[:120000])
-          # بلوک صفحه‌بندی و فیلترها
-          for kw in ('pagination', 'page-item', 'filter', 'type'):
-              for m in re.finditer(r'<[^>]*%s[^>]*>' % kw, src, re.I):
-                  out.append(m.group(0)[:400])
-          pathlib.Path('.probe/table.html').write_text('\n\n<!-- ===== -->\n\n'.join(out), 'utf-8')
-          print('table chars', sum(len(x) for x in out))
-          PY
-          curl -sSL --http1.1 -m 40 -A "$UA" -o .probe/fund-list.js "https://isignal.ir/wp-content/themes/signal/assets/dist/js/fund-list.build.js?ver=1.73.0" || true
-          curl -sSL --http1.1 -m 40 -A "$UA" -o .probe/fund-landing.js "https://isignal.ir/wp-content/themes/signal/assets/dist/js/fund-landing.build.js?ver=1.73.0" || true
-          ls -la .probe
+          BASE='https://advancedchart.isignal.ir/service/signalData@4.0.0'
+          cat > .probe/api/old.json <<'JSON'
+          {"market":"fund","sortBy":{"key":"return.oneYear","order":"desc"},"selectProperties":{"properties":["id","name","date","return.oneYear","return.oneMonth","buyPrice","manager","typeId"]}}
+          JSON
+          cat > .probe/api/new.json <<'JSON'
+          {"market":"fund","sortBy":{"sortBy":"return.oneYear","desc":true},"property":["id","name","date","return.oneYear","return.sixMonth","return.threeMonth","return.oneMonth","return.oneWeek","buyPrice","manager","rasamUrl","typeId"]}
+          JSON
+          call() {
+            name="$1"; shift
+            code=$(curl -sS --http1.1 -m 45 -A "$UA" -o ".probe/api/$name.out" -w '%{http_code}' "$@" 2>".probe/api/$name.err" || echo ERR)
+            echo "== $name -> $code bytes=$(wc -c < ".probe/api/$name.out")" >> .probe/api/summary.txt
+            head -c 400 ".probe/api/$name.out" >> .probe/api/summary.txt; echo >> .probe/api/summary.txt
+            head -c 200 ".probe/api/$name.err" >> .probe/api/summary.txt; echo >> .probe/api/summary.txt
+          }
+          call old-post -X POST "$BASE/list" -H 'content-type: application/json' -H 'gateway-system: signal' -H 'origin: https://isignal.ir' -H 'referer: https://isignal.ir/fund/' --data-binary @.probe/api/old.json
+          call new-post -X POST "$BASE/list" -H 'content-type: application/json' -H 'gateway-system: signal' -H 'origin: https://isignal.ir' -H 'referer: https://isignal.ir/fund/' --data-binary @.probe/api/new.json
+          call info -H 'gateway-system: signal' -H 'origin: https://isignal.ir' -H 'referer: https://isignal.ir/fund/' "$BASE/info?market=fund&symbolId=5247"
+          call fundtypes -H 'gateway-system: signal' -H 'origin: https://isignal.ir' "$BASE/fundTypes?market=fund"
+          call landing -H 'gateway-system: signal' -H 'origin: https://isignal.ir' "$BASE/landingFunds?market=fund"
+          call root -H 'gateway-system: signal' "$BASE/list"
+          node -e "
+            const fs=require('fs');
+            for (const f of ['old-post','new-post']) {
+              try { const j=JSON.parse(fs.readFileSync('.probe/api/'+f+'.out','utf8'));
+                const rows=Array.isArray(j)?j:(j.data||j.result||j.items||[]);
+                console.log(f,'array',Array.isArray(rows),'len',rows&&rows.length);
+                if(rows&&rows[0]) console.log(JSON.stringify(rows[0]).slice(0,600));
+              } catch(e){ console.log(f,'not-json',e.message); }
+            }
+          " >> .probe/api/summary.txt 2>&1
+          ls -la .probe/api
       - name: Commit probe output
         run: |
           git config user.name 'probe-bot'
