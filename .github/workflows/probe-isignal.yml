@@ -1,5 +1,7 @@
 name: probe-isignal
 on:
+  push:
+    paths: [".probe-trigger"]
   workflow_dispatch:
 jobs:
   probe:
