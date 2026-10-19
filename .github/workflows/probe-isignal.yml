@@ -21,9 +21,9 @@ jobs:
           PAYLOAD='{"market":"fund","sortBy":{"sortBy":"return.oneYear","desc":true},"property":["id","name","date","return.oneYear","return.oneMonth","buyPrice","manager","typeId"]}'
           call() {
             name="$1"; shift
-            code=$(curl -sS --http1.1 -m 25 -A "$UA" -H 'origin: https://isignal.ir' -o ".probe/api4/$name.out" -w '%{http_code}' "$@" 2>".probe/api4/$name.err") || code="000"
+            code=$(curl -sS --http1.1 -m 20 -A "$UA" -H 'origin: https://isignal.ir' -o ".probe/api4/$name.out" -w '%{http_code}' "$@" 2>".probe/api4/$name.err") || code="000"
             echo "== $name -> $code bytes=$(wc -c < ".probe/api4/$name.out" 2>/dev/null || echo 0) err=$(head -c 120 ".probe/api4/$name.err" 2>/dev/null | tr '\n' ' ')" >> .probe/api4/summary.txt
-            head -c 300 ".probe/api4/$name.out" >> .probe/api4/summary.txt; echo >> .probe/api4/summary.txt
+            { head -c 300 ".probe/api4/$name.out" 2>/dev/null || true; } >> .probe/api4/summary.txt; echo >> .probe/api4/summary.txt
           }
           : > .probe/api4/summary.txt
           ENC=$(node -e "console.log(encodeURIComponent('https://advancedchart.isignal.ir/service/signalData@4.0.0/list'))")
