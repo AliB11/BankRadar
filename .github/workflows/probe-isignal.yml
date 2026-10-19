@@ -3,34 +3,50 @@ on:
   push:
     paths: [".probe-trigger"]
   workflow_dispatch:
+permissions:
+  contents: write
 jobs:
   probe:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: arena/ceda17b9-bankradar
       - name: Fetch isignal pages
         run: |
-          mkdir -p out
+          mkdir -p .probe
           UA='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36'
           i=0
           for u in \
             "https://isignal.ir/fund/" \
-            "https://isignal.ir/fund/?page=2" \
-            "https://isignal.ir/fund/page/2" \
+            "https://isignal.ir/fund/page/2/" \
             "https://isignal.ir/fund/?paged=2" \
-            "https://isignal.ir/fund/?type=30" \
-            "https://isignal.ir/fund/page/60/" \
+            "https://isignal.ir/fund/?page=2" \
             "https://isignal.ir/fund/%D8%AB%D8%A8%D8%A7%D8%AA-%D9%86%D9%88%DB%8C%D8%AF/" ; do
             i=$((i+1))
-            code=$(curl -sSL --http1.1 -m 40 -A "$UA" -o "out/p$i.html" -w '%{http_code}' "$u" || echo ERR)
-            echo "$i $code $(wc -c < "out/p$i.html") $u" | tee -a out/index.txt
+            code=$(curl -sSL --http1.1 -m 40 -A "$UA" -o ".probe/p$i.html" -w '%{http_code}' "$u" || echo ERR)
+            echo "$i $code $(wc -c < ".probe/p$i.html") $u" >> .probe/index.txt
           done
-          echo '---- links ----' > out/links.txt
-          grep -oE 'href="[^"]+"' out/p1.html | sort -u | grep -iE 'fund|page|type|compare' >> out/links.txt || true
-          echo '---- numbers/pagination markup ----' > out/pagination.txt
-          grep -oE '<[^>]*(page|pagination|nav-links|compare)[^>]*>' out/p1.html | head -60 >> out/pagination.txt || true
-      - uses: actions/upload-artifact@v4
-        with:
-          name: isignal-probe
-          path: out
-          retention-days: 2
+          # فقط بخش جدول صفحهٔ ۱ + ناوبری صفحه‌بندی + فیلترها
+          python3 - <<'PY'
+          import re, pathlib
+          src = pathlib.Path('.probe/p1.html').read_text('utf-8', 'replace')
+          out = []
+          for m in re.finditer(r'<table[\s\S]*?</table>', src, re.I):
+              out.append(m.group(0)[:120000])
+          # بلوک صفحه‌بندی و فیلترها
+          for kw in ('pagination', 'page-item', 'filter', 'type'):
+              for m in re.finditer(r'<[^>]*%s[^>]*>' % kw, src, re.I):
+                  out.append(m.group(0)[:400])
+          pathlib.Path('.probe/table.html').write_text('\n\n<!-- ===== -->\n\n'.join(out), 'utf-8')
+          print('table chars', sum(len(x) for x in out))
+          PY
+          ls -la .probe
+      - name: Commit probe output
+        run: |
+          git config user.name 'probe-bot'
+          git config user.email 'probe-bot@users.noreply.github.com'
+          git add -f .probe
+          git commit -m "chore(probe): isignal html dump [skip ci]"
+          git push origin HEAD:arena/ceda17b9-bankradar
