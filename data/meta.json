@@ -8,20 +8,20 @@
     "loyalty": 14,
     "total": 354
   },
-  "lastRun": "2026-10-18T08:13:56.363Z",
-  "lastRunDurationMs": 169915,
+  "lastRun": "2026-10-19T09:10:37.502Z",
+  "lastRunDurationMs": 188429,
   "lastRunMode": "full",
   "sources": [
     {
-      "attempted": 133,
+      "attempted": 150,
       "discovered": 612,
       "failures": 0,
       "fresh": 120,
-      "ms": 22901,
+      "ms": 21412,
       "name": "rade.ir",
       "ok": true,
-      "parsed": 133,
-      "rotated": 13
+      "parsed": 150,
+      "rotated": 30
     },
     {
       "detail": [
@@ -176,21 +176,21 @@
           "url": "https://tobank.ir/"
         }
       ],
-      "ms": 96415,
+      "ms": 103671,
       "name": "bank-sites",
       "ok": true,
       "reachable": 4,
       "targets": 25
     },
     {
-      "ms": 14959,
+      "ms": 28209,
       "name": "macro-indicators",
       "ok": true,
       "sourcesOk": 2,
       "touched": []
     },
     {
-      "ms": 1973,
+      "ms": 1532,
       "name": "dgshahr.com",
       "ok": true,
       "parsed": 31,
@@ -201,7 +201,7 @@
     {
       "etf": 43,
       "issuance": 30,
-      "ms": 33574,
+      "ms": 33504,
       "name": "isignal.ir",
       "ok": true,
       "origin": "fallback:isignal-funds-1405-07-05.json",
