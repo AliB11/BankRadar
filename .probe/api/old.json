@@ -1,1 +1,0 @@
-{"market":"fund","sortBy":{"key":"return.oneYear","order":"desc"},"selectProperties":{"properties":["id","name","date","return.oneYear","return.oneMonth","buyPrice","manager","typeId"]}}

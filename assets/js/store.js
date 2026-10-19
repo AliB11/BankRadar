@@ -458,6 +458,8 @@ export function filtered(opts = {}) {
   // تاریخ بازبینی (lastSeen) یا به‌روزرسانی منبع (lastUpdated) است. اگر فقط
   // lastUpdated ملاک گرفته شود، رکوردی که دیروز واکشی شده ولی صفحه منبعش
   // ماه‌هاست دست‌نخورده مانده، غیابی «فقط کنترل‌شده» محسوب می‌شود.
+  // «کنترل‌شده بودن» برای فیلتر onlyFresh: جدیدترینِ تاریخ بازبینی خط لوله
+  // یا تاریخ به‌روزرسانی خود منبع (صفحه‌ای که بانک تازه ویرایش کرده، تازه است).
   const checkedAge = (p) => daysSince(mostRecent(p.lastUpdated, p.lastSeen));
 
   let rows = store.products.filter((p) => {
@@ -532,9 +534,14 @@ export function summary() {
   //   sourceFresh30 — رکوردهایی که خود منبع در ۳۰ روز گذشته به‌روز شده است
   // تفکیک این دو مهم است: داده‌ای می‌تواند «تازه کنترل‌شده» ولی «منبع کهنه»
   // باشد، و برعکس. نمایش یک عدد به‌جای هر دو، تصویر نادرست می‌دهد.
-  const verified30 = products.filter(
-    (p) => daysSince(mostRecent(p.lastUpdated, p.lastSeen)) <= 30,
-  ).length;
+  // فقط مهرهای «دیدن/تأیید» ملاک است. پیش‌تر lastUpdated هم حساب می‌شد و
+  // رکوردی که منبعش تصادفاً تازه بود، «بازبینی‌شده» شمرده می‌شد؛ نتیجه،
+  // عددی خوش‌بینانه بود که با گزارش هفتگی نمی‌خواند (یافتهٔ F9 ممیزی).
+  const verifiedAt = (p) => p.lastSeen || p.lastVerified || p.source?.checked || null;
+  const verified30 = products.filter((p) => {
+    const d = verifiedAt(p);
+    return d ? daysSince(d) <= 30 : false;
+  }).length;
   const sourceFresh30 = products.filter((p) => daysSince(p.lastUpdated) <= 30).length;
   const stale = products.filter((p) => p.stale).length;
   const auto = products.filter((p) => p.autoDiscovered).length;
@@ -565,16 +572,24 @@ export function summary() {
      * تازگی خودِ منبع وزن سبک‌تری دارد (۲۰) چون به رفتار بانک‌ها بستگی دارد
      * و در اختیار این سامانه نیست. اطمینان منبع ۲۰ و نبود رکورد منقضی ۱۵.
      */
-    health: Math.round(
-      clamp(
-        (verified30 / Math.max(1, products.length)) * 45 +
-          (sourceFresh30 / Math.max(1, products.length)) * 20 +
-          (products.filter((p) => p.confidence === 'high').length / Math.max(1, products.length)) * 20 +
-          (1 - stale / Math.max(1, products.length)) * 15,
-        0,
-        100,
-      ),
-    ),
+    // عدد نمایشی باید همان عدد گزارش هفتگی باشد. پیش‌تر داشبورد فرمول خودش
+    // را داشت (۷۰) و گزارش هفتگی فرمول دیگری (۱۰۰)؛ کاربر دو عدد متناقض از
+    // یک داده می‌دید. اکنون مرجع، امتیاز ممیزی هفتگی است و فقط وقتی آن فایل
+    // در دسترس نباشد، فرمول محلی (۳۰ روزه) محاسبه می‌شود.
+    health: (() => {
+      const audit = Number(store.weeklyReport?.stats?.healthScore);
+      if (Number.isFinite(audit) && audit >= 0 && audit <= 100) return Math.round(audit);
+      return Math.round(
+        clamp(
+          (verified30 / Math.max(1, products.length)) * 45 +
+            (sourceFresh30 / Math.max(1, products.length)) * 20 +
+            (products.filter((p) => p.confidence === 'high').length / Math.max(1, products.length)) * 20 +
+            (1 - stale / Math.max(1, products.length)) * 15,
+          0,
+          100,
+        ),
+      );
+    })(),
   };
 }
 

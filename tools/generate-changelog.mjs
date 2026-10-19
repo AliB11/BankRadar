@@ -98,15 +98,21 @@ async function main() {
 
   // افزودن رکورد فعلی به تاریخچه (فقط خلاصه، نه کل محصولات برای حجم)
   const weeklyReport = await readJSON(path.join(DATA, 'weekly-report.json'));
-  if (weeklyReport) {
-    history.push({
+  if (weeklyReport?.stats) {
+    // رکوردهای بی‌آمار (بازماندهٔ نسخه‌های قدیمی) و رکورد تکراری همان روز
+    // حذف/جایگزین می‌شوند تا تاریخچه معنای «هر روز یک ردیف» را حفظ کند.
+    history = history.filter((h) => h?.stats);
+    const entry = {
       date: today,
       generatedAt: weeklyReport.generatedAt,
       stats: weeklyReport.stats,
       macro: weeklyReport.macro,
       counts: weeklyReport.counts,
       anomalies: { total: weeklyReport.anomalies?.total ?? 0 },
-    });
+    };
+    const sameDay = history.findIndex((h) => h?.date === entry.date);
+    if (sameDay >= 0) history[sameDay] = entry;
+    else history.push(entry);
     // نگهداری 52 هفته اخیر
     if (history.length > 52) history = history.slice(-52);
     await fs.writeFile(historyPath, `${JSON.stringify(history, null, 2)}\n`, 'utf8');

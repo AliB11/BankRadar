@@ -713,7 +713,10 @@ export async function syncWeekly(opts = {}) {
     } catch {
       history = [];
     }
-    history.push({
+    // یک اجرا در روز: اجرای دوبارهٔ همان روز جای رکورد قبلی را می‌گیرد، نه
+    // اینکه ردیف تکراری بسازد. پیش‌تر دو اجرای ۱۰-۱۶ چهار ردیف در تاریخچه
+    // گذاشته بودند و «۱۲ هفته» در واقع ۳ هفته بود (یافتهٔ F10 ممیزی).
+    const entry = {
       date: today(),
       generatedAt: report.generatedAt,
       stats: report.stats,
@@ -722,7 +725,10 @@ export async function syncWeekly(opts = {}) {
       anomalies: { total: report.anomalies?.total ?? anomalies.length },
       changelogSummary: changelogDiff.summary,
       transparencyAvg: report.transparency.avgScore,
-    });
+    };
+    const sameDay = history.findIndex((h) => h?.date === entry.date);
+    if (sameDay >= 0) history[sameDay] = entry;
+    else history.push(entry);
     if (history.length > 52) history = history.slice(-52);
     await writeJSON(historyPath, history);
     // برای دسترسی سریع در bundle
