@@ -1,0 +1,8 @@
+Title: 
+
+URL Source: https://advancedchart.isignal.ir/service/signalData@4.0.0/list?market=fund
+
+Warning: Target URL returned error 404: Not Found
+
+Markdown Content:
+{"data":{"message":{"fa":"آدرس مورد نظر یافت نشد!","en":"route address not found!"},"additionalInfo":{"httpMethod":"GET","requestedUrl":"/service/signalData@4.0.0/list"}},"meta":{"code":"RouteAddressNotFound","sourceType":"unknown","sourceName":"@partFramework/eventBus","version":"1.7.3","shamsiDate":"14050727104835846","requestId":"4c01ddd9-6477-4980-af8b-ba451e451cae"}}

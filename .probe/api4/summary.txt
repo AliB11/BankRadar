@@ -1,1 +1,58 @@
-== direct-get -> 000 bytes=0 err=curl: (28) Connection timed out after 25002 milliseconds 
+== direct-get -> 000 bytes=0 err=curl: (28) Connection timed out after 20002 milliseconds 
+
+== direct-http -> 000 bytes=0 err=curl: (28) Connection timed out after 20001 milliseconds 
+
+== same-origin -> 404 bytes=73018 err=
+<!DOCTYPE html>
+<html dir="rtl" lang="fa-IR">
+<head>
+    <link rel="manifest" href="/manifest.webmanifest">
+
+    <!-- Matomo -->
+    <script>
+        var _paq = window._paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _p
+== spg-get -> 404 bytes=369 err=
+{"meta":{"code":"functionNotFound","sourceType":"module","sourceName":"partFramework","version":"9.46.0","shamsiDate":"14050727104822157","requestId":"4eeb4831-cead-4220-90b1-786c93005ecc"},"data":{"message":{"fa":"تابع مورد درخواست کاربر در اَپ/سرویس موجود نیس�
+== spg-post -> 200 bytes=112081 err=
+{"data":{"market":"fund","data":[{"id":5424,"name":"پروژه پایدار انرژی","manager":"سبد گردان آرارات","typeId":46},{"id":5414,"name":"پروژه راهبرد انرژی فردا","manager":"سبدگردان فارابی","typeId":46},{"id":5372,"name":"راهکار","man
+== allorigins -> 502 bytes=16 err=
+error code: 502
+
+== allorigins2 -> 408 bytes=24 err=
+Oops... Request Timeout.
+== jina-api -> 200 bytes=559 err=
+Title: 
+
+URL Source: https://advancedchart.isignal.ir/service/signalData@4.0.0/list?market=fund
+
+Warning: Target URL returned error 404: Not Found
+
+Markdown Content:
+{"data":{"message":{"fa":"آدرس مورد نظر یافت نشد!","en":"route address not found!"},"additionalInfo":{"httpMethod":"
+== corsproxy -> 403 bytes=5485 err=
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!
+== corsanywhere -> 403 bytes=28 err=
+See /corsdemo for more info
+
+== thingproxy -> 000 bytes=0 err=curl: (6) Could not resolve host: thingproxy.freeboard.io 
+
+== codetabs -> 522 bytes=16 err=
+error code: 522
+
+direct-get missing
+same-origin len 72273 head "<!DOCTYPE html>\n<html dir=\"rtl\" lang=\"fa-IR\">\n<head>\n    <link rel=\"manifest\" href=\"/manifest.webmanifest\">\n\n    <!-- Matomo -->\n    <script>\n        var _paq ="
+spg-get len 330 head "{\"meta\":{\"code\":\"functionNotFound\",\"sourceType\":\"module\",\"sourceName\":\"partFramework\",\"version\":\"9.46.0\",\"shamsiDate\":\"14050727104822157\",\"requestId\":\"4eeb4831-"
+spg-post len 94616 head "{\"data\":{\"market\":\"fund\",\"data\":[{\"id\":5424,\"name\":\"پروژه پایدار انرژی\",\"manager\":\"سبد گردان آرارات\",\"typeId\":46},{\"id\":5414,\"name\":\"پروژه راهبرد انرژی فردا\",\"m"
+allorigins len 16 head "error code: 502\n"
+allorigins2 len 24 head "Oops... Request Timeout."
+jina-api len 541 head "Title: \n\nURL Source: https://advancedchart.isignal.ir/service/signalData@4.0.0/list?market=fund\n\nWarning: Target URL returned error 404: Not Found\n\nMarkdown Con"
+corsproxy len 5485 head "<!DOCTYPE html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class=\"no-js ie7 oldie\" lang=\"en-US\"> <![endi"
+corsanywhere len 28 head "See /corsdemo for more info\n"
+thingproxy missing
+codetabs len 16 head "error code: 522\n"
