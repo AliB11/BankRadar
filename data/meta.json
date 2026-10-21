@@ -8,20 +8,20 @@
     "loyalty": 14,
     "total": 354
   },
-  "lastRun": "2026-10-20T08:45:20.759Z",
-  "lastRunDurationMs": 132100,
+  "lastRun": "2026-10-21T08:49:15.097Z",
+  "lastRunDurationMs": 314533,
   "lastRunMode": "full",
   "sources": [
     {
-      "attempted": 133,
+      "attempted": 150,
       "discovered": 612,
-      "failures": 0,
+      "failures": 1,
       "fresh": 120,
-      "ms": 24111,
+      "ms": 172042,
       "name": "rade.ir",
       "ok": true,
-      "parsed": 133,
-      "rotated": 13
+      "parsed": 149,
+      "rotated": 30
     },
     {
       "detail": [
@@ -36,6 +36,12 @@
           "ok": true,
           "rates": [],
           "url": "https://www.cbi.ir/simplelist/1466.aspx"
+        },
+        {
+          "id": "saman",
+          "ok": true,
+          "rates": [],
+          "url": "https://www.sb24.ir/"
         },
         {
           "id": "bankino",
@@ -90,12 +96,6 @@
           "id": "pasargad",
           "ok": false,
           "url": "https://www.bpi.ir/"
-        },
-        {
-          "error": "شبکه در دسترس نبود — https://www.sb24.ir/",
-          "id": "saman",
-          "ok": false,
-          "url": "https://www.sb24.ir/"
         },
         {
           "error": "شبکه در دسترس نبود — https://www.refah-bank.ir/",
@@ -176,21 +176,21 @@
           "url": "https://tobank.ir/"
         }
       ],
-      "ms": 92616,
+      "ms": 107651,
       "name": "bank-sites",
       "ok": true,
-      "reachable": 3,
+      "reachable": 4,
       "targets": 25
     },
     {
-      "ms": 9728,
+      "ms": 23042,
       "name": "macro-indicators",
       "ok": true,
       "sourcesOk": 2,
       "touched": []
     },
     {
-      "ms": 3107,
+      "ms": 5186,
       "name": "dgshahr.com",
       "ok": true,
       "parsed": 31,
@@ -201,7 +201,7 @@
     {
       "etf": 38,
       "issuance": 29,
-      "ms": 2436,
+      "ms": 6336,
       "name": "isignal.ir",
       "ok": true,
       "origin": "api:signalpardazgroup.com",
@@ -212,7 +212,7 @@
       },
       "parsed": 67,
       "refreshed": 8,
-      "rows": 591,
+      "rows": 592,
       "skipped": 10,
       "unmapped": 94
     }
