@@ -8,20 +8,20 @@
     "loyalty": 14,
     "total": 354
   },
-  "lastRun": "2026-10-23T08:44:44.905Z",
-  "lastRunDurationMs": 169592,
+  "lastRun": "2026-10-24T08:19:16.631Z",
+  "lastRunDurationMs": 146226,
   "lastRunMode": "full",
   "sources": [
     {
-      "attempted": 133,
+      "attempted": 150,
       "discovered": 612,
       "failures": 0,
       "fresh": 120,
-      "ms": 24047,
+      "ms": 34609,
       "name": "rade.ir",
       "ok": true,
-      "parsed": 133,
-      "rotated": 13
+      "parsed": 150,
+      "rotated": 30
     },
     {
       "detail": [
@@ -176,29 +176,32 @@
           "url": "https://tobank.ir/"
         }
       ],
-      "ms": 96830,
+      "ms": 99422,
       "name": "bank-sites",
       "ok": true,
       "reachable": 4,
       "targets": 25
     },
     {
-      "ms": 9273,
+      "ms": 6389,
       "name": "macro-indicators",
       "ok": true,
       "sourcesOk": 2,
       "touched": []
     },
     {
-      "error": "HTTP 500 Internal Server Error (HTTP 500) — https://dgshahr.com/blog/best-banks-for-deposit-rates/",
-      "ms": 33801,
+      "ms": 1802,
       "name": "dgshahr.com",
-      "ok": false
+      "ok": true,
+      "parsed": 31,
+      "schemes": 13,
+      "standard": 6,
+      "tiers": 51
     },
     {
       "etf": 38,
       "issuance": 29,
-      "ms": 5577,
+      "ms": 3822,
       "name": "isignal.ir",
       "ok": true,
       "origin": "api:signalpardazgroup.com",
