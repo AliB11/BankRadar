@@ -449,5 +449,49 @@
       "verifiedIn7Days": 285
     },
     "transparencyAvg": 68
+  },
+  {
+    "anomalies": {
+      "total": 32
+    },
+    "changelogSummary": {
+      "added": 0,
+      "amountChanged": 0,
+      "confidenceChanged": 0,
+      "rateChanged": 0,
+      "removed": 0,
+      "revived": 0,
+      "staleNow": 0,
+      "termChanged": 0,
+      "totalChanges": 0
+    },
+    "counts": {
+      "credit": 63,
+      "deposits": 53,
+      "funds": 73,
+      "loans": 151,
+      "loyalty": 14,
+      "total": 354
+    },
+    "date": "2026-10-24",
+    "generatedAt": "2026-10-24T08:38:47.022Z",
+    "macro": {
+      "depositCap1y": 23,
+      "inflationAnnual": 73.6,
+      "interbankRate": 24,
+      "loanRateCeiling": 23,
+      "realDepositReturn": -50.6
+    },
+    "stats": {
+      "autoProducts": 283,
+      "curatedProducts": 71,
+      "freshnessPercent": 31,
+      "healthScore": 66,
+      "snapshotProducts": 0,
+      "staleProducts": 0,
+      "totalProducts": 354,
+      "verifiedIn7Days": 111
+    },
+    "transparencyAvg": 68
   }
 ]
