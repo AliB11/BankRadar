@@ -8,8 +8,8 @@
     "loyalty": 14,
     "total": 356
   },
-  "lastRun": "2026-10-26T09:13:31.168Z",
-  "lastRunDurationMs": 198635,
+  "lastRun": "2026-10-27T09:13:38.235Z",
+  "lastRunDurationMs": 135136,
   "lastRunMode": "full",
   "sources": [
     {
@@ -17,7 +17,7 @@
       "discovered": 614,
       "failures": 0,
       "fresh": 120,
-      "ms": 79204,
+      "ms": 25928,
       "name": "rade.ir",
       "ok": true,
       "parsed": 150,
@@ -176,14 +176,14 @@
           "url": "https://tobank.ir/"
         }
       ],
-      "ms": 96414,
+      "ms": 95617,
       "name": "bank-sites",
       "ok": true,
       "reachable": 4,
       "targets": 25
     },
     {
-      "ms": 8419,
+      "ms": 9125,
       "name": "macro-indicators",
       "ok": true,
       "sourcesOk": 2,
@@ -191,27 +191,27 @@
     },
     {
       "error": "HTTP 403 Forbidden (HTTP 403) — https://dgshahr.com/blog/best-banks-for-deposit-rates/",
-      "ms": 489,
+      "ms": 745,
       "name": "dgshahr.com",
       "ok": false
     },
     {
       "etf": 38,
       "issuance": 29,
-      "ms": 13915,
+      "ms": 3544,
       "name": "isignal.ir",
       "ok": true,
       "origin": "api:signalpardazgroup.com",
       "page": {
-        "bytes": 2351,
+        "bytes": 70459,
         "ok": true,
         "url": "https://isignal.ir/fund/"
       },
       "parsed": 67,
       "refreshed": 8,
-      "rows": 592,
-      "skipped": 10,
-      "unmapped": 94
+      "rows": 584,
+      "skipped": 9,
+      "unmapped": 93
     }
   ],
   "stale": 0,
