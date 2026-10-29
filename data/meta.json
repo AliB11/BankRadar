@@ -8,8 +8,8 @@
     "loyalty": 14,
     "total": 357
   },
-  "lastRun": "2026-10-28T09:54:25.383Z",
-  "lastRunDurationMs": 127051,
+  "lastRun": "2026-10-29T10:16:15.004Z",
+  "lastRunDurationMs": 129648,
   "lastRunMode": "full",
   "sources": [
     {
@@ -17,7 +17,7 @@
       "discovered": 615,
       "failures": 0,
       "fresh": 120,
-      "ms": 21279,
+      "ms": 21797,
       "name": "rade.ir",
       "ok": true,
       "parsed": 150,
@@ -176,14 +176,14 @@
           "url": "https://tobank.ir/"
         }
       ],
-      "ms": 94927,
+      "ms": 94022,
       "name": "bank-sites",
       "ok": true,
       "reachable": 4,
       "targets": 25
     },
     {
-      "ms": 7796,
+      "ms": 10277,
       "name": "macro-indicators",
       "ok": true,
       "sourcesOk": 2,
@@ -191,14 +191,14 @@
     },
     {
       "error": "HTTP 403 Forbidden (HTTP 403) — https://dgshahr.com/blog/best-banks-for-deposit-rates/",
-      "ms": 689,
+      "ms": 779,
       "name": "dgshahr.com",
       "ok": false
     },
     {
       "etf": 38,
       "issuance": 29,
-      "ms": 2264,
+      "ms": 2676,
       "name": "isignal.ir",
       "ok": true,
       "origin": "api:signalpardazgroup.com",
