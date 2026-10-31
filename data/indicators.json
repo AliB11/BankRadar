@@ -4,7 +4,7 @@
     "realDepositReturnAnnual": -50.6,
     "realDepositReturnCbi": -45.4
   },
-  "generatedAt": "2026-10-30T10:17:40.384Z",
+  "generatedAt": "2026-10-31T09:51:59.397Z",
   "generator": "tools/collect.mjs",
   "indicators": {
     "certificateRate": {
