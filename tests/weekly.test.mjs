@@ -99,6 +99,7 @@ test('detectAnomalies انحرافات نرخ سپرده و سقف‌های تس
       product: 'سپرده با سود ۳۰٪',
       category: 'deposits',
       rate: 30,
+      termMonths: 12,
       contractType: 'unknown',
     },
     {

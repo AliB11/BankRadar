@@ -30,9 +30,41 @@ const OUT = path.resolve(ROOT, OPT('out', 'public'));
 // فایل‌ها و پوشه‌های زمان‌اجرا که مرورگر لازم دارد.
 // ابزارها (tools/)، آزمون‌ها (tests/) و اسکریپت‌ها (scripts/) عمداً منتشر نمی‌شوند.
 const ENTRIES = ['index.html', 'assets', 'data'];
+const PROTECTED = new Set(['assets', 'data', 'tools', 'scripts', 'tests', 'docs', 'index.html']);
+const SAFE_OUTPUTS = new Set(['public', 'dist', 'build', 'out']);
+
+/** هرگز ریشه، منابع، مسیر پنهان یا محل خارج از مخزن را پاک نکن. */
+export async function validateOutputPath(out = OUT) {
+  const rel = path.relative(ROOT, path.resolve(out));
+  const first = rel.split(path.sep)[0];
+  if (!rel || rel.startsWith('..') || path.isAbsolute(rel) || !first || first.startsWith('.') || PROTECTED.has(first)) {
+    throw new Error('مسیر خروجی نباید ریشه، مسیر پنهان، منبع پروژه یا بیرون مخزن باشد');
+  }
+  // مسیرهای سفارشی موجود فقط اگر قبلاً توسط همین ابزار ساخته شده باشند پاک
+  // می‌شوند؛ نام‌های متداول خروجی صریحاً برای سازگاری پشتیبانی می‌شوند.
+  try {
+    const stat = await fs.stat(out);
+    if (!stat.isDirectory()) throw new Error('خروجی موجود پوشه نیست');
+    if (!SAFE_OUTPUTS.has(first)) await fs.access(path.join(out, '.bankradar-build'));
+  } catch (err) {
+    if (err.code !== 'ENOENT') throw err;
+    // اگر خود پوشه هست اما نشانگر نیست، آن را متعلق به کاربر بدان.
+    try { await fs.stat(out); throw new Error('پوشه خروجی موجود نشانگر ساخت ندارد و پاک نمی‌شود'); }
+    catch (inner) { if (inner.code !== 'ENOENT') throw inner; }
+  }
+  // والد واقعی نباید از طریق symlink بیرون از ریشه باشد.
+  let parent = path.dirname(path.resolve(out));
+  while (true) {
+    try { parent = await fs.realpath(parent); break; }
+    catch (err) { if (err.code !== 'ENOENT') throw err; parent = path.dirname(parent); }
+  }
+  const realRel = path.relative(await fs.realpath(ROOT), parent);
+  if (realRel.startsWith('..') || path.isAbsolute(realRel)) throw new Error('والد خروجی خارج از مخزن است');
+}
 
 async function main() {
-  // پاک‌سازی خروجی قبلی تا فایل‌های حذف‌شده کهنه نمانند
+  // پیش از هر پاک‌سازی، مسیر و مالکیت خروجی بررسی می‌شود.
+  await validateOutputPath();
   await fs.rm(OUT, { recursive: true, force: true });
   await fs.mkdir(OUT, { recursive: true });
 
@@ -44,6 +76,7 @@ async function main() {
 
   // هم‌ترازی با بسته GitHub Pages
   await fs.writeFile(path.join(OUT, '.nojekyll'), '', 'utf8');
+  await fs.writeFile(path.join(OUT, '.bankradar-build'), '', 'utf8');
 
   // نگهبان: اگر فایل ورودی اصلی جا افتاده باشد، بی‌صدا یک سایت خراب منتشر نشود
   const indexFile = path.join(OUT, 'index.html');

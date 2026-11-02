@@ -33,37 +33,52 @@ const MIME = {
   '.map': 'application/json; charset=utf-8',
 };
 
-const server = http.createServer(async (req, res) => {
+let syncInFlight = false;
+
+/** محافظ CSRF برای عملیات نوشتنی؛ میزبان عمومی پروکسی نیز پشتیبانی می‌شود. */
+export function sameOriginPost(req) {
+  if (!req.headers.origin || req.headers['sec-fetch-site'] === 'cross-site') return false;
+  if (!/^application\/json(?:\s*;|$)/i.test(req.headers['content-type'] ?? '')) return false;
+  const host = String(req.headers['x-forwarded-host'] || req.headers.host || '').split(',')[0].trim();
+  const proto = String(req.headers['x-forwarded-proto'] || (req.socket?.encrypted ? 'https' : 'http')).split(',')[0].trim();
+  if (!['http', 'https'].includes(proto) || !host) return false;
+  try { return new URL(req.headers.origin).origin === new URL(`${proto}://${host}`).origin; }
+  catch { return false; }
+}
+
+export const server = http.createServer(async (req, res) => {
   try {
     const url = new URL(req.url, `http://${req.headers.host}`);
 
-    // پشتیبانی از CORS preflight
+    // API نوشتنی فقط از صفحه هم‌مبدأ با JSON قابل فراخوانی است. CORS باز و
+    // درخواست‌های ساده cross-origin نباید اجرای جمع‌آوری/بازنویسی داده را شروع کنند.
     if (req.method === 'OPTIONS') {
-      res.writeHead(204, {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type',
-      });
-      res.end();
+      res.writeHead(405, { Allow: 'GET, POST' }).end();
       return;
     }
 
-    // درگاه‌های API برای همگام‌سازی و استعلام زنده
     if (req.method === 'POST' && (url.pathname === '/api/refresh' || url.pathname === '/api/sync')) {
+      if (!sameOriginPost(req)) {
+        res.writeHead(403, { 'Content-Type': 'application/json; charset=utf-8' });
+        res.end(JSON.stringify({ ok: false, error: 'درخواست باید هم‌مبدأ و JSON باشد' }));
+        return;
+      }
+      if (syncInFlight) {
+        res.writeHead(409, { 'Content-Type': 'application/json; charset=utf-8' });
+        res.end(JSON.stringify({ ok: false, error: 'همگام‌سازی دیگری در حال اجراست' }));
+        return;
+      }
+      syncInFlight = true;
       try {
         const { syncWeekly } = await import('./sync-weekly.mjs');
         const result = await syncWeekly({ offline: false });
-        res.writeHead(200, {
-          'Content-Type': 'application/json; charset=utf-8',
-          'Access-Control-Allow-Origin': '*',
-        });
+        res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
         res.end(JSON.stringify({ ok: true, report: result?.report ?? {} }));
       } catch (err) {
-        res.writeHead(500, {
-          'Content-Type': 'application/json; charset=utf-8',
-          'Access-Control-Allow-Origin': '*',
-        });
+        res.writeHead(500, { 'Content-Type': 'application/json; charset=utf-8' });
         res.end(JSON.stringify({ ok: false, error: err.message }));
+      } finally {
+        syncInFlight = false;
       }
       return;
     }
@@ -71,7 +86,6 @@ const server = http.createServer(async (req, res) => {
     if (req.method === 'GET' && url.pathname === '/api/status') {
       res.writeHead(200, {
         'Content-Type': 'application/json; charset=utf-8',
-        'Access-Control-Allow-Origin': '*',
       });
       res.end(JSON.stringify({ ok: true, timestamp: new Date().toISOString() }));
       return;
@@ -108,13 +122,19 @@ const server = http.createServer(async (req, res) => {
     }
 
     const target = stat.isDirectory() ? path.join(absolute, 'index.html') : absolute;
-    const body = await fs.readFile(target);
+    // symlink درون ریشه هم نباید خواندن فایل خارج از مخزن یا مسیر پنهان را ممکن کند.
+    const realTarget = await fs.realpath(target);
+    const realRel = path.relative(await fs.realpath(ROOT), realTarget);
+    if (realRel.startsWith('..') || path.isAbsolute(realRel) || realRel.split(path.sep).some((seg) => seg.startsWith('.'))) {
+      res.writeHead(403).end('Forbidden');
+      return;
+    }
+    const body = await fs.readFile(realTarget);
     const ext = path.extname(target).toLowerCase();
 
     res.writeHead(200, {
       'Content-Type': MIME[ext] ?? 'application/octet-stream',
       'Cache-Control': 'no-cache, no-store, must-revalidate',
-      'Access-Control-Allow-Origin': '*',
     });
     res.end(body);
   } catch (err) {
@@ -122,7 +142,8 @@ const server = http.createServer(async (req, res) => {
   }
 });
 
-server.listen(PORT, HOST, () => {
-  console.log(`بانک‌رادار روی http://localhost:${PORT} در حال اجراست`);
+const isMain = process.argv[1] && import.meta.url === `file://${path.resolve(process.argv[1])}`;
+if (isMain) server.listen(PORT, HOST, () => {
+  console.log(`بانک‌رادار روی http://localhost:${server.address().port} در حال اجراست`);
   console.log(`ریشه: ${ROOT}`);
 });

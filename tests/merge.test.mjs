@@ -330,7 +330,7 @@ test('توضیح محصول همه پاراگراف‌های صفحه را نگ�
   assert.match(p.desc, /پاراگراف سوم/, 'پاراگراف سوم حفظ شود');
 });
 
-test('کارمزد یک‌بار در محصولات وام به‌درستی تشخیص داده می‌شود', () => {
+test('کارمزد در برابر سود بر اساس شاهد تشخیص داده می‌شود', () => {
   const qarz = mapToProduct('https://www.rade.ir/loan-interest-free-loan/5-وام/', `
     <table>
       <tr><td>نام وام</td><td>وام قرض‌الحسنه آزمون</td></tr>
@@ -348,25 +348,25 @@ test('کارمزد یک‌بار در محصولات وام به‌درستی ت
       <tr><td>حداکثر زمان بازپرداخت</td><td>60 ماه</td></tr>
     </table>`);
 
-  assert.equal(qarz.rateKind, 'fee', 'نرخ ۴٪ در وام قرض‌الحسنه کارمزد یک‌بار است');
+  assert.equal(qarz.rateKind, 'fee', 'نرخ ۴٪ در وام قرض‌الحسنه کارمزد است');
   assert.equal(bank.rateKind, 'profit', 'نرخ ۲۳٪ سود سالانه است');
 });
 
-test('تشخیص کارمزد یک‌بار در برابر سود سالانه', () => {
+test('تشخیص کارمزد نیازمند شاهد است، نه صرف نرخ کم', () => {
   const loans = { category: 'loans' };
   const deposits = { category: 'deposits' };
 
-  // کارمزد یک‌بار
+  // کارمزد با شاهد صریح
   assert.equal(isFeeBased('https://www.rade.ir/loan-interest-free-loan/1-وام-قرض‌الحسنه/', 'وام قرض‌الحسنه اصناف', loans, 4), true);
-  assert.equal(isFeeBased('https://www.rade.ir/loan-cash-loan/2-وام-ازدواج/', 'وام ازدواج', loans, 4), true);
-  assert.equal(isFeeBased('https://www.rade.ir/loan-cash-loan/3-وام-حمایتی/', 'وام حمایتی بازنشستگان', loans, 4), true);
+  assert.equal(isFeeBased('https://www.rade.ir/loan-marriage-loan/2-وام-ازدواج/', 'وام ازدواج', loans, 4), true);
+  assert.equal(isFeeBased('https://www.rade.ir/loan-cash-loan/3-وام-حمایتی/', 'وام حمایتی بازنشستگان', loans, 4), false);
 
   // سود سالانه
   assert.equal(isFeeBased('https://www.rade.ir/loan-cash-loan/4-مرابحه/', 'تسهیلات مرابحه خرد', loans, 23), false);
   assert.equal(isFeeBased('https://www.rade.ir/loan-instant-loan/5-به‌جا/', 'وام به‌جا', loans, 20), false);
   assert.equal(isFeeBased('https://www.rade.ir/loan-goods-loan/6-کارت/', 'کارت اعتباری کالا', loans, 24), false);
 
-  // سپرده‌ها هرگز کارمزد یک‌بار نیستند
+  // سپرده‌ها و نرخ‌های پایین بدون شاهد کارمزد نیستند
   assert.equal(isFeeBased('https://www.rade.ir/bank-account/7-سپرده/', 'سپرده بلندمدت', deposits, 4), false);
 });
 
@@ -492,13 +492,13 @@ test('چرخش بازبینی، رکوردهای قدیمی را در نوبت �
     ],
   });
 
-  assert.deepEqual(selected.map((e) => e.url), [
-    'https://www.rade.ir/loan-cash-loan/1-a/',
-    'https://www.rade.ir/loan-cash-loan/3-c/',
-  ], 'تازه‌ترین‌ها اول');
+  const urls = [...selected, ...rotation].map((e) => e.url);
+  assert.equal(selected.length, 2);
+  assert.equal(selected[0].url, index[0].url, 'تازه‌ترین صفحه همیشه در اولویت است');
+  assert.ok(urls.includes(index[1].url), 'صفحه قدیمی یا اکتشاف یا بازبینی می‌شود');
+  assert.equal(new Set(urls).size, urls.length, 'نشانی تکراری نباید واکشی شود');
+  assert.ok(urls.every((url) => url.startsWith('https://www.rade.ir/')));
 
-  assert.deepEqual(rotation.map((e) => e.url), ['https://www.rade.ir/loan-cash-loan/2-ب/'],
-    'صفحه قدیمی در چرخش بیاید، صفحه تکراری و دامنه غریبه نه');
 });
 
 test('چرخش بازبینی دامنه غریبه را نمی‌پذیرد و در نبود صفحه تازه محدودیت زمانی را نادیده می‌گیرد', () => {
@@ -690,7 +690,8 @@ test('محصول جدید بانکی پس از به‌روزرسانی در کل
   // ۲) نرمال‌سازی در وضعیت برنامه
   const normalized = normalizeProduct(addedRecord);
   assert.equal(normalized.bank, 'بانک خاورمیانه');
-  assert.equal(normalized.contractType, 'non-partnership', 'عقد به درستی استنتاج می‌شود');
+  assert.equal(normalized.contractType, 'unknown', 'بدون شاهد نوع عقد، نرخ سود به‌تنهایی کافی نیست');
+  assert.equal(normalizeProduct({ ...addedRecord, desc: 'قرارداد مرابحه' }).contractType, 'non-partnership');
 
   // ۳) امتیازدهی ۵بعدی و رتبه‌بندی
   const scored = scoreProduct(normalized, {

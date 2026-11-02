@@ -254,23 +254,23 @@ export function parseInputData(rawContent, filename = 'input.json', banksList = 
 export function detectAnomalies(products = [], indicators = {}) {
   const anomalies = [];
   const ind = indicators.indicators ?? {};
-  const depositCap1y = ind.depositCap1y?.value ?? 23;
+  const depositCap1y = ind.depositCap1y?.value ?? null;
   const loanCeiling = ind.loanRateCeiling?.value ?? 23;
 
   for (let i = 0; i < products.length; i++) {
     const p = products[i];
     const at = `محصول «${p.product}» (${p.bank} — ${p.id})`;
 
-    // ۱) انحراف سقف سپرده مصوب بانک مرکزی
-    if (p.category === 'deposits' && p.rate > depositCap1y) {
+    // فقط مقایسه یک‌ساله عادی؛ مدت‌های دیگر و اوراق ویژه سقف‌های دیگری دارند.
+    if (p.category === 'deposits' && p.termMonths === 12 && depositCap1y != null && p.rate > depositCap1y && !/گواهی|اوراق|ویژه/.test(`${p.product ?? ''} ${p.subcategory ?? ''}`)) {
       anomalies.push({
         id: 'cbi-deposit-cap-exceeded',
         severity: 'warn',
         productId: p.id,
         bank: p.bank,
         rate: p.rate,
-        title: 'نرخ سود سپرده بالاتر از سقف مصوب',
-        detail: `${at}: نرخ ${p.rate}٪ بالاتر از سقف مصوب ${depositCap1y}٪ بانک مرکزی است.`,
+        title: 'سپرده یک‌ساله بالاتر از نرخ مرجع گزارش‌شده',
+        detail: `${at}: نرخ ${p.rate}٪ از مرجع یک‌ساله ${depositCap1y}٪ بیشتر است؛ نوع قرارداد و استثناها نیازمند بررسی‌اند.`,
       });
     }
 
@@ -308,7 +308,7 @@ export function detectAnomalies(products = [], indicators = {}) {
         bank: p.bank,
         rate: p.rate,
         title: 'تله مسدودی سپرده همراه با سود تجاری',
-        detail: `${at}: مسدودی سپرده در نرخ ۲۳٪، نرخ مؤثر واقعی را به بیش از ۳۵٪ افزایش می‌دهد.`,
+        detail: `${at}: هزینه فرصت مسدودی به مبلغ، مدت و سود سپرده بستگی دارد و بدون آن‌ها نمی‌توان درصد قطعی اعلام کرد.`,
       });
     }
 
@@ -416,7 +416,7 @@ export function generateWeeklyReport(opts = {}) {
   const ind = indicators.indicators ?? {};
   const inflationAnnual = ind.inflationAnnual?.value ?? 69.9;
   const depositCap1y = ind.depositCap1y?.value ?? 23;
-  const realDepositReturn = indicators.derived?.realDepositReturnAnnual ?? Number((depositCap1y - inflationAnnual).toFixed(1));
+  const realDepositReturn = indicators.derived?.realDepositReturnAnnual ?? Number((((1 + depositCap1y / 100) / (1 + inflationAnnual / 100) - 1) * 100).toFixed(1));
 
   return {
     version: 2,

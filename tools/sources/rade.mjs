@@ -189,36 +189,14 @@ export function parseTermMonths(text) {
   return null;
 }
 
-/**
- * آیا هزینه این محصول «کارمزد یک‌بار» است یا «سود سالانه»؟
- *
- * وام‌های قرض‌الحسنه کارمزد یک‌باری می‌گیرند که روی کل اصل بسته می‌شود؛ وام‌های
- * سودمحور نرخ سالانه دارند. تفکیک این دو برای محاسبه قسط حیاتی است، چون
- * تفسیر نادرست کارمزد ۴٪ به‌عنوان نرخ سالانه، هزینه وام ده‌ساله را حدود ده
- * برابر واقعیت نشان می‌دهد.
- *
- * @param {string} url نشانی صفحه
- * @param {string} title عنوان محصول
- * @param {{category:string}} meta دسته‌بندی
- * @param {number|null} rate نرخ استخراج‌شده
- */
-export function isFeeBased(url, title, meta, rate) {
-  if (meta.category !== 'loans') return false;
-  // نرخ‌های ۲۳٪ و ۲۴٪ سقف مصوب سود هستند، نه کارمزد
-  if (rate == null || rate >= 20) return false;
-
-  const text = `${url} ${title}`;
-
-  // ۱) صریح‌ترین نشانه: مسیر یا عنوان قرض‌الحسنه
-  if (/قرض‌الحسنه|قرض الحسنه|interest-free-loan/i.test(text)) return true;
-
-  // ۲) وام‌های حمایتی (ازدواج، فرزندآوری، ایثارگران، بازنشستگان) کارمزد ثابت
-  //    کم و غیرمرکب دارند و نرخ آن‌ها یک‌بار روی اصل بسته می‌شود
-  if (rate <= 10 && /حمایتی|ازدواج|فرزندآوری|ایثارگر|بازنشست/.test(text)) return true;
-
-  // ۳) نرخ‌های بسیار پایین در هر عنوان دیگری هم کارمزد یک‌بار است، چون هیچ
-  //    تسهیلات سودمحوری زیر ۶٪ عرضه نمی‌شود
-  return rate <= 6;
+/** آیا متن یا مسیر شاهد کارمزد است؟ نرخ کم به‌تنهایی کافی نیست. */
+export function isFeeBased(url, title, meta, rate, rateText = '') {
+  if (meta.category !== 'loans' || (rate != null && rate >= 20)) return false;
+  // کم‌بودن عدد به‌تنهایی دلیل کارمزد بودن یا قرض‌الحسنه بودن نیست.
+  // اگر جدول صریحاً سود بگوید، مسیر یا نام محصول نباید آن را نقض کند.
+  if (/(?:نرخ\s*)?سود(?:\s*(?:این\s*)?(?:وام|تسهیلات))?\s*(?:معادل|برابر|:)?\s*\d/.test(normalizeText(rateText))) return false;
+  return /قرض[\s\u200c]*الحسنه|interest-free-loan|loan-marriage-loan/i.test(`${url} ${title}`)
+    || /کارمزد/.test(rateText);
 }
 
 /**
@@ -269,7 +247,11 @@ export function mapToProduct(url, html) {
     specSel(spec, 'سود', 'raw') ||
     specSel(spec, 'نرخ موثر', 'raw');
   const rateList = parseRates(rateRaw);
-  const rate = rateList.length ? rateList[0] : /ندارد|صفر|بدون\s*سود/.test(rateRaw) ? 0 : null;
+  // صفر در جدول با «نامشخص» متفاوت است. فقط اگر توضیح صریحاً کارمزد همین
+  // وام را صفر بداند و جدول عددی نداشته باشد، مقدار صفر را می‌پذیریم.
+  const description = normalizeText(specSel(spec, 'توضیحات', 'raw'));
+  const zeroFeeInDescription = /کارمزد\s*(?:آن|این\s*(?:وام|تسهیلات))?\s*(?:برابر\s*با|معادل|:|،|است)?\s*(?:صفر|0)(?:\s*(?:درصد|٪))/.test(description);
+  const rate = rateList.length ? rateList[0] : /ندارد|صفر|بدون\s*(?:سود|کارمزد)/.test(rateRaw) || zeroFeeInDescription ? 0 : null;
 
   const maxRaw = specSel(spec, 'سقف وام') || specSel(spec, 'حداکثر اعتبار');
   const minRaw = specSel(spec, 'کف وام') || specSel(spec, 'حداقل موجودی') || specSel(spec, 'حداقل اعتبار');
@@ -286,7 +268,8 @@ export function mapToProduct(url, html) {
 
   const maxDetail = specSel(spec, 'سقف وام', 'detail') || specSel(spec, 'حداکثر اعتبار', 'detail');
   const guarantee = specSel(spec, 'نوع ضمانت');
-  const hasGuarantor = /ضامن/.test(guarantee);
+  const explicitlyNoGuarantor = /بدون\s*ضامن|عدم\s*نیاز\s*به\s*ضامن/.test(guarantee);
+  const hasGuarantor = /ضامن/.test(guarantee) && !explicitlyNoGuarantor;
   const needsDeposit = /بله|دارد|الزام/.test(specSel(spec, 'نیاز به سپرده'));
 
   // ── سقف مشروط ──────────────────────────────────────────────────────────
@@ -300,9 +283,9 @@ export function mapToProduct(url, html) {
   const ratioImpliesContingent = ratioNum != null && Math.abs(ratioNum - 100) > 1;
 
   const ceilingContingent =
-    /رتبه\s*اعتباری|میانگین\s*حساب|سابقه\s*حساب|ضوابط|حسب\s*امتیاز/.test(maxDetail) ||
+    /اعتباری|میانگین|معدل|سابقه|ضوابط|امتیاز|شرکت|تعاونی|ارزش|درصد/.test(maxDetail) ||
     ratioImpliesContingent ||
-    /رتبه\s*اعتباری|حسب\s*امتیاز/.test(specSel(spec, 'توضیحات', 'raw'));
+    /رتبه\s*اعتباری|حسب\s*امتیاز|معدل\s*حساب|میانگین\s*(?:حساب|موجودی)/.test(specSel(spec, 'توضیحات', 'raw'));
 
   // ── سقف بی‌معنا: بسته چند‌طرحی ─────────────────────────────────────────
   // صفحه‌هایی مانند «طرح ایرانیار» یک بسته ۹ وامی‌اند و سقف نوشته‌شده
@@ -323,7 +306,7 @@ export function mapToProduct(url, html) {
   const updatedRaw = normalizeText(stripTags(html)).match(
     /آخرین[\s\u200c\u200d]*به[\s\u200c\u200d]*روز[\s\u200c\u200d]*رسانی[\s\u200c\u200d]*:?[\s\u200c\u200d]*([^|]{4,40})/,
   );
-  const lastUpdated = parseJalaliDate(updatedRaw?.[1]) || parseJalaliDate(html) || null;
+  const lastUpdated = parseJalaliDate(updatedRaw?.[1]) || null;
 
   const slug = url.replace(BASE, '').replace(/\/$/, '').split('/').filter(Boolean).pop() || '';
   const numericId = slug.match(/^(\d+)/)?.[1] || slug.slice(0, 24);
@@ -348,13 +331,10 @@ export function mapToProduct(url, html) {
     category: meta.category,
     subcategory: meta.subcategory,
     rate: rate ?? (depositRate[0] ?? 0),
-    // کارمزد در برابر سود سالانه.
-    //
-    // این تفکیک تعیین می‌کند که موتور مالی عدد rate را سالانه مرکب حساب کند یا
-    // کارمزد یک‌بار روی کل اصل. تشخیص بر پایه سه نشانه است، نه فقط عدد نرخ:
-    // مسیر قرض‌الحسنه در نشانی، واژه قرض‌الحسنه در عنوان، و نرخ پایین غیرمتعارف.
-    rateKind: isDeposit ? (rate === 0 ? 'none' : 'profit') : isFeeBased(url, title, meta, rate) ? 'fee' : 'profit',
-    rateLabel: rate != null ? `سود ${rate}٪` : 'نامشخص',
+    rateKnown: rate != null || depositRate.length > 0,
+    rateKind: isDeposit ? (rate === 0 ? 'none' : 'profit') : isFeeBased(url, title, meta, rate, rateRaw) ? 'fee' : 'profit',
+    ...(isFeeBased(url, title, meta, rate, rateRaw) && !/قرض[\s\u200c]*الحسنه|interest-free-loan|loan-marriage-loan/i.test(`${url} ${title}`) ? { feeModel: 'unknown' } : {}),
+    rateLabel: rate != null ? `${isFeeBased(url, title, meta, rate, rateRaw) ? 'کارمزد' : 'سود'} ${rate}٪` : depositRate.length ? `سود ${depositRate[0]}٪` : 'نامشخص',
     regulatory: false,
     benefit: benefitFromRate(rate, meta.category),
     minAmount: multiPlan ? null : minAmount,
@@ -369,7 +349,7 @@ export function mapToProduct(url, html) {
     digital: /دارد|آنلاین|اپلیکیشن|غیرحضوری/.test(onlineOpening + ' ' + descParts.join(' ')) ? 85 : 60,
     friction: isDeposit ? 85 : hasGuarantor ? 50 : needsDeposit ? 60 : 72,
     collateral: isDeposit ? 'بدون وثیقه' : guarantee || specSel(spec, 'نوع ضمانت', 'detail') || 'نامشخص',
-    collateralKind: isDeposit ? 'none' : hasGuarantor ? 'guarantor' : needsDeposit ? 'deposit-block' : 'credit-score',
+    collateralKind: isDeposit ? 'none' : hasGuarantor ? 'guarantor' : needsDeposit ? 'deposit-block' : /اعتبارسنجی|بدون\s*ضامن/.test(guarantee) ? 'credit-score' : 'mixed',
     audience: isDeposit ? 'سپرده‌گذاران بانکی' : 'متقاضیان تسهیلات بانکی',
     desc: (descParts.join(' ') || title).slice(0, 700),
     tags: [meta.label, bank.replace(/^بانک\s*/, '')].filter(Boolean),
@@ -383,9 +363,8 @@ export function mapToProduct(url, html) {
     confidence: multiPlan ? 'low' : 'medium',
     autoDiscovered: true,
     sourceKind: 'aggregator',
-    // اگر صفحه تاریخ خوانایی نداشت، تاریخ مشاهده ثبت می‌شود: اعتبارسنجی داده
-    // تاریخ را الزامی می‌داند و رکورد بی‌تاریخ، خط لوله را سرخ می‌کند.
-    lastUpdated: lastUpdated || checked,
+    // تاریخ انتشار یا ویرایش نامعلوم را با تاریخ مشاهده جعل نمی‌کنیم.
+    lastUpdated,
     source: {
       title: `رده — ${title}`,
       url,
@@ -440,12 +419,27 @@ export function selectFetchSet(index, opts = {}) {
   // اگر بریدن زمانی همه چیز را حذف کند، محدودیت نادیده گرفته می‌شود:
   // دادن داده کهنه بهتر از ندادن داده است.
   const pool = fresh.length ? fresh : index;
+  const count = Math.max(0, Math.trunc(Number(limit) || 0));
+  const recentBudget = Math.floor(count * 0.75);
+  const selected = [...new Map(pool.filter((e) => e?.url).map((e) => [e.url, e])).values()]
+    .sort((a, b) => String(b.lastmod ?? '').localeCompare(String(a.lastmod ?? '')) || a.url.localeCompare(b.url))
+    .slice(0, recentBudget);
 
-  const selected = [...pool]
-    .sort((a, b) => String(b.lastmod).localeCompare(String(a.lastmod)) || a.url.localeCompare(b.url))
-    .slice(0, limit);
-
+  // سهمیه اکتشاف از تمام sitemap، حتی URLهایی که هرگز محصول نشده‌اند. روی
+  // نقشه ثابت هر روز یک قطعه پیوسته انتخاب می‌شود؛ cursor به meta وابسته
+  // نیست، چون CI تغییرات صرفاً فراداده‌ای را commit نمی‌کند.
   const chosen = new Set(selected.map((e) => e.url));
+  const remaining = [...new Map(index.filter((e) => e?.url && !chosen.has(e.url)).map((e) => [e.url, e])).values()]
+    .sort((a, b) => a.url.localeCompare(b.url));
+  const quota = Math.min(count - selected.length, remaining.length);
+  const requestedDay = opts.day ?? new Date().toISOString().slice(0, 10);
+  const millis = Date.parse(`${String(requestedDay).slice(0, 10)}T00:00:00Z`);
+  const dayNumber = Number.isFinite(millis) ? Math.floor(millis / 86_400_000) : Math.floor(Date.now() / 86_400_000);
+  for (let i = 0; i < quota; i++) {
+    const entry = remaining[((dayNumber * quota + i) % remaining.length + remaining.length) % remaining.length];
+    selected.push(entry);
+    chosen.add(entry.url);
+  }
   const rotation = [...new Set(refreshUrls)]
     .filter((url) => url && !chosen.has(url) && url.startsWith(BASE))
     .map((url) => ({ url, lastmod: null }));
@@ -509,7 +503,7 @@ export async function collect(opts = {}) {
   log(`رده: ${index.length} صفحه وام در فهرست یافت شد`);
 
   const { selected, rotation } = selectFetchSet(index, { limit, sinceMonths, refreshUrls });
-  log(`رده: ${selected.length} صفحه تازه برای واکشی انتخاب شد`);
+  log(`رده: ${selected.length} صفحه تازه و اکتشافی برای واکشی انتخاب شد`);
   if (rotation.length) log(`رده: ${rotation.length} صفحه قدیمی برای بازبینی چرخشی`);
 
   const work = [...selected, ...rotation];

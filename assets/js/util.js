@@ -102,7 +102,8 @@ export function faToman(value, { short = true } = {}) {
 export function faPercent(value, digits = 1) {
   if (value === null || value === undefined || Number.isNaN(value)) return '—';
   const v = Number(value);
-  const rounded = Math.abs(v % 1) < 0.05 ? v.toFixed(0) : v.toFixed(digits);
+  const fixed = v.toFixed(digits);
+  const rounded = Number.isInteger(Number(fixed)) ? Number(fixed).toFixed(0) : fixed;
   return `${fa(rounded)}٪`;
 }
 
@@ -110,7 +111,8 @@ export function faPercent(value, digits = 1) {
 export function faSignedPercent(value, digits = 1) {
   if (value === null || value === undefined || Number.isNaN(value)) return '—';
   const v = Number(value);
-  const rounded = Math.abs(v % 1) < 0.05 ? Math.abs(v).toFixed(0) : Math.abs(v).toFixed(digits);
+  const fixed = Math.abs(v).toFixed(digits);
+  const rounded = Number.isInteger(Number(fixed)) ? Number(fixed).toFixed(0) : fixed;
   return `${v > 0 ? '+' : v < 0 ? '−' : ''}${fa(rounded)}٪`;
 }
 

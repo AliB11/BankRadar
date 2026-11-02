@@ -23,6 +23,7 @@ const MACRO_SOURCES = [
     label: 'مرکز آمار ایران — شاخص قیمت مصرف‌کننده',
     url: 'https://www.amar.org.ir/english/Statistics-by-Topic/Consumer-Price-Index',
     kind: 'regulator',
+    trustedForInflation: true,
   },
   {
     id: 'cbi-inflation',
@@ -102,6 +103,69 @@ export function extractPolicyRates(text) {
   return Object.fromEntries(Object.entries(out).filter(([, v]) => v != null && v > 0 && v <= 50));
 }
 
+/** کلید ترتیبی ماه جلالی؛ دوره نامعلوم برای جایگزینی کافی نیست. */
+export function macroPeriodIndex(period) {
+  const text = normalizeText(period ?? '');
+  const m = text.match(/(فروردین|اردیبهشت|خرداد|تیر|مرداد|شهریور|مهر|آبان|آذر|دی|بهمن|اسفند)\s*(?:ماه\s*)?(\d{4})/);
+  if (!m) return null;
+  const month = PERSIAN_MONTHS.indexOf(m[1]);
+  const year = Number(m[2]);
+  return month < 0 || year < 1300 || year > 1600 ? null : year * 12 + month;
+}
+
+/**
+ * هر عدد و دوره و منبع از یک مشاهده می‌آید. منبع‌های کلی/بی‌دوره فقط برای
+ * بررسی ثبت می‌شوند، نه انتشار خودکار؛ میانگین‌گیری بین دوره‌ها ممنوع است.
+ * نرخ‌های سیاستی استخراج‌شده از صفحه عمومی نیز نیاز به تأیید انسانی دارند.
+ */
+export function mergeMacroObservations(base, found, opts = {}) {
+  const merged = structuredClone(base);
+  const touched = [];
+  const j = opts.todayJalali ?? todayJalali();
+  const currentPeriod = j.jy * 12 + j.jm - 1;
+  const fields = [
+    ['annual', 'inflationAnnual', 5, 200],
+    ['pointToPoint', 'inflationPointToPoint', 0, 300],
+    ['monthly', 'inflationMonthly', 0, 100],
+  ];
+  for (const [field, key, min, max] of fields) {
+    const previous = merged.indicators?.[key];
+    if (!previous) continue;
+    const prevPeriod = macroPeriodIndex(previous.period);
+    const eligible = found.filter((f) => {
+      const value = f.inflation?.[field];
+      const period = macroPeriodIndex(f.inflation?.period);
+      return f.trustedForInflation === true && /^https?:\/\//.test(f.url ?? '') &&
+        Number.isFinite(value) && value >= min && value < max && period != null &&
+        period <= currentPeriod && (prevPeriod == null || period > prevPeriod);
+    }).sort((a, b) => macroPeriodIndex(b.inflation.period) - macroPeriodIndex(a.inflation.period));
+    const selected = eligible[0];
+    if (!selected) continue;
+    const value = selected.inflation[field];
+    merged.indicators[key] = {
+      ...previous,
+      previousValue: previous.value,
+      value,
+      period: toPersianDigits(selected.inflation.period),
+      source: { kind: selected.kind, title: selected.label, url: selected.url },
+      changedAt: opts.now ?? new Date().toISOString(),
+    };
+    touched.push(`${key}: ${previous.value} → ${value}`);
+  }
+
+  const inflation = merged.indicators?.inflationAnnual?.value;
+  const cbiInflation = merged.indicators?.inflationCbiAnnual?.value;
+  const deposit = merged.indicators?.depositCap1y?.value;
+  const fisher = (nominal, inf) => Number((((1 + nominal / 100) / (1 + inf / 100) - 1) * 100).toFixed(1));
+  merged.derived = {
+    ...merged.derived,
+    note: 'بازده حقیقی بر پایه رابطه فیشر: (۱ + سود اسمی) ÷ (۱ + تورم) − ۱؛ منفی یعنی افت قدرت خرید.',
+    ...(Number.isFinite(deposit) && Number.isFinite(inflation) ? { realDepositReturnAnnual: fisher(deposit, inflation) } : {}),
+    ...(Number.isFinite(deposit) && Number.isFinite(cbiInflation) ? { realDepositReturnCbi: fisher(deposit, cbiInflation) } : {}),
+  };
+  return { indicators: merged, touched };
+}
+
 /**
  * واکشی شاخص‌های کلان و ادغام با مقادیر پایه.
  * @param {object} base محتوای فعلی data/indicators.json
@@ -122,7 +186,7 @@ export async function collect(base, opts = {}) {
 
     if (result.ok) {
       const { inflation, rates } = result.data;
-      found.push({ source: source.id, label: source.label, inflation, rates });
+      found.push({ source: source.id, label: source.label, url: source.url, kind: source.kind, trustedForInflation: source.trustedForInflation === true, inflation, rates });
       log(`${source.label}: ${JSON.stringify({ ...inflation, ...rates })}`);
     } else {
       failures.push({ source: source.id, label: source.label, error: result.error });
@@ -130,52 +194,7 @@ export async function collect(base, opts = {}) {
     }
   }
 
-  // ادغام: فقط مقادیری جایگزین می‌شوند که معقول و موجود باشند
-  const merged = structuredClone(base);
-  const touched = [];
-
-  const annualCandidates = found
-    .map((f) => f.inflation.annual)
-    .filter((v) => v != null && v > 5 && v < 200);
-
-  if (annualCandidates.length) {
-    // میانه برای مقاومت در برابر مقدار پرت
-    const sorted = [...annualCandidates].sort((a, b) => a - b);
-    const median = sorted[Math.floor(sorted.length / 2)];
-    const prev = merged.indicators.inflationAnnual.value;
-    if (Math.abs(median - prev) >= 0.1) {
-      merged.indicators.inflationAnnual.value = median;
-      merged.indicators.inflationAnnual.previousValue = prev;
-      merged.indicators.inflationAnnual.changedAt = new Date().toISOString();
-      touched.push(`inflationAnnual: ${prev} → ${median}`);
-    }
-    if (found[0]?.inflation?.period) {
-      merged.indicators.inflationAnnual.period = found[0].inflation.period;
-    }
-  }
-
-  const policy = found.reduce((acc, f) => ({ ...acc, ...f.rates }), {});
-  for (const [key, value] of Object.entries(policy)) {
-    if (merged.indicators[key] && value !== merged.indicators[key].value) {
-      const prev = merged.indicators[key].value;
-      merged.indicators[key].value = value;
-      merged.indicators[key].previousValue = prev;
-      merged.indicators[key].changedAt = new Date().toISOString();
-      touched.push(`${key}: ${prev} → ${value}`);
-    }
-  }
-
-  // بازمحاسبه نرخ واقعی
-  const inflation = merged.indicators.inflationAnnual.value;
-  const cbiInflation = merged.indicators.inflationCbiAnnual?.value;
-  const deposit = merged.indicators.depositCap1y.value;
-  merged.derived = {
-    ...merged.derived,
-    realDepositReturnAnnual: Number((deposit - inflation).toFixed(1)),
-    ...(Number.isFinite(cbiInflation)
-      ? { realDepositReturnCbi: Number((deposit - cbiInflation).toFixed(1)) }
-      : {}),
-  };
+  const { indicators: merged, touched } = mergeMacroObservations(base, found);
 
   const j = todayJalali();
   merged.generatedAt = new Date().toISOString();

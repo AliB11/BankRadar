@@ -10,7 +10,7 @@
  */
 
 import { daysSince, faNum, faPercent, faSignedPercent } from './util.js';
-import { scheduleFee, irrAnnual } from './finance.js';
+import { effectiveAnnualRate, canEstimateLoan } from './finance.js';
 
 export const WEIGHT_KEYS = ['benefit', 'digital', 'speed', 'friction', 'fresh'];
 
@@ -117,23 +117,21 @@ export function scoreProduct(product, weights, ctx = {}) {
   let realRate = null;
   let adjustment = 0;
 
-  if (inflation != null && product.rate > 0) {
-    // مبنای محاسبه، نرخ مؤثر سالانه است نه نرخ اسمی:
-    // برای محصولات کارمزد‌محور (قرض‌الحسنه)، عدد rate یک کارمزد یک‌بار است و
-    // تفسیر آن به‌عنوان نرخ سالانه، هزینه واقعی را چند برابر برآورد می‌کند.
-    const basis = basisAnnualRate(product);
+  const basis = basisAnnualRate(product);
+  if (inflation != null && basis != null && Number.isFinite(basis)) {
+    // مبنای تسهیلات نرخ مؤثر سالانه با جریان واقعی اقساط تخمینی است.
     const real = (1 + basis / 100) / (1 + inflation / 100) - 1;
     realRate = Number((real * 100).toFixed(1));
 
     if (product.category === 'deposits' || product.category === 'funds') {
       // بازده حقیقی منفی شدید → جریمه متناسب (حداکثر ۱۲ نمره)
-      adjustment -= Math.min(12, Math.abs(realRate) * 0.18);
+      if (realRate < 0) adjustment -= Math.min(12, Math.abs(realRate) * 0.18);
     } else if (product.category === 'loans' && product.rate <= 6) {
       // تسهیلات قرض‌الحسنه در تورم بالا برای مشتری بسیار ارزشمند است
-      adjustment += Math.min(10, (inflation - product.rate) * 0.14);
+      adjustment += Math.min(10, Math.max(0, (inflation - basis) * 0.14));
     } else if ((product.category === 'loans' || product.category === 'credit') && product.rate >= 20) {
       // نرخ تسهیلات بالای ۲۰٪ در برابر تورم هنوز ارزش حقیقی مثبت دارد اما کمتر
-      adjustment += Math.min(6, (inflation - product.rate) * 0.06);
+      adjustment += Math.min(6, Math.max(0, (inflation - basis) * 0.06));
     }
   }
 
@@ -202,38 +200,24 @@ export function explainScore(product, result, ctx = {}) {
     );
   }
 
+  if (product.availability === 'historical') lines.push('این محصول تاریخی است و عرضه جدید آن تأیید نشده است');
   if (product.stale) lines.push('این رکورد در آخرین واکشی دیده نشد و ممکن است منقضی شده باشد');
   if (product.confidence === 'low') lines.push('سطح اطمینان داده پایین است؛ پیش از اقدام تأیید شود');
 
   return lines;
 }
 
-/**
- * نرخ سالانه قابل‌مقایسه برای محصول.
- *
- * برای سپرده و تسهیلات سودمحور، خود نرخ سالانه است. برای محصولات کارمزد‌محور
- * (قرض‌الحسنه)، کارمزد یک‌بار به نرخ مؤثر سالانه تبدیل می‌شود تا در فرمول
- * فیشر قابل‌استفاده باشد. بدون این تبدیل، کارمزد ۴ درصدی یک وام ده‌ساله
- * به‌اشتباه ۴ درصد در سال شمرده می‌شد.
- *
- * @param {object} product
- * @returns {number} نرخ سالانه به درصد
- */
+/** نرخ مبنای فیشر؛ برای وام‌ها جریان اقساط و برای سپرده نرخ اعلامی. */
 export function basisAnnualRate(product) {
-  const rate = Number(product?.rate) || 0;
-  if (rate <= 0) return 0;
-
-  if (product.rateKind === 'fee') {
-    const principal = product.maxAmount ?? product.minAmount ?? 0;
-    const months = product.termMonths ?? 12;
-    if (principal > 0 && months > 0) {
-      const { installment } = scheduleFee(principal, rate, months);
-      const eff = irrAnnual(installment, months, principal);
-      if (Number.isFinite(eff)) return eff;
-    }
-    // بدون مبلغ و مدت، تبدیل ممکن نیست؛ نرخ کوچک‌تری از کارمزد یک‌بار فرض می‌شود
-    return rate / 2;
+  if (!product || product.rateKnown === false || product.rateKind === 'none' || product.availability === 'historical') return null;
+  const rate = Number(product.rate);
+  if (!Number.isFinite(rate) || rate < 0) return null;
+  if (product.category === 'loans' || product.category === 'credit' || product.rateKind === 'fee') {
+    if (!canEstimateLoan(product)) return null;
+    const principal = product.maxAmount ?? product.minAmount;
+    const months = product.termMonths;
+    if (!(principal > 0) || !(months > 0)) return null;
+    return effectiveAnnualRate(product, principal, months);
   }
   return rate;
 }
-

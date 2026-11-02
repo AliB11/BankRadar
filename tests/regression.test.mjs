@@ -102,7 +102,7 @@ test('رکورد بی‌شناسه شناسه پایدار و معتبر می‌
 
 /* ---------- rade: صفحه بدون تاریخ، رکورد بی‌تاریخ تولید نمی‌کند ---------- */
 
-test('mapToProduct برای صفحه بدون تاریخ، تاریخ مشاهده را ثبت می‌کند', async () => {
+test('mapToProduct تاریخ مشاهده را از تاریخ ویرایش نامعلوم جدا نگه می‌دارد', async () => {
   const { mapToProduct } = await import('../tools/sources/rade.mjs');
 
   const html = `
@@ -117,8 +117,8 @@ test('mapToProduct برای صفحه بدون تاریخ، تاریخ مشاهد
     </table>`;
   const p = mapToProduct('https://www.rade.ir/loan-cash-loan/900001-test/', html);
   assert.ok(p, 'محصول باید ساخته شود');
-  assert.match(p.lastUpdated, /^\d{4}-\d{2}-\d{2}$/, 'lastUpdated نباید null بماند');
-  assert.equal(p.lastUpdated, p.source.checked);
+  assert.equal(p.lastUpdated, null, 'تاریخ ویرایش ناشناخته نباید جعل شود');
+  assert.match(p.source.checked, /^\d{4}-\d{2}-\d{2}$/, 'تاریخ مشاهده باید ثبت شود');
 });
 
 /* ---------- matchBank: نام عام نباید به اولین بانک بچسبد ---------- */
@@ -157,15 +157,16 @@ test('matchBank با نام‌های عام و مهمل، تطبیق تصادف�
 test('نرخ مؤثر محصولات کارمزد‌محور واقع‌گرایانه می‌ماند', async () => {
   const finance = await import('../assets/js/finance.js');
 
-  // کارمزد ۴٪ یک‌بار روی وام ۱۰ ساله ≈ ۰٫۸٪ نرخ مؤثر سالانه (مستند finance.js)
+  // نرخ مؤثر جریان واقعی قسط‌های سالانه کارمزد ≈ ۴٫۴۸٪ است.
   const qarz = { rate: 4, rateKind: 'fee', maxAmount: 300_000_000, termMonths: 120 };
   const effQarz = finance.effectiveAnnualRate(qarz, 300_000_000, 120, 0);
-  assert.ok(effQarz < 2, `نرخ مؤثر قرض‌الحسنه باید زیر ۲٪ باشد، دریافت شد ${effQarz}`);
+  assert.equal(effQarz, 4.48);
 
-  // تسهیلات ۲۳٪ با ۴٪ کارمزد کسرشده: حدود ۲۵ تا ۲۷ درصد، نه ۳۳ تا ۳۵
+  // با کسر اولیه صریح ۴٪، نرخ مرکب مؤثر از حالت بدون کسر بالاتر است.
   const profit = { rate: 23, rateKind: 'profit' };
   const effProfit = finance.effectiveAnnualRate(profit, 100_000_000, 48, 4);
-  assert.ok(effProfit > 24 && effProfit < 28, `نرخ مؤثر باید معقول باشد، دریافت شد ${effProfit}`);
+  assert.equal(effProfit, 28.59);
+  assert.equal(finance.effectiveAnnualRate(profit, 100_000_000, 48), 25.59);
 
   // انتخاب روش قدیمی باید در نرخ مؤثر اثر بگذارد (با قسط روش قدیمی محاسبه شود)
   const std = finance.scheduleStandard(100_000_000, 23, 48);

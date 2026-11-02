@@ -167,9 +167,9 @@ function renderSearchSuggestions(query) {
   list.innerHTML = directSearchMatches.length
     ? directSearchMatches.map((p, index) => {
         const category = CATEGORY_META[p.category];
-        const rate = p.rate > 0
-          ? `${p.rateKind === 'fee' ? 'کارمزد' : 'نرخ'} ${faPercent(p.rate)}`
-          : 'اطلاعات نرخ ندارد';
+        const rate = p.rateKnown === false || p.rateKind === 'none'
+          ? 'اطلاعات نرخ ندارد'
+          : `${p.rateKind === 'fee' ? 'کارمزد' : 'نرخ'} ${faPercent(p.rate)}`;
         return `<button class="search-suggestion" type="button" role="option"
           id="search-option-${index}" data-action="search-open" data-id="${esc(p.id)}"
           data-index="${index}" tabindex="-1" aria-selected="false">
@@ -295,34 +295,35 @@ function updateCalculator(scope) {
   const amountEl = calc.querySelector('[data-calc-input="amount"]');
   const monthsEl = calc.querySelector('[data-calc-input="months"]');
   const rateEl = calc.querySelector('[data-calc-input="rate"]');
+  const upfrontEl = calc.querySelector('[data-calc-input="upfront"]');
 
   // محدودسازی دستی مقادیر تایپ‌شده: ویژگی‌های min/max فقط روی دکمه‌های چرخان
   // اثر دارند و کاربر می‌تواند با تایپ آزاد، عدد منفی یا ماهِ ۹۹۹ وارد کند؛
   // محاسبه باید روی همان بازهٔ معتبر انجام شود.
   const amount = Math.max(0, Number(amountEl.value) || 0) * 1e6;
   const months = Math.min(360, Math.max(1, Math.round(Number(monthsEl.value) || 12)));
+  if (String(rateEl.value).trim() === '') {
+    out.innerHTML = '<div>نرخ محصول نامشخص است؛ برای برآورد، نرخ قراردادی را وارد کنید.</div>';
+    return;
+  }
   const rate = Math.min(100, Math.max(0, Number(rateEl.value) || 0));
 
-  // شیوه محاسبه از خود محصول می‌آید، نه از نرخ عددی: در وام‌های قرض‌الحسنه
-  // عدد ۴ یک کارمزد یک‌بار است و اگر نرخ سالانه فرض شود، هزینه چند برابر
-  // واقعیت نمایش داده می‌شود.
-  const product = store.products.find((x) => x.id === calc.dataset.id) ?? {
-    rate,
-    rateKind: rate <= 6 ? 'fee' : 'profit',
-  };
-  const model = { ...product, rate };
+  // نوع محاسبه از رکورد می‌آید؛ نرخ پایین به‌تنهایی نشانه کارمزد نیست.
+  const product = store.products.find((x) => x.id === calc.dataset.id) ?? { rate, rateKind: 'profit' };
+  const model = { ...product, rate, rateKnown: true };
   const monthsClamped = Math.max(1, Math.round(months));
 
   const std = scheduleFor(model, amount, monthsClamped);
   const leg = scheduleLegacy(amount, rate, monthsClamped);
-  const upfrontFee = model.rateKind !== 'fee' && rate >= 20 ? 4 : 0;
+  if (!std) { out.innerHTML = '<div>روش محاسبه کارمزد نامشخص است.</div>'; return; }
+  const upfrontFee = Math.min(99, Math.max(0, Number(upfrontEl?.value) || 0));
   const eff = effectiveAnnualRate(model, amount, monthsClamped, upfrontFee);
   const inflation = store.indicators?.inflationAnnual?.value ?? null;
-  const real = inflation != null ? realRate(eff, inflation) : null;
+  const real = inflation != null && eff != null ? realRate(eff, inflation) : null;
 
   const isFee = model.rateKind === 'fee';
   const costLabel = isFee ? 'کل کارمزد' : 'کل سود پرداختی';
-  const firstLabel = isFee ? 'قسط ماهانه' : 'قسط ماهانه (روش جدید)';
+  const firstLabel = isFee ? 'قسط معمول اصل' : 'قسط ماهانه (روش جدید)';
 
   // یادآوری محدوده: مبلغ خارج از سقف/حداقل واقعی محصول، برآورد را از واقعیت
   // دور می‌کند؛ پیام کوتاه، کاربر را درجا آگاه می‌کند.
@@ -336,11 +337,12 @@ function updateCalculator(scope) {
   ].join('');
 
   out.innerHTML = `
-    <div><span class="k">${firstLabel}</span><span class="v num" style="color:var(--brand)">${faToman(std.installment)}</span></div>
-    ${isFee ? '' : `<div><span class="k">قسط ماهانه (روش قدیمی)</span><span class="v num">${faToman(leg.installment)}</span></div>`}
-    <div><span class="k">${costLabel}</span><span class="v num">${faToman(std.totalInterest)}</span></div>
-    <div><span class="k">مجموع بازپرداخت</span><span class="v num">${faToman(std.totalPayment)}</span></div>
-    <div><span class="k">نرخ مؤثر سالانه${upfrontFee ? ` (با کارمزد ${fa(upfrontFee)}٪)` : ''}</span><span class="v num" style="color:var(--warn)">${faPercent(eff)}</span></div>
+    <div><span class="k">${firstLabel}</span><span class="v num" style="color:var(--brand)">${faToman(std.installment, { short: false })}</span></div>
+    ${isFee && std.firstFee != null ? `<div><span class="k">کارمزد سال نخست</span><span class="v num">${faToman(std.firstFee, { short: false })}</span></div>` : ''}
+    ${isFee ? '' : `<div><span class="k">قسط ماهانه (روش قدیمی)</span><span class="v num">${faToman(leg.installment, { short: false })}</span></div>`}
+    <div><span class="k">${costLabel}</span><span class="v num">${faToman(std.totalInterest, { short: false })}</span></div>
+    <div><span class="k">مجموع بازپرداخت</span><span class="v num">${faToman(std.totalPayment, { short: false })}</span></div>
+    <div><span class="k">نرخ مؤثر سالانه${upfrontFee ? ` (با کسر ${fa(upfrontFee)}٪)` : ' (بدون هزینه کسر اولیه)'}</span><span class="v num" style="color:var(--warn)">${faPercent(eff, 2)}</span></div>
     ${real != null ? `<div><span class="k">هزینه حقیقی در برابر تورم</span><span class="v num" style="color:${real < 0 ? 'var(--brand)' : 'var(--danger)'}">${faPercent(real)}</span></div>` : ''}
     ${rangeNote}
   `;
@@ -354,7 +356,9 @@ function resetCalculator(scope) {
   if (!p) return;
   calc.querySelector('[data-calc-input="amount"]').value = Math.round((p.maxAmount || 100_000_000) / 1e6);
   calc.querySelector('[data-calc-input="months"]').value = p.termMonths || 36;
-  calc.querySelector('[data-calc-input="rate"]').value = p.rate || 23;
+  calc.querySelector('[data-calc-input="rate"]').value = p.rateKnown === false ? '' : p.rate;
+  const upfront = calc.querySelector('[data-calc-input="upfront"]');
+  if (upfront) upfront.value = 0;
   updateCalculator(scope);
 }
 
@@ -390,7 +394,7 @@ function download(filename, content, type) {
 }
 
 const CSV_COLUMNS = [
-  'id', 'bank', 'product', 'category', 'subcategory', 'rate', 'rateKind',
+  'id', 'bank', 'product', 'category', 'subcategory', 'rate', 'rateKnown', 'rateKind', 'feeModel', 'availability',
   'contractType',
   'minAmount', 'maxAmount', 'termMonths', 'collateralKind', 'collateral',
   'confidence', 'autoDiscovered', 'stale', 'lastUpdated', 'sourceUrl',

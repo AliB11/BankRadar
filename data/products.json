@@ -1,20 +1,27 @@
 {
-  "autoDiscovered": 286,
+  "autoDiscovered": 290,
   "counts": {
     "credit": 65,
     "deposits": 53,
     "funds": 73,
-    "loans": 152,
+    "loans": 156,
     "loyalty": 14,
-    "total": 357
+    "total": 361
   },
   "disclaimer": "هر رکورد دارای منبع و تاریخ کنترل است. نرخ‌های سود تابع مصوبات شورای پول و اعتبار و بخشنامه‌های بانک مرکزی است و بانک‌ها می‌توانند شرایط را تغییر دهند. پیش از اقدام، شرایط را از منبع رسمی بانک تأیید کنید.",
-  "generatedAt": "2026-11-01T10:39:21.291Z",
-  "generator": "tools/collect.mjs",
+  "generatedAt": "2026-11-02T07:29:43Z",
+  "generator": "ممیزی مستند ۲۰۲۶-۱۱-۰۲؛ خط لوله tools/collect.mjs",
   "products": [
     {
       "amountLabel": "از ۱ میلیون تا مبالغ میلیاردی",
       "audience": "سپرده‌گذاران آستانه‌پذیر بالای یک میلیارد تومان",
+      "availability": "historical",
+      "availabilityNote": "بانک آینده از ۱ آبان ۱۴۰۴ وارد فرایند گزیر شد و امور سپرده‌گذاران به بانک ملی واگذار شد؛ عرضه جدید این محصول تأیید نشده است.",
+      "availabilitySource": {
+        "kind": "regulator",
+        "title": "اطلاعیه بانک مرکزی درباره گزیر بانک آینده",
+        "url": "https://cbi.ir/showitem/33657.aspx"
+      },
       "bank": "بانک آینده",
       "bankId": "ayandeh",
       "benefit": 56,
@@ -102,35 +109,37 @@
       "category": "deposits",
       "collateral": "ندارد — فقط عدم برداشت پیش از سررسید",
       "collateralKind": "none",
-      "confidence": "high",
-      "desc": "نرخ مرجع کل بازار. برای مقایسه درست باید «نرخ واقعی» محاسبه شود: با تورم سالانه نزدیک ۷۰ درصد، بازده حقیقی سپرده یک‌ساله عمیقاً منفی است. مقدار اسمی این نرخ مبنای سنجش سایر محصولات منابعی است.",
+      "confidence": "medium",
+      "desc": "طبق گزارش منتشرشده در آبان ۱۴۰۵، نرخ مرجع سپرده عادی یک‌ساله ۲۰٫۵ درصد است. این عدد را منبع خبری گزارش کرده و جدول بخشنامه رسمی در این بازبینی مستقیماً قابل استخراج نبود؛ پیش از اقدام از بانک تأیید کنید.",
       "digital": 85,
       "friction": 88,
       "id": "cbi-deposit-1y-cap",
-      "lastUpdated": "2026-09-15",
+      "lastSeen": "2026-11-02",
+      "lastUpdated": null,
       "maxAmount": null,
       "minAmount": 1000000,
-      "product": "سپرده سرمایه‌گذاری بلندمدت یک‌ساله (نرخ مرجع مصوب)",
-      "rate": 23,
+      "product": "سپرده بلندمدت یک‌ساله — نرخ مرجع گزارش‌شده",
+      "rate": 20.5,
       "rateKind": "profit",
-      "rateLabel": "سود سالانه ۲۳٪",
-      "regulatory": true,
+      "rateLabel": "نرخ یک‌ساله گزارش‌شده ۲۰٫۵٪",
+      "regulatory": false,
       "requirements": [
         "افتتاح حساب",
         "عدم برداشت پیش از سررسید",
         "پذیرش حداقل موجودی بانک عامل"
       ],
       "source": {
-        "kind": "regulator",
-        "title": "بانک مرکزی — مصوبه شورای پول و اعتبار نرخ سود سپرده",
-        "url": "https://www.cbi.ir"
+        "checked": "2026-11-02",
+        "kind": "press",
+        "title": "نبض قیمت — نرخ سود بانکی در آبان ۱۴۰۵",
+        "url": "https://nabzgheymat.ir/نرخ-سود-بانکی-در-آبان-۱۴۰۵-تغییر-میکن/"
       },
       "speed": 72,
       "stale": false,
       "subcategory": "term",
       "tags": [
-        "نرخ مرجع",
-        "مصوب شورای پول و اعتبار",
+        "نرخ مرجع گزارش‌شده",
+        "سپرده عادی",
         "بلندمدت"
       ],
       "termLabel": "۱۲ ماه (سررسید یک‌ساله)",
@@ -2514,50 +2523,51 @@
       "termMonths": 18
     },
     {
-      "amountLabel": "۵۰ میلیون بدون ضامن تا ۴۰۰ میلیون با ضامن، بر پایه گروه امتیازی",
+      "amountLabel": "تا ۲۰۰ میلیون بدون ضامن؛ تا ۴۰۰ میلیون با ضامن (مشروط)",
       "audience": "کاربران بلوبانک با رتبه اعتباری A تا C و میانگین موجودی قابل قبول",
       "bank": "بلوبانک",
       "bankId": "blubank",
       "benefit": 63,
       "category": "credit",
       "ceilingContingent": true,
-      "collateral": "ضامن با رتبه B۲ و بالاتر برای سقف‌های بالا؛ مسیر اعتبارسنجی برای سقف پایین",
+      "collateral": "تا ۲۰۰ میلیون بدون ضامن؛ سقف ۴۰۰ میلیون با ضامن واجد شرایط",
       "collateralKind": "mixed",
       "confidence": "high",
-      "desc": "وام نقدی دیجیتال بلوبانک با سود ۲۰ درصد و کارمزد ۴ درصد. سقف در سه گروه تعیین می‌شود: با نداشتن قسط معوق (گروه یک) تا ۵۰ میلیون بدون ضامن و ۱۰۰ میلیون با ضامن، با ۴ تا ۱۲ قسط پرداخت‌شده تا ۱۰۰ و ۲۰۰ میلیون، و با بیش از ۱۲ قسط تا ۲۰۰ میلیون بدون ضامن و ۴۰۰ میلیون با ضامن. شرط ورود، میانگین موجودی ۳ میلیون تومان در سه ماه متوالی است. رتبه اعتباری C۳ و پایین‌تر واجد شرایط نیست.",
+      "desc": "طبق صفحه بلوبانک، وام به‌جا تا ۲۰۰ میلیون تومان بدون ضامن و تا ۴۰۰ میلیون تومان با ضامن است. سقف هر فرد به میانگین سه‌ماهه، سابقه اقساط به‌موقع و رتبه اعتباری وابسته است. سود ۲۰ درصد، کارمزد ۴ درصد و هزینه تمبر مالیاتی ۷۵ هزار تومان اعلام شده است؛ شرایط و نحوه کسر هزینه‌ها را هنگام قرارداد از بانک بپرسید.",
       "digital": 99,
       "friction": 78,
       "id": "blu-loan-beja",
-      "lastUpdated": "2026-09-15",
+      "lastSeen": "2026-11-02",
+      "lastUpdated": null,
       "maxAmount": 400000000,
-      "minAmount": 50000000,
-      "product": "وام به‌جا — تسهیلات نقدی دیجیتال بدون ضامن",
+      "minAmount": 3000000,
+      "product": "وام به‌جا بلوبانک — با ضامن و بدون ضامن",
       "rate": 20,
       "rateKind": "profit",
-      "rateLabel": "سود سالانه ۲۳٪",
+      "rateLabel": "سود ۲۰٪؛ کارمزد ۴٪ جداگانه",
       "requirements": [
-        "میانگین موجودی حداقل ۳ میلیون تومان در سه ماه متوالی",
-        "رتبه اعتباری بالاتر از C۳",
-        "ضامن با رتبه B۲+ برای سقف‌های بالای ۲۰۰ میلیون",
-        "تمبر مالیاتی ۷۵ هزار تومان"
+        "میانگین حداقل ۳ میلیون تومان در سه ماه متوالی",
+        "سقف ۴۰۰ میلیون: بیش از ۱۲ قسط به‌موقع، رتبه A۱ تا B۲ و میانگین حداقل ۴۰۰ میلیون",
+        "برای سقف ۴۰۰ میلیون ارائه ضامن لازم است",
+        "کارمزد ۴٪ و هزینه تمبر مالیاتی ۷۵ هزار تومان طبق اعلام بلوبانک"
       ],
       "source": {
-        "kind": "aggregator",
-        "title": "رده — وام بهجا بلوبانک (جدول مشخصات کامل)",
-        "url": "https://www.rade.ir/loan-instant-loan/706908-%D9%88%D8%A7%D9%85-%D8%A8%D9%87%E2%80%8C%D8%AC%D8%A7-%D8%A8%D9%84%D9%88%D8%A8%D8%A7%D9%86%DA%A9/"
+        "checked": "2026-11-02",
+        "kind": "bank",
+        "title": "بلوبانک — شرایط وام به‌جا",
+        "url": "https://blubank.com/loan/beja-loan/"
       },
       "speed": 97,
       "stale": false,
       "subcategory": "digital-loan",
       "tags": [
-        "بدون ضامن",
+        "با ضامن و بدون ضامن",
         "نئوبانک",
-        "پرداخت آنی",
         "اعتبارسنجی"
       ],
       "termLabel": "تا ۱۲ ماه",
       "termMonths": 12,
-      "updateNote": "سقف پیشین ۱۲۰ میلیون تومان بود؛ بر پایه جدول مرجع رده اصلاح شد."
+      "updateNote": "در ممیزی ۱۱ آبان ۱۴۰۵ سقف و شروط با صفحه رسمی بلوبانک اصلاح شد؛ کارمزد و تمبر در محاسبه قسط خودکار لحاظ نشده‌اند."
     },
     {
       "amountLabel": "پله اول ۳ تا ۱۰ میلیون، پله‌های بعدی تا ۱۰۰ میلیون تومان",
@@ -4193,7 +4203,7 @@
         "محدود به کشاورزان دارای مطالبات گندم و چای",
         "دوره بازپرداخت کوتاه ۳ ماهه"
       ],
-      "contractType": "morabehe",
+      "contractType": "unknown",
       "desc": "گرین‌پی",
       "digital": 60,
       "extra": {
@@ -4520,7 +4530,7 @@
       "bankId": "saman",
       "benefit": 61,
       "category": "credit",
-      "ceilingContingent": false,
+      "ceilingContingent": true,
       "collateral": "اعتبارسنجی",
       "collateralKind": "credit-score",
       "confidence": "medium",
@@ -4547,8 +4557,8 @@
       "regulatory": false,
       "requirements": [
         "ضمانت: اعتبارسنجی",
-        "هزینه جانبی: —",
-        "قسط تقریبی: ۱۸,۵۲۶,۹۰۱ تومان"
+        "قسط تقریبی: ۱۸,۵۲۶,۹۰۱ تومان",
+        "طبق صفحه رسمی بلو، سود ۲۰٪، کارمزد ۴٪ و تمبر ۷۵ هزار تومان است؛ نحوه کسر را از بانک تأیید کنید."
       ],
       "source": {
         "checked": "2026-11-01",
@@ -4582,7 +4592,7 @@
       "cons": [
         "الزام به داشتن چک صیادی بنفش و رتبه اعتباری A یا B"
       ],
-      "contractType": "morabehe",
+      "contractType": "unknown",
       "desc": "پلتفرم «وان ایکس وام» امکان دریافت اعتبار خرید اقساطی کالا از ۱۰ تا ۳۰۰ میلیون تومان با بازپرداخت ۱۲، ۱۸، ۲۴ و ۳۶ ماهه را با ارائه یک برگ چک صیادی بنفش و اعتبارسنجی آنلاین فراهم می‌کند.",
       "digital": 88,
       "friction": 74,
@@ -4709,6 +4719,7 @@
       "product": "طرح روزنو بانک تجارت",
       "rate": 0,
       "rateKind": "profit",
+      "rateKnown": false,
       "rateLabel": "نامشخص",
       "regulatory": false,
       "requirements": [
@@ -4803,7 +4814,7 @@
       "cons": [
         "نرخ سود و کارمزد بالا (۴۲٪ اسمی / ۵۱.۱٪ مؤثر)"
       ],
-      "contractType": "morabehe",
+      "contractType": "unknown",
       "desc": "سامانه خرید اقساطی «باکالا» در قالب طرح‌های «چکالا» (با چک صیادی)، «مبتا» (ویژه مستمری‌بگیران بانک رفاه بدون چک) و «حبصا» اعتبار خرید کالا تا ۲۰۰ میلیون تومان با بازپرداخت ۶ تا ۲۴ ماهه ارائه می‌دهد.",
       "digital": 86,
       "friction": 70,
@@ -4859,7 +4870,7 @@
       "cons": [
         "هزینه کارمزد پلتفرم و اشتراک که نرخ مؤثر را افزایش می‌دهد"
       ],
-      "contractType": "morabehe",
+      "contractType": "unknown",
       "desc": "پلتفرم لندتک «الوپی» (الوقسطی) با همکاری بانک‌های عامل، اعتبار خرید کالا و خدمات تا سقف ۴۰۰ میلیون تومان با بازپرداخت ۱۲ تا ۳۶ ماهه ارائه می‌دهد. فرآیند اعتبارسنجی آنلاین بوده و با ارائه چک صیادی یا سفته الکترونیکی بدون ضامن انجام می‌شود.",
       "digital": 90,
       "friction": 75,
@@ -5096,6 +5107,7 @@
       "product": "وام بلوجونیور بانک سامان",
       "rate": 0,
       "rateKind": "profit",
+      "rateKnown": false,
       "rateLabel": "نامشخص",
       "regulatory": false,
       "requirements": [
@@ -5246,9 +5258,10 @@
         "سقف اعتبار محدود به ۲۰ میلیون تومان",
         "کارمزد ۲.۵٪ ماهانه در بازپرداخت چهار قسطه"
       ],
-      "contractType": "qarz",
+      "contractType": "unknown",
       "desc": "سرویس خرید اعتباری (BNPL) سوپراپلیکیشن «اوانو» وابسته به همراه اول، اعتبار ۲ تا ۲۰ میلیون تومانی برای خرید از فروشگاه‌های طرف قرارداد ارائه می‌دهد. تسویه پایان ماه کاملاً بدون سود و کارمزد بوده و در حالت ۴ قسطه (۲۵٪ پیش‌پرداخت و ۳ قسط ماهانه) کارمزد ۲.۵٪ در ماه اعمال می‌شود.",
       "digital": 95,
+      "feeModel": "unknown",
       "friction": 88,
       "id": "rade-708812",
       "lastSeen": "2026-10-31",
@@ -5263,6 +5276,7 @@
       ],
       "rate": 30,
       "rateKind": "fee",
+      "rateKnown": false,
       "rateLabel": "خرید پایان ماه بدون کارمزد یا ۴ قسطه با کارمزد ۲.۵٪ ماهانه",
       "regulatory": false,
       "requirements": [
@@ -5303,7 +5317,7 @@
         "سقف پله‌ای محدود به ۲۰ میلیون تومان",
         "نرخ مؤثر بالا (۴۷.۳٪) با احتساب کارمزد خدمات"
       ],
-      "contractType": "morabehe",
+      "contractType": "unknown",
       "desc": "سرویس «کاریزماپی» گروه مالی کاریزما امکان دریافت وام نقدی خرد از ۱ تا ۲۰ میلیون تومان را در ۶ پله متوالی (پله اول ۱ میلیون و پله ششم ۲۰ میلیون تومان) بدون ضامن، چک یا سفته فراهم می‌کند. مبلغ وام مستقیماً به حساب بلوبانک متقاضی واریز شده و بازپرداخت آن ۴ تا ۶ ماهه است.",
       "digital": 96,
       "friction": 90,
@@ -5886,7 +5900,7 @@
       "collateral": "ضامن معتبر یا اعتبارسنجی مسیر جایگزین + سفته",
       "collateralKind": "guarantor",
       "confidence": "high",
-      "desc": "ارزان‌ترین منبع تأمین مالی خانوار در اقتصاد ایران: کارمزد یک‌بار ۴ درصد در برابر تورم نزدیک ۷۰ درصد، یعنی هزینه حقیقی استقراض در حدود منفی ۴۰ درصد به نفع وام‌گیرنده. هزینه واقعی این ارزانی، صف انتظار طولانی و سپرده‌گذاری اجباری در برخی شعب است. قسط ماهانه هر نفر ۲ میلیون و ۶۰۰ هزار تومان است و کل کارمزد ده‌ساله ۱۲ میلیون تومان می‌شود.",
+      "desc": "تسهیلات قرض‌الحسنه ازدواج با کارمزد سالانه ۴ درصد و بازپرداخت ده‌ساله، تابع سقف‌های مصوب و شرایط بانک عامل است. در مدل تقریبی کارمزد سالانه بر مانده، برای ۳۰۰ میلیون تومان مجموع کارمزد حدود ۶۶ میلیون و اقساط اصل معمول حدود ۲٫۷۳ میلیون تومان است؛ قسط کارمزد ابتدای هر سال جداست. قرارداد بانک و هزینه‌های جانبی ملاک نهایی‌اند.",
       "digital": 66,
       "friction": 48,
       "id": "ezdevaj-300",
@@ -7203,6 +7217,57 @@
       "termMonths": 60
     },
     {
+      "amountLabel": "تا ۵۰۰ میلیون تومان مشروط به معدل حساب",
+      "audience": "اشخاص حقیقی واجد شرایط",
+      "autoDiscovered": true,
+      "bank": "بانک قرض‌الحسنه مهر ایران",
+      "bankId": "mehr-iran",
+      "benefit": 90,
+      "category": "loans",
+      "ceilingContingent": true,
+      "collateral": "ضامن و اعتبارسنجی مطابق سیاست بانک",
+      "collateralKind": "guarantor",
+      "confidence": "medium",
+      "contractType": "qarz",
+      "desc": "طبق گزارش رده، نیلوفر تا ۵۰۰ میلیون تومان با کارمزد ۲ تا ۴ درصد و دوره بازپرداخت تا ۶۰ ماه ارائه می‌شود. مبلغ وام به معدل حساب ۱ تا ۳۶ ماه و سیاست اعتباری بانک بستگی دارد. سقف و تضامین را پیش از اقدام از بانک تأیید کنید.",
+      "digital": 60,
+      "friction": 50,
+      "id": "rade-704672",
+      "lastSeen": "2026-11-02",
+      "lastUpdated": null,
+      "maxAmount": 500000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "وام طرح نیلوفر بانک مهر ایران",
+      "rate": 4,
+      "rateKind": "fee",
+      "rateKnown": true,
+      "rateLabel": "کارمزد ۲ تا ۴٪، طبق شرایط بانک",
+      "regulatory": false,
+      "requirements": [
+        "معدل حساب ۱ تا ۳۶ ماه و امتیاز کافی",
+        "ضمانت و اعتبارسنجی طبق ضوابط بانک",
+        "احراز شرایط مشتری حقیقی"
+      ],
+      "source": {
+        "checked": "2026-11-02",
+        "kind": "aggregator",
+        "title": "رده — وام طرح نیلوفر بانک مهر ایران",
+        "url": "https://www.rade.ir/loan-interest-free-loan/704672-وام-طرح-نیلوفر-بانک-مهر-ایران/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 55,
+      "stale": false,
+      "subcategory": "qarz",
+      "tags": [
+        "قرض‌الحسنه",
+        "نیلوفر",
+        "معدل حساب"
+      ],
+      "termLabel": "تا ۶۰ ماه",
+      "termMonths": 60
+    },
+    {
       "amountLabel": "۳ میلیارد تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
@@ -7425,6 +7490,13 @@
       "amountLabel": "۳ میلیارد تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
+      "availability": "historical",
+      "availabilityNote": "بانک آینده از ۱ آبان ۱۴۰۴ وارد فرایند گزیر شد و امور سپرده‌گذاران به بانک ملی واگذار شد؛ عرضه جدید این محصول تأیید نشده است.",
+      "availabilitySource": {
+        "kind": "regulator",
+        "title": "اطلاعیه بانک مرکزی درباره گزیر بانک آینده",
+        "url": "https://cbi.ir/showitem/33657.aspx"
+      },
       "bank": "بانک آینده",
       "bankId": "ayandeh",
       "benefit": 55,
@@ -7510,11 +7582,11 @@
       "multiPlan": false,
       "product": "وام مسکن روستایی",
       "pros": [
-        "کارمزد حمایتی ۵٪ با دوره بازپرداخت ۲۰ ساله",
+        "سود حمایتی ۵٪ با دوره بازپرداخت ۲۰ ساله",
         "پرداخت مرحله‌ای متناسب با پیشرفت فیزیکی ساخت"
       ],
       "rate": 5,
-      "rateKind": "fee",
+      "rateKind": "profit",
       "rateLabel": "سود ۵٪",
       "regulatory": false,
       "requirements": [
@@ -7734,6 +7806,7 @@
       "product": "وام خرید تاکسی‌های برقی بانک شهر",
       "rate": 0,
       "rateKind": "profit",
+      "rateKnown": false,
       "rateLabel": "نامشخص",
       "regulatory": false,
       "requirements": [
@@ -7986,11 +8059,12 @@
       "bankId": "mehr-iran",
       "benefit": 50,
       "category": "loans",
-      "ceilingContingent": false,
+      "ceilingContingent": true,
       "collateral": "ضامن رسمی, اعتبارسنجی, چک صیادی",
       "collateralKind": "guarantor",
       "confidence": "medium",
-      "desc": "وام طرح نورا بانک مهر ایران (وام قرض الحسنه)",
+      "contractType": "qarz",
+      "desc": "طرح نورا بر پایه معدل حساب یک تا ۳۶ ماه و اعتبارسنجی است. جدول رده نرخ را نامشخص نوشته، اما توضیحات آن کارمزد صفر و مثال قسط بر مبنای صفر را صریحاً بیان می‌کنند. سقف ۵۰۰ میلیون تومان و تضمین‌ها مشروط است؛ جزئیات را از بانک تأیید کنید.",
       "digital": 60,
       "extra": {
         "installment": 8333333,
@@ -8000,7 +8074,7 @@
       },
       "friction": 50,
       "id": "rade-704708",
-      "lastSeen": "2026-11-01",
+      "lastSeen": "2026-11-02",
       "lastUpdated": "2026-10-17",
       "lastVerified": "2026-10-16",
       "maxAmount": 500000000,
@@ -8008,8 +8082,9 @@
       "multiPlan": false,
       "product": "وام طرح نورا بانک مهر ایران (وام قرض الحسنه)",
       "rate": 0,
-      "rateKind": "profit",
-      "rateLabel": "نامشخص",
+      "rateKind": "fee",
+      "rateKnown": true,
+      "rateLabel": "کارمزد صفر طبق توضیح رده",
       "regulatory": false,
       "requirements": [
         "ضمانت: ضامن رسمی, اعتبارسنجی, چک صیادی",
@@ -8017,7 +8092,7 @@
         "قسط تقریبی: ۸,۳۳۳,۳۳۳ تومان"
       ],
       "source": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-02",
         "kind": "aggregator",
         "title": "رده — وام طرح نورا بانک مهر ایران (وام قرض الحسنه)",
         "url": "https://www.rade.ir/loan-interest-free-loan/704708-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%87%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7%d9%86-%d8%b7%d8%b1%d8%ad-%d9%86%d9%88%d8%b1%d8%a7-%d9%88%d8%a7%d9%85-%d9%82%d8%b1%d8%b6-%d8%a7%d9%84%d8%ad%d8%b3%d9%86%d9%87/"
@@ -8045,6 +8120,7 @@
       "collateral": "ضامن رسمی, اعتبارسنجی",
       "collateralKind": "guarantor",
       "confidence": "medium",
+      "contractType": "unknown",
       "desc": "وام گردونه بانک ملت",
       "digital": 60,
       "extra": {
@@ -8053,6 +8129,7 @@
         "totalInterest": 18000000,
         "totalWithInterest": 318000000
       },
+      "feeModel": "unknown",
       "friction": 50,
       "id": "rade-704709",
       "lastSeen": "2026-10-31",
@@ -8419,6 +8496,57 @@
       "termMonths": 36
     },
     {
+      "amountLabel": "تا ۴۰۰ میلیون تومان برای کارکنان واجد شرایط",
+      "audience": "حقوق‌بگیران شرکت‌ها و سازمان‌های طرف حساب بانک تجارت",
+      "autoDiscovered": true,
+      "bank": "بانک تجارت",
+      "bankId": "tejarat",
+      "benefit": 60,
+      "category": "loans",
+      "ceilingContingent": true,
+      "collateral": "ترکیبی از کسر حقوق، سفته و ضامن یا قرارداد لازم‌الاجرا",
+      "collateralKind": "mixed",
+      "confidence": "medium",
+      "contractType": "non-partnership",
+      "desc": "طرح تسریع برای کارکنان شرکت‌هایی گزارش شده است که حقوق خود را از طریق بانک تجارت پرداخت می‌کنند. تسهیلات مرابحه با سود ۴، ۱۰ یا ۲۳ درصد و بدون میانگین‌گیری عرضه می‌شود؛ سقف و نوع تضمین تابع شرایط شرکت و بانک است.",
+      "digital": 60,
+      "friction": 50,
+      "id": "rade-704772",
+      "lastSeen": "2026-11-02",
+      "lastUpdated": null,
+      "maxAmount": 400000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "وام تسریع بانک تجارت",
+      "rate": 23,
+      "rateKind": "profit",
+      "rateKnown": true,
+      "rateLabel": "سود ۴، ۱۰ یا ۲۳٪ بر اساس ضریب و مدت",
+      "regulatory": false,
+      "requirements": [
+        "پرداخت حقوق از طریق بانک تجارت",
+        "احراز شرایط سازمان و اعتبارسنجی",
+        "دو مورد از تضامین مورد قبول شعبه"
+      ],
+      "source": {
+        "checked": "2026-11-02",
+        "kind": "aggregator",
+        "title": "رده — وام تسریع بانک تجارت",
+        "url": "https://www.rade.ir/loan-instant-loan/704772-وام-تسریع-بانک-تجارت/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 55,
+      "stale": false,
+      "subcategory": "instant",
+      "tags": [
+        "تسریع",
+        "کارکنان",
+        "مرابحه"
+      ],
+      "termLabel": "۱۲، ۱۸، ۲۴ یا ۳۶ ماه",
+      "termMonths": 36
+    },
+    {
       "amountLabel": "۳۰۰ میلیون تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
@@ -8760,6 +8888,7 @@
       "collateral": "اعتبار شغلی, اعتبارسنجی",
       "collateralKind": "credit-score",
       "confidence": "medium",
+      "contractType": "unknown",
       "desc": "طرح کارگشا بانک رفاه کارگران",
       "digital": 60,
       "extra": {
@@ -8768,6 +8897,7 @@
         "totalInterest": 24000000,
         "totalWithInterest": 424000000
       },
+      "feeModel": "unknown",
       "friction": 72,
       "id": "rade-704812",
       "lastSeen": "2026-11-01",
@@ -8857,6 +8987,56 @@
       ],
       "termLabel": "۳۶ ماه",
       "termMonths": 36
+    },
+    {
+      "amountLabel": "تا ۵۰ میلیون تومان وابسته به ارزیابی طلا",
+      "audience": "متقاضیان دارای وثیقه طلا",
+      "autoDiscovered": true,
+      "bank": "بانک ملی ایران",
+      "bankId": "melli",
+      "benefit": 60,
+      "category": "loans",
+      "ceilingContingent": true,
+      "collateral": "طلا، سکه یا جواهرات تا تسویه نزد بانک",
+      "collateralKind": "collateral",
+      "confidence": "low",
+      "contractType": "unknown",
+      "desc": "رده سقف ۵۰ میلیون تومان، سود ۲۳ درصد و بازپرداخت ۶۰ ماه را برای طرح کارگشای ملی گزارش کرده است. میزان وام تابع ارزیابی طلا و شرایط بانک است؛ گزارش‌های دیگر درباره نرخ متفاوت‌اند، پس قبل از اقدام شرایط جاری را از بانک کارگشایی تأیید کنید.",
+      "digital": 60,
+      "friction": 50,
+      "id": "rade-704874",
+      "lastSeen": "2026-11-02",
+      "lastUpdated": null,
+      "maxAmount": 50000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "طرح کارگشای ملی با وثیقه طلا",
+      "rate": 23,
+      "rateKind": "profit",
+      "rateKnown": true,
+      "rateLabel": "سود ۲۳٪ طبق گزارش رده؛ نیازمند تأیید بانک",
+      "regulatory": false,
+      "requirements": [
+        "ارائه طلا یا سایر وثایق قابل قبول و ارزیابی بانک",
+        "تحویل وثیقه تا تسویه",
+        "تأیید نرخ و شرایط روز از بانک"
+      ],
+      "source": {
+        "checked": "2026-11-02",
+        "kind": "aggregator",
+        "title": "رده — طرح کارگشای ملی با وثیقه طلا",
+        "url": "https://www.rade.ir/loan-cash-loan/704874-طرح-کارگشای-ملی/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 55,
+      "stale": false,
+      "subcategory": "cash",
+      "tags": [
+        "کارگشای ملی",
+        "وثیقه طلا"
+      ],
+      "termLabel": "تا ۶۰ ماه طبق رده",
+      "termMonths": 60
     },
     {
       "amountLabel": "۶۰۰ میلیون تومان",
@@ -9131,6 +9311,58 @@
         "ملت"
       ],
       "termLabel": "۴۸ ماه",
+      "termMonths": 48
+    },
+    {
+      "amountLabel": "تعاونی‌ها تا ۵ میلیارد؛ سایر شرکت‌ها تا ۲ میلیارد تومان",
+      "audience": "شرکت‌ها و اتحادیه‌های تعاونی و شرکت‌های واجد شرایط تولیدی و خدماتی",
+      "autoDiscovered": true,
+      "bank": "بانک توسعه تعاون",
+      "bankId": "tosee-taavon",
+      "benefit": 60,
+      "category": "loans",
+      "ceilingContingent": true,
+      "collateral": "تضامین و اعتبارسنجی طبق نظر بانک",
+      "collateralKind": "mixed",
+      "confidence": "medium",
+      "contractType": "unknown",
+      "desc": "طرح حاتم ۲ برای خرید یا جایگزینی کالاهای سرمایه‌ای و ماشین‌آلات گزارش شده است. سقف تعاونی‌ها ۵ میلیارد و دیگر شرکت‌ها ۲ میلیارد تومان، حداکثر ۷۰ درصد قیمت کالا است. فاصله اقساط می‌تواند سه ماه باشد؛ ماشین‌حساب اقساط ماهانه برای این رکورد غیرفعال است.",
+      "digital": 60,
+      "friction": 50,
+      "id": "rade-704924",
+      "lastSeen": "2026-11-02",
+      "lastUpdated": null,
+      "maxAmount": 5000000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "paymentSchedule": "variable",
+      "product": "طرح حاتم ۲ بانک توسعه تعاون",
+      "rate": 23,
+      "rateKind": "profit",
+      "rateKnown": true,
+      "rateLabel": "سود ۲۳٪",
+      "regulatory": false,
+      "requirements": [
+        "حداکثر ۷۰ درصد قیمت کالا و ارائه پیش‌فاکتور",
+        "تعیین تضامین و مدارک فعالیت توسط بانک",
+        "بازپرداخت و فاصله اقساط طبق قرارداد"
+      ],
+      "source": {
+        "checked": "2026-11-02",
+        "kind": "aggregator",
+        "title": "رده — طرح حاتم ۲ بانک توسعه تعاون",
+        "url": "https://www.rade.ir/loan-cash-loan/704924-طرح-حاتم2-بانک-توسعه-تعاون/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 55,
+      "stale": false,
+      "subcategory": "business",
+      "tags": [
+        "حاتم",
+        "تعاونی",
+        "سرمایه‌ای"
+      ],
+      "termLabel": "تا ۴۸ ماه تعاونی؛ تا ۳۶ ماه سایر شرکت‌ها",
       "termMonths": 48
     },
     {
@@ -9517,6 +9749,13 @@
       "amountLabel": "۱۵ میلیون تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
+      "availability": "historical",
+      "availabilityNote": "بانک آینده از ۱ آبان ۱۴۰۴ وارد فرایند گزیر شد و امور سپرده‌گذاران به بانک ملی واگذار شد؛ عرضه جدید این محصول تأیید نشده است.",
+      "availabilitySource": {
+        "kind": "regulator",
+        "title": "اطلاعیه بانک مرکزی درباره گزیر بانک آینده",
+        "url": "https://cbi.ir/showitem/33657.aspx"
+      },
       "bank": "بانک آینده",
       "bankId": "ayandeh",
       "benefit": 65,
@@ -10284,6 +10523,7 @@
       "collateral": "ضامن رسمی, اعتبارسنجی",
       "collateralKind": "guarantor",
       "confidence": "medium",
+      "contractType": "unknown",
       "desc": "وام مشاغل خانگی",
       "digital": 60,
       "extra": {
@@ -10292,6 +10532,7 @@
         "totalInterest": 20998265,
         "totalWithInterest": 220998265
       },
+      "feeModel": "unknown",
       "friction": 50,
       "id": "rade-705262",
       "lastSeen": "2026-11-01",
@@ -10888,6 +11129,7 @@
       "collateral": "اعتبارسنجی",
       "collateralKind": "credit-score",
       "confidence": "medium",
+      "contractType": "unknown",
       "desc": "وام حمپاد بانک صادرات ایران",
       "digital": 60,
       "extra": {
@@ -10896,6 +11138,7 @@
         "totalInterest": 5000000,
         "totalWithInterest": 55000000
       },
+      "feeModel": "unknown",
       "friction": 72,
       "id": "rade-705624",
       "lastSeen": "2026-11-01",
@@ -11546,6 +11789,7 @@
       "collateral": "اعتبارسنجی",
       "collateralKind": "credit-score",
       "confidence": "medium",
+      "contractType": "unknown",
       "desc": "وام دانشجویی دانشگاه آزاد اسلامی بانک شهر",
       "digital": 60,
       "extra": {
@@ -11554,6 +11798,7 @@
         "totalInterest": 20000000,
         "totalWithInterest": 220000000
       },
+      "feeModel": "unknown",
       "friction": 72,
       "id": "rade-706199",
       "lastSeen": "2026-11-01",
@@ -12365,7 +12610,7 @@
       "bankId": "saman",
       "benefit": 61,
       "category": "loans",
-      "ceilingContingent": false,
+      "ceilingContingent": true,
       "collateral": "ضامن رسمی, اعتبارسنجی",
       "collateralKind": "guarantor",
       "confidence": "medium",
@@ -12379,7 +12624,7 @@
       },
       "friction": 50,
       "id": "rade-706908",
-      "lastSeen": "2026-11-01",
+      "lastSeen": "2026-11-02",
       "lastUpdated": "2026-10-20",
       "lastVerified": "2026-10-16",
       "maxAmount": 400000000,
@@ -12393,10 +12638,11 @@
       "requirements": [
         "ضمانت: ضامن رسمی, اعتبارسنجی",
         "هزینه جانبی: علاوه بر نرخ سود و کارمزد این وام، مبلغ ۷۵ هزار تومان هزینه تمبر مالیاتی است که به‌صورت جداگانه در لحظه واریز وام، از حساب شما کسر می‌شود.",
-        "قسط تقریبی: ۳۷,۰۵۳,۸۰۲ تومان"
+        "قسط تقریبی: ۳۷,۰۵۳,۸۰۲ تومان",
+        "طبق صفحه رسمی بلو، سود ۲۰٪، کارمزد ۴٪ و تمبر ۷۵ هزار تومان است؛ نحوه کسر را از بانک تأیید کنید."
       ],
       "source": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-02",
         "kind": "aggregator",
         "title": "رده — وام به‌جا (با ضامن) بلوبانک",
         "url": "https://www.rade.ir/loan-cash-loan/706908-%d9%88%d8%a7%d9%85-%d8%a8%d9%87%d8%ac%d8%a7-%d8%a8%d9%84%d9%88%d8%a8%d8%a7%d9%86%da%a9/"
@@ -12424,6 +12670,7 @@
       "collateral": "ضامن رسمی, اعتبارسنجی",
       "collateralKind": "guarantor",
       "confidence": "medium",
+      "contractType": "unknown",
       "desc": "وام مسکن خانواده‌های دارای فرزند یا بدون فرزند",
       "digital": 60,
       "extra": {
@@ -12432,6 +12679,7 @@
         "totalInterest": 88000000,
         "totalWithInterest": 488000000
       },
+      "feeModel": "unknown",
       "friction": 50,
       "id": "rade-706957",
       "lastSeen": "2026-11-01",
@@ -12587,6 +12835,7 @@
       "collateral": "اعتبارسنجی",
       "collateralKind": "credit-score",
       "confidence": "medium",
+      "contractType": "unknown",
       "desc": "وام تحصیلی دانشجویی صندوق رفاه دانشجویی",
       "digital": 60,
       "extra": {
@@ -12595,6 +12844,7 @@
         "totalInterest": null,
         "totalWithInterest": null
       },
+      "feeModel": "unknown",
       "friction": 72,
       "id": "rade-707006",
       "lastSeen": "2026-11-01",
@@ -12640,6 +12890,7 @@
       "collateral": "اعتبارسنجی",
       "collateralKind": "credit-score",
       "confidence": "medium",
+      "contractType": "unknown",
       "desc": "وام شهریه دانشجویی صندوق رفاه دانشجویی",
       "digital": 60,
       "extra": {
@@ -12648,6 +12899,7 @@
         "totalInterest": null,
         "totalWithInterest": null
       },
+      "feeModel": "unknown",
       "friction": 72,
       "id": "rade-707008",
       "lastSeen": "2026-11-01",
@@ -12711,6 +12963,7 @@
       "product": "وام ضروری دانشجویی صندوق رفاه دانشجویی",
       "rate": 0,
       "rateKind": "profit",
+      "rateKnown": false,
       "rateLabel": "نامشخص",
       "regulatory": false,
       "requirements": [
@@ -12966,6 +13219,7 @@
       "collateral": "ضامن رسمی, اعتبارسنجی",
       "collateralKind": "guarantor",
       "confidence": "medium",
+      "contractType": "unknown",
       "desc": "وام شهریه دانشجویی دانشگاه آزاد اسلامی",
       "digital": 60,
       "extra": {
@@ -12974,6 +13228,7 @@
         "totalInterest": 20000000,
         "totalWithInterest": 220000000
       },
+      "feeModel": "unknown",
       "friction": 50,
       "id": "rade-707234",
       "lastSeen": "2026-11-01",
@@ -13202,7 +13457,7 @@
       "multiPlan": false,
       "product": "وام نوسازی خودروهای فرسوده",
       "rate": 4,
-      "rateKind": "fee",
+      "rateKind": "profit",
       "rateLabel": "سود ۴٪",
       "regulatory": false,
       "requirements": [
@@ -13414,6 +13669,7 @@
         "الزام به گذراندن دوره مهارت‌آموزی و تأیید در سامانه سماسو",
         "صف تخصیص اعتبار در بانک‌های عامل"
       ],
+      "contractType": "unknown",
       "desc": "وام ۱۵۰ میلیونی خوداشتغالی سربازی",
       "digital": 60,
       "extra": {
@@ -13422,6 +13678,7 @@
         "totalInterest": 24000000,
         "totalWithInterest": 174000000
       },
+      "feeModel": "unknown",
       "friction": 72,
       "id": "rade-708514",
       "lastSeen": "2026-11-01",

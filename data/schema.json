@@ -96,7 +96,7 @@
             "partnership",
             "unknown"
           ],
-          "description": "نوع عقد تسهیلات. اختیاری است؛ در نبود آن سامانه از خود رکورد استنتاج می‌کند (کارمزد‌محور = قرض‌الحسنه، ذکر صریح مشارکت/مضاربه = مشارکتی، سایر تسهیلات سودمحور = غیرمشارکتی، غیرنرخ‌دار = نامشخص)."
+          "description": "نوع عقد اختیاری؛ مقدار صریح اولویت دارد. استنتاج فقط با شاهد متنی یا دسته مشخص؛ در نبود شاهد unknown."
         },
         "benefit": {
           "type": "number",
@@ -185,8 +185,12 @@
           "type": "boolean"
         },
         "lastUpdated": {
-          "type": "string",
-          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+          "description": "تاریخ ویرایش منبع، یا null وقتی نامعلوم است؛ مستقل از تاریخ مشاهده."
         },
         "lastSeen": {
           "type": "string",
@@ -220,8 +224,10 @@
                 "regulator",
                 "bank",
                 "aggregator",
-                "press"
-              ]
+                "press",
+                "snapshot"
+              ],
+              "description": "snapshot برداشت ذخیره‌شده است و به‌تنهایی به معنی تأیید زنده نیست."
             },
             "checked": {
               "type": "string"
@@ -238,6 +244,32 @@
         "multiPlan": {
           "type": "boolean",
           "description": "صفحه یک بسته چند‌طرحی است و سقف/مدت منفرد ندارد؛ ارقام این رکورد قطعی نیستند."
+        },
+        "rateKnown": {
+          "type": "boolean",
+          "description": "false یعنی عدد صفر جایگزین نرخ نامعلوم است؛ صفر واقعی جداگانه معتبر است."
+        },
+        "feeModel": {
+          "enum": [
+            "annual-balance",
+            "one-time",
+            "unknown"
+          ],
+          "description": "مدل کارمزد، در صورت شناسایی؛ نبود آن برای وام‌ها تنها برآورد قرض‌الحسنه است."
+        },
+        "availability": {
+          "enum": [
+            "historical",
+            "available"
+          ],
+          "description": "وضعیت عرضه؛ historical یعنی محصول برای درخواست جدید قابل توصیه نیست."
+        },
+        "paymentSchedule": {
+          "enum": [
+            "monthly",
+            "variable"
+          ],
+          "description": "variable یعنی فاصله اقساط نامنظم یا غیرماهانه است و برآورد قسط ساده مناسب نیست."
         }
       }
     }
