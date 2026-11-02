@@ -1,10 +1,10 @@
 {
   "derived": {
-    "note": "بازده حقیقی با رابطه فیشر: (۱ + سود اسمی) ÷ (۱ + تورم) − ۱؛ منفی یعنی کاهش قدرت خرید.",
+    "note": "بازده حقیقی بر پایه رابطه فیشر: (۱ + سود اسمی) ÷ (۱ + تورم) − ۱؛ منفی یعنی افت قدرت خرید.",
     "realDepositReturnAnnual": -31.8,
     "realDepositReturnCbi": -28.4
   },
-  "generatedAt": "2026-11-02T07:26:18Z",
+  "generatedAt": "2026-11-02T11:30:18.898Z",
   "generator": "ممیزی مستند ۲۰۲۶-۱۱-۰۲؛ خط لوله tools/collect.mjs",
   "indicators": {
     "certificateRate": {
