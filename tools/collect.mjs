@@ -11,7 +11,7 @@
  * استفاده:
  *   node tools/collect.mjs              # واکشی کامل و نوشتن
  *   node tools/collect.mjs --dry-run    # بدون نوشتن، فقط گزارش
- *   node tools/collect.mjs --offline    # بدون شبکه (فقط بازسازی bundle و اعتبارسنجی)
+ *   node tools/collect.mjs --offline    # بدون شبکه و تغییر داده/گزارش؛ فقط بازسازی bundle
  *   node tools/collect.mjs --limit=60   # محدودکردن تعداد صفحات وام
  *   node tools/collect.mjs --only=dgshahr  # فقط منبع دیجی‌شهر (برای درون‌ریزی آفلاین: DGSHAHR_HTML_FILE)
  *   node tools/collect.mjs --only=isignal  # فقط صندوق‌های درآمد ثابت آی‌سیگنال (برون‌خط: ISIGNAL_JSON_FILE)
@@ -204,11 +204,17 @@ export function mergeProducts(existing, incoming) {
     // بگیرند؛ وگرنه دادهٔ کهنه در گزارش تازگی، تازه شمرده می‌شود.
     const live = candidate.live !== false;
     delete candidate.live;
-    candidate.stale = false;
-    if (live) candidate.lastSeen = today();
+    if (live) {
+      candidate.stale = false;
+      candidate.lastSeen = today();
+    } else {
+      // snapshot فقط تاریخ واقعی خودش را دارد؛ نبود تاریخ هم تأیید زنده نیست.
+      const observed = candidate.lastSeen || candidate.lastVerified || candidate.source?.checked || candidate.lastUpdated;
+      candidate.stale = candidate.stale === true || !observed || daysSince(observed) > 45;
+    }
 
     let targetId = byId.has(candidate.id) ? candidate.id : byKey.get(matchKey(candidate));
-    seenIds.add(targetId ?? candidate.id);
+    if (live) seenIds.add(targetId ?? candidate.id);
 
     if (!targetId) {
       byId.set(candidate.id, candidate);
@@ -218,6 +224,12 @@ export function mergeProducts(existing, incoming) {
     }
 
     const current = byId.get(targetId);
+    // Snapshot آفلاین هرگز محصول موجود را با داده احتمالاً قدیمی بازنویسی
+    // نمی‌کند و مشاهده تازه هم نمی‌سازد؛ وضعیت کهنگی پایین جدا بررسی می‌شود.
+    if (!live) {
+      unchanged += 1;
+      continue;
+    }
     const isCurated = current.autoDiscovered !== true;
     // برداشت ناقص: محتوا دست‌نخورده می‌ماند، فقط مشاهده ثبت می‌شود.
     if (isThinScrape(candidate, current)) {
@@ -305,8 +317,8 @@ export function mergeProducts(existing, incoming) {
   // علامت‌گذاری رکوردهای خودکارِ دیده‌نشده (حذف نمی‌شوند)
   for (const [id, p] of byId) {
     if (p.autoDiscovered === true && !seenIds.has(id)) {
-      const lastSeen = p.lastSeen || p.lastUpdated;
-      if (lastSeen && daysSince(lastSeen) > 45) {
+      const lastSeen = p.lastSeen || p.lastVerified || p.source?.checked || p.lastUpdated;
+      if (!lastSeen || daysSince(lastSeen) > 45) {
         byId.set(id, { ...p, stale: true });
       }
     }
@@ -348,6 +360,22 @@ async function main() {
     merge: null,
     durationMs: 0,
   };
+
+  // ساخت برون‌خط هیچ منبعی را بررسی نمی‌کند. بازنویسی products/meta در این
+  // حالت، مهر ساخت/آخرین اجرا را جعل و سلامت واقعی منابع را پاک می‌کرد.
+  if (OFFLINE) {
+    log('حالت offline: واکشی و تغییر داده/گزارش انجام نشد');
+    if (!DRY_RUN) {
+      await buildBundle({ dataDir: DATA, log: vlog });
+      log('data/bundle.js بازسازی شد');
+    }
+    report.finishedAt = new Date().toISOString();
+    report.durationMs = Date.now() - startedAt.getTime();
+    report.counts = dataset.counts ?? { total: dataset.products.length };
+    if (VERBOSE) console.log(JSON.stringify(report, null, 2));
+    log(`پایان در ${report.durationMs} ms`);
+    return report;
+  }
 
   let incoming = [];
   let indicators = indicatorsBase;

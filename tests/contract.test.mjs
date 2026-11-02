@@ -1,7 +1,7 @@
 /**
  * آزمون‌های نوع عقد (تفکیک منطقی تسهیلات) و اصلاحات محاسباتی/منطقی:
  *
- *   ۱. استنتاج قطعی نوع عقد از رکورد (deriveContractType) — قواعد و ترتیب آن‌ها
+ *   ۱. استنتاج محتاطانه نوع عقد از رکورد (deriveContractType) — قواعد و ترتیب آن‌ها
  *   ۲. فیلتر «نوع عقد» — اعمال در دسته‌های اعتباری، خنثی در سایر دسته‌ها
  *   ۳. نمایش فیلتر در پنل، نشان عقد روی کارت و ردیف نوع عقد در کشو
  *   ۴. «کنترل‌شده بودن» رکورد = جدیدترین تاریخ بازبینی/منبع (فیلتر onlyFresh
@@ -47,10 +47,10 @@ const iso = (daysAgo) => new Date(Date.now() - daysAgo * 86_400_000).toISOString
 
 /* ---------- ۱) استنتاج نوع عقد ---------- */
 
-test('کارمزد‌محور بودن یعنی قرض‌الحسنه — قوی‌ترین نشانه', () => {
-  assert.equal(deriveContractType({ rateKind: 'fee', rate: 4, product: 'وام ازدواج' }), 'qarz');
-  // حتی اگر متن، عقد دیگری را ذکر کند، ماهیت هزینه‌گذاری داده حرف آخر را می‌زند
-  assert.equal(deriveContractType({ rateKind: 'fee', rate: 4, desc: 'بر پایه عقد مشارکت' }), 'qarz');
+test('کارمزد به‌تنهایی نوع عقد را ثابت نمی‌کند', () => {
+  assert.equal(deriveContractType({ category: 'loans', subcategory: 'marriage', rateKind: 'fee', rate: 4 }), 'qarz');
+  assert.equal(deriveContractType({ category: 'credit', rateKind: 'fee', rate: 4 }), 'unknown');
+  assert.equal(deriveContractType({ rateKind: 'fee', rate: 4, desc: 'بر پایه عقد مشارکت' }), 'partnership');
 });
 
 test('ذکر صریح قرض‌الحسنه با نرخ پایین، قرض‌الحسنه است', () => {
@@ -66,7 +66,7 @@ test('ذکر صریح قرض‌الحسنه با نرخ پایین، قرض‌ا
   // ذکر قرض‌الحسنه با نرخ ۱۵٪ فقط ارجاع به قرارداد دیگر است، نه نوع عقد خود محصول
   assert.equal(
     deriveContractType({ rateKind: 'profit', rate: 15, desc: 'در مقابل قرض‌الحسنه ۴ درصدی…' }),
-    'non-partnership',
+    'unknown',
   );
 });
 
@@ -81,9 +81,10 @@ test('ذکر صریح مشارکت/مضاربه در تسهیلات سودمحو
   );
 });
 
-test('سایر تسهیلات سودمحور، غیرمشارکتی فرض می‌شوند', () => {
-  assert.equal(deriveContractType({ rateKind: 'profit', rate: 23, product: 'وام خودروسازی' }), 'non-partnership');
-  assert.equal(deriveContractType({ rateKind: 'profit', rate: 8, tags: ['وام نقدی'] }), 'non-partnership');
+test('نرخ سود به‌تنهایی نوع عقد را مشخص نمی‌کند', () => {
+  assert.equal(deriveContractType({ rateKind: 'profit', rate: 23, product: 'وام خودروسازی' }), 'unknown');
+  assert.equal(deriveContractType({ rateKind: 'profit', rate: 23, product: 'وام مرابحه' }), 'non-partnership');
+  assert.equal(deriveContractType({ rateKind: 'profit', rate: 8, tags: ['وام نقدی'] }), 'unknown');
   // نشانه عقد از loanType افزونه (خریدار خودکار) هم خوانده می‌شود — اما فقط
   // وقتی با نرخ هم‌خوان است؛ برچسبِ «قرض‌الحسنه» با نرخ ۲۳٪ تناقض دارد و
   // نرخ، که مبناي موتور مالی است، بر برچسب برتری دارد.
@@ -93,7 +94,7 @@ test('سایر تسهیلات سودمحور، غیرمشارکتی فرض می�
   );
   assert.equal(
     deriveContractType({ rateKind: 'profit', rate: 23, extra: { loanType: 'وام قرض الحسنه' } }),
-    'non-partnership',
+    'unknown',
   );
 });
 
@@ -210,8 +211,8 @@ test('مقدار صریح contractType داده، بر استنتاج ارجحی
 
     const byId = Object.fromEntries(S.products.map((p) => [p.id, p]));
     assert.equal(byId['explicit-ok'].contractType, 'partnership', 'مقدار صریح معتبر باید پاس شود');
-    assert.equal(byId['explicit-bad'].contractType, 'non-partnership', 'مقدار نامعتبر باید به استنتاج سپرده شود');
-    assert.equal(byId['derived'].contractType, 'non-partnership', 'در نبود مقدار صریح، استنتاج می‌شود');
+    assert.equal(byId['explicit-bad'].contractType, 'unknown', 'مقدار نامعتبر باید به استنتاج سپرده شود');
+    assert.equal(byId['derived'].contractType, 'unknown', 'در نبود مقدار صریح، استنتاج می‌شود');
   } finally {
     globalThis.__BANK_RADAR__ = originalBundle;
     await loadData(); // بازگرداندن محصولات به وضعیت اصلی

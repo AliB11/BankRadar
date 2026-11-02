@@ -14,10 +14,10 @@ import {
 } from './store.js';
 import { scoreTone, explainScore, WEIGHT_META, WEIGHT_KEYS, mostRecent } from './score.js';
 import { scoreRing, donut, rateLadder, compareBars, freshnessGrid } from './charts.js';
-import { loanSummary, realRate, scheduleFor, installmentInflationTrajectory } from './finance.js';
+import { loanSummary, realRate, scheduleFor, canEstimateLoan, installmentInflationTrajectory } from './finance.js';
 
 const confChip = {
-  high: ['chip chip--good', 'منبع تأییدشده'],
+  high: ['chip chip--good', 'اطمینان بالا'],
   medium: ['chip', 'نیازمند تأیید نهایی'],
   low: ['chip chip--warn', 'اطمینان پایین'],
 };
@@ -44,6 +44,7 @@ export function heroHTML() {
 
   const real = depositCap != null && inflation != null ? realRate(depositCap, inflation) : null;
 
+  const periodLabel = (label, key) => ind[key]?.period ? `${label} (${ind[key].period})` : label;
   const macroCell = (label, value, tone = '') => `
     <div class="macro-cell">
       <span class="k">${esc(label)}</span>
@@ -55,20 +56,22 @@ export function heroHTML() {
   return `
   <section class="hero panel" aria-labelledby="hero-title">
     <div>
-      <span class="pill-live"><span class="live-dot"></span> پایش زنده محصولات بانکی</span>
+      <span class="pill-live"><span class="live-dot"></span> پایش محصولات بانکی</span>
       <h1 id="hero-title">رادار محصولات بانکی ایران</h1>
       <p class="hero-lead">
-        ${fa(s.total)} محصول مالی از ${fa(s.banks)} بانک و مؤسسه اعتباری، با امتیازدهی شفاف از دید مشتری.
+        ${fa(s.total)} رکورد محصول از ${fa(s.banks)} نام نهاد یا ارائه‌دهنده، شامل سوابق تاریخی، با امتیازدهی از دید مشتری.
         نرخ‌ها با تورم سنجیده می‌شوند تا «بازده حقیقی» — نه فقط عدد اسمی — در تصمیم دیده شود.
         داده‌ها از منابع رسمی بانک‌ها، بانک مرکزی و مراجع مقایسه‌ای گردآوری و به‌صورت خودکار به‌روزرسانی می‌شوند.
       </p>
 
       <div class="macro-strip">
-        ${macroCell('تورم سالانه', inflation != null ? faPercent(inflation) : '—', 'var(--danger)')}
-        ${macroCell('سقف سود سپرده', depositCap != null ? faPercent(depositCap) : '—')}
-        ${macroCell('نرخ بین‌بانکی', interbank != null ? faPercent(interbank) : '—')}
-        ${macroCell('سقف سود تسهیلات', loanCap != null ? faPercent(loanCap) : '—')}
+        ${macroCell(periodLabel('تورم سالانه', 'inflationAnnual'), inflation != null ? faPercent(inflation) : '—', 'var(--danger)')}
+        ${macroCell(periodLabel('مرجع سپرده یک‌ساله', 'depositCap1y'), depositCap != null ? faPercent(depositCap) : '—')}
+        ${macroCell(periodLabel('نرخ بین‌بانکی', 'interbankRate'), interbank != null ? faPercent(interbank) : '—')}
+        ${macroCell(periodLabel('مرجع تسهیلات غیرمشارکتی', 'loanRateCeiling'), loanCap != null ? faPercent(loanCap) : '—')}
       </div>
+
+      <p style="font-size:var(--fs-3xs);color:var(--text-4);margin-block-start:var(--sp-2)">دوره شاخص‌ها یکسان نیست؛ برخی ارقام به نقل از رسانه‌اند و نیاز به تأیید دارند.</p>
 
       ${
         real != null
@@ -78,8 +81,8 @@ export function heroHTML() {
                 <b>بازده حقیقی سپرده یک‌ساله: ${faSignedPercent(real)}</b>
                 <p>
                   با تورم ${faPercent(inflation)} و سود اسمی ${faPercent(depositCap)}، نگهداری پول در سپرده یک‌ساله
-                  قدرت خرید را کاهش می‌دهد. در امتیازدهی این سامانه، این فرسایش به‌صورت جریمه روی محصولات
-                  منابعی اعمال می‌شود؛ به همین دلیل سپرده با نرخ ۲۳ درصد امتیاز بالایی نمی‌گیرد.
+                  ${real < 0 ? 'قدرت خرید کاهش می‌یابد و در امتیازدهی محصولات منابعی جریمه اعمال می‌شود.' : real > 0 ? 'بازده حقیقی تخمینی مثبت است.' : 'بازده حقیقی تخمینی تقریباً صفر است.'}
+                  نرخ اسمی به‌تنهایی معیار کافی نیست و تورم آینده ممکن است تغییر کند.
                 </p>
               </div>
             </div>`
@@ -97,7 +100,7 @@ export function heroHTML() {
       <div class="progress ${healthTone}"><i style="width:${s.health}%"></i></div>
 
       <div class="health-list">
-        <div class="health-row"><span class="lbl">محصول فعال</span><span class="val num">${fa(s.total)}</span></div>
+        <div class="health-row"><span class="lbl">رکورد محصول</span><span class="val num">${fa(s.total)}</span></div>
         <div class="health-row" title="رکوردهایی که خط لوله در ۳۰ روز گذشته بازبینی کرده است">
           <span class="lbl">بازبینی‌شده در ۳۰ روز</span><span class="val num">${fa(s.verified30)}<small>از ${fa(s.total)}</small></span>
         </div>
@@ -218,7 +221,7 @@ export function filtersHTML() {
         <span class="field-label">سطح اطمینان داده</span>
         <select data-filter="confidence">
           ${option('all', 'همه سطوح', f.confidence)}
-          ${option('high', `تأییدشده (${fa(s.confidence.high)})`, f.confidence)}
+          ${option('high', `اطمینان بالا (${fa(s.confidence.high)})`, f.confidence)}
           ${option('medium', `متوسط (${fa(s.confidence.medium)})`, f.confidence)}
           ${option('low', `پایین (${fa(s.confidence.low)})`, f.confidence)}
         </select>
@@ -377,7 +380,7 @@ export function cardHTML(p) {
   const initials = bankMonogram(p.bank);
 
   const rateDisplay =
-    p.rateKind === 'none' || p.rate === 0 ? '—' : faPercent(p.rate);
+    p.rateKind === 'none' || p.rateKnown === false ? '—' : faPercent(p.rate);
 
   const real =
     result.realRate != null
@@ -403,6 +406,7 @@ export function cardHTML(p) {
           <span class="chip chip--cat-${esc(p.category)}" style="padding:1px 7px">${esc(meta.short)}</span>
           ${p.regulatory ? '<span class="chip chip--info" style="padding:1px 7px">مصوب</span>' : ''}
           ${p.stale ? '<span class="chip chip--warn" style="padding:1px 7px">نیازمند بازبینی</span>' : ''}
+          ${p.availability === 'historical' ? '<span class="chip chip--bad" style="padding:1px 7px">تاریخی؛ عرضه جدید تأیید نشده</span>' : ''}
         </div>
       </div>
       <div class="score-ring" title="${esc(tone.label)} — امتیاز ${fa(score)} از ۱۰۰">
@@ -476,7 +480,8 @@ function emptyHTML() {
 /* ---------- رتبه‌بندی ---------- */
 
 export function rankHTML(rows) {
-  const top = rows.slice(0, 8);
+  const eligible = rows.filter((p) => p.availability !== 'historical');
+  const top = eligible.slice(0, 8);
   const meta = CATEGORY_META[store.filters.category];
 
   if (!top.length) {
@@ -495,7 +500,7 @@ export function rankHTML(rows) {
           بر پایه وزن‌های جاری شما و با تعدیل نرخ حقیقی · ${esc(meta.desc)}
         </p>
       </div>
-      <span class="chip">${fa(rows.length)} محصول در رتبه‌بندی</span>
+      <span class="chip">${fa(eligible.length)} محصول در رتبه‌بندی</span>
     </div>
 
     <div class="rank-list">
@@ -523,7 +528,7 @@ export function rankHTML(rows) {
 
 /** آیا برای این محصول می‌توان قسط در سقف مجاز را معنا کرد؟ */
 function isFinanced(p) {
-  return (p.category === 'loans' || p.category === 'credit') && p.maxAmount && p.termMonths;
+  return (p.category === 'loans' || p.category === 'credit') && p.maxAmount && p.termMonths && p.availability !== 'historical' && canEstimateLoan(p);
 }
 
 /** آیا سقف این محصول مشروط است (نه یک حق قطعی)؟ */
@@ -571,11 +576,11 @@ export function compareHTML() {
   const rows = [
     { key: 'score', label: 'امتیاز جذابیت', dir: 'max', get: (p) => scoreOf(p.id), fmt: (v) => fa(v) },
     { key: 'real', label: 'بازده/هزینه حقیقی', dir: 'family', get: (p) => resultOf(p.id).realRate, fmt: (v) => (v == null ? '—' : faSignedPercent(v)) },
-    { key: 'rate', label: 'نرخ / کارمزد سالانه', dir: 'family', get: (p) => (p.rateKind === 'none' ? null : p.rate), fmt: (v) => faPercent(v) },
+    { key: 'rate', label: 'نرخ / کارمزد سالانه', dir: 'family', get: (p) => (p.rateKind === 'none' || p.rateKnown === false ? null : p.rate), fmt: (v) => faPercent(v) },
     { key: 'max', label: 'سقف مبلغ', dir: 'max', contingent: true, get: (p) => p.maxAmount, fmt: (v) => (v == null ? '—' : faToman(v)) },
     { key: 'min', label: 'حداقل مبلغ', dir: 'min', get: (p) => p.minAmount, fmt: (v) => faToman(v) },
     { key: 'term', label: 'مدت بازپرداخت', get: (p) => p.termMonths, fmt: (v) => (v ? `${fa(v)} ماه` : '—') },
-    { key: 'installment', label: 'قسط تقریبی (در سقف مجاز)', dir: 'min', contingent: true, get: (p) => (isFinanced(p) ? scheduleFor(p, p.maxAmount, p.termMonths).installment : null), fmt: (v) => faToman(v) },
+    { key: 'installment', label: 'بیشترین قسط تقریبی (در سقف مجاز)', dir: 'min', contingent: true, get: (p) => { if (!isFinanced(p)) return null; const plan = scheduleFor(p, p.maxAmount, p.termMonths); return plan.maxInstallment ?? plan.installment; }, fmt: (v) => faToman(v) },
     { key: 'interest', label: 'کل هزینه مالی (سود یا کارمزد)', dir: 'min', contingent: true, get: (p) => (isFinanced(p) ? scheduleFor(p, p.maxAmount, p.termMonths).totalInterest : null), fmt: (v) => faToman(v) },
     { key: 'collateral', label: 'وثیقه / ضمانت', get: (p) => null, fmt: (_, p) => esc(fa(p.collateral)) },
     { key: 'digital', label: 'امتیاز دیجیتال', dir: 'max', get: (p) => p.digital, fmt: (v) => fa(Math.round(v)) },
@@ -593,7 +598,7 @@ export function compareHTML() {
   };
   for (const row of rows) {
     if (!row.dir) continue;
-    const eligible = row.contingent ? items.filter((p) => !p.ceilingContingent) : items;
+    const eligible = items.filter((p) => p.availability !== 'historical' && (!row.contingent || !p.ceilingContingent));
     const withVals = eligible
       .map((p) => [p, row.get(p)])
       .filter(([, v]) => typeof v === 'number' && Number.isFinite(v));
@@ -622,6 +627,8 @@ export function compareHTML() {
         <h3 style="font-size:var(--fs-sm);margin:0">جدول مقایسه انتخابی</h3>
         <p style="font-size:var(--fs-3xs);color:var(--text-4);margin:2px 0 0">
           ${fa(items.length)} محصول · مقادیر برتر هر ردیف با رنگ سبز مشخص شده‌اند${inflation != null ? ` · نرخ حقیقی با تورم ${faPercent(inflation)} محاسبه شده` : ''}
+          ${items.some((p) => p.rateKind === 'fee') ? '<br>قسط قرض‌الحسنه ممکن است متغیر باشد؛ بیشترین قسط برآوردی با فرض کارمزد سالانه روی مانده نمایش داده می‌شود.' : ''}
+          ${items.some((p) => p.availability === 'historical') ? '<br>رکوردهای تاریخی در انتخاب مقدار برتر لحاظ نمی‌شوند.' : ''}
           ${mixedFamilies ? '<br>در ردیف‌های نرخ و بازده/هزینه حقیقی، برترین مقدار درون هر خانواده (سپرده/صندوق در برابر تسهیلات/اعتبار) جداگانه مشخص می‌شود' : ''}
           ${items.some((p) => p.ceilingContingent) ? '<br>≈ سقف مشروط به سپرده، امتیاز یا مصوبه اعتباری — محاسبه در این سقف فرضی است و در انتخاب مقدار برتر لحاظ نشده' : ''}
         </p>
@@ -713,7 +720,7 @@ export function chartsHTML(rows) {
       <div class="chart-head">
         <div>
           <h3>نردبان نرخ سود در برابر تورم</h3>
-          <p>مقایسه سقف‌های مصوب سپرده با تورم سالانه — نرخ‌های زیر خط تورم، بازده حقیقی منفی دارند</p>
+          <p>مقایسه نرخ‌های مرجع گزارش‌شده با تورم سالانه — نرخ‌های زیر تورم، بازده حقیقی منفی دارند</p>
         </div>
       </div>
       ${rateLadder(ladderRows, inflation)}
@@ -723,7 +730,7 @@ export function chartsHTML(rows) {
       <div class="chart-head">
         <div>
           <h3>نرخ تسهیلات و کارمزد قرض‌الحسنه</h3>
-          <p>سقف‌های مصوب شورای پول و اعتبار برای انواع عقود</p>
+          <p>نرخ‌های مرجع ثبت‌شده؛ شرایط قرارداد و دوره باید جداگانه بررسی شوند</p>
         </div>
       </div>
       ${rateLadder(loanRows, inflation)}
@@ -785,15 +792,15 @@ export function detailHTML(p) {
   const spec = (k, v) => `<div class="spec"><span class="k">${esc(k)}</span><span class="v">${v}</span></div>`;
 
   const isFee = p.rateKind === 'fee';
-  const summaryFinance = isLoan && p.maxAmount ? loanSummary(p, { inflation }) : null;
+  const summaryFinance = isLoan && p.maxAmount && p.termMonths && p.availability !== 'historical' ? loanSummary(p, { inflation }) : null;
 
   const calcSection =
-    isLoan && p.maxAmount
+    isLoan && p.maxAmount && p.availability !== 'historical' && canEstimateLoan({ ...p, rateKnown: true })
       ? `
     <div class="section-title">ماشین‌حساب اقساط</div>
     <div class="calc" data-calc data-id="${esc(p.id)}"
       data-max="${p.maxAmount || 0}" data-min="${p.minAmount || 0}"
-      data-rate="${p.rate || 0}" data-term="${p.termMonths || 36}">
+      data-rate="${p.rateKnown === false ? '' : p.rate}" data-term="${p.termMonths || 36}">
       <div class="row" style="gap:var(--sp-3)">
         <label class="field" style="flex:1;min-width:150px">
           <span class="field-label">مبلغ تسهیلات (میلیون تومان)</span>
@@ -806,9 +813,13 @@ export function detailHTML(p) {
             value="${p.termMonths || 36}" />
         </label>
         <label class="field" style="flex:1;min-width:120px">
-          <span class="field-label"${p.rate ? '' : ' title="نرخ این محصول در داده ثبت نشده است؛ ۲۳ درصد پیش‌فرض سامانه برای برآورد است"'}>${p.rateKind === 'fee' ? 'کارمزد یک‌بار (٪)' : 'نرخ سود سالانه (٪)'}${p.rate ? '' : ' — پیش‌فرض'}</span>
-          <input type="number" data-calc-input="rate" min="0" max="60" step="0.1"
-            value="${p.rate || 23}" />
+          <span class="field-label">${p.rateKind === 'fee' ? 'کارمزد سالانه (٪)' : 'نرخ سود سالانه (٪)'}${p.rateKnown === false ? ' — نامشخص؛ وارد کنید' : ''}</span>
+          <input type="number" data-calc-input="rate" min="0" max="100" step="0.1"
+            value="${p.rateKnown === false ? '' : p.rate}" />
+        </label>
+        <label class="field" style="flex:1;min-width:120px">
+          <span class="field-label">هزینه کسر از اصل (٪، اختیاری)</span>
+          <input type="number" data-calc-input="upfront" min="0" max="99" step="0.1" value="0" />
         </label>
       </div>
       <div class="calc-out" data-calc-out></div>
@@ -816,12 +827,13 @@ export function detailHTML(p) {
         <button class="btn btn--sm" type="button" data-action="calc-reset">بازگشت به مقادیر محصول</button>
         <span style="font-size:var(--fs-3xs);color:var(--text-4)">
           ${p.rateKind === 'fee'
-            ? 'کارمزد یک‌بار روی کل اصل بسته و به اقساط مساوی تقسیم می‌شود (روش قرض‌الحسنه)'
+            ? (p.feeModel === 'one-time' ? 'کارمزد یک‌باره طبق مدل ثبت‌شده' : 'برآورد: کارمزد سالانه روی مانده؛ قسط کارمزد در آغاز هر سال متفاوت است. قرارداد بانک ملاک است.')
             : 'روش جدید = اقساط مساوی با نرخ مؤثر روی مانده · روش قدیمی = سود مازاد تقسیم‌شده'}
         </span>
       </div>
     </div>`
-      : '';
+      : (isLoan && p.maxAmount && p.availability !== 'historical' && !canEstimateLoan({ ...p, rateKnown: true })
+        ? '<p class="chip chip--warn">برنامه اقساط یا شیوه کارمزد این محصول نامشخص یا متغیر است؛ برآورد قسط ارائه نمی‌شود.</p>' : '');
 
   const depositSection =
     (p.category === 'deposits' || p.category === 'funds') && inflation != null && p.rate > 0
@@ -847,6 +859,7 @@ export function detailHTML(p) {
       <div class="row" style="gap:var(--sp-2);margin-block-end:var(--sp-2)">
         <span class="chip chip--cat-${esc(p.category)}">${esc(meta.title)}</span>
         ${p.regulatory ? '<span class="chip chip--info">مصوب نهاد ناظر</span>' : ''}
+        ${p.availability === 'historical' ? '<span class="chip chip--bad">تاریخی؛ عرضه جدید تأیید نشده</span>' : ''}
         ${p.multiPlan ? '<span class="chip chip--warn" title="این صفحه بسته چند طرح مستقل است؛ سقف و مدت نوشته‌شده به یک محصول واحد تعلق ندارد">بسته چندطرحی</span>' : ''}
         ${p.autoDiscovered ? '<span class="chip">گردآوری خودکار</span>' : '<span class="chip chip--good">دستی‌گردآوری</span>'}
       </div>
@@ -859,6 +872,7 @@ export function detailHTML(p) {
   </div>
 
   <div class="drawer-body">
+    ${p.availability === 'historical' ? `<p class="chip chip--warn">${esc(p.availabilityNote || 'این رکورد تاریخی است؛ امکان عرضه جدید آن تأیید نشده است.')} ${p.availabilitySource?.url ? `<a href="${safeUrl(p.availabilitySource.url)}" target="_blank" rel="noopener noreferrer">اطلاعیه مرجع</a>` : ''}</p>` : ''}
     <div class="row row-between" style="margin-block-end:var(--sp-4)">
       <div class="score-ring" style="width:74px;height:74px">
         ${scoreRing(result.score, tone.color, { size: 74, stroke: 6 })}
@@ -874,7 +888,7 @@ export function detailHTML(p) {
     </div>
 
     <div class="spec-grid">
-      ${spec('نرخ / کارمزد', p.rateKind === 'none' ? 'غیرنرخ‌دار' : faPercent(p.rate))}
+      ${spec('نرخ / کارمزد', p.rateKind === 'none' ? 'غیرنرخ‌دار' : p.rateKnown === false ? esc(p.rateLabel || 'نامشخص') : faPercent(p.rate))}
       ${spec('سقف مبلغ', esc(fa(p.amountLabel || faToman(p.maxAmount))))}
       ${p.multiPlan ? `<div><span class="k">توجه</span><span class="v" style="font-size:var(--fs-3xs);color:var(--text-3);line-height:1.9">این صفحه یک بسته چند طرح مستقل است؛ سقف و مدت بازپرداخت بین طرح‌ها متفاوت است و ارقام منفرد در جدول مقایسه آورده نمی‌شود.</span></div>` : ''}
       ${spec('حداقل مبلغ', esc(faToman(p.minAmount)))}
@@ -925,20 +939,17 @@ export function detailHTML(p) {
       summaryFinance
         ? `<div class="section-title">تحلیل تسهیلات در سقف مجاز</div>
            <div class="calc-out">
-             <div><span class="k">${isFee ? 'قسط ماهانه' : 'قسط (روش جدید)'}</span><span class="v num">${faToman(summaryFinance.standard.installment)}</span></div>
-             ${isFee ? '' : `<div><span class="k">قسط (روش قدیمی)</span><span class="v num">${faToman(summaryFinance.legacy.installment)}</span></div>`}
-             <div><span class="k">${isFee ? 'کل کارمزد' : 'کل سود'}</span><span class="v num">${faToman(summaryFinance.standard.totalInterest)}</span></div>
-             <div><span class="k">نرخ مؤثر سالانه</span><span class="v num">${faPercent(summaryFinance.effective)}</span></div>
+             <div><span class="k">${isFee ? 'قسط معمول اصل' : 'قسط (روش جدید)'}</span><span class="v num">${faToman(summaryFinance.standard.installment, { short: false })}</span></div>
+             ${isFee && summaryFinance.standard.firstFee != null ? `<div><span class="k">کارمزد سال نخست</span><span class="v num">${faToman(summaryFinance.standard.firstFee, { short: false })}</span></div>` : ''}
+             ${isFee ? '' : `<div><span class="k">قسط (روش قدیمی)</span><span class="v num">${faToman(summaryFinance.legacy.installment, { short: false })}</span></div>`}
+             <div><span class="k">${isFee ? 'کل کارمزد' : 'کل سود'}</span><span class="v num">${faToman(summaryFinance.standard.totalInterest, { short: false })}</span></div>
+             <div><span class="k">نرخ مؤثر سالانه</span><span class="v num">${faPercent(summaryFinance.effective, 2)}</span></div>
            </div>
            <p style="font-size:var(--fs-3xs);color:var(--text-4);margin-block-start:var(--sp-2);line-height:1.9">
              ${isFee
-               ? `این محصول کارمزد‌محور است: ${faPercent(p.rate)} یک‌بار روی کل اصل بسته می‌شود و سود مرکبی وجود ندارد.
-                  با تقسیم مبلغ بر تعداد اقساط، نرخ مؤثر سالانه تنها حدود ${faPercent(summaryFinance.effective)} می‌شود —
-                  یعنی در تورم کنونی، ارزان‌ترین منبع تأمین مالی به‌شمار می‌آید.`
+               ? (p.feeModel === 'one-time' ? 'کارمزد طبق مدل ثبت‌شده یک‌بار محاسبه شده است؛ قرارداد بانک ملاک نهایی است.' : `این محاسبه تخمینی است: کارمزد سالانه بر مانده در آغاز هر سال پرداخت می‌شود و اقساط اصل جداست. برای ماه‌های ناقص کارمزد متناسب محاسبه می‌شود؛ جزئیات قرارداد بانک ممکن است متفاوت باشد.`)
                : `تفاوت دو روش در این محصول ${faToman(summaryFinance.difference)} است.
-                  نرخ مؤثر با احتساب کارمزد کسرشده از اصل محاسبه می‌شود و از نرخ اسمی بالاتر است.
-                  توجه: این عدد هزینه‌های جانبی مانند بیمه، کارمزد ضامن و هزینه فرصت سپرده را در بر نمی‌گیرد،
-                  بنابراین کف هزینه واقعی است نه سقف آن.`}
+                  نرخ مؤثر مرکب بدون فرض کسر اولیه محاسبه شده است. بیمه، هزینه ضامن و خواب سپرده در آن نیستند.`}
            </p>
            ${
              inflation != null && summaryFinance.standard.installment > 0
@@ -963,7 +974,7 @@ export function detailHTML(p) {
                          .join('')}
                      </div>
                      <p style="font-size:var(--fs-3xs);color:var(--text-4);margin-block-start:var(--sp-1);line-height:1.9">
-                       با توجه به تورم سالانه ${faPercent(inflation)}، ارزش واقعی قسط اسمی ${faToman(summaryFinance.standard.installment)} به مرور زمان کاهش می‌یابد.
+                       با توجه به تورم سالانه ${faPercent(inflation)}، ارزش واقعی قسط اسمی ${faToman(summaryFinance.standard.installment, { short: false })} به مرور زمان کاهش می‌یابد.
                        در سال ${fa(trajectory[trajectory.length - 1].year)}، ارزش قدرت خرید این قسط معادل تنها ${faToman(trajectory[trajectory.length - 1].realPurchasingPower)} خواهد بود (${fa(trajectory[trajectory.length - 1].erosionPercent)}٪ افت بار پرداخت به سود وام‌گیرنده).
                      </p>
                    `;
@@ -977,7 +988,7 @@ export function detailHTML(p) {
         ? `<div class="spec" style="border-color:var(--danger);background:rgba(255,107,129,0.08);margin-block:var(--sp-3)">
              <span class="k" style="color:var(--danger);font-weight:bold">⚠️ هشدار تله مسدودی سپرده</span>
              <span class="v" style="font-size:var(--fs-3xs);color:var(--text-2);line-height:1.9">
-               این تسهیلات نیازمند مسدودسازی سپرده نزد بانک است. با توجه به تورم بالا و عدم پرداخت سود متناسب به سپرده مسدودی، هزینه فرصت خواب پول باعث می‌شود نرخ مؤثر واقعی این وام به مراتب از نرخ اسمی اعلامی بیشتر تمام شود.
+               مسدودسازی سپرده می‌تواند هزینه فرصت ایجاد کند. بدون دانستن مبلغ، مدت مسدودی و سود سپرده نمی‌توان افزایش نرخ مؤثر را با اطمینان محاسبه کرد.
              </span>
            </div>`
         : ''
@@ -1009,7 +1020,7 @@ export function dataModalHTML() {
   const weekly = store.weeklyReport;
 
   const changelogSection = changelog
-    ? `<div class="section-title">تغییرات هفته — ${esc(fa(changelog.summary?.totalChanges ?? 0))} مورد</div>
+    ? `<div class="section-title">آخرین گزارش تغییرات — ${esc(fa(changelog.summary?.totalChanges ?? 0))} مورد</div>
        <div class="spec-grid" style="margin-block-end:var(--sp-3)">
          <div class="spec"><span class="k">افزوده‌شده</span><span class="v num" style="color:var(--brand)">${fa(changelog.summary?.added ?? 0)}</span></div>
          <div class="spec"><span class="k">تغییر نرخ</span><span class="v num" style="color:var(--warn)">${fa(changelog.summary?.rateChanged ?? 0)}</span></div>
@@ -1047,19 +1058,19 @@ export function dataModalHTML() {
        <p style="font-size:var(--fs-2xs);color:var(--text-3)">فایل <code>data/changelog.json</code> پس از نخستین اجرای هفتگی در دسترس خواهد بود. این فید تفاوت دو نسخه پایگاه داده را با جزئیات نرخ، سقف و وضعیت کهنگی گزارش می‌دهد.</p>`;
 
   const transparencySection = transparency.length
-    ? `<div class="section-title">شاخص شفافیت بانک‌ها — ${fa(transparency.length)} بانک</div>
+    ? `<div class="section-title">شاخص کیفیت رکوردها — ${fa(transparency.length)} نام نهاد</div>
        <div class="health-list" style="margin-block-end:var(--sp-3)">
          ${transparency
            .slice(0, 10)
            .map(
              (b) => `<div class="health-row">
                <span class="lbl">${esc(b.bank)} <span class="num" style="color:var(--text-4)">(${fa(b.total)} محصول)</span></span>
-               <span class="chip ${b.transparencyScore >= 80 ? 'chip--good' : b.transparencyScore >= 60 ? 'chip--warn' : 'chip--bad'}">${fa(b.transparencyScore)}٪ شفافیت</span>
+               <span class="chip ${b.transparencyScore >= 80 ? 'chip--good' : b.transparencyScore >= 60 ? 'chip--warn' : 'chip--bad'}">${fa(b.transparencyScore)} از ۱۰۰</span>
              </div>`,
            )
            .join('')}
        </div>
-       <p style="font-size:var(--fs-3xs);color:var(--text-4);line-height:1.9">امتیاز شفافیت بر پایه تازگی، نسبت اطمینان بالا، پوشش دیجیتال و عدم کهنگی محاسبه می‌شود. بانک‌هایی که داده‌هایشان را شفاف و به‌روز نگه می‌دارند امتیاز بالاتری می‌گیرند — مستقل از نرخ سود.</p>`
+       <p style="font-size:var(--fs-3xs);color:var(--text-4);line-height:1.9">امتیاز شفافیت بر پایه تازگی، نسبت اطمینان منبع، دیجیتال و کهنگی رکوردهای همین سامانه محاسبه می‌شود؛ معیار مستقلی از شفافیت واقعی بانک نیست.</p>`
     : '';
 
   const historySection = history.length >= 2
@@ -1080,11 +1091,11 @@ export function dataModalHTML() {
          <span>${esc(history[history.length - 1]?.date ?? '')}</span>
        </div>`
     : weekly
-      ? `<div class="section-title">سلامت داده — امتیاز ${fa(weekly.stats?.healthScore ?? 0)} از ۱۰۰</div>
+      ? `<div class="section-title">گزارش هفتگی تاریخی — امتیاز سلامت ${fa(weekly.stats?.healthScore ?? 0)} از ۱۰۰</div>
          <div class="spec-grid" style="margin-block-end:var(--sp-3)">
            <div class="spec"><span class="k">تازگی ۷ روزه</span><span class="v num">${fa(weekly.stats?.verifiedIn7Days ?? 0)} (${fa(weekly.stats?.freshnessPercent ?? 0)}٪)</span></div>
            <div class="spec"><span class="k">کهنه</span><span class="v num" style="color:${(weekly.stats?.staleProducts ?? 0) ? 'var(--danger)' : 'var(--brand)'}">${fa(weekly.stats?.staleProducts ?? 0)}</span></div>
-           <div class="spec"><span class="k">تورم مرجع</span><span class="v num">${faPercent(weekly.macro?.inflationAnnual ?? 0)}</span></div>
+           <div class="spec"><span class="k">تورم مرجع</span><span class="v num">${faPercent(weekly.macro?.inflationAnnual)}</span></div>
            <div class="spec"><span class="k">ناهنجاری</span><span class="v num">${fa(weekly.anomalies?.total ?? 0)}</span></div>
          </div>`
       : '';
@@ -1101,8 +1112,11 @@ export function dataModalHTML() {
   </div>
 
   <div class="modal-body">
+    ${weekly?.generatedAt ? `<p style="font-size:var(--fs-3xs);color:var(--text-4)">آخرین گزارش هفتگی: ${esc(faDate(String(weekly.generatedAt).slice(0, 10)))}؛ آمار تاریخی آن ممکن است با داده‌های کنونی متفاوت باشد.</p>` : ''}
     <div class="spec-grid">
       <div class="spec"><span class="k">آخرین اجرای خط لوله</span><span class="v">${store.meta?.lastRun ? esc(faDate(String(store.meta.lastRun).slice(0, 10))) : 'نامشخص'}</span></div>
+      <div class="spec"><span class="k">نوع اجرای خط لوله</span><span class="v">${esc(({ full: 'گردآوری کامل', 'weekly-sync': 'پایش هفتگی', 'offline-audit': 'ممیزی آفلاین', 'external-import': 'ورود داده خارجی', offline: 'آفلاین' })[store.meta?.lastRunMode] ?? store.meta?.lastRunMode ?? 'نامشخص')}</span></div>
+      <div class="spec"><span class="k">تاریخ تولید داده محصولات</span><span class="v">${store.meta?.generatedAt ? esc(faDate(String(store.meta.generatedAt).slice(0, 10))) : 'نامشخص'}</span></div>
       <div class="spec"><span class="k">منبع بارگذاری</span><span class="v">${store.meta?.loadSource === 'json' ? 'JSON تازه' : 'بسته درون‌خطی'}</span></div>
       <div class="spec"><span class="k">مجموع محصولات</span><span class="v num">${fa(s.total)}</span></div>
       <div class="spec"><span class="k">گردآوری خودکار</span><span class="v num">${fa(s.auto)}</span></div>
@@ -1110,20 +1124,20 @@ export function dataModalHTML() {
 
     ${historySection}
 
-    <div class="section-title">وضعیت منابع در آخرین اجرا</div>
+    <div class="section-title">آخرین وضعیت ثبت‌شده منابع</div>
     ${
       sources.length
         ? `<div class="health-list">
             ${sources
-              .map(
-                (src) => `<div class="health-row">
+              .map((src) => {
+                const partial = src.ok && Number.isFinite(src.targets) && Number.isFinite(src.reachable) && src.reachable < src.targets;
+                const tone = !src.ok ? 'chip--bad' : partial ? 'chip--warn' : 'chip--good';
+                const label = !src.ok ? 'ناموفق' : partial ? `دسترسی محدود: ${fa(src.reachable)} از ${fa(src.targets)}` : 'اجرا شد';
+                return `<div class="health-row">
                   <span class="lbl">${esc(src.name)}</span>
-                  <span class="chip ${src.ok ? 'chip--good' : 'chip--bad'}">
-                    ${src.ok ? 'موفق' : 'ناموفق'}
-                    ${src.parsed != null ? ` · ${fa(src.parsed)} محصول` : ''}
-                  </span>
-                </div>`,
-              )
+                  <span class="chip ${tone}">${label}${src.parsed != null ? ` · ${fa(src.parsed)} محصول` : ''}</span>
+                </div>`;
+              })
               .join('')}
           </div>`
         : `<p style="font-size:var(--fs-xs);color:var(--text-3)">
@@ -1150,7 +1164,7 @@ export function dataModalHTML() {
         <div>
           <div style="font-weight:700;font-size:var(--fs-sm);color:var(--text-1);margin-block-end:2px">استعلام فوری و بازخوانی آخرین داده‌ها</div>
           <div style="font-size:var(--fs-2xs);color:var(--text-3);line-height:1.7">
-            دریافت تازه‌ترین نرخ‌ها، محصولات جدید بانک‌ها، ممیزی ناهنجاری‌ها و بازسازی رتبه‌بندی.
+            سرور محلی تلاش به گردآوری می‌کند؛ در نسخه ایستا فقط آخرین داده منتشرشده بازخوانی می‌شود. دسترسی منابع تضمین‌شده نیست.
           </div>
         </div>
         <button class="btn btn--primary btn--sm" type="button" data-action="sync-data-now">
@@ -1163,7 +1177,7 @@ export function dataModalHTML() {
     <div class="spec-grid" style="margin-block-end:var(--sp-3)">
       <div class="spec">
         <span class="k">پایش هفتگی خودکار</span>
-        <span class="v" style="color:var(--brand)">فعال — شنبه ۰۴:۰۰ UTC</span>
+        <span class="v" style="color:var(--brand)">برنامه مخزن: پنجشنبه ۰۵:۰۰ UTC و شنبه ۰۴:۰۰ UTC</span>
       </div>
       <div class="spec">
         <span class="k">ممیزی رکوردهای پنج‌گانه</span>
@@ -1179,7 +1193,7 @@ export function dataModalHTML() {
       </div>
       <div class="spec">
         <span class="k">شاخص شفافیت بانک‌ها</span>
-        <span class="v"><code>data/weekly-report.json → transparency</code></span>
+        <span class="v">محاسبه محلی از رکوردهای فعلی</span>
       </div>
       <div class="spec">
         <span class="k">فید باز</span>
@@ -1236,22 +1250,21 @@ export function methodModalHTML() {
     <div class="section-title">سه اصلاحی که امتیاز را واقع‌گرا می‌کند</div>
     <ul class="req-list">
       <li><b>نرخ حقیقی.</b> نرخ اسمی به‌تنهایی گمراه‌کننده است.${inflation != null ? ` با تورم ${faPercent(inflation)}،` : ''}
-        سپرده یک‌ساله با سود ۲۳ درصد بازده حقیقی منفی دارد، بنابراین امتیاز آن جریمه می‌شود.
-        در مقابل، تسهیلات قرض‌الحسنه با کارمزد ۴ درصد پاداش می‌گیرد چون ارزش حقیقی بزرگی برای وام‌گیرنده ایجاد می‌کند.</li>
+        سپرده‌ای با سود کمتر از تورم بازده حقیقی منفی دارد، بنابراین امتیاز آن جریمه می‌شود.
+        در مقابل، تسهیلات کم‌نرخ در صورت بالاتر بودن تورم از هزینه مؤثر، پاداش محدودی می‌گیرند.</li>
       <li><b>هزینه فرصت.</b> تسهیلات سپرده‌محور امتیاز کمتری می‌گیرند، چون پولی که برای امتیازسازی خواب می‌ماند
         از بازده بازار محروم می‌شود و تورم آن را می‌فرساید.</li>
-      <li><b>اعتبار منبع.</b> رکوردهای گردآوری خودکار، کم‌اطمینان یا نیازمند بازبینی حداکثر ۸ درصد امتیاز کمتری می‌گیرند.</li>
+      <li><b>اعتبار منبع.</b> رکوردهای گردآوری خودکار، کم‌اطمینان یا نیازمند بازبینی در مجموع تا ۱۴ درصد از امتیاز پایه کسر می‌کنند.</li>
     </ul>
 
     <div class="section-title">فیلتر نوع عقد (تسهیلات و اعتبار)</div>
     <p style="font-size:var(--fs-xs);line-height:2.05;color:var(--text-2)">
-      تسهیلات بر پایه سه خانواده عقد تفکیک می‌شوند: <b>قرض‌الحسنه</b> (کارمزد یک‌بار روی اصل)،
+      تسهیلات بر پایه سه خانواده عقد تفکیک می‌شوند: <b>قرض‌الحسنه</b> (کارمزد طبق قرارداد)،
       <b>عقود غیرمشارکتی/مبادله‌ای</b> (مرابحه، مزارعه، اجاره و مانند آن‌ها) و <b>عقود مشارکتی</b>
       (مضاربه و مشارکت). اگر رکورد نوع عقد را صریح ثبت نکرده باشد، از خود رکورد استنتاج می‌شود:
-      محصولات کارمزد‌محور (rateKind: fee) قطعاً قرض‌الحسنه‌اند؛ ذکر صریح مشارکت یا مضاربه در متن
-      آن‌ها را مشارکتی می‌شمارد؛ و تسهیلات سودمحور دیگر — در غیاب ذکر صریح — چون غلبه عملی
-      و سقف‌های مصوب شورای پول و اعتبار با عقد مبادله‌ای هم‌خوان است، غیرمشارکتی فرض می‌شوند.
-      محصولات بدون نرخ «نامشخص» می‌مانند؛ برای آن‌ها ادعایی شکل نمی‌گیرد.
+      فقط با شاهدی مانند نام قرض‌الحسنه، ازدواج، مرابحه، مشارکت یا مضاربه استنتاج می‌شود؛
+      نرخ پایین یا کارمزد در اعتبار خرید به‌تنهایی نوع عقد را ثابت نمی‌کند. در نبود شاهد،
+      نوع عقد «نامشخص» می‌ماند؛ برچسب استنتاجی جایگزین قرارداد نیست.
     </p>
 
     <div class="section-title">مسئولیت‌پذیری داده</div>

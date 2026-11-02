@@ -30,11 +30,22 @@ async function readJSON(file) {
   return JSON.parse(await fs.readFile(path.join(DATA, file), 'utf8'));
 }
 
-function checkProduct(p, index) {
+function checkProduct(p, index, productSchema = {}) {
   const at = `products[${index}] (${p?.id ?? 'بدون شناسه'})`;
 
   if (!p || typeof p !== 'object') return err(`${at}: رکورد شیء نیست`);
-  for (const field of ['id', 'bank', 'product', 'category', 'lastUpdated']) {
+  // فهرست‌های مجاز را از خود طرح‌واره بخوان تا نوع عقد یا منبع نامعتبر
+  // بی‌صدا از دروازه CI عبور نکند. این جایگزین اعتبارسنج کامل JSON Schema نیست.
+  for (const [field, spec] of Object.entries(productSchema)) {
+    if (p[field] === undefined) continue;
+    if (Array.isArray(spec.enum) && !spec.enum.includes(p[field])) err(`${at}: مقدار «${field}» در طرح‌واره مجاز نیست`);
+    if (spec.type === 'boolean' && typeof p[field] !== 'boolean') err(`${at}: «${field}» باید بولی باشد`);
+  }
+  const sourceKinds = productSchema.source?.properties?.kind?.enum;
+  if (p.source?.kind !== undefined && Array.isArray(sourceKinds) && !sourceKinds.includes(p.source.kind)) {
+    err(`${at}: نوع منبع «${p.source.kind}» در طرح‌واره مجاز نیست`);
+  }
+  for (const field of ['id', 'bank', 'product', 'category']) {
     if (p[field] == null || p[field] === '') err(`${at}: فیلد الزامی «${field}» خالی است`);
   }
   if (p.id && !ID_RE.test(p.id)) err(`${at}: شناسه با الگوی مجاز مطابق نیست`);
@@ -134,12 +145,21 @@ async function main() {
     process.exit(1);
   }
 
-  const products = dataset.products ?? [];
-  if (!Array.isArray(products) || products.length === 0) err('products: آرایه خالی است');
+  const products = Array.isArray(dataset.products) ? dataset.products : [];
+  if (products.length === 0) err('products: آرایه خالی یا نامعتبر است');
+
+  let productSchema = {};
+  try {
+    productSchema = (await readJSON('schema.json'))?.definitions?.product?.properties;
+    if (!productSchema || typeof productSchema !== 'object') throw new Error('تعریف محصول موجود نیست');
+  } catch (e) {
+    err(`خواندن schema.json ناموفق بود: ${e.message}`);
+    productSchema = {};
+  }
 
   const seen = new Set();
   products.forEach((p, i) => {
-    checkProduct(p, i);
+    checkProduct(p, i, productSchema);
     if (p?.id) {
       if (seen.has(p.id)) err(`شناسه تکراری: «${p.id}»`);
       seen.add(p.id);

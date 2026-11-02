@@ -46,10 +46,13 @@ export async function buildBundle(opts = {}) {
     period: indicators.period ?? '',
     meta: {
       generatedAt: products.generatedAt ?? null,
+      indicatorsGeneratedAt: indicators.generatedAt ?? null,
+      banksGeneratedAt: banks.generatedAt ?? null,
       counts: products.counts ?? {},
       stale: products.stale ?? 0,
       autoDiscovered: products.autoDiscovered ?? 0,
       lastRun: meta.lastRun ?? null,
+      lastRunMode: meta.lastRunMode ?? null,
       sources: meta.sources ?? [],
     },
   };

@@ -256,3 +256,15 @@ test('شبکه برگه‌های دسته‌بندی دسکتاپ ۵ ستونه 
   assert.match(r.decls['grid-template-columns'] || '', /repeat\(\s*5\s*,/, 'باید ۵ ستون برای ۵ دسته محصول داشته باشد');
 });
 
+
+test('فیلتر و پیوند بلند جزئیات در عرض کم می‌توانند شکسته شوند', () => {
+  const presets = findRule('.filters .seg');
+  assert.equal(presets?.decls['flex-wrap'], 'wrap');
+  const footer = findRule('.drawer-foot');
+  assert.equal(footer?.decls['flex-wrap'], 'wrap');
+  const link = findRule('.drawer-foot a');
+  assert.equal(link?.decls['white-space'], 'normal');
+  assert.equal(link?.decls['max-width'], '100%');
+  const charts = findRule('.chart-grid');
+  assert.match(charts?.decls['grid-template-columns'] ?? '', /min\(320px, 100%\)/);
+});

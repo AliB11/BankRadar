@@ -8,7 +8,7 @@
  */
 
 import { storage, daysSince, clamp } from './util.js';
-import { DEFAULT_WEIGHTS, scoreProduct, PRESETS, mostRecent } from './score.js';
+import { DEFAULT_WEIGHTS, scoreProduct, PRESETS, mostRecent, freshnessScore } from './score.js';
 
 const CATEGORY_META = {
   deposits: { title: 'منابعی و سپرده', short: 'سپرده', icon: '💰', color: '#2fe0a8', desc: 'سپرده‌ها، گواهی‌ها و طرح‌های سرمایه‌گذاری' },
@@ -24,16 +24,16 @@ export { CATEGORY_META };
  * نوع عقد تسهیلات — پایه تفکیک منطقی محصولات اعتباری.
  *
  * در نظام بانکی ایران تسهیلات بر پایه سه خانواده عقد منعقد می‌شود:
- *   • قرض‌الحسنه — کارمزد یک‌بار روی اصل، بدون سود مرکب (rateKind: 'fee').
+ *   • قرض‌الحسنه — کارمزد طبق قرارداد؛ برآورد رایج سالانه بر مانده (rateKind: 'fee').
  *   • عقود مشارکتی — مضاربه، مشارکت مدنی و مانند آن‌ها.
  *   • عقود غیرمشارکتی (مبادله‌ای) — مرابحه، مزارعه، اجاره و مانند آن‌ها.
  *
  * فیلد اختیاری «contractType» در داده، نوع عقد را صریح ثبت می‌کند. در نبود
- * آن، نوع عقد به‌صورت قطعی از خود رکورد استنتاج می‌شود (deriveContractType)
+ * آن، نوع عقد با شواهد ثبت‌شده استنتاج می‌شود و در نبود شاهد نامشخص می‌ماند (deriveContractType)
  * تا رکوردهای تازه‌وارد هم بدون دخالت خط لوله تفکیک‌پذیر بمانند.
  */
 export const CONTRACT_META = {
-  qarz: { label: 'قرض‌الحسنه', short: 'قرض‌الحسنه', hint: 'کارمزد یک‌بار روی کل اصل؛ بدون سود مرکب' },
+  qarz: { label: 'قرض‌الحسنه', short: 'قرض‌الحسنه', hint: 'کارمزد طبق قرارداد؛ در برآورد مدل سالانه بر مانده فرض می‌شود' },
   'non-partnership': { label: 'عقود غیرمشارکتی (مبادله‌ای)', short: 'غیرمشارکتی', hint: 'مرابحه، مزارعه، اجاره و مانند آن‌ها' },
   partnership: { label: 'عقود مشارکتی', short: 'مشارکتی', hint: 'مضاربه و مشارکت' },
   unknown: { label: 'نامشخص', short: 'نامشخص', hint: 'نوع عقد در داده ثبت نشده است' },
@@ -45,38 +45,19 @@ export const CONTRACT_KEYS = Object.keys(CONTRACT_META);
 export const isCreditCategory = (category) => category === 'loans' || category === 'credit';
 
 /**
- * استنتاج قطعی نوع عقد از رکورد.
- *
- * ترتیب قواعد اهمیت دارد:
- *   ۱. rateKind 'fee' → قطعاً قرض‌الحسنه (این تفکیک را موتور مالی هم همین‌طور می‌داند).
- *   ۲. ذکر صریح قرض‌الحسنه در متن + نرخ پایین (≤۱۰٪) → قرض‌الحسنه؛
- *      پوشش رکوردهایی که rateKind اشتباه ثبت شده ولی ماهیت عقد روشن است.
- *   ۳. تسهیلات سودمحور: ذکر صریح مشارکت/مضاربه → مشارکتی؛ وگرنه غیرمشارکتی.
- *      تسهیلات سودمحور در ایران بر پایه عقد مبادله‌ای یا مشارکتی بسته می‌شود و
- *      غلبه عملی و سقف‌های مصوب (۲۳٪ غیرمشارکتی در برابر ۲۴٪ مشارکتی) نشان
- *      می‌دهد که در نبود ذکر صریح، مبنای معقول عقد مبادله‌ای (غیرمشارکتی) است.
- *   ۴. بقیه (غیرنرخ‌دار و…) → نامشخص؛ ادعایی نمی‌شود.
- *
- * @param {object} p محصول نرمال‌شده
- * @returns {'qarz'|'non-partnership'|'partnership'|'unknown'}
+ * استنتاج محتاطانه نوع عقد؛ عدد نرخ به‌تنهایی نوع قرارداد را ثابت نمی‌کند.
+ * مقدار صریح contractType پیش از این تابع بررسی می‌شود. بدون شاهد متنی یا
+ * دسته مشخص قرض‌الحسنه/ازدواج، نتیجه unknown است.
  */
 export function deriveContractType(p) {
-  const rate = Number(p?.rate) || 0;
-  if (p?.rateKind === 'fee') return 'qarz';
-
-  const text = [
-    p?.product ?? '',
-    p?.desc ?? '',
-    Array.isArray(p?.tags) ? p.tags.join(' ') : '',
-    p?.extra?.loanType ?? '',
-  ].join(' ');
-
-  if (/قرض[\s\u200c]*الحسنه/.test(text) && rate > 0 && rate <= 10) return 'qarz';
-
-  if (p?.rateKind === 'profit' && rate > 0) {
-    return /مشارکت|مضاربه/.test(text) ? 'partnership' : 'non-partnership';
-  }
-
+  if (!p) return 'unknown';
+  const rate = Number(p.rate);
+  const text = [p.product, p.desc, ...(Array.isArray(p.tags) ? p.tags : []), p.extra?.loanType, p.source?.url].filter(Boolean).join(' ');
+  if (/عقد\s*(?:مشارکت|مضاربه)|مشارکت\s*مدنی|مضاربه/.test(text)) return 'partnership';
+  if (/مرابحه|جعاله|مزارعه|اجاره\s*به\s*شرط\s*تملیک/.test(text)) return 'non-partnership';
+  if (/قرض[\s\u200c]*الحسنه/.test(text) && (!Number.isFinite(rate) || rate <= 10)) return 'qarz';
+  if (p.rateKind === 'fee' && p.category === 'loans' && p.feeModel !== 'unknown' &&
+      (p.subcategory === 'qarz' || p.subcategory === 'marriage' || /loan-interest-free-loan|loan-marriage-loan/i.test(text))) return 'qarz';
   return 'unknown';
 }
 
@@ -127,6 +108,12 @@ export function normalizeProduct(raw, index) {
     rate: Number(raw.rate) || 0,
     rateKind: raw.rateKind || 'profit',
     rateLabel: raw.rateLabel || '',
+    rateKnown: raw.rateKnown ?? (raw.rate != null && !(Number(raw.rate) === 0 && /نامشخص|متغیر/.test(raw.rateLabel || ''))),
+    feeModel: raw.feeModel || null,
+    paymentSchedule: raw.paymentSchedule || null,
+    availability: raw.availability || 'available',
+    availabilityNote: raw.availabilityNote || '',
+    availabilitySource: raw.availabilitySource || null,
     benefit: numOr(raw.benefit, 55),
     minAmount: raw.minAmount ?? null,
     maxAmount: raw.maxAmount ?? null,
@@ -187,11 +174,18 @@ async function fetchFresh(baseGeneratedAt) {
     if (!res.ok) return null;
     const json = await res.json();
     if (!json?.products?.length) return null;
-    if (baseGeneratedAt && json.generatedAt && json.generatedAt <= baseGeneratedAt) return null;
+    if (baseGeneratedAt && json.generatedAt && atLeastAsNew(baseGeneratedAt, json.generatedAt)) return null;
     return json;
   } catch {
     return null;
   }
+}
+
+/** مقایسه مهرهای زمانی با درنظرگرفتن ناحیه زمانی، نه مقایسه رشته‌ای. */
+function atLeastAsNew(candidate, baseline) {
+  const next = Date.parse(candidate || '');
+  const prev = Date.parse(baseline || '');
+  return !Number.isFinite(prev) || (Number.isFinite(next) && next >= prev);
 }
 
 async function fetchOptionalJSON(url) {
@@ -205,7 +199,7 @@ async function fetchOptionalJSON(url) {
 }
 
 function computeTransparencyLocal(products) {
-  // محاسبه محلی شفافیت اگر weekly-report در دسترس نباشد
+  // با همان وزن‌های گزارش هفتگی، ولی بر پایه مجموعه‌ای که اکنون بارگذاری شده است.
   const byBank = new Map();
   for (const p of products) {
     const key = p.bank || 'نامشخص';
@@ -218,9 +212,8 @@ function computeTransparencyLocal(products) {
     const high = list.filter((x) => x.confidence === 'high').length;
     const stale = list.filter((x) => x.stale).length;
     const avgDigital = list.reduce((a, x) => a + (x.digital ?? 50), 0) / Math.max(1, total);
-    const score = Math.round(
-      (high / Math.max(1, total)) * 50 + (1 - stale / Math.max(1, total)) * 30 + (avgDigital / 100) * 20,
-    );
+    const avgFresh = list.reduce((sum, p) => sum + freshnessScore(p), 0) / Math.max(1, total);
+    const score = Math.round((avgFresh / 100) * 30 + (high / Math.max(1, total)) * 30 + (avgDigital / 100) * 20 + (1 - stale / Math.max(1, total)) * 20);
     out.push({ bank, bankId: list[0]?.bankId || null, total, highConfidence: high, stale, transparencyScore: score });
   }
   return out.sort((a, b) => b.transparencyScore - a.transparencyScore);
@@ -240,7 +233,6 @@ export async function reloadFreshData() {
     }
     if (json.generatedAt && store.meta) {
       store.meta.generatedAt = json.generatedAt;
-      store.meta.lastRun = json.generatedAt;
       store.meta.loadSource = 'json';
     }
 
@@ -249,10 +241,23 @@ export async function reloadFreshData() {
       if (indRes.ok) {
         const indJson = await indRes.json();
         const indMap = indJson?.indicators || indJson;
-        if (indMap?.inflationAnnual) store.indicators = indMap;
+        if (indMap?.inflationAnnual) {
+          store.indicators = indMap;
+          store.ranges = indJson.ranges ?? store.ranges;
+          store.derived = indJson.derived ?? store.derived;
+          store.period = indJson.period ?? store.period;
+          store.meta.indicatorsGeneratedAt = indJson.generatedAt ?? store.meta.indicatorsGeneratedAt;
+        }
       }
     } catch {
       // استفاده از شاخص‌های موجود
+    }
+
+    const [meta, bankFile] = await Promise.all([fetchOptionalJSON('data/meta.json'), fetchOptionalJSON('data/banks.json')]);
+    if (meta) store.meta = { ...store.meta, ...meta, loadSource: 'json', generatedAt: json.generatedAt ?? store.meta.generatedAt, counts: json.counts ?? store.meta.counts };
+    if (Array.isArray(bankFile?.banks)) {
+      store.banks = bankFile.banks;
+      store.meta.banksGeneratedAt = bankFile.generatedAt ?? store.meta.banksGeneratedAt;
     }
 
     // فیدهای هفتگی اختیاری
@@ -262,7 +267,7 @@ export async function reloadFreshData() {
     if (changelog) store.changelog = changelog;
     const history = await fetchOptionalJSON('data/history/weekly-history.json');
     if (Array.isArray(history)) store.history = history;
-    store.transparency = weekly?.transparency?.banks || computeTransparencyLocal(store.products);
+    store.transparency = computeTransparencyLocal(store.products);
 
     recalculate();
     return { ok: true, count: store.products.length };
@@ -290,22 +295,34 @@ export async function loadData() {
 
   store.products = productsRaw.map(normalizeProduct);
   store.banks = bundled?.banks ?? [];
-  // شاخص‌های کلان، بازه‌های مصوب و فهرست بانک‌ها فقط در بسته درون‌خطی هستند
-  // (products.json تنها محصولات را دارد)؛ پس حتی وقتی نسخه تازه‌تر JSON
-  // جایگزین می‌شود، این بخش‌ها از بسته خوانده می‌شوند.
+  // هر فایل مهر ساخت مستقلی دارد؛ تغییر شاخص یا فهرست بانک نباید به
+  // تغییر هم‌زمان products.json یا بازسازی بسته وابسته بماند.
   store.indicators = bundled?.indicators ?? {};
   store.ranges = bundled?.ranges ?? {};
   store.derived = bundled?.derived ?? {};
   store.period = bundled?.period ?? '';
   store.meta = { ...(bundled?.meta ?? {}), loadSource: source };
-  // وقتی نسخه تازه‌تر JSON جایگزین می‌شود، شمارش‌ها و مهر اجرا هم باید از همان
-  // نسخه بیایند؛ وگرنه مرکز داده آمار کهنه بسته را نشان می‌دهد.
-  if (fresh) {
-    if (fresh.counts) store.meta.counts = fresh.counts;
-    if (fresh.generatedAt) {
-      store.meta.generatedAt = fresh.generatedAt;
-      store.meta.lastRun = fresh.generatedAt;
-    }
+  if (fresh?.counts) store.meta.counts = fresh.counts;
+  if (fresh?.generatedAt) store.meta.generatedAt = fresh.generatedAt;
+
+  const [metaFresh, indicatorsFresh, banksFresh] = await Promise.all([
+    fetchOptionalJSON('data/meta.json'), fetchOptionalJSON('data/indicators.json'), fetchOptionalJSON('data/banks.json'),
+  ]);
+  if (metaFresh && atLeastAsNew(metaFresh.lastRun, store.meta.lastRun)) {
+    // تاریخ ساخت و شمار محصولات مربوط به products است، نه آخرین اجرا.
+    const { generatedAt, counts } = store.meta;
+    store.meta = { ...store.meta, ...metaFresh, generatedAt, counts: counts ?? metaFresh.counts, loadSource: source };
+  }
+  if (indicatorsFresh?.indicators && atLeastAsNew(indicatorsFresh.generatedAt, store.meta.indicatorsGeneratedAt)) {
+    store.indicators = indicatorsFresh.indicators;
+    store.ranges = indicatorsFresh.ranges ?? {};
+    store.derived = indicatorsFresh.derived ?? {};
+    store.period = indicatorsFresh.period ?? '';
+    store.meta.indicatorsGeneratedAt = indicatorsFresh.generatedAt ?? store.meta.indicatorsGeneratedAt;
+  }
+  if (Array.isArray(banksFresh?.banks) && atLeastAsNew(banksFresh.generatedAt, store.meta.banksGeneratedAt)) {
+    store.banks = banksFresh.banks;
+    store.meta.banksGeneratedAt = banksFresh.generatedAt ?? store.meta.banksGeneratedAt;
   }
 
   // بازیابی تنظیمات کاربر
@@ -336,7 +353,7 @@ export async function loadData() {
     if (changelog) store.changelog = changelog;
     const history = await fetchOptionalJSON('data/history/weekly-history.json');
     if (Array.isArray(history)) store.history = history;
-    store.transparency = weekly?.transparency?.banks || computeTransparencyLocal(store.products);
+    store.transparency = computeTransparencyLocal(store.products);
   } catch {
     store.transparency = computeTransparencyLocal(store.products);
   }
@@ -470,7 +487,7 @@ export function filtered(opts = {}) {
     if (f.channel === 'online' && p.digital < 75) return false;
     if (f.channel === 'branch' && p.digital >= 75) return false;
     if (f.collateral === 'none' && !['none', 'credit-score'].includes(p.collateralKind)) return false;
-    if (f.collateral === 'no-guarantor' && p.collateralKind === 'guarantor') return false;
+    if (f.collateral === 'no-guarantor' && !['none', 'credit-score'].includes(p.collateralKind)) return false;
     if (f.confidence !== 'all' && p.confidence !== f.confidence) return false;
     // نوع عقد فقط برای محصولات اعتباری معنا دارد؛ در سایر دسته‌ها این فیلتر
     // خنثی است تا انتخاب کاربر هنگام جابه‌جایی بین دسته‌ها نتایج را خالی نکند.
@@ -537,7 +554,7 @@ export function summary() {
   // فقط مهرهای «دیدن/تأیید» ملاک است. پیش‌تر lastUpdated هم حساب می‌شد و
   // رکوردی که منبعش تصادفاً تازه بود، «بازبینی‌شده» شمرده می‌شد؛ نتیجه،
   // عددی خوش‌بینانه بود که با گزارش هفتگی نمی‌خواند (یافتهٔ F9 ممیزی).
-  const verifiedAt = (p) => p.lastSeen || p.lastVerified || p.source?.checked || null;
+  const verifiedAt = (p) => mostRecent(p.lastSeen, p.lastVerified, p.source?.checked);
   const verified30 = products.filter((p) => {
     const d = verifiedAt(p);
     return d ? daysSince(d) <= 30 : false;
@@ -564,32 +581,16 @@ export function summary() {
       medium: products.filter((p) => p.confidence === 'medium').length,
       low: products.filter((p) => p.confidence === 'low').length,
     },
-    /** امتیاز سلامت کل داده: ترکیب تازگی، اطمینان و پوشش */
-    /**
-     * امتیاز سلامت مجموعه داده.
-     *
-     * پوشش بازبینی مهم‌ترین عامل است (۴۵) چون نشان می‌دهد خط لوله کار می‌کند.
-     * تازگی خودِ منبع وزن سبک‌تری دارد (۲۰) چون به رفتار بانک‌ها بستگی دارد
-     * و در اختیار این سامانه نیست. اطمینان منبع ۲۰ و نبود رکورد منقضی ۱۵.
-     */
-    // عدد نمایشی باید همان عدد گزارش هفتگی باشد. پیش‌تر داشبورد فرمول خودش
-    // را داشت (۷۰) و گزارش هفتگی فرمول دیگری (۱۰۰)؛ کاربر دو عدد متناقض از
-    // یک داده می‌دید. اکنون مرجع، امتیاز ممیزی هفتگی است و فقط وقتی آن فایل
-    // در دسترس نباشد، فرمول محلی (۳۰ روزه) محاسبه می‌شود.
-    health: (() => {
-      const audit = Number(store.weeklyReport?.stats?.healthScore);
-      if (Number.isFinite(audit) && audit >= 0 && audit <= 100) return Math.round(audit);
-      return Math.round(
-        clamp(
-          (verified30 / Math.max(1, products.length)) * 45 +
-            (sourceFresh30 / Math.max(1, products.length)) * 20 +
-            (products.filter((p) => p.confidence === 'high').length / Math.max(1, products.length)) * 20 +
-            (1 - stale / Math.max(1, products.length)) * 15,
-          0,
-          100,
-        ),
-      );
-    })(),
+    // محاسبه از رکوردهای فعلی است؛ امتیاز فایل گزارش هفتگی تاریخی است و
+    // از فرمول متفاوتی استفاده می‌کند، پس نباید به‌جای وضعیت امروز نمایش یابد.
+    health: Math.round(clamp(
+      (verified30 / Math.max(1, products.length)) * 45 +
+        (sourceFresh30 / Math.max(1, products.length)) * 20 +
+        (products.filter((p) => p.confidence === 'high').length / Math.max(1, products.length)) * 20 +
+        (1 - stale / Math.max(1, products.length)) * 15,
+      0, 100,
+    )),
+
   };
 }
 

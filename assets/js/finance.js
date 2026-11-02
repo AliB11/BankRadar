@@ -8,11 +8,10 @@
  *      قسط استاندارد (PMT): قسط = P·r / (1 − (1+r)^−n)
  *      قسط قدیمی:           سود = P·R·(n+1) / 2400 ، قسط = (P + سود) / n
  *
- *   ۲) کارمزد یک‌بار (rateKind: 'fee') — روش قرض‌الحسنه و وام‌های حمایتی.
- *      در این محصولات عدد ۴٪ نرخ سالانه نیست؛ کارمزد یک‌باری است که یک بار
- *      روی کل اصل بسته می‌شود. اگر آن را نرخ سالانه فرض کنیم، هزینه وام
- *      ده‌ساله حدود ده برابر واقعیت برآورد می‌شود. این تفکیک در تابع
- *      scheduleFee پیاده شده است.
+ *   ۲) کارمزد قرض‌الحسنه (rateKind: 'fee') — برای وام‌ها، یک مدل تقریبی
+ *      با کارمزد سالانه روی مانده و قسط کارمزد در آغاز هر سال به کار می‌رود.
+ *      قرارداد واقعی ممکن است متفاوت باشد؛ برای اعتبار غیر بانکی یا کارمزد
+ *      یک‌باره باید نوع محاسبه صریحاً در feeModel مشخص شود.
  *
  *   ۳) بازده سپرده (rateKind: 'yield') — سود سالانه سپرده.
  *
@@ -68,99 +67,126 @@ export function scheduleLegacy(principal, annualRate, months, gapMonths = 1) {
 }
 
 /**
- * قسط برای محصولات کارمزد‌محور (قرض‌الحسنه و وام‌های حمایتی).
+ * برآورد رایج قرض‌الحسنه: کارمزد سالانه روی مانده، در اولین قسط هر سال.
+ * اقساط دیگر اصل را به‌طور مساوی بازپرداخت می‌کنند. برای سال ناقص، کارمزد
+ * متناسب با تعداد ماه‌های باقیمانده است. در دوره تک‌ماهه اصل و کارمزد با هم
+ * پرداخت می‌شوند. این یک مدل تخمینی است و قرارداد بانک ملاک نهایی است.
  *
- * در این محصولات کارمزد یک بار روی کل اصل بسته می‌شود و مبلغ حاصل به اقساط
- * مساوی تقسیم می‌گردد. هیچ سود مرکبی وجود ندارد.
- *
- * مثال: ۳۰۰ میلیون تومان با کارمزد ۴٪ و ۱۲۰ قسط
- *        هزینه کل = ۱۲ میلیون ، قسط = ۲ میلیون و ۶۰۰ هزار تومان
- *
- * @param {number} principal مبلغ تسهیلات (تومان)
- * @param {number} feePercent کارمزد یک‌بار (درصد از اصل)
- * @param {number} months تعداد اقساط
- * @returns {{installment:number, totalInterest:number, totalPayment:number}}
+ * ۳۰۰ میلیون، ۴٪ و ۱۲۰ ماه: ۱۱۰ قسط اصل حدود ۲٫۷۲۷ میلیون و ده قسط
+ * سالانه کارمزد (اولین قسط ۱۲ میلیون)، در مجموع ۶۶ میلیون کارمزد.
  */
 export function scheduleFee(principal, feePercent, months) {
-  if (!principal || !months) return { installment: 0, totalInterest: 0, totalPayment: 0 };
-  const fee = (principal * (feePercent || 0)) / 100;
-  const totalPayment = principal + fee;
+  const n = Math.max(0, Math.trunc(Number(months) || 0));
+  const amount = Math.max(0, Number(principal) || 0);
+  const rate = Math.max(0, Number(feePercent) || 0) / 100;
+  if (!amount || !n) return { installment: 0, totalInterest: 0, totalPayment: 0, payments: [], feePayments: [], firstFee: 0, maxInstallment: 0 };
+
+  // کارمزد صفر قسط مجزای کارمزد ندارد.
+  if (!rate) {
+    const payment = amount / n;
+    return { installment: Math.round(payment), totalInterest: 0, totalPayment: Math.round(amount), payments: Array(n).fill(payment), feePayments: [], firstFee: 0, maxInstallment: Math.round(payment) };
+  }
+
+  const feeOnlyMonths = new Set();
+  for (let start = 0; start < n; start += 12) {
+    if (Math.min(12, n - start) > 1) feeOnlyMonths.add(start);
+  }
+  const principalPayment = amount / (n - feeOnlyMonths.size);
+  let balance = amount;
+  const payments = [];
+  const feePayments = [];
+  let totalFee = 0;
+
+  for (let month = 0; month < n; month++) {
+    let fee = 0;
+    if (month % 12 === 0) {
+      fee = balance * rate * Math.min(12, n - month) / 12;
+      feePayments.push({ month: month + 1, amount: Math.round(fee) });
+      totalFee += fee;
+    }
+    const principalPart = feeOnlyMonths.has(month) ? 0 : Math.min(balance, principalPayment);
+    balance -= principalPart;
+    payments.push(principalPart + fee);
+  }
+
   return {
-    installment: Math.round(totalPayment / months),
-    totalInterest: Math.round(fee),
-    totalPayment: Math.round(totalPayment),
+    installment: Math.round(principalPayment),
+    totalInterest: Math.round(totalFee),
+    totalPayment: Math.round(amount + totalFee),
+    payments,
+    feePayments,
+    firstFee: feePayments[0]?.amount ?? 0,
+    maxInstallment: Math.round(Math.max(...payments)),
   };
 }
 
-/**
- * انتخاب خودکار شیوه محاسبه بر پایه نوع نرخ محصول.
- *
- * این تابع نقطه ورود واحد برای همه مصرف‌کنندگان است تا اشتباه «نرخ سالانه
- * فرض کردن کارمزد یک‌بار» تکرار نشود.
- *
- * @param {{rate?:number, rateKind?:string}} product
- * @param {number} principal
- * @param {number} months
- * @param {'standard'|'legacy'} [method]
- */
+/** کارمزد یک‌باره فقط وقتی مشخصاً در قرارداد ثبت شده باشد. */
+export function scheduleOneTimeFee(principal, feePercent, months) {
+  const n = Math.max(0, Math.trunc(Number(months) || 0));
+  const amount = Math.max(0, Number(principal) || 0);
+  if (!amount || !n) return { installment: 0, totalInterest: 0, totalPayment: 0, payments: [] };
+  const fee = amount * Math.max(0, Number(feePercent) || 0) / 100;
+  const payment = (amount + fee) / n;
+  return { installment: Math.round(payment), totalInterest: Math.round(fee), totalPayment: Math.round(amount + fee), payments: Array(n).fill(payment) };
+}
+
+/** مدل کارمزد ناشناخته (مثلاً BNPL) نباید مثل قرض‌الحسنه برآورد شود. */
+export function canEstimateLoan(product) {
+  if (!product || product.rateKnown === false || product.paymentSchedule === 'variable') return false;
+  if (product.rateKind !== 'fee') return true;
+  if (product.feeModel === 'unknown') return false;
+  if (product.feeModel === 'annual-balance' || product.feeModel === 'one-time') return true;
+  return product.category !== 'credit';
+}
+
+/** انتخاب مدل طبق نوع نرخ؛ فرض قرض‌الحسنه صرفاً یک برآورد است. */
 export function scheduleFor(product, principal, months, method = 'standard') {
+  if (!canEstimateLoan(product)) return null;
   const rate = product?.rate ?? 0;
-  if (product?.rateKind === 'fee') return scheduleFee(principal, rate, months);
-  if (method === 'legacy') return scheduleLegacy(principal, rate, months);
-  return scheduleStandard(principal, rate, months);
+  if (product?.rateKind === 'fee') {
+    return product.feeModel === 'one-time'
+      ? scheduleOneTimeFee(principal, rate, months)
+      : scheduleFee(principal, rate, months);
+  }
+  return method === 'legacy' ? scheduleLegacy(principal, rate, months) : scheduleStandard(principal, rate, months);
 }
 
 /**
- * نرخ مؤثر سالانه با روش IRR.
- *
- * نرخ مؤثری می‌یابد که ارزش فعلی اقساط را با مبلغ خالص دریافتی برابر کند.
- * «خالص دریافتی» کلید ماجراست: اگر بانک کارمزدی از اصل کسر کند، وام‌گیرنده
- * کمتر از اصل دریافت می‌کند و نرخ واقعی بالاتر می‌رود.
- *
- * دامنه واقع‌گرایانه: کارمزد ۴ درصدی کسرشده از اصل، نرخ مؤثر یک تسهیلات ۲۳
- * درصدی چهارساله را به حدود ۲۵٫۴ درصد می‌رساند، نه ۳۳ تا ۳۵ درصد. ارقام
- * بالاتر که در گزارش‌های میدانی نقل می‌شود، هزینه‌های دیگر (بیمه، سپرده
- * مسدود، کارمزد ضامن، هزینه فرصت) را هم در بر می‌گیرد که در این تابع محاسبه
- * نمی‌شوند. بنابراین خروجی این تابع را «کف نرخ مؤثر» بدانید، نه سقف آن.
- *
- * @param {number} installment قسط ماهانه
- * @param {number} months تعداد اقساط
- * @param {number} netReceived مبلغ خالص دریافتی وام‌گیرنده
- * @returns {number} نرخ مؤثر سالانه به درصد (۰ تا ۱۰۰)
+ * IRR جریان اقساط ماهانه، با تبدیل ماهانه به نرخ مؤثر سالانه مرکب.
+ * ترتیب و مقدار واقعی اقساط مهم است، به‌خصوص قسط‌های سالانه کارمزد.
  */
-export function irrAnnual(installment, months, netReceived) {
-  if (!installment || !months || netReceived <= 0) return 0;
-
-  // ارزش فعلی اقساط با نرخ ماهانه r
-  const pv = (r) => (r === 0 ? installment * months : (installment * (1 - (1 + r) ** -months)) / r);
-
-  let lo = 0;
-  let hi = 1; // سقف جست‌وجو: ۱۰۰٪ ماهانه
-  // اگر حتی با نرخ صفر هم اقساط کمتر از دریافتی باشد، نرخ منفی است
+export function irrCashflows(payments, netReceived) {
+  if (!Array.isArray(payments) || !payments.length || !(netReceived > 0)) return 0;
+  if (payments.some((p) => !Number.isFinite(p) || p < 0)) return null;
+  const pv = (r) => payments.reduce((sum, amount, i) => sum + amount / (1 + r) ** (i + 1), 0);
   if (pv(0) <= netReceived) return 0;
-
+  let lo = 0;
+  let hi = 1;
+  while (pv(hi) > netReceived && hi < 1_000_000) hi *= 2;
   for (let i = 0; i < 80; i++) {
     const mid = (lo + hi) / 2;
     if (pv(mid) > netReceived) lo = mid;
     else hi = mid;
   }
-  return Number((((lo + hi) / 2) * 12 * 100).toFixed(2));
+  return Number((((1 + (lo + hi) / 2) ** 12 - 1) * 100).toFixed(2));
 }
 
-/**
- * نرخ مؤثر سالانه یک محصول با در نظر گرفتن شیوه هزینه‌گذاری آن.
- *
- * @param {object} product
- * @param {number} principal
- * @param {number} months
- * @param {number} upfrontFee کارمزد کسرشده از اصل (درصد)
- * @param {'standard'|'legacy'} [method] شیوه قسط‌بندی — باید با همان شیوه‌ای باشد
- *   که قسط نمایش‌داده‌شده با آن محاسبه شده تا نرخ مؤثر با قسط هم‌خوان بماند
- */
+/** نرخ مؤثر برای اقساط مساوی؛ ورودی قسط ماهانه به تومان است. */
+export function irrAnnual(installment, months, netReceived) {
+  const n = Math.max(0, Math.trunc(Number(months) || 0));
+  if (!installment || !n || netReceived <= 0) return 0;
+  return irrCashflows(Array(n).fill(installment), netReceived);
+}
+
+/** نرخ مؤثر طبق همان مدل قسط و هزینه کسرشده صریح از اصل وام. */
 export function effectiveAnnualRate(product, principal, months, upfrontFee = 0, method = 'standard') {
-  const { installment } = scheduleFor(product, principal, months, method);
-  const netReceived = principal * (1 - (upfrontFee || 0) / 100);
-  return irrAnnual(installment, months, netReceived);
+  const schedule = scheduleFor(product, principal, months, method);
+  if (!schedule) return null;
+  const fee = Number(upfrontFee) || 0;
+  if (fee < 0 || fee >= 100) return null;
+  const netReceived = principal * (1 - fee / 100);
+  const payments = schedule.payments ?? Array(Math.max(0, Math.trunc(months))).fill(schedule.installment);
+  return irrCashflows(payments, netReceived);
 }
 
 /**
@@ -220,14 +246,11 @@ export function loanSummary(product, opts = {}) {
   const isFee = product.rateKind === 'fee';
 
   const standard = scheduleFor(product, principal, months, method);
-  const legacy = isFee
-    ? scheduleFee(principal, product.rate, months)
-    : scheduleLegacy(principal, product.rate, months);
+  if (!standard) return null;
+  const legacy = isFee ? standard : scheduleLegacy(principal, product.rate, months);
 
-  // کارمزد اضافی فقط برای تسهیلات سودمحور معنا دارد؛ در محصولات کارمزد‌محور
-  // عدد rate خودش کارمزد است و افزودن دوباره آن، هزینه را دو برابر نشان می‌دهد.
-  const upfrontFee = !isFee && product.rate >= 20 ? 4 : 0;
-  const effective = effectiveAnnualRate(product, principal, months, upfrontFee, method);
+  // هیچ هزینه کسر از اصل بدون شاهد یا ورود کاربر فرض نمی‌شود.
+  const effective = effectiveAnnualRate(product, principal, months, opts.upfrontFee ?? 0, method);
 
   return {
     principal,
@@ -238,7 +261,7 @@ export function loanSummary(product, opts = {}) {
     standard,
     legacy,
     effective,
-    real: inflation != null ? realRate(effective, inflation) : null,
+    real: inflation != null && effective != null ? realRate(effective, inflation) : null,
     difference: Math.abs(standard.totalInterest - legacy.totalInterest),
   };
 }

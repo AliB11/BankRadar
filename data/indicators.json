@@ -1,62 +1,67 @@
 {
   "derived": {
-    "note": "نرخ سود واقعی = نرخ سود سپرده یک‌ساله منهای تورم. مقدار منفی به معنای کاهش قدرت خرید سپرده‌گذار است و باید در مقایسه محصولات منابعی لحاظ شود.",
-    "realDepositReturnAnnual": -50.6,
-    "realDepositReturnCbi": -45.4
+    "note": "بازده حقیقی با رابطه فیشر: (۱ + سود اسمی) ÷ (۱ + تورم) − ۱؛ منفی یعنی کاهش قدرت خرید.",
+    "realDepositReturnAnnual": -31.8,
+    "realDepositReturnCbi": -28.4
   },
-  "generatedAt": "2026-11-01T10:41:20.122Z",
-  "generator": "tools/collect.mjs",
+  "generatedAt": "2026-11-02T07:26:18Z",
+  "generator": "ممیزی مستند ۲۰۲۶-۱۱-۰۲؛ خط لوله tools/collect.mjs",
   "indicators": {
     "certificateRate": {
       "label": "سود اوراق گواهی سپرده مدت‌دار ویژه",
+      "note": "داده پیشین؛ منبع مستقیم و شرایط جاری آن در این ممیزی مستقل تأیید نشده است.",
       "period": "۱۴۰۵",
       "source": {
         "kind": "regulator",
-        "title": "بانک مرکزی",
+        "title": "بانک مرکزی — نشانی عمومی، نه سند مستقیم",
         "url": "https://www.cbi.ir"
       },
       "unit": "%",
       "value": 23
     },
     "depositCap1y": {
-      "label": "سقف سود سپرده بلندمدت یک‌ساله (مصوب)",
-      "period": "۱۴۰۵",
+      "label": "نرخ مرجع سپرده عادی یک‌ساله (گزارش رسانه)",
+      "note": "نرخ گزارش‌شده در رسانه؛ جدول بخشنامه رسمی در این ممیزی مستقیماً قابل استخراج نبود.",
+      "period": "آبان ۱۴۰۵",
       "source": {
-        "kind": "regulator",
-        "title": "شورای پول و اعتبار / بانک مرکزی",
-        "url": "https://www.cbi.ir"
+        "kind": "press",
+        "title": "نبض قیمت — نرخ سپرده عادی یک‌ساله",
+        "url": "https://nabzgheymat.ir/نرخ-سود-بانکی-در-آبان-۱۴۰۵-تغییر-میکن/"
       },
       "unit": "%",
-      "value": 23
+      "value": 20.5
     },
     "depositCap2y": {
       "label": "سقف سود سپرده دو ساله",
-      "period": "۱۴۰۵",
+      "note": "نرخ گزارش‌شده در رسانه؛ جدول بخشنامه رسمی در این ممیزی مستقیماً استخراج نشد.",
+      "period": "آبان ۱۴۰۵",
       "source": {
-        "kind": "regulator",
-        "title": "شورای پول و اعتبار",
-        "url": "https://www.cbi.ir"
+        "kind": "press",
+        "title": "نبض قیمت — سپرده عادی دوساله",
+        "url": "https://nabzgheymat.ir/نرخ-سود-بانکی-در-آبان-۱۴۰۵-تغییر-میکن/"
       },
       "unit": "%",
       "value": 21.5
     },
     "depositCap3y": {
       "label": "سقف سود سپرده سه ساله",
-      "period": "۱۴۰۵",
+      "note": "نرخ گزارش‌شده در رسانه؛ جدول بخشنامه رسمی در این ممیزی مستقیماً استخراج نشد.",
+      "period": "آبان ۱۴۰۵",
       "source": {
-        "kind": "regulator",
-        "title": "شورای پول و اعتبار",
-        "url": "https://www.cbi.ir"
+        "kind": "press",
+        "title": "نبض قیمت — سپرده عادی سه‌ساله",
+        "url": "https://nabzgheymat.ir/نرخ-سود-بانکی-در-آبان-۱۴۰۵-تغییر-میکن/"
       },
       "unit": "%",
       "value": 22.5
     },
     "depositShort3m": {
       "label": "سود سپرده کوتاه‌مدت ویژه سه‌ماهه",
+      "note": "داده پیشین؛ منبع مستقیم و شرایط جاری آن در این ممیزی مستقل تأیید نشده است.",
       "period": "۱۴۰۵",
       "source": {
         "kind": "regulator",
-        "title": "شورای پول و اعتبار",
+        "title": "شورای پول و اعتبار — نشانی عمومی، نه سند مستقیم",
         "url": "https://www.cbi.ir"
       },
       "unit": "%",
@@ -64,10 +69,11 @@
     },
     "depositShort6m": {
       "label": "سود سپرده کوتاه‌مدت ویژه شش‌ماهه",
+      "note": "داده پیشین؛ منبع مستقیم و شرایط جاری آن در این ممیزی مستقل تأیید نشده است.",
       "period": "۱۴۰۵",
       "source": {
         "kind": "regulator",
-        "title": "شورای پول و اعتبار",
+        "title": "شورای پول و اعتبار — نشانی عمومی، نه سند مستقیم",
         "url": "https://www.cbi.ir"
       },
       "unit": "%",
@@ -75,27 +81,28 @@
     },
     "depositShortNormal": {
       "label": "سود سپرده کوتاه‌مدت عادی (کارتی)",
+      "note": "داده پیشین؛ منبع مستقیم و شرایط جاری آن در این ممیزی مستقل تأیید نشده است.",
       "period": "۱۴۰۵",
       "source": {
         "kind": "regulator",
-        "title": "شورای پول و اعتبار",
+        "title": "شورای پول و اعتبار — نشانی عمومی، نه سند مستقیم",
         "url": "https://www.cbi.ir"
       },
       "unit": "%",
       "value": 5
     },
     "inflationAnnual": {
-      "changedAt": "2026-09-23T08:00:00.000Z",
+      "changedAt": "2026-11-02T07:09:10Z",
       "label": "تورم سالانه (مرکز آمار ایران)",
-      "period": "شهریور ۱۴۰۵",
-      "previousValue": 69.9,
+      "period": "مهر ۱۴۰۵",
+      "previousValue": 73.6,
       "source": {
         "kind": "press",
-        "title": "مرکز آمار ایران / اقتصاد آنلاین",
-        "url": "https://www.eghtesadonline.com/fa/news/2159686/"
+        "title": "خبرگزاری برنا به نقل از مرکز آمار ایران — مهر ۱۴۰۵",
+        "url": "https://borna.news/fa/news/2408030/"
       },
       "unit": "%",
-      "value": 73.6
+      "value": 76.8
     },
     "inflationCbiAnnual": {
       "changedAt": "2026-09-25T08:00:00.000Z",
@@ -103,47 +110,49 @@
       "period": "شهریور ۱۴۰۵",
       "previousValue": 65,
       "source": {
-        "kind": "regulator",
-        "title": "روابط عمومی بانک مرکزی / اکوایران",
+        "kind": "press",
+        "title": "اکوایران به نقل از بانک مرکزی",
         "url": "https://ecoiran.com/بخش-اقتصاد-کلان-186/150832"
       },
       "unit": "%",
       "value": 68.4
     },
     "inflationHousing": {
-      "label": "تورم سالانه بخش مسکن",
+      "label": "تورم سالانه اجاره‌بها (نه کل بخش مسکن)",
       "period": "شهریور ۱۴۰۵",
-      "source": {
-        "kind": "regulator",
-        "title": "مرکز آمار ایران",
-        "url": "https://www.amar.org.ir"
-      },
-      "unit": "%",
-      "value": 34.2
-    },
-    "inflationMonthly": {
-      "label": "تورم ماهانه",
-      "period": "شهریور ۱۴۰۵",
-      "source": {
-        "kind": "regulator",
-        "title": "مرکز آمار ایران",
-        "url": "https://www.amar.org.ir"
-      },
-      "unit": "%",
-      "value": 4.2
-    },
-    "inflationPointToPoint": {
-      "changedAt": "2026-09-23T08:00:00.000Z",
-      "label": "تورم نقطه‌به‌نقطه",
-      "period": "شهریور ۱۴۰۵",
-      "previousValue": 89,
       "source": {
         "kind": "press",
-        "title": "مرکز آمار ایران / خبرآنلاین",
-        "url": "https://www.khabaronline.ir/news/2266047/"
+        "title": "صداوسیما به نقل از مرکز آمار — اجاره مسکن شهریور",
+        "url": "https://www.irib-news.ir/fa/news/5926391/"
       },
       "unit": "%",
-      "value": 89.8
+      "value": 32.2
+    },
+    "inflationMonthly": {
+      "changedAt": "2026-11-02T07:09:10Z",
+      "label": "تورم ماهانه",
+      "period": "مهر ۱۴۰۵",
+      "previousValue": 4.2,
+      "source": {
+        "kind": "press",
+        "title": "خبرگزاری برنا به نقل از مرکز آمار ایران — مهر ۱۴۰۵",
+        "url": "https://borna.news/fa/news/2408030/"
+      },
+      "unit": "%",
+      "value": 4.4
+    },
+    "inflationPointToPoint": {
+      "changedAt": "2026-11-02T07:09:10Z",
+      "label": "تورم نقطه‌به‌نقطه",
+      "period": "مهر ۱۴۰۵",
+      "previousValue": 89.8,
+      "source": {
+        "kind": "press",
+        "title": "خبرگزاری برنا به نقل از مرکز آمار ایران — مهر ۱۴۰۵",
+        "url": "https://borna.news/fa/news/2408030/"
+      },
+      "unit": "%",
+      "value": 88.7
     },
     "interbankRate": {
       "label": "نرخ سود بازار بین‌بانکی",
@@ -158,21 +167,23 @@
     },
     "loanRateCeiling": {
       "label": "سقف نرخ سود تسهیلات عقود غیرمشارکتی",
-      "period": "۱۴۰۵",
+      "note": "نرخ گزارش‌شده در رسانه؛ جدول بخشنامه رسمی در این ممیزی مستقیماً استخراج نشد.",
+      "period": "آبان ۱۴۰۵",
       "source": {
-        "kind": "regulator",
-        "title": "شورای پول و اعتبار",
-        "url": "https://www.cbi.ir"
+        "kind": "press",
+        "title": "نبض قیمت — تسهیلات غیرمشارکتی",
+        "url": "https://nabzgheymat.ir/نرخ-سود-بانکی-در-آبان-۱۴۰۵-تغییر-میکن/"
       },
       "unit": "%",
       "value": 23
     },
     "loanRateMosharekat": {
       "label": "نرخ سود مورد انتظار عقود مشارکتی",
+      "note": "داده پیشین؛ منبع مستقیم و شرایط جاری آن در این ممیزی مستقل تأیید نشده است.",
       "period": "۱۴۰۵",
       "source": {
         "kind": "regulator",
-        "title": "شورای پول و اعتبار",
+        "title": "شورای پول و اعتبار — نشانی عمومی، نه سند مستقیم",
         "url": "https://www.cbi.ir"
       },
       "unit": "%",
@@ -180,10 +191,11 @@
     },
     "qarzRate": {
       "label": "کارمزد تسهیلات قرض‌الحسنه",
+      "note": "داده پیشین؛ منبع مستقیم و شرایط جاری آن در این ممیزی مستقل تأیید نشده است.",
       "period": "۱۴۰۵",
       "source": {
         "kind": "regulator",
-        "title": "قانون بودجه ۱۴۰۵ / بانک مرکزی",
+        "title": "قانون بودجه ۱۴۰۵ / بانک مرکزی — نشانی عمومی، نه سند مستقیم",
         "url": "https://www.cbi.ir"
       },
       "unit": "%",
@@ -191,7 +203,7 @@
     }
   },
   "note": "شاخص‌های کلان و نرخ‌های مرجع نظام بانکی. مبنای محاسبه «نرخ واقعی» در سامانه.",
-  "period": "شهریور ۱۴۰۵",
+  "period": "مهر ۱۴۰۵",
   "ranges": {
     "depositCaps": [
       {
@@ -211,17 +223,17 @@
       },
       {
         "label": "بلندمدت یک‌ساله",
-        "note": "نرخ غالب بازار",
-        "rate": 23
+        "note": "نرخ سپرده عادی یک‌ساله طبق گزارش رسانه",
+        "rate": 20.5
       },
       {
         "label": "بلندمدت دو ساله",
-        "note": "سقف مصوب",
+        "note": "نرخ گزارش‌شده در رسانه؛ متن بخشنامه مستقیماً بررسی نشد",
         "rate": 21.5
       },
       {
         "label": "بلندمدت سه ساله",
-        "note": "سقف مصوب",
+        "note": "نرخ گزارش‌شده در رسانه؛ متن بخشنامه مستقیماً بررسی نشد",
         "rate": 22.5
       }
     ],

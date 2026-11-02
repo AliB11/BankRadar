@@ -264,6 +264,7 @@ a:hover { color: #7bffd0; text-decoration: underline; }
   gap: var(--sp-5);
   align-items: start;
 }
+.main-grid > * { min-width: 0; }
 
 /*
   ستون محتوا. بدون min-width: 0، آیتم شبکه به‌طور پیش‌فرض min-width: auto
@@ -680,6 +681,9 @@ a:hover { color: #7bffd0; text-decoration: underline; }
   padding: var(--sp-5);
   scrollbar-width: thin;
 }
+
+/* دکمه‌های پروفایل نباید عرض ذاتی شبکه را در موبایل بزرگ کنند. */
+.filters .seg { display: flex; flex-wrap: wrap; max-width: 100%; }
 
 .filter-group + .filter-group {
   margin-block-start: var(--sp-5);
@@ -1139,7 +1143,7 @@ table.compare .prod-bank { color: var(--text-4); font-size: var(--fs-3xs); }
 /* ---------- ۱۵. نمودار ---------- */
 .chart-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
   gap: var(--sp-4);
 }
 .chart-card { padding: var(--sp-5); }
@@ -1238,9 +1242,11 @@ table.compare .prod-bank { color: var(--text-4); font-size: var(--fs-3xs); }
   padding: var(--sp-4) var(--sp-5);
   border-block-start: 1px solid var(--hairline);
   display: flex;
+  flex-wrap: wrap;
   gap: var(--sp-2);
   flex-shrink: 0;
 }
+.drawer-foot a { max-width: 100%; white-space: normal; overflow-wrap: anywhere; text-align: start; }
 
 .spec-grid {
   display: grid;
@@ -1450,7 +1456,7 @@ table.compare .prod-bank { color: var(--text-4); font-size: var(--fs-3xs); }
 
 /* ---------- ۲۲. واکنش‌گرا ---------- */
 @media (max-width: 1180px) {
-  .main-grid { grid-template-columns: 1fr; }
+  .main-grid { grid-template-columns: minmax(0, 1fr); }
   .filters { position: static; max-height: none; }
   .hero { grid-template-columns: 1fr; padding: var(--sp-6); }
   .cards { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
@@ -1470,7 +1476,14 @@ table.compare .prod-bank { color: var(--text-4); font-size: var(--fs-3xs); }
   .cards { grid-template-columns: 1fr; }
   .metrics { grid-template-columns: 1fr; }
   .macro-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .topbar-actions { gap: 2px; }
+  .topbar-actions .btn { padding-inline: 0.4rem; }
   .topbar-actions .btn span.lbl { display: none; }
+  .topbar-search { min-width: 0; }
+  .topbar-search input { padding-inline: 30px 8px; }
+  .topbar-search .icon { inset-inline-start: 10px; }
+  /* فهرست پیشنهادها در موبایل عرض نوار جست‌وجوی کوچک را به ارث نمی‌برد. */
+  .search-suggestions { position: fixed; top: calc(var(--header-h) + var(--sp-2)); inset-inline: var(--sp-3); }
   .drawer { width: 100%; }
   .ladder-row { grid-template-columns: 92px minmax(0, 1fr) 44px; gap: var(--sp-2); }
 }
