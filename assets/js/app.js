@@ -11,10 +11,11 @@ import {
 } from './util.js';
 import {
   store, loadData, reloadFreshData, recalculate, filtered, searchProducts, summary, saveFilters, saveWeights,
-  saveCompare, applyPreset, availableBanksIn, CATEGORY_META, CONTRACT_META, deriveContractType,
+  saveCompare, applyPreset, availableBanksIn, CATEGORY_META, CONTRACT_META, deriveContractType, resultOf,
 } from './store.js';
 import { DEFAULT_WEIGHTS, WEIGHT_META, PRESETS } from './score.js';
 import { scheduleFor, scheduleLegacy, effectiveAnnualRate, realRate } from './finance.js';
+import { buildXlsx } from './xlsx.js';
 import * as view from './views.js';
 
 /* ---------- اعلان ---------- */
@@ -35,6 +36,38 @@ function toast(message, tone = 'good') {
     node.style.transform = 'translateY(8px)';
     setTimeout(() => node.remove(), 320);
   }, 4200);
+}
+
+/* ---------- تم روشن/تیره ---------- */
+
+const THEME_STORAGE_KEY = 'bank-radar-theme';
+
+/** تم فعلی سند؛ پیش‌فرض تیره است و اسکریپت ابتدای index.html آن را زودتر می‌چیند. */
+function currentTheme() {
+  return document.documentElement.dataset.theme === 'light' ? 'light' : 'dark';
+}
+
+/**
+ * تغییر تم با ذخیرهٔ انتخاب کاربر.
+ * اسکریپت کوچک ابتدای index.html تم را قبل از اولین رنگ‌آمیزی می‌چیند تا
+ * «فلش تم نادرست» نداشته باشیم؛ اینجا فقط انتخاب را می‌چرخاند و می‌نویسد.
+ */
+function applyTheme(theme, { announce = false } = {}) {
+  document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark';
+  storage.set(THEME_STORAGE_KEY, theme);
+  document.querySelectorAll?.('[data-action="toggle-theme"]').forEach((btn) => {
+    btn.setAttribute('aria-pressed', String(theme === 'light'));
+    const lbl = btn.querySelector('.lbl');
+    if (lbl) lbl.textContent = theme === 'light' ? 'تم تیره' : 'تم روشن';
+    const ic = btn.querySelector('[data-theme-icon]');
+    if (ic) ic.textContent = theme === 'light' ? '☾' : '☀';
+  });
+  if (announce) toast(theme === 'light' ? 'تم روشن فعال شد.' : 'تم تیره فعال شد.');
+}
+
+function toggleTheme() {
+  const next = currentTheme() === 'light' ? 'dark' : 'light';
+  applyTheme(next, { announce: true });
 }
 
 /* ---------- رندر ---------- */
@@ -432,6 +465,102 @@ function exportJSON() {
   toast('خروجی JSON ساخته شد.');
 }
 
+/* ---------- خروجی اکسل ---------- */
+
+/**
+ * خروجی اکسل (.xlsx) سه‌برگه‌ای، بدون هیچ وابستگی خارجی (assets/js/xlsx.js).
+ *
+ * دامنهٔ ردیف‌ها با CSV یکی است: اگر سبدهای مقایسه چیزی دارد همان‌ها، وگرنه
+ * نتیجهٔ فیلترهای جاری — یعنی «خروجی همان چیزی که می‌بینی».
+ *
+ * برگهٔ «محصولات» اعداد کلیدی (نرخ، سقف، امتیاز، بازده حقیقی) را به‌صورت سلول
+ * عددی می‌نویسد تا کاربر بتواند در اکسل مرتب‌سازی و فرمول بزند؛ برگهٔ «شاخص‌های
+ * کلان» و «خلاصه» زمینهٔ تصمیم و شرایط تولید داده را کنار جدول می‌آورند تا
+ * گزارش بدون این صفحهٔ وب هم خودکفا باشد.
+ */
+function exportExcel() {
+  const rows = store.compare.size
+    ? store.products.filter((p) => store.compare.has(p.id))
+    : filtered();
+
+  const inflation = store.indicators?.inflationAnnual?.value ?? null;
+  const checkedOf = (p) => p.lastSeen || p.lastVerified || p.source?.checked || p.lastUpdated || '';
+
+  const productRows = rows.map((p) => {
+    const result = resultOf(p.id);
+    return [
+      p.bank,
+      p.product,
+      CATEGORY_META[p.category]?.title ?? p.category,
+      p.subcategory || '',
+      p.rateKnown === false || p.rateKind === 'none' ? null : p.rate,
+      p.rateKind === 'fee' ? 'کارمزد' : p.rateKind === 'none' ? 'بدون نرخ' : 'سود',
+      p.maxAmount ?? null,
+      p.minAmount ?? null,
+      p.termMonths ?? null,
+      result.score ?? null,
+      result.realRate ?? null,
+      p.collateral || '',
+      p.collateralKind || '',
+      p.confidence || '',
+      p.stale ? 'بله' : 'خیر',
+      p.availability === 'historical' ? 'تاریخی' : 'فعال',
+      checkedOf(p),
+      p.lastUpdated || '',
+      p.source?.url || '',
+      p.desc || '',
+    ];
+  });
+
+  const indicatorRows = Object.entries(store.indicators ?? {})
+    .filter(([, v]) => v && typeof v === 'object')
+    .map(([key, v]) => [key, v.label ?? '', typeof v.value === 'number' ? v.value : null, v.period ?? '', v.sourceKind ?? '']);
+
+  const s = summary();
+  const summaryRows = [
+    ['تاریخ تولید گزارش', todayISO()],
+    ['تعداد کل محصولات', s.total],
+    ['تعداد بانک / نهاد', s.banks],
+    ['میانگین امتیاز جذابیت', s.avgScore],
+    ['تورم سالانه مرجع (%)', inflation],
+    ['آخرین اجرای خط لوله', store.meta?.lastRun ?? ''],
+    ['نوع اجرا', store.meta?.lastRunMode ?? ''],
+    ['دامنهٔ ردیف‌ها', store.compare.size ? `سبد مقایسه (${rows.length} محصول)` : `فیلترهای جاری (${rows.length} محصول)`],
+    ...Object.entries(store.filters ?? {}).map(([k, v]) => [`فیلتر: ${k}`, String(v)]),
+    ...Object.entries(store.weights ?? DEFAULT_WEIGHTS).map(([k, v]) => [`وزن: ${WEIGHT_META[k]?.label ?? k}`, v]),
+    ...Object.entries(CATEGORY_META).map(([key, meta]) => [`دسته: ${meta.title}`, s.byCategory[key] ?? 0]),
+  ];
+
+  const bytes = buildXlsx([
+    {
+      name: 'محصولات',
+      columns: [
+        'بانک / نهاد', 'محصول', 'دسته', 'زیردسته', 'نرخ یا کارمزد (٪)', 'نوع نرخ',
+        'سقف (تومان)', 'حداقل (تومان)', 'مدت (ماه)', 'امتیاز جذابیت', 'بازده/هزینه حقیقی (٪)',
+        'وثیقه', 'نوع وثیقه', 'اطمینان منبع', 'نیازمند بازبینی', 'وضعیت عرضه',
+        'آخرین کنترل', 'به‌روزرسانی منبع', 'لینک منبع', 'توضیح',
+      ],
+      rows: productRows,
+      widths: [22, 30, 12, 14, 14, 9, 16, 16, 9, 12, 17, 18, 13, 12, 12, 11, 13, 13, 30, 44],
+    },
+    {
+      name: 'شاخص‌های کلان',
+      columns: ['کلید', 'عنوان', 'مقدار', 'دوره', 'نوع منبع'],
+      rows: indicatorRows,
+      widths: [22, 34, 12, 14, 12],
+    },
+    {
+      name: 'خلاصه',
+      columns: ['ستون', 'مقدار'],
+      rows: summaryRows,
+      widths: [30, 44],
+    },
+  ]);
+
+  download(`bank-radar-${todayISO()}.xlsx`, bytes, 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+  toast(`${fa(rows.length)} رکورد در قالب اکسل (سه برگه) خروجی گرفته شد.`);
+}
+
 /* ---------- بارگذاری داده دستی ---------- */
 
 function importJSON() {
@@ -716,6 +845,9 @@ function bindEvents() {
       case 'download-csv':
         exportCSV();
         break;
+      case 'download-xlsx':
+        exportExcel();
+        break;
       case 'download-json':
         exportJSON();
         break;
@@ -727,6 +859,9 @@ function bindEvents() {
         break;
       case 'scroll-top':
         window.scrollTo({ top: 0, behavior: 'smooth' });
+        break;
+      case 'toggle-theme':
+        toggleTheme();
         break;
       default:
         break;
@@ -801,6 +936,7 @@ async function boot() {
     render();
     renderFooter();
     bindEvents();
+    applyTheme(currentTheme()); // هم‌گام‌سازی برچسب و aria دکمهٔ تم با اسکریپت ابتدای صفحه
 
     // بارگذاری داده محلی ذخیره‌شده
     const custom = storage.get('customProducts');

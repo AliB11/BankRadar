@@ -3,10 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="color-scheme" content="dark" />
+  <meta name="color-scheme" content="dark light" />
   <meta name="theme-color" content="#05070f" />
-
   <title>بانک‌رادار | مقایسه حرفه‌ای محصولات بانکی ایران با بازده حقیقی</title>
+  <script>
+    /* تم را پیش از نخستین رنگ‌آمیزی می‌چیند تا «فلش تم نادرست» نباشد.
+       کلید و قالب ذخیره با assets/js/util.js (storage) هم‌ساز است. */
+    (function () {
+      try {
+        var raw = localStorage.getItem('bankradar.v2.bank-radar-theme');
+        var t = raw == null ? null : JSON.parse(raw);
+        if (t !== 'light' && t !== 'dark') {
+          t = window.matchMedia && matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        }
+        document.documentElement.dataset.theme = t;
+      } catch (e) {
+        document.documentElement.dataset.theme = 'dark';
+      }
+    })();
+  </script>
   <meta name="description" content="مقایسه و رتبه‌بندی محصولات منابعی، اعتباری، تسهیلاتی و امتیازی بانک‌های ایران با امتیازدهی شفاف، محاسبه اقساط و تحلیل بازده حقیقی نسبت به تورم. داده‌ها از بانک مرکزی، سایت بانک‌ها و مراجع مقایسه‌ای گردآوری و خودکار به‌روزرسانی می‌شود." />
   <meta name="keywords" content="وام, سپرده, نرخ سود بانکی, کارت اعتباری, قرض‌الحسنه, وام ازدواج, وام فرزندآوری, مقایسه بانک‌ها, بازده حقیقی, تورم" />
   <meta name="author" content="بانک‌رادار" />
@@ -73,6 +88,10 @@
     </div>
 
     <div class="topbar-actions">
+      <button class="btn btn--ghost btn--sm" type="button" data-action="toggle-theme" aria-pressed="false"
+        title="تغییر تم روشن/تیره" aria-label="تغییر تم">
+        <span data-theme-icon aria-hidden="true">☀</span><span class="lbl">تم روشن</span>
+      </button>
       <button class="btn btn--ghost btn--sm" type="button" data-action="manual-refresh" title="استعلام و به‌روزرسانی دستی داده‌ها" aria-label="به‌روزرسانی">
         <span class="refresh-icon" aria-hidden="true">↻</span><span class="lbl">به‌روزرسانی</span>
       </button>

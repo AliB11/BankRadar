@@ -308,6 +308,10 @@ export function toolbarHTML(rows) {
     <button class="btn btn--sm" type="button" data-action="scroll-compare">
       مقایسه <span class="chip chip--info" style="margin-inline-start:4px">${fa(store.compare.size)}</span>
     </button>
+    <button class="btn btn--sm btn--primary" type="button" data-action="download-xlsx"
+      title="خروجی اکسل سه‌برگه‌ای: محصولات فیلترشده یا سبدهای مقایسه + شاخص‌های کلان + خلاصه">
+      <span aria-hidden="true">▦</span> خروجی اکسل
+    </button>
     <button class="btn btn--sm" type="button" data-action="open-data">مرکز داده</button>
     <button class="btn btn--sm" type="button" data-action="open-method">روش امتیازدهی</button>
   </div>`;
@@ -382,6 +386,25 @@ export function cardHTML(p) {
   const rateDisplay =
     p.rateKind === 'none' || p.rateKnown === false ? '—' : faPercent(p.rate);
 
+  // نرخ مهم‌ترین عدد یک محصول بانکی است؛ پس مثل یک عنوان بزرگ نشان داده می‌شود،
+  // نه یک سلول هم‌سایز با سقف و مدت. برچسب هم دقیق‌تر شد: «کارمزد سالانه» با
+  // «نرخ سود سالانه» یکی نیست و کاربر را گمراه می‌کرد.
+  const rateLabel =
+    p.rateKnown === false
+      ? p.rateLabel || 'نرخ نامشخص'
+      : p.rateKind === 'none'
+        ? 'بدون نرخ'
+        : p.rateKind === 'fee'
+          ? 'کارمزد سالانه'
+          : p.category === 'deposits' || p.category === 'funds'
+            ? 'نرخ سود سالانه'
+            : 'نرخ سالانه';
+
+  // برچسب‌های تکمیلی فقط تا سقف معین نمایش داده می‌شوند؛ از سه‌تا بیشتر،
+  // شمارنده می‌آید تا کارت‌های هم‌ردیف کش نیایند و اسکن عمودی ممکن شود.
+  const visibleTags = (p.tags || []).slice(0, 2);
+  const extraTags = Math.max(0, (p.tags || []).length - visibleTags.length);
+
   const real =
     result.realRate != null
       ? `<span class="chip ${realTone(p, result.realRate)}" title="${realTitle(p)}">
@@ -396,7 +419,7 @@ export function cardHTML(p) {
 
   return `
   <article class="card ${compared ? 'is-compared' : ''} ${p.stale ? 'is-stale' : ''}"
-    style="--card-accent:${meta.color}22" data-card="${esc(p.id)}">
+    style="--card-accent:${meta.color}22;--card-c:${meta.color}" data-card="${esc(p.id)}">
     <header class="card-head">
       <span class="card-logo" aria-hidden="true">${esc(initials)}</span>
       <div class="card-title">
@@ -415,28 +438,31 @@ export function cardHTML(p) {
       </div>
     </header>
 
-    <div class="metrics">
-      <div class="metric">
-        <span class="k">${p.category === 'deposits' || p.category === 'funds' ? 'نرخ سود' : 'نرخ / کارمزد'}</span>
+    <div class="rate-hero">
+      <div class="rate-main">
         <span class="v num">${rateDisplay}</span>
+        <span class="k">${esc(rateLabel)}</span>
       </div>
-      <div class="metric">
-        <span class="k">سقف / دامنه</span>
-        <span class="v">${esc(fa(p.amountLabel || faToman(p.maxAmount) || 'نامشخص'))}</span>
-      </div>
-      <div class="metric">
-        <span class="k">مدت</span>
-        <span class="v">${esc(fa(p.termLabel || (p.termMonths ? `${fa(p.termMonths)} ماه` : 'نامشخص')))}</span>
+      <div class="rate-side">
+        <div class="rate-stat">
+          <span class="k">سقف / دامنه</span>
+          <span class="v">${esc(fa(p.amountLabel || faToman(p.maxAmount) || 'نامشخص'))}</span>
+        </div>
+        <div class="rate-stat">
+          <span class="k">مدت</span>
+          <span class="v">${esc(fa(p.termLabel || (p.termMonths ? `${fa(p.termMonths)} ماه` : 'نامشخص')))}</span>
+        </div>
       </div>
     </div>
 
-    <p class="card-desc">${esc(p.desc)}</p>
+    <p class="card-desc" title="${esc(p.desc)}">${esc(p.desc)}</p>
 
     <div class="tags">
       <span class="chip" style="padding:1px 8px">${esc(collateralLabel[p.collateralKind] ?? 'نامشخص')}</span>
       ${contractChip}
       ${real}
-      ${(p.tags || []).slice(0, 3).map((t) => `<span class="tag">${esc(t)}</span>`).join('')}
+      ${visibleTags.map((t) => `<span class="tag">${esc(t)}</span>`).join('')}
+      ${extraTags > 0 ? `<span class="tag tag-more" title="${esc((p.tags || []).slice(visibleTags.length).join(' · '))}">+${fa(extraTags)}</span>` : ''}
     </div>
 
     <footer class="card-foot">
@@ -504,22 +530,41 @@ export function rankHTML(rows) {
     </div>
 
     <div class="rank-list">
-      ${top
-        .map((p, i) => {
-          const result = resultOf(p.id);
-          return `<div class="rank-item">
+      ${
+        /* ستون امتیاز را روی گسترهٔ همین فهرست نرمال می‌کنیم: وقتی هشت رکورد
+           برتر همه بین ۶۷ تا ۷۰ امتیاز دارند، نوار خام همه تقریباً پُر می‌شود و
+           تفاوت رتبه‌ها دیده نمی‌شود. با نگاشت min-max به بازهٔ ۱۸–۱۰۰، تفاوت‌ها
+           قابل دیدن می‌شود؛ در حالت تساوی کامل، همه پُر می‌مانند و گمراه‌کننده
+           نیست. */
+        (() => {
+          const scores = top.map((p) => resultOf(p.id).score);
+          const min = Math.min(...scores);
+          const max = Math.max(...scores);
+          const span = max - min;
+          return top
+            .map((p, i) => {
+              const result = resultOf(p.id);
+              const width = span > 0 ? 18 + ((result.score - min) / span) * 82 : 100;
+              const ratePart =
+                p.rateKnown === false || p.rateKind === 'none'
+                  ? 'نرخ نامشخص'
+                  : `${p.rateKind === 'fee' ? 'کارمزد' : 'نرخ'} ${faPercent(p.rate)}`;
+              return `<div class="rank-item">
             <span class="pos num">${fa(i + 1)}</span>
             <div class="body">
               <div class="top">
                 <span class="nm">${esc(p.bank)} — ${esc(p.product)}</span>
                 <span class="sc num">${fa(result.score)}</span>
               </div>
-              <div class="bar"><i style="width:${result.score}%"></i></div>
+              <div class="bar"><i style="width:${width.toFixed(1)}%"></i></div>
+              <div class="rk-meta"><span>${esc(ratePart)}</span>${p.maxAmount ? `<span>سقف ${esc(faToman(p.maxAmount))}</span>` : ''}</div>
             </div>
             <button class="btn btn--sm" type="button" data-action="detail" data-id="${esc(p.id)}">جزئیات</button>
           </div>`;
-        })
-        .join('')}
+            })
+            .join('');
+        })()
+      }
     </div>
   </section>`;
 }
@@ -634,6 +679,7 @@ export function compareHTML() {
         </p>
       </div>
       <div class="row" style="gap:var(--sp-2)">
+        <button class="btn btn--sm btn--primary" type="button" data-action="download-xlsx">خروجی اکسل</button>
         <button class="btn btn--sm" type="button" data-action="download-csv">خروجی CSV</button>
         <button class="btn btn--sm btn--danger" type="button" data-action="clear-compare">پاک‌کردن</button>
       </div>
@@ -1228,6 +1274,7 @@ export function dataModalHTML() {
     <div class="row" style="margin-block-start:var(--sp-3)">
       <button class="btn btn--primary btn--sm" type="button" data-action="import-json">بارگذاری JSON</button>
       <button class="btn btn--sm" type="button" data-action="download-json">خروجی JSON فعلی</button>
+      <button class="btn btn--sm btn--primary" type="button" data-action="download-xlsx">خروجی اکسل</button>
       <button class="btn btn--sm" type="button" data-action="download-csv">خروجی CSV</button>
       <button class="btn btn--sm btn--danger" type="button" data-action="reset-local">پاک‌کردن داده محلی</button>
     </div>

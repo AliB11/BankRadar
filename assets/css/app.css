@@ -808,11 +808,25 @@ input[type='range']::-moz-range-thumb {
 }
 
 /* ---------- ۱۰. برگه‌های دسته‌بندی ---------- */
+/*
+ * نوار دسته‌ها هنگام اسکرول در فهرست‌های بلند می‌چسبد (زیر نوار بالا) تا
+ * جابه‌جایی میان دسته‌ها بدون بازگشت به بالای صفحه ممکن باشد. پس‌زمینهٔ
+ * نیمه‌شفاف با blur، خوانایی محتوا را در حالت عبور حفظ می‌کند.
+ */
 .cat-tabs {
+  position: sticky;
+  top: var(--header-h);
+  z-index: 50;
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: var(--sp-2);
   margin-block-end: var(--sp-4);
+  padding-block: var(--sp-2);
+  margin-block-start: calc(-1 * var(--sp-2));
+  background: rgba(6, 9, 20, 0.72);
+  border-radius: var(--r-md);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
 }
 .cat-tab {
   display: flex;
@@ -972,34 +986,61 @@ input[type='range']::-moz-range-thumb {
 .score-ring .txt b { display: block; font-size: var(--fs-lg); font-weight: 800; letter-spacing: -0.03em; }
 .score-ring .txt span { font-size: 9px; color: var(--text-4); }
 
-/* معیارها */
-.metrics {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--sp-2);
+/*
+ * rate-hero — نرخ به‌عنوان اصلی‌ترین عدد کارت.
+ *
+ * پیش‌تر نرخ، سقف و مدت سه سلول هم‌اندازه بودند و نرخِ تعیین‌کنندهٔ تصمیم در
+ * انبوهی از برچسب‌های ریز گم می‌شد. حالا نرخ درشت‌نویس با رنگ دسته نمایش
+ * داده می‌شود و سقف/مدت به یک ستون فرعی کنارش می‌روند؛ اسکن عمودی فهرست
+ * (مقایسهٔ چشمی نرخ‌ها) ممکن می‌شود.
+ */
+.rate-hero {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: var(--sp-4);
   margin-block: var(--sp-4);
-}
-.metric {
-  padding: var(--sp-3);
-  background: rgba(4, 7, 16, 0.5);
+  padding: var(--sp-3) var(--sp-4);
+  background: rgba(4, 7, 16, 0.45);
   border: 1px solid var(--hairline);
-  border-radius: var(--r-sm);
-  min-width: 0;
+  border-radius: var(--r-md);
 }
-.metric .k {
-  display: block;
-  font-size: 10px;
-  color: var(--text-4);
-  margin-block-end: 3px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.rate-main { display: grid; align-content: center; gap: 2px; min-width: 0; }
+.rate-main .v {
+  font-size: var(--fs-3xl);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--card-c, var(--brand));
 }
-.metric .v {
+.rate-main .k { font-size: var(--fs-3xs); color: var(--text-4); }
+.rate-side {
+  display: grid;
+  align-content: center;
+  gap: var(--sp-1);
+  flex-shrink: 0;
+  max-width: 58%;
+}
+.rate-stat {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--sp-3);
+}
+.rate-stat .k { font-size: 10px; color: var(--text-4); white-space: nowrap; }
+.rate-stat .v {
   font-size: var(--fs-2xs);
   font-weight: 700;
   line-height: 1.55;
+  text-align: end;
   word-break: break-word;
+  /* حداکثر دو خط: متن‌های بلند سقف («از ۱ میلیون تا ۲۵ میلیارد تومان») کارت را
+     نمی‌کِشند؛ متن کامل در کشوی جزئیات هست. */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .card-desc {
@@ -1023,6 +1064,12 @@ input[type='range']::-moz-range-thumb {
   border: 1px solid var(--accent-line);
   color: #d5dbff;
   white-space: nowrap;
+}
+.tag-more {
+  background: transparent;
+  border-style: dashed;
+  color: var(--text-4);
+  cursor: help;
 }
 
 .card-foot {
@@ -1081,6 +1128,14 @@ input[type='range']::-moz-range-thumb {
 .rank-item .top .nm { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .rank-item .top .sc { font-weight: 800; color: var(--brand); flex-shrink: 0; }
 .rank-item .bar { height: 5px; border-radius: var(--r-full); background: rgba(255, 255, 255, 0.07); overflow: hidden; }
+.rank-item .rk-meta {
+  display: flex;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+  font-size: 10px;
+  color: var(--text-4);
+  margin-block-start: 4px;
+}
 .rank-item .bar i {
   display: block; height: 100%;
   border-radius: inherit;
@@ -1504,10 +1559,13 @@ table.compare .prod-bank { color: var(--text-4); font-size: var(--fs-3xs); }
 @media print {
   body { background: #fff; color: #000; }
   body::before, body::after { display: none; }
-  .topbar, .filters, .toolbar, .card-actions, .drawer, .modal-backdrop, .toast-stack, .footer { display: none !important; }
+  .topbar, .filters, .toolbar, .card-actions, .drawer, .modal-backdrop, .toast-stack, .footer, .cat-tabs { display: none !important; }
   .panel, .card { border: 1px solid #ccc; box-shadow: none; background: #fff; }
+  .rate-hero, .rank-item { background: #fff; }
   .main-grid { grid-template-columns: 1fr; }
   .hero h1 { -webkit-text-fill-color: #000; color: #000; }
+  .card { break-inside: avoid; }
+  .table-wrap { overflow: visible; }
 }
 
 /* مقادیر فرضی در جدول مقایسه (سقف مشروط) — از مقدار قطعی قابل تشخیص باشد */
@@ -1515,3 +1573,104 @@ table.compare .prod-bank { color: var(--text-4); font-size: var(--fs-3xs); }
   color: var(--text-4);
   font-style: italic;
 }
+
+/* ---------- ۲۵. تم روشن ---------- */
+/*
+ * تم روشن به‌صورت لایهٔ بازنویسی روی همان توکن‌هاست، نه قالب دوم:
+ * تیره پیش‌فرض می‌ماند (html بدون data-theme)، و انتخاب کاربر با کلید
+ * bankradar.v2.bank-radar-theme در اسکریپت ابتدای index.html زودتر از
+ * نخستین رنگ‌آمیزی اعمال می‌شود.
+ *
+ * توجه: توکن‌های ink-* عمداً بازنویسی نمی‌شوند — دکمهٔ اصلی متن تیره روی
+ * گرین سبک دارد و در تم روشن هم باید تیره بماند.
+ */
+html[data-theme='light'] {
+  color-scheme: light;
+  --surface-1: rgba(13, 20, 36, 0.04);
+  --surface-2: rgba(13, 20, 36, 0.07);
+  --surface-3: rgba(13, 20, 36, 0.1);
+  --surface-4: rgba(13, 20, 36, 0.15);
+  --hairline: rgba(13, 20, 36, 0.14);
+  --hairline-strong: rgba(13, 20, 36, 0.26);
+  --text-1: #0e1626;
+  --text-2: #313e5b;
+  --text-3: #526181;
+  --text-4: #7585a4;
+  --brand: #0b9d72;
+  --brand-dim: #087c5a;
+  --brand-soft: rgba(11, 157, 114, 0.11);
+  --brand-line: rgba(11, 157, 114, 0.4);
+  --accent: #5060e6;
+  --accent-soft: rgba(80, 96, 230, 0.1);
+  --accent-line: rgba(80, 96, 230, 0.38);
+  --warn: #9a6400;
+  --warn-soft: rgba(199, 138, 16, 0.13);
+  --warn-line: rgba(199, 138, 16, 0.42);
+  --danger: #cc2b4b;
+  --danger-soft: rgba(204, 43, 75, 0.09);
+  --danger-line: rgba(204, 43, 75, 0.38);
+  --info: #0c7ec2;
+  --info-soft: rgba(12, 126, 194, 0.1);
+  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.07);
+  --shadow-md: 0 8px 24px -8px rgba(16, 24, 40, 0.16);
+  --shadow-lg: 0 24px 60px -20px rgba(16, 24, 40, 0.22);
+  --shadow-xl: 0 40px 100px -30px rgba(16, 24, 40, 0.28);
+  --glow-brand: 0 0 0 1px var(--brand-line), 0 12px 40px -14px rgba(11, 157, 114, 0.35);
+}
+
+html[data-theme='light'] body { background: #eef1f7; }
+html[data-theme='light'] body::before {
+  background:
+    radial-gradient(ellipse 80% 55% at 82% -8%, rgba(80, 96, 230, 0.1), transparent 60%),
+    radial-gradient(ellipse 70% 50% at 12% 4%, rgba(11, 157, 114, 0.09), transparent 58%),
+    radial-gradient(ellipse 100% 60% at 50% 108%, rgba(80, 96, 230, 0.06), transparent 62%),
+    linear-gradient(178deg, #f7f9fd 0%, #eef1f7 55%, #e3e8f2 100%);
+}
+html[data-theme='light'] body::after { opacity: 0.22; }
+html[data-theme='light'] a:hover { color: var(--brand-dim); }
+html[data-theme='light'] ::selection { color: var(--text-1); }
+html[data-theme='light'] .topbar { background: rgba(248, 250, 253, 0.82); }
+html[data-theme='light'] .cat-tabs { background: rgba(248, 250, 253, 0.75); }
+html[data-theme='light'] ::-webkit-scrollbar-track { background: rgba(13, 20, 36, 0.04); }
+html[data-theme='light'] ::-webkit-scrollbar-thumb { background: rgba(13, 20, 36, 0.26); background-clip: padding-box; }
+html[data-theme='light'] ::-webkit-scrollbar-thumb:hover { background: rgba(13, 20, 36, 0.4); background-clip: padding-box; }
+
+/* متن‌های سفارشی که برای پس‌زمینهٔ تیره ساخته شده بودند */
+html[data-theme='light'] .chip--good { color: #075c40; }
+html[data-theme='light'] .chip--warn { color: #6e4a00; }
+html[data-theme='light'] .chip--bad { color: #8f1b31; }
+html[data-theme='light'] .chip--info { color: #2b39ab; }
+html[data-theme='light'] .chip--cat-deposits { color: #075c40; }
+html[data-theme='light'] .chip--cat-credit { color: #2b39ab; }
+html[data-theme='light'] .chip--cat-loans { color: #6e4a00; }
+html[data-theme='light'] .chip--cat-loyalty { color: #92274d; }
+html[data-theme='light'] .chip--cat-funds { color: #0c6f96; }
+html[data-theme='light'] .tag { color: #3b46b8; }
+html[data-theme='light'] .btn--danger { color: #8f1b31; }
+html[data-theme='light'] .freshness.good { color: #07714f; }
+
+/* سطح‌های تیرهٔ هاردکد مؤلفه‌ها */
+html[data-theme='light'] .rate-hero { background: rgba(255, 255, 255, 0.72); }
+html[data-theme='light'] .rank-item { background: rgba(255, 255, 255, 0.6); }
+html[data-theme='light'] .rank-item .bar { background: rgba(13, 20, 36, 0.1); }
+html[data-theme='light'] .score-ring .track { stroke: rgba(13, 20, 36, 0.12); }
+html[data-theme='light'] .macro-cell { background: rgba(255, 255, 255, 0.75); }
+html[data-theme='light'] .health-row { background: rgba(255, 255, 255, 0.7); }
+html[data-theme='light'] .spec { background: rgba(255, 255, 255, 0.65); }
+html[data-theme='light'] .table-wrap { background: #fff; }
+html[data-theme='light'] table.compare thead th { background: #eef1f7; }
+html[data-theme='light'] table.compare th[scope='row'] { background: #f4f6fb; }
+html[data-theme='light'] .ladder-track { background: rgba(13, 20, 36, 0.07); }
+html[data-theme='light'] .progress { background: rgba(13, 20, 36, 0.1); }
+html[data-theme='light'] .search-suggestions { background: rgba(252, 253, 255, 0.98); }
+html[data-theme='light'] .modal { background: linear-gradient(160deg, #f8fafd, #eef1f7); }
+html[data-theme='light'] .toast { background: #fff; }
+html[data-theme='light'] .pill-live { color: var(--brand-dim); }
+html[data-theme='light'] .real-rate-callout b { color: #8f1b31; }
+html[data-theme='light'] .hero h1 {
+  background: linear-gradient(112deg, #10233f 8%, #0b7c5c 52%, #3c4cc0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+html[data-theme='light'] .drawer { background: linear-gradient(160deg, #f7f9fc, #eef1f7); }

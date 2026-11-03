@@ -145,7 +145,7 @@ export function freshnessGrid(dates, months = 12) {
         return `<span title="${esc(b.key)} — ${fa(b.count)} رکورد"
           style="flex:1;height:${h.toFixed(0)}px;border-radius:4px;
           background:rgba(47,224,168,${alpha.toFixed(2)});
-          border:1px solid rgba(255,255,255,.07)"></span>`;
+          border:1px solid var(--hairline)"></span>`;
       })
       .join('')}
   </div>`;
