@@ -21,7 +21,7 @@
  */
 
 import fs from 'node:fs/promises';
-import { get } from '../lib/http.mjs';
+import { fetchResilient, summarizeAttempts } from '../lib/resilience.mjs';
 import {
   normalizeText,
   foldForMatch,
@@ -379,11 +379,16 @@ const SCHEME_SUFFIXES = new Map(
   }).map(([k, v]) => [foldForMatch(k), v]),
 );
 
-const sourceRef = () => ({
+/**
+ * ارجاع منبع. تاریخ «کنترل» همان تاریخ مشاهدهٔ محتواست؛ اگر محتوا از آرشیو
+ * آمده باشد، تاریخ snapshot می‌نشیند نه تاریخ امروز — وگرنه دادهٔ سه‌هفته‌کهنه
+ * «تازه‌دیده‌شده» جا زده می‌شود.
+ */
+const sourceRef = (checked = today()) => ({
   kind: 'press',
   title: DGSHAHR_TITLE,
   url: DGSHAHR_URL,
-  checked: today(),
+  checked,
 });
 
 /**
@@ -392,7 +397,7 @@ const sourceRef = () => ({
  * @param {{existing?:object[], banks?:object[]}} opts
  */
 export function mapToProducts(parsed, opts = {}) {
-  const { existing = [], banks = [] } = opts;
+  const { existing = [], banks = [], observedAt = today() } = opts;
   const products = [];
   const seenIds = new Set();
 
@@ -475,9 +480,9 @@ export function mapToProducts(parsed, opts = {}) {
       confidence: 'medium',
       autoDiscovered: true,
       lastUpdated: DGSHAHR_UPDATED,
-      lastSeen: today(),
-      lastVerified: today(),
-      source: sourceRef(),
+      lastSeen: observedAt,
+      lastVerified: observedAt,
+      source: sourceRef(observedAt),
     });
     seenIds.add(id);
   }
@@ -580,9 +585,9 @@ export function mapToProducts(parsed, opts = {}) {
       confidence: 'medium',
       autoDiscovered: true,
       lastUpdated: DGSHAHR_UPDATED,
-      lastSeen: today(),
-      lastVerified: today(),
-      source: sourceRef(),
+      lastSeen: observedAt,
+      lastVerified: observedAt,
+      source: sourceRef(observedAt),
     });
     seenIds.add(id);
   }
@@ -600,14 +605,39 @@ export function mapToProducts(parsed, opts = {}) {
  * @param {{html?:string, url?:string, existing?:object[], banks?:object[], log?:Function}} opts
  */
 export async function collect(opts = {}) {
-  const { url = DGSHAHR_URL, html: injected, existing = [], banks = [], log = () => {} } = opts;
+  const {
+    url = DGSHAHR_URL,
+    html: injected,
+    existing = [],
+    banks = [],
+    log = () => {},
+    now = () => new Date(),
+  } = opts;
 
   let html = injected ?? null;
+  let via = html ? 'injected' : 'direct';
+  let observedISO = null;
+  let chain = 'درون‌ریزی محلی';
+
   if (!html && process.env.DGSHAHR_HTML_FILE) {
     html = await fs.readFile(process.env.DGSHAHR_HTML_FILE, 'utf8');
+    via = 'file';
   }
   if (!html) {
-    html = await get(url, { timeout: 30_000, retries: 2 });
+    // دیجی‌شهر از بیرون ایران صفحهٔ «فیلترشکن خود را خاموش کنید» می‌دهد
+    // (آزمون ۱۲ آبان ۱۴۰۵). زنجیره: اصلی → آرشیو اینترنت.
+    // پروکسی متن عمداً خاموش است: پارسر به ساختار جدول HTML نیاز دارد.
+    const page = await fetchResilient(url, {
+      allowWayback: true,
+      allowProxy: false,
+      timeout: 30_000,
+      retries: 2,
+      now,
+    });
+    html = page.text;
+    via = page.via;
+    observedISO = page.observedAt;
+    chain = summarizeAttempts(page.attempts);
   }
 
   const parsed = parseDgshahrHtml(html);
@@ -615,14 +645,20 @@ export async function collect(opts = {}) {
     throw new Error('هیچ جدول نرخی در صفحه دیجی‌شهر پیدا نشد');
   }
 
-  const products = mapToProducts(parsed, { existing, banks });
+  // تاریخ مشاهده = تاریخ محتوا؛ برای snapshot آرشیو، همان روز آرشیو
+  const observedAt = observedISO ? String(observedISO).slice(0, 10) : today();
+  const products = mapToProducts(parsed, { existing, banks, observedAt });
   log(
-    `دیجی‌شهر: ${byCount(parsed.tierRows)} پله نرخ ترجیحی و ${parsed.schemeRows.length} طرح ویژه → ${byCount(products)} محصول`,
+    `دیجی‌شهر: ${byCount(parsed.tierRows)} پله نرخ ترجیحی و ${parsed.schemeRows.length} طرح ویژه → ${byCount(products)} محصول (${via})`,
   );
 
   return {
     source: 'dgshahr',
     url,
+    via,
+    observedAt,
+    observedISO,
+    chain,
     products,
     tierRows: parsed.tierRows.length,
     schemeRows: parsed.schemeRows.length,

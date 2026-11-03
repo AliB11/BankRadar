@@ -16,6 +16,8 @@
     "sync:weekly:offline": "node tools/sync-weekly.mjs --offline",
     "changelog": "node tools/generate-changelog.mjs",
     "transparency": "node tools/lib/transparency.mjs",
+    "health": "node tools/source-health.mjs",
+    "crosscheck": "node tools/collect.mjs --only=crosscheck",
     "bundle": "node tools/build-bundle.mjs",
     "build:public": "node tools/build-public.mjs",
     "build": "npm run collect:offline && npm run validate && npm run build:public",

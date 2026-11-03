@@ -1115,6 +1115,11 @@ export function dataModalHTML() {
     ${weekly?.generatedAt ? `<p style="font-size:var(--fs-3xs);color:var(--text-4)">آخرین گزارش هفتگی: ${esc(faDate(String(weekly.generatedAt).slice(0, 10)))}؛ آمار تاریخی آن ممکن است با داده‌های کنونی متفاوت باشد.</p>` : ''}
     <div class="spec-grid">
       <div class="spec"><span class="k">آخرین اجرای خط لوله</span><span class="v">${store.meta?.lastRun ? esc(faDate(String(store.meta.lastRun).slice(0, 10))) : 'نامشخص'}</span></div>
+      ${
+        store.meta?.freshness?.total
+          ? `<div class="spec"><span class="k">تازگی داده (۷ روز)</span><span class="v num">${fa(Math.round(((store.meta.freshness.d7 ?? 0) / store.meta.freshness.total) * 100))}٪<span style="color:var(--text-4);font-size:var(--fs-3xs)"> · میانه ${fa(store.meta.freshness.medianDays ?? 0)} روز</span></span></div>`
+          : ''
+      }
       <div class="spec"><span class="k">نوع اجرای خط لوله</span><span class="v">${esc(({ full: 'گردآوری کامل', 'weekly-sync': 'پایش هفتگی', 'offline-audit': 'ممیزی آفلاین', 'external-import': 'ورود داده خارجی', offline: 'آفلاین' })[store.meta?.lastRunMode] ?? store.meta?.lastRunMode ?? 'نامشخص')}</span></div>
       <div class="spec"><span class="k">تاریخ تولید داده محصولات</span><span class="v">${store.meta?.generatedAt ? esc(faDate(String(store.meta.generatedAt).slice(0, 10))) : 'نامشخص'}</span></div>
       <div class="spec"><span class="k">منبع بارگذاری</span><span class="v">${store.meta?.loadSource === 'json' ? 'JSON تازه' : 'بسته درون‌خطی'}</span></div>
@@ -1130,9 +1135,22 @@ export function dataModalHTML() {
         ? `<div class="health-list">
             ${sources
               .map((src) => {
-                const partial = src.ok && Number.isFinite(src.targets) && Number.isFinite(src.reachable) && src.reachable < src.targets;
-                const tone = !src.ok ? 'chip--bad' : partial ? 'chip--warn' : 'chip--good';
-                const label = !src.ok ? 'ناموفق' : partial ? `دسترسی محدود: ${fa(src.reachable)} از ${fa(src.targets)}` : 'اجرا شد';
+                // سه حالت جدا: ناموفق، موفق از مسیر جایگزین (آرشیو/پروکسی)، و موفقِ مستقیم.
+                // «دسترسی محدود» و «بدون سیگنال تازه» با سبزِ کامل اشتباه گرفته نمی‌شوند.
+                const viaArchive = src.via === 'wayback';
+                const viaFallback = src.degraded === true || viaArchive || src.via === 'proxy';
+                const partial = src.ok && Number.isFinite(src.targets) && Number.isFinite(src.reached ?? src.reachable) && (src.reached ?? src.reachable) < src.targets;
+                const empty = Number(src.empty) > 0;
+                const tone = !src.ok ? 'chip--bad' : partial || viaFallback || empty ? 'chip--warn' : 'chip--good';
+                const label = !src.ok
+                  ? 'ناموفق'
+                  : viaFallback
+                    ? `از مسیر جایگزین${viaArchive ? ' (آرشیو)' : ''}`
+                    : empty
+                      ? `بدون سیگنال تازه: ${fa(src.empty)} هدف`
+                      : partial
+                        ? `دسترسی محدود: ${fa(src.reachable)} از ${fa(src.targets)}`
+                        : 'اجرا شد';
                 return `<div class="health-row">
                   <span class="lbl">${esc(src.name)}</span>
                   <span class="chip ${tone}">${label}${src.parsed != null ? ` · ${fa(src.parsed)} محصول` : ''}</span>

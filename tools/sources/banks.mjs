@@ -7,25 +7,33 @@
  * شکست‌ها در گزارش سلامت ثبت می‌شوند.
  */
 
-import { get, pool, runSource, unwrapPool } from '../lib/http.mjs';
+import { pool, runSource, unwrapPool } from '../lib/http.mjs';
+import { fetchResilient, summarizeAttempts } from '../lib/resilience.mjs';
 import { normalizeText, stripTags, parseRates, parseAllAmounts } from '../lib/parse.mjs';
 
 /**
- * فهرست اهداف پایش. هر هدف یک برچسب، نشانی و ترتیب اولویت دارد.
+ * فهرست اهداف پایش. هر هدف یک برچسب، نشانی، آینه‌های جایگزین و ترتیب اولویت دارد.
  * `expect`: نرخ‌هایی که در صورت یافت‌شدن معتبر تلقی می‌شوند (بازه مجاز).
+ * `mirrors`: نشانی‌های جایگزین همان نهاد (دامنهٔ دیگر یا مسیر تازه) — پیش از
+ *   آرشیو امتحان می‌شوند.
+ * `wayback`: اگر true، در صورت بسته‌بودن مسیر مستقیم از snapshot آرشیو استفاده
+ *   می‌شود (با تاریخ خود snapshot، نه تاریخ امروز).
+ *
+ * درس ممیزی ۱۲ آبان ۱۴۰۵: نشانی‌های `www.cbi.ir/simplelist/*` حذف شده‌اند و با
+ * کد ۲۰۰ متن «Page Not Found» برمی‌گرداندند؛ بنابراین «موفقِ بی‌نرخ» ثبت
+ * می‌شدند. نشانی درست نرخ‌های سیاستی `PolicyRates/policyrates_fa.aspx` است.
  */
 export const TARGETS = [
-  { id: 'cbi-rates', label: 'بانک مرکزی — نرخ‌های سود', url: 'https://www.cbi.ir/simplelist/2088.aspx', kind: 'regulator', expect: [1, 35] },
-  { id: 'cbi-circulars', label: 'بانک مرکزی — بخشنامه‌ها', url: 'https://www.cbi.ir/simplelist/1466.aspx', kind: 'regulator', expect: [1, 35] },
-  { id: 'melli-deposit', label: 'بانک ملی ایران — سپرده‌ها', url: 'https://bmi.ir/fa/deposit', kind: 'bank', expect: [1, 35] },
-  { id: 'mellat-deposit', label: 'بانک ملت — سپرده‌ها', url: 'https://bankmellat.ir/deposits', kind: 'bank', expect: [1, 35] },
-  { id: 'tejarat-deposit', label: 'بانک تجارت — سپرده‌ها', url: 'https://tejaratbank.ir/دپارتمان-حساب-سپرده', kind: 'bank', expect: [1, 35] },
+  { id: 'cbi-policy-rates', label: 'بانک مرکزی — نرخ سود سیاستی', url: 'https://www.cbi.ir/PolicyRates/policyrates_fa.aspx', kind: 'regulator', expect: [1, 35] },
+  { id: 'melli-deposit', label: 'بانک ملی ایران — سپرده‌ها', url: 'https://bmi.ir/fa/deposit', kind: 'bank', expect: [1, 35], mirrors: ['https://bank-melli.ir/fa/deposit'] },
+  { id: 'mellat-deposit', label: 'بانک ملت — سپرده‌ها', url: 'https://bankmellat.ir/deposits', kind: 'bank', expect: [1, 35], mirrors: ['https://www.bankmellat.ir/deposits'] },
+  { id: 'tejarat-deposit', label: 'بانک تجارت — سپرده‌ها', url: 'https://tejaratbank.ir/دپارتمان-حساب-سپرده', kind: 'bank', expect: [1, 35], mirrors: ['https://www.tejaratbank.ir/'] },
   { id: 'saderat-deposit', label: 'بانک صادرات — سپرده‌ها', url: 'https://www.bsi.ir/Services/Deposits', kind: 'bank', expect: [1, 35] },
-  { id: 'sepah-deposit', label: 'بانک سپه — سپرده‌ها', url: 'https://banksepah.ir/سپرده', kind: 'bank', expect: [1, 35] },
+  { id: 'sepah-deposit', label: 'بانک سپه — سپرده‌ها', url: 'https://banksepah.ir/سپرده', kind: 'bank', expect: [1, 35], mirrors: ['https://www.banksepah.ir/'] },
   { id: 'eghtesad-novin', label: 'بانک اقتصاد نوین', url: 'https://www.enbank.ir/', kind: 'bank', expect: [1, 35] },
-  { id: 'parsian', label: 'بانک پارسیان', url: 'https://parsian-bank.ir/', kind: 'bank', expect: [1, 35] },
+  { id: 'parsian', label: 'بانک پارسیان', url: 'https://parsian-bank.ir/', kind: 'bank', expect: [1, 35], mirrors: ['https://www.parsian-bank.ir/'] },
   { id: 'pasargad', label: 'بانک پاسارگاد', url: 'https://www.bpi.ir/', kind: 'bank', expect: [1, 35] },
-  { id: 'saman', label: 'بانک سامان', url: 'https://www.sb24.ir/', kind: 'bank', expect: [1, 35] },
+  { id: 'saman', label: 'بانک سامان', url: 'https://www.sb24.ir/', kind: 'bank', expect: [1, 35], mirrors: ['https://samanbank.ir/'] },
   { id: 'refah', label: 'بانک رفاه کارگران', url: 'https://www.refah-bank.ir/', kind: 'bank', expect: [1, 35] },
   { id: 'maskan', label: 'بانک مسکن', url: 'https://www.bank-maskan.ir/', kind: 'bank', expect: [1, 35] },
   { id: 'karafarin', label: 'بانک کارآفرین', url: 'https://www.karafarinbank.ir/', kind: 'bank', expect: [1, 35] },
@@ -73,21 +81,56 @@ export function extractBankSignals(html, expect = [1, 35]) {
 }
 
 /**
+ * داوری دربارهٔ «سیگنال واقعی» یک هدف.
+ *
+ * سه حالت را از هم جدا می‌کند تا گزارش سلامت صادق بماند:
+ *   ۱. سیگنال تازه (trustworthy)
+ *   ۲. دسترسی بود ولی سیگنالی نبود (empty) — صفحهٔ خالی یا «Page Not Found»
+ *   ۳. سیگنال از snapshot کهنهٔ آرشیو (staleSnapshot) — شاهد امروز نیست
+ *
+ * @param {{rates?:number[], keywords?:string[], ageDays?:number|null}} input
+ */
+export function assessTargetSignal({ rates = [], keywords = [], ageDays = null } = {}) {
+  const hasSignal = rates.length > 0;
+  const staleSnapshot = ageDays != null && ageDays > 90;
+  return {
+    hasSignal,
+    staleSnapshot,
+    trustworthy: hasSignal && !staleSnapshot,
+    weak: !hasSignal && keywords.length > 0,
+  };
+}
+
+/**
  * واکشی همه اهداف بانکی.
  * @param {{concurrency?:number, log?:Function, targets?:typeof TARGETS}} [opts]
  */
 export async function collect(opts = {}) {
-  const { concurrency = 4, log = () => {}, targets = TARGETS } = opts;
+  const { concurrency = 4, log = () => {}, targets = TARGETS, now = () => new Date() } = opts;
 
   const tasks = targets.map((target) => async () => {
     const result = await runSource(target.id, async () => {
-      const html = await get(target.url, {
+      // زنجیرهٔ جایگزین: اصلی → آینه‌ها → آرشیو → پروکسی متن
+      const page = await fetchResilient(target.url, {
+        mirrors: target.mirrors ?? [],
+        allowWayback: target.wayback !== false,
+        allowProxy: target.allowProxy === true,
         timeout: 25_000,
         retries: 1,
         headers: { Referer: 'https://www.google.com/' },
+        now,
       });
-      const signals = extractBankSignals(html, target.expect);
-      return { ...signals, bytes: html.length };
+      const signals = extractBankSignals(page.text, target.expect);
+      return {
+        ...signals,
+        bytes: page.text.length,
+        via: page.via,
+        resolvedUrl: page.resolvedUrl,
+        observedAt: page.observedAt,
+        ageDays: page.ageDays,
+        degraded: page.degraded,
+        chain: summarizeAttempts(page.attempts),
+      };
     });
     return { target, ...result };
   });
@@ -102,18 +145,46 @@ export async function collect(opts = {}) {
 
   for (const r of results) {
     if (r.ok && r.data) {
+      // «دسترسی موفق» با «سیگنال واقعی» یکی نیست. پیش‌تر هدفی که صفحهٔ
+      // «Page Not Found» یا صفحهٔ خالی برمی‌گرداند هم ok:true می‌گرفت و
+      // سلامت منابع را سبز نشان می‌داد (یافتهٔ F1 در ممیزی ۱۲ آبان ۱۴۰۵).
+      const rates = r.data.rates ?? [];
+      const keywords = r.data.keywords ?? [];
+      // snapshot کهنه «شاهد امروز» نیست: نرخ یک سال پیش، نرخ امروز را اثبات
+      // نمی‌کند. آستانه ۹۰ روز انتخاب شده تا تعطیلات و سرویس‌های کم‌بازدید را
+      // پوشش دهد، ولی داده فصلی/سالانه را «تازه» جا نزند.
+      const { hasSignal, staleSnapshot, trustworthy, weak } = assessTargetSignal({
+        rates,
+        keywords,
+        ageDays: r.data.ageDays ?? null,
+      });
       observations.push({
         id: r.target.id,
         label: r.target.label,
         url: r.target.url,
         kind: r.target.kind,
-        ok: true,
-        rates: r.data.rates,
-        amounts: r.data.amounts.slice(0, 12),
-        keywords: r.data.keywords,
+        ok: trustworthy,
+        reached: true,
+        ...(hasSignal ? {} : { empty: true, weak }),
+        ...(staleSnapshot ? { staleSnapshot: true, note: `snapshot ${r.data.ageDays} روز کهنه` } : {}),
+        rates,
+        amounts: (r.data.amounts ?? []).slice(0, 12),
+        keywords,
         bytes: r.data.bytes,
+        via: r.data.via,
+        resolvedUrl: r.data.resolvedUrl,
+        observedAt: r.data.observedAt,
+        ageDays: r.data.ageDays,
+        degraded: r.data.degraded === true,
+        chain: r.data.chain,
       });
-      log(`${r.target.label}: ${r.data.rates.length} نرخ شناسایی شد`);
+      log(
+        staleSnapshot
+          ? `${r.target.label}: سیگنال از snapshot کهنه (${r.data.ageDays} روز) — شاهد امروز نیست`
+          : hasSignal
+            ? `${r.target.label}: ${rates.length} نرخ شناسایی شد (${r.data.via}${r.data.ageDays ? `، ${r.data.ageDays} روز کهنه` : ''})`
+            : `${r.target.label}: دسترسی برقرار بود ولی سیگنالی نبود (${r.data.via})`,
+      );
     } else {
       observations.push({
         id: r.target.id,
@@ -121,6 +192,7 @@ export async function collect(opts = {}) {
         url: r.target.url,
         kind: r.target.kind,
         ok: false,
+        reached: false,
         error: r.error,
       });
       log(`${r.target.label}: ناموفق — ${r.error}`);
@@ -131,6 +203,9 @@ export async function collect(opts = {}) {
     source: 'bank-sites',
     targets: targets.length,
     ok: observations.filter((o) => o.ok).length,
+    reached: observations.filter((o) => o.reached).length,
+    viaFallback: observations.filter((o) => o.ok && o.via && o.via !== 'direct').length,
+    empty: observations.filter((o) => o.empty).length,
     observations,
   };
 }
