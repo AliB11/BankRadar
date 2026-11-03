@@ -19,7 +19,9 @@ import { sameOriginPost, server } from '../tools/serve.mjs';
 import { validateOutputPath } from '../tools/build-public.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const ago = (days) => new Date(Date.now() - days * 86_400_000).toISOString().slice(0, 10);
+/* تاریخ «امروز» با قرارداد خط لوله (UTC+3:30 تهران) — همان today() در tools/lib/parse.mjs.
+   بدون این هم‌سازی، آزمون در پنجرهٔ ۲۰:۳۰–۲۴:۰۰ UTC (نیمه‌شب تهران) flake می‌کند. */
+const ago = (days) => new Date(Date.now() + 3.5 * 3_600_000 - days * 86_400_000).toISOString().slice(0, 10);
 
 /* جریان اقساط متغیر و نرخ مؤثر */
 test('کارمزد سالانه نزولی مطابق نمونه ۳۵۰ میلیونی محاسبه می‌شود', () => {

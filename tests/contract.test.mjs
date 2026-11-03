@@ -43,7 +43,9 @@ const {
 
 await loadData();
 
-const iso = (daysAgo) => new Date(Date.now() - daysAgo * 86_400_000).toISOString().slice(0, 10);
+/* تاریخ «امروز» با قرارداد خط لوله (UTC+3:30 تهران) — همان today() در tools/lib/parse.mjs؛
+   بدون هم‌سازی، آزمون در پنجرهٔ ۲۰:۳۰–۲۴:۰۰ UTC (نیمه‌شب تهران) flake می‌کند. */
+const iso = (daysAgo) => new Date(Date.now() + 3.5 * 3_600_000 - daysAgo * 86_400_000).toISOString().slice(0, 10);
 
 /* ---------- ۱) استنتاج نوع عقد ---------- */
 

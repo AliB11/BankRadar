@@ -18,6 +18,9 @@ const read = (rel) => fs.readFileSync(path.join(ROOT, rel), 'utf8');
 
 test('faAgo برای بازه سالانه، تعداد سال را درست می‌گوید', async () => {
   const { faAgo } = await import('../assets/js/util.js');
+  /* این آزمون با حساب روزِ دقیق daysSince کار می‌کند؛ helper باید UTC بماند
+     (برش رشته روی نیمه‌شب UTC فاصلهٔ روز را همیشه دقیق نگه می‌دارد). helper
+     تهران‌محور فقط جایی لازم است که خروجی today() خط لوله مقایسه شود. */
   const iso = (days) => new Date(Date.now() - days * 86_400_000).toISOString().slice(0, 10);
 
   assert.equal(faAgo(iso(400)), '۱ سال پیش', '۴۰۰ روز باید «۱ سال پیش» باشد نه «۳۳ سال پیش»');
@@ -59,7 +62,7 @@ test('daysSince با تاریخ نامعتبر، کهنه/نامشخص حکم م
   const { daysSince } = await import('../assets/js/util.js');
   assert.equal(daysSince('2026-19-99'), Infinity, 'ماه/روز نامعتبر نباید با سرریز Date.UTC «تازه» شود');
   assert.equal(daysSince('garbage'), Infinity);
-  const todayISO = new Date().toISOString().slice(0, 10);
+  const todayISO = new Date(Date.now() + 3.5 * 3_600_000).toISOString().slice(0, 10); // قرارداد تهران خط لوله
   assert.equal(daysSince(todayISO), 0, 'امروز باید فاصله صفر روز داشته باشد');
   assert.ok(Number.isFinite(daysSince('2026-09-21')), 'تاریخ معتبر باید فاصله متناهی بدهد');
 });

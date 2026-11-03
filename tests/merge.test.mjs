@@ -108,7 +108,7 @@ test('برداشت ناقص، محتوای رکورد را پاک نمی‌کن�
   assert.match(p.desc, /سوپراپلیکیشن/);
   assert.equal(p.product, 'اعتبار خرید اقساطی اوانو (همراه اول)');
   assert.deepEqual(p.tags, ['خرید اقساطی', 'اوانو', 'همراه اول']);
-  assert.equal(p.lastSeen, new Date().toISOString().slice(0, 10), 'مشاهده ثبت می‌شود');
+  assert.equal(p.lastSeen, new Date(Date.now() + 3.5 * 3_600_000).toISOString().slice(0, 10), 'مشاهده ثبت می‌شود'); // قرارداد تهران خط لوله
 });
 
 test('به‌روزرسانی سبک صندوق دست‌نویس با محافظ برداشت ناقص مسدود نمی‌شود', () => {
@@ -598,7 +598,7 @@ test('deepEqual محتوای یکسان را یکسان می‌بیند، نه �
 });
 
 test('رکورد خودکار با محتوای یکسان، «به‌روزشده» شمرده نمی‌شود', () => {
-  const today = new Date().toISOString().slice(0, 10);
+  const today = new Date(Date.now() + 3.5 * 3_600_000).toISOString().slice(0, 10); // قرارداد تهران خط لوله
   const current = {
     id: 'rade-9', bank: 'بانک آزمون', product: 'وام آزمون', category: 'loans',
     rate: 23, maxAmount: 100_000_000, autoDiscovered: true,

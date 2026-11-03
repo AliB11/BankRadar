@@ -285,7 +285,7 @@ test('نشانی‌های خطرناک در href مسدود می‌شوند', as
 test('تازگی بر پایه جدیدترین تاریخ بازبینی و منبع سنجیده می‌شود', async () => {
   const { freshnessScore } = await import('../assets/js/score.js');
 
-  const today = new Date().toISOString().slice(0, 10);
+  const today = new Date(Date.now() + 3.5 * 3_600_000).toISOString().slice(0, 10); // قرارداد تهران خط لوله
   const old = '2025-01-01';
 
   // منبع کهنه ولی امروز بازبینی شده → تازه
@@ -306,7 +306,7 @@ test('تازگی بر پایه جدیدترین تاریخ بازبینی و م�
 });
 
 test('خلاصه، بازبینی و تازگی منبع را جدا گزارش می‌کند', async () => {
-  const today = new Date().toISOString().slice(0, 10);
+  const today = new Date(Date.now() + 3.5 * 3_600_000).toISOString().slice(0, 10); // قرارداد تهران خط لوله
   const old = '2025-01-01';
 
   store.store.products = [
