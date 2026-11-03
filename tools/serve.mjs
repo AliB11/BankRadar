@@ -11,7 +11,7 @@
 import http from 'node:http';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PORT = Number(process.env.PORT || 4173);
@@ -142,7 +142,7 @@ export const server = http.createServer(async (req, res) => {
   }
 });
 
-const isMain = process.argv[1] && import.meta.url === `file://${path.resolve(process.argv[1])}`;
+const isMain = process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href;
 if (isMain) server.listen(PORT, HOST, () => {
   console.log(`بانک‌رادار روی http://localhost:${server.address().port} در حال اجراست`);
   console.log(`ریشه: ${ROOT}`);

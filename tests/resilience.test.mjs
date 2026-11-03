@@ -211,3 +211,51 @@ test('assessTargetSignal سه حالت را از هم جدا می‌کند', asy
   assert.equal(stale.staleSnapshot, true);
   assert.equal(stale.trustworthy, false, 'snapshot یک‌ساله نباید «تأیید امروز» شمرده شود');
 });
+
+test('۴۰۴ داخل عدد سال فارسی (مثل ۱۴۰۴) صفحه را «پیدا نشد» نمی‌کند', () => {
+  // رگرسیون ۱۳ آبان ۱۴۰۵: مقالهٔ خانهٔ سرمایه با جملهٔ «جدول‌های ۱۴۰۴ هم همین
+  // بود» به‌خاطر زیررشتهٔ ۴۰۴ داخل ۱۴۰۴، «پیدا نشد» شمرده می‌شد و دادهٔ سالم
+  // ۴۱۳ هزار بایتی دور ریخته می‌شد.
+  const body = `<html><body><p>${'نرخ سپرده بلندمدت یک‌ساله ۲۰٫۵ درصد است. '.repeat(10)}جدول‌های ۱۴۰۵ رسانه‌ها همین شش نرخ را آورده‌اند. جدول ۱۴۰۴ هم همین بود.</p></body></html>`;
+  const verdict = classifyContent({ status: 200, body });
+  assert.equal(verdict.valid, true);
+  assert.equal(verdict.blocked, null);
+});
+
+test('۴۰۴ مستقل همچنان «پیدا نشد» شمرده می‌شود', () => {
+  assert.equal(classifyContent({ status: 200, body: '<html><body>صفحه ۴۰۴</body></html>' }).blocked, 'notfound');
+  assert.equal(classifyContent({ status: 200, body: '<html><body>error 404 not found</body></html>' }).blocked, 'notfound');
+  // عددی که ۴۰۴ داخلش است ولی صفحه واقعی: شمارهٔ سند/سال
+  assert.equal(classifyContent({ body: `<html><body>${'<p>نرخ سود ۲۰٫۵ درصد.</p>'.repeat(30)} سند شماره ۴۰۴۵ </body></html>` }).valid, true);
+});
+
+test('CSS قالب با کلاس error-404 صفحه را «پیدا نشد» نمی‌کند (رگرسیون وردپرس)', () => {
+  // رگرسیون ۱۳ آبان ۱۴۰۵: CSS قالب Astra کلاس‌های .ast-404-layout-1 و
+  // .error-404 را دارد؛ بدون کنار گذاشتن <style>، هر سایت وردپرسیِ سالم
+  // «پیدا نشد» شمرده می‌شد و دادهٔ ۴۱۳ هزار بایتی خانهٔ سرمایه دور ریخته می‌شد.
+  const body = `<html><head><style>.ast-404-layout-1 h1.page-title{color:var(--c);} .error-404 .page-sub-title{font-size:1.5rem;}</style></head><body><p>${'نرخ سپرده بلندمدت یک‌ساله ۲۰٫۵ درصد است. '.repeat(20)}</p></body></html>`;
+  const verdict = classifyContent({ status: 200, body });
+  assert.equal(verdict.valid, true);
+  assert.equal(verdict.blocked, null);
+});
+
+test('«404» مستقل در متن قابل مشاهده همچنان «پیدا نشد» است', () => {
+  const body = '<html><body><h1>error 404</h1><p>محتوای واقعی یافت نشد</p></body></html>';
+  assert.equal(classifyContent({ status: 200, body }).blocked, 'notfound');
+  // حتی وقتی داخل <script> هم است، متن دیدنی ملاک است
+  const withScript = `<html><body><h1>error 404</h1><script>var x = 1;</script></body></html>`;
+  assert.equal(classifyContent({ status: 200, body: withScript }).blocked, 'notfound');
+});
+
+test('اشارهٔ متنی به فیلترشکن در مقالهٔ سالم، ژئوبلاک نیست (رگرسیون دیجی‌شهر)', () => {
+  // رگرسیون ۱۳ آبان ۱۴۰۵: مقالهٔ نرخ دیجی‌شهر در بخش «مطالب مرتبط» لینک
+  // «بهترین فیلترشکن رایگان برای آیفون» دارد؛ با الگوی تنها «فیلترشکن» همین
+  // مقالهٔ سالم «ژئوبلاک» شمرده می‌شد و واکشی مستقیم از داخل ایران شکست می‌خورد.
+  const body = `<html><body><p>${'نرخ سپرده ترجیحی بانک‌ها ۲۲ تا ۳۱ درصد است. '.repeat(30)}</p>
+    <a aria-label="بهترین فیلترشکن رایگان برای آیفون کدام است؟" href="/blog/best-vpn-pr/">مطالعه کنید</a></body></html>`;
+  const verdict = classifyContent({ status: 200, body });
+  assert.equal(verdict.valid, true);
+  assert.equal(verdict.blocked, null);
+  // صفحهٔ interstitial واقعی ژئوبلاک همچنان شناسایی می‌شود
+  assert.equal(classifyContent({ status: 200, body: GEO }).blocked, 'geo');
+});

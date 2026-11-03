@@ -20,7 +20,7 @@
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { runSource } from './lib/http.mjs';
 import { foldForMatch, daysSince, today, slugify, faDisplayText, sanitizeDisplayText } from './lib/parse.mjs';
 import * as rade from './sources/rade.mjs';
@@ -692,7 +692,7 @@ async function main() {
   log(`پایان در ${report.durationMs} ms`);
 }
 
-const isMain = process.argv[1] && import.meta.url === `file://${path.resolve(process.argv[1])}`;
+const isMain = process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href;
 if (isMain) {
   main().catch((err) => {
     console.error(`[collect] خطای مرگبار: ${err.stack || err.message}`);

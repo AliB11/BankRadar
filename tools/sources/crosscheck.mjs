@@ -13,7 +13,19 @@
 import { fetchResilient, summarizeAttempts } from '../lib/resilience.mjs';
 import { normalizeText, stripTags, toNumber } from '../lib/parse.mjs';
 
-/** منابع جایگزینِ قابل دسترس از بیرون ایران (آزموده‌شده ۱۲ آبان ۱۴۰۵) */
+/**
+ * منابع جایگزینِ تطبیق مستقل.
+ *
+ * تاریخچهٔ اعتبارسنجی:
+ *   - ۱۲ آبان ۱۴۰۵: FinAI و نبض قیمت با آزمون زنده تأیید شدند.
+ *   - ۱۳ آبان ۱۴۰۵ (بازآزمایی زنده): یک مثبت کاذب در `classifyContent` دو صفحهٔ
+ *     سالم را «پیدا نشد» شمرده بود (کلاس‌های `.error-404` در CSS قالب وردپرس +
+ *     زیررشتهٔ ۴۰۴ داخل عدد سال «۱۴۰۴»)؛ در `tools/lib/resilience.mjs` اصلاح شد.
+ *   - ۱۳ آبان ۱۴۰۵: «خانهٔ سرمایه» به‌عنوان منبع سوم افزوده و با آزمون زنده
+ *     تأیید شد (هر شش سقف سپرده: ۵/۱۲/۱۷/۲۰٫۵/۲۱٫۵/۲۲٫۵ — هم‌خوان با شاخص‌ها).
+ *     نتیجهٔ نهایی: هر شاخص سقف سپرده با سه منبع مستقل تأیید می‌شود؛ تک‌منبعی
+ *     شدن تطبیق مستقل — ریسک ثبت‌شده در §۷.۴ ممیزی — از بین می‌رود.
+ */
 export const ALT_SOURCES = [
   {
     id: 'finai',
@@ -21,6 +33,13 @@ export const ALT_SOURCES = [
     url: 'https://finai.ir/blog/bank-deposit-interest-1405',
     kind: 'aggregator',
     covers: ['depositCap1y', 'depositCap2y', 'depositCap3y'],
+  },
+  {
+    id: 'khanesarmaye',
+    label: 'خانهٔ سرمایه — جدول نرخ سپرده بانک‌ها ۱۴۰۵',
+    url: 'https://bank.khanesarmaye.com/blog/bank-interest',
+    kind: 'aggregator',
+    covers: ['depositShortNormal', 'depositShort3m', 'depositShort6m', 'depositCap1y', 'depositCap2y', 'depositCap3y'],
   },
   {
     id: 'nabzgheymat',

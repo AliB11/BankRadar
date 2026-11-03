@@ -14,6 +14,7 @@ import http from 'node:http';
 import { pool, unwrapPool, describeError } from '../tools/lib/http.mjs';
 import { collect as collectBanks, extractBankSignals } from '../tools/sources/banks.mjs';
 import { collectPages, mapToProduct } from '../tools/sources/rade.mjs';
+import { ALT_SOURCES, parseCapTable } from '../tools/sources/crosscheck.mjs';
 import { mergeProducts } from '../tools/collect.mjs';
 
 /** سرور آزمایشی محلی (بدون شبکه واقعی) */
@@ -257,3 +258,36 @@ test('mapToProduct صفحات سپرده و خرید اقساطی رده را ب
   assert.equal(inst.termMonths, 6);
 });
 
+
+test('منابع تطبیق مستقل شناسه و نشانی یکتا دارند و پوشششان مشخص است', () => {
+  const ids = ALT_SOURCES.map((s) => s.id);
+  const urls = ALT_SOURCES.map((s) => s.url);
+  assert.ok(ALT_SOURCES.length >= 3, 'تک‌منبعی شدن تطبیق مستقل خطر است — حداقل سه منبع مستقل لازم است (ممیزی ۱۳ آبان ۱۴۰۵)');
+  assert.equal(new Set(ids).size, ids.length, 'شناسه‌های منابع نباید تکراری باشند');
+  assert.equal(new Set(urls).size, urls.length, 'نشانی‌های منابع نباید تکراری باشند');
+  for (const s of ALT_SOURCES) {
+    assert.ok(s.id && s.label && s.url.startsWith('https://'), `منبع ${s.id} ناقص است`);
+    assert.ok(Array.isArray(s.covers) && s.covers.length > 0, `پوشش ${s.id} باید مشخص باشد`);
+  }
+});
+
+test('parseCapTable جدول هم‌ساختار خانهٔ سرمایه را کامل استخراج می‌کند', () => {
+  // ساختار همسان با جدول نرخ‌های bank.khanesarmaye.com/blog/bank-interest:
+  // سررسید با نیم‌فاصله در سلول جدا و نرخ در سلول بعدی.
+  const html = `<table>
+    <tr><td>سپرده کوتاه‌مدت عادی</td><td>۵٪</td></tr>
+    <tr><td>سپرده کوتاه‌مدت ویژه سه‌ماهه</td><td>۱۲٪</td></tr>
+    <tr><td>سپرده کوتاه‌مدت ویژه شش‌ماهه</td><td>۱۷٪</td></tr>
+    <tr><td>سپرده بلندمدت یک‌ساله</td><td>۲۰.۵٪</td></tr>
+    <tr><td>سپرده بلندمدت دو‌ساله</td><td>۲۱.۵٪</td></tr>
+    <tr><td>سپرده بلندمدت سه‌ساله</td><td>۲۲.۵٪</td></tr>
+  </table>`;
+  assert.deepEqual(parseCapTable(html), {
+    depositShortNormal: 5,
+    depositShort3m: 12,
+    depositShort6m: 17,
+    depositCap1y: 20.5,
+    depositCap2y: 21.5,
+    depositCap3y: 22.5,
+  });
+});

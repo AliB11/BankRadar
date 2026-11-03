@@ -33,13 +33,38 @@ export const WAYBACK_AVAILABLE = 'https://archive.org/wayback/available';
 export const WAYBACK_BASE = 'https://web.archive.org/web';
 export const TEXT_PROXY = 'https://r.jina.ai/';
 
-/** نشانه‌های صفحهٔ «پیدا نشد» که با کد ۲۰۰ هم برمی‌گردند */
+/** نشانه‌های صفحهٔ «پیدا نشد» که با کد ۲۰۰ هم برمی‌گردند.
+ *
+ *  چرا «۴۰۴» با مرز رقم است: بدون آن، عدد سال «۱۴۰۴» (که ۴۰۴ زیررشتهٔ آن است)
+ *  در هر مقالهٔ فارسی match می‌شود و صفحهٔ سالم «پیدا نشد» شمرده می‌شود —
+ *  همان‌طور که در آزمون زندهٔ ۱۳ آبان ۱۴۰۵ روی مقالهٔ خانهٔ سرمایه افتاد.
+ *  چرا مرزِ 404 با حرف/خط تیره هم است: CSS قالب‌ها کلاس‌هایی مثل
+ *  `.error-404` و `.ast-404-layout-1` دارند که در هر صفحهٔ وردپرسی هست؛
+ *  بدون مرز، همان صفحهٔ سالم باز هم «پیدا نشد» می‌شد (بازآزمایی همان روز).
+ */
 const NOT_FOUND_RE =
-  /(page\s+not\s+found|صفحه\s*مورد\s*نظر\s*یافت\s*نشد|۴۰۴|the page could not be found)/i;
+  /(page\s+not\s+found|صفحه\s*مورد\s*نظر\s*یافت\s*نشد|(?<![\d۰-۹\u200c-])۴۰۴(?![\d۰-۹\u200c-])|(?<![\w\u200c-])404(?![\w\u200c-])|the page could not be found)/i;
 
-/** نشانه‌های ژئوبلاک/فیلتر جغرافیایی */
+/** متن «محتوا»: تگ‌های script/style کنار گذاشته می‌شوند.
+ *
+ *  CSS و JS قالب سایت رشته‌هایی مثل `.error-404`، «Page Not Found» یا حتی
+ *  واژه‌های ژئوبلاک را در هر صفحهٔ سالم هم دارند؛ تشخیص وضعیت باید روی
+ *  چیزی که کاربر می‌بیند بگذرد، نه روی کد قالب.
+ */
+function contentOnly(html) {
+  return String(html ?? '').replace(/<(script|style)\b[\s\S]*?<\/\1>/gi, ' ');
+}
+
+/** نشانه‌های ژئوبلاک/فیلتر جغرافیایی.
+ *
+ *  فقط عبارت‌های مشخص interstitial ژئوبلاک، نه واژه‌های تنهایی که در متن سالم
+ *  هم می‌آیند. مثال واقعی (۱۳ آبان ۱۴۰۵): مقالهٔ نرخ دیجی‌شهر در بخش «مطالب
+ *  مرتبط» لینک «بهترین فیلترشکن رایگان برای آیفون» را دارد؛ با الگوی تنها
+ *  «فیلترشکن»، همین مقالهٔ سالمِ ۲۸۹ هزار بایتی «ژئوبلاک» شمرده می‌شد.
+ *  به همین دلیل «فیلترشکن» باید کنار «خاموش» بیاید و «geo block» مرز کلمه دارد.
+ */
 const GEO_BLOCK_RE =
-  /(فیلترشکن|دسترسی از\s*IP|blocked from your IP|your location|geo.?block|کشور شما)/i;
+  /(blocked from your IP|دسترسی از\s*IP|فیلترشکن[^.]{0,40}خاموش|\bgeo[\s-]?block(ed|ing)?\b)/i;
 
 /** صفحه‌های «مشکل امنیتی» که محتوای واقعی ندارند */
 const WAF_RE = /(access denied|request blocked|security settings|درخواست شما مسدود)/i;
@@ -55,7 +80,7 @@ const WAF_RE = /(access denied|request blocked|security settings|درخواست 
  * @returns {{valid:boolean, reason:string|null, blocked:'geo'|'waf'|'notfound'|'thin'|null}}
  */
 export function classifyContent({ status = 200, body = '', minBytes = 160 } = {}) {
-  const text = String(body ?? '');
+  const text = contentOnly(body);
   if (status >= 400) {
     return { valid: false, reason: `HTTP ${status}`, blocked: status === 403 || status === 429 ? 'waf' : null };
   }
