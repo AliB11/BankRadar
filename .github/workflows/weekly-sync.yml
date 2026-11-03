@@ -141,6 +141,14 @@ jobs:
           ls -lh data/
           ls -lh data/history/ 2>/dev/null || true
 
+      - name: ساخت گزارش اکسل هفتگی
+        if: ${{ inputs.dry_run != true }}
+        run: |
+          # data/report.xlsx لینک پایدار گزارش اکسل است؛ امتیازها با همان
+          # موتور مرورگر (score.js) حساب می‌شوند تا با سایت یکی باشد.
+          node tools/export-report.mjs
+          ls -lh data/report.xlsx
+
       - name: بررسی تغییرات محتوایی
         id: diff
         run: |

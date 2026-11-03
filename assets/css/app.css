@@ -1234,6 +1234,44 @@ table.compare .prod-bank { color: var(--text-4); font-size: var(--fs-3xs); }
 }
 .ladder-track i.negative { background: linear-gradient(90deg, #8a2b3c, var(--danger)); }
 
+/*
+ * tooltip شناور سطرهای نردبان.
+ *
+ * چرا translateX نداریم: درس قفل‌شدهٔ RTL همین ریپو — transform فیزیکی است
+ * و با جهت سند نمی‌چرخد. tooltip تمام‌عرضِ سطر، بالای آن شناور می‌شود؛
+ * نه به مرکز نیازی است نه به translate. focus هم پشتیبانی می‌شود (tabindex
+ * روی سطر در charts.js) و متن note به‌صورت sr-only هم هست.
+ */
+.ladder-row.has-tip { position: relative; cursor: help; outline-offset: 2px; }
+.ladder-row.has-tip::after {
+  content: attr(data-tip);
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: calc(100% + 6px);
+  z-index: 40;
+  padding: 8px 12px;
+  border-radius: var(--r-sm);
+  background: var(--ink-750);
+  color: var(--text-1);
+  border: 1px solid var(--hairline-strong);
+  box-shadow: var(--shadow-lg);
+  font-size: var(--fs-3xs);
+  line-height: 1.85;
+  white-space: normal;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(4px);
+  transition: opacity var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease), visibility var(--dur-fast);
+  pointer-events: none;
+}
+.ladder-row.has-tip:hover::after,
+.ladder-row.has-tip:focus::after {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+html[data-theme='light'] .ladder-row.has-tip::after { background: #fff; color: var(--text-1); }
+
 /* ---------- ۱۶. کشو (Drawer) ---------- */
 .drawer-backdrop {
   position: fixed;
@@ -1573,6 +1611,24 @@ table.compare .prod-bank { color: var(--text-4); font-size: var(--fs-3xs); }
   color: var(--text-4);
   font-style: italic;
 }
+
+/*
+ * مقایسهٔ تمام‌عرض: وضعیت روی body است نه روی خود سکشن — چون renderResults
+ * هر بار #compare را از نو می‌سازد و کلاسِ روی سکشن با هر تغییر سبد می‌پرید.
+ * ESC و دکمهٔ همان حالت آن را می‌بندد.
+ */
+body.compare-zoom #compare-section {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  margin: 0 !important;
+  border-radius: 0;
+  border-inline: 0;
+  overflow-y: auto;
+  background: var(--ink-900);
+}
+html[data-theme='light'] body.compare-zoom #compare-section { background: #eef1f7; }
+body.compare-zoom .table-wrap { max-width: 1600px; margin-inline: auto; }
 
 /* ---------- ۲۵. تم روشن ---------- */
 /*

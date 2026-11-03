@@ -191,6 +191,15 @@ function coversViewport(decls) {
   return vertical && horizontal;
 }
 
+/*
+ * لایه‌های وضعیت‌دار (state-gated): قاعدهٔ تمام‌صفحه فقط زیر یک کلاس وضعیت
+ * صریح بدنه اجرا می‌شود و نشانی‌اش خودِ آن کلاس را دارد؛ بدون کلاس، CSS هیچ
+ * لایه‌ای نمی‌سازد. قرارداد: هر لایهٔ جدید از این نوع باید با «body.<کلاس>
+ * » شروع شود تا این فهرست معنا پیدا کند.
+ */
+const STATE_GATED_PREFIX = ['body.compare-zoom '];
+const isStateGated = (selector) => STATE_GATED_PREFIX.some((p) => selector.startsWith(p));
+
 /** آیا در حالت پیش‌فرض پنهان است (دیده نمی‌شود یا پشت محتواست)؟ */
 function hiddenByDefault(decls) {
   if (decls.display === 'none') return true;
@@ -207,6 +216,7 @@ test('همه لایه‌های ثابتِ تمام‌صفحه در حالت پی
   for (const r of rules) {
     if (r.media) continue; // قواعد واکنش‌گرا فقط اندازه را تغییر می‌دهند
     if (!coversViewport(r.decls)) continue;
+    if (isStateGated(r.selector)) continue; // فقط زیر کلاس وضعیت فعال می‌شود
     if (!hiddenByDefault(r.decls)) offenders.push(r.selector);
   }
   assert.deepEqual(offenders, [], `این لایه‌ها در حالت پیش‌فرض روی صفحه دیده می‌شوند: ${offenders.join(', ')}`);
@@ -217,11 +227,22 @@ test('لایه‌های تمام‌صفحه با z-index مثبت، در حال�
   for (const r of rules) {
     if (r.media) continue;
     if (!coversViewport(r.decls)) continue;
+    if (isStateGated(r.selector)) continue; // فقط زیر کلاس وضعیت فعال می‌شود
     const z = Number(r.decls['z-index'] ?? 0);
     if (z <= 0) continue; // لایه‌های پس‌زمینه زیر محتوا هستند
     if (r.decls['pointer-events'] !== 'none') offenders.push(`${r.selector} (z-index:${z})`);
   }
   assert.deepEqual(offenders, [], `این لایه‌ها می‌توانند کلیک را ببلعند: ${offenders.join(', ')}`);
+});
+
+test('هر لایهٔ وضعیت‌دار واقعاً با کلاس بدنهٔ فعال‌سازش شروع می‌شود', () => {
+  // اگر روزی کسی STATE_GATED_PREFIX را گسترش داد، این قفل تضمین می‌کند
+  // نشانی قاعده خودِ کلاس فعال‌ساز را دارد؛ وگرنه «شرطی بودن» فقط در
+  // کامنت بود و نگهبان بی‌اثر می‌شد.
+  for (const selector of ['body.compare-zoom #compare-section']) {
+    assert.ok(isStateGated(selector), `لایهٔ وضعیت‌دار «${selector}» در فهرست نیست`);
+    assert.match(selector, /^body\.[a-z-]+ /, 'قاعده باید با کلاس وضعیت بدنه شروع شود');
+  }
 });
 
 test('پس‌زمینه‌های ثابت تزئینی کلیک را مسدود نمی‌کنند', () => {

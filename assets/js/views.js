@@ -679,6 +679,10 @@ export function compareHTML() {
         </p>
       </div>
       <div class="row" style="gap:var(--sp-2)">
+        <button class="btn btn--sm" type="button" data-action="compare-fullscreen"
+          title="نمایش جدول مقایسه در کل صفحه">حالت تمام‌عرض</button>
+        <button class="btn btn--sm" type="button" data-action="copy-compare-link"
+          title="کپی لینکی که این همین انتخاب مقایسه را برای دیگران باز می‌کند">کپی لینک</button>
         <button class="btn btn--sm btn--primary" type="button" data-action="download-xlsx">خروجی اکسل</button>
         <button class="btn btn--sm" type="button" data-action="download-csv">خروجی CSV</button>
         <button class="btn btn--sm btn--danger" type="button" data-action="clear-compare">پاک‌کردن</button>
@@ -1215,6 +1219,7 @@ export function dataModalHTML() {
 
     <div class="section-title">فید باز و API</div>
     <div class="spec-grid" style="margin-block-end:var(--sp-3)">
+      <div class="spec"><span class="k">گزارش اکسل هفتگی</span><span class="v"><a href="data/report.xlsx" target="_blank" rel="noopener"><code>data/report.xlsx</code></a></span></div>
       <div class="spec"><span class="k">فید RSS تغییرات</span><span class="v"><a href="data/feed.xml" target="_blank" rel="noopener"><code>data/feed.xml</code></a></span></div>
       <div class="spec"><span class="k">فید JSON تغییرات</span><span class="v"><a href="data/changelog.json" target="_blank" rel="noopener"><code>data/changelog.json</code></a></span></div>
       <div class="spec"><span class="k">گزارش هفتگی کامل</span><span class="v"><a href="data/weekly-report.json" target="_blank" rel="noopener"><code>data/weekly-report.json</code></a></span></div>

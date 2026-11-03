@@ -275,6 +275,57 @@ function resetWeights() {
 
 /* ---------- مقایسه ---------- */
 
+/**
+ * همگام‌سازی سبد مقایسه با نشانی صفحه (#compare=id1,id2,...).
+ *
+ * چرا hash و نه query: hash هرگز درخواست شبکه جدید نمی‌سازد و با
+ * history.replaceState هم تاریخچه مرورگر آلوده نمی‌شود؛ «کپی لینک» هر لحظه
+ * معتبر است. شناسه‌های محصول پایدارند (id از خود داده می‌آید)، پس لینک بین
+ * کاربرها و بین نسخه‌های داده معنا دارد؛ شناسه‌های ناشناخته بی‌سروصدا
+ * حذف می‌شوند نه اینکه صفحه را بشکنند.
+ */
+function syncCompareHash() {
+  const ids = [...store.compare].join(',');
+  const url = ids ? `${location.pathname}#compare=${ids}` : location.pathname;
+  history.replaceState(null, '', url);
+}
+
+/** بازخوانی سبد مقایسه از لینک اشتراکی (اگر بود) — بر ذخیرهٔ محلی اولویت دارد. */
+function restoreCompareFromHash() {
+  const match = /^#compare=(.+)$/.exec(location.hash || '');
+  if (!match) return null;
+  const ids = match[1]
+    .split(',')
+    .filter((id) => id && store.products.some((p) => p.id === id))
+    .slice(0, 8);
+  if (!ids.length) return null;
+  store.compare = new Set(ids);
+  saveCompare();
+  return ids;
+}
+
+/** حالت تمام‌عرض جدول مقایسه — وضعیت روی body می‌ماند تا با هر رندر مجدد نپرد. */
+function toggleCompareFullscreen() {
+  const section = document.querySelector('#compare-section');
+  if (!section) return;
+  const on = document.body.classList.toggle('compare-zoom');
+  document.body.style.overflow = on ? 'hidden' : '';
+  if (!on && !drawer().classList.contains('is-open')) document.body.style.overflow = '';
+  section.querySelector('[data-action="compare-fullscreen"]')?.scrollIntoView({ block: 'nearest' });
+}
+
+async function copyCompareLink() {
+  syncCompareHash();
+  const url = location.href;
+  try {
+    await navigator.clipboard.writeText(url);
+    toast('لینک مقایسه کپی شد؛ همین نشانی انتخاب شما را برای دیگران باز می‌کند.');
+  } catch {
+    // محیط‌های بدون مجوز clipboard — لینک کامل در پیام می‌آید تا دستی کپی شود
+    toast(`کپی خودکار ممکن نشد — لینک مقایسه: ${url}`, 'warn');
+  }
+}
+
 function toggleCompare(id) {
   if (store.compare.has(id)) store.compare.delete(id);
   else {
@@ -285,6 +336,7 @@ function toggleCompare(id) {
     store.compare.add(id);
   }
   saveCompare();
+  syncCompareHash();
   renderSoon();
 }
 
@@ -817,8 +869,17 @@ function bindEvents() {
       case 'clear-compare':
         store.compare.clear();
         saveCompare();
+        syncCompareHash();
+        document.body.classList.remove('compare-zoom');
+        if (!drawer().classList.contains('is-open')) document.body.style.overflow = '';
         renderSoon();
         toast('فهرست مقایسه پاک شد.');
+        break;
+      case 'compare-fullscreen':
+        toggleCompareFullscreen();
+        break;
+      case 'copy-compare-link':
+        copyCompareLink();
         break;
       case 'scroll-compare':
         document.querySelector('#compare')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -871,7 +932,10 @@ function bindEvents() {
   // کلیدها
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-      if (drawer().classList.contains('is-open')) closeDrawer();
+      if (document.body.classList.contains('compare-zoom')) {
+        document.body.classList.remove('compare-zoom');
+        if (!drawer().classList.contains('is-open')) document.body.style.overflow = '';
+      } else if (drawer().classList.contains('is-open')) closeDrawer();
       else if ($('#data-modal').classList.contains('is-open')) closeModal('#data-modal');
       else if ($('#method-modal').classList.contains('is-open')) closeModal('#method-modal');
       return;
@@ -932,11 +996,30 @@ async function boot() {
       return;
     }
 
+    // لینک اشتراکی مقایسه — پیش از اولین رندر، تا سکشن مقایسه از همان بار
+    // اول با سبد درست ساخته شود و گره هدفِ اسکرول با رندر مجدد جایگزین نشود.
+    const restoredIds = restoreCompareFromHash();
+
     renderHero();
     render();
     renderFooter();
     bindEvents();
     applyTheme(currentTheme()); // هم‌گام‌سازی برچسب و aria دکمهٔ تم با اسکریپت ابتدای صفحه
+
+    if (restoredIds?.length) {
+      toast(`${fa(restoredIds.length)} محصول از لینک اشتراکی به مقایسه اضافه شد.`);
+      // اسکرول با scrollTo محاسبه‌شده: scrollIntoView در برخی محیط‌ها بی‌اثر است
+      // و scroll-padding نوار بالا را هم باید خودمان لحاظ کنیم.
+      requestAnimationFrame(() => {
+        const section = document.querySelector('#compare-section');
+        if (section) {
+          window.scrollTo({
+            top: section.getBoundingClientRect().top + window.scrollY - 84,
+            behavior: 'instant',
+          });
+        }
+      });
+    }
 
     // بارگذاری داده محلی ذخیره‌شده
     const custom = storage.get('customProducts');

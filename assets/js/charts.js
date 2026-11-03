@@ -42,10 +42,11 @@ export function donut(slices, opts = {}) {
   const arcs = slices
     .map((s) => {
       const len = (s.value / total) * c;
+      // title بومی: تنها راه نشان دادن مقدار روی hoverِ خود قوس، بدون JS اضافه
       const seg = `<circle cx="${size / 2}" cy="${size / 2}" r="${r}" fill="none"
         stroke="${esc(s.color)}" stroke-width="${stroke}"
         stroke-dasharray="${len} ${c - len}" stroke-dashoffset="${-offset}"
-        stroke-linecap="butt"></circle>`;
+        stroke-linecap="butt"><title>${esc(s.label)}: ${fa(s.value)}</title></circle>`;
       offset += len;
       return seg;
     })
@@ -57,6 +58,12 @@ export function donut(slices, opts = {}) {
 
 /**
  * نردبان نرخ‌ها در برابر خط تورم.
+ *
+ * تعامل: هر سطر توضیح محتوایی (note) دارد که پیش‌تر فقط در title بومی بود —
+ * روی لمس دیده نمی‌شد و در دسکتاپ پنهان می‌ماند. حالا همان متن به‌صورت
+ * tooltip شناور بالای سطر می‌آید (hover/focus) و متن آن به‌صورت sr-only هم
+ * در دسترس صفحه‌خوان‌هاست؛ title بومی حذف شد تا tooltip دوگانه نسازد.
+ *
  * @param {Array<{label:string, rate:number, note?:string, negative?:boolean}>} rows
  * @param {number|null} inflation
  */
@@ -68,12 +75,21 @@ export function rateLadder(rows, inflation) {
     .map((row) => {
       const pct = Math.max(2, ((row.rate ?? 0) / max) * 100);
       const neg = row.negative === true;
-      return `<div class="ladder-row">
+      const gap = inflation != null && row.rate != null
+        ? ` (${row.rate < inflation ? `${fa((inflation - row.rate).toFixed(1))}٪ زیر تورم` : `${fa((row.rate - inflation).toFixed(1))}٪ بالای تورم`})`
+        : '';
+      const tip = [
+        row.label,
+        `نرخ: ${faPercent(row.rate)}${gap}`,
+        row.note || '',
+      ].filter(Boolean).join(' — ');
+      return `<div class="ladder-row has-tip" tabindex="0" data-tip="${esc(tip)}">
         <span class="lbl">${esc(row.label)}</span>
-        <span class="ladder-track" title="${esc(row.note || '')}">
+        <span class="ladder-track">
           <i class="${neg ? 'negative' : ''}" style="width:${pct.toFixed(1)}%"></i>
         </span>
         <span class="val">${faPercent(row.rate)}</span>
+        ${row.note ? `<span class="visually-hidden">${esc(row.note)}</span>` : ''}
       </div>`;
     })
     .join('');

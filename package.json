@@ -18,6 +18,7 @@
     "transparency": "node tools/lib/transparency.mjs",
     "health": "node tools/source-health.mjs",
     "crosscheck": "node tools/collect.mjs --only=crosscheck",
+    "report": "node tools/export-report.mjs",
     "bundle": "node tools/build-bundle.mjs",
     "build:public": "node tools/build-public.mjs",
     "build": "npm run collect:offline && npm run validate && npm run build:public",
