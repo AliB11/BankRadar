@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-11-03T17:55:23.867Z",
-  "lastRun": "2026-11-03T11:07:49.288Z",
+  "generatedAt": "2026-11-03T20:13:05.914Z",
+  "lastRun": "2026-11-03T20:12:42.043Z",
   "lastRunMode": "full",
   "counts": {
     "credit": 65,
     "deposits": 53,
     "funds": 73,
-    "loans": 203,
+    "loans": 232,
     "loyalty": 14,
-    "total": 408
+    "total": 437
   },
   "freshness": {
-    "d7": 124,
+    "d7": 153,
     "d30": 75,
     "d90": 143,
     "older": 66,
     "unknown": 0,
-    "total": 408,
-    "medianDays": 37
+    "total": 437,
+    "medianDays": 20
   },
   "categoryFreshness": {
     "deposits": {
@@ -37,8 +37,8 @@
       "unknown": 0
     },
     "loans": {
-      "total": 203,
-      "fresh": 52,
+      "total": 232,
+      "fresh": 81,
       "recent": 54,
       "aging": 44,
       "stale": 53,
@@ -226,32 +226,49 @@
       "name": "bank-sites",
       "status": "ok",
       "ok": true,
-      "reached": 4,
-      "targets": 25
+      "reached": 1,
+      "targets": 24,
+      "viaFallback": 0,
+      "empty": 12
     },
     {
       "name": "macro-indicators",
       "status": "ok",
       "ok": true,
-      "sourcesOk": 2
+      "sourcesOk": 3
     },
     {
       "name": "dgshahr.com",
-      "status": "down",
-      "ok": false,
-      "error": "HTTP 403 Forbidden (HTTP 403) — https://dgshahr.com/blog/best-banks-for-deposit-rates/"
+      "status": "ok",
+      "ok": true,
+      "via": "direct",
+      "observedAt": "2026-11-03",
+      "parsed": 31
     },
     {
       "name": "isignal.ir",
       "status": "ok",
       "ok": true,
       "parsed": 67
+    },
+    {
+      "name": "crosscheck",
+      "status": "ok",
+      "ok": true,
+      "matched": 6,
+      "mismatched": 0
     }
   ],
-  "degradedSources": [
-    "dgshahr.com"
-  ],
-  "crosscheck": null,
+  "degradedSources": [],
+  "crosscheck": {
+    "generatedAt": "2026-11-03T20:12:41.983Z",
+    "summary": {
+      "matched": 6,
+      "mismatched": 0,
+      "unverified": 0
+    },
+    "mismatches": []
+  },
   "linkHealth": {
     "total": 30,
     "ok": 22,
@@ -259,8 +276,8 @@
     "healthPercent": 73
   },
   "verdict": {
-    "dataFresh": false,
-    "sourcesHealthy": false,
+    "dataFresh": true,
+    "sourcesHealthy": true,
     "note": "اعداد این گزارش از دادهٔ ثبت‌شده ساخته می‌شوند، نه از واکشی زنده."
   }
 }

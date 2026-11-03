@@ -1,23 +1,32 @@
 {
-  "autoDiscovered": 337,
+  "autoDiscovered": 366,
   "counts": {
     "credit": 65,
     "deposits": 53,
     "funds": 73,
-    "loans": 203,
+    "loans": 232,
     "loyalty": 14,
-    "total": 408
+    "total": 437
   },
-  "lastRun": "2026-11-03T11:07:49.288Z",
-  "lastRunDurationMs": 132326,
+  "freshness": {
+    "d30": 75,
+    "d7": 153,
+    "d90": 143,
+    "medianDays": 20,
+    "older": 66,
+    "total": 437,
+    "unknown": 0
+  },
+  "lastRun": "2026-11-03T20:12:42.043Z",
+  "lastRunDurationMs": 156665,
   "lastRunMode": "full",
   "sources": [
     {
       "attempted": 150,
-      "discovered": 616,
+      "discovered": 617,
       "failures": 0,
       "fresh": 120,
-      "ms": 25663,
+      "ms": 33222,
       "name": "rade.ir",
       "ok": true,
       "parsed": 150,
@@ -26,179 +35,216 @@
     {
       "detail": [
         {
-          "id": "cbi-rates",
+          "id": "sepah-deposit",
           "ok": true,
-          "rates": [],
-          "url": "https://www.cbi.ir/simplelist/2088.aspx"
+          "rates": [
+            25,
+            23,
+            5,
+            2
+          ],
+          "url": "https://banksepah.ir/سپرده",
+          "via": "direct"
         },
         {
-          "id": "cbi-circulars",
-          "ok": true,
-          "rates": [],
-          "url": "https://www.cbi.ir/simplelist/1466.aspx"
+          "empty": true,
+          "id": "cbi-policy-rates",
+          "ok": false,
+          "url": "https://www.cbi.ir/PolicyRates/policyrates_fa.aspx",
+          "via": "direct"
         },
         {
-          "id": "saman",
-          "ok": true,
-          "rates": [],
-          "url": "https://www.sb24.ir/"
-        },
-        {
-          "id": "bankino",
-          "ok": true,
-          "rates": [],
-          "url": "https://bankino.digital/"
-        },
-        {
-          "error": "HTTP 403 Forbidden (HTTP 403) — https://bmi.ir/fa/deposit",
+          "error": "همهٔ مسیرهای «https://bmi.ir/fa/deposit» بسته بود — direct: HTTP 404 Not Found (HTTP 404) — https://bmi.ir/fa/deposit | mirror: HTTP 404 Not Found (HTTP 404) — ",
           "id": "melli-deposit",
           "ok": false,
           "url": "https://bmi.ir/fa/deposit"
         },
         {
-          "error": "شبکه در دسترس نبود — https://bankmellat.ir/deposits",
+          "error": "همهٔ مسیرهای «https://bankmellat.ir/deposits» بسته بود — direct: شبکه در دسترس نبود — https://bankmellat.ir/deposits | mirror: شبکه در دسترس نبود — https://www.",
           "id": "mellat-deposit",
           "ok": false,
           "url": "https://bankmellat.ir/deposits"
         },
         {
-          "error": "شبکه در دسترس نبود — https://tejaratbank.ir/دپارتمان-حساب-سپرده",
+          "empty": true,
           "id": "tejarat-deposit",
           "ok": false,
-          "url": "https://tejaratbank.ir/دپارتمان-حساب-سپرده"
+          "url": "https://tejaratbank.ir/دپارتمان-حساب-سپرده",
+          "via": "mirror"
         },
         {
-          "error": "شبکه در دسترس نبود — https://www.bsi.ir/Services/Deposits",
+          "empty": true,
           "id": "saderat-deposit",
           "ok": false,
-          "url": "https://www.bsi.ir/Services/Deposits"
+          "url": "https://www.bsi.ir/Services/Deposits",
+          "via": "direct"
         },
         {
-          "error": "شبکه در دسترس نبود — https://banksepah.ir/سپرده",
-          "id": "sepah-deposit",
-          "ok": false,
-          "url": "https://banksepah.ir/سپرده"
-        },
-        {
-          "error": "شبکه در دسترس نبود — https://www.enbank.ir/",
+          "error": "همهٔ مسیرهای «https://www.enbank.ir/» بسته بود — direct: شبکه در دسترس نبود — https://www.enbank.ir/ | wayback: snapshot یافت نشد",
           "id": "eghtesad-novin",
           "ok": false,
           "url": "https://www.enbank.ir/"
         },
         {
-          "error": "شبکه در دسترس نبود — https://parsian-bank.ir/",
+          "empty": true,
           "id": "parsian",
           "ok": false,
-          "url": "https://parsian-bank.ir/"
+          "url": "https://parsian-bank.ir/",
+          "via": "direct"
         },
         {
-          "error": "HTTP 403 Forbidden (HTTP 403) — https://www.bpi.ir/",
+          "empty": true,
           "id": "pasargad",
           "ok": false,
-          "url": "https://www.bpi.ir/"
+          "url": "https://www.bpi.ir/",
+          "via": "direct"
         },
         {
-          "error": "شبکه در دسترس نبود — https://www.refah-bank.ir/",
+          "empty": true,
+          "id": "saman",
+          "ok": false,
+          "url": "https://www.sb24.ir/",
+          "via": "direct"
+        },
+        {
+          "error": "همهٔ مسیرهای «https://www.refah-bank.ir/» بسته بود — direct: شبکه در دسترس نبود — https://www.refah-bank.ir/ | wayback: snapshot یافت نشد",
           "id": "refah",
           "ok": false,
           "url": "https://www.refah-bank.ir/"
         },
         {
-          "error": "شبکه در دسترس نبود — https://www.bank-maskan.ir/",
+          "empty": true,
           "id": "maskan",
           "ok": false,
-          "url": "https://www.bank-maskan.ir/"
+          "url": "https://www.bank-maskan.ir/",
+          "via": "direct"
         },
         {
-          "error": "شبکه در دسترس نبود — https://www.karafarinbank.ir/",
+          "empty": true,
           "id": "karafarin",
           "ok": false,
-          "url": "https://www.karafarinbank.ir/"
+          "url": "https://www.karafarinbank.ir/",
+          "via": "direct"
         },
         {
-          "error": "شبکه در دسترس نبود — https://www.shahr-bank.ir/",
+          "error": "همهٔ مسیرهای «https://www.shahr-bank.ir/» بسته بود — direct: شبکه در دسترس نبود — https://www.shahr-bank.ir/ | wayback: snapshot یافت نشد",
           "id": "shahr",
           "ok": false,
           "url": "https://www.shahr-bank.ir/"
         },
         {
-          "error": "شبکه در دسترس نبود — https://www.sinabank.ir/",
+          "error": "همهٔ مسیرهای «https://www.sinabank.ir/» بسته بود — direct: شبکه در دسترس نبود — https://www.sinabank.ir/ | wayback: snapshot یافت نشد",
           "id": "sina",
           "ok": false,
           "url": "https://www.sinabank.ir/"
         },
         {
-          "error": "شبکه در دسترس نبود — https://www.qmb.ir/",
+          "error": "همهٔ مسیرهای «https://www.qmb.ir/» بسته بود — direct: شبکه در دسترس نبود — https://www.qmb.ir/ | wayback: snapshot یافت نشد",
           "id": "mehr-iran",
           "ok": false,
           "url": "https://www.qmb.ir/"
         },
         {
-          "error": "شبکه در دسترس نبود — https://www.rqbank.ir/",
+          "empty": true,
           "id": "resalat",
           "ok": false,
-          "url": "https://www.rqbank.ir/"
+          "url": "https://www.rqbank.ir/",
+          "via": "direct"
         },
         {
-          "error": "شبکه در دسترس نبود — https://blubank.com/",
+          "error": "همهٔ مسیرهای «https://blubank.com/» بسته بود — direct: شبکه در دسترس نبود — https://blubank.com/ | wayback: snapshot یافت نشد",
           "id": "blubank",
           "ok": false,
           "url": "https://blubank.com/"
         },
         {
-          "error": "شبکه در دسترس نبود — https://wepod.ir/",
+          "empty": true,
           "id": "vipad",
           "ok": false,
-          "url": "https://wepod.ir/"
+          "url": "https://wepod.ir/",
+          "via": "direct"
         },
         {
-          "error": "شبکه در دسترس نبود — https://www.mebank.ir/",
+          "error": "همهٔ مسیرهای «https://www.mebank.ir/» بسته بود — direct: شبکه در دسترس نبود — https://www.mebank.ir/ | wayback: snapshot یافت نشد",
           "id": "middle-east",
           "ok": false,
           "url": "https://www.mebank.ir/"
         },
         {
-          "error": "شبکه در دسترس نبود — https://www.bki.ir/",
+          "error": "همهٔ مسیرهای «https://www.bki.ir/» بسته بود — direct: شبکه در دسترس نبود — https://www.bki.ir/ | wayback: snapshot یافت نشد",
           "id": "keshavarzi",
           "ok": false,
           "url": "https://www.bki.ir/"
         },
         {
-          "error": "شبکه در دسترس نبود — https://www.gardeshgari-bank.com/",
+          "error": "همهٔ مسیرهای «https://www.gardeshgari-bank.com/» بسته بود — direct: شبکه در دسترس نبود — https://www.gardeshgari-bank.com/ | wayback: snapshot یافت نشد",
           "id": "gardeshgari",
           "ok": false,
           "url": "https://www.gardeshgari-bank.com/"
         },
         {
-          "error": "HTTP 403 Forbidden (HTTP 403) — https://tobank.ir/",
+          "empty": true,
+          "id": "bankino",
+          "ok": false,
+          "url": "https://bankino.digital/",
+          "via": "direct"
+        },
+        {
+          "empty": true,
           "id": "tobank",
           "ok": false,
-          "url": "https://tobank.ir/"
+          "url": "https://tobank.ir/",
+          "via": "direct"
         }
       ],
-      "ms": 94949,
+      "empty": 12,
+      "ms": 69758,
       "name": "bank-sites",
       "ok": true,
-      "reachable": 4,
-      "targets": 25
+      "reachable": 1,
+      "reached": 13,
+      "targets": 24,
+      "viaFallback": 0
     },
     {
-      "ms": 7535,
+      "failures": [
+        {
+          "error": "همهٔ مسیرهای «https://www.amar.org.ir/english/Statistics-by-Topic/Consumer-Price-Index» بسته بود — direct: شبکه در دسترس نبود — https://www.amar.org.ir/english/",
+          "label": "مرکز آمار ایران — شاخص قیمت مصرف‌کننده",
+          "source": "amar-cpi",
+          "url": "https://www.amar.org.ir/english/Statistics-by-Topic/Consumer-Price-Index"
+        }
+      ],
+      "ms": 42315,
       "name": "macro-indicators",
       "ok": true,
-      "sourcesOk": 2,
+      "policy": {
+        "latest": {
+          "date": "1405/08/07",
+          "interbank": 24,
+          "iso": "2026-10-29"
+        },
+        "rows": 32
+      },
+      "sourcesOk": 3,
       "touched": []
     },
     {
-      "error": "HTTP 403 Forbidden (HTTP 403) — https://dgshahr.com/blog/best-banks-for-deposit-rates/",
-      "ms": 847,
+      "degraded": false,
+      "ms": 965,
       "name": "dgshahr.com",
-      "ok": false
+      "observedAt": "2026-11-03",
+      "ok": true,
+      "parsed": 31,
+      "schemes": 13,
+      "standard": 6,
+      "tiers": 51,
+      "via": "direct"
     },
     {
       "etf": 38,
       "issuance": 29,
-      "ms": 3247,
+      "ms": 1963,
       "name": "isignal.ir",
       "ok": true,
       "origin": "api:signalpardazgroup.com",
@@ -212,6 +258,43 @@
       "rows": 599,
       "skipped": 13,
       "unmapped": 93
+    },
+    {
+      "matched": 6,
+      "mismatched": 0,
+      "ms": 8347,
+      "name": "crosscheck",
+      "ok": true,
+      "sources": [
+        {
+          "ageDays": 0,
+          "chain": "direct✓",
+          "name": "finai",
+          "observedAt": "2026-11-03T20:12:33.637Z",
+          "ok": true,
+          "values": 6,
+          "via": "direct"
+        },
+        {
+          "ageDays": 0,
+          "chain": "direct✓",
+          "name": "khanesarmaye",
+          "observedAt": "2026-11-03T20:12:35.974Z",
+          "ok": true,
+          "values": 6,
+          "via": "direct"
+        },
+        {
+          "ageDays": 0,
+          "chain": "direct✓",
+          "name": "nabzgheymat",
+          "observedAt": "2026-11-03T20:12:37.747Z",
+          "ok": true,
+          "values": 6,
+          "via": "direct"
+        }
+      ],
+      "unverified": 0
     }
   ],
   "stale": 0,

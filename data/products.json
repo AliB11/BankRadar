@@ -1,15 +1,15 @@
 {
-  "autoDiscovered": 337,
+  "autoDiscovered": 366,
   "counts": {
     "credit": 65,
     "deposits": 53,
     "funds": 73,
-    "loans": 203,
+    "loans": 232,
     "loyalty": 14,
-    "total": 408
+    "total": 437
   },
   "disclaimer": "هر رکورد دارای منبع و تاریخ کنترل است. نرخ‌های سود تابع مصوبات شورای پول و اعتبار و بخشنامه‌های بانک مرکزی است و بانک‌ها می‌توانند شرایط را تغییر دهند. پیش از اقدام، شرایط را از منبع رسمی بانک تأیید کنید.",
-  "generatedAt": "2026-11-03T11:05:36.962Z",
+  "generatedAt": "2026-11-03T20:10:05.378Z",
   "generator": "tools/collect.mjs",
   "products": [
     {
@@ -202,9 +202,9 @@
       "digital": 70,
       "friction": 80,
       "id": "day-deposit-pref-30",
-      "lastSeen": "2026-10-25",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-25",
+      "lastVerified": "2026-11-03",
       "maxAmount": null,
       "minAmount": 5000000000,
       "product": "سپرده با سود ترجیحی بانک دی (پلکانی ۲۷ تا ۳۰٪ بر اساس مانده)",
@@ -217,7 +217,7 @@
         "نرخ شکست: در صورتی که حساب خود را زودتر از حداقل مدت سپرده‌گذاری ببندید؛ سقف سود ۵ درصد است."
       ],
       "source": {
-        "checked": "2026-10-25",
+        "checked": "2026-11-03",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -330,9 +330,9 @@
       "digital": 70,
       "friction": 80,
       "id": "eghtesad-novin-deposit-pref-30",
-      "lastSeen": "2026-10-25",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-25",
+      "lastVerified": "2026-11-03",
       "maxAmount": null,
       "minAmount": 1000000000,
       "product": "سپرده با سود ترجیحی بانک اقتصاد نوین (پلکانی ۲۵ تا ۳۰٪ بر اساس مانده)",
@@ -346,7 +346,7 @@
         "۱۰ میلیارد تومان و بیش‌تر: ۲۹ الی ۳۰٪"
       ],
       "source": {
-        "checked": "2026-10-25",
+        "checked": "2026-11-03",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -418,9 +418,9 @@
       "digital": 70,
       "friction": 80,
       "id": "gardeshgari-deposit-pref-28",
-      "lastSeen": "2026-10-25",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-25",
+      "lastVerified": "2026-11-03",
       "maxAmount": null,
       "minAmount": 10000000000,
       "product": "سپرده با سود ترجیحی بانک گردشگری (سقف ۳۱٪ برای مبالغ بالا)",
@@ -434,7 +434,7 @@
         "نرخ شکست: برای مدت‌زمان کم‌تر از یک ماه، نرخ شکست ندارد."
       ],
       "source": {
-        "checked": "2026-10-25",
+        "checked": "2026-11-03",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -505,9 +505,9 @@
       "digital": 70,
       "friction": 80,
       "id": "iran-zamin-deposit-pref-30",
-      "lastSeen": "2026-10-25",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-25",
+      "lastVerified": "2026-11-03",
       "maxAmount": null,
       "minAmount": 1000000000,
       "product": "سپرده با سود ترجیحی بانک ایران زمین (پلکانی ۲۵ تا ۳۰٪ بر اساس مانده)",
@@ -521,7 +521,7 @@
         "نرخ شکست: در صورتی که حساب خود را زودتر از حداقل مدت سپرده‌گذاری ببندید؛ سقف سود ۰ است. / در صورتی که حساب خود را زودتر از حداقل مدت سپرده‌گذاری ببندید؛ سقف سود ۲۷٪ است."
       ],
       "source": {
-        "checked": "2026-10-25",
+        "checked": "2026-11-03",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -552,9 +552,9 @@
       "digital": 70,
       "friction": 80,
       "id": "karafarin-deposit-pref-30",
-      "lastSeen": "2026-10-25",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-25",
+      "lastVerified": "2026-11-03",
       "maxAmount": null,
       "minAmount": 5000000000,
       "product": "سپرده با سود ترجیحی بانک کارآفرین (پلکانی ۲۷ تا ۲۹.۵٪ بر اساس مانده)",
@@ -569,7 +569,7 @@
         "نرخ شکست: نرخ شکست ندارد."
       ],
       "source": {
-        "checked": "2026-10-25",
+        "checked": "2026-11-03",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -639,9 +639,9 @@
       "digital": 65,
       "friction": 80,
       "id": "keshavarzi-atiyeh-talayi",
-      "lastSeen": "2026-10-25",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-25",
+      "lastVerified": "2026-11-03",
       "maxAmount": null,
       "minAmount": 100000,
       "product": "سپرده آتیه طلایی (سپرده سرمایه‌گذاری کوتاه‌مدت)",
@@ -654,7 +654,7 @@
         "مزایا: دارای یک حساب کوتاه‌مدت عادی و یک حساب بلندمدت، امکان سرمایه‌گذاری مشتریان در دوره‌های کوتاه‌مدت و بهره‌مندی از ارزش حداکثری ایجاد شده برای مشتری در پایان دوره (بر اساس قوانین جاری بانک مرکزی) و مناسب برای گروه‌های مختلف مشتریان به‌ویژه خانواده‌ها(به‌منظور سرمایه‌گذاری برای فرزندان)، مستمری‌بگیران، افرادی که خدمات بازنشستگی مناسبی ندارند، سازمان‌ها، نهادها و موسسات خیریه، کمیته امداد و بهزیستی"
       ],
       "source": {
-        "checked": "2026-10-25",
+        "checked": "2026-11-03",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -684,9 +684,9 @@
       "digital": 85,
       "friction": 80,
       "id": "maskan-atiyeh-talayi-3",
-      "lastSeen": "2026-10-25",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-25",
+      "lastVerified": "2026-11-03",
       "maxAmount": null,
       "minAmount": 200000,
       "product": "سپرده آتیه طلایی ۳ (سرمایه‌گذاری کوتاه‌مدت عادی با قابلیت واریز و برداشت)",
@@ -699,7 +699,7 @@
         "مزایا: دارای ۲ حساب کوتاه‌مدت و بلندمدت برای واریز سود حساب بلندمدت به کوتاه‌مدت و امکان استفاده از سپرده با خدمات الکترونیکی بانک"
       ],
       "source": {
-        "checked": "2026-10-25",
+        "checked": "2026-11-03",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -729,9 +729,9 @@
       "digital": 70,
       "friction": 80,
       "id": "maskan-sp-deposit-pref-28",
-      "lastSeen": "2026-10-25",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-25",
+      "lastVerified": "2026-11-03",
       "maxAmount": null,
       "minAmount": 300000000,
       "product": "سپرده با سود ترجیحی بانک مسکن (سقف ۲۸٪ برای مبالغ بالا)",
@@ -744,7 +744,7 @@
         "حداقل مدت برای سقف سود: ۶ ماه اول ۲۷٪ و بعد از ۶ ماه ۲۸٪ (بعد از گذشت ۶ ماه، یک درصد سود مازاد ماه‌های گذشته هم به شما پرداخت می‌شود. )"
       ],
       "source": {
-        "checked": "2026-10-25",
+        "checked": "2026-11-03",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -775,9 +775,9 @@
       "digital": 70,
       "friction": 80,
       "id": "mellal-deposit-pref-26",
-      "lastSeen": "2026-10-25",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-25",
+      "lastVerified": "2026-11-03",
       "maxAmount": null,
       "minAmount": 1000000000,
       "product": "سپرده با سود ترجیحی مؤسسه اعتباری ملل (سقف ۳۰.۵٪ برای مبالغ بالا)",
@@ -791,7 +791,7 @@
         "نرخ شکست: در کم‌تر از یک ماه، معادل ۰.۵٪"
       ],
       "source": {
-        "checked": "2026-10-25",
+        "checked": "2026-11-03",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -822,9 +822,9 @@
       "digital": 65,
       "friction": 80,
       "id": "mellal-vijehe",
-      "lastSeen": "2026-10-25",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-25",
+      "lastVerified": "2026-11-03",
       "maxAmount": null,
       "minAmount": 1000000,
       "product": "سپرده ویژه (بلندمدت)",
@@ -836,7 +836,7 @@
         "برداشت پیش از موعد: بعد از ۳ ماه، نرخ شکست ندارد."
       ],
       "source": {
-        "checked": "2026-10-25",
+        "checked": "2026-11-03",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -866,9 +866,9 @@
       "digital": 70,
       "friction": 80,
       "id": "mellat-deposit-pref-30",
-      "lastSeen": "2026-10-25",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-25",
+      "lastVerified": "2026-11-03",
       "maxAmount": null,
       "minAmount": 5000000000,
       "product": "سپرده با سود ترجیحی بانک ملت (پلکانی ۲۷ تا ۲۹.۹٪ بر اساس مانده)",
@@ -884,7 +884,7 @@
         "نرخ شکست: در صورتی که حساب خود را زودتر از حداقل مدت سپرده‌گذاری ببندید؛ سقف سود ۲۷٪ است. / در صورتی که حساب خود را زودتر از حداقل مدت سپرده‌گذاری ببندید؛ سقف سود ۲۹٪ است."
       ],
       "source": {
-        "checked": "2026-10-25",
+        "checked": "2026-11-03",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -955,9 +955,9 @@
       "digital": 70,
       "friction": 80,
       "id": "melli-deposit-pref-29",
-      "lastSeen": "2026-10-25",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-25",
+      "lastVerified": "2026-11-03",
       "maxAmount": null,
       "minAmount": 50000000,
       "product": "سپرده با سود ترجیحی بانک ملی ایران (پلکانی ۲۲ تا ۲۹٪ بر اساس مانده)",
@@ -975,7 +975,7 @@
         "حداقل مدت برای سقف سود: ۳ ماه"
       ],
       "source": {
-        "checked": "2026-10-25",
+        "checked": "2026-11-03",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -1006,9 +1006,9 @@
       "digital": 70,
       "friction": 80,
       "id": "parsian-deposit-pref-27",
-      "lastSeen": "2026-10-25",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-25",
+      "lastVerified": "2026-11-03",
       "maxAmount": null,
       "minAmount": 5000000000,
       "product": "سپرده با سود ترجیحی بانک پارسیان (پلکانی ۲۶.۵ تا ۲۷٪ بر اساس مانده)",
@@ -1022,7 +1022,7 @@
         "نرخ شکست: نرخ شکست ندارد."
       ],
       "source": {
-        "checked": "2026-10-25",
+        "checked": "2026-11-03",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -1053,9 +1053,9 @@
       "digital": 85,
       "friction": 80,
       "id": "parsian-saba",
-      "lastSeen": "2026-10-25",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-25",
+      "lastVerified": "2026-11-03",
       "maxAmount": null,
       "minAmount": null,
       "product": "سپرده سبا (سپرده سرمایه‌گذاری کوتاه‌مدت عادی)",
@@ -1068,7 +1068,7 @@
         "مزایا: امکان استفاده از تسهیلات، امکان شرکت در قرعه‌کشی دوره‌ای سبا، عضویت خودکار در باشگاه مشتریان بانک پارسیان، عضویت خودکار در باشگاه تخفیفی تاپیا با قابلیت تخفیف یک تا ۵۰٪ در لحظه، استفاده از جوایز و تخفیف‌های شرکای تجاری باشگاه و امکان افتتاح حساب آنلاین"
       ],
       "source": {
-        "checked": "2026-10-25",
+        "checked": "2026-11-03",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -1098,9 +1098,9 @@
       "digital": 65,
       "friction": 80,
       "id": "pasargad-bist-plus",
-      "lastSeen": "2026-10-25",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-25",
+      "lastVerified": "2026-11-03",
       "maxAmount": 10000000000,
       "minAmount": 1000000,
       "product": "طرح سرمایه‌گذاری بیست + ویپاد",
@@ -1113,7 +1113,7 @@
         "مزایا: امکان دریافت ۴ سکه (امتیاز تسهیلات) به‌ازای هر یک میلیون تومان در هر روز در وی‌کلاب و معاف از مالیات"
       ],
       "source": {
-        "checked": "2026-10-25",
+        "checked": "2026-11-03",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -1143,9 +1143,9 @@
       "digital": 65,
       "friction": 80,
       "id": "pasargad-danesh-amoozi",
-      "lastSeen": "2026-10-25",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-25",
+      "lastVerified": "2026-11-03",
       "maxAmount": null,
       "minAmount": 100000,
       "product": "سپرده سرمایه‌گذاری دانش‌آموزی",
@@ -1157,7 +1157,7 @@
         "مزایا: سپرده باید توسط مدیران ارشد مدارس ابتدائی و متوسطه به‌نام دانش‌آموز افتتاح شود."
       ],
       "source": {
-        "checked": "2026-10-25",
+        "checked": "2026-11-03",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -1187,9 +1187,9 @@
       "digital": 70,
       "friction": 80,
       "id": "pasargad-deposit-pref-30",
-      "lastSeen": "2026-10-25",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-25",
+      "lastVerified": "2026-11-03",
       "maxAmount": null,
       "minAmount": 1000000000,
       "product": "سپرده با سود ترجیحی بانک پاسارگاد (پلکانی ۲۷ تا ۳۰٪ بر اساس مانده)",
@@ -1204,7 +1204,7 @@
         "نرخ شکست: در صورتی که حساب خود را زودتر از حداقل مدت سپرده‌گذاری ببندید؛ سقف سود ۰ است."
       ],
       "source": {
-        "checked": "2026-10-25",
+        "checked": "2026-11-03",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -1235,9 +1235,9 @@
       "digital": 65,
       "friction": 80,
       "id": "pasargad-rasta",
-      "lastSeen": "2026-10-25",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-25",
+      "lastVerified": "2026-11-03",
       "maxAmount": 10000000000,
       "minAmount": 1000000,
       "product": "طرح سرمایه‌گذاری رستا ویپاد",
@@ -1250,7 +1250,7 @@
         "مزایا: امکان دریافت ۵ سکه (امتیاز تسهیلات) به‌ازای هر یک میلیون تومان در هر روز در وی‌کلاب و معاف از مالیات"
       ],
       "source": {
-        "checked": "2026-10-25",
+        "checked": "2026-11-03",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -1280,9 +1280,9 @@
       "digital": 65,
       "friction": 80,
       "id": "pasargad-rooyesh",
-      "lastSeen": "2026-10-25",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-25",
+      "lastVerified": "2026-11-03",
       "maxAmount": 10000000000,
       "minAmount": 1000000,
       "product": "طرح سرمایه‌گذاری رویش ویپاد (بلندمدت یک ساله)",
@@ -1295,7 +1295,7 @@
         "مزایا: پس از پایان دوره سرمایه‌گذاری، طرح رویش قابل تمدید نیست."
       ],
       "source": {
-        "checked": "2026-10-25",
+        "checked": "2026-11-03",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -1614,7 +1614,7 @@
       },
       "friction": 85,
       "id": "rade-707740",
-      "lastSeen": "2026-11-01",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-11-01",
       "lastVerified": "2026-10-16",
       "maxAmount": null,
@@ -1628,11 +1628,12 @@
       ],
       "rate": 20,
       "rateKind": "profit",
+      "rateKnown": true,
       "rateLabel": "سود ۲۰٪",
       "regulatory": false,
       "requirements": [],
       "source": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — طرح سرمایه‌گذاری بیست+ ویپاد بانک پاسارگاد",
         "url": "https://www.rade.ir/bank-account-special-deposit/707740-%d8%b7%d8%b1%d8%ad-%d8%b3%d8%b1%d9%85%d8%a7%db%8c%d9%87%da%af%d8%b0%d8%a7%d8%b1%db%8c-%d8%a8%db%8c%d8%b3%d8%aa-%d9%88%db%8c%d9%be%d8%a7%d8%af/"
@@ -1703,9 +1704,9 @@
       "digital": 70,
       "friction": 80,
       "id": "refah-deposit-pref-28",
-      "lastSeen": "2026-10-25",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-25",
+      "lastVerified": "2026-11-03",
       "maxAmount": null,
       "minAmount": 500000000,
       "product": "سپرده با سود ترجیحی بانک رفاه کارگران (سقف ۲۸٪ برای مبالغ بالا)",
@@ -1717,7 +1718,7 @@
         "نرخ شکست: برای مدت‌زمان کم‌تر از یک ماه، نرخ شکست ندارد."
       ],
       "source": {
-        "checked": "2026-10-25",
+        "checked": "2026-11-03",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -1748,9 +1749,9 @@
       "digital": 65,
       "friction": 80,
       "id": "refah-farda",
-      "lastSeen": "2026-10-25",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-25",
+      "lastVerified": "2026-11-03",
       "maxAmount": null,
       "minAmount": 100000,
       "product": "سپرده رفاه فردا (بلندمدت)",
@@ -1763,7 +1764,7 @@
         "مزایا: امکان استفاده از تسهیلات برای خرید کالا و خدمات مورد نیاز و خرید خودرو و امکان واگذاری امتیاز طرح به غیر (واریز سود مستمر ماهانه به حساب افراد دیگر)"
       ],
       "source": {
-        "checked": "2026-10-25",
+        "checked": "2026-11-03",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -1793,9 +1794,9 @@
       "digital": 65,
       "friction": 80,
       "id": "saderat-saheem-1",
-      "lastSeen": "2026-10-25",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-25",
+      "lastVerified": "2026-11-03",
       "maxAmount": null,
       "minAmount": 5000000,
       "product": "طرح سهیم یک (بلندمدت)",
@@ -1808,7 +1809,7 @@
         "مزایا: کل سود ۱۲ ماه خود را در پایان ماه اول دریافت می‌کنید."
       ],
       "source": {
-        "checked": "2026-10-25",
+        "checked": "2026-11-03",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -1838,9 +1839,9 @@
       "digital": 65,
       "friction": 80,
       "id": "saderat-saheem-2",
-      "lastSeen": "2026-10-25",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-25",
+      "lastVerified": "2026-11-03",
       "maxAmount": null,
       "minAmount": 5000000,
       "product": "طرح سهیم ۲ (بلندمدت)",
@@ -1853,7 +1854,7 @@
         "مزایا: کل سود ۱۲ ماه خود را در پایان ماه اول و کل سود ۲۴ ماه خود را در پایان ماه سیزدهم دریافت می‌کنید."
       ],
       "source": {
-        "checked": "2026-10-25",
+        "checked": "2026-11-03",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -1883,9 +1884,9 @@
       "digital": 65,
       "friction": 80,
       "id": "saman-atiyeh-plus",
-      "lastSeen": "2026-10-25",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-25",
+      "lastVerified": "2026-11-03",
       "maxAmount": null,
       "minAmount": 100000,
       "product": "سپرده آتیه پلاس",
@@ -1898,7 +1899,7 @@
         "مزایا: امکان افتتاح حساب به‌صورت مشترک"
       ],
       "source": {
-        "checked": "2026-10-25",
+        "checked": "2026-11-03",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -1968,9 +1969,9 @@
       "digital": 70,
       "friction": 80,
       "id": "saman-sp-deposit-30",
-      "lastSeen": "2026-10-25",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-25",
+      "lastVerified": "2026-11-03",
       "maxAmount": null,
       "minAmount": 2000000000,
       "product": "سپرده با سود ترجیحی بانک سامان (پلکانی ۲۴.۵ تا ۲۷٪ بر اساس مانده)",
@@ -1986,7 +1987,7 @@
         "نرخ شکست: در صورتی که حساب خود را زودتر از حداقل مدت سپرده‌گذاری ببندید؛ سقف سود در حالت‌های اول و دوم ۴٪ و در حالت سوم ۰ است."
       ],
       "source": {
-        "checked": "2026-10-25",
+        "checked": "2026-11-03",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -2017,9 +2018,9 @@
       "digital": 85,
       "friction": 80,
       "id": "saman-win-card",
-      "lastSeen": "2026-10-25",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-25",
+      "lastVerified": "2026-11-03",
       "maxAmount": null,
       "minAmount": 10000,
       "product": "سپرده وین کارت",
@@ -2032,7 +2033,7 @@
         "مزایا: امکان شرکت در قرعه‌کشی ۴۰ میلیارد جوایز و امکان افتتاح حساب به‌صورت آنلاین"
       ],
       "source": {
-        "checked": "2026-10-25",
+        "checked": "2026-11-03",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -2101,9 +2102,9 @@
       "digital": 70,
       "friction": 80,
       "id": "sepah-deposit-pref-27",
-      "lastSeen": "2026-10-25",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-25",
+      "lastVerified": "2026-11-03",
       "maxAmount": null,
       "minAmount": 3000000000,
       "product": "سپرده با سود ترجیحی بانک سپه (پلکانی ۲۶ تا ۲۷٪ بر اساس مانده)",
@@ -2117,7 +2118,7 @@
         "نرخ شکست: در صورتی که حساب خود را زودتر از حداقل مدت سپرده‌گذاری ببندید؛ سقف سود ۴ الی ۵٪ است."
       ],
       "source": {
-        "checked": "2026-10-25",
+        "checked": "2026-11-03",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -2188,9 +2189,9 @@
       "digital": 70,
       "friction": 80,
       "id": "shahr-deposit-pref-26",
-      "lastSeen": "2026-10-25",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-25",
+      "lastVerified": "2026-11-03",
       "maxAmount": null,
       "minAmount": 1000000000,
       "product": "سپرده با سود ترجیحی بانک شهر (پلکانی ۲۵ تا ۳۰٪ بر اساس مانده)",
@@ -2204,7 +2205,7 @@
         "نرخ شکست: نرخ شکست ندارد."
       ],
       "source": {
-        "checked": "2026-10-25",
+        "checked": "2026-11-03",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -2276,9 +2277,9 @@
       "digital": 70,
       "friction": 80,
       "id": "sina-sp-deposit-pref-27",
-      "lastSeen": "2026-10-25",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-25",
+      "lastVerified": "2026-11-03",
       "maxAmount": null,
       "minAmount": 1000000000,
       "product": "سپرده با سود ترجیحی بانک سینا (پلکانی ۲۶ تا ۲۸٪ بر اساس مانده)",
@@ -2293,7 +2294,7 @@
         "نرخ شکست: برای مدت‌زمان کم‌تر از یک ماه، نرخ شکست ندارد."
       ],
       "source": {
-        "checked": "2026-10-25",
+        "checked": "2026-11-03",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -2324,9 +2325,9 @@
       "digital": 70,
       "friction": 80,
       "id": "tejarat-deposit-pref-29",
-      "lastSeen": "2026-10-25",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-25",
+      "lastVerified": "2026-11-03",
       "maxAmount": null,
       "minAmount": 1500000000,
       "product": "سپرده با سود ترجیحی بانک تجارت (پلکانی ۲۵.۵ تا ۲۹٪ بر اساس مانده)",
@@ -2339,7 +2340,7 @@
         "۵ میلیارد تومان و بیش‌تر: ۲۸ الی ۲۹٪"
       ],
       "source": {
-        "checked": "2026-10-25",
+        "checked": "2026-11-03",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -2410,9 +2411,9 @@
       "digital": 70,
       "friction": 80,
       "id": "tosee-taavon-deposit-pref-26",
-      "lastSeen": "2026-10-25",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-08-23",
-      "lastVerified": "2026-10-25",
+      "lastVerified": "2026-11-03",
       "maxAmount": null,
       "minAmount": 1000000000,
       "product": "سپرده با سود ترجیحی بانک توسعه تعاون (پلکانی ۲۲.۵ تا ۲۶٪ بر اساس مانده)",
@@ -2426,7 +2427,7 @@
         "نرخ شکست: برای مدت‌زمان کم‌تر از یک ماه، نرخ شکست ندارد."
       ],
       "source": {
-        "checked": "2026-10-25",
+        "checked": "2026-11-03",
         "kind": "press",
         "title": "دیجی‌شهر — مقایسه نرخ سود سپرده بانکی ۱۴۰۵",
         "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
@@ -3007,7 +3008,7 @@
       },
       "friction": 50,
       "id": "rade-704680",
-      "lastSeen": "2026-11-01",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2025-12-17",
       "lastVerified": "2026-10-16",
       "maxAmount": 100000000000,
@@ -3016,6 +3017,7 @@
       "product": "طرح تسهیلات ایران‌یار بانک ایران زمین",
       "rate": 23,
       "rateKind": "profit",
+      "rateKnown": true,
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
@@ -3023,7 +3025,7 @@
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام"
       ],
       "source": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — طرح تسهیلات ایران‌یار بانک ایران زمین",
         "url": "https://www.rade.ir/loan-goods-loan/704680-%d8%b7%d8%b1%d8%ad-%d8%aa%d8%b3%d9%87%db%8c%d9%84%d8%a7%d8%aa-%d8%a7%db%8c%d8%b1%d8%a7%d9%86%db%8c%d8%a7%d8%b1-%d8%a8%d8%a7%d9%86%da%a9-%d8%a7%db%8c%d8%b1%d8%a7%d9%86-%d8%b2%d9%85%db%8c%d9%86/"
@@ -3061,7 +3063,7 @@
       },
       "friction": 72,
       "id": "rade-704689",
-      "lastSeen": "2026-11-02",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-05-20",
       "lastVerified": "2026-10-16",
       "maxAmount": 200000000,
@@ -3079,7 +3081,7 @@
         "قسط تقریبی: ۱۲,۵۷۱,۲۸۶ تومان"
       ],
       "source": {
-        "checked": "2026-11-02",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — وام نسیم خرید بانک سرمایه",
         "url": "https://www.rade.ir/loan-goods-loan/704689-%d9%88%d8%a7%d9%85-%d9%86%d8%b3%db%8c%d9%85-%d8%ae%d8%b1%db%8c%d8%af-%d8%a8%d8%a7%d9%86%da%a9-%d8%b3%d8%b1%d9%85%d8%a7%db%8c%d9%87/"
@@ -3117,7 +3119,7 @@
       },
       "friction": 72,
       "id": "rade-704701",
-      "lastSeen": "2026-11-01",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-07-27",
       "lastVerified": "2026-10-16",
       "maxAmount": 40000000,
@@ -3126,6 +3128,7 @@
       "product": "وام بلوبانک",
       "rate": 20,
       "rateKind": "profit",
+      "rateKnown": true,
       "rateLabel": "سود ۲۰٪",
       "regulatory": false,
       "requirements": [
@@ -3134,7 +3137,7 @@
         "قسط تقریبی: ۳,۷۶۳,۰۵۲ تومان"
       ],
       "source": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — وام بلوبانک",
         "url": "https://www.rade.ir/loan-no-guarantor-loans/704701-%d9%88%d8%a7%d9%85-%d8%a8%d9%84%d9%88%d8%a8%d8%a7%d9%86%da%a9/"
@@ -3172,7 +3175,7 @@
       },
       "friction": 72,
       "id": "rade-704722",
-      "lastSeen": "2026-11-01",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-09-27",
       "lastVerified": "2026-10-16",
       "maxAmount": 500000000,
@@ -3181,6 +3184,7 @@
       "product": "وام کارت رفاهی بانک رفاه کارگران",
       "rate": 7.5,
       "rateKind": "profit",
+      "rateKnown": true,
       "rateLabel": "سود ۷.۵٪",
       "regulatory": false,
       "requirements": [
@@ -3189,7 +3193,7 @@
         "قسط تقریبی: ۲۲,۷۲۷,۲۷۳ تومان"
       ],
       "source": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — وام کارت رفاهی بانک رفاه کارگران",
         "url": "https://www.rade.ir/loan-goods-loan/704722-%d9%88%d8%a7%d9%85-%da%a9%d8%a7%d8%b1%d8%aa-%d8%b1%d9%81%d8%a7%d9%87%db%8c-%d8%a8%d8%a7%d9%86%da%a9-%d8%b1%d9%81%d8%a7%d9%87-%da%a9%d8%a7%d8%b1%da%af%d8%b1%d8%a7%d9%86/"
@@ -3227,7 +3231,7 @@
       },
       "friction": 72,
       "id": "rade-704736",
-      "lastSeen": "2026-11-01",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-09-14",
       "lastVerified": "2026-10-16",
       "maxAmount": 400000000,
@@ -3236,6 +3240,7 @@
       "product": "تسهیلات پیمان ویپاد بانک پاسارگاد",
       "rate": 22.5,
       "rateKind": "profit",
+      "rateKnown": true,
       "rateLabel": "سود ۲۲.۵٪",
       "regulatory": false,
       "requirements": [
@@ -3244,7 +3249,7 @@
         "قسط تقریبی: ۲۴,۱۶۸,۵۹۲ تومان"
       ],
       "source": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — تسهیلات پیمان ویپاد بانک پاسارگاد",
         "url": "https://www.rade.ir/loan-no-guarantor-loans/704736-%d8%aa%d8%b3%d9%87%db%8c%d9%84%d8%a7%d8%aa-%d9%be%db%8c%d9%85%d8%a7%d9%86-%d9%88%db%8c%d9%be%d8%a7%d8%af-%d8%a8%d8%a7%d9%86%da%a9-%d9%be%d8%a7%d8%b3%d8%a7%d8%b1%da%af%d8%a7%d8%af/"
@@ -3393,7 +3398,7 @@
       },
       "friction": 72,
       "id": "rade-705067",
-      "lastSeen": "2026-11-01",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-07-27",
       "lastVerified": "2026-10-16",
       "maxAmount": 400000000,
@@ -3402,6 +3407,7 @@
       "product": "وام خرید لوازم‌ خانگی بانک سامان (کارت اعتباری)",
       "rate": 23,
       "rateKind": "profit",
+      "rateKnown": true,
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
@@ -3410,7 +3416,7 @@
         "قسط تقریبی: ۱۱,۲۷۶,۱۸۸ تومان"
       ],
       "source": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — وام خرید لوازم‌ خانگی بانک سامان (کارت اعتباری)",
         "url": "https://www.rade.ir/loan-goods-loan/705067-%d9%88%d8%a7%d9%85-%d8%ae%d8%b1%db%8c%d8%af-%d9%84%d9%88%d8%a7%d8%b2%d9%85-%d8%ae%d8%a7%d9%86%da%af%db%8c-%d8%a8%d8%a7%d9%86%da%a9-%d8%b3%d8%a7%d9%85%d8%a7%d9%86-%da%a9%d8%a7%d8%b1%d8%aa/"
@@ -3504,7 +3510,7 @@
       },
       "friction": 72,
       "id": "rade-705318",
-      "lastSeen": "2026-11-01",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-10-20",
       "lastVerified": "2026-10-16",
       "maxAmount": 50000000,
@@ -3513,6 +3519,7 @@
       "product": "تسهیلات برآیند چک‌یار ویپاد بانک پاسارگاد",
       "rate": 22.5,
       "rateKind": "profit",
+      "rateKnown": true,
       "rateLabel": "سود ۲۲.۵٪",
       "regulatory": false,
       "requirements": [
@@ -3521,7 +3528,7 @@
         "قسط تقریبی: ۵,۵۲۹,۹۸۴ تومان"
       ],
       "source": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — تسهیلات برآیند چک‌یار ویپاد بانک پاسارگاد",
         "url": "https://www.rade.ir/loan-no-guarantor-loans/705318-%d8%aa%d8%b3%d9%87%db%8c%d9%84%d8%a7%d8%aa-%d8%a8%d8%b1%d8%a2%db%8c%d9%86%d8%af-%da%86%da%a9%db%8c%d8%a7%d8%b1-%d9%88%db%8c%d9%be%d8%a7%d8%af-%d8%a8%d8%a7%d9%86%da%a9-%d9%be%d8%a7%d8%b3%d8%a7/"
@@ -3559,7 +3566,7 @@
       },
       "friction": 72,
       "id": "rade-705549",
-      "lastSeen": "2026-11-01",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-10-20",
       "lastVerified": "2026-10-16",
       "maxAmount": 300000000,
@@ -3568,6 +3575,7 @@
       "product": "وام سازمانی بلوبانک",
       "rate": 23,
       "rateKind": "profit",
+      "rateKnown": true,
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
@@ -3576,7 +3584,7 @@
         "قسط تقریبی: ۱۵,۷۱۱,۹۹۲ تومان"
       ],
       "source": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — وام سازمانی بلوبانک",
         "url": "https://www.rade.ir/loan-instant-loan/705549-%d9%88%d8%a7%d9%85-%d8%b3%d8%a7%d8%b2%d9%85%d8%a7%d9%86%db%8c-%d8%a8%d9%84%d9%88%d8%a8%d8%a7%d9%86%da%a9/"
@@ -3614,7 +3622,7 @@
       },
       "friction": 72,
       "id": "rade-705630",
-      "lastSeen": "2026-11-01",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-10-20",
       "lastVerified": "2026-10-16",
       "maxAmount": 50000000,
@@ -3623,6 +3631,7 @@
       "product": "وام غیرحضوری فرازبانک ایران زمین",
       "rate": 23,
       "rateKind": "profit",
+      "rateKnown": true,
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
@@ -3631,7 +3640,7 @@
         "قسط تقریبی: ۲,۶۱۸,۶۶۵ تومان"
       ],
       "source": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — وام غیرحضوری فرازبانک ایران زمین",
         "url": "https://www.rade.ir/loan-no-guarantor-loans/705630-%d9%88%d8%a7%d9%85-%d8%ba%db%8c%d8%b1%d8%ad%d8%b6%d9%88%d8%b1%db%8c-%d9%81%d8%b1%d8%a7%d8%b2%d8%a8%d8%a7%d9%86%da%a9-%d8%a7%db%8c%d8%b1%d8%a7%d9%86-%d8%b2%d9%85%db%8c%d9%86/"
@@ -3669,7 +3678,7 @@
       },
       "friction": 72,
       "id": "rade-705737",
-      "lastSeen": "2026-11-01",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-08-16",
       "lastVerified": "2026-10-16",
       "maxAmount": 2250000000,
@@ -3678,6 +3687,7 @@
       "product": "وام ثروت سرمایه بانک سرمایه",
       "rate": 10,
       "rateKind": "profit",
+      "rateKnown": true,
       "rateLabel": "سود ۱۰٪",
       "regulatory": false,
       "requirements": [
@@ -3686,7 +3696,7 @@
         "قسط تقریبی: ۱۸۳,۳۴۰,۶۱۶ تومان"
       ],
       "source": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — وام ثروت سرمایه بانک سرمایه",
         "url": "https://www.rade.ir/loan-no-guarantor-loans/705737-%d9%88%d8%a7%d9%85-%d8%ab%d8%b1%d9%88%d8%aa-%d8%b3%d8%b1%d9%85%d8%a7%db%8c%d9%87-%d8%a8%d8%a7%d9%86%da%a9-%d8%b3%d8%b1%d9%85%d8%a7%db%8c%d9%87/"
@@ -3724,7 +3734,7 @@
       },
       "friction": 72,
       "id": "rade-705742",
-      "lastSeen": "2026-11-01",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2025-12-29",
       "lastVerified": "2026-10-16",
       "maxAmount": 200000000,
@@ -3733,6 +3743,7 @@
       "product": "طرح بای کارت بانک گردشگری",
       "rate": 23,
       "rateKind": "profit",
+      "rateKnown": true,
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
@@ -3741,7 +3752,7 @@
         "قسط تقریبی: ۷,۷۴۱,۹۴۴ تومان"
       ],
       "source": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — طرح بای کارت بانک گردشگری",
         "url": "https://www.rade.ir/loan-instant-loan/705742-%d8%b7%d8%b1%d8%ad-%d8%a8%d8%a7%db%8c-%da%a9%d8%a7%d8%b1%d8%aa-%d8%a8%d8%a7%d9%86%da%a9-%da%af%d8%b1%d8%af%d8%b4%da%af%d8%b1%db%8c/"
@@ -3779,7 +3790,7 @@
       },
       "friction": 50,
       "id": "rade-705857",
-      "lastSeen": "2026-11-01",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-09-15",
       "lastVerified": "2026-10-16",
       "maxAmount": 200000000,
@@ -3788,6 +3799,7 @@
       "product": "تسهیلات کارت اعتباری توبانک بانک گردشگری",
       "rate": 23,
       "rateKind": "profit",
+      "rateKnown": true,
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
@@ -3796,7 +3808,7 @@
         "قسط تقریبی: ۷,۷۴۱,۹۴۴ تومان"
       ],
       "source": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — تسهیلات کارت اعتباری توبانک بانک گردشگری",
         "url": "https://www.rade.ir/loan-goods-loan/705857-%d8%aa%d8%b3%d9%87%db%8c%d9%84%d8%a7%d8%aa-%da%a9%d8%a7%d8%b1%d8%aa-%d8%a7%d8%b9%d8%aa%d8%a8%d8%a7%d8%b1%db%8c-%d8%aa%d9%88%d8%a8%d8%a7%d9%86%da%a9-%d8%a8%d8%a7%d9%86%da%a9-%da%af%d8%b1%d8%af%d8%b4/"
@@ -3834,7 +3846,7 @@
       },
       "friction": 72,
       "id": "rade-706036",
-      "lastSeen": "2026-11-01",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-09-27",
       "lastVerified": "2026-10-16",
       "maxAmount": 600000000,
@@ -3843,6 +3855,7 @@
       "product": "وام نیترو بانک صادرات ایران",
       "rate": 23,
       "rateKind": "profit",
+      "rateKnown": true,
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
@@ -3851,7 +3864,7 @@
         "قسط تقریبی: ۲۳,۲۲۵,۸۳۳ تومان"
       ],
       "source": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — وام نیترو بانک صادرات ایران",
         "url": "https://www.rade.ir/loan-no-guarantor-loans/706036-%d9%88%d8%a7%d9%85-%d9%86%db%8c%d8%aa%d8%b1%d9%88-%d8%a8%d8%a7%d9%86%da%a9-%d8%b5%d8%a7%d8%af%d8%b1%d8%a7%d8%aa-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
@@ -3889,7 +3902,7 @@
       },
       "friction": 72,
       "id": "rade-706662",
-      "lastSeen": "2026-11-01",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-10-20",
       "lastVerified": "2026-10-16",
       "maxAmount": 50000000,
@@ -3898,6 +3911,7 @@
       "product": "وام میکرولون بانک ملت",
       "rate": 23,
       "rateKind": "profit",
+      "rateKnown": true,
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
@@ -3906,7 +3920,7 @@
         "قسط تقریبی: ۸,۹۰۱,۲۰۴ تومان"
       ],
       "source": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — وام میکرولون بانک ملت",
         "url": "https://www.rade.ir/loan-no-guarantor-loans/706662-%d9%88%d8%a7%d9%85-%d9%85%db%8c%da%a9%d8%b1%d9%88%d9%84%d9%88%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%84%d8%aa/"
@@ -4000,7 +4014,7 @@
       },
       "friction": 72,
       "id": "rade-706689",
-      "lastSeen": "2026-11-01",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-10-20",
       "lastVerified": "2026-10-16",
       "maxAmount": 100000000,
@@ -4009,6 +4023,7 @@
       "product": "تسهیلات اعتباری ایرانسل (بانک ملت)",
       "rate": 23,
       "rateKind": "profit",
+      "rateKnown": true,
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
@@ -4017,7 +4032,7 @@
         "قسط تقریبی: ۹,۴۰۷,۶۳۲ تومان"
       ],
       "source": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — تسهیلات اعتباری ایرانسل (بانک ملت)",
         "url": "https://www.rade.ir/loan-goods-loan/706689-%d8%aa%d8%b3%d9%87%db%8c%d9%84%d8%a7%d8%aa-%d8%a7%d8%b9%d8%aa%d8%a8%d8%a7%d8%b1%db%8c-%d8%a7%db%8c%d8%b1%d8%a7%d9%86%d8%b3%d9%84-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%84%d8%aa/"
@@ -4055,7 +4070,7 @@
       },
       "friction": 72,
       "id": "rade-706711",
-      "lastSeen": "2026-11-01",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-10-20",
       "lastVerified": "2026-10-16",
       "maxAmount": 20000000,
@@ -4064,6 +4079,7 @@
       "product": "طرح رفاه کار بانک رفاه کارگران",
       "rate": 4,
       "rateKind": "profit",
+      "rateKnown": true,
       "rateLabel": "سود ۴٪",
       "regulatory": false,
       "requirements": [
@@ -4072,7 +4088,7 @@
         "قسط تقریبی: ۵,۰۴۱,۷۳۶ تومان"
       ],
       "source": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — طرح رفاه کار بانک رفاه کارگران",
         "url": "https://www.rade.ir/loan-goods-loan/706711-%d8%b7%d8%b1%d8%ad-%d8%b1%d9%81%d8%a7%d9%87-%da%a9%d8%a7%d8%b1-%d8%a8%d8%a7%d9%86%da%a9-%d8%b1%d9%81%d8%a7%d9%87-%da%a9%d8%a7%d8%b1%da%af%d8%b1%d8%a7%d9%86/"
@@ -4110,7 +4126,7 @@
       },
       "friction": 72,
       "id": "rade-706733",
-      "lastSeen": "2026-11-01",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-05-03",
       "lastVerified": "2026-10-16",
       "maxAmount": 50000000,
@@ -4119,6 +4135,7 @@
       "product": "وام طرح فرهنگ‌کارت بانک ملت",
       "rate": 23,
       "rateKind": "profit",
+      "rateKnown": true,
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
@@ -4127,7 +4144,7 @@
         "قسط تقریبی: ۴,۷۰۳,۸۱۶ تومان"
       ],
       "source": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — وام طرح فرهنگ‌کارت بانک ملت",
         "url": "https://www.rade.ir/loan-goods-loan/706733-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%d9%81%d8%b1%d9%87%d9%86%da%af%da%a9%d8%a7%d8%b1%d8%aa-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%84%d8%aa/"
@@ -4165,7 +4182,7 @@
       },
       "friction": 72,
       "id": "rade-706758",
-      "lastSeen": "2026-11-01",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-09-21",
       "lastVerified": "2026-10-16",
       "maxAmount": 100000000,
@@ -4174,6 +4191,7 @@
       "product": "وام کشاورزی بانک کشاورزی",
       "rate": 23,
       "rateKind": "profit",
+      "rateKnown": true,
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
@@ -4182,7 +4200,7 @@
         "قسط تقریبی: ۹,۴۰۷,۶۳۲ تومان"
       ],
       "source": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — وام کشاورزی بانک کشاورزی",
         "url": "https://www.rade.ir/loan-no-guarantor-loans/706758-%d9%88%d8%a7%d9%85-%da%a9%d8%b4%d8%a7%d9%88%d8%b1%d8%b2%db%8c-%d8%a8%d8%a7%d9%86%da%a9-%da%a9%d8%b4%d8%a7%d9%88%d8%b1%d8%b2%db%8c/"
@@ -4208,7 +4226,7 @@
       "category": "credit",
       "ceilingContingent": false,
       "collateral": "نامشخص",
-      "collateralKind": "credit-score",
+      "collateralKind": "mixed",
       "confidence": "medium",
       "cons": [
         "محدود به کشاورزان دارای مطالبات گندم و چای",
@@ -4225,7 +4243,7 @@
       },
       "friction": 72,
       "id": "rade-706960",
-      "lastSeen": "2026-11-01",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-11-01",
       "lastVerified": "2026-10-16",
       "maxAmount": 1000000000,
@@ -4238,11 +4256,12 @@
       ],
       "rate": 23,
       "rateKind": "profit",
+      "rateKnown": true,
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [],
       "source": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — گرین‌پی",
         "url": "https://www.rade.ir/installment/706960-%da%af%d8%b1%db%8c%d9%86%d9%be%db%8c/"
@@ -4614,7 +4633,7 @@
       "digital": 88,
       "friction": 74,
       "id": "rade-707734",
-      "lastSeen": "2026-11-02",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-08-29",
       "lastVerified": "2026-10-16",
       "maxAmount": 300000000,
@@ -4838,7 +4857,7 @@
       "digital": 86,
       "friction": 70,
       "id": "rade-707969",
-      "lastSeen": "2026-11-02",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-09-02",
       "lastVerified": "2026-10-16",
       "maxAmount": 200000000,
@@ -4894,7 +4913,7 @@
       "digital": 90,
       "friction": 75,
       "id": "rade-708359",
-      "lastSeen": "2026-11-02",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-09-12",
       "lastVerified": "2026-10-16",
       "maxAmount": 400000000,
@@ -5288,7 +5307,7 @@
       "feeModel": "unknown",
       "friction": 88,
       "id": "rade-708812",
-      "lastSeen": "2026-11-02",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-09-29",
       "lastVerified": "2026-10-16",
       "maxAmount": 20000000,
@@ -5346,7 +5365,7 @@
       "digital": 96,
       "friction": 90,
       "id": "rade-708922",
-      "lastSeen": "2026-11-02",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-10-04",
       "lastVerified": "2026-10-16",
       "maxAmount": 20000000,
@@ -6554,7 +6573,7 @@
       },
       "friction": 50,
       "id": "rade-704651",
-      "lastSeen": "2026-11-02",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-05-20",
       "lastVerified": "2026-10-16",
       "maxAmount": 300000000,
@@ -6572,7 +6591,7 @@
         "قسط تقریبی: ۱۱,۴۵۷,۱۳۶ تومان"
       ],
       "source": {
-        "checked": "2026-11-02",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — وام همپا موسسه اعتباری ملل",
         "url": "https://www.rade.ir/loan-cash-loan/704651-%d9%88%d8%a7%d9%85-%d9%87%d9%85%d9%be%d8%a7-%d9%85%d9%88%d8%b3%d8%b3%d9%87-%d8%a7%d8%b9%d8%aa%d8%a8%d8%a7%d8%b1%db%8c-%d9%85%d9%84%d9%84/"
@@ -6610,7 +6629,7 @@
       },
       "friction": 72,
       "id": "rade-704652",
-      "lastSeen": "2026-11-02",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-07-07",
       "lastVerified": "2026-10-16",
       "maxAmount": 500000000,
@@ -6628,7 +6647,7 @@
         "قسط تقریبی: ۱۵,۱۵۱,۵۱۵ تومان"
       ],
       "source": {
-        "checked": "2026-11-02",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — وام طرح کرامت (مهریار سازمان‌های اجتماعی) بانک مهر ایران",
         "url": "https://www.rade.ir/loan-interest-free-loan/704652-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%da%a9%d8%b1%d8%a7%d9%85%d8%aa-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%87%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
@@ -6666,7 +6685,7 @@
       },
       "friction": 72,
       "id": "rade-704653",
-      "lastSeen": "2026-11-02",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-09-21",
       "lastVerified": "2026-10-16",
       "maxAmount": 1000000000,
@@ -6684,7 +6703,7 @@
         "قسط تقریبی: ۱۸,۱۸۱,۸۱۸ تومان"
       ],
       "source": {
-        "checked": "2026-11-02",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — وام طرح نصر تفاهم‌نامه‌ای بانک مهر ایران",
         "url": "https://www.rade.ir/loan-interest-free-loan/704653-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%d9%86%d8%b5%d8%b1-%d8%ad%d9%82%d9%88%d9%82%db%8c-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%87%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
@@ -6722,7 +6741,7 @@
       },
       "friction": 72,
       "id": "rade-704654",
-      "lastSeen": "2026-11-02",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-09-19",
       "lastVerified": "2026-10-16",
       "maxAmount": 1000000000,
@@ -6740,7 +6759,7 @@
         "قسط تقریبی: ۴۵,۴۵۴,۵۴۵ تومان"
       ],
       "source": {
-        "checked": "2026-11-02",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — وام طرح توسکا (مهریار اصناف) بانک مهر ایران",
         "url": "https://www.rade.ir/loan-interest-free-loan/704654-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%d8%aa%d9%88%d8%b3%da%a9%d8%a7-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%87%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
@@ -6778,7 +6797,7 @@
       },
       "friction": 50,
       "id": "rade-704655",
-      "lastSeen": "2026-11-02",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-09-19",
       "lastVerified": "2026-10-16",
       "maxAmount": 1000000000,
@@ -6796,7 +6815,7 @@
         "قسط تقریبی: ۱۸,۱۸۱,۸۱۸ تومان"
       ],
       "source": {
-        "checked": "2026-11-02",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — وام طرح نارون بانک مهر ایران",
         "url": "https://www.rade.ir/loan-interest-free-loan/704655-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%d9%86%d8%a7%d8%b1%d9%88%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%87%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
@@ -6890,7 +6909,7 @@
       },
       "friction": 50,
       "id": "rade-704657",
-      "lastSeen": "2026-11-02",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-09-19",
       "lastVerified": "2026-10-16",
       "maxAmount": 150000000,
@@ -6908,7 +6927,7 @@
         "قسط تقریبی: ۲,۷۲۷,۲۷۳ تومان"
       ],
       "source": {
-        "checked": "2026-11-02",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — وام طرح نجم بانک مهر ایران",
         "url": "https://www.rade.ir/loan-interest-free-loan/704657-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%d9%86%d8%ac%d9%85-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%87%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
@@ -6946,7 +6965,7 @@
       },
       "friction": 72,
       "id": "rade-704659",
-      "lastSeen": "2026-11-02",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2025-11-12",
       "lastVerified": "2026-10-16",
       "maxAmount": 50000000000,
@@ -6963,7 +6982,7 @@
         "هزینه جانبی: —"
       ],
       "source": {
-        "checked": "2026-11-02",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — وام واحدهای تولیدی و طرح های سرمایه گذاری بانک توسعه صادرات ایران",
         "url": "https://www.rade.ir/loan-cash-loan/704659-%d9%88%d8%a7%d9%85-%d9%88%d8%a7%d8%ad%d8%af%d9%87%d8%a7%db%8c-%d8%aa%d9%88%d9%84%db%8c%d8%af%db%8c-%d9%88-%d8%b7%d8%b1%d8%ad-%d9%87%d8%a7%db%8c-%d8%b3%d8%b1%d9%85%d8%a7%db%8c%d9%87-%da%af%d8%b0%d8%a7/"
@@ -7001,7 +7020,7 @@
       },
       "friction": 50,
       "id": "rade-704661",
-      "lastSeen": "2026-11-02",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-07-08",
       "lastVerified": "2026-10-16",
       "maxAmount": 300000000,
@@ -7019,7 +7038,7 @@
         "قسط تقریبی: ۹,۲۸۹,۷۰۸ تومان"
       ],
       "source": {
-        "checked": "2026-11-02",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — وام طرح نوید 2 بانک سپه",
         "url": "https://www.rade.ir/loan-cash-loan/704661-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%d9%86%d9%88%db%8c%d8%af-2-%d8%a8%d8%a7%d9%86%da%a9-%d8%b3%d9%be%d9%87/"
@@ -7057,7 +7076,7 @@
       },
       "friction": 50,
       "id": "rade-704662",
-      "lastSeen": "2026-11-02",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-07-08",
       "lastVerified": "2026-10-16",
       "maxAmount": 1000000000,
@@ -7075,7 +7094,7 @@
         "قسط تقریبی: ۱۸,۱۸۱,۸۱۸ تومان"
       ],
       "source": {
-        "checked": "2026-11-02",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — وام نگین امید زرین بانک سپه",
         "url": "https://www.rade.ir/loan-interest-free-loan/704662-%d9%88%d8%a7%d9%85-%d9%86%da%af%db%8c%d9%86-%d8%a7%d9%85%db%8c%d8%af-%d8%b2%d8%b1%db%8c%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d8%b3%d9%be%d9%87/"
@@ -7169,7 +7188,7 @@
       },
       "friction": 50,
       "id": "rade-704668",
-      "lastSeen": "2026-11-02",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-09-15",
       "lastVerified": "2026-10-16",
       "maxAmount": 300000000,
@@ -7186,7 +7205,7 @@
         "هزینه جانبی: —"
       ],
       "source": {
-        "checked": "2026-11-02",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — وام نیروگاه خورشیدی خانگی بانک ملت",
         "url": "https://www.rade.ir/loan-cash-loan/704668-%d9%88%d8%a7%d9%85-%d9%86%db%8c%d8%b1%d9%88%da%af%d8%a7%d9%87-%d8%ae%d9%88%d8%b1%d8%b4%db%8c%d8%af%db%8c-%d8%ae%d8%a7%d9%86%da%af%db%8c-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%84%d8%aa/"
@@ -7275,7 +7294,7 @@
       "digital": 60,
       "friction": 50,
       "id": "rade-704672",
-      "lastSeen": "2026-11-02",
+      "lastSeen": "2026-11-03",
       "lastUpdated": null,
       "maxAmount": 500000000,
       "minAmount": null,
@@ -7848,7 +7867,7 @@
       },
       "friction": 72,
       "id": "rade-704697",
-      "lastSeen": "2026-11-02",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2025-11-12",
       "lastVerified": "2026-10-16",
       "maxAmount": 1200000000,
@@ -7866,7 +7885,7 @@
         "قسط تقریبی: ۹,۰۰۰,۰۰۰ تومان"
       ],
       "source": {
-        "checked": "2026-11-02",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — وام خرید تاکسی‌های برقی بانک شهر",
         "url": "https://www.rade.ir/loan-car-loan/704697-%d9%88%d8%a7%d9%85-%d8%ae%d8%b1%db%8c%d8%af-%d8%aa%d8%a7%da%a9%d8%b3%db%8c%d9%87%d8%a7%db%8c-%d8%a8%d8%b1%d9%82%db%8c-%d8%a8%d8%a7%d9%86%da%a9-%d8%b4%d9%87%d8%b1/"
@@ -7960,7 +7979,7 @@
       },
       "friction": 72,
       "id": "rade-704703",
-      "lastSeen": "2026-11-02",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-09-19",
       "lastVerified": "2026-10-16",
       "maxAmount": 500000000,
@@ -7978,7 +7997,7 @@
         "قسط تقریبی: ۱۱,۱۱۱,۱۱۱ تومان"
       ],
       "source": {
-        "checked": "2026-11-02",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — وام ارکیده بانک مهر ایران + شرایط",
         "url": "https://www.rade.ir/loan-interest-free-loan/704703-%d9%88%d8%a7%d9%85-%d8%a7%d8%b1%da%a9%db%8c%d8%af%d9%87-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%87%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7%d9%86-%d8%b4%d8%b1%d8%a7%db%8c%d8%b7/"
@@ -9451,7 +9470,7 @@
       "digital": 60,
       "friction": 50,
       "id": "rade-704772",
-      "lastSeen": "2026-11-02",
+      "lastSeen": "2026-11-03",
       "lastUpdated": null,
       "maxAmount": 400000000,
       "minAmount": null,
@@ -9619,7 +9638,7 @@
       },
       "friction": 50,
       "id": "rade-704789",
-      "lastSeen": "2026-11-01",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-05-20",
       "lastVerified": "2026-10-16",
       "maxAmount": 2000000000,
@@ -9628,6 +9647,7 @@
       "product": "وام یاقوت نوین موسسه اعتباری ملل",
       "rate": 23,
       "rateKind": "profit",
+      "rateKnown": true,
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
@@ -9636,7 +9656,7 @@
         "قسط تقریبی: ۶۴,۱۰۲,۹۴۳ تومان"
       ],
       "source": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — وام یاقوت نوین موسسه اعتباری ملل",
         "url": "https://www.rade.ir/loan-cash-loan/704789-%d9%88%d8%a7%d9%85-%db%8c%d8%a7%d9%82%d9%88%d8%aa-%d9%85%d9%84%d9%84-%d9%85%d9%88%d8%b3%d8%b3%d9%87-%d9%85%d9%84%d9%84/"
@@ -9674,7 +9694,7 @@
       },
       "friction": 50,
       "id": "rade-704796",
-      "lastSeen": "2026-11-02",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-05-20",
       "lastVerified": "2026-10-16",
       "maxAmount": 300000000,
@@ -9692,7 +9712,7 @@
         "قسط تقریبی: ۵,۴۵۴,۵۴۵ تومان"
       ],
       "source": {
-        "checked": "2026-11-02",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — وام نیکان نوین موسسه اعتباری ملل",
         "url": "https://www.rade.ir/loan-interest-free-loan/704796-%d9%88%d8%a7%d9%85-%d9%86%db%8c%da%a9%d8%a7%d9%86-%d9%85%d9%88%d8%b3%d8%b3%d9%87-%d9%85%d9%84%d9%84/"
@@ -9760,6 +9780,171 @@
       "tags": [
         "قرض‌الحسنه",
         "موسسه اعتباری ملل"
+      ],
+      "termLabel": "۶۰ ماه",
+      "termMonths": 60
+    },
+    {
+      "amountLabel": "۳۰۰ میلیون تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک سپه",
+      "bankId": "sepah",
+      "benefit": 96,
+      "category": "loans",
+      "ceilingContingent": true,
+      "collateral": "ضامن رسمی, اعتبارسنجی",
+      "collateralKind": "guarantor",
+      "confidence": "medium",
+      "desc": "وام نگین امید بانک سپه",
+      "digital": 60,
+      "extra": {
+        "installment": 5454545,
+        "loanType": "وام قرض الحسنه",
+        "totalInterest": 18000000,
+        "totalWithInterest": 318000000
+      },
+      "friction": 50,
+      "id": "rade-704798",
+      "lastSeen": "2026-11-03",
+      "lastUpdated": null,
+      "maxAmount": 300000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "وام نگین امید بانک سپه",
+      "rate": 2,
+      "rateKind": "fee",
+      "rateKnown": true,
+      "rateLabel": "کارمزد ۲٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: ضامن رسمی, اعتبارسنجی",
+        "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
+        "قسط تقریبی: ۵,۴۵۴,۵۴۵ تومان"
+      ],
+      "source": {
+        "checked": "2026-11-03",
+        "kind": "aggregator",
+        "title": "رده — وام نگین امید بانک سپه",
+        "url": "https://www.rade.ir/loan-interest-free-loan/704798-%d9%88%d8%a7%d9%85-%d9%86%da%af%db%8c%d9%86-%d8%a7%d9%85%db%8c%d8%af-%d8%a8%d8%a7%d9%86%da%a9-%d8%b3%d9%be%d9%87/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "qarz",
+      "tags": [
+        "قرض‌الحسنه",
+        "سپه"
+      ],
+      "termLabel": "۶۰ ماه",
+      "termMonths": 60
+    },
+    {
+      "amountLabel": "۳۰۰ میلیون تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک صادرات",
+      "bankId": "saderat",
+      "benefit": 92,
+      "category": "loans",
+      "ceilingContingent": true,
+      "collateral": "ضامن رسمی, اعتبارسنجی",
+      "collateralKind": "guarantor",
+      "confidence": "medium",
+      "desc": "وام سپاس سپهر بانک صادرات",
+      "digital": 60,
+      "extra": {
+        "installment": 9090909,
+        "loanType": "وام قرض الحسنه",
+        "totalInterest": 24000000,
+        "totalWithInterest": 324000000
+      },
+      "friction": 50,
+      "id": "rade-704801",
+      "lastSeen": "2026-11-03",
+      "lastUpdated": null,
+      "maxAmount": 300000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "وام سپاس سپهر بانک صادرات",
+      "rate": 4,
+      "rateKind": "fee",
+      "rateKnown": true,
+      "rateLabel": "کارمزد ۴٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: ضامن رسمی, اعتبارسنجی",
+        "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
+        "قسط تقریبی: ۹,۰۹۰,۹۰۹ تومان"
+      ],
+      "source": {
+        "checked": "2026-11-03",
+        "kind": "aggregator",
+        "title": "رده — وام سپاس سپهر بانک صادرات",
+        "url": "https://www.rade.ir/loan-interest-free-loan/704801-%d9%88%d8%a7%d9%85-%d8%b3%d9%be%d8%a7%d8%b3-%d8%b3%d9%be%d9%87%d8%b1-%d8%a8%d8%a7%d9%86%da%a9-%d8%b5%d8%a7%d8%af%d8%b1%d8%a7%d8%aa/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "qarz",
+      "tags": [
+        "قرض‌الحسنه",
+        "صادرات"
+      ],
+      "termLabel": "۳۶ ماه",
+      "termMonths": 36
+    },
+    {
+      "amountLabel": "۳۰۰ میلیون تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک توسعه تعاون",
+      "bankId": "tosee-taavon",
+      "benefit": 92,
+      "category": "loans",
+      "ceilingContingent": false,
+      "collateral": "ضامن رسمی, اعتبار شغلی, اعتبارسنجی",
+      "collateralKind": "guarantor",
+      "confidence": "medium",
+      "desc": "طرح مائده بانک توسعه تعاون",
+      "digital": 60,
+      "extra": {
+        "installment": 5454545,
+        "loanType": "وام قرض الحسنه",
+        "totalInterest": 36000000,
+        "totalWithInterest": 336000000
+      },
+      "friction": 50,
+      "id": "rade-704808",
+      "lastSeen": "2026-11-03",
+      "lastUpdated": null,
+      "maxAmount": 300000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "طرح مائده بانک توسعه تعاون",
+      "rate": 4,
+      "rateKind": "fee",
+      "rateKnown": true,
+      "rateLabel": "کارمزد ۴٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: ضامن رسمی, اعتبار شغلی, اعتبارسنجی",
+        "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
+        "قسط تقریبی: ۵,۴۵۴,۵۴۵ تومان"
+      ],
+      "source": {
+        "checked": "2026-11-03",
+        "kind": "aggregator",
+        "title": "رده — طرح مائده بانک توسعه تعاون",
+        "url": "https://www.rade.ir/loan-interest-free-loan/704808-%d8%b7%d8%b1%d8%ad-%d9%85%d8%a7%d8%a6%d8%af%d9%87-%d8%a8%d8%a7%d9%86%da%a9-%d8%aa%d9%88%d8%b3%d8%b9%d9%87-%d8%aa%d8%b9%d8%a7%d9%88%d9%86/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "qarz",
+      "tags": [
+        "قرض‌الحسنه",
+        "توسعه تعاون"
       ],
       "termLabel": "۶۰ ماه",
       "termMonths": 60
@@ -9879,6 +10064,61 @@
       "termMonths": 24
     },
     {
+      "amountLabel": "۴۰۰ میلیون تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک قرض‌الحسنه مهر ایران",
+      "bankId": "mehr-iran",
+      "benefit": 92,
+      "category": "loans",
+      "ceilingContingent": true,
+      "collateral": "ضامن رسمی, اعتبار شغلی, اعتبارسنجی",
+      "collateralKind": "guarantor",
+      "confidence": "medium",
+      "desc": "طرح مهرپوز بانک مهر ایران",
+      "digital": 60,
+      "extra": {
+        "installment": 7272727,
+        "loanType": "وام قرض الحسنه",
+        "totalInterest": 48000000,
+        "totalWithInterest": 448000000
+      },
+      "friction": 50,
+      "id": "rade-704817",
+      "lastSeen": "2026-11-03",
+      "lastUpdated": null,
+      "maxAmount": 400000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "طرح مهرپوز بانک مهر ایران",
+      "rate": 4,
+      "rateKind": "fee",
+      "rateKnown": true,
+      "rateLabel": "کارمزد ۴٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: ضامن رسمی, اعتبار شغلی, اعتبارسنجی",
+        "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
+        "قسط تقریبی: ۷,۲۷۲,۷۲۷ تومان"
+      ],
+      "source": {
+        "checked": "2026-11-03",
+        "kind": "aggregator",
+        "title": "رده — طرح مهرپوز بانک مهر ایران",
+        "url": "https://www.rade.ir/loan-interest-free-loan/704817-%d8%b7%d8%b1%d8%ad-%d9%85%d9%87%d8%b1%d9%be%d9%88%d8%b2-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%87%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "qarz",
+      "tags": [
+        "قرض‌الحسنه",
+        "قرض‌الحسنه مهر ایران"
+      ],
+      "termLabel": "۶۰ ماه",
+      "termMonths": 60
+    },
+    {
       "amountLabel": "۹۵۰ میلیون تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
@@ -9935,6 +10175,556 @@
       "termMonths": 36
     },
     {
+      "amountLabel": "۱۰۰ میلیون تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک آینده",
+      "bankId": "ayandeh",
+      "benefit": 92,
+      "category": "loans",
+      "ceilingContingent": false,
+      "collateral": "اعتبار شغلی",
+      "collateralKind": "mixed",
+      "confidence": "medium",
+      "desc": "وام قرض‌الحسنه بانک آینده ویژه کارکنان دانشگاه آزاد",
+      "digital": 60,
+      "extra": {
+        "installment": 3030303,
+        "loanType": "وام قرض الحسنه",
+        "totalInterest": 8000000,
+        "totalWithInterest": 108000000
+      },
+      "friction": 72,
+      "id": "rade-704824",
+      "lastSeen": "2026-11-03",
+      "lastUpdated": null,
+      "maxAmount": 100000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "وام قرض‌الحسنه بانک آینده ویژه کارکنان دانشگاه آزاد",
+      "rate": 4,
+      "rateKind": "fee",
+      "rateKnown": true,
+      "rateLabel": "کارمزد ۴٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: اعتبار شغلی",
+        "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
+        "قسط تقریبی: ۳,۰۳۰,۳۰۳ تومان"
+      ],
+      "source": {
+        "checked": "2026-11-03",
+        "kind": "aggregator",
+        "title": "رده — وام قرض‌الحسنه بانک آینده ویژه کارکنان دانشگاه آزاد",
+        "url": "https://www.rade.ir/loan-interest-free-loan/704824-%d9%88%d8%a7%d9%85-%d9%82%d8%b1%d8%b6%d8%a7%d9%84%d8%ad%d8%b3%d9%86%d9%87-%d8%a8%d8%a7%d9%86%da%a9-%d8%a2%db%8c%d9%86%d8%af%d9%87-%d9%88%db%8c%da%98%d9%87-%da%a9%d8%a7%d8%b1%da%a9%d9%86%d8%a7/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "qarz",
+      "tags": [
+        "قرض‌الحسنه",
+        "آینده"
+      ],
+      "termLabel": "۳۶ ماه",
+      "termMonths": 36
+    },
+    {
+      "amountLabel": "۳۰۰ میلیون تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک سینا",
+      "bankId": "sina",
+      "benefit": 50,
+      "category": "loans",
+      "ceilingContingent": true,
+      "collateral": "ضامن رسمی, اعتبارسنجی",
+      "collateralKind": "guarantor",
+      "confidence": "medium",
+      "desc": "طرح آفتاب بانک سینا",
+      "digital": 60,
+      "extra": {
+        "installment": 6818182,
+        "loanType": "وام قرض الحسنه",
+        "totalInterest": null,
+        "totalWithInterest": 300100000
+      },
+      "friction": 50,
+      "id": "rade-704825",
+      "lastSeen": "2026-11-03",
+      "lastUpdated": null,
+      "maxAmount": 300000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "طرح آفتاب بانک سینا",
+      "rate": 0,
+      "rateKind": "fee",
+      "rateKnown": false,
+      "rateLabel": "نامشخص",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: ضامن رسمی, اعتبارسنجی",
+        "هزینه جانبی: ۱۰۰ هزار تومان شامل: تشکیل پرونده و اعتبارسنجی",
+        "قسط تقریبی: ۶,۸۱۸,۱۸۲ تومان"
+      ],
+      "source": {
+        "checked": "2026-11-03",
+        "kind": "aggregator",
+        "title": "رده — طرح آفتاب بانک سینا",
+        "url": "https://www.rade.ir/loan-interest-free-loan/704825-%d8%b7%d8%b1%d8%ad-%d8%a2%d9%81%d8%aa%d8%a7%d8%a8-%d8%a8%d8%a7%d9%86%da%a9-%d8%b3%db%8c%d9%86%d8%a7/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "qarz",
+      "tags": [
+        "قرض‌الحسنه",
+        "سینا"
+      ],
+      "termLabel": "۴۸ ماه",
+      "termMonths": 48
+    },
+    {
+      "amountLabel": "۳۰۰ میلیون تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک سینا",
+      "bankId": "sina",
+      "benefit": 96,
+      "category": "loans",
+      "ceilingContingent": true,
+      "collateral": "ضامن رسمی",
+      "collateralKind": "guarantor",
+      "confidence": "medium",
+      "desc": "طرح چشمه بانک سینا",
+      "digital": 60,
+      "extra": {
+        "installment": 5454545,
+        "loanType": "وام قرض الحسنه",
+        "totalInterest": 18000000,
+        "totalWithInterest": 318100000
+      },
+      "friction": 50,
+      "id": "rade-704831",
+      "lastSeen": "2026-11-03",
+      "lastUpdated": null,
+      "maxAmount": 300000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "طرح چشمه بانک سینا",
+      "rate": 2,
+      "rateKind": "fee",
+      "rateKnown": true,
+      "rateLabel": "کارمزد ۲٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: ضامن رسمی",
+        "هزینه جانبی: ۱۰۰ هزار تومان شامل: تشکیل پرونده و اعتبارسنجی",
+        "قسط تقریبی: ۵,۴۵۴,۵۴۵ تومان"
+      ],
+      "source": {
+        "checked": "2026-11-03",
+        "kind": "aggregator",
+        "title": "رده — طرح چشمه بانک سینا",
+        "url": "https://www.rade.ir/loan-interest-free-loan/704831-%d8%b7%d8%b1%d8%ad-%da%86%d8%b4%d9%85%d9%87-%d8%a8%d8%a7%d9%86%da%a9-%d8%b3%db%8c%d9%86%d8%a7/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "qarz",
+      "tags": [
+        "قرض‌الحسنه",
+        "سینا"
+      ],
+      "termLabel": "۶۰ ماه",
+      "termMonths": 60
+    },
+    {
+      "amountLabel": "۱۰۰ میلیون تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک پارسیان",
+      "bankId": "parsian",
+      "benefit": 92,
+      "category": "loans",
+      "ceilingContingent": false,
+      "collateral": "اعتبار شغلی",
+      "collateralKind": "mixed",
+      "confidence": "medium",
+      "desc": "طرح ترنج بانک پارسیان",
+      "digital": 60,
+      "extra": {
+        "installment": 3030303,
+        "loanType": "وام قرض الحسنه",
+        "totalInterest": 8000000,
+        "totalWithInterest": 108000000
+      },
+      "friction": 72,
+      "id": "rade-704837",
+      "lastSeen": "2026-11-03",
+      "lastUpdated": null,
+      "maxAmount": 100000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "طرح ترنج بانک پارسیان",
+      "rate": 4,
+      "rateKind": "fee",
+      "rateKnown": true,
+      "rateLabel": "کارمزد ۴٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: اعتبار شغلی",
+        "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
+        "قسط تقریبی: ۳,۰۳۰,۳۰۳ تومان"
+      ],
+      "source": {
+        "checked": "2026-11-03",
+        "kind": "aggregator",
+        "title": "رده — طرح ترنج بانک پارسیان",
+        "url": "https://www.rade.ir/loan-interest-free-loan/704837-%d8%b7%d8%b1%d8%ad-%d8%aa%d8%b1%d9%86%d8%ac-%d8%a8%d8%a7%d9%86%da%a9-%d9%be%d8%a7%d8%b1%d8%b3%db%8c%d8%a7%d9%86/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "qarz",
+      "tags": [
+        "قرض‌الحسنه",
+        "پارسیان"
+      ],
+      "termLabel": "۳۶ ماه",
+      "termMonths": 36
+    },
+    {
+      "amountLabel": "۳۰۰ میلیون تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک کشاورزی",
+      "bankId": "keshavarzi",
+      "benefit": 92,
+      "category": "loans",
+      "ceilingContingent": true,
+      "collateral": "ضامن رسمی, اعتبارسنجی",
+      "collateralKind": "guarantor",
+      "confidence": "medium",
+      "desc": "طرح احسان بانک کشاورزی",
+      "digital": 60,
+      "extra": {
+        "installment": 5454545,
+        "loanType": "وام قرض الحسنه",
+        "totalInterest": 36000000,
+        "totalWithInterest": 336000000
+      },
+      "friction": 50,
+      "id": "rade-704838",
+      "lastSeen": "2026-11-03",
+      "lastUpdated": null,
+      "maxAmount": 300000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "طرح احسان بانک کشاورزی",
+      "rate": 4,
+      "rateKind": "fee",
+      "rateKnown": true,
+      "rateLabel": "کارمزد ۴٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: ضامن رسمی, اعتبارسنجی",
+        "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
+        "قسط تقریبی: ۵,۴۵۴,۵۴۵ تومان"
+      ],
+      "source": {
+        "checked": "2026-11-03",
+        "kind": "aggregator",
+        "title": "رده — طرح احسان بانک کشاورزی",
+        "url": "https://www.rade.ir/loan-interest-free-loan/704838-%d8%b7%d8%b1%d8%ad-%d8%a7%d8%ad%d8%b3%d8%a7%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%da%a9%d8%b4%d8%a7%d9%88%d8%b1%d8%b2%db%8c/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "qarz",
+      "tags": [
+        "قرض‌الحسنه",
+        "کشاورزی"
+      ],
+      "termLabel": "۶۰ ماه",
+      "termMonths": 60
+    },
+    {
+      "amountLabel": "۳۰۰ میلیون تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک سینا",
+      "bankId": "sina",
+      "benefit": 92,
+      "category": "loans",
+      "ceilingContingent": false,
+      "collateral": "ضامن رسمی, اعتبار شغلی",
+      "collateralKind": "guarantor",
+      "confidence": "medium",
+      "desc": "طرح سپیدار بانک سینا",
+      "digital": 60,
+      "extra": {
+        "installment": 6818182,
+        "loanType": "وام قرض الحسنه",
+        "totalInterest": 30000000,
+        "totalWithInterest": 330000000
+      },
+      "friction": 50,
+      "id": "rade-704842",
+      "lastSeen": "2026-11-03",
+      "lastUpdated": null,
+      "maxAmount": 300000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "طرح سپیدار بانک سینا",
+      "rate": 4,
+      "rateKind": "fee",
+      "rateKnown": true,
+      "rateLabel": "کارمزد ۴٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: ضامن رسمی, اعتبار شغلی",
+        "هزینه جانبی: ۱۰۰ هزار تومان شامل: تشکیل پرونده و اعتبارسنجی",
+        "قسط تقریبی: ۶,۸۱۸,۱۸۲ تومان"
+      ],
+      "source": {
+        "checked": "2026-11-03",
+        "kind": "aggregator",
+        "title": "رده — طرح سپیدار بانک سینا",
+        "url": "https://www.rade.ir/loan-interest-free-loan/704842-%d8%b7%d8%b1%d8%ad-%d8%b3%d9%be%db%8c%d8%af%d8%a7%d8%b1-%d8%a8%d8%a7%d9%86%da%a9-%d8%b3%db%8c%d9%86%d8%a7/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "qarz",
+      "tags": [
+        "قرض‌الحسنه",
+        "سینا"
+      ],
+      "termLabel": "۴۸ ماه",
+      "termMonths": 48
+    },
+    {
+      "amountLabel": "۳۰۰ میلیون تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک سینا",
+      "bankId": "sina",
+      "benefit": 92,
+      "category": "loans",
+      "ceilingContingent": true,
+      "collateral": "اعتبار شغلی",
+      "collateralKind": "mixed",
+      "confidence": "medium",
+      "desc": "طرح نیلوفر بانک سینا",
+      "digital": 60,
+      "extra": {
+        "installment": 6818182,
+        "loanType": "وام قرض الحسنه",
+        "totalInterest": 30000000,
+        "totalWithInterest": 330000000
+      },
+      "friction": 72,
+      "id": "rade-704843",
+      "lastSeen": "2026-11-03",
+      "lastUpdated": null,
+      "maxAmount": 300000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "طرح نیلوفر بانک سینا",
+      "rate": 4,
+      "rateKind": "fee",
+      "rateKnown": true,
+      "rateLabel": "کارمزد ۴٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: اعتبار شغلی",
+        "هزینه جانبی: ۱۰۰ هزار تومان شامل: تشکیل پرونده و اعتبارسنجی",
+        "قسط تقریبی: ۶,۸۱۸,۱۸۲ تومان"
+      ],
+      "source": {
+        "checked": "2026-11-03",
+        "kind": "aggregator",
+        "title": "رده — طرح نیلوفر بانک سینا",
+        "url": "https://www.rade.ir/loan-interest-free-loan/704843-%d8%b7%d8%b1%d8%ad-%d9%86%db%8c%d9%84%d9%88%d9%81%d8%b1-%d8%a8%d8%a7%d9%86%da%a9-%d8%b3%db%8c%d9%86%d8%a7/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "qarz",
+      "tags": [
+        "قرض‌الحسنه",
+        "سینا"
+      ],
+      "termLabel": "۴۸ ماه",
+      "termMonths": 48
+    },
+    {
+      "amountLabel": "۳۰۰ میلیون تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک سرمایه",
+      "bankId": "sarmayeh",
+      "benefit": 92,
+      "category": "loans",
+      "ceilingContingent": false,
+      "collateral": "ضامن رسمی, اعتبار شغلی, اعتبارسنجی",
+      "collateralKind": "guarantor",
+      "confidence": "medium",
+      "desc": "طرح نسیم‌ سرمایه بانک سرمایه",
+      "digital": 60,
+      "extra": {
+        "installment": 5454545,
+        "loanType": "وام قرض الحسنه",
+        "totalInterest": 36000000,
+        "totalWithInterest": 336000000
+      },
+      "friction": 50,
+      "id": "rade-704845",
+      "lastSeen": "2026-11-03",
+      "lastUpdated": null,
+      "maxAmount": 300000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "طرح نسیم‌ سرمایه بانک سرمایه",
+      "rate": 4,
+      "rateKind": "fee",
+      "rateKnown": true,
+      "rateLabel": "کارمزد ۴٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: ضامن رسمی, اعتبار شغلی, اعتبارسنجی",
+        "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
+        "قسط تقریبی: ۵,۴۵۴,۵۴۵ تومان"
+      ],
+      "source": {
+        "checked": "2026-11-03",
+        "kind": "aggregator",
+        "title": "رده — طرح نسیم‌ سرمایه بانک سرمایه",
+        "url": "https://www.rade.ir/loan-interest-free-loan/704845-%d8%b7%d8%b1%d8%ad-%d9%86%d8%b3%db%8c%d9%85-%d8%b3%d8%b1%d9%85%d8%a7%db%8c%d9%87-%d8%a8%d8%a7%d9%86%da%a9-%d8%b3%d8%b1%d9%85%d8%a7%db%8c%d9%87/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "qarz",
+      "tags": [
+        "قرض‌الحسنه",
+        "سرمایه"
+      ],
+      "termLabel": "۶۰ ماه",
+      "termMonths": 60
+    },
+    {
+      "amountLabel": "۳۰۰ میلیون تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک قرض‌الحسنه مهر ایران",
+      "bankId": "mehr-iran",
+      "benefit": 92,
+      "category": "loans",
+      "ceilingContingent": false,
+      "collateral": "ضامن رسمی, اعتبارسنجی",
+      "collateralKind": "guarantor",
+      "confidence": "medium",
+      "desc": "تسهیلات امتیازی بانک مهر ایران",
+      "digital": 60,
+      "extra": {
+        "installment": 5454545,
+        "loanType": "وام قرض الحسنه",
+        "totalInterest": 36000000,
+        "totalWithInterest": 336000000
+      },
+      "friction": 50,
+      "id": "rade-704869",
+      "lastSeen": "2026-11-03",
+      "lastUpdated": null,
+      "maxAmount": 300000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "تسهیلات امتیازی بانک مهر ایران",
+      "rate": 4,
+      "rateKind": "fee",
+      "rateKnown": true,
+      "rateLabel": "کارمزد ۴٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: ضامن رسمی, اعتبارسنجی",
+        "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
+        "قسط تقریبی: ۵,۴۵۴,۵۴۵ تومان"
+      ],
+      "source": {
+        "checked": "2026-11-03",
+        "kind": "aggregator",
+        "title": "رده — تسهیلات امتیازی بانک مهر ایران",
+        "url": "https://www.rade.ir/loan-interest-free-loan/704869-%d8%aa%d8%b3%d9%87%db%8c%d9%84%d8%a7%d8%aa-%d8%a7%d9%85%d8%aa%db%8c%d8%a7%d8%b2%db%8c-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%87%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "qarz",
+      "tags": [
+        "قرض‌الحسنه",
+        "قرض‌الحسنه مهر ایران"
+      ],
+      "termLabel": "۶۰ ماه",
+      "termMonths": 60
+    },
+    {
+      "amountLabel": "۴۰۰ میلیون تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک قرض‌الحسنه مهر ایران",
+      "bankId": "mehr-iran",
+      "benefit": 92,
+      "category": "loans",
+      "ceilingContingent": false,
+      "collateral": "اعتبار شغلی, اعتبارسنجی",
+      "collateralKind": "credit-score",
+      "confidence": "medium",
+      "desc": "طرح مهریار حقیقی (توسکا) بانک مهر ایران",
+      "digital": 60,
+      "extra": {
+        "installment": 7272727,
+        "loanType": "وام قرض الحسنه",
+        "totalInterest": 48000000,
+        "totalWithInterest": 448000000
+      },
+      "friction": 72,
+      "id": "rade-704873",
+      "lastSeen": "2026-11-03",
+      "lastUpdated": null,
+      "maxAmount": 400000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "طرح مهریار حقیقی (توسکا) بانک مهر ایران",
+      "rate": 4,
+      "rateKind": "fee",
+      "rateKnown": true,
+      "rateLabel": "کارمزد ۴٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: اعتبار شغلی, اعتبارسنجی",
+        "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
+        "قسط تقریبی: ۷,۲۷۲,۷۲۷ تومان"
+      ],
+      "source": {
+        "checked": "2026-11-03",
+        "kind": "aggregator",
+        "title": "رده — طرح مهریار حقیقی (توسکا) بانک مهر ایران",
+        "url": "https://www.rade.ir/loan-interest-free-loan/704873-%d8%b7%d8%b1%d8%ad-%d9%85%d9%87%d8%b1%db%8c%d8%a7%d8%b1-%d8%ad%d9%82%db%8c%d9%82%db%8c-%d8%aa%d9%88%d8%b3%da%a9%d8%a7-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%87%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "qarz",
+      "tags": [
+        "قرض‌الحسنه",
+        "قرض‌الحسنه مهر ایران"
+      ],
+      "termLabel": "۶۰ ماه",
+      "termMonths": 60
+    },
+    {
       "amountLabel": "تا ۵۰ میلیون تومان وابسته به ارزیابی طلا",
       "audience": "متقاضیان دارای وثیقه طلا",
       "autoDiscovered": true,
@@ -9951,7 +10741,7 @@
       "digital": 60,
       "friction": 50,
       "id": "rade-704874",
-      "lastSeen": "2026-11-02",
+      "lastSeen": "2026-11-03",
       "lastUpdated": null,
       "maxAmount": 50000000,
       "minAmount": null,
@@ -10062,7 +10852,7 @@
       },
       "friction": 72,
       "id": "rade-704884",
-      "lastSeen": "2026-11-01",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-09-15",
       "lastVerified": "2026-10-16",
       "maxAmount": 4000000000,
@@ -10071,6 +10861,7 @@
       "product": "طرح پذیرندگان بانک ملت",
       "rate": 23,
       "rateKind": "profit",
+      "rateKnown": true,
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
@@ -10079,7 +10870,7 @@
         "قسط تقریبی: ۷۱۲,۰۹۶,۲۸۶ تومان"
       ],
       "source": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — طرح پذیرندگان بانک ملت",
         "url": "https://www.rade.ir/loan-cash-loan/704884-%d8%b7%d8%b1%d8%ad-%d9%be%d8%b0%db%8c%d8%b1%d9%86%d8%af%da%af%d8%a7%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%84%d8%aa/"
@@ -10150,6 +10941,116 @@
       ],
       "termLabel": "۱۲ ماه",
       "termMonths": 12
+    },
+    {
+      "amountLabel": "۵۰۰ میلیون تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک قرض‌الحسنه مهر ایران",
+      "bankId": "mehr-iran",
+      "benefit": 92,
+      "category": "loans",
+      "ceilingContingent": false,
+      "collateral": "ضامن رسمی, اعتبارسنجی",
+      "collateralKind": "guarantor",
+      "confidence": "medium",
+      "desc": "وام قرض‌الحسنه بانک مهر ایران",
+      "digital": 60,
+      "extra": {
+        "installment": 9090909,
+        "loanType": "وام قرض الحسنه",
+        "totalInterest": 60000000,
+        "totalWithInterest": 560000000
+      },
+      "friction": 50,
+      "id": "rade-704903",
+      "lastSeen": "2026-11-03",
+      "lastUpdated": null,
+      "maxAmount": 500000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "وام قرض‌الحسنه بانک مهر ایران",
+      "rate": 4,
+      "rateKind": "fee",
+      "rateKnown": true,
+      "rateLabel": "کارمزد ۴٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: ضامن رسمی, اعتبارسنجی",
+        "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
+        "قسط تقریبی: ۹,۰۹۰,۹۰۹ تومان"
+      ],
+      "source": {
+        "checked": "2026-11-03",
+        "kind": "aggregator",
+        "title": "رده — وام قرض‌الحسنه بانک مهر ایران",
+        "url": "https://www.rade.ir/loan-interest-free-loan/704903-%d9%88%d8%a7%d9%85-%d9%82%d8%b1%d8%b6%d8%a7%d9%84%d8%ad%d8%b3%d9%86%d9%87-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%87%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "qarz",
+      "tags": [
+        "قرض‌الحسنه",
+        "قرض‌الحسنه مهر ایران"
+      ],
+      "termLabel": "۶۰ ماه",
+      "termMonths": 60
+    },
+    {
+      "amountLabel": "۱۰۰ میلیون تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک توسعه تعاون",
+      "bankId": "tosee-taavon",
+      "benefit": 92,
+      "category": "loans",
+      "ceilingContingent": true,
+      "collateral": "ضامن رسمی",
+      "collateralKind": "guarantor",
+      "confidence": "medium",
+      "desc": "طرح کوثر بانک توسعه تعاون",
+      "digital": 60,
+      "extra": {
+        "installment": 10000000,
+        "loanType": "وام قرض الحسنه",
+        "totalInterest": 4219813,
+        "totalWithInterest": 100100000
+      },
+      "friction": 50,
+      "id": "rade-704913",
+      "lastSeen": "2026-11-03",
+      "lastUpdated": null,
+      "maxAmount": 100000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "طرح کوثر بانک توسعه تعاون",
+      "rate": 4,
+      "rateKind": "fee",
+      "rateKnown": true,
+      "rateLabel": "کارمزد ۴٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: ضامن رسمی",
+        "هزینه جانبی: ۱۰۰ هزار تومان شامل: تشکیل پرونده و اعتبارسنجی",
+        "قسط تقریبی: ۱۰,۰۰۰,۰۰۰ تومان"
+      ],
+      "source": {
+        "checked": "2026-11-03",
+        "kind": "aggregator",
+        "title": "رده — طرح کوثر بانک توسعه تعاون",
+        "url": "https://www.rade.ir/loan-interest-free-loan/704913-%d8%b7%d8%b1%d8%ad-%da%a9%d9%88%d8%ab%d8%b1-%d8%a8%d8%a7%d9%86%da%a9-%d8%aa%d9%88%d8%b3%d8%b9%d9%87-%d8%aa%d8%b9%d8%a7%d9%88%d9%86/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "qarz",
+      "tags": [
+        "قرض‌الحسنه",
+        "توسعه تعاون"
+      ],
+      "termLabel": "۲۴ ماه",
+      "termMonths": 24
     },
     {
       "amountLabel": "۳۰۰ میلیون تومان",
@@ -10264,6 +11165,116 @@
       "termMonths": 48
     },
     {
+      "amountLabel": "۸۰ میلیون تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک قرض‌الحسنه مهر ایران",
+      "bankId": "mehr-iran",
+      "benefit": 92,
+      "category": "loans",
+      "ceilingContingent": false,
+      "collateral": "ضامن رسمی",
+      "collateralKind": "guarantor",
+      "confidence": "medium",
+      "desc": "طرح دوم پیوند مهر بانک مهر ایران",
+      "digital": 60,
+      "extra": {
+        "installment": 1473322,
+        "loanType": "وام قرض الحسنه",
+        "totalInterest": 8399306,
+        "totalWithInterest": 88459306
+      },
+      "friction": 50,
+      "id": "rade-704921",
+      "lastSeen": "2026-11-03",
+      "lastUpdated": null,
+      "maxAmount": 80000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "طرح دوم پیوند مهر بانک مهر ایران",
+      "rate": 4,
+      "rateKind": "fee",
+      "rateKnown": true,
+      "rateLabel": "کارمزد ۴٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: ضامن رسمی",
+        "هزینه جانبی: ۶۰ هزار تومان شامل تشکیل پرونده و اعتبار سنجی",
+        "قسط تقریبی: ۱,۴۷۳,۳۲۲ تومان"
+      ],
+      "source": {
+        "checked": "2026-11-03",
+        "kind": "aggregator",
+        "title": "رده — طرح دوم پیوند مهر بانک مهر ایران",
+        "url": "https://www.rade.ir/loan-interest-free-loan/704921-%d8%b7%d8%b1%d8%ad-%d8%af%d9%88%d9%85-%d9%be%db%8c%d9%88%d9%86%d8%af-%d9%85%d9%87%d8%b1-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%87%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "qarz",
+      "tags": [
+        "قرض‌الحسنه",
+        "قرض‌الحسنه مهر ایران"
+      ],
+      "termLabel": "۶۰ ماه",
+      "termMonths": 60
+    },
+    {
+      "amountLabel": "۱۰۰ میلیون تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک قرض‌الحسنه مهر ایران",
+      "bankId": "mehr-iran",
+      "benefit": 92,
+      "category": "loans",
+      "ceilingContingent": false,
+      "collateral": "ضامن رسمی",
+      "collateralKind": "guarantor",
+      "confidence": "medium",
+      "desc": "طرح حمایت فرد حقیقی بانک مهر ایران",
+      "digital": 60,
+      "extra": {
+        "installment": 2952399,
+        "loanType": "وام قرض الحسنه",
+        "totalInterest": 6286346,
+        "totalWithInterest": 106346347
+      },
+      "friction": 50,
+      "id": "rade-704922",
+      "lastSeen": "2026-11-03",
+      "lastUpdated": null,
+      "maxAmount": 100000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "طرح حمایت فرد حقیقی بانک مهر ایران",
+      "rate": 4,
+      "rateKind": "fee",
+      "rateKnown": true,
+      "rateLabel": "کارمزد ۴٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: ضامن رسمی",
+        "هزینه جانبی: ۱۰۰ هزار تومان شامل: تشکیل پرونده و اعتبارسنجی",
+        "قسط تقریبی: ۲,۹۵۲,۳۹۹ تومان"
+      ],
+      "source": {
+        "checked": "2026-11-03",
+        "kind": "aggregator",
+        "title": "رده — طرح حمایت فرد حقیقی بانک مهر ایران",
+        "url": "https://www.rade.ir/loan-interest-free-loan/704922-%d8%b7%d8%b1%d8%ad-%d8%ad%d9%85%d8%a7%db%8c%d8%aa-%d9%81%d8%b1%d8%af-%d8%ad%d9%82%db%8c%d9%82%db%8c-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%87%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "qarz",
+      "tags": [
+        "قرض‌الحسنه",
+        "قرض‌الحسنه مهر ایران"
+      ],
+      "termLabel": "۳۶ ماه",
+      "termMonths": 36
+    },
+    {
       "amountLabel": "تعاونی‌ها تا ۵ میلیارد؛ سایر شرکت‌ها تا ۲ میلیارد تومان",
       "audience": "شرکت‌ها و اتحادیه‌های تعاونی و شرکت‌های واجد شرایط تولیدی و خدماتی",
       "autoDiscovered": true,
@@ -10280,7 +11291,7 @@
       "digital": 60,
       "friction": 50,
       "id": "rade-704924",
-      "lastSeen": "2026-11-02",
+      "lastSeen": "2026-11-03",
       "lastUpdated": null,
       "maxAmount": 5000000000,
       "minAmount": null,
@@ -10479,6 +11490,61 @@
       ],
       "termLabel": "۶۰ ماه",
       "termMonths": 60
+    },
+    {
+      "amountLabel": "۴۰۰ میلیون تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک قرض‌الحسنه مهر ایران",
+      "bankId": "mehr-iran",
+      "benefit": 92,
+      "category": "loans",
+      "ceilingContingent": false,
+      "collateral": "ضامن رسمی, اعتبارسنجی",
+      "collateralKind": "guarantor",
+      "confidence": "medium",
+      "desc": "طرح اعتبار در حساب جاری بانک مهر ایران",
+      "digital": 60,
+      "extra": {
+        "installment": 18181818,
+        "loanType": "وام قرض الحسنه",
+        "totalInterest": 24000000,
+        "totalWithInterest": 424000000
+      },
+      "friction": 50,
+      "id": "rade-704932",
+      "lastSeen": "2026-11-03",
+      "lastUpdated": null,
+      "maxAmount": 400000000,
+      "minAmount": 20000000,
+      "multiPlan": false,
+      "product": "طرح اعتبار در حساب جاری بانک مهر ایران",
+      "rate": 4,
+      "rateKind": "fee",
+      "rateKnown": true,
+      "rateLabel": "کارمزد ۴٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: ضامن رسمی, اعتبارسنجی",
+        "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
+        "قسط تقریبی: ۱۸,۱۸۱,۸۱۸ تومان"
+      ],
+      "source": {
+        "checked": "2026-11-03",
+        "kind": "aggregator",
+        "title": "رده — طرح اعتبار در حساب جاری بانک مهر ایران",
+        "url": "https://www.rade.ir/loan-interest-free-loan/704932-%d8%b7%d8%b1%d8%ad-%d8%a7%d8%b9%d8%aa%d8%a8%d8%a7%d8%b1-%d8%af%d8%b1-%d8%ad%d8%b3%d8%a7%d8%a8-%d8%ac%d8%a7%d8%b1%db%8c-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%87%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "qarz",
+      "tags": [
+        "قرض‌الحسنه",
+        "قرض‌الحسنه مهر ایران"
+      ],
+      "termLabel": "۲۴ ماه",
+      "termMonths": 24
     },
     {
       "amountLabel": "۲۰۰ میلیون تومان",
@@ -10697,6 +11763,61 @@
       "tags": [
         "وام نقدی",
         "سینا"
+      ],
+      "termLabel": "۳۶ ماه",
+      "termMonths": 36
+    },
+    {
+      "amountLabel": "۵۰ میلیون تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک کارآفرین",
+      "bankId": "karafarin",
+      "benefit": 92,
+      "category": "loans",
+      "ceilingContingent": true,
+      "collateral": "اعتبارسنجی",
+      "collateralKind": "credit-score",
+      "confidence": "medium",
+      "desc": "تسهیلات نیک‌آفرین پلاس بانک کارآفرین",
+      "digital": 60,
+      "extra": {
+        "installment": 1515152,
+        "loanType": "وام قرض الحسنه",
+        "totalInterest": 4000000,
+        "totalWithInterest": 54000000
+      },
+      "friction": 72,
+      "id": "rade-704941",
+      "lastSeen": "2026-11-03",
+      "lastUpdated": null,
+      "maxAmount": 50000000,
+      "minAmount": 5000000,
+      "multiPlan": false,
+      "product": "تسهیلات نیک‌آفرین پلاس بانک کارآفرین",
+      "rate": 4,
+      "rateKind": "fee",
+      "rateKnown": true,
+      "rateLabel": "کارمزد ۴٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: اعتبارسنجی",
+        "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام",
+        "قسط تقریبی: ۱,۵۱۵,۱۵۲ تومان"
+      ],
+      "source": {
+        "checked": "2026-11-03",
+        "kind": "aggregator",
+        "title": "رده — تسهیلات نیک‌آفرین پلاس بانک کارآفرین",
+        "url": "https://www.rade.ir/loan-interest-free-loan/704941-%d8%aa%d8%b3%d9%87%db%8c%d9%84%d8%a7%d8%aa-%d9%86%db%8c%da%a9%d8%a2%d9%81%d8%b1%db%8c%d9%86-%d9%be%d9%84%d8%a7%d8%b3-%d8%a8%d8%a7%d9%86%da%a9-%da%a9%d8%a7%d8%b1%d8%a2%d9%81%d8%b1%db%8c%d9%86/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "qarz",
+      "tags": [
+        "قرض‌الحسنه",
+        "کارآفرین"
       ],
       "termLabel": "۳۶ ماه",
       "termMonths": 36
@@ -11747,6 +12868,61 @@
       "termMonths": 36
     },
     {
+      "amountLabel": "۴۰ میلیون تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک قرض‌الحسنه مهر ایران",
+      "bankId": "mehr-iran",
+      "benefit": 92,
+      "category": "loans",
+      "ceilingContingent": false,
+      "collateral": "ضامن رسمی",
+      "collateralKind": "guarantor",
+      "confidence": "medium",
+      "desc": "طرح پیوند مهر ایران بانک مهر ایران",
+      "digital": 60,
+      "extra": {
+        "installment": 1111111,
+        "loanType": "وام قرض الحسنه",
+        "totalInterest": null,
+        "totalWithInterest": null
+      },
+      "friction": 50,
+      "id": "rade-704998",
+      "lastSeen": "2026-11-03",
+      "lastUpdated": null,
+      "maxAmount": 40000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "طرح پیوند مهر ایران بانک مهر ایران",
+      "rate": 4,
+      "rateKind": "fee",
+      "rateKnown": true,
+      "rateLabel": "کارمزد ۴٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: ضامن رسمی",
+        "هزینه جانبی: ۱ میلیون و ۶۶۰ هزار تومان شامل تشکیل پرونده و کارمزد",
+        "قسط تقریبی: ۱,۱۱۱,۱۱۱ تومان"
+      ],
+      "source": {
+        "checked": "2026-11-03",
+        "kind": "aggregator",
+        "title": "رده — طرح پیوند مهر ایران بانک مهر ایران",
+        "url": "https://www.rade.ir/loan-interest-free-loan/704998-%d8%b7%d8%b1%d8%ad-%d9%be%db%8c%d9%88%d9%86%d8%af-%d9%85%d9%87%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%87%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "qarz",
+      "tags": [
+        "قرض‌الحسنه",
+        "قرض‌الحسنه مهر ایران"
+      ],
+      "termLabel": "۳۶ ماه",
+      "termMonths": 36
+    },
+    {
       "amountLabel": "۱ میلیارد تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
@@ -11912,6 +13088,61 @@
       "termMonths": 36
     },
     {
+      "amountLabel": "۲۰ میلیون تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک قرض‌الحسنه مهر ایران",
+      "bankId": "mehr-iran",
+      "benefit": 92,
+      "category": "loans",
+      "ceilingContingent": false,
+      "collateral": "ضامن رسمی",
+      "collateralKind": "guarantor",
+      "confidence": "medium",
+      "desc": "طرح تداوم مهر بانک قرض‌الحسنه مهر ایران",
+      "digital": 60,
+      "extra": {
+        "installment": 368330,
+        "loanType": "وام قرض الحسنه",
+        "totalInterest": 2099826,
+        "totalWithInterest": 22153333
+      },
+      "friction": 50,
+      "id": "rade-705005",
+      "lastSeen": "2026-11-03",
+      "lastUpdated": null,
+      "maxAmount": 20000000,
+      "minAmount": 10000000,
+      "multiPlan": false,
+      "product": "طرح تداوم مهر بانک قرض‌الحسنه مهر ایران",
+      "rate": 4,
+      "rateKind": "fee",
+      "rateKnown": true,
+      "rateLabel": "کارمزد ۴٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: ضامن رسمی",
+        "هزینه جانبی: ۶۰ هزار تومان شامل: تشکیل پرونده، اعتبار سنجی و.",
+        "قسط تقریبی: ۳۶۸,۳۳۰ تومان"
+      ],
+      "source": {
+        "checked": "2026-11-03",
+        "kind": "aggregator",
+        "title": "رده — طرح تداوم مهر بانک قرض‌الحسنه مهر ایران",
+        "url": "https://www.rade.ir/loan-interest-free-loan/705005-%d8%b7%d8%b1%d8%ad-%d8%aa%d8%af%d8%a7%d9%88%d9%85-%d9%85%d9%87%d8%b1-%d8%a8%d8%a7%d9%86%da%a9-%d9%82%d8%b1%d8%b6%d8%a7%d9%84%d8%ad%d8%b3%d9%86%d9%87-%d9%85%d9%87%d8%b1-%d8%a7%db%8c%d8%b1/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "qarz",
+      "tags": [
+        "قرض‌الحسنه",
+        "قرض‌الحسنه مهر ایران"
+      ],
+      "termLabel": "۶۰ ماه",
+      "termMonths": 60
+    },
+    {
       "amountLabel": "۲۰۰ میلیون تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
@@ -11965,6 +13196,61 @@
       ],
       "termLabel": "۶۰ ماه",
       "termMonths": 60
+    },
+    {
+      "amountLabel": "۲۰ میلیون تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک قرض‌الحسنه مهر ایران",
+      "bankId": "mehr-iran",
+      "benefit": 92,
+      "category": "loans",
+      "ceilingContingent": false,
+      "collateral": "ضامن رسمی",
+      "collateralKind": "guarantor",
+      "confidence": "medium",
+      "desc": "طرح اندوخته اجتماعی بانک مهر ایران",
+      "digital": 60,
+      "extra": {
+        "installment": 451581,
+        "loanType": "وام قرض الحسنه",
+        "totalInterest": 1675892,
+        "totalWithInterest": 21753333
+      },
+      "friction": 50,
+      "id": "rade-705008",
+      "lastSeen": "2026-11-03",
+      "lastUpdated": null,
+      "maxAmount": 20000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "طرح اندوخته اجتماعی بانک مهر ایران",
+      "rate": 4,
+      "rateKind": "fee",
+      "rateKnown": true,
+      "rateLabel": "کارمزد ۴٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: ضامن رسمی",
+        "هزینه جانبی: ۶۰ هزار تومان شامل: تشکیل پرونده",
+        "قسط تقریبی: ۴۵۱,۵۸۱ تومان"
+      ],
+      "source": {
+        "checked": "2026-11-03",
+        "kind": "aggregator",
+        "title": "رده — طرح اندوخته اجتماعی بانک مهر ایران",
+        "url": "https://www.rade.ir/loan-interest-free-loan/705008-%d8%b7%d8%b1%d8%ad-%d8%a7%d9%86%d8%af%d9%88%d8%ae%d8%aa%d9%87-%d8%a7%d8%ac%d8%aa%d9%85%d8%a7%d8%b9%db%8c-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%87%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "qarz",
+      "tags": [
+        "قرض‌الحسنه",
+        "قرض‌الحسنه مهر ایران"
+      ],
+      "termLabel": "۴۸ ماه",
+      "termMonths": 48
     },
     {
       "amountLabel": "۱ میلیارد تومان",
@@ -12077,6 +13363,116 @@
       "termMonths": 36
     },
     {
+      "amountLabel": "۱۵۰ میلیون تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک قرض‌الحسنه مهر ایران",
+      "bankId": "mehr-iran",
+      "benefit": 92,
+      "category": "loans",
+      "ceilingContingent": false,
+      "collateral": "ضامن رسمی",
+      "collateralKind": "guarantor",
+      "confidence": "medium",
+      "desc": "کالا کارت بانک قرض‌الحسنه مهر ایران",
+      "digital": 60,
+      "extra": {
+        "installment": 6513738,
+        "loanType": "وام قرض الحسنه",
+        "totalInterest": 6329720,
+        "totalWithInterest": 157889720
+      },
+      "friction": 50,
+      "id": "rade-705020",
+      "lastSeen": "2026-11-03",
+      "lastUpdated": null,
+      "maxAmount": 150000000,
+      "minAmount": 5000000,
+      "multiPlan": false,
+      "product": "کالا کارت بانک قرض‌الحسنه مهر ایران",
+      "rate": 4,
+      "rateKind": "fee",
+      "rateKnown": true,
+      "rateLabel": "کارمزد ۴٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: ضامن رسمی",
+        "هزینه جانبی: ۱ میلیون و ۶۰۰ هزار تومان شامل: تشکیل پرونده و آبونمان سالیانه",
+        "قسط تقریبی: ۶,۵۱۳,۷۳۸ تومان"
+      ],
+      "source": {
+        "checked": "2026-11-03",
+        "kind": "aggregator",
+        "title": "رده — کالا کارت بانک قرض‌الحسنه مهر ایران",
+        "url": "https://www.rade.ir/loan-interest-free-loan/705020-%da%a9%d8%a7%d9%84%d8%a7-%da%a9%d8%a7%d8%b1%d8%aa-%d8%a8%d8%a7%d9%86%da%a9-%d9%82%d8%b1%d8%b6%d8%a7%d9%84%d8%ad%d8%b3%d9%86%d9%87-%d9%85%d9%87%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "qarz",
+      "tags": [
+        "قرض‌الحسنه",
+        "قرض‌الحسنه مهر ایران"
+      ],
+      "termLabel": "۲۴ ماه",
+      "termMonths": 24
+    },
+    {
+      "amountLabel": "۱۵۰ میلیون تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک قرض‌الحسنه مهر ایران",
+      "bankId": "mehr-iran",
+      "benefit": 98,
+      "category": "loans",
+      "ceilingContingent": true,
+      "collateral": "مسدودی سپرده",
+      "collateralKind": "mixed",
+      "confidence": "medium",
+      "desc": "وام با سپرده بانک قرض‌الحسنه مهر ایران (۲ در‌ یک)",
+      "digital": 60,
+      "extra": {
+        "installment": 2564062,
+        "loanType": "وام قرض الحسنه",
+        "totalInterest": 3843727,
+        "totalWithInterest": 153932500
+      },
+      "friction": 72,
+      "id": "rade-705048",
+      "lastSeen": "2026-11-03",
+      "lastUpdated": null,
+      "maxAmount": 150000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "وام با سپرده بانک قرض‌الحسنه مهر ایران (۲ در‌ یک)",
+      "rate": 1,
+      "rateKind": "fee",
+      "rateKnown": true,
+      "rateLabel": "کارمزد ۱٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: مسدودی سپرده",
+        "هزینه جانبی: ۱٪ کارمزد و بیمه از وام کسر می‌شود.",
+        "قسط تقریبی: ۲,۵۶۴,۰۶۲ تومان"
+      ],
+      "source": {
+        "checked": "2026-11-03",
+        "kind": "aggregator",
+        "title": "رده — وام با سپرده بانک قرض‌الحسنه مهر ایران (2 در‌ یک)",
+        "url": "https://www.rade.ir/loan-interest-free-loan/705048-%d9%88%d8%a7%d9%85-%d8%a8%d8%a7-%d8%b3%d9%be%d8%b1%d8%af%d9%87-%d8%a8%d8%a7%d9%86%da%a9-%d9%82%d8%b1%d8%b6%d8%a7%d9%84%d8%ad%d8%b3%d9%86%d9%87-%d9%85%d9%87%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "qarz",
+      "tags": [
+        "قرض‌الحسنه",
+        "قرض‌الحسنه مهر ایران"
+      ],
+      "termLabel": "۶۰ ماه",
+      "termMonths": 60
+    },
+    {
       "amountLabel": "۱۰۰ میلیون تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
@@ -12131,6 +13527,60 @@
       ],
       "termLabel": "۳۶ ماه",
       "termMonths": 36
+    },
+    {
+      "amountLabel": "متغیر",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک قرض‌الحسنه مهر ایران",
+      "bankId": "mehr-iran",
+      "benefit": 98,
+      "category": "loans",
+      "ceilingContingent": false,
+      "collateral": "مسدودی سپرده",
+      "collateralKind": "mixed",
+      "confidence": "medium",
+      "desc": "تسهیلات با پشتوانه سپرده بانک قرض الحسنه مهر ایران",
+      "digital": 60,
+      "extra": {
+        "installment": null,
+        "loanType": "وام قرض الحسنه",
+        "totalInterest": null,
+        "totalWithInterest": null
+      },
+      "friction": 72,
+      "id": "rade-705086",
+      "lastSeen": "2026-11-03",
+      "lastUpdated": null,
+      "maxAmount": null,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "تسهیلات با پشتوانه سپرده بانک قرض الحسنه مهر ایران",
+      "rate": 1,
+      "rateKind": "fee",
+      "rateKnown": true,
+      "rateLabel": "کارمزد ۱٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: مسدودی سپرده",
+        "هزینه جانبی: —"
+      ],
+      "source": {
+        "checked": "2026-11-03",
+        "kind": "aggregator",
+        "title": "رده — تسهیلات با پشتوانه سپرده بانک قرض الحسنه مهر ایران",
+        "url": "https://www.rade.ir/loan-interest-free-loan/705086-%d8%aa%d8%b3%d9%87%db%8c%d9%84%d8%a7%d8%aa-%d8%a8%d8%a7-%d9%be%d8%b4%d8%aa%d9%88%d8%a7%d9%86%d9%87-%d8%b3%d9%be%d8%b1%d8%af%d9%87-%d8%a8%d8%a7%d9%86%da%a9-%d9%82%d8%b1%d8%b6-%d8%a7%d9%84%d8%ad%d8%b3/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "qarz",
+      "tags": [
+        "قرض‌الحسنه",
+        "قرض‌الحسنه مهر ایران"
+      ],
+      "termLabel": "۶۰ ماه",
+      "termMonths": 60
     },
     {
       "amountLabel": "۴۰۰ میلیون تومان",
@@ -12188,6 +13638,61 @@
       "termMonths": 144
     },
     {
+      "amountLabel": "۳۰ میلیون تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک قرض‌الحسنه مهر ایران",
+      "bankId": "mehr-iran",
+      "benefit": 92,
+      "category": "loans",
+      "ceilingContingent": false,
+      "collateral": "ضامن رسمی",
+      "collateralKind": "guarantor",
+      "confidence": "medium",
+      "desc": "وام قرض‌الحسنه میانگین حساب بانک مهر ایران (طرح امتیازی مهر)",
+      "digital": 60,
+      "extra": {
+        "installment": 552496,
+        "loanType": "وام قرض الحسنه",
+        "totalInterest": 3149740,
+        "totalWithInterest": 33170000
+      },
+      "friction": 50,
+      "id": "rade-705100",
+      "lastSeen": "2026-11-03",
+      "lastUpdated": null,
+      "maxAmount": 30000000,
+      "minAmount": null,
+      "multiPlan": false,
+      "product": "وام قرض‌الحسنه میانگین حساب بانک مهر ایران (طرح امتیازی مهر)",
+      "rate": 4,
+      "rateKind": "fee",
+      "rateKnown": true,
+      "rateLabel": "کارمزد ۴٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: ضامن رسمی",
+        "هزینه جانبی: —",
+        "قسط تقریبی: ۵۵۲,۴۹۶ تومان"
+      ],
+      "source": {
+        "checked": "2026-11-03",
+        "kind": "aggregator",
+        "title": "رده — وام قرض‌الحسنه میانگین حساب بانک مهر ایران (طرح امتیازی مهر)",
+        "url": "https://www.rade.ir/loan-interest-free-loan/705100-%d9%88%d8%a7%d9%85-%d9%82%d8%b1%d8%b6%d8%a7%d9%84%d8%ad%d8%b3%d9%86%d9%87-%d9%85%db%8c%d8%a7%d9%86%da%af%db%8c%d9%86-%d8%ad%d8%b3%d8%a7%d8%a8-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%87%d8%b1/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "qarz",
+      "tags": [
+        "قرض‌الحسنه",
+        "قرض‌الحسنه مهر ایران"
+      ],
+      "termLabel": "۶۰ ماه",
+      "termMonths": 60
+    },
+    {
       "amountLabel": "۱۶۰ میلیون تومان",
       "audience": "متقاضیان تسهیلات بانکی",
       "autoDiscovered": true,
@@ -12241,6 +13746,60 @@
       ],
       "termLabel": "۱۴۴ ماه",
       "termMonths": 144
+    },
+    {
+      "amountLabel": "۱۵ میلیون تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "بانک قرض‌الحسنه مهر ایران",
+      "bankId": "mehr-iran",
+      "benefit": 92,
+      "category": "loans",
+      "ceilingContingent": false,
+      "collateral": "ضامن رسمی",
+      "collateralKind": "guarantor",
+      "confidence": "medium",
+      "desc": "وام درمان بانک قرض‌الحسنه مهر ایران",
+      "digital": 60,
+      "extra": {
+        "installment": null,
+        "loanType": "وام قرض الحسنه",
+        "totalInterest": null,
+        "totalWithInterest": null
+      },
+      "friction": 50,
+      "id": "rade-705107",
+      "lastSeen": "2026-11-03",
+      "lastUpdated": null,
+      "maxAmount": 15000000,
+      "minAmount": 2,
+      "multiPlan": false,
+      "product": "وام درمان بانک قرض‌الحسنه مهر ایران",
+      "rate": 4,
+      "rateKind": "fee",
+      "rateKnown": true,
+      "rateLabel": "کارمزد ۴٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: ضامن رسمی",
+        "هزینه جانبی: —"
+      ],
+      "source": {
+        "checked": "2026-11-03",
+        "kind": "aggregator",
+        "title": "رده — وام درمان بانک قرض‌الحسنه مهر ایران",
+        "url": "https://www.rade.ir/loan-interest-free-loan/705107-%d9%88%d8%a7%d9%85-%d8%af%d8%b1%d9%85%d8%a7%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d9%82%d8%b1%d8%b6%d8%a7%d9%84%d8%ad%d8%b3%d9%86%d9%87-%d9%85%d9%87%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "qarz",
+      "tags": [
+        "قرض‌الحسنه",
+        "قرض‌الحسنه مهر ایران"
+      ],
+      "termLabel": "۳۶ ماه",
+      "termMonths": 36
     },
     {
       "amountLabel": "۱۵ میلیون تومان",
@@ -13940,7 +15499,7 @@
       },
       "friction": 50,
       "id": "rade-705749",
-      "lastSeen": "2026-11-01",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-07-21",
       "lastVerified": "2026-10-16",
       "maxAmount": 400000000,
@@ -13949,6 +15508,7 @@
       "product": "وام شکوفایی ملل موسسه اعتباری ملل",
       "rate": 23,
       "rateKind": "profit",
+      "rateKnown": true,
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
@@ -13957,7 +15517,7 @@
         "قسط تقریبی: ۱۵,۴۸۳,۸۸۹ تومان"
       ],
       "source": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — وام شکوفایی ملل موسسه اعتباری ملل",
         "url": "https://www.rade.ir/loan-cash-loan/705749-%d9%88%d8%a7%d9%85-%d8%b4%da%a9%d9%88%d9%81%d8%a7%db%8c%db%8c-%d9%85%d9%84%d9%84-%d9%85%d9%88%d8%b3%d8%b3%d9%87-%d8%a7%d8%b9%d8%aa%d8%a8%d8%a7%d8%b1%db%8c-%d9%85%d9%84%d9%84/"
@@ -14051,7 +15611,7 @@
       },
       "friction": 50,
       "id": "rade-705756",
-      "lastSeen": "2026-11-01",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-05-20",
       "lastVerified": "2026-10-16",
       "maxAmount": 400000000,
@@ -14060,6 +15620,7 @@
       "product": "وام همگام موسسه اعتباری ملل",
       "rate": 22,
       "rateKind": "profit",
+      "rateKnown": true,
       "rateLabel": "سود ۲۲٪",
       "regulatory": false,
       "requirements": [
@@ -14068,7 +15629,7 @@
         "قسط تقریبی: ۱۵,۲۷۶,۱۸۱ تومان"
       ],
       "source": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — وام همگام موسسه اعتباری ملل",
         "url": "https://www.rade.ir/loan-cash-loan/705756-%d9%88%d8%a7%d9%85-%d9%87%d9%85%da%af%d8%a7%d9%85-%d9%85%d9%88%d8%b3%d8%b3%d9%87-%d8%a7%d8%b9%d8%aa%d8%a8%d8%a7%d8%b1%db%8c-%d9%85%d9%84%d9%84/"
@@ -14162,7 +15723,7 @@
       },
       "friction": 50,
       "id": "rade-705795",
-      "lastSeen": "2026-11-01",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-10-10",
       "lastVerified": "2026-10-16",
       "maxAmount": 100000000,
@@ -14171,6 +15732,7 @@
       "product": "وام باجت بانک تجارت",
       "rate": 23,
       "rateKind": "profit",
+      "rateKnown": true,
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
@@ -14179,7 +15741,7 @@
         "قسط تقریبی: ۵,۲۳۷,۳۳۱ تومان"
       ],
       "source": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — وام باجت بانک تجارت",
         "url": "https://www.rade.ir/loan-cash-loan/705795-%d9%88%d8%a7%d9%85-%d8%a8%d8%a7%d8%ac%d8%aa-%d8%a8%d8%a7%d9%86%da%a9-%d8%aa%d8%ac%d8%a7%d8%b1%d8%aa/"
@@ -14217,7 +15779,7 @@
       },
       "friction": 72,
       "id": "rade-705807",
-      "lastSeen": "2026-11-01",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-07-15",
       "lastVerified": "2026-10-16",
       "maxAmount": null,
@@ -14226,6 +15788,7 @@
       "product": "طرح ارزیار بانک رفاه کارگران",
       "rate": 23,
       "rateKind": "profit",
+      "rateKnown": true,
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
@@ -14233,7 +15796,7 @@
         "هزینه جانبی: —"
       ],
       "source": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — طرح ارزیار بانک رفاه کارگران",
         "url": "https://www.rade.ir/loan-cash-loan/705807-%d8%b7%d8%b1%d8%ad-%d8%a7%d8%b1%d8%b2%db%8c%d8%a7%d8%b1-%d8%a8%d8%a7%d9%86%da%a9-%d8%b1%d9%81%d8%a7%d9%87-%da%a9%d8%a7%d8%b1%da%af%d8%b1%d8%a7%d9%86/"
@@ -14271,7 +15834,7 @@
       },
       "friction": 50,
       "id": "rade-705924",
-      "lastSeen": "2026-11-01",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-07-28",
       "lastVerified": "2026-10-16",
       "maxAmount": 35000000000,
@@ -14280,6 +15843,7 @@
       "product": "طرح صنعت ارز بانک صنعت و معدن",
       "rate": 23,
       "rateKind": "profit",
+      "rateKnown": true,
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
@@ -14288,7 +15852,7 @@
         "قسط تقریبی: ۱۸,۰۰۴,۷۱۶,۹۴۹ تومان"
       ],
       "source": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — طرح صنعت ارز بانک صنعت و معدن",
         "url": "https://www.rade.ir/loan-cash-loan/705924-%d8%b7%d8%b1%d8%ad-%d8%b5%d9%86%d8%b9%d8%aa-%d8%a7%d8%b1%d8%b2-%d8%a8%d8%a7%d9%86%da%a9-%d8%b5%d9%86%d8%b9%d8%aa-%d9%88-%d9%85%d8%b9%d8%af%d9%86/"
@@ -14326,7 +15890,7 @@
       },
       "friction": 50,
       "id": "rade-706040",
-      "lastSeen": "2026-11-01",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-07-11",
       "lastVerified": "2026-10-16",
       "maxAmount": 300000000,
@@ -14335,7 +15899,8 @@
       "product": "طرح نسیم بانک توسعه تعاون",
       "rate": 4,
       "rateKind": "fee",
-      "rateLabel": "سود ۴٪",
+      "rateKnown": true,
+      "rateLabel": "کارمزد ۴٪",
       "regulatory": false,
       "requirements": [
         "ضمانت: ضامن رسمی, اعتبار شغلی, اعتبارسنجی",
@@ -14343,7 +15908,7 @@
         "قسط تقریبی: ۵,۴۵۴,۵۴۵ تومان"
       ],
       "source": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — طرح نسیم بانک توسعه تعاون",
         "url": "https://www.rade.ir/loan-interest-free-loan/706040-%d8%b7%d8%b1%d8%ad-%d9%86%d8%b3%db%8c%d9%85-%d8%a8%d8%a7%d9%86%da%a9-%d8%aa%d9%88%d8%b3%d8%b9%d9%87-%d8%aa%d8%b9%d8%a7%d9%88%d9%86/"
@@ -14381,7 +15946,7 @@
       },
       "friction": 72,
       "id": "rade-706193",
-      "lastSeen": "2026-11-01",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-06-02",
       "lastVerified": "2026-10-16",
       "maxAmount": 100000000,
@@ -14390,7 +15955,8 @@
       "product": "طرح افق ۲ بانک رفاه کارگران",
       "rate": 4,
       "rateKind": "fee",
-      "rateLabel": "سود ۴٪",
+      "rateKnown": true,
+      "rateLabel": "کارمزد ۴٪",
       "regulatory": false,
       "requirements": [
         "ضمانت: اعتبارسنجی",
@@ -14398,7 +15964,7 @@
         "قسط تقریبی: ۸,۵۱۴,۹۹۰ تومان"
       ],
       "source": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — طرح افق 2 بانک رفاه کارگران",
         "url": "https://www.rade.ir/loan-interest-free-loan/706193-%d8%b7%d8%b1%d8%ad-%d8%a7%d9%81%d9%82-2-%d8%a8%d8%a7%d9%86%da%a9-%d8%b1%d9%81%d8%a7%d9%87-%da%a9%d8%a7%d8%b1%da%af%d8%b1%d8%a7%d9%86/"
@@ -14438,14 +16004,15 @@
       "feeModel": "unknown",
       "friction": 72,
       "id": "rade-706199",
-      "lastSeen": "2026-11-01",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-09-26",
       "maxAmount": 200000000,
       "minAmount": 25000000,
       "multiPlan": false,
       "product": "وام دانشجویی دانشگاه آزاد اسلامی بانک شهر",
       "rate": 4,
-      "rateKind": "fee",
+      "rateKind": "profit",
+      "rateKnown": true,
       "rateLabel": "سود ۴٪",
       "regulatory": false,
       "requirements": [
@@ -14454,7 +16021,7 @@
         "قسط تقریبی: ۴,۵۴۵,۴۵۵ تومان"
       ],
       "source": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — وام دانشجویی دانشگاه آزاد اسلامی بانک شهر",
         "url": "https://www.rade.ir/loan-student-loan/706199-%d9%88%d8%a7%d9%85-%d8%af%d8%a7%d9%86%d8%b4%d8%ac%d9%88%db%8c%db%8c-%d8%af%d8%a7%d9%86%d8%b4%da%af%d8%a7%d9%87-%d8%a2%d8%b2%d8%a7%d8%af-%d8%a7%d8%b3%d9%84%d8%a7%d9%85%db%8c-%d8%a8%d8%a7%d9%86%da%a9/"
@@ -14492,7 +16059,7 @@
       },
       "friction": 50,
       "id": "rade-706215",
-      "lastSeen": "2026-11-01",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-09-27",
       "lastVerified": "2026-10-16",
       "maxAmount": 10000000000,
@@ -14501,6 +16068,7 @@
       "product": "طرح جاری زندگی بانک صادرات ایران",
       "rate": 23,
       "rateKind": "profit",
+      "rateKnown": true,
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
@@ -14509,7 +16077,7 @@
         "قسط تقریبی: ۹۴۰,۷۶۳,۲۱۳ تومان"
       ],
       "source": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — طرح جاری زندگی بانک صادرات ایران",
         "url": "https://www.rade.ir/loan-cash-loan/706215-%d8%b7%d8%b1%d8%ad-%d8%ac%d8%a7%d8%b1%db%8c-%d8%b2%d9%86%d8%af%da%af%db%8c-%d8%a8%d8%a7%d9%86%da%a9-%d8%b5%d8%a7%d8%af%d8%b1%d8%a7%d8%aa-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
@@ -14603,7 +16171,7 @@
       },
       "friction": 72,
       "id": "rade-706570",
-      "lastSeen": "2026-11-01",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-10-20",
       "lastVerified": "2026-10-16",
       "maxAmount": 700000000,
@@ -14612,14 +16180,15 @@
       "product": "وام قرض‌الحسنه ودیعه مسکن جنگ رمضان بانک مسکن",
       "rate": 4,
       "rateKind": "fee",
-      "rateLabel": "سود ۴٪",
+      "rateKnown": true,
+      "rateLabel": "کارمزد ۴٪",
       "regulatory": false,
       "requirements": [
         "ضمانت: اعتبارسنجی",
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام"
       ],
       "source": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — وام قرض‌الحسنه ودیعه مسکن جنگ رمضان بانک مسکن",
         "url": "https://www.rade.ir/loan-interest-free-loan/706570-%d9%88%d8%a7%d9%85-%d9%82%d8%b1%d8%b6%d8%a7%d9%84%d8%ad%d8%b3%d9%86%d9%87-%d9%88%d8%af%db%8c%d8%b9%d9%87-%d9%85%d8%b3%da%a9%d9%86-%d8%ac%d9%86%da%af-%d8%b1%d9%85%d8%b6%d8%a7%d9%86-%d8%a8/"
@@ -14657,7 +16226,7 @@
       },
       "friction": 50,
       "id": "rade-706640",
-      "lastSeen": "2026-11-01",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-09-15",
       "lastVerified": "2026-10-16",
       "maxAmount": 10000000000,
@@ -14666,6 +16235,7 @@
       "product": "وام طرح برنا بانک ملت",
       "rate": 23,
       "rateKind": "profit",
+      "rateKnown": true,
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
@@ -14674,7 +16244,7 @@
         "قسط تقریبی: ۹۴۰,۷۶۳,۲۱۳ تومان"
       ],
       "source": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — وام طرح برنا بانک ملت",
         "url": "https://www.rade.ir/loan-cash-loan/706640-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%d8%a8%d8%b1%d9%86%d8%a7-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%84%d8%aa/"
@@ -14712,7 +16282,7 @@
       },
       "friction": 50,
       "id": "rade-706675",
-      "lastSeen": "2026-11-01",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-10-20",
       "lastVerified": "2026-10-16",
       "maxAmount": 300000000,
@@ -14721,6 +16291,7 @@
       "product": "وام طرح چکامه پست بانک ایران",
       "rate": 16,
       "rateKind": "profit",
+      "rateKnown": true,
       "rateLabel": "سود ۱۶٪",
       "regulatory": false,
       "requirements": [
@@ -14729,7 +16300,7 @@
         "قسط تقریبی: ۱۰,۵۴۷,۱۱۰ تومان"
       ],
       "source": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — وام طرح چکامه پست بانک ایران",
         "url": "https://www.rade.ir/loan-cash-loan/706675-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%da%86%da%a9%d8%a7%d9%85%d9%87-%d9%be%d8%b3%d8%aa-%d8%a8%d8%a7%d9%86%da%a9-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
@@ -14767,7 +16338,7 @@
       },
       "friction": 50,
       "id": "rade-706682",
-      "lastSeen": "2026-11-01",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-10-20",
       "lastVerified": "2026-10-16",
       "maxAmount": 2000000000,
@@ -14776,6 +16347,7 @@
       "product": "وام طرح حامی بانک مسکن",
       "rate": 23,
       "rateKind": "profit",
+      "rateKnown": true,
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
@@ -14784,7 +16356,7 @@
         "قسط تقریبی: ۶۴,۱۰۲,۹۴۳ تومان"
       ],
       "source": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — وام طرح حامی بانک مسکن",
         "url": "https://www.rade.ir/loan-cash-loan/706682-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%d8%ad%d8%a7%d9%85%db%8c-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d8%b3%da%a9%d9%86/"
@@ -14878,7 +16450,7 @@
       },
       "friction": 72,
       "id": "rade-706769",
-      "lastSeen": "2026-11-01",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-10-20",
       "lastVerified": "2026-10-16",
       "maxAmount": 22000000,
@@ -14887,6 +16459,7 @@
       "product": "تسهیلات بنگاه‌های آسیب‌دیده در جنگ بانک رفاه کارگران",
       "rate": 23,
       "rateKind": "profit",
+      "rateKnown": true,
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
@@ -14895,7 +16468,7 @@
         "قسط تقریبی: ۳,۹۱۶,۵۳۰ تومان"
       ],
       "source": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — تسهیلات بنگاه‌های آسیب‌دیده در جنگ بانک رفاه کارگران",
         "url": "https://www.rade.ir/loan-cash-loan/706769-%d8%aa%d8%b3%d9%87%db%8c%d9%84%d8%a7%d8%aa-%d8%a8%d9%86%da%af%d8%a7%d9%87%d9%87%d8%a7%db%8c-%d8%a2%d8%b3%db%8c%d8%a8%d8%af%db%8c%d8%af%d9%87-%d8%af%d8%b1-%d8%ac%d9%86%da%af-%d8%a8/"
@@ -14933,7 +16506,7 @@
       },
       "friction": 72,
       "id": "rade-706829",
-      "lastSeen": "2026-11-01",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-10-20",
       "lastVerified": "2026-10-16",
       "maxAmount": 44000000,
@@ -14942,6 +16515,7 @@
       "product": "تسهیلات کسب‌وکارهای آسیب‌دیده در جنگ رمضان بانک صادرات",
       "rate": 23,
       "rateKind": "profit",
+      "rateKnown": true,
       "rateLabel": "سود ۲۳٪",
       "regulatory": false,
       "requirements": [
@@ -14950,7 +16524,7 @@
         "قسط تقریبی: ۱۱,۵۳۲,۰۸۶ تومان"
       ],
       "source": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — تسهیلات کسب‌وکارهای آسیب‌دیده در جنگ رمضان بانک صادرات",
         "url": "https://www.rade.ir/loan-cash-loan/706829-%d8%aa%d8%b3%d9%87%db%8c%d9%84%d8%a7%d8%aa-%da%a9%d8%b3%d8%a8%d9%88%da%a9%d8%a7%d8%b1%d9%87%d8%a7%db%8c-%d8%a2%d8%b3%db%8c%d8%a8%d8%af%db%8c%d8%af%d9%87-%d8%af%d8%b1-%d8%ac%d9%86/"
@@ -14988,7 +16562,7 @@
       },
       "friction": 72,
       "id": "rade-706844",
-      "lastSeen": "2026-11-01",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-10-20",
       "lastVerified": "2026-10-16",
       "maxAmount": 75000000,
@@ -14997,7 +16571,8 @@
       "product": "وام بازنشستگان کشوری بانک صادرات",
       "rate": 4,
       "rateKind": "fee",
-      "rateLabel": "سود ۴٪",
+      "rateKnown": true,
+      "rateLabel": "کارمزد ۴٪",
       "regulatory": false,
       "requirements": [
         "ضمانت: اعتبارسنجی",
@@ -15005,7 +16580,7 @@
         "قسط تقریبی: ۲,۲۷۲,۷۲۷ تومان"
       ],
       "source": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — وام بازنشستگان کشوری بانک صادرات",
         "url": "https://www.rade.ir/loan-interest-free-loan/706844-%d9%88%d8%a7%d9%85-%d8%a8%d8%a7%d8%b2%d9%86%d8%b4%d8%b3%d8%aa%da%af%d8%a7%d9%86-%da%a9%d8%b4%d9%88%d8%b1%db%8c-%d8%a8%d8%a7%d9%86%da%a9-%d8%b5%d8%a7%d8%af%d8%b1%d8%a7%d8%aa/"
@@ -15099,7 +16674,7 @@
       },
       "friction": 50,
       "id": "rade-706859",
-      "lastSeen": "2026-11-01",
+      "lastSeen": "2026-11-03",
       "lastUpdated": "2026-10-20",
       "lastVerified": "2026-10-16",
       "maxAmount": 2000000000,
@@ -15108,7 +16683,8 @@
       "product": "وام طرح سرو تفاهم‌نامه‌ای بانک مهر ایران",
       "rate": 4,
       "rateKind": "fee",
-      "rateLabel": "سود ۴٪",
+      "rateKnown": true,
+      "rateLabel": "کارمزد ۴٪",
       "regulatory": false,
       "requirements": [
         "ضمانت: ضامن رسمی, اعتبار شغلی, اعتبارسنجی",
@@ -15116,7 +16692,7 @@
         "قسط تقریبی: ۹۰,۹۰۹,۰۹۱ تومان"
       ],
       "source": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-03",
         "kind": "aggregator",
         "title": "رده — وام طرح سرو تفاهم‌نامه‌ای بانک مهر ایران",
         "url": "https://www.rade.ir/loan-interest-free-loan/706859-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%d8%b3%d8%b1%d9%88-%d8%aa%d9%81%d8%a7%d9%87%d9%85%d9%86%d8%a7%d9%85%d9%87%d8%a7%db%8c-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%87%d8%b1-%d8%a7%db%8c/"
@@ -16893,6 +18469,61 @@
       "termMonths": null
     },
     {
+      "amountLabel": "۱۵ میلیارد تومان",
+      "audience": "متقاضیان تسهیلات بانکی",
+      "autoDiscovered": true,
+      "bank": "غیر بانکی",
+      "bankId": "omid-fund",
+      "benefit": 49,
+      "category": "loans",
+      "ceilingContingent": false,
+      "collateral": "اعتبارسنجی",
+      "collateralKind": "credit-score",
+      "confidence": "medium",
+      "desc": "وام خرید خودرو مبین خودرو",
+      "digital": 60,
+      "extra": {
+        "installment": 413310000,
+        "loanType": "وام خودرو",
+        "totalInterest": 14758320000,
+        "totalWithInterest": 29758320000
+      },
+      "friction": 72,
+      "id": "rade-709530",
+      "lastSeen": "2026-11-03",
+      "lastUpdated": null,
+      "maxAmount": 15000000000,
+      "minAmount": 100000000,
+      "multiPlan": false,
+      "product": "وام خرید خودرو مبین خودرو",
+      "rate": 26,
+      "rateKind": "profit",
+      "rateKnown": true,
+      "rateLabel": "سود ۲۶٪",
+      "regulatory": false,
+      "requirements": [
+        "ضمانت: اعتبارسنجی",
+        "هزینه جانبی: —",
+        "قسط تقریبی: ۴۱۳,۳۱۰,۰۰۰ تومان"
+      ],
+      "source": {
+        "checked": "2026-11-03",
+        "kind": "aggregator",
+        "title": "رده — وام خرید خودرو مبین خودرو",
+        "url": "https://www.rade.ir/loan-car-loan/709530-%d9%88%d8%a7%d9%85-%d8%ae%d8%b1%db%8c%d8%af-%d8%ae%d9%88%d8%af%d8%b1%d9%88-%d9%85%d8%a8%db%8c%d9%86-%d8%ae%d9%88%d8%af%d8%b1%d9%88/"
+      },
+      "sourceKind": "aggregator",
+      "speed": 60,
+      "stale": false,
+      "subcategory": "car",
+      "tags": [
+        "وام خودرو",
+        "غیر بانکی"
+      ],
+      "termLabel": "۷۲ ماه",
+      "termMonths": 72
+    },
+    {
       "amountLabel": "بر پایه امتیاز و ضوابط طرح",
       "audience": "متقاضیان وام کم‌هزینه و کاربران دیجیتال",
       "bank": "بانک قرض‌الحسنه رسالت",
@@ -17805,7 +19436,7 @@
       "termMonths": null
     },
     {
-      "amountLabel": "هر واحد حدود ۱۰۲.۵ هزار تومان — حداقل صدور طبق امیدنامه",
+      "amountLabel": "هر واحد حدود ۱۰۲.۶ هزار تومان — حداقل صدور طبق امیدنامه",
       "audience": "سرمایه‌گذاران کم‌ریسک متقاضی واریز سود ماهانه بدون نیاز به معاملات برخط",
       "autoDiscovered": true,
       "bank": "تأمین سرمایه امین",
@@ -17815,25 +19446,25 @@
       "collateral": "ندارد — ابطال واحدها از طریق مدیر صندوق",
       "collateralKind": "none",
       "confidence": "medium",
-      "desc": "صندوق درآمد ثابت صدور و ابطالی «امین انصار» با مدیریت تأمین سرمایه امین. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۱۰) ۳۱.۵۱٪ بوده است (شش‌ماهه ۱۶.۱۵٪، سه‌ماهه ۷.۹۵٪، یک‌ماهه ۲.۶۴٪). صدور و ابطال واحدها از طریق مدیر صندوق انجام می‌شود و سود به‌صورت دوره‌ای (ماهانه) به حساب سرمایه‌گذار واریز می‌گردد. قیمت هر واحد حدود ۱۰۲.۵ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
+      "desc": "صندوق درآمد ثابت صدور و ابطالی «امین انصار» با مدیریت تأمین سرمایه امین. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۱۱) ۳۱.۴۹٪ بوده است (شش‌ماهه ۱۶.۱۴٪، سه‌ماهه ۷.۹۵٪، یک‌ماهه ۲.۶۳٪). صدور و ابطال واحدها از طریق مدیر صندوق انجام می‌شود و سود به‌صورت دوره‌ای (ماهانه) به حساب سرمایه‌گذار واریز می‌گردد. قیمت هر واحد حدود ۱۰۲.۶ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
       "digital": 85,
       "extra": {
-        "dataDate": "1405/08/10",
+        "dataDate": "1405/08/11",
         "fullName": null,
         "guarantor": null,
         "inception": null,
         "isignalId": 191,
-        "issuePrice": 1024921,
+        "issuePrice": 1025781,
         "manager": "تأمین سرمایه امین",
         "navBillionRial": null,
         "payout": "monthly",
         "redeemPrice": null,
         "returns": {
-          "oneMonth": 2.635,
+          "oneMonth": 2.633,
           "oneWeek": 0.549,
-          "oneYear": 31.51,
-          "sixMonth": 16.154,
-          "threeMonth": 7.95
+          "oneYear": 31.489,
+          "sixMonth": 16.144,
+          "threeMonth": 7.947
         },
         "site": null,
         "symbol": null
@@ -17841,14 +19472,14 @@
       "friction": 88,
       "id": "fund-amin-ansar",
       "lastSeen": "2026-11-03",
-      "lastUpdated": "2026-11-01",
+      "lastUpdated": "2026-11-02",
       "lastVerified": "2026-11-03",
       "maxAmount": null,
-      "minAmount": 102492,
+      "minAmount": 102578,
       "product": "صندوق سرمایه‌گذاری امین انصار (صدور و ابطالی)",
-      "rate": 31.51,
+      "rate": 31.49,
       "rateKind": "profit",
-      "rateLabel": "بازدهی یک‌ساله ۳۱.۵۱٪ (صدور و ابطالی، تقسیم سود ماهانه) — آی‌سیگنال ۱۴۰۵/۰۸/۱۰",
+      "rateLabel": "بازدهی یک‌ساله ۳۱.۴۹٪ (صدور و ابطالی، تقسیم سود ماهانه) — آی‌سیگنال ۱۴۰۵/۰۸/۱۱",
       "regulatory": true,
       "requirements": [
         "ثبت‌نام سجام",
@@ -18298,25 +19929,25 @@
       "collateral": "ندارد — نقدشوندگی از طریق بازار سرمایه",
       "collateralKind": "none",
       "confidence": "medium",
-      "desc": "صندوق درآمد ثابت قابل معامله در بورس (ETF) «مشترک گنجینه مهر» با مدیریت تأمین سرمایه امید. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۱۰) ۲۸.۵۶٪ بوده است (شش‌ماهه ۱۴.۳۹٪، سه‌ماهه ۷.۶۵٪، یک‌ماهه ۲.۳۹٪). واحدها با نماد «آسان» در بورس معامله می‌شوند و سود به‌صورت دوره‌ای (ماهانه) تقسیم می‌شود. قیمت هر واحد حدود ۱.۴ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
+      "desc": "صندوق درآمد ثابت قابل معامله در بورس (ETF) «مشترک گنجینه مهر» با مدیریت تأمین سرمایه امید. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۱۱) ۲۸.۵٪ بوده است (شش‌ماهه ۱۴.۴۵٪، سه‌ماهه ۷.۶۹٪، یک‌ماهه ۲.۴۳٪). واحدها با نماد «آسان» در بورس معامله می‌شوند و سود به‌صورت دوره‌ای (ماهانه) تقسیم می‌شود. قیمت هر واحد حدود ۱.۴ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
       "digital": 95,
       "extra": {
-        "dataDate": "1405/08/10",
+        "dataDate": "1405/08/11",
         "fullName": "مشترک گنجینه مهر",
         "guarantor": null,
         "inception": null,
         "isignalId": 211,
-        "issuePrice": 13569,
+        "issuePrice": 13581,
         "manager": "تأمین سرمایه امید",
         "navBillionRial": null,
         "payout": "monthly",
         "redeemPrice": null,
         "returns": {
-          "oneMonth": 2.391,
-          "oneWeek": 0.549,
-          "oneYear": 28.555,
-          "sixMonth": 14.392,
-          "threeMonth": 7.653
+          "oneMonth": 2.426,
+          "oneWeek": 0.541,
+          "oneYear": 28.501,
+          "sixMonth": 14.446,
+          "threeMonth": 7.686
         },
         "site": null,
         "symbol": "آسان"
@@ -18324,14 +19955,14 @@
       "friction": 94,
       "id": "fund-asan-ganjineh-mehr",
       "lastSeen": "2026-11-03",
-      "lastUpdated": "2026-11-01",
+      "lastUpdated": "2026-11-02",
       "lastVerified": "2026-11-03",
       "maxAmount": null,
-      "minAmount": 1357,
+      "minAmount": 1358,
       "product": "صندوق درآمد ثابت مشترک گنجینه مهر (ETF - آسان)",
-      "rate": 28.56,
+      "rate": 28.5,
       "rateKind": "profit",
-      "rateLabel": "بازدهی یک‌ساله ۲۸.۵۶٪ (ETF بورسی، تقسیم سود ماهانه) — آی‌سیگنال ۱۴۰۵/۰۸/۱۰",
+      "rateLabel": "بازدهی یک‌ساله ۲۸.۵٪ (ETF بورسی، تقسیم سود ماهانه) — آی‌سیگنال ۱۴۰۵/۰۸/۱۱",
       "regulatory": true,
       "requirements": [
         "کد بورسی (سجام)",
@@ -18563,7 +20194,7 @@
       "termMonths": null
     },
     {
-      "amountLabel": "هر واحد حدود ۱۰۱.۳ هزار تومان — حداقل صدور طبق امیدنامه",
+      "amountLabel": "هر واحد حدود ۱۰۱.۴ هزار تومان — حداقل صدور طبق امیدنامه",
       "audience": "سرمایه‌گذاران کم‌ریسک متقاضی واریز سود ماهانه بدون نیاز به معاملات برخط",
       "autoDiscovered": true,
       "bank": "سبدگردان کاریزما",
@@ -18573,15 +20204,15 @@
       "collateral": "ندارد — ابطال واحدها از طریق مدیر صندوق",
       "collateralKind": "none",
       "confidence": "medium",
-      "desc": "صندوق درآمد ثابت صدور و ابطالی «در اوراق بهادار با در آمد ثابت کاریزما» با مدیریت سبدگردان کاریزما. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۱۰) ۲۷.۴۷٪ بوده است (شش‌ماهه ۱۴.۸۷٪، سه‌ماهه ۷.۲۹٪، یک‌ماهه ۲.۴۳٪). صدور و ابطال واحدها از طریق مدیر صندوق انجام می‌شود و سود به‌صورت دوره‌ای (ماهانه) به حساب سرمایه‌گذار واریز می‌گردد. قیمت هر واحد حدود ۱۰۱.۳ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
+      "desc": "صندوق درآمد ثابت صدور و ابطالی «در اوراق بهادار با در آمد ثابت کاریزما» با مدیریت سبدگردان کاریزما. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۱۱) ۲۷.۴۷٪ بوده است (شش‌ماهه ۱۴.۸۷٪، سه‌ماهه ۷.۲۹٪، یک‌ماهه ۲.۴۳٪). صدور و ابطال واحدها از طریق مدیر صندوق انجام می‌شود و سود به‌صورت دوره‌ای (ماهانه) به حساب سرمایه‌گذار واریز می‌گردد. قیمت هر واحد حدود ۱۰۱.۴ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
       "digital": 85,
       "extra": {
-        "dataDate": "1405/08/10",
+        "dataDate": "1405/08/11",
         "fullName": null,
         "guarantor": null,
         "inception": null,
         "isignalId": 313,
-        "issuePrice": 1013021,
+        "issuePrice": 1013840,
         "manager": "سبدگردان کاریزما",
         "navBillionRial": null,
         "payout": "monthly",
@@ -18599,14 +20230,14 @@
       "friction": 88,
       "id": "fund-charisma-fixed",
       "lastSeen": "2026-11-03",
-      "lastUpdated": "2026-11-01",
+      "lastUpdated": "2026-11-02",
       "lastVerified": "2026-11-03",
       "maxAmount": null,
-      "minAmount": 101302,
+      "minAmount": 101384,
       "product": "صندوق سرمایه‌گذاری در اوراق بهادار با در آمد ثابت کاریزما (صدور و ابطالی)",
       "rate": 27.47,
       "rateKind": "profit",
-      "rateLabel": "بازدهی یک‌ساله ۲۷.۴۷٪ (صدور و ابطالی، تقسیم سود ماهانه) — آی‌سیگنال ۱۴۰۵/۰۸/۱۰",
+      "rateLabel": "بازدهی یک‌ساله ۲۷.۴۷٪ (صدور و ابطالی، تقسیم سود ماهانه) — آی‌سیگنال ۱۴۰۵/۰۸/۱۱",
       "regulatory": true,
       "requirements": [
         "ثبت‌نام سجام",
@@ -18849,15 +20480,15 @@
       "collateral": "ندارد — ابطال واحدها از طریق مدیر صندوق",
       "collateralKind": "none",
       "confidence": "medium",
-      "desc": "صندوق درآمد ثابت صدور و ابطالی «اعتماد کارگزاری بانک ملی ایران» با مدیریت کارگزاری بانک ملی ایران. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۱۰) ۳۰.۷۳٪ بوده است (شش‌ماهه ۱۴.۵٪، سه‌ماهه ۷.۱۳٪، یک‌ماهه ۲.۳۱٪). صدور و ابطال واحدها از طریق مدیر صندوق انجام می‌شود و سود به‌صورت دوره‌ای (ماهانه) به حساب سرمایه‌گذار واریز می‌گردد. قیمت هر واحد حدود ۱ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
+      "desc": "صندوق درآمد ثابت صدور و ابطالی «اعتماد کارگزاری بانک ملی ایران» با مدیریت کارگزاری بانک ملی ایران. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۱۱) ۳۰.۷۳٪ بوده است (شش‌ماهه ۱۴.۵٪، سه‌ماهه ۷.۱۳٪، یک‌ماهه ۲.۳۱٪). صدور و ابطال واحدها از طریق مدیر صندوق انجام می‌شود و سود به‌صورت دوره‌ای (ماهانه) به حساب سرمایه‌گذار واریز می‌گردد. قیمت هر واحد حدود ۱ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
       "digital": 85,
       "extra": {
-        "dataDate": "1405/08/10",
+        "dataDate": "1405/08/11",
         "fullName": null,
         "guarantor": null,
         "inception": null,
         "isignalId": 569,
-        "issuePrice": 10208,
+        "issuePrice": 10216,
         "manager": "کارگزاری بانک ملی ایران",
         "navBillionRial": null,
         "payout": "monthly",
@@ -18875,14 +20506,14 @@
       "friction": 88,
       "id": "fund-etemad-melli",
       "lastSeen": "2026-11-03",
-      "lastUpdated": "2026-11-01",
+      "lastUpdated": "2026-11-02",
       "lastVerified": "2026-11-03",
       "maxAmount": null,
-      "minAmount": 1021,
+      "minAmount": 1022,
       "product": "صندوق سرمایه‌گذاری اعتماد کارگزاری بانک ملی ایران (صدور و ابطالی)",
       "rate": 30.73,
       "rateKind": "profit",
-      "rateLabel": "بازدهی یک‌ساله ۳۰.۷۳٪ (صدور و ابطالی، تقسیم سود ماهانه) — آی‌سیگنال ۱۴۰۵/۰۸/۱۰",
+      "rateLabel": "بازدهی یک‌ساله ۳۰.۷۳٪ (صدور و ابطالی، تقسیم سود ماهانه) — آی‌سیگنال ۱۴۰۵/۰۸/۱۱",
       "regulatory": true,
       "requirements": [
         "ثبت‌نام سجام",
@@ -19127,7 +20758,7 @@
       "collateral": "ندارد — نقدشوندگی از طریق بازار سرمایه",
       "collateralKind": "none",
       "confidence": "medium",
-      "desc": "صندوق درآمد ثابت قابل معامله در بورس (ETF) «فیروزه آسیا» با مدیریت سبدگردان توسعه فیروزه. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۱۱) ۳۸.۶۱٪ بوده است (شش‌ماهه ۱۷.۷۶٪، سه‌ماهه ۸.۴۹٪، یک‌ماهه ۲.۴۴٪). واحدها با نماد «فیروزا» در بورس معامله می‌شوند و سود در قیمت واحد (NAV) انباشته می‌شود؛ تقسیم سود دوره‌ای ندارد. قیمت هر واحد حدود ۹.۵ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
+      "desc": "صندوق درآمد ثابت قابل معامله در بورس (ETF) «فیروزه آسیا» با مدیریت سبدگردان توسعه فیروزه. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۱۱) ۳۸.۴۵٪ بوده است (شش‌ماهه ۱۷.۷٪، سه‌ماهه ۸.۳۸٪، یک‌ماهه ۲.۴۳٪). واحدها با نماد «فیروزا» در بورس معامله می‌شوند و سود در قیمت واحد (NAV) انباشته می‌شود؛ تقسیم سود دوره‌ای ندارد. قیمت هر واحد حدود ۹.۵ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
       "digital": 95,
       "extra": {
         "dataDate": "1405/08/11",
@@ -19141,11 +20772,11 @@
         "payout": "none",
         "redeemPrice": null,
         "returns": {
-          "oneMonth": 2.444,
-          "oneWeek": 0.64,
-          "oneYear": 38.613,
-          "sixMonth": 17.755,
-          "threeMonth": 8.488
+          "oneMonth": 2.426,
+          "oneWeek": 0.512,
+          "oneYear": 38.451,
+          "sixMonth": 17.705,
+          "threeMonth": 8.377
         },
         "site": null,
         "symbol": "فیروزا"
@@ -19158,9 +20789,9 @@
       "maxAmount": null,
       "minAmount": 9509,
       "product": "صندوق درآمد ثابت فیروزه آسیا (ETF - فیروزا)",
-      "rate": 38.61,
+      "rate": 38.45,
       "rateKind": "profit",
-      "rateLabel": "بازدهی یک‌ساله ۳۸.۶۱٪ (ETF بورسی، سود انباشته در NAV) — آی‌سیگنال ۱۴۰۵/۰۸/۱۱",
+      "rateLabel": "بازدهی یک‌ساله ۳۸.۴۵٪ (ETF بورسی، سود انباشته در NAV) — آی‌سیگنال ۱۴۰۵/۰۸/۱۱",
       "regulatory": true,
       "requirements": [
         "کد بورسی (سجام)",
@@ -19197,7 +20828,7 @@
       "collateral": "ندارد — نقدشوندگی از طریق بازار سرمایه",
       "collateralKind": "none",
       "confidence": "medium",
-      "desc": "صندوق درآمد ثابت قابل معامله در بورس (ETF) «گنجینه یکم آوید» با مدیریت تأمین سرمایه امین. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۱۱) ۳۷.۲۸٪ بوده است (شش‌ماهه ۱۷.۴٪، سه‌ماهه ۸.۵۱٪، یک‌ماهه ۲.۷۸٪). واحدها با نماد «گنجین» در بورس معامله می‌شوند و سود در قیمت واحد (NAV) انباشته می‌شود؛ تقسیم سود دوره‌ای ندارد. قیمت هر واحد حدود ۴.۵ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
+      "desc": "صندوق درآمد ثابت قابل معامله در بورس (ETF) «گنجینه یکم آوید» با مدیریت تأمین سرمایه امین. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۱۱) ۳۷.۱۵٪ بوده است (شش‌ماهه ۱۷.۳٪، سه‌ماهه ۸.۴۱٪، یک‌ماهه ۲.۶۸٪). واحدها با نماد «گنجین» در بورس معامله می‌شوند و سود در قیمت واحد (NAV) انباشته می‌شود؛ تقسیم سود دوره‌ای ندارد. قیمت هر واحد حدود ۴.۵ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
       "digital": 95,
       "extra": {
         "dataDate": "1405/08/11",
@@ -19211,11 +20842,11 @@
         "payout": "none",
         "redeemPrice": null,
         "returns": {
-          "oneMonth": 2.775,
-          "oneWeek": 0.645,
-          "oneYear": 37.275,
-          "sixMonth": 17.397,
-          "threeMonth": 8.506
+          "oneMonth": 2.682,
+          "oneWeek": 0.552,
+          "oneYear": 37.152,
+          "sixMonth": 17.298,
+          "threeMonth": 8.408
         },
         "site": null,
         "symbol": "گنجین"
@@ -19228,9 +20859,9 @@
       "maxAmount": null,
       "minAmount": 4454,
       "product": "صندوق درآمد ثابت گنجینه یکم آوید (ETF - گنجین)",
-      "rate": 37.28,
+      "rate": 37.15,
       "rateKind": "profit",
-      "rateLabel": "بازدهی یک‌ساله ۳۷.۲۸٪ (ETF بورسی، سود انباشته در NAV) — آی‌سیگنال ۱۴۰۵/۰۸/۱۱",
+      "rateLabel": "بازدهی یک‌ساله ۳۷.۱۵٪ (ETF بورسی، سود انباشته در NAV) — آی‌سیگنال ۱۴۰۵/۰۸/۱۱",
       "regulatory": true,
       "requirements": [
         "کد بورسی (سجام)",
@@ -19615,15 +21246,15 @@
       "collateral": "ندارد — ابطال واحدها از طریق مدیر صندوق",
       "collateralKind": "none",
       "confidence": "medium",
-      "desc": "صندوق درآمد ثابت صدور و ابطالی «حامی دوم مفید» با مدیریت سبدگردان مفید. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۱۰) ۳۵.۲۷٪ بوده است (شش‌ماهه ۱۶.۳۹٪، سه‌ماهه ۸.۰۱٪، یک‌ماهه ۲.۶۵٪). صدور و ابطال واحدها از طریق مدیر صندوق انجام می‌شود و سود در قیمت واحد انباشته می‌شود؛ تقسیم سود دوره‌ای ندارد. قیمت هر واحد حدود ۱.۹ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
+      "desc": "صندوق درآمد ثابت صدور و ابطالی «حامی دوم مفید» با مدیریت سبدگردان مفید. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۱۱) ۳۵.۲۸٪ بوده است (شش‌ماهه ۱۶.۴٪، سه‌ماهه ۸٪، یک‌ماهه ۲.۶۵٪). صدور و ابطال واحدها از طریق مدیر صندوق انجام می‌شود و سود در قیمت واحد انباشته می‌شود؛ تقسیم سود دوره‌ای ندارد. قیمت هر واحد حدود ۱.۹ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
       "digital": 85,
       "extra": {
-        "dataDate": "1405/08/10",
+        "dataDate": "1405/08/11",
         "fullName": null,
         "guarantor": null,
         "inception": null,
         "isignalId": 978,
-        "issuePrice": 18790,
+        "issuePrice": 18806,
         "manager": "سبدگردان مفید",
         "navBillionRial": null,
         "payout": "none",
@@ -19631,9 +21262,9 @@
         "returns": {
           "oneMonth": 2.65,
           "oneWeek": 0.62,
-          "oneYear": 35.27,
-          "sixMonth": 16.39,
-          "threeMonth": 8.01
+          "oneYear": 35.28,
+          "sixMonth": 16.4,
+          "threeMonth": 8
         },
         "site": null,
         "symbol": null
@@ -19641,14 +21272,14 @@
       "friction": 88,
       "id": "fund-hami-2-mofid",
       "lastSeen": "2026-11-03",
-      "lastUpdated": "2026-11-01",
+      "lastUpdated": "2026-11-02",
       "lastVerified": "2026-11-03",
       "maxAmount": null,
-      "minAmount": 1879,
+      "minAmount": 1881,
       "product": "صندوق درآمد ثابت حامی دوم مفید (صدور و ابطالی)",
-      "rate": 35.27,
+      "rate": 35.28,
       "rateKind": "profit",
-      "rateLabel": "بازدهی یک‌ساله ۳۵.۲۷٪ (صدور و ابطالی، سود انباشته در NAV) — آی‌سیگنال ۱۴۰۵/۰۸/۱۰",
+      "rateLabel": "بازدهی یک‌ساله ۳۵.۲۸٪ (صدور و ابطالی، سود انباشته در NAV) — آی‌سیگنال ۱۴۰۵/۰۸/۱۱",
       "regulatory": true,
       "requirements": [
         "ثبت‌نام سجام",
@@ -19675,7 +21306,7 @@
       "termMonths": null
     },
     {
-      "amountLabel": "هر واحد حدود ۱۰۲.۳ هزار تومان — حداقل صدور طبق امیدنامه",
+      "amountLabel": "هر واحد حدود ۱۰۲.۴ هزار تومان — حداقل صدور طبق امیدنامه",
       "audience": "سرمایه‌گذاران کم‌ریسک متقاضی واریز سود ماهانه بدون نیاز به معاملات برخط",
       "autoDiscovered": true,
       "bank": "سبدگردان آشنا",
@@ -19685,15 +21316,15 @@
       "collateral": "ندارد — ابطال واحدها از طریق مدیر صندوق",
       "collateralKind": "none",
       "confidence": "medium",
-      "desc": "صندوق درآمد ثابت صدور و ابطالی «حکمت آشنا ایرانیان» با مدیریت سبدگردان آشنا. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۱۰) ۳۰.۳۶٪ بوده است (شش‌ماهه ۱۵.۲۹٪، سه‌ماهه ۷.۴۷٪، یک‌ماهه ۲.۴۹٪). صدور و ابطال واحدها از طریق مدیر صندوق انجام می‌شود و سود به‌صورت دوره‌ای (ماهانه) به حساب سرمایه‌گذار واریز می‌گردد. قیمت هر واحد حدود ۱۰۲.۳ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
+      "desc": "صندوق درآمد ثابت صدور و ابطالی «حکمت آشنا ایرانیان» با مدیریت سبدگردان آشنا. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۱۱) ۳۰.۳۶٪ بوده است (شش‌ماهه ۱۵.۲۹٪، سه‌ماهه ۷.۴۷٪، یک‌ماهه ۲.۴۹٪). صدور و ابطال واحدها از طریق مدیر صندوق انجام می‌شود و سود به‌صورت دوره‌ای (ماهانه) به حساب سرمایه‌گذار واریز می‌گردد. قیمت هر واحد حدود ۱۰۲.۴ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
       "digital": 85,
       "extra": {
-        "dataDate": "1405/08/10",
+        "dataDate": "1405/08/11",
         "fullName": null,
         "guarantor": null,
         "inception": null,
         "isignalId": 238,
-        "issuePrice": 1022835,
+        "issuePrice": 1023692,
         "manager": "سبدگردان آشنا",
         "navBillionRial": null,
         "payout": "monthly",
@@ -19711,14 +21342,14 @@
       "friction": 88,
       "id": "fund-hekmat-ashna",
       "lastSeen": "2026-11-03",
-      "lastUpdated": "2026-11-01",
+      "lastUpdated": "2026-11-02",
       "lastVerified": "2026-11-03",
       "maxAmount": null,
-      "minAmount": 102284,
+      "minAmount": 102369,
       "product": "صندوق سرمایه‌گذاری حکمت آشنا ایرانیان (صدور و ابطالی)",
       "rate": 30.36,
       "rateKind": "profit",
-      "rateLabel": "بازدهی یک‌ساله ۳۰.۳۶٪ (صدور و ابطالی، تقسیم سود ماهانه) — آی‌سیگنال ۱۴۰۵/۰۸/۱۰",
+      "rateLabel": "بازدهی یک‌ساله ۳۰.۳۶٪ (صدور و ابطالی، تقسیم سود ماهانه) — آی‌سیگنال ۱۴۰۵/۰۸/۱۱",
       "regulatory": true,
       "requirements": [
         "ثبت‌نام سجام",
@@ -20296,7 +21927,7 @@
       "termMonths": null
     },
     {
-      "amountLabel": "هر واحد حدود ۱۰۱.۶ هزار تومان — حداقل صدور طبق امیدنامه",
+      "amountLabel": "هر واحد حدود ۱۰۱.۷ هزار تومان — حداقل صدور طبق امیدنامه",
       "audience": "سرمایه‌گذاران کم‌ریسک متقاضی واریز سود ماهانه بدون نیاز به معاملات برخط",
       "autoDiscovered": true,
       "bank": "بانک تجارت / تأمین سرمایه کاردان",
@@ -20306,25 +21937,25 @@
       "collateral": "ندارد — ابطال واحدها از طریق مدیر صندوق",
       "collateralKind": "none",
       "confidence": "medium",
-      "desc": "صندوق درآمد ثابت صدور و ابطالی «کاردان» با مدیریت تأمین سرمایه کاردان. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۱۰) ۲۷.۴۳٪ بوده است (شش‌ماهه ۱۳.۵۶٪، سه‌ماهه ۶.۵۶٪، یک‌ماهه ۲.۲۸٪). صدور و ابطال واحدها از طریق مدیر صندوق انجام می‌شود و سود به‌صورت دوره‌ای (ماهانه) به حساب سرمایه‌گذار واریز می‌گردد. قیمت هر واحد حدود ۱۰۱.۶ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
+      "desc": "صندوق درآمد ثابت صدور و ابطالی «کاردان» با مدیریت تأمین سرمایه کاردان. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۱۱) ۲۷.۴۲٪ بوده است (شش‌ماهه ۱۳.۵۶٪، سه‌ماهه ۶.۵۶٪، یک‌ماهه ۲.۲۶٪). صدور و ابطال واحدها از طریق مدیر صندوق انجام می‌شود و سود به‌صورت دوره‌ای (ماهانه) به حساب سرمایه‌گذار واریز می‌گردد. قیمت هر واحد حدود ۱۰۱.۷ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
       "digital": 85,
       "extra": {
-        "dataDate": "1405/08/10",
+        "dataDate": "1405/08/11",
         "fullName": null,
         "guarantor": null,
         "inception": null,
         "isignalId": 323,
-        "issuePrice": 1016439,
+        "issuePrice": 1017262,
         "manager": "تأمین سرمایه کاردان",
         "navBillionRial": null,
         "payout": "monthly",
         "redeemPrice": null,
         "returns": {
-          "oneMonth": 2.275,
+          "oneMonth": 2.255,
           "oneWeek": 0.569,
-          "oneYear": 27.428,
-          "sixMonth": 13.564,
-          "threeMonth": 6.559
+          "oneYear": 27.419,
+          "sixMonth": 13.557,
+          "threeMonth": 6.562
         },
         "site": null,
         "symbol": null
@@ -20332,14 +21963,14 @@
       "friction": 88,
       "id": "fund-kardan-tejarat",
       "lastSeen": "2026-11-03",
-      "lastUpdated": "2026-11-01",
+      "lastUpdated": "2026-11-02",
       "lastVerified": "2026-11-03",
       "maxAmount": null,
-      "minAmount": 101644,
+      "minAmount": 101726,
       "product": "صندوق درآمد ثابت کاردان (صدور و ابطالی)",
-      "rate": 27.43,
+      "rate": 27.42,
       "rateKind": "profit",
-      "rateLabel": "بازدهی یک‌ساله ۲۷.۴۳٪ (صدور و ابطالی، تقسیم سود ماهانه) — آی‌سیگنال ۱۴۰۵/۰۸/۱۰",
+      "rateLabel": "بازدهی یک‌ساله ۲۷.۴۲٪ (صدور و ابطالی، تقسیم سود ماهانه) — آی‌سیگنال ۱۴۰۵/۰۸/۱۱",
       "regulatory": true,
       "requirements": [
         "ثبت‌نام سجام",
@@ -20573,7 +22204,7 @@
       "termMonths": null
     },
     {
-      "amountLabel": "هر واحد حدود ۱۰۱.۱ هزار تومان — حداقل صدور طبق امیدنامه",
+      "amountLabel": "هر واحد حدود ۱۰۱.۲ هزار تومان — حداقل صدور طبق امیدنامه",
       "audience": "سرمایه‌گذاران کم‌ریسک متقاضی واریز سود ماهانه بدون نیاز به معاملات برخط",
       "autoDiscovered": true,
       "bank": "سبدگردان آبان",
@@ -20583,25 +22214,25 @@
       "collateral": "ندارد — ابطال واحدها از طریق مدیر صندوق",
       "collateralKind": "none",
       "confidence": "medium",
-      "desc": "صندوق درآمد ثابت صدور و ابطالی «کوثر یکم» با مدیریت سبدگردان آبان. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۱۰) ۳۴.۹۴٪ بوده است (شش‌ماهه ۱۵.۶۵٪، سه‌ماهه ۷.۹۲٪، یک‌ماهه ۲.۷۳٪). صدور و ابطال واحدها از طریق مدیر صندوق انجام می‌شود و سود به‌صورت دوره‌ای (ماهانه) به حساب سرمایه‌گذار واریز می‌گردد. قیمت هر واحد حدود ۱۰۱.۱ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
+      "desc": "صندوق درآمد ثابت صدور و ابطالی «کوثر یکم» با مدیریت سبدگردان آبان. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۱۱) ۳۵.۰۳٪ بوده است (شش‌ماهه ۱۵.۷۴٪، سه‌ماهه ۸.۰۱٪، یک‌ماهه ۲.۸۱٪). صدور و ابطال واحدها از طریق مدیر صندوق انجام می‌شود و سود به‌صورت دوره‌ای (ماهانه) به حساب سرمایه‌گذار واریز می‌گردد. قیمت هر واحد حدود ۱۰۱.۲ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
       "digital": 85,
       "extra": {
-        "dataDate": "1405/08/10",
+        "dataDate": "1405/08/11",
         "fullName": null,
         "guarantor": null,
         "inception": null,
         "isignalId": 341,
-        "issuePrice": 1011075,
+        "issuePrice": 1011952,
         "manager": "سبدگردان آبان",
         "navBillionRial": null,
         "payout": "monthly",
         "redeemPrice": null,
         "returns": {
-          "oneMonth": 2.726,
-          "oneWeek": 0.449,
-          "oneYear": 34.94,
-          "sixMonth": 15.649,
-          "threeMonth": 7.922
+          "oneMonth": 2.813,
+          "oneWeek": 0.536,
+          "oneYear": 35.026,
+          "sixMonth": 15.735,
+          "threeMonth": 8.009
         },
         "site": null,
         "symbol": null
@@ -20609,14 +22240,14 @@
       "friction": 88,
       "id": "fund-kosar-1-aban",
       "lastSeen": "2026-11-03",
-      "lastUpdated": "2026-11-01",
+      "lastUpdated": "2026-11-02",
       "lastVerified": "2026-11-03",
       "maxAmount": null,
-      "minAmount": 101108,
+      "minAmount": 101195,
       "product": "صندوق درآمد ثابت کوثر یکم (صدور و ابطالی)",
-      "rate": 34.94,
+      "rate": 35.03,
       "rateKind": "profit",
-      "rateLabel": "بازدهی یک‌ساله ۳۴.۹۴٪ (صدور و ابطالی، تقسیم سود ماهانه) — آی‌سیگنال ۱۴۰۵/۰۸/۱۰",
+      "rateLabel": "بازدهی یک‌ساله ۳۵.۰۳٪ (صدور و ابطالی، تقسیم سود ماهانه) — آی‌سیگنال ۱۴۰۵/۰۸/۱۱",
       "regulatory": true,
       "requirements": [
         "ثبت‌نام سجام",
@@ -20636,6 +22267,7 @@
         "صدور و ابطالی",
         "کوثر یکم",
         "تقسیم سود ماهانه",
+        "بازدهی بالا",
         "آبان"
       ],
       "termLabel": "روزشمار — واریز سود ماهانه؛ ابطال از طریق مدیر صندوق (چند روز کاری)",
@@ -20655,22 +22287,22 @@
       "digital": 95,
       "extra": {
         "isignal": {
-          "dataDate": "1405/08/10",
+          "dataDate": "1405/08/11",
           "fullName": "لبخند فارابی",
           "guarantor": null,
           "inception": null,
           "isignalId": 5183,
-          "issuePrice": 32120,
+          "issuePrice": 32163,
           "manager": "سبدگردان فارابی",
           "navBillionRial": null,
           "payout": "none",
           "redeemPrice": null,
           "returns": {
-            "oneMonth": 2.714,
-            "oneWeek": 0.514,
-            "oneYear": 38.389,
-            "sixMonth": 17.636,
-            "threeMonth": 8.375
+            "oneMonth": 2.849,
+            "oneWeek": 0.645,
+            "oneYear": 38.57,
+            "sixMonth": 17.79,
+            "threeMonth": 8.517
           },
           "site": null,
           "symbol": "لبخند"
@@ -20679,14 +22311,14 @@
       "friction": 94,
       "id": "fund-labkhand-farabi",
       "lastSeen": "2026-11-03",
-      "lastUpdated": "2026-11-01",
+      "lastUpdated": "2026-11-02",
       "lastVerified": "2026-11-03",
       "maxAmount": null,
       "minAmount": 100000,
       "product": "صندوق درآمد ثابت لبخند فارابی (ETF - لبخند)",
-      "rate": 38.39,
+      "rate": 38.57,
       "rateKind": "profit",
-      "rateLabel": "بازدهی یک‌ساله ۳۸.۳۹٪ (ETF بورسی، سود انباشته در NAV) — آی‌سیگنال ۱۴۰۵/۰۸/۱۰",
+      "rateLabel": "بازدهی یک‌ساله ۳۸.۵۷٪ (ETF بورسی، سود انباشته در NAV) — آی‌سیگنال ۱۴۰۵/۰۸/۱۱",
       "regulatory": true,
       "requirements": [
         "کد بورسی (سجام)",
@@ -20697,7 +22329,7 @@
         "title": "مرکز پردازش اطلاعات مالی ایران (فیپیران) / فارابی",
         "url": "https://fipiran.ir"
       },
-      "sourceObservedAt": "2026-11-01",
+      "sourceObservedAt": "2026-11-02",
       "speed": 92,
       "stale": false,
       "subcategory": "etf",
@@ -20725,12 +22357,12 @@
       "digital": 88,
       "extra": {
         "isignal": {
-          "dataDate": "1405/08/10",
+          "dataDate": "1405/08/11",
           "fullName": null,
           "guarantor": null,
           "inception": null,
           "isignalId": 269,
-          "issuePrice": 1013108,
+          "issuePrice": 1014035,
           "manager": "تأمین سرمایه لوتوس پارسیان",
           "navBillionRial": null,
           "payout": "monthly",
@@ -20749,14 +22381,14 @@
       "friction": 90,
       "id": "fund-lotus-parsian",
       "lastSeen": "2026-11-03",
-      "lastUpdated": "2026-11-01",
+      "lastUpdated": "2026-11-02",
       "lastVerified": "2026-11-03",
       "maxAmount": null,
       "minAmount": 110000,
       "product": "صندوق سرمایه‌گذاری لوتوس پارسیان (صدور و ابطالی)",
       "rate": 28.17,
       "rateKind": "profit",
-      "rateLabel": "بازدهی یک‌ساله ۲۸.۱۷٪ (صدور و ابطالی، تقسیم سود ماهانه) — آی‌سیگنال ۱۴۰۵/۰۸/۱۰",
+      "rateLabel": "بازدهی یک‌ساله ۲۸.۱۷٪ (صدور و ابطالی، تقسیم سود ماهانه) — آی‌سیگنال ۱۴۰۵/۰۸/۱۱",
       "regulatory": true,
       "requirements": [
         "کد سجام",
@@ -20767,7 +22399,7 @@
         "title": "تأمین سرمایه لوتوس پارسیان",
         "url": "https://lotusib.ir"
       },
-      "sourceObservedAt": "2026-11-01",
+      "sourceObservedAt": "2026-11-02",
       "speed": 88,
       "stale": false,
       "subcategory": "issuance-redemption",
@@ -20791,7 +22423,7 @@
       "collateral": "ندارد — نقدشوندگی از طریق بازار سرمایه",
       "collateralKind": "none",
       "confidence": "medium",
-      "desc": "صندوق درآمد ثابت قابل معامله در بورس (ETF) «ماهور» با مدیریت مشاور سرمایه‌گذاری معیار. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۱۱) ۳۹.۸۳٪ بوده است (شش‌ماهه ۱۸.۰۸٪، سه‌ماهه ۹.۴۱٪، یک‌ماهه ۲.۷۲٪). واحدها با نماد «ماهور» در بورس معامله می‌شوند و سود در قیمت واحد (NAV) انباشته می‌شود؛ تقسیم سود دوره‌ای ندارد. قیمت هر واحد حدود ۲.۴ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
+      "desc": "صندوق درآمد ثابت قابل معامله در بورس (ETF) «ماهور» با مدیریت مشاور سرمایه‌گذاری معیار. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۱۱) ۳۹.۷۳٪ بوده است (شش‌ماهه ۱۷.۹۸٪، سه‌ماهه ۹.۱۸٪، یک‌ماهه ۲.۶۹٪). واحدها با نماد «ماهور» در بورس معامله می‌شوند و سود در قیمت واحد (NAV) انباشته می‌شود؛ تقسیم سود دوره‌ای ندارد. قیمت هر واحد حدود ۲.۴ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
       "digital": 95,
       "extra": {
         "dataDate": "1405/08/11",
@@ -20805,11 +22437,11 @@
         "payout": "none",
         "redeemPrice": null,
         "returns": {
-          "oneMonth": 2.721,
-          "oneWeek": 0.525,
-          "oneYear": 39.834,
-          "sixMonth": 18.076,
-          "threeMonth": 9.415
+          "oneMonth": 2.686,
+          "oneWeek": 0.442,
+          "oneYear": 39.73,
+          "sixMonth": 17.984,
+          "threeMonth": 9.184
         },
         "site": null,
         "symbol": "ماهور"
@@ -20822,9 +22454,9 @@
       "maxAmount": null,
       "minAmount": 2434,
       "product": "صندوق درآمد ثابت ماهور (ETF)",
-      "rate": 39.83,
+      "rate": 39.73,
       "rateKind": "profit",
-      "rateLabel": "بازدهی یک‌ساله ۳۹.۸۳٪ (ETF بورسی، سود انباشته در NAV) — آی‌سیگنال ۱۴۰۵/۰۸/۱۱",
+      "rateLabel": "بازدهی یک‌ساله ۳۹.۷۳٪ (ETF بورسی، سود انباشته در NAV) — آی‌سیگنال ۱۴۰۵/۰۸/۱۱",
       "regulatory": true,
       "requirements": [
         "کد بورسی (سجام)",
@@ -20856,12 +22488,12 @@
       "autoDiscovered": true,
       "bank": "سبدگردان مانی",
       "bankId": "mani",
-      "benefit": 84,
+      "benefit": 83,
       "category": "funds",
       "collateral": "ندارد — نقدشوندگی از طریق بازار سرمایه",
       "collateralKind": "none",
       "confidence": "medium",
-      "desc": "صندوق درآمد ثابت قابل معامله در بورس (ETF) «مانی» با مدیریت سبدگردان مانی. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۱۱) ۳۶.۰۲٪ بوده است (شش‌ماهه ۱۵.۷۱٪، سه‌ماهه ۸.۲۳٪، یک‌ماهه ۲.۰۹٪). واحدها با نماد «مانی» در بورس معامله می‌شوند و سود در قیمت واحد (NAV) انباشته می‌شود؛ تقسیم سود دوره‌ای ندارد. قیمت هر واحد حدود ۳.۵ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
+      "desc": "صندوق درآمد ثابت قابل معامله در بورس (ETF) «مانی» با مدیریت سبدگردان مانی. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۱۱) ۳۵.۹۴٪ بوده است (شش‌ماهه ۱۵.۶۴٪، سه‌ماهه ۸.۱۱٪، یک‌ماهه ۲.۰۸٪). واحدها با نماد «مانی» در بورس معامله می‌شوند و سود در قیمت واحد (NAV) انباشته می‌شود؛ تقسیم سود دوره‌ای ندارد. قیمت هر واحد حدود ۳.۵ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
       "digital": 95,
       "extra": {
         "dataDate": "1405/08/11",
@@ -20875,11 +22507,11 @@
         "payout": "none",
         "redeemPrice": null,
         "returns": {
-          "oneMonth": 2.088,
-          "oneWeek": -0.057,
-          "oneYear": 36.024,
-          "sixMonth": 15.707,
-          "threeMonth": 8.23
+          "oneMonth": 2.076,
+          "oneWeek": 0.396,
+          "oneYear": 35.935,
+          "sixMonth": 15.643,
+          "threeMonth": 8.114
         },
         "site": null,
         "symbol": "مانی"
@@ -20892,9 +22524,9 @@
       "maxAmount": null,
       "minAmount": 3529,
       "product": "صندوق درآمد ثابت مانی (ETF)",
-      "rate": 36.02,
+      "rate": 35.94,
       "rateKind": "profit",
-      "rateLabel": "بازدهی یک‌ساله ۳۶.۰۲٪ (ETF بورسی، سود انباشته در NAV) — آی‌سیگنال ۱۴۰۵/۰۸/۱۱",
+      "rateLabel": "بازدهی یک‌ساله ۳۵.۹۴٪ (ETF بورسی، سود انباشته در NAV) — آی‌سیگنال ۱۴۰۵/۰۸/۱۱",
       "regulatory": true,
       "requirements": [
         "کد بورسی (سجام)",
@@ -21197,7 +22829,7 @@
       "termMonths": null
     },
     {
-      "amountLabel": "هر واحد حدود ۱۰۱.۵ هزار تومان — حداقل صدور طبق امیدنامه",
+      "amountLabel": "هر واحد حدود ۱۰۱.۶ هزار تومان — حداقل صدور طبق امیدنامه",
       "audience": "سرمایه‌گذاران کم‌ریسک متقاضی واریز سود ماهانه بدون نیاز به معاملات برخط",
       "autoDiscovered": true,
       "bank": "بانک خاورمیانه / کارگزاری بانک خاورمیانه",
@@ -21207,15 +22839,15 @@
       "collateral": "ندارد — ابطال واحدها از طریق مدیر صندوق",
       "collateralKind": "none",
       "confidence": "medium",
-      "desc": "صندوق درآمد ثابت صدور و ابطالی «مشترک افق کارگزاری بانک خاورمیانه» با مدیریت کارگزاری بانک خاورمیانه. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۱۰) ۳۱.۰۵٪ بوده است (شش‌ماهه ۱۵.۶۹٪، سه‌ماهه ۸.۱۳٪، یک‌ماهه ۲.۷۹٪). صدور و ابطال واحدها از طریق مدیر صندوق انجام می‌شود و سود به‌صورت دوره‌ای (ماهانه) به حساب سرمایه‌گذار واریز می‌گردد. قیمت هر واحد حدود ۱۰۱.۵ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
+      "desc": "صندوق درآمد ثابت صدور و ابطالی «مشترک افق کارگزاری بانک خاورمیانه» با مدیریت کارگزاری بانک خاورمیانه. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۱۱) ۳۱.۰۵٪ بوده است (شش‌ماهه ۱۵.۶۹٪، سه‌ماهه ۸.۱۳٪، یک‌ماهه ۲.۷۹٪). صدور و ابطال واحدها از طریق مدیر صندوق انجام می‌شود و سود به‌صورت دوره‌ای (ماهانه) به حساب سرمایه‌گذار واریز می‌گردد. قیمت هر واحد حدود ۱۰۱.۶ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
       "digital": 85,
       "extra": {
-        "dataDate": "1405/08/10",
+        "dataDate": "1405/08/11",
         "fullName": null,
         "guarantor": null,
         "inception": null,
         "isignalId": 327,
-        "issuePrice": 1014758,
+        "issuePrice": 1015565,
         "manager": "کارگزاری بانک خاورمیانه",
         "navBillionRial": null,
         "payout": "monthly",
@@ -21233,14 +22865,14 @@
       "friction": 88,
       "id": "fund-ofogh-middle-east",
       "lastSeen": "2026-11-03",
-      "lastUpdated": "2026-11-01",
+      "lastUpdated": "2026-11-02",
       "lastVerified": "2026-11-03",
       "maxAmount": null,
-      "minAmount": 101476,
+      "minAmount": 101557,
       "product": "صندوق سرمایه‌گذاری مشترک افق کارگزاری بانک خاورمیانه (صدور و ابطالی)",
       "rate": 31.05,
       "rateKind": "profit",
-      "rateLabel": "بازدهی یک‌ساله ۳۱.۰۵٪ (صدور و ابطالی، تقسیم سود ماهانه) — آی‌سیگنال ۱۴۰۵/۰۸/۱۰",
+      "rateLabel": "بازدهی یک‌ساله ۳۱.۰۵٪ (صدور و ابطالی، تقسیم سود ماهانه) — آی‌سیگنال ۱۴۰۵/۰۸/۱۱",
       "regulatory": true,
       "requirements": [
         "ثبت‌نام سجام",
@@ -21266,7 +22898,7 @@
       "termMonths": null
     },
     {
-      "amountLabel": "هر واحد حدود ۱۰۵.۳ هزار تومان — حداقل صدور طبق امیدنامه",
+      "amountLabel": "هر واحد حدود ۱۰۵.۴ هزار تومان — حداقل صدور طبق امیدنامه",
       "audience": "سرمایه‌گذاران کم‌ریسک متقاضی واریز سود ماهانه بدون نیاز به معاملات برخط",
       "autoDiscovered": true,
       "bank": "بانک سپه / تأمین سرمایه امید",
@@ -21276,25 +22908,25 @@
       "collateral": "ندارد — ابطال واحدها از طریق مدیر صندوق",
       "collateralKind": "none",
       "confidence": "medium",
-      "desc": "صندوق درآمد ثابت صدور و ابطالی «امید انصار» با مدیریت تأمین سرمایه امید. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۱۰) ۲۹.۰۸٪ بوده است (شش‌ماهه ۱۴.۹۲٪، سه‌ماهه ۷.۴۹٪، یک‌ماهه ۲.۵۷٪). صدور و ابطال واحدها از طریق مدیر صندوق انجام می‌شود و سود به‌صورت دوره‌ای (ماهانه) به حساب سرمایه‌گذار واریز می‌گردد. قیمت هر واحد حدود ۱۰۵.۳ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
+      "desc": "صندوق درآمد ثابت صدور و ابطالی «امید انصار» با مدیریت تأمین سرمایه امید. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۱۱) ۲۹.۰۷٪ بوده است (شش‌ماهه ۱۴.۹۲٪، سه‌ماهه ۷.۴۹٪، یک‌ماهه ۲.۵۶٪). صدور و ابطال واحدها از طریق مدیر صندوق انجام می‌شود و سود به‌صورت دوره‌ای (ماهانه) به حساب سرمایه‌گذار واریز می‌گردد. قیمت هر واحد حدود ۱۰۵.۴ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
       "digital": 85,
       "extra": {
-        "dataDate": "1405/08/10",
+        "dataDate": "1405/08/11",
         "fullName": null,
         "guarantor": null,
         "inception": null,
         "isignalId": 345,
-        "issuePrice": 1052599,
+        "issuePrice": 1053513,
         "manager": "تأمین سرمایه امید",
         "navBillionRial": null,
         "payout": "monthly",
         "redeemPrice": null,
         "returns": {
-          "oneMonth": 2.57,
-          "oneWeek": 0.528,
-          "oneYear": 29.079,
-          "sixMonth": 14.924,
-          "threeMonth": 7.489
+          "oneMonth": 2.561,
+          "oneWeek": 0.527,
+          "oneYear": 29.073,
+          "sixMonth": 14.923,
+          "threeMonth": 7.49
         },
         "site": null,
         "symbol": null
@@ -21302,14 +22934,14 @@
       "friction": 88,
       "id": "fund-omid-ansar",
       "lastSeen": "2026-11-03",
-      "lastUpdated": "2026-11-01",
+      "lastUpdated": "2026-11-02",
       "lastVerified": "2026-11-03",
       "maxAmount": null,
-      "minAmount": 105260,
+      "minAmount": 105351,
       "product": "صندوق درآمد ثابت امید انصار (صدور و ابطالی)",
-      "rate": 29.08,
+      "rate": 29.07,
       "rateKind": "profit",
-      "rateLabel": "بازدهی یک‌ساله ۲۹.۰۸٪ (صدور و ابطالی، تقسیم سود ماهانه) — آی‌سیگنال ۱۴۰۵/۰۸/۱۰",
+      "rateLabel": "بازدهی یک‌ساله ۲۹.۰۷٪ (صدور و ابطالی، تقسیم سود ماهانه) — آی‌سیگنال ۱۴۰۵/۰۸/۱۱",
       "regulatory": true,
       "requirements": [
         "ثبت‌نام سجام",
@@ -21348,22 +22980,22 @@
       "digital": 82,
       "extra": {
         "isignal": {
-          "dataDate": "1405/08/10",
+          "dataDate": "1405/08/11",
           "fullName": null,
           "guarantor": null,
           "inception": null,
           "isignalId": 328,
-          "issuePrice": 111634,
+          "issuePrice": 111717,
           "manager": "تأمین سرمایه امید",
           "navBillionRial": null,
           "payout": "monthly",
           "redeemPrice": null,
           "returns": {
-            "oneMonth": 2.22,
-            "oneWeek": 0.453,
-            "oneYear": 28.017,
-            "sixMonth": 14.264,
-            "threeMonth": 6.944
+            "oneMonth": 2.217,
+            "oneWeek": 0.452,
+            "oneYear": 27.999,
+            "sixMonth": 14.251,
+            "threeMonth": 6.932
           },
           "site": null,
           "symbol": null
@@ -21372,14 +23004,14 @@
       "friction": 88,
       "id": "fund-omid-sepah",
       "lastSeen": "2026-11-03",
-      "lastUpdated": "2026-11-01",
+      "lastUpdated": "2026-11-02",
       "lastVerified": "2026-11-03",
       "maxAmount": null,
       "minAmount": 100000,
       "product": "صندوق سرمایه‌گذاری گنجینه امید ایرانیان (صدور و ابطالی بانک سپه)",
-      "rate": 28.02,
+      "rate": 28,
       "rateKind": "profit",
-      "rateLabel": "بازدهی یک‌ساله ۲۸.۰۲٪ (صدور و ابطالی، تقسیم سود ماهانه) — آی‌سیگنال ۱۴۰۵/۰۸/۱۰",
+      "rateLabel": "بازدهی یک‌ساله ۲۸٪ (صدور و ابطالی، تقسیم سود ماهانه) — آی‌سیگنال ۱۴۰۵/۰۸/۱۱",
       "regulatory": true,
       "requirements": [
         "حساب در بانک سپه یا ثبت‌نام آنلاین در تارنمای صندوق"
@@ -21389,7 +23021,7 @@
         "title": "مدیریت دارایی امید — بانک سپه",
         "url": "https://omidfund.com"
       },
-      "sourceObservedAt": "2026-11-01",
+      "sourceObservedAt": "2026-11-02",
       "speed": 84,
       "stale": false,
       "subcategory": "issuance-redemption",
@@ -22101,12 +23733,12 @@
       "autoDiscovered": true,
       "bank": "سبدگردان سینا",
       "bankId": "sina-amc",
-      "benefit": 84,
+      "benefit": 85,
       "category": "funds",
       "collateral": "ندارد — نقدشوندگی از طریق بازار سرمایه",
       "collateralKind": "none",
       "confidence": "medium",
-      "desc": "صندوق درآمد ثابت قابل معامله در بورس (ETF) «سیناد» با مدیریت سبدگردان سینا. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۱۱) ۳۶.۵۳٪ بوده است (شش‌ماهه ۱۶.۸۳٪، سه‌ماهه ۸.۰۹٪، یک‌ماهه ۲.۶۴٪). واحدها با نماد «سیناد» در بورس معامله می‌شوند و سود در قیمت واحد (NAV) انباشته می‌شود؛ تقسیم سود دوره‌ای ندارد. قیمت هر واحد حدود ۲.۸ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
+      "desc": "صندوق درآمد ثابت قابل معامله در بورس (ETF) «سیناد» با مدیریت سبدگردان سینا. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۱۱) ۳۶.۶۹٪ بوده است (شش‌ماهه ۱۶.۸۴٪، سه‌ماهه ۸.۲۸٪، یک‌ماهه ۲.۷۶٪). واحدها با نماد «سیناد» در بورس معامله می‌شوند و سود در قیمت واحد (NAV) انباشته می‌شود؛ تقسیم سود دوره‌ای ندارد. قیمت هر واحد حدود ۲.۸ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
       "digital": 95,
       "extra": {
         "dataDate": "1405/08/11",
@@ -22120,11 +23752,11 @@
         "payout": "none",
         "redeemPrice": null,
         "returns": {
-          "oneMonth": 2.638,
-          "oneWeek": 0.517,
-          "oneYear": 36.534,
-          "sixMonth": 16.825,
-          "threeMonth": 8.092
+          "oneMonth": 2.761,
+          "oneWeek": 0.635,
+          "oneYear": 36.686,
+          "sixMonth": 16.844,
+          "threeMonth": 8.283
         },
         "site": null,
         "symbol": "سیناد"
@@ -22137,9 +23769,9 @@
       "maxAmount": null,
       "minAmount": 2823,
       "product": "صندوق درآمد ثابت سیناد (ETF)",
-      "rate": 36.53,
+      "rate": 36.69,
       "rateKind": "profit",
-      "rateLabel": "بازدهی یک‌ساله ۳۶.۵۳٪ (ETF بورسی، سود انباشته در NAV) — آی‌سیگنال ۱۴۰۵/۰۸/۱۱",
+      "rateLabel": "بازدهی یک‌ساله ۳۶.۶۹٪ (ETF بورسی، سود انباشته در NAV) — آی‌سیگنال ۱۴۰۵/۰۸/۱۱",
       "regulatory": true,
       "requirements": [
         "کد بورسی (سجام)",
@@ -22452,15 +24084,15 @@
       "collateral": "ندارد — ابطال واحدها از طریق مدیر صندوق",
       "collateralKind": "none",
       "confidence": "medium",
-      "desc": "صندوق درآمد ثابت صدور و ابطالی «توسعه تعاون صبا» با مدیریت سبدگردان اندیشه صبا. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۱۰) ۲۹.۷٪ بوده است (شش‌ماهه ۱۳.۶۵٪، سه‌ماهه ۶.۸۴٪، یک‌ماهه ۲.۳۲٪). صدور و ابطال واحدها از طریق مدیر صندوق انجام می‌شود و سود به‌صورت دوره‌ای (ماهانه) به حساب سرمایه‌گذار واریز می‌گردد. قیمت هر واحد حدود ۱۰۰.۹ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
+      "desc": "صندوق درآمد ثابت صدور و ابطالی «توسعه تعاون صبا» با مدیریت سبدگردان اندیشه صبا. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۱۱) ۲۹.۷٪ بوده است (شش‌ماهه ۱۳.۶۵٪، سه‌ماهه ۶.۸۴٪، یک‌ماهه ۲.۳۲٪). صدور و ابطال واحدها از طریق مدیر صندوق انجام می‌شود و سود به‌صورت دوره‌ای (ماهانه) به حساب سرمایه‌گذار واریز می‌گردد. قیمت هر واحد حدود ۱۰۰.۹ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
       "digital": 85,
       "extra": {
-        "dataDate": "1405/08/10",
+        "dataDate": "1405/08/11",
         "fullName": null,
         "guarantor": null,
         "inception": null,
         "isignalId": 343,
-        "issuePrice": 1008523,
+        "issuePrice": 1009463,
         "manager": "سبدگردان اندیشه صبا",
         "navBillionRial": null,
         "payout": "monthly",
@@ -22478,14 +24110,14 @@
       "friction": 88,
       "id": "fund-tosee-taavon-saba",
       "lastSeen": "2026-11-03",
-      "lastUpdated": "2026-11-01",
+      "lastUpdated": "2026-11-02",
       "lastVerified": "2026-11-03",
       "maxAmount": null,
-      "minAmount": 100852,
+      "minAmount": 100946,
       "product": "صندوق سرمایه‌گذاری توسعه تعاون صبا (صدور و ابطالی)",
       "rate": 29.7,
       "rateKind": "profit",
-      "rateLabel": "بازدهی یک‌ساله ۲۹.۷٪ (صدور و ابطالی، تقسیم سود ماهانه) — آی‌سیگنال ۱۴۰۵/۰۸/۱۰",
+      "rateLabel": "بازدهی یک‌ساله ۲۹.۷٪ (صدور و ابطالی، تقسیم سود ماهانه) — آی‌سیگنال ۱۴۰۵/۰۸/۱۱",
       "regulatory": true,
       "requirements": [
         "ثبت‌نام سجام",
