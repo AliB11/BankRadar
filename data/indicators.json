@@ -19,8 +19,44 @@
       "unit": "%",
       "value": 23
     },
+    "corridorCeilingRate": {
+      "changedAt": "2026-11-03T18:10:00.000Z",
+      "label": "نرخ اعتبارگیری قاعده‌مند (سقف کریدور)",
+      "observedDate": "1405/08/07",
+      "officialDate": "2026-10-29",
+      "period": "آبان ۱۴۰۵",
+      "source": {
+        "kind": "regulator",
+        "title": "بانک مرکزی — نرخ سود سیاستی (جدول هفتگی رسمی)",
+        "url": "https://www.cbi.ir/PolicyRates/policyrates_fa.aspx"
+      },
+      "unit": "%",
+      "value": 24
+    },
     "depositCap1y": {
+      "corroboration": [
+        {
+          "observedAt": "2026-11-03",
+          "source": "finai.ir",
+          "url": "https://finai.ir/blog/bank-deposit-interest-1405",
+          "via": "direct"
+        },
+        {
+          "observedAt": "2026-11-03",
+          "source": "nabzgheymat.ir",
+          "url": "https://nabzgheymat.ir/",
+          "via": "direct"
+        },
+        {
+          "observedAt": "2026-11-03",
+          "scope": "policy-rates",
+          "source": "cbi.ir",
+          "url": "https://www.cbi.ir/PolicyRates/policyrates_fa.aspx",
+          "via": "direct"
+        }
+      ],
       "label": "نرخ مرجع سپرده عادی یک‌ساله (گزارش رسانه)",
+      "lastCrosscheck": "2026-11-03",
       "note": "نرخ گزارش‌شده در رسانه؛ جدول بخشنامه رسمی در این ممیزی مستقیماً قابل استخراج نبود.",
       "period": "آبان ۱۴۰۵",
       "source": {
@@ -32,7 +68,29 @@
       "value": 20.5
     },
     "depositCap2y": {
+      "corroboration": [
+        {
+          "observedAt": "2026-11-03",
+          "source": "finai.ir",
+          "url": "https://finai.ir/blog/bank-deposit-interest-1405",
+          "via": "direct"
+        },
+        {
+          "observedAt": "2026-11-03",
+          "source": "nabzgheymat.ir",
+          "url": "https://nabzgheymat.ir/",
+          "via": "direct"
+        },
+        {
+          "observedAt": "2026-11-03",
+          "scope": "policy-rates",
+          "source": "cbi.ir",
+          "url": "https://www.cbi.ir/PolicyRates/policyrates_fa.aspx",
+          "via": "direct"
+        }
+      ],
       "label": "سقف سود سپرده دو ساله",
+      "lastCrosscheck": "2026-11-03",
       "note": "نرخ گزارش‌شده در رسانه؛ جدول بخشنامه رسمی در این ممیزی مستقیماً استخراج نشد.",
       "period": "آبان ۱۴۰۵",
       "source": {
@@ -44,7 +102,29 @@
       "value": 21.5
     },
     "depositCap3y": {
+      "corroboration": [
+        {
+          "observedAt": "2026-11-03",
+          "source": "finai.ir",
+          "url": "https://finai.ir/blog/bank-deposit-interest-1405",
+          "via": "direct"
+        },
+        {
+          "observedAt": "2026-11-03",
+          "source": "nabzgheymat.ir",
+          "url": "https://nabzgheymat.ir/",
+          "via": "direct"
+        },
+        {
+          "observedAt": "2026-11-03",
+          "scope": "policy-rates",
+          "source": "cbi.ir",
+          "url": "https://www.cbi.ir/PolicyRates/policyrates_fa.aspx",
+          "via": "direct"
+        }
+      ],
       "label": "سقف سود سپرده سه ساله",
+      "lastCrosscheck": "2026-11-03",
       "note": "نرخ گزارش‌شده در رسانه؛ جدول بخشنامه رسمی در این ممیزی مستقیماً استخراج نشد.",
       "period": "آبان ۱۴۰۵",
       "source": {
@@ -55,8 +135,44 @@
       "unit": "%",
       "value": 22.5
     },
+    "depositFacilityRate": {
+      "changedAt": "2026-11-03T18:10:00.000Z",
+      "label": "نرخ سپرده‌گذاری قاعده‌مند",
+      "observedDate": "1405/08/07",
+      "officialDate": "2026-10-29",
+      "period": "آبان ۱۴۰۵",
+      "source": {
+        "kind": "regulator",
+        "title": "بانک مرکزی — نرخ سود سیاستی (جدول هفتگی رسمی)",
+        "url": "https://www.cbi.ir/PolicyRates/policyrates_fa.aspx"
+      },
+      "unit": "%",
+      "value": 17
+    },
     "depositShort3m": {
+      "corroboration": [
+        {
+          "observedAt": "2026-11-03",
+          "source": "finai.ir",
+          "url": "https://finai.ir/blog/bank-deposit-interest-1405",
+          "via": "direct"
+        },
+        {
+          "observedAt": "2026-11-03",
+          "source": "nabzgheymat.ir",
+          "url": "https://nabzgheymat.ir/",
+          "via": "direct"
+        },
+        {
+          "observedAt": "2026-11-03",
+          "scope": "policy-rates",
+          "source": "cbi.ir",
+          "url": "https://www.cbi.ir/PolicyRates/policyrates_fa.aspx",
+          "via": "direct"
+        }
+      ],
       "label": "سود سپرده کوتاه‌مدت ویژه سه‌ماهه",
+      "lastCrosscheck": "2026-11-03",
       "note": "داده پیشین؛ منبع مستقیم و شرایط جاری آن در این ممیزی مستقل تأیید نشده است.",
       "period": "۱۴۰۵",
       "source": {
@@ -68,7 +184,29 @@
       "value": 12
     },
     "depositShort6m": {
+      "corroboration": [
+        {
+          "observedAt": "2026-11-03",
+          "source": "finai.ir",
+          "url": "https://finai.ir/blog/bank-deposit-interest-1405",
+          "via": "direct"
+        },
+        {
+          "observedAt": "2026-11-03",
+          "source": "nabzgheymat.ir",
+          "url": "https://nabzgheymat.ir/",
+          "via": "direct"
+        },
+        {
+          "observedAt": "2026-11-03",
+          "scope": "policy-rates",
+          "source": "cbi.ir",
+          "url": "https://www.cbi.ir/PolicyRates/policyrates_fa.aspx",
+          "via": "direct"
+        }
+      ],
       "label": "سود سپرده کوتاه‌مدت ویژه شش‌ماهه",
+      "lastCrosscheck": "2026-11-03",
       "note": "داده پیشین؛ منبع مستقیم و شرایط جاری آن در این ممیزی مستقل تأیید نشده است.",
       "period": "۱۴۰۵",
       "source": {
@@ -80,7 +218,29 @@
       "value": 17
     },
     "depositShortNormal": {
+      "corroboration": [
+        {
+          "observedAt": "2026-11-03",
+          "source": "finai.ir",
+          "url": "https://finai.ir/blog/bank-deposit-interest-1405",
+          "via": "direct"
+        },
+        {
+          "observedAt": "2026-11-03",
+          "source": "nabzgheymat.ir",
+          "url": "https://nabzgheymat.ir/",
+          "via": "direct"
+        },
+        {
+          "observedAt": "2026-11-03",
+          "scope": "policy-rates",
+          "source": "cbi.ir",
+          "url": "https://www.cbi.ir/PolicyRates/policyrates_fa.aspx",
+          "via": "direct"
+        }
+      ],
       "label": "سود سپرده کوتاه‌مدت عادی (کارتی)",
+      "lastCrosscheck": "2026-11-03",
       "note": "داده پیشین؛ منبع مستقیم و شرایط جاری آن در این ممیزی مستقل تأیید نشده است.",
       "period": "۱۴۰۵",
       "source": {
@@ -155,18 +315,44 @@
       "value": 88.7
     },
     "interbankRate": {
+      "changedAt": "2026-11-03T18:10:00.000Z",
       "label": "نرخ سود بازار بین‌بانکی",
-      "period": "شهریور ۱۴۰۵",
+      "observedDate": "1405/08/07",
+      "officialDate": "2026-10-29",
+      "period": "آبان ۱۴۰۵",
+      "previousValue": 24,
       "source": {
-        "kind": "press",
-        "title": "بانک مرکزی / نبض قیمت",
-        "url": "https://nabzgheymat.ir/"
+        "kind": "regulator",
+        "title": "بانک مرکزی — نرخ سود سیاستی (جدول هفتگی رسمی)",
+        "url": "https://www.cbi.ir/PolicyRates/policyrates_fa.aspx"
       },
       "unit": "%",
       "value": 24
     },
     "loanRateCeiling": {
+      "corroboration": [
+        {
+          "observedAt": "2026-11-03",
+          "source": "finai.ir",
+          "url": "https://finai.ir/blog/bank-deposit-interest-1405",
+          "via": "direct"
+        },
+        {
+          "observedAt": "2026-11-03",
+          "source": "nabzgheymat.ir",
+          "url": "https://nabzgheymat.ir/",
+          "via": "direct"
+        },
+        {
+          "observedAt": "2026-11-03",
+          "scope": "policy-rates",
+          "source": "cbi.ir",
+          "url": "https://www.cbi.ir/PolicyRates/policyrates_fa.aspx",
+          "via": "direct"
+        }
+      ],
       "label": "سقف نرخ سود تسهیلات عقود غیرمشارکتی",
+      "lastCrosscheck": "2026-11-03",
       "note": "نرخ گزارش‌شده در رسانه؛ جدول بخشنامه رسمی در این ممیزی مستقیماً استخراج نشد.",
       "period": "آبان ۱۴۰۵",
       "source": {
@@ -200,6 +386,20 @@
       },
       "unit": "%",
       "value": 4
+    },
+    "repoFloorRate": {
+      "changedAt": "2026-11-03T18:10:00.000Z",
+      "label": "حداقل نرخ توافق بازخرید",
+      "observedDate": "1405/08/07",
+      "officialDate": "2026-10-29",
+      "period": "آبان ۱۴۰۵",
+      "source": {
+        "kind": "regulator",
+        "title": "بانک مرکزی — نرخ سود سیاستی (جدول هفتگی رسمی)",
+        "url": "https://www.cbi.ir/PolicyRates/policyrates_fa.aspx"
+      },
+      "unit": "%",
+      "value": 23
     }
   },
   "note": "شاخص‌های کلان و نرخ‌های مرجع نظام بانکی. مبنای محاسبه «نرخ واقعی» در سامانه.",
@@ -255,5 +455,63 @@
       }
     ]
   },
+  "sourcesChecked": {
+    "at": "2026-11-03",
+    "note": "آزمون زندهٔ دستی منابع؛ جزئیات در docs/FRESHNESS_AUDIT_2026_11_03.md",
+    "results": [
+      {
+        "id": "cbi-policy-rates",
+        "observed": "1405/08/07",
+        "ok": true,
+        "url": "https://www.cbi.ir/PolicyRates/policyrates_fa.aspx"
+      },
+      {
+        "id": "cbi-home",
+        "ok": true,
+        "url": "https://www.cbi.ir/default.aspx"
+      },
+      {
+        "id": "cbi-simplelist-2088",
+        "ok": false,
+        "reason": "صفحهٔ «Page Not Found» با کد ۲۰۰ — نشانی حذف شده",
+        "url": "https://www.cbi.ir/simplelist/2088.aspx"
+      },
+      {
+        "id": "dgshahr",
+        "ok": false,
+        "reason": "ژئوبلاک؛ صفحهٔ «فیلترشکن خود را خاموش کنید»",
+        "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/"
+      },
+      {
+        "id": "bank-melli",
+        "ok": false,
+        "reason": "HTTP 403 — دسترسی از IP/منطقهٔ جغرافیایی مسدود",
+        "url": "https://bank-melli.ir/fa/deposit"
+      },
+      {
+        "id": "wayback-dgshahr",
+        "ok": true,
+        "reason": "snapshot ۲۲ روزه",
+        "url": "https://web.archive.org/web/20261012075233/https://dgshahr.com/blog/best-banks-for-deposit-rates/"
+      },
+      {
+        "id": "wayback-bpi",
+        "ok": true,
+        "reason": "snapshot ۳۲۴ روزه — کهنه",
+        "url": "https://web.archive.org/web/20251214143406/https://www.bpi.ir/"
+      },
+      {
+        "id": "finai",
+        "ok": true,
+        "url": "https://finai.ir/blog/bank-deposit-interest-1405"
+      },
+      {
+        "id": "isignal",
+        "ok": true,
+        "url": "https://isignal.ir/fund/"
+      }
+    ]
+  },
+  "verifiedAt": "2026-11-03",
   "version": 2
 }

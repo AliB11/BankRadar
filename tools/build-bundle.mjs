@@ -53,6 +53,7 @@ export async function buildBundle(opts = {}) {
       autoDiscovered: products.autoDiscovered ?? 0,
       lastRun: meta.lastRun ?? null,
       lastRunMode: meta.lastRunMode ?? null,
+      freshness: meta.freshness ?? null,
       sources: meta.sources ?? [],
     },
   };

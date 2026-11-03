@@ -1,0 +1,266 @@
+{
+  "generatedAt": "2026-11-03T17:55:23.867Z",
+  "lastRun": "2026-11-03T11:07:49.288Z",
+  "lastRunMode": "full",
+  "counts": {
+    "credit": 65,
+    "deposits": 53,
+    "funds": 73,
+    "loans": 203,
+    "loyalty": 14,
+    "total": 408
+  },
+  "freshness": {
+    "d7": 124,
+    "d30": 75,
+    "d90": 143,
+    "older": 66,
+    "unknown": 0,
+    "total": 408,
+    "medianDays": 37
+  },
+  "categoryFreshness": {
+    "deposits": {
+      "total": 53,
+      "fresh": 6,
+      "recent": 0,
+      "aging": 47,
+      "stale": 0,
+      "unknown": 0
+    },
+    "credit": {
+      "total": 65,
+      "fresh": 3,
+      "recent": 19,
+      "aging": 30,
+      "stale": 13,
+      "unknown": 0
+    },
+    "loans": {
+      "total": 203,
+      "fresh": 52,
+      "recent": 54,
+      "aging": 44,
+      "stale": 53,
+      "unknown": 0
+    },
+    "loyalty": {
+      "total": 14,
+      "fresh": 0,
+      "recent": 1,
+      "aging": 13,
+      "stale": 0,
+      "unknown": 0
+    },
+    "funds": {
+      "total": 73,
+      "fresh": 63,
+      "recent": 1,
+      "aging": 9,
+      "stale": 0,
+      "unknown": 0
+    }
+  },
+  "indicators": [
+    {
+      "key": "certificateRate",
+      "label": "سود اوراق گواهی سپرده مدت‌دار ویژه",
+      "value": 23,
+      "period": "۱۴۰۵",
+      "sourceKind": "regulator",
+      "class": "fresh"
+    },
+    {
+      "key": "corridorCeilingRate",
+      "label": "نرخ اعتبارگیری قاعده‌مند (سقف کریدور)",
+      "value": 24,
+      "period": "آبان ۱۴۰۵",
+      "sourceKind": "regulator",
+      "class": "fresh"
+    },
+    {
+      "key": "depositCap1y",
+      "label": "نرخ مرجع سپرده عادی یک‌ساله (گزارش رسانه)",
+      "value": 20.5,
+      "period": "آبان ۱۴۰۵",
+      "sourceKind": "press",
+      "class": "fresh"
+    },
+    {
+      "key": "depositCap2y",
+      "label": "سقف سود سپرده دو ساله",
+      "value": 21.5,
+      "period": "آبان ۱۴۰۵",
+      "sourceKind": "press",
+      "class": "fresh"
+    },
+    {
+      "key": "depositCap3y",
+      "label": "سقف سود سپرده سه ساله",
+      "value": 22.5,
+      "period": "آبان ۱۴۰۵",
+      "sourceKind": "press",
+      "class": "fresh"
+    },
+    {
+      "key": "depositFacilityRate",
+      "label": "نرخ سپرده‌گذاری قاعده‌مند",
+      "value": 17,
+      "period": "آبان ۱۴۰۵",
+      "sourceKind": "regulator",
+      "class": "fresh"
+    },
+    {
+      "key": "depositShort3m",
+      "label": "سود سپرده کوتاه‌مدت ویژه سه‌ماهه",
+      "value": 12,
+      "period": "۱۴۰۵",
+      "sourceKind": "regulator",
+      "class": "fresh"
+    },
+    {
+      "key": "depositShort6m",
+      "label": "سود سپرده کوتاه‌مدت ویژه شش‌ماهه",
+      "value": 17,
+      "period": "۱۴۰۵",
+      "sourceKind": "regulator",
+      "class": "fresh"
+    },
+    {
+      "key": "depositShortNormal",
+      "label": "سود سپرده کوتاه‌مدت عادی (کارتی)",
+      "value": 5,
+      "period": "۱۴۰۵",
+      "sourceKind": "regulator",
+      "class": "fresh"
+    },
+    {
+      "key": "inflationAnnual",
+      "label": "تورم سالانه (مرکز آمار ایران)",
+      "value": 76.8,
+      "period": "مهر ۱۴۰۵",
+      "sourceKind": "press",
+      "class": "fresh"
+    },
+    {
+      "key": "inflationCbiAnnual",
+      "label": "تورم سالانه برآورد بانک مرکزی",
+      "value": 68.4,
+      "period": "شهریور ۱۴۰۵",
+      "sourceKind": "press",
+      "class": "fresh"
+    },
+    {
+      "key": "inflationHousing",
+      "label": "تورم سالانه اجاره‌بها (نه کل بخش مسکن)",
+      "value": 32.2,
+      "period": "شهریور ۱۴۰۵",
+      "sourceKind": "press",
+      "class": "fresh"
+    },
+    {
+      "key": "inflationMonthly",
+      "label": "تورم ماهانه",
+      "value": 4.4,
+      "period": "مهر ۱۴۰۵",
+      "sourceKind": "press",
+      "class": "fresh"
+    },
+    {
+      "key": "inflationPointToPoint",
+      "label": "تورم نقطه‌به‌نقطه",
+      "value": 88.7,
+      "period": "مهر ۱۴۰۵",
+      "sourceKind": "press",
+      "class": "fresh"
+    },
+    {
+      "key": "interbankRate",
+      "label": "نرخ سود بازار بین‌بانکی",
+      "value": 24,
+      "period": "آبان ۱۴۰۵",
+      "sourceKind": "regulator",
+      "class": "fresh"
+    },
+    {
+      "key": "loanRateCeiling",
+      "label": "سقف نرخ سود تسهیلات عقود غیرمشارکتی",
+      "value": 23,
+      "period": "آبان ۱۴۰۵",
+      "sourceKind": "press",
+      "class": "fresh"
+    },
+    {
+      "key": "loanRateMosharekat",
+      "label": "نرخ سود مورد انتظار عقود مشارکتی",
+      "value": 24,
+      "period": "۱۴۰۵",
+      "sourceKind": "regulator",
+      "class": "fresh"
+    },
+    {
+      "key": "qarzRate",
+      "label": "کارمزد تسهیلات قرض‌الحسنه",
+      "value": 4,
+      "period": "۱۴۰۵",
+      "sourceKind": "regulator",
+      "class": "fresh"
+    },
+    {
+      "key": "repoFloorRate",
+      "label": "حداقل نرخ توافق بازخرید",
+      "value": 23,
+      "period": "آبان ۱۴۰۵",
+      "sourceKind": "regulator",
+      "class": "fresh"
+    }
+  ],
+  "sources": [
+    {
+      "name": "rade.ir",
+      "status": "ok",
+      "ok": true,
+      "parsed": 150
+    },
+    {
+      "name": "bank-sites",
+      "status": "ok",
+      "ok": true,
+      "reached": 4,
+      "targets": 25
+    },
+    {
+      "name": "macro-indicators",
+      "status": "ok",
+      "ok": true,
+      "sourcesOk": 2
+    },
+    {
+      "name": "dgshahr.com",
+      "status": "down",
+      "ok": false,
+      "error": "HTTP 403 Forbidden (HTTP 403) — https://dgshahr.com/blog/best-banks-for-deposit-rates/"
+    },
+    {
+      "name": "isignal.ir",
+      "status": "ok",
+      "ok": true,
+      "parsed": 67
+    }
+  ],
+  "degradedSources": [
+    "dgshahr.com"
+  ],
+  "crosscheck": null,
+  "linkHealth": {
+    "total": 30,
+    "ok": 22,
+    "dead": 8,
+    "healthPercent": 73
+  },
+  "verdict": {
+    "dataFresh": false,
+    "sourcesHealthy": false,
+    "note": "اعداد این گزارش از دادهٔ ثبت‌شده ساخته می‌شوند، نه از واکشی زنده."
+  }
+}

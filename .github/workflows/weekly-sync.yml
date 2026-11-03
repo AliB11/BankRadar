@@ -114,6 +114,17 @@ jobs:
             cat data/link-health.json | python3 -c "import json,sys; d=json.load(open('data/link-health.json')); print(f\"سلامت لینک: {d['ok']}/{d['total']} ({d['healthPercent']}%)\")"
           fi
 
+      - name: گزارش سلامت و تازگی منابع
+        run: |
+          node tools/source-health.mjs 2>&1 | tee health.log
+          {
+            echo "### سلامت و تازگی منابع"
+            echo ""
+            echo '```'
+            tail -20 health.log
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
       - name: اعتبارسنجی داده
         run: node scripts/validate-data.mjs
 

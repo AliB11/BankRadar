@@ -15,6 +15,7 @@
  *   node tools/collect.mjs --limit=60   # محدودکردن تعداد صفحات وام
  *   node tools/collect.mjs --only=dgshahr  # فقط منبع دیجی‌شهر (برای درون‌ریزی آفلاین: DGSHAHR_HTML_FILE)
  *   node tools/collect.mjs --only=isignal  # فقط صندوق‌های درآمد ثابت آی‌سیگنال (برون‌خط: ISIGNAL_JSON_FILE)
+ *   node tools/collect.mjs --only=crosscheck # فقط تطبیق مستقل نرخ‌ها با منابع جایگزین
  */
 
 import fs from 'node:fs/promises';
@@ -27,6 +28,7 @@ import * as banks from './sources/banks.mjs';
 import * as cbi from './sources/cbi.mjs';
 import * as dgshahr from './sources/dgshahr.mjs';
 import * as isignal from './sources/isignal.mjs';
+import * as crosscheck from './sources/crosscheck.mjs';
 import { buildBundle } from './build-bundle.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -336,6 +338,46 @@ export function mergeProducts(existing, incoming) {
   return { merged, stats: { added, updated, unchanged, thinSkipped } };
 }
 
+/**
+ * توزیع تازگی داده — «چند درصد رکوردها در ۷، ۳۰ یا ۹۰ روز گذشته تأیید شده‌اند».
+ *
+ * مبنای محاسبه `lastUpdated` است (تاریخ ویرایش منبع)، نه `lastSeen` (تاریخ
+ * دیده‌شدن در واکشی). اگر منبع فقط قابل مشاهده باشد ولی تاریخ ویرایش نداشته
+ * باشد، `source.checked` مبنای بعدی است. رکورد بدون هیچ تاریخی در سبد
+ * «نامعلوم» می‌افتد و در هیچ درصدی حساب نمی‌شود.
+ *
+ * @param {object[]} products
+ * @param {Date} [now]
+ * @returns {{d7:number, d30:number, d90:number, older:number, unknown:number, total:number, medianDays:number|null}}
+ */
+export function freshnessBuckets(products = [], now = new Date()) {
+  const buckets = { d7: 0, d30: 0, d90: 0, older: 0, unknown: 0, total: products.length, medianDays: null };
+  const ages = [];
+  for (const product of products) {
+    // `lastSeen` عمداً مبنای محاسبه نیست: رکوردی که هر روز «دیده» می‌شود ولی
+    // محتوایش از سه ماه پیش تغییر نکرده، تازه نیست. دیده‌شدن جداگانه شمرده
+    // می‌شود تا تفاوت «در دسترس بودن» و «تازه بودن» گم نشود.
+    const ref = product?.lastUpdated || product?.source?.checked;
+    const age = daysSince(ref, now);
+    if (!Number.isFinite(age)) {
+      buckets.unknown += 1;
+      const seenAge = daysSince(product?.lastSeen, now);
+      if (Number.isFinite(seenAge) && seenAge <= 7) buckets.seenButUndated = (buckets.seenButUndated ?? 0) + 1;
+      continue;
+    }
+    ages.push(age);
+    if (age <= 7) buckets.d7 += 1;
+    else if (age <= 30) buckets.d30 += 1;
+    else if (age <= 90) buckets.d90 += 1;
+    else buckets.older += 1;
+  }
+  if (ages.length) {
+    ages.sort((a, b) => a - b);
+    buckets.medianDays = ages[Math.floor(ages.length / 2)];
+  }
+  return buckets;
+}
+
 /* ------------------------------------------------------------------ */
 /* اجرا                                                                */
 /* ------------------------------------------------------------------ */
@@ -425,7 +467,11 @@ async function main() {
         name: 'bank-sites',
         ok: true,
         targets: bankResult.data.targets,
+        // ok = سیگنال واقعی (نه فقط دسترسی). reached = پاسخ گرفته شد.
         reachable: bankResult.data.ok,
+        reached: bankResult.data.reached,
+        viaFallback: bankResult.data.viaFallback,
+        empty: bankResult.data.empty,
         // فهرست کامل اهداف با وضعیت هر یک — تا شکست یک آدرس در صدای داده
         // گم نشود و بتوان هدف خراب را مستقیم اصلاح کرد
         detail: (bankResult.data.observations ?? [])
@@ -433,6 +479,9 @@ async function main() {
             id: o.id,
             url: o.url,
             ok: o.ok,
+            ...(o.reached ? { via: o.via } : {}),
+            ...(o.empty ? { empty: true } : {}),
+            ...(o.ageDays ? { ageDays: o.ageDays } : {}),
             ...(o.ok ? { rates: (o.rates ?? []).slice(0, 6) } : { error: o.error }),
           }))
           .sort((a, b) => Number(b.ok) - Number(a.ok)),
@@ -454,6 +503,8 @@ async function main() {
         ok: true,
         sourcesOk: cbiResult.data.sourcesOk,
         touched: cbiResult.data.touched,
+        policy: cbiResult.data.policy,
+        failures: cbiResult.data.failures,
         ms: cbiResult.ms,
       });
       if (cbiResult.data.touched.length) log(`شاخص‌ها به‌روز شد: ${cbiResult.data.touched.join(' | ')}`);
@@ -474,6 +525,9 @@ async function main() {
         report.sources.push({
           name: 'dgshahr.com',
           ok: true,
+          via: dgResult.data.via,
+          observedAt: dgResult.data.observedAt,
+          degraded: dgResult.data.via === 'wayback' || dgResult.data.via === 'proxy',
           parsed: dgResult.data.products.length,
           tiers: dgResult.data.tierRows,
           schemes: dgResult.data.schemeRows,
@@ -523,6 +577,30 @@ async function main() {
       }
     }
 
+    // ۶) تطبیق مستقل نرخ‌های مرجع با منابع جایگزین
+    //    هیچ عددی را بازنویسی نمی‌کند؛ فقط توافق/اختلاف منابع را ثبت می‌کند.
+    if (runs('crosscheck')) {
+      const ccResult = await runSource('crosscheck', () =>
+        crosscheck.collect(indicators, { log: vlog }),
+      );
+      if (ccResult.ok) {
+        await writeJSON('crosscheck.json', ccResult.data);
+        report.sources.push({
+          name: 'crosscheck',
+          ok: ccResult.data.summary.matched > 0 || ccResult.data.summary.unverified < ccResult.data.checks.length,
+          matched: ccResult.data.summary.matched,
+          mismatched: ccResult.data.summary.mismatched,
+          unverified: ccResult.data.summary.unverified,
+          sources: ccResult.data.sources,
+          ms: ccResult.ms,
+        });
+        const { matched, mismatched, unverified } = ccResult.data.summary;
+        log(`تطبیق مستقل: ${matched} توافق، ${mismatched} اختلاف، ${unverified} تأییدنشده`);
+      } else {
+        report.sources.push({ name: 'crosscheck', ok: false, error: ccResult.error, ms: ccResult.ms });
+        log(`تطبیق مستقل: ناموفق — ${ccResult.error}`);
+      }
+    }
   } else {
     log('حالت offline: واکشی شبکه انجام نشد');
   }
@@ -559,6 +637,7 @@ async function main() {
   report.counts = productsOut.counts;
   report.stale = productsOut.stale;
   report.autoDiscovered = productsOut.autoDiscovered;
+  report.freshness = freshnessBuckets(merged);
 
   // در اجرای جزئی (--only) وضعیت منابعی که اجرا نشده‌اند از گزارش قبلی حفظ می‌شود
   let metaSources = report.sources;
@@ -577,6 +656,7 @@ async function main() {
     counts: productsOut.counts,
     stale: productsOut.stale,
     autoDiscovered: productsOut.autoDiscovered,
+    freshness: report.freshness,
     sources: metaSources,
   });
 
