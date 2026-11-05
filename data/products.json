@@ -9,8 +9,8 @@
     "total": 485
   },
   "disclaimer": "هر رکورد دارای منبع و تاریخ کنترل است. نرخ‌های سود تابع مصوبات شورای پول و اعتبار و بخشنامه‌های بانک مرکزی است و بانک‌ها می‌توانند شرایط را تغییر دهند. پیش از اقدام، شرایط را از منبع رسمی بانک تأیید کنید.",
-  "generatedAt": "2026-11-05T11:14:27.607Z",
-  "generator": "tools/collect.mjs",
+  "generatedAt": "2026-11-05T12:48:12.283Z",
+  "generator": "tools/sync-weekly.mjs",
   "products": [
     {
       "amountLabel": "از ۱ میلیون تا مبالغ میلیاردی",
@@ -114,7 +114,6 @@
       "digital": 85,
       "friction": 88,
       "id": "cbi-deposit-1y-cap",
-      "lastSeen": "2026-11-02",
       "lastUpdated": null,
       "maxAmount": null,
       "minAmount": 1000000,
@@ -129,7 +128,6 @@
         "پذیرش حداقل موجودی بانک عامل"
       ],
       "source": {
-        "checked": "2026-11-02",
         "kind": "press",
         "title": "نبض قیمت — نرخ سود بانکی در آبان ۱۴۰۵",
         "url": "https://nabzgheymat.ir/نرخ-سود-بانکی-در-آبان-۱۴۰۵-تغییر-میکن/"
@@ -2542,7 +2540,6 @@
       "digital": 99,
       "friction": 78,
       "id": "blu-loan-beja",
-      "lastSeen": "2026-11-02",
       "lastUpdated": null,
       "maxAmount": 400000000,
       "minAmount": 3000000,
@@ -2557,7 +2554,6 @@
         "کارمزد ۴٪ و هزینه تمبر مالیاتی ۷۵ هزار تومان طبق اعلام بلوبانک"
       ],
       "source": {
-        "checked": "2026-11-02",
         "kind": "bank",
         "title": "بلوبانک — شرایط وام به‌جا",
         "url": "https://blubank.com/loan/beja-loan/"
@@ -7563,7 +7559,7 @@
       },
       "friction": 72,
       "id": "rade-704652",
-      "lastSeen": "2026-11-03",
+      "lastSeen": "2026-11-05",
       "lastUpdated": "2026-07-07",
       "lastVerified": "2026-10-16",
       "maxAmount": 500000000,
@@ -7581,7 +7577,7 @@
         "قسط تقریبی: ۱۵,۱۵۱,۵۱۵ تومان"
       ],
       "source": {
-        "checked": "2026-11-03",
+        "checked": "2026-11-05",
         "kind": "aggregator",
         "title": "رده — وام طرح کرامت (مهریار سازمان‌های اجتماعی) بانک مهر ایران",
         "url": "https://www.rade.ir/loan-interest-free-loan/704652-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%da%a9%d8%b1%d8%a7%d9%85%d8%aa-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%87%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
@@ -7619,7 +7615,7 @@
       },
       "friction": 72,
       "id": "rade-704653",
-      "lastSeen": "2026-11-03",
+      "lastSeen": "2026-11-05",
       "lastUpdated": "2026-09-21",
       "lastVerified": "2026-10-16",
       "maxAmount": 1000000000,
@@ -7637,7 +7633,7 @@
         "قسط تقریبی: ۱۸,۱۸۱,۸۱۸ تومان"
       ],
       "source": {
-        "checked": "2026-11-03",
+        "checked": "2026-11-05",
         "kind": "aggregator",
         "title": "رده — وام طرح نصر تفاهم‌نامه‌ای بانک مهر ایران",
         "url": "https://www.rade.ir/loan-interest-free-loan/704653-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%d9%86%d8%b5%d8%b1-%d8%ad%d9%82%d9%88%d9%82%db%8c-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%87%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
@@ -7675,7 +7671,7 @@
       },
       "friction": 72,
       "id": "rade-704654",
-      "lastSeen": "2026-11-03",
+      "lastSeen": "2026-11-05",
       "lastUpdated": "2026-09-19",
       "lastVerified": "2026-10-16",
       "maxAmount": 1000000000,
@@ -7693,7 +7689,7 @@
         "قسط تقریبی: ۴۵,۴۵۴,۵۴۵ تومان"
       ],
       "source": {
-        "checked": "2026-11-03",
+        "checked": "2026-11-05",
         "kind": "aggregator",
         "title": "رده — وام طرح توسکا (مهریار اصناف) بانک مهر ایران",
         "url": "https://www.rade.ir/loan-interest-free-loan/704654-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%d8%aa%d9%88%d8%b3%da%a9%d8%a7-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%87%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
@@ -7731,7 +7727,7 @@
       },
       "friction": 50,
       "id": "rade-704655",
-      "lastSeen": "2026-11-03",
+      "lastSeen": "2026-11-05",
       "lastUpdated": "2026-09-19",
       "lastVerified": "2026-10-16",
       "maxAmount": 1000000000,
@@ -7749,7 +7745,7 @@
         "قسط تقریبی: ۱۸,۱۸۱,۸۱۸ تومان"
       ],
       "source": {
-        "checked": "2026-11-03",
+        "checked": "2026-11-05",
         "kind": "aggregator",
         "title": "رده — وام طرح نارون بانک مهر ایران",
         "url": "https://www.rade.ir/loan-interest-free-loan/704655-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%d9%86%d8%a7%d8%b1%d9%88%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%87%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
@@ -7843,7 +7839,7 @@
       },
       "friction": 50,
       "id": "rade-704657",
-      "lastSeen": "2026-11-03",
+      "lastSeen": "2026-11-05",
       "lastUpdated": "2026-09-19",
       "lastVerified": "2026-10-16",
       "maxAmount": 150000000,
@@ -7861,7 +7857,7 @@
         "قسط تقریبی: ۲,۷۲۷,۲۷۳ تومان"
       ],
       "source": {
-        "checked": "2026-11-03",
+        "checked": "2026-11-05",
         "kind": "aggregator",
         "title": "رده — وام طرح نجم بانک مهر ایران",
         "url": "https://www.rade.ir/loan-interest-free-loan/704657-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%d9%86%d8%ac%d9%85-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%87%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
@@ -7899,7 +7895,7 @@
       },
       "friction": 72,
       "id": "rade-704659",
-      "lastSeen": "2026-11-03",
+      "lastSeen": "2026-11-05",
       "lastUpdated": "2025-11-12",
       "lastVerified": "2026-10-16",
       "maxAmount": 50000000000,
@@ -7916,7 +7912,7 @@
         "هزینه جانبی: —"
       ],
       "source": {
-        "checked": "2026-11-03",
+        "checked": "2026-11-05",
         "kind": "aggregator",
         "title": "رده — وام واحدهای تولیدی و طرح های سرمایه گذاری بانک توسعه صادرات ایران",
         "url": "https://www.rade.ir/loan-cash-loan/704659-%d9%88%d8%a7%d9%85-%d9%88%d8%a7%d8%ad%d8%af%d9%87%d8%a7%db%8c-%d8%aa%d9%88%d9%84%db%8c%d8%af%db%8c-%d9%88-%d8%b7%d8%b1%d8%ad-%d9%87%d8%a7%db%8c-%d8%b3%d8%b1%d9%85%d8%a7%db%8c%d9%87-%da%af%d8%b0%d8%a7/"
@@ -7954,7 +7950,7 @@
       },
       "friction": 50,
       "id": "rade-704661",
-      "lastSeen": "2026-11-03",
+      "lastSeen": "2026-11-05",
       "lastUpdated": "2026-07-08",
       "lastVerified": "2026-10-16",
       "maxAmount": 300000000,
@@ -7972,7 +7968,7 @@
         "قسط تقریبی: ۹,۲۸۹,۷۰۸ تومان"
       ],
       "source": {
-        "checked": "2026-11-03",
+        "checked": "2026-11-05",
         "kind": "aggregator",
         "title": "رده — وام طرح نوید 2 بانک سپه",
         "url": "https://www.rade.ir/loan-cash-loan/704661-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%d9%86%d9%88%db%8c%d8%af-2-%d8%a8%d8%a7%d9%86%da%a9-%d8%b3%d9%be%d9%87/"
@@ -8010,7 +8006,7 @@
       },
       "friction": 50,
       "id": "rade-704662",
-      "lastSeen": "2026-11-03",
+      "lastSeen": "2026-11-05",
       "lastUpdated": "2026-07-08",
       "lastVerified": "2026-10-16",
       "maxAmount": 1000000000,
@@ -8028,7 +8024,7 @@
         "قسط تقریبی: ۱۸,۱۸۱,۸۱۸ تومان"
       ],
       "source": {
-        "checked": "2026-11-03",
+        "checked": "2026-11-05",
         "kind": "aggregator",
         "title": "رده — وام نگین امید زرین بانک سپه",
         "url": "https://www.rade.ir/loan-interest-free-loan/704662-%d9%88%d8%a7%d9%85-%d9%86%da%af%db%8c%d9%86-%d8%a7%d9%85%db%8c%d8%af-%d8%b2%d8%b1%db%8c%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d8%b3%d9%be%d9%87/"
@@ -8122,7 +8118,7 @@
       },
       "friction": 50,
       "id": "rade-704668",
-      "lastSeen": "2026-11-03",
+      "lastSeen": "2026-11-05",
       "lastUpdated": "2026-09-15",
       "lastVerified": "2026-10-16",
       "maxAmount": 300000000,
@@ -8139,7 +8135,7 @@
         "هزینه جانبی: —"
       ],
       "source": {
-        "checked": "2026-11-03",
+        "checked": "2026-11-05",
         "kind": "aggregator",
         "title": "رده — وام نیروگاه خورشیدی خانگی بانک ملت",
         "url": "https://www.rade.ir/loan-cash-loan/704668-%d9%88%d8%a7%d9%85-%d9%86%db%8c%d8%b1%d9%88%da%af%d8%a7%d9%87-%d8%ae%d9%88%d8%b1%d8%b4%db%8c%d8%af%db%8c-%d8%ae%d8%a7%d9%86%da%af%db%8c-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%84%d8%aa/"
@@ -8177,7 +8173,7 @@
       },
       "friction": 50,
       "id": "rade-704671",
-      "lastSeen": "2026-11-03",
+      "lastSeen": "2026-11-05",
       "lastUpdated": "2026-08-10",
       "lastVerified": "2026-10-16",
       "maxAmount": 2000000000,
@@ -8195,7 +8191,7 @@
         "قسط تقریبی: ۴۱,۵۱۶,۷۱۰ تومان"
       ],
       "source": {
-        "checked": "2026-11-03",
+        "checked": "2026-11-05",
         "kind": "aggregator",
         "title": "رده — وام طرح سپید بانک مسکن",
         "url": "https://www.rade.ir/loan-cash-loan/704671-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%d8%b3%d9%be%db%8c%d8%af-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d8%b3%da%a9%d9%86/"
@@ -8228,7 +8224,7 @@
       "digital": 60,
       "friction": 50,
       "id": "rade-704672",
-      "lastSeen": "2026-11-03",
+      "lastSeen": "2026-11-05",
       "lastUpdated": null,
       "maxAmount": 500000000,
       "minAmount": null,
@@ -8284,7 +8280,7 @@
       },
       "friction": 50,
       "id": "rade-704675",
-      "lastSeen": "2026-11-03",
+      "lastSeen": "2026-11-05",
       "lastUpdated": "2026-10-20",
       "lastVerified": "2026-10-16",
       "maxAmount": 3000000000,
@@ -8302,7 +8298,7 @@
         "قسط تقریبی: ۱۹۸,۶۴۳,۱۳۹ تومان"
       ],
       "source": {
-        "checked": "2026-11-03",
+        "checked": "2026-11-05",
         "kind": "aggregator",
         "title": "رده — وام طرح فرصت بانک پارسیان",
         "url": "https://www.rade.ir/loan-cash-loan/704675-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%d9%81%d8%b1%d8%b5%d8%aa-%d8%a8%d8%a7%d9%86%da%a9-%d9%be%d8%a7%d8%b1%d8%b3%db%8c%d8%a7%d9%86/"
@@ -8396,7 +8392,7 @@
       },
       "friction": 50,
       "id": "rade-704677",
-      "lastSeen": "2026-11-03",
+      "lastSeen": "2026-11-05",
       "lastUpdated": "2026-07-08",
       "lastVerified": "2026-10-16",
       "maxAmount": 400000000,
@@ -8414,7 +8410,7 @@
         "قسط تقریبی: ۱۱,۲۷۶,۱۸۸ تومان"
       ],
       "source": {
-        "checked": "2026-11-03",
+        "checked": "2026-11-05",
         "kind": "aggregator",
         "title": "رده — وام نگین فراپویا بانک سپه",
         "url": "https://www.rade.ir/loan-cash-loan/704677-%d9%88%d8%a7%d9%85-%d9%86%da%af%db%8c%d9%86-%d9%81%d8%b1%d8%a7%d9%be%d9%88%db%8c%d8%a7-%d8%a8%d8%a7%d9%86%da%a9-%d8%b3%d9%be%d9%87/"
@@ -8452,7 +8448,7 @@
       },
       "friction": 72,
       "id": "rade-704682",
-      "lastSeen": "2026-11-03",
+      "lastSeen": "2026-11-05",
       "lastUpdated": "2026-07-29",
       "lastVerified": "2026-10-16",
       "maxAmount": null,
@@ -8469,7 +8465,7 @@
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام"
       ],
       "source": {
-        "checked": "2026-11-03",
+        "checked": "2026-11-05",
         "kind": "aggregator",
         "title": "رده — وام آژانس‌یار بانک گردشگری",
         "url": "https://www.rade.ir/loan-cash-loan/704682-%d9%88%d8%a7%d9%85-%d8%a2%da%98%d8%a7%d9%86%d8%b3%db%8c%d8%a7%d8%b1-%d8%a8%d8%a7%d9%86%da%a9-%da%af%d8%b1%d8%af%d8%b4%da%af%d8%b1%db%8c/"
@@ -8514,7 +8510,7 @@
       },
       "friction": 50,
       "id": "rade-704684",
-      "lastSeen": "2026-11-03",
+      "lastSeen": "2026-11-05",
       "lastUpdated": "2026-01-05",
       "lastVerified": "2026-10-16",
       "maxAmount": 3000000000,
@@ -8532,7 +8528,7 @@
         "قسط تقریبی: ۱۳۲,۴۱۹,۷۹۵ تومان"
       ],
       "source": {
-        "checked": "2026-11-03",
+        "checked": "2026-11-05",
         "kind": "aggregator",
         "title": "رده — طرح تسهیلاتی الماس بانک آینده",
         "url": "https://www.rade.ir/loan-cash-loan/704684-%d8%b7%d8%b1%d8%ad-%d8%aa%d8%b3%d9%87%db%8c%d9%84%d8%a7%d8%aa%db%8c-%d8%a7%d9%84%d9%85%d8%a7%d8%b3-%d8%a8%d8%a7%d9%86%da%a9-%d8%a2%db%8c%d9%86%d8%af%d9%87/"
@@ -8634,7 +8630,7 @@
       },
       "friction": 72,
       "id": "rade-704691",
-      "lastSeen": "2026-11-03",
+      "lastSeen": "2026-11-05",
       "lastUpdated": "2026-07-11",
       "lastVerified": "2026-10-16",
       "maxAmount": null,
@@ -8651,7 +8647,7 @@
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام"
       ],
       "source": {
-        "checked": "2026-11-03",
+        "checked": "2026-11-05",
         "kind": "aggregator",
         "title": "رده — وام رویان بانک توسعه تعاون",
         "url": "https://www.rade.ir/loan-cash-loan/704691-%d9%88%d8%a7%d9%85-%d8%b1%d9%88%db%8c%d8%a7%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d8%aa%d9%88%d8%b3%d8%b9%d9%87-%d8%aa%d8%b9%d8%a7%d9%88%d9%86/"
@@ -8689,7 +8685,7 @@
       },
       "friction": 50,
       "id": "rade-704693",
-      "lastSeen": "2026-11-03",
+      "lastSeen": "2026-11-05",
       "lastUpdated": "2026-05-20",
       "lastVerified": "2026-10-16",
       "maxAmount": 300000000,
@@ -8707,7 +8703,7 @@
         "قسط تقریبی: ۵,۴۵۴,۵۴۵ تومان"
       ],
       "source": {
-        "checked": "2026-11-03",
+        "checked": "2026-11-05",
         "kind": "aggregator",
         "title": "رده — وام قرض‌الحسنه نوید ملل موسسه اعتباری ملل",
         "url": "https://www.rade.ir/loan-cash-loan/704693-%d9%88%d8%a7%d9%85-%d9%82%d8%b1%d8%b6%d8%a7%d9%84%d8%ad%d8%b3%d9%86%d9%87-%d9%86%d9%88%db%8c%d8%af-%d9%85%d9%84%d9%84-%d9%85%d9%88%d8%b3%d8%b3%d9%87-%d9%85%d9%84%d9%84/"
@@ -8801,7 +8797,7 @@
       },
       "friction": 72,
       "id": "rade-704697",
-      "lastSeen": "2026-11-03",
+      "lastSeen": "2026-11-05",
       "lastUpdated": "2025-11-12",
       "lastVerified": "2026-10-16",
       "maxAmount": 1200000000,
@@ -8819,7 +8815,7 @@
         "قسط تقریبی: ۹,۰۰۰,۰۰۰ تومان"
       ],
       "source": {
-        "checked": "2026-11-03",
+        "checked": "2026-11-05",
         "kind": "aggregator",
         "title": "رده — وام خرید تاکسی‌های برقی بانک شهر",
         "url": "https://www.rade.ir/loan-car-loan/704697-%d9%88%d8%a7%d9%85-%d8%ae%d8%b1%db%8c%d8%af-%d8%aa%d8%a7%da%a9%d8%b3%db%8c%d9%87%d8%a7%db%8c-%d8%a8%d8%b1%d9%82%db%8c-%d8%a8%d8%a7%d9%86%da%a9-%d8%b4%d9%87%d8%b1/"
@@ -8857,7 +8853,7 @@
       },
       "friction": 72,
       "id": "rade-704702",
-      "lastSeen": "2026-11-03",
+      "lastSeen": "2026-11-05",
       "lastUpdated": "2026-07-15",
       "lastVerified": "2026-10-16",
       "maxAmount": 25000000000,
@@ -8875,7 +8871,7 @@
         "قسط تقریبی: ۲,۳۵۱,۹۰۸,۰۳۳ تومان"
       ],
       "source": {
-        "checked": "2026-11-03",
+        "checked": "2026-11-05",
         "kind": "aggregator",
         "title": "رده — وام نفیس بانک رفاه کارگران",
         "url": "https://www.rade.ir/loan-cash-loan/704702-%d9%88%d8%a7%d9%85-%d9%86%d9%81%db%8c%d8%b3-%d8%a8%d8%a7%d9%86%da%a9-%d8%b1%d9%81%d8%a7%d9%87-%da%a9%d8%a7%d8%b1%da%af%d8%b1%d8%a7%d9%86/"
@@ -8913,7 +8909,7 @@
       },
       "friction": 72,
       "id": "rade-704703",
-      "lastSeen": "2026-11-03",
+      "lastSeen": "2026-11-05",
       "lastUpdated": "2026-09-19",
       "lastVerified": "2026-10-16",
       "maxAmount": 500000000,
@@ -8931,7 +8927,7 @@
         "قسط تقریبی: ۱۱,۱۱۱,۱۱۱ تومان"
       ],
       "source": {
-        "checked": "2026-11-03",
+        "checked": "2026-11-05",
         "kind": "aggregator",
         "title": "رده — وام ارکیده بانک مهر ایران + شرایط",
         "url": "https://www.rade.ir/loan-interest-free-loan/704703-%d9%88%d8%a7%d9%85-%d8%a7%d8%b1%da%a9%db%8c%d8%af%d9%87-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%87%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7%d9%86-%d8%b4%d8%b1%d8%a7%db%8c%d8%b7/"
@@ -8969,7 +8965,7 @@
       },
       "friction": 50,
       "id": "rade-704705",
-      "lastSeen": "2026-11-03",
+      "lastSeen": "2026-11-05",
       "lastUpdated": "2026-09-26",
       "lastVerified": "2026-10-16",
       "maxAmount": 3000000000,
@@ -8987,7 +8983,7 @@
         "قسط تقریبی: ۱۱۶,۱۲۹,۱۶۵ تومان"
       ],
       "source": {
-        "checked": "2026-11-03",
+        "checked": "2026-11-05",
         "kind": "aggregator",
         "title": "رده — وام ربیع رفاه بانک رفاه کارگران",
         "url": "https://www.rade.ir/loan-cash-loan/704705-%d9%88%d8%a7%d9%85-%d8%b1%d8%a8%db%8c%d8%b9-%d8%b1%d9%81%d8%a7%d9%87-%d8%a8%d8%a7%d9%86%da%a9-%d8%b1%d9%81%d8%a7%d9%87-%da%a9%d8%a7%d8%b1%da%af%d8%b1%d8%a7%d9%86/"
@@ -9025,7 +9021,7 @@
       },
       "friction": 50,
       "id": "rade-704706",
-      "lastSeen": "2026-11-03",
+      "lastSeen": "2026-11-05",
       "lastUpdated": "2026-08-22",
       "lastVerified": "2026-10-16",
       "maxAmount": 2000000000,
@@ -9043,7 +9039,7 @@
         "قسط تقریبی: ۷۷,۴۱۹,۴۴۳ تومان"
       ],
       "source": {
-        "checked": "2026-11-03",
+        "checked": "2026-11-05",
         "kind": "aggregator",
         "title": "رده — طرح آساوام بانک اقتصاد نوین",
         "url": "https://www.rade.ir/loan-cash-loan/704706-%d8%b7%d8%b1%d8%ad-%d8%a2%d8%b3%d8%a7%d9%88%d8%a7%d9%85-%d8%a8%d8%a7%d9%86%da%a9-%d8%a7%d9%82%d8%aa%d8%b5%d8%a7%d8%af-%d9%86%d9%88%db%8c%d9%86/"
@@ -9140,7 +9136,7 @@
       "feeModel": "unknown",
       "friction": 50,
       "id": "rade-704709",
-      "lastSeen": "2026-11-03",
+      "lastSeen": "2026-11-05",
       "lastUpdated": "2026-09-15",
       "lastVerified": "2026-10-16",
       "maxAmount": 300000000,
@@ -9158,7 +9154,7 @@
         "قسط تقریبی: ۱۳,۶۳۶,۳۶۴ تومان"
       ],
       "source": {
-        "checked": "2026-11-03",
+        "checked": "2026-11-05",
         "kind": "aggregator",
         "title": "رده — وام گردونه بانک ملت",
         "url": "https://www.rade.ir/loan-cash-loan/704709-%d9%88%d8%a7%d9%85-%da%af%d8%b1%d8%af%d9%88%d9%86%d9%87-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%84%d8%aa/"
@@ -9252,7 +9248,7 @@
       },
       "friction": 50,
       "id": "rade-704714",
-      "lastSeen": "2026-11-03",
+      "lastSeen": "2026-11-05",
       "lastUpdated": "2026-05-20",
       "lastVerified": "2026-10-16",
       "maxAmount": 400000000,
@@ -9270,7 +9266,7 @@
         "قسط تقریبی: ۱۴,۴۶۰,۹۵۸ تومان"
       ],
       "source": {
-        "checked": "2026-11-03",
+        "checked": "2026-11-05",
         "kind": "aggregator",
         "title": "رده — وام ملل‌یار موسسه اعتباری ملل",
         "url": "https://www.rade.ir/loan-cash-loan/704714-%d9%88%d8%a7%d9%85-%d9%85%d9%84%d9%84%db%8c%d8%a7%d8%b1-%d9%85%d9%88%d8%b3%d8%b3%d9%87-%d9%85%d9%84%d9%84/"
@@ -9308,7 +9304,7 @@
       },
       "friction": 50,
       "id": "rade-704717",
-      "lastSeen": "2026-11-03",
+      "lastSeen": "2026-11-05",
       "lastUpdated": "2026-07-20",
       "lastVerified": "2026-10-16",
       "maxAmount": 1000000000,
@@ -9326,7 +9322,7 @@
         "قسط تقریبی: ۲۰,۲۷۶,۳۹۴ تومان"
       ],
       "source": {
-        "checked": "2026-11-03",
+        "checked": "2026-11-05",
         "kind": "aggregator",
         "title": "رده — وام ماهان بانک دی",
         "url": "https://www.rade.ir/loan-cash-loan/704717-%d9%88%d8%a7%d9%85-%d9%85%d8%a7%d9%87%d8%a7%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d8%af%db%8c/"
@@ -9364,7 +9360,7 @@
       },
       "friction": 72,
       "id": "rade-704718",
-      "lastSeen": "2026-11-03",
+      "lastSeen": "2026-11-05",
       "lastUpdated": null,
       "maxAmount": 5000000000,
       "minAmount": 10000000,
@@ -9381,7 +9377,7 @@
         "قسط تقریبی: ۱۱۶,۳۴۱,۲۵۴ تومان"
       ],
       "source": {
-        "checked": "2026-11-03",
+        "checked": "2026-11-05",
         "kind": "aggregator",
         "title": "رده — وام نوآور بانک کشاورزی",
         "url": "https://www.rade.ir/loan-cash-loan/704718-%d9%88%d8%a7%d9%85-%d9%86%d9%88%d8%a2%d9%88%d8%b1-%d8%a8%d8%a7%d9%86%da%a9-%da%a9%d8%b4%d8%a7%d9%88%d8%b1%d8%b2%db%8c/"
@@ -9419,7 +9415,7 @@
       },
       "friction": 50,
       "id": "rade-704720",
-      "lastSeen": "2026-11-03",
+      "lastSeen": "2026-11-05",
       "lastUpdated": null,
       "maxAmount": null,
       "minAmount": null,
@@ -9435,7 +9431,7 @@
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام"
       ],
       "source": {
-        "checked": "2026-11-03",
+        "checked": "2026-11-05",
         "kind": "aggregator",
         "title": "رده — وام تابان بانک سینا",
         "url": "https://www.rade.ir/loan-cash-loan/704720-%d9%88%d8%a7%d9%85-%d8%aa%d8%a7%d8%a8%d8%a7%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d8%b3%db%8c%d9%86%d8%a7/"
@@ -9473,7 +9469,7 @@
       },
       "friction": 72,
       "id": "rade-704721",
-      "lastSeen": "2026-11-03",
+      "lastSeen": "2026-11-05",
       "lastUpdated": null,
       "maxAmount": null,
       "minAmount": null,
@@ -9489,7 +9485,7 @@
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام"
       ],
       "source": {
-        "checked": "2026-11-03",
+        "checked": "2026-11-05",
         "kind": "aggregator",
         "title": "رده — وام شایان بانک سینا",
         "url": "https://www.rade.ir/loan-cash-loan/704721-%d9%88%d8%a7%d9%85-%d8%b4%d8%a7%db%8c%d8%a7%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d8%b3%db%8c%d9%86%d8%a7/"
@@ -9527,7 +9523,7 @@
       },
       "friction": 50,
       "id": "rade-704723",
-      "lastSeen": "2026-11-03",
+      "lastSeen": "2026-11-05",
       "lastUpdated": null,
       "maxAmount": 300000000,
       "minAmount": null,
@@ -9544,7 +9540,7 @@
         "قسط تقریبی: ۲۵,۵۴۴,۹۷۱ تومان"
       ],
       "source": {
-        "checked": "2026-11-03",
+        "checked": "2026-11-05",
         "kind": "aggregator",
         "title": "رده — وام مهرگان بانک سینا",
         "url": "https://www.rade.ir/loan-cash-loan/704723-%d9%88%d8%a7%d9%85-%d9%85%d9%87%d8%b1%da%af%d8%a7%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d8%b3%db%8c%d9%86%d8%a7/"
@@ -9582,7 +9578,7 @@
       },
       "friction": 50,
       "id": "rade-704726",
-      "lastSeen": "2026-11-03",
+      "lastSeen": "2026-11-05",
       "lastUpdated": null,
       "maxAmount": 500000000,
       "minAmount": null,
@@ -9599,7 +9595,7 @@
         "قسط تقریبی: ۱۴,۰۹۵,۲۳۶ تومان"
       ],
       "source": {
-        "checked": "2026-11-03",
+        "checked": "2026-11-05",
         "kind": "aggregator",
         "title": "رده — وام توان بانک مسکن",
         "url": "https://www.rade.ir/loan-cash-loan/704726-%d9%88%d8%a7%d9%85-%d8%aa%d9%88%d8%a7%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d8%b3%da%a9%d9%86/"
@@ -9693,7 +9689,7 @@
       },
       "friction": 72,
       "id": "rade-704737",
-      "lastSeen": "2026-11-03",
+      "lastSeen": "2026-11-05",
       "lastUpdated": null,
       "maxAmount": 100000000,
       "minAmount": null,
@@ -9710,7 +9706,7 @@
         "قسط تقریبی: ۵,۲۳۷,۳۳۱ تومان"
       ],
       "source": {
-        "checked": "2026-11-03",
+        "checked": "2026-11-05",
         "kind": "aggregator",
         "title": "رده — وام بهان بانک ملت",
         "url": "https://www.rade.ir/loan-cash-loan/704737-%d9%88%d8%a7%d9%85-%d8%a8%d9%87%d8%a7%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%84%d8%aa/"
@@ -9748,7 +9744,7 @@
       },
       "friction": 72,
       "id": "rade-704738",
-      "lastSeen": "2026-11-03",
+      "lastSeen": "2026-11-05",
       "lastUpdated": null,
       "maxAmount": 1500000000,
       "minAmount": null,
@@ -9764,7 +9760,7 @@
         "هزینه جانبی: هزینه‌های متداول بانکی شامل هزینه‌های افتتاح حساب، اعتبارسنجی و دریافت وام"
       ],
       "source": {
-        "checked": "2026-11-03",
+        "checked": "2026-11-05",
         "kind": "aggregator",
         "title": "رده — وام تامینو بانک رفاه کارگران",
         "url": "https://www.rade.ir/loan-cash-loan/704738-%d9%88%d8%a7%d9%85-%d8%aa%d8%a7%d9%85%db%8c%d9%86%d9%88-%d8%a8%d8%a7%d9%86%da%a9-%d8%b1%d9%81%d8%a7%d9%87-%da%a9%d8%a7%d8%b1%da%af%d8%b1%d8%a7%d9%86/"
@@ -9802,7 +9798,7 @@
       },
       "friction": 50,
       "id": "rade-704744",
-      "lastSeen": "2026-11-03",
+      "lastSeen": "2026-11-05",
       "lastUpdated": "2025-12-08",
       "lastVerified": "2026-10-16",
       "maxAmount": 1000000000,
@@ -9820,7 +9816,7 @@
         "قسط تقریبی: ۲۶,۳۳۳,۸۳۵ تومان"
       ],
       "source": {
-        "checked": "2026-11-03",
+        "checked": "2026-11-05",
         "kind": "aggregator",
         "title": "رده — وام وزین شهر بانک شهر",
         "url": "https://www.rade.ir/loan-cash-loan/704744-%d9%88%d8%a7%d9%85-%d9%88%d8%b2%db%8c%d9%86-%d8%b4%d9%87%d8%b1-%d8%a8%d8%a7%d9%86%da%a9-%d8%b4%d9%87%d8%b1/"
@@ -9858,7 +9854,7 @@
       },
       "friction": 72,
       "id": "rade-704745",
-      "lastSeen": "2026-11-03",
+      "lastSeen": "2026-11-05",
       "lastUpdated": null,
       "maxAmount": 300000000,
       "minAmount": null,
@@ -9875,7 +9871,7 @@
         "قسط تقریبی: ۷,۲۹۵,۴۱۷ تومان"
       ],
       "source": {
-        "checked": "2026-11-03",
+        "checked": "2026-11-05",
         "kind": "aggregator",
         "title": "رده — وام نسیم مرابحه بانک سرمایه",
         "url": "https://www.rade.ir/loan-cash-loan/704745-%d9%88%d8%a7%d9%85-%d9%86%d8%b3%db%8c%d9%85-%d9%85%d8%b1%d8%a7%d8%a8%d8%ad%d9%87-%d8%a8%d8%a7%d9%86%da%a9-%d8%b3%d8%b1%d9%85%d8%a7%db%8c%d9%87/"
@@ -9913,7 +9909,7 @@
       },
       "friction": 50,
       "id": "rade-704746",
-      "lastSeen": "2026-11-03",
+      "lastSeen": "2026-11-05",
       "lastUpdated": null,
       "maxAmount": 400000000,
       "minAmount": 10000000,
@@ -9930,7 +9926,7 @@
         "قسط تقریبی: ۲۰,۹۴۹,۳۲۲ تومان"
       ],
       "source": {
-        "checked": "2026-11-03",
+        "checked": "2026-11-05",
         "kind": "aggregator",
         "title": "رده — وام اقساطی بانکینو بانک خاورمیانه",
         "url": "https://www.rade.ir/loan-cash-loan/704746-%d9%88%d8%a7%d9%85-%d8%a7%d9%82%d8%b3%d8%a7%d8%b7%db%8c-%d8%a8%d8%a7%d9%86%da%a9%db%8c%d9%86%d9%88-%d8%a8%d8%a7%d9%86%da%a9-%d8%ae%d8%a7%d9%88%d8%b1%d9%85%db%8c%d8%a7%d9%86%d9%87/"
@@ -9968,7 +9964,7 @@
       },
       "friction": 72,
       "id": "rade-704747",
-      "lastSeen": "2026-11-03",
+      "lastSeen": "2026-11-05",
       "lastUpdated": null,
       "maxAmount": 500000000,
       "minAmount": null,
@@ -9985,7 +9981,7 @@
         "قسط تقریبی: ۱۳,۸۰۹,۴۵۶ تومان"
       ],
       "source": {
-        "checked": "2026-11-03",
+        "checked": "2026-11-05",
         "kind": "aggregator",
         "title": "رده — وام مهر فرهنگیان بانک سرمایه",
         "url": "https://www.rade.ir/loan-cash-loan/704747-%d9%88%d8%a7%d9%85-%d9%85%d9%87%d8%b1-%d9%81%d8%b1%d9%87%d9%86%da%af%db%8c%d8%a7%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d8%b3%d8%b1%d9%85%d8%a7%db%8c%d9%87/"
@@ -10134,7 +10130,7 @@
       },
       "friction": 72,
       "id": "rade-704753",
-      "lastSeen": "2026-11-03",
+      "lastSeen": "2026-11-05",
       "lastUpdated": null,
       "maxAmount": 150000000,
       "minAmount": null,
@@ -10151,7 +10147,7 @@
         "قسط تقریبی: ۴,۴۹۵,۶۳۵ تومان"
       ],
       "source": {
-        "checked": "2026-11-03",
+        "checked": "2026-11-05",
         "kind": "aggregator",
         "title": "رده — وام تدبیر ایران زمین",
         "url": "https://www.rade.ir/loan-cash-loan/704753-%d9%88%d8%a7%d9%85-%d8%aa%d8%af%d8%a8%db%8c%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7%d9%86-%d8%b2%d9%85%db%8c%d9%86/"
@@ -10189,7 +10185,7 @@
       },
       "friction": 72,
       "id": "rade-704754",
-      "lastSeen": "2026-11-03",
+      "lastSeen": "2026-11-05",
       "lastUpdated": null,
       "maxAmount": 30000000000,
       "minAmount": null,
@@ -10206,7 +10202,7 @@
         "قسط تقریبی: ۱,۵۷۱,۱۹۹,۱۸۱ تومان"
       ],
       "source": {
-        "checked": "2026-11-03",
+        "checked": "2026-11-05",
         "kind": "aggregator",
         "title": "رده — وام فراز بانک رفاه کارگران",
         "url": "https://www.rade.ir/loan-cash-loan/704754-%d9%88%d8%a7%d9%85-%d9%81%d8%b1%d8%a7%d8%b2-%d8%a8%d8%a7%d9%86%da%a9-%d8%b1%d9%81%d8%a7%d9%87-%da%a9%d8%a7%d8%b1%da%af%d8%b1%d8%a7%d9%86/"
@@ -10244,7 +10240,7 @@
       },
       "friction": 72,
       "id": "rade-704756",
-      "lastSeen": "2026-11-03",
+      "lastSeen": "2026-11-05",
       "lastUpdated": null,
       "maxAmount": 400000000,
       "minAmount": null,
@@ -10261,7 +10257,7 @@
         "قسط تقریبی: ۱۱,۲۷۶,۱۸۸ تومان"
       ],
       "source": {
-        "checked": "2026-11-03",
+        "checked": "2026-11-05",
         "kind": "aggregator",
         "title": "رده — وام الماس موسسه اعتباری ملل",
         "url": "https://www.rade.ir/loan-cash-loan/704756-%d9%88%d8%a7%d9%85-%d8%a7%d9%84%d9%85%d8%a7%d8%b3-%d9%85%d9%88%d8%b3%d8%b3%d9%87-%d9%85%d9%84%d9%84/"
@@ -10299,7 +10295,7 @@
       },
       "friction": 50,
       "id": "rade-704758",
-      "lastSeen": "2026-11-03",
+      "lastSeen": "2026-11-05",
       "lastUpdated": null,
       "maxAmount": 700000000,
       "minAmount": null,
@@ -10316,7 +10312,7 @@
         "قسط تقریبی: ۱۶,۲۸۷,۷۷۶ تومان"
       ],
       "source": {
-        "checked": "2026-11-03",
+        "checked": "2026-11-05",
         "kind": "aggregator",
         "title": "رده — وام اعتبار ملی بانک ملی",
         "url": "https://www.rade.ir/loan-cash-loan/704758-%d9%88%d8%a7%d9%85-%d8%a7%d8%b9%d8%aa%d8%a8%d8%a7%d8%b1-%d9%85%d9%84%db%8c-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%84%db%8c/"
