@@ -1,22 +1,22 @@
 {
-  "generatedAt": "2026-11-07T10:32:21.528Z",
-  "lastRun": "2026-11-07T10:32:21.437Z",
-  "lastRunMode": "full",
+  "generatedAt": "2026-11-07T10:55:14.372Z",
+  "lastRun": "2026-11-07T10:54:40.163Z",
+  "lastRunMode": "weekly-sync",
   "counts": {
-    "credit": 90,
+    "credit": 108,
     "deposits": 53,
     "funds": 73,
-    "loans": 272,
+    "loans": 278,
     "loyalty": 14,
-    "total": 502
+    "total": 526
   },
   "freshness": {
-    "d7": 197,
+    "d7": 221,
     "d30": 90,
     "d90": 147,
     "older": 66,
     "unknown": 2,
-    "total": 502,
+    "total": 526,
     "medianDays": 18
   },
   "categoryFreshness": {
@@ -29,16 +29,16 @@
       "unknown": 1
     },
     "credit": {
-      "total": 90,
-      "fresh": 26,
+      "total": 108,
+      "fresh": 44,
       "recent": 18,
       "aging": 32,
       "stale": 13,
       "unknown": 1
     },
     "loans": {
-      "total": 272,
-      "fresh": 121,
+      "total": 278,
+      "fresh": 127,
       "recent": 54,
       "aging": 44,
       "stale": 53,
@@ -220,30 +220,24 @@
       "name": "rade.ir",
       "status": "ok",
       "ok": true,
-      "parsed": 144
+      "parsed": 196
     },
     {
       "name": "bank-sites",
       "status": "ok",
       "ok": true,
       "reached": 1,
-      "targets": 24,
-      "viaFallback": 1,
-      "empty": 14
+      "targets": 24
     },
     {
       "name": "macro-indicators",
       "status": "ok",
-      "ok": true,
-      "sourcesOk": 3
+      "ok": true
     },
     {
       "name": "dgshahr.com",
-      "status": "degraded",
+      "status": "ok",
       "ok": true,
-      "degraded": true,
-      "via": "wayback",
-      "observedAt": "2026-10-12",
       "parsed": 31
     },
     {
@@ -260,9 +254,7 @@
       "mismatched": 0
     }
   ],
-  "degradedSources": [
-    "dgshahr.com"
-  ],
+  "degradedSources": [],
   "crosscheck": {
     "generatedAt": "2026-11-07T10:32:21.374Z",
     "summary": {
@@ -273,14 +265,14 @@
     "mismatches": []
   },
   "linkHealth": {
-    "total": 30,
-    "ok": 22,
-    "dead": 8,
-    "healthPercent": 73
+    "total": 21,
+    "ok": 11,
+    "dead": 10,
+    "healthPercent": 52
   },
   "verdict": {
     "dataFresh": true,
-    "sourcesHealthy": false,
+    "sourcesHealthy": true,
     "note": "اعداد این گزارش از دادهٔ ثبت‌شده ساخته می‌شوند، نه از واکشی زنده."
   }
 }

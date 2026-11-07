@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-31T10:12:44.800Z",
-  "total": 30,
-  "ok": 22,
-  "dead": 8,
-  "healthPercent": 73,
+  "generatedAt": "2026-11-07T10:55:13.933Z",
+  "total": 21,
+  "ok": 11,
+  "dead": 10,
+  "healthPercent": 52,
   "deadLinks": [
     {
       "productId": "sepah-negin-club",
@@ -13,7 +13,26 @@
       "ok": false,
       "status": 0,
       "error": "The operation was aborted due to timeout",
-      "checkedAt": "2026-10-31T10:12:44.800Z"
+      "checkedAt": "2026-11-07T10:55:12.293Z"
+    },
+    {
+      "productId": "blu-loan-beja",
+      "bank": "بلوبانک",
+      "product": "وام به‌جا بلوبانک — با ضامن و بدون ضامن",
+      "url": "https://blubank.com/loan/beja-loan/",
+      "ok": false,
+      "status": 0,
+      "error": "fetch failed",
+      "checkedAt": "2026-11-07T10:55:13.932Z"
+    },
+    {
+      "productId": "mellat-deposit-pref-30",
+      "bank": "بانک ملت",
+      "product": "سپرده با سود ترجیحی بانک ملت (پلکانی ۲۷ تا ۲۹.۹٪ بر اساس مانده)",
+      "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/",
+      "ok": false,
+      "status": 403,
+      "checkedAt": "2026-11-07T10:55:04.123Z"
     },
     {
       "productId": "fund-amin-ashna",
@@ -23,7 +42,7 @@
       "ok": false,
       "status": 0,
       "error": "fetch failed",
-      "checkedAt": "2026-10-31T10:12:14.240Z"
+      "checkedAt": "2026-11-07T10:54:41.776Z"
     },
     {
       "productId": "fund-yaghoot-agah",
@@ -33,7 +52,7 @@
       "ok": false,
       "status": 0,
       "error": "The operation was aborted due to timeout",
-      "checkedAt": "2026-10-31T10:12:28.800Z"
+      "checkedAt": "2026-11-07T10:54:56.293Z"
     },
     {
       "productId": "fund-ganjineh-zarrin-shahr",
@@ -43,7 +62,7 @@
       "ok": false,
       "status": 0,
       "error": "The operation was aborted due to timeout",
-      "checkedAt": "2026-10-31T10:12:28.835Z"
+      "checkedAt": "2026-11-07T10:54:56.320Z"
     },
     {
       "productId": "fund-lotus-parsian",
@@ -53,7 +72,7 @@
       "ok": false,
       "status": 0,
       "error": "The operation was aborted due to timeout",
-      "checkedAt": "2026-10-31T10:12:28.836Z"
+      "checkedAt": "2026-11-07T10:54:56.322Z"
     },
     {
       "productId": "fund-omid-sepah",
@@ -63,7 +82,7 @@
       "ok": false,
       "status": 0,
       "error": "fetch failed",
-      "checkedAt": "2026-10-31T10:12:14.352Z"
+      "checkedAt": "2026-11-07T10:54:41.843Z"
     },
     {
       "productId": "tobank-club",
@@ -72,7 +91,7 @@
       "url": "https://tobank.ir",
       "ok": false,
       "status": 403,
-      "checkedAt": "2026-10-31T10:12:19.047Z"
+      "checkedAt": "2026-11-07T10:54:47.201Z"
     },
     {
       "productId": "vipad-weclub",
@@ -82,7 +101,7 @@
       "ok": false,
       "status": 0,
       "error": "The operation was aborted due to timeout",
-      "checkedAt": "2026-10-31T10:12:35.050Z"
+      "checkedAt": "2026-11-07T10:55:03.202Z"
     }
   ],
   "all": [
@@ -93,7 +112,7 @@
       "url": "https://aloghesti.com/mag/best-loans-for-purchasing-goods/",
       "ok": true,
       "status": 200,
-      "checkedAt": "2026-10-31T10:12:34.827Z"
+      "checkedAt": "2026-11-07T10:54:59.402Z"
     },
     {
       "productId": "farzandavari-44",
@@ -102,7 +121,7 @@
       "url": "https://andishemoaser.ir/%D8%AB%D8%A8%D8%AA%D9%86%D8%A7%D9%85-%D9%88%D8%A7%D9%85-%D9%81%D8%B1%D8%B2%D9%86%D8%AF%D8%A2%D9%88%D8%B1%DB%8C-%DB%B1%DB%B4%DB%B0%DB%B5-%D8%A2%D8%BA%D8%A7%D8%B2-%D8%B4%D8%AF-%D9%85%D8%A8/",
       "ok": true,
       "status": 200,
-      "checkedAt": "2026-10-31T10:12:36.529Z"
+      "checkedAt": "2026-11-07T10:55:01.574Z"
     },
     {
       "productId": "murabaha-khord-23",
@@ -111,7 +130,7 @@
       "url": "https://andishemoaser.ir/%D9%85%D8%AD%D8%A7%D8%B3%D8%A8%D9%87-%D9%88%D8%A7%D9%85-%D8%A8%D8%A7%D9%86%DA%A9%DB%8C%D8%9B-%D9%81%D8%B1%D9%85%D9%88%D9%84-%D8%AF%D9%82%DB%8C%D9%82-%D8%A7%D9%82%D8%B3%D8%A7%D8%B7-%D9%85%D8%A7%D9%87/",
       "ok": true,
       "status": 200,
-      "checkedAt": "2026-10-31T10:12:32.787Z"
+      "checkedAt": "2026-11-07T10:54:57.859Z"
     },
     {
       "productId": "saderat-ghasta",
@@ -120,7 +139,7 @@
       "url": "https://andishemoaser.ir/%D9%88%D8%A7%D9%85-%D9%82%D8%B3%D8%B7%D8%A7-%DB%B1%DB%B4%DB%B0%DB%B5-%D9%85%D8%A8%D9%84%D8%BA%D8%8C-%D8%B4%D8%B1%D8%A7%DB%8C%D8%B7-%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA%D8%8C-%D9%82%D8%B3%D8%B7%D8%A7/",
       "ok": true,
       "status": 200,
-      "checkedAt": "2026-10-31T10:12:37.256Z"
+      "checkedAt": "2026-11-07T10:55:02.692Z"
     },
     {
       "productId": "bankino-vamino-club",
@@ -129,7 +148,7 @@
       "url": "https://bankino.digital",
       "ok": true,
       "status": 206,
-      "checkedAt": "2026-10-31T10:12:18.067Z"
+      "checkedAt": "2026-11-07T10:54:46.345Z"
     },
     {
       "productId": "sepah-negin-club",
@@ -139,7 +158,26 @@
       "ok": false,
       "status": 0,
       "error": "The operation was aborted due to timeout",
-      "checkedAt": "2026-10-31T10:12:44.800Z"
+      "checkedAt": "2026-11-07T10:55:12.293Z"
+    },
+    {
+      "productId": "blu-loan-beja",
+      "bank": "بلوبانک",
+      "product": "وام به‌جا بلوبانک — با ضامن و بدون ضامن",
+      "url": "https://blubank.com/loan/beja-loan/",
+      "ok": false,
+      "status": 0,
+      "error": "fetch failed",
+      "checkedAt": "2026-11-07T10:55:13.932Z"
+    },
+    {
+      "productId": "mellat-deposit-pref-30",
+      "bank": "بانک ملت",
+      "product": "سپرده با سود ترجیحی بانک ملت (پلکانی ۲۷ تا ۲۹.۹٪ بر اساس مانده)",
+      "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/",
+      "ok": false,
+      "status": 403,
+      "checkedAt": "2026-11-07T10:55:04.123Z"
     },
     {
       "productId": "mehr-iran-mehryar",
@@ -148,7 +186,7 @@
       "url": "https://digivam.app/mehriran-bank/",
       "ok": true,
       "status": 200,
-      "checkedAt": "2026-10-31T10:12:37.381Z"
+      "checkedAt": "2026-11-07T10:55:03.409Z"
     },
     {
       "productId": "fund-amin-ashna",
@@ -158,7 +196,7 @@
       "ok": false,
       "status": 0,
       "error": "fetch failed",
-      "checkedAt": "2026-10-31T10:12:14.240Z"
+      "checkedAt": "2026-11-07T10:54:41.776Z"
     },
     {
       "productId": "fund-yaghoot-agah",
@@ -168,7 +206,7 @@
       "ok": false,
       "status": 0,
       "error": "The operation was aborted due to timeout",
-      "checkedAt": "2026-10-31T10:12:28.800Z"
+      "checkedAt": "2026-11-07T10:54:56.293Z"
     },
     {
       "productId": "fund-ganjineh-zarrin-shahr",
@@ -178,7 +216,7 @@
       "ok": false,
       "status": 0,
       "error": "The operation was aborted due to timeout",
-      "checkedAt": "2026-10-31T10:12:28.835Z"
+      "checkedAt": "2026-11-07T10:54:56.320Z"
     },
     {
       "productId": "fund-lotus-parsian",
@@ -188,7 +226,7 @@
       "ok": false,
       "status": 0,
       "error": "The operation was aborted due to timeout",
-      "checkedAt": "2026-10-31T10:12:28.836Z"
+      "checkedAt": "2026-11-07T10:54:56.322Z"
     },
     {
       "productId": "ezdevaj-350",
@@ -197,7 +235,7 @@
       "url": "https://nabzgheymat.ir/%D9%88%D8%A7%D9%85-%D8%A7%D8%B2%D8%AF%D9%88%D8%A7%D8%AC-%D9%88-%D9%81%D8%B1%D8%B2%D9%86%D8%AF%D8%A2%D9%88%D8%B1%DB%8C-%DB%B1%DB%B4%DB%B0%DB%B5%D8%9B-%DB%B6%DB%B0%DB%B0-%D8%AA%D8%A7-%DB%B7%DB%B0%DB%B0/",
       "ok": true,
       "status": 200,
-      "checkedAt": "2026-10-31T10:12:36.181Z"
+      "checkedAt": "2026-11-07T10:55:00.427Z"
     },
     {
       "productId": "ezdevaj-300",
@@ -206,7 +244,7 @@
       "url": "https://nabzgheymat.ir/%D9%88%D8%A7%D9%85-%D8%A7%D8%B2%D8%AF%D9%88%D8%A7%D8%AC-%DB%B1%DB%B4%DB%B0%DB%B5%D8%9B-%D9%85%D8%A8%D9%84%D8%BA-%DB%B3%DB%B0%DB%B0-%D8%AA%D8%A7-%DB%B3%DB%B5%DB%B0-%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86/",
       "ok": true,
       "status": 200,
-      "checkedAt": "2026-10-31T10:12:34.825Z"
+      "checkedAt": "2026-11-07T10:54:59.781Z"
     },
     {
       "productId": "farzandavari-220",
@@ -215,7 +253,7 @@
       "url": "https://nabzgheymat.ir/%D9%88%D8%A7%D9%85-%D9%81%D8%B1%D8%B2%D9%86%D8%AF%D8%A2%D9%88%D8%B1%DB%8C-%DB%B1%DB%B4%DB%B0%DB%B5%D8%9B-%D8%A7%D8%B2-%DB%B4%DB%B4-%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86-%D8%AA%D8%A7-%DB%B2%DB%B2%DB%B0/",
       "ok": true,
       "status": 200,
-      "checkedAt": "2026-10-31T10:12:36.172Z"
+      "checkedAt": "2026-11-07T10:55:01.233Z"
     },
     {
       "productId": "fund-omid-sepah",
@@ -225,7 +263,7 @@
       "ok": false,
       "status": 0,
       "error": "fetch failed",
-      "checkedAt": "2026-10-31T10:12:14.352Z"
+      "checkedAt": "2026-11-07T10:54:41.843Z"
     },
     {
       "productId": "tobank-club",
@@ -234,7 +272,7 @@
       "url": "https://tobank.ir",
       "ok": false,
       "status": 403,
-      "checkedAt": "2026-10-31T10:12:19.047Z"
+      "checkedAt": "2026-11-07T10:54:47.201Z"
     },
     {
       "productId": "vipad-weclub",
@@ -244,7 +282,7 @@
       "ok": false,
       "status": 0,
       "error": "The operation was aborted due to timeout",
-      "checkedAt": "2026-10-31T10:12:35.050Z"
+      "checkedAt": "2026-11-07T10:55:03.202Z"
     },
     {
       "productId": "deposit-kootah-moddate-adi",
@@ -253,106 +291,7 @@
       "url": "https://www.cbi.ir",
       "ok": true,
       "status": 200,
-      "checkedAt": "2026-10-31T10:12:33.505Z"
-    },
-    {
-      "productId": "rade-704361",
-      "bank": "بانک اقتصاد نوین",
-      "product": "سپرده وینگر بانک اقتصاد نوین",
-      "url": "https://www.rade.ir/bank-account-checking-account/704361-%d8%b3%d9%be%d8%b1%d8%af%d9%87-%d9%88%db%8c%d9%86%da%af%d8%b1-%d8%a8%d8%a7%d9%86%da%a9-%d8%a7%d9%82%d8%aa%d8%b5%d8%a7%d8%af-%d9%86%d9%88%db%8c%d9%86/",
-      "ok": true,
-      "status": 200,
-      "checkedAt": "2026-10-31T10:12:37.704Z"
-    },
-    {
-      "productId": "rade-705203",
-      "bank": "بانک رفاه کارگران",
-      "product": "سپرده رفاه فردا بانک رفاه کارگران",
-      "url": "https://www.rade.ir/bank-account-special-deposit/705203-%d8%b3%d9%be%d8%b1%d8%af%d9%87-%d8%b1%d9%81%d8%a7%d9%87-%d9%81%d8%b1%d8%af%d8%a7-%d8%a8%d8%a7%d9%86%da%a9-%d8%b1%d9%81%d8%a7%d9%87-%da%a9%d8%a7%d8%b1%da%af%d8%b1%d8%a7%d9%86/",
-      "ok": true,
-      "status": 200,
-      "checkedAt": "2026-10-31T10:12:38.209Z"
-    },
-    {
-      "productId": "rade-707739",
-      "bank": "بانک پاسارگاد",
-      "product": "طرح سرمایه‌گذاری رستا ویپاد بانک پاسارگاد",
-      "url": "https://www.rade.ir/bank-account-special-deposit/707739-%d8%b7%d8%b1%d8%ad-%d8%b3%d8%b1%d9%85%d8%a7%db%8c%d9%87%da%af%d8%b0%d8%a7%d8%b1%db%8c-%d8%b1%d8%b3%d8%aa%d8%a7-%d9%88%db%8c%d9%be%d8%a7%d8%af/",
-      "ok": true,
-      "status": 200,
-      "checkedAt": "2026-10-31T10:12:39.060Z"
-    },
-    {
-      "productId": "rade-707740",
-      "bank": "بانک پاسارگاد",
-      "product": "طرح سرمایه‌گذاری بیست+ ویپاد بانک پاسارگاد",
-      "url": "https://www.rade.ir/bank-account-special-deposit/707740-%d8%b7%d8%b1%d8%ad-%d8%b3%d8%b1%d9%85%d8%a7%db%8c%d9%87%da%af%d8%b0%d8%a7%d8%b1%db%8c-%d8%a8%db%8c%d8%b3%d8%aa-%d9%88%db%8c%d9%be%d8%a7%d8%af/",
-      "ok": true,
-      "status": 200,
-      "checkedAt": "2026-10-31T10:12:40.234Z"
-    },
-    {
-      "productId": "rade-705678",
-      "bank": "بانک خاورمیانه",
-      "product": "سپرده بلندمدت دومینو بانک خاورمیانه",
-      "url": "https://www.rade.ir/bank-account-time-deposit/705678-%d8%b3%d9%be%d8%b1%d8%af%d9%87-%d8%a8%d9%84%d9%86%d8%af%d9%85%d8%af%d8%aa-%d8%af%d9%88%d9%85%db%8c%d9%86%d9%88-%d8%a8%d8%a7%d9%86%da%a9-%d8%ae%d8%a7%d9%88%d8%b1%d9%85%db%8c%d8%a7%d9%86%d9%87/",
-      "ok": true,
-      "status": 200,
-      "checkedAt": "2026-10-31T10:12:38.207Z"
-    },
-    {
-      "productId": "rade-704667",
-      "bank": "بانک سامان",
-      "product": "وام اپلیکیشن ۷۲۴ بانک سامان",
-      "url": "https://www.rade.ir/loan-goods-loan/704667-%d9%88%d8%a7%d9%85-%d8%a7%d9%be%d9%84%db%8c%da%a9%db%8c%d8%b4%d9%86-724-%d8%a8%d8%a7%d9%86%da%a9-%d8%b3%d8%a7%d9%85%d8%a7%d9%86/",
-      "ok": true,
-      "status": 200,
-      "checkedAt": "2026-10-31T10:12:39.056Z"
-    },
-    {
-      "productId": "rade-704680",
-      "bank": "بانک ایران زمین",
-      "product": "طرح تسهیلات ایران‌یار بانک ایران زمین",
-      "url": "https://www.rade.ir/loan-goods-loan/704680-%d8%b7%d8%b1%d8%ad-%d8%aa%d8%b3%d9%87%db%8c%d9%84%d8%a7%d8%aa-%d8%a7%db%8c%d8%b1%d8%a7%d9%86%db%8c%d8%a7%d8%b1-%d8%a8%d8%a7%d9%86%da%a9-%d8%a7%db%8c%d8%b1%d8%a7%d9%86-%d8%b2%d9%85%db%8c%d9%86/",
-      "ok": true,
-      "status": 200,
-      "checkedAt": "2026-10-31T10:12:39.868Z"
-    },
-    {
-      "productId": "rade-704689",
-      "bank": "بانک سرمایه",
-      "product": "وام نسیم خرید بانک سرمایه",
-      "url": "https://www.rade.ir/loan-goods-loan/704689-%d9%88%d8%a7%d9%85-%d9%86%d8%b3%db%8c%d9%85-%d8%ae%d8%b1%db%8c%d8%af-%d8%a8%d8%a7%d9%86%da%a9-%d8%b3%d8%b1%d9%85%d8%a7%db%8c%d9%87/",
-      "ok": true,
-      "status": 200,
-      "checkedAt": "2026-10-31T10:12:40.686Z"
-    },
-    {
-      "productId": "rade-704674",
-      "bank": "بانک مسکن",
-      "product": "وام نیروگاه خورشیدی خانگی بانک مسکن",
-      "url": "https://www.rade.ir/loan-instant-loan/704674-%d9%88%d8%a7%d9%85-%d9%86%db%8c%d8%b1%d9%88%da%af%d8%a7%d9%87-%d8%ae%d9%88%d8%b1%d8%b4%db%8c%d8%af%db%8c-%d8%ae%d8%a7%d9%86%da%af%db%8c-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d8%b3%da%a9%d9%86/",
-      "ok": true,
-      "status": 200,
-      "checkedAt": "2026-10-31T10:12:39.869Z"
-    },
-    {
-      "productId": "blu-loan-beja",
-      "bank": "بلوبانک",
-      "product": "وام به‌جا — تسهیلات نقدی دیجیتال بدون ضامن",
-      "url": "https://www.rade.ir/loan-instant-loan/706908-%D9%88%D8%A7%D9%85-%D8%A8%D9%87%E2%80%8C%D8%AC%D8%A7-%D8%A8%D9%84%D9%88%D8%A8%D8%A7%D9%86%DA%A9/",
-      "ok": true,
-      "status": 200,
-      "checkedAt": "2026-10-31T10:12:31.319Z"
-    },
-    {
-      "productId": "rade-704701",
-      "bank": "بانک سامان",
-      "product": "وام بلوبانک",
-      "url": "https://www.rade.ir/loan-no-guarantor-loans/704701-%d9%88%d8%a7%d9%85-%d8%a8%d9%84%d9%88%d8%a8%d8%a7%d9%86%da%a9/",
-      "ok": true,
-      "status": 200,
-      "checkedAt": "2026-10-31T10:12:40.683Z"
+      "checkedAt": "2026-11-07T10:54:57.368Z"
     },
     {
       "productId": "blu-loan-instant",
@@ -361,7 +300,7 @@
       "url": "https://www.rade.ir/service/694259-%D9%88%D8%A7%D9%85-%D8%A8%D9%84%D9%88%D8%A8%D8%A7%D9%86%DA%A9/",
       "ok": true,
       "status": 200,
-      "checkedAt": "2026-10-31T10:12:37.676Z"
+      "checkedAt": "2026-11-07T10:55:03.189Z"
     }
   ]
 }
