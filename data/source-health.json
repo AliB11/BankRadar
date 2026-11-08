@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-11-07T10:55:14.372Z",
-  "lastRun": "2026-11-07T10:54:40.163Z",
-  "lastRunMode": "weekly-sync",
+  "generatedAt": "2026-11-08T10:39:32.412Z",
+  "lastRun": "2026-11-08T10:39:32.305Z",
+  "lastRunMode": "full",
   "counts": {
     "credit": 108,
     "deposits": 53,
     "funds": 73,
-    "loans": 278,
+    "loans": 297,
     "loyalty": 14,
-    "total": 526
+    "total": 545
   },
   "freshness": {
-    "d7": 221,
-    "d30": 90,
-    "d90": 147,
+    "d7": 240,
+    "d30": 91,
+    "d90": 146,
     "older": 66,
     "unknown": 2,
-    "total": 526,
-    "medianDays": 18
+    "total": 545,
+    "medianDays": 19
   },
   "categoryFreshness": {
     "deposits": {
@@ -37,8 +37,8 @@
       "unknown": 1
     },
     "loans": {
-      "total": 278,
-      "fresh": 127,
+      "total": 297,
+      "fresh": 146,
       "recent": 54,
       "aging": 44,
       "stale": 53,
@@ -55,8 +55,8 @@
     "funds": {
       "total": 73,
       "fresh": 45,
-      "recent": 18,
-      "aging": 10,
+      "recent": 19,
+      "aging": 9,
       "stale": 0,
       "unknown": 0
     }
@@ -220,24 +220,30 @@
       "name": "rade.ir",
       "status": "ok",
       "ok": true,
-      "parsed": 196
+      "parsed": 150
     },
     {
       "name": "bank-sites",
       "status": "ok",
       "ok": true,
       "reached": 1,
-      "targets": 24
+      "targets": 24,
+      "viaFallback": 1,
+      "empty": 13
     },
     {
       "name": "macro-indicators",
       "status": "ok",
-      "ok": true
+      "ok": true,
+      "sourcesOk": 3
     },
     {
       "name": "dgshahr.com",
-      "status": "ok",
+      "status": "degraded",
       "ok": true,
+      "degraded": true,
+      "via": "wayback",
+      "observedAt": "2026-10-12",
       "parsed": 31
     },
     {
@@ -254,9 +260,11 @@
       "mismatched": 0
     }
   ],
-  "degradedSources": [],
+  "degradedSources": [
+    "dgshahr.com"
+  ],
   "crosscheck": {
-    "generatedAt": "2026-11-07T10:32:21.374Z",
+    "generatedAt": "2026-11-08T10:39:32.224Z",
     "summary": {
       "matched": 6,
       "mismatched": 0,
@@ -272,7 +280,7 @@
   },
   "verdict": {
     "dataFresh": true,
-    "sourcesHealthy": true,
+    "sourcesHealthy": false,
     "note": "اعداد این گزارش از دادهٔ ثبت‌شده ساخته می‌شوند، نه از واکشی زنده."
   }
 }
