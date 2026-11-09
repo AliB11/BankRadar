@@ -1,41 +1,41 @@
 {
-  "autoDiscovered": 474,
+  "autoDiscovered": 475,
   "counts": {
-    "credit": 108,
+    "credit": 109,
     "deposits": 53,
     "funds": 73,
     "loans": 297,
     "loyalty": 14,
-    "total": 545
+    "total": 546
   },
   "freshness": {
-    "d30": 91,
-    "d7": 240,
-    "d90": 146,
-    "medianDays": 19,
-    "older": 66,
-    "total": 545,
+    "d30": 79,
+    "d7": 253,
+    "d90": 145,
+    "medianDays": 20,
+    "older": 67,
+    "total": 546,
     "unknown": 2
   },
-  "lastRun": "2026-11-08T10:39:32.305Z",
-  "lastRunDurationMs": 187524,
+  "lastRun": "2026-11-09T11:55:32.492Z",
+  "lastRunDurationMs": 202668,
   "lastRunMode": "full",
   "sources": [
     {
-      "attempted": 150,
-      "discovered": 617,
+      "attempted": 141,
+      "discovered": 618,
       "failures": 0,
       "fresh": 120,
-      "ms": 27158,
+      "ms": 21406,
       "name": "rade.ir",
       "ok": true,
-      "parsed": 150,
-      "rotated": 30
+      "parsed": 141,
+      "rotated": 21
     },
     {
       "detail": [
         {
-          "ageDays": 56,
+          "ageDays": 57,
           "id": "blubank",
           "ok": true,
           "rates": [
@@ -82,7 +82,7 @@
           "url": "https://banksepah.ir/سپرده"
         },
         {
-          "ageDays": 1104,
+          "ageDays": 1105,
           "empty": true,
           "id": "eghtesad-novin",
           "ok": false,
@@ -96,10 +96,12 @@
           "url": "https://parsian-bank.ir/"
         },
         {
-          "error": "همهٔ مسیرهای «https://www.bpi.ir/» بسته بود — direct: HTTP 403 Forbidden (HTTP 403) — https://www.bpi.ir/ | wayback: snapshot یافت نشد",
+          "ageDays": 329,
+          "empty": true,
           "id": "pasargad",
           "ok": false,
-          "url": "https://www.bpi.ir/"
+          "url": "https://www.bpi.ir/",
+          "via": "wayback"
         },
         {
           "empty": true,
@@ -109,7 +111,7 @@
           "via": "direct"
         },
         {
-          "ageDays": 1509,
+          "ageDays": 1510,
           "empty": true,
           "id": "refah",
           "ok": false,
@@ -117,7 +119,7 @@
           "via": "wayback"
         },
         {
-          "ageDays": 1600,
+          "ageDays": 1601,
           "empty": true,
           "id": "maskan",
           "ok": false,
@@ -125,7 +127,7 @@
           "via": "wayback"
         },
         {
-          "ageDays": 505,
+          "ageDays": 506,
           "empty": true,
           "id": "karafarin",
           "ok": false,
@@ -133,7 +135,7 @@
           "via": "wayback"
         },
         {
-          "ageDays": 1620,
+          "ageDays": 1621,
           "empty": true,
           "id": "shahr",
           "ok": false,
@@ -147,14 +149,14 @@
           "url": "https://www.sinabank.ir/"
         },
         {
-          "ageDays": 1677,
+          "ageDays": 1678,
           "id": "mehr-iran",
           "ok": false,
           "url": "https://www.qmb.ir/",
           "via": "wayback"
         },
         {
-          "ageDays": 1290,
+          "ageDays": 1291,
           "empty": true,
           "id": "resalat",
           "ok": false,
@@ -162,7 +164,7 @@
           "via": "wayback"
         },
         {
-          "ageDays": 510,
+          "ageDays": 511,
           "empty": true,
           "id": "vipad",
           "ok": false,
@@ -170,7 +172,7 @@
           "via": "wayback"
         },
         {
-          "ageDays": 1842,
+          "ageDays": 1843,
           "empty": true,
           "id": "middle-east",
           "ok": false,
@@ -178,7 +180,7 @@
           "via": "wayback"
         },
         {
-          "ageDays": 521,
+          "ageDays": 522,
           "empty": true,
           "id": "keshavarzi",
           "ok": false,
@@ -199,7 +201,7 @@
           "via": "direct"
         },
         {
-          "ageDays": 174,
+          "ageDays": 175,
           "empty": true,
           "id": "tobank",
           "ok": false,
@@ -207,12 +209,12 @@
           "via": "wayback"
         }
       ],
-      "empty": 13,
-      "ms": 133669,
+      "empty": 14,
+      "ms": 139493,
       "name": "bank-sites",
       "ok": true,
       "reachable": 1,
-      "reached": 15,
+      "reached": 16,
       "targets": 24,
       "viaFallback": 1
     },
@@ -225,7 +227,7 @@
           "url": "https://www.amar.org.ir/english/Statistics-by-Topic/Consumer-Price-Index"
         }
       ],
-      "ms": 8937,
+      "ms": 15575,
       "name": "macro-indicators",
       "ok": true,
       "policy": {
@@ -241,7 +243,7 @@
     },
     {
       "degraded": true,
-      "ms": 3166,
+      "ms": 3724,
       "name": "dgshahr.com",
       "observedAt": "2026-10-12",
       "ok": true,
@@ -254,7 +256,7 @@
     {
       "etf": 38,
       "issuance": 29,
-      "ms": 3667,
+      "ms": 3367,
       "name": "isignal.ir",
       "ok": true,
       "origin": "api:signalpardazgroup.com",
@@ -272,24 +274,21 @@
     {
       "matched": 6,
       "mismatched": 0,
-      "ms": 10810,
+      "ms": 18979,
       "name": "crosscheck",
       "ok": true,
       "sources": [
         {
-          "ageDays": 0,
-          "chain": "direct✓",
+          "chain": "direct✗(HTTP 404 Not Found (HTTP 404) — https://finai.ir/blog/bank-deposit-interest-1405) ← wayback✗(snapshot یافت نشد) ← proxy✗(صفحهٔ «پیدا نشد» با کد ۲۰۰)",
+          "error": "همهٔ مسیرهای «https://finai.ir/blog/bank-deposit-interest-1405» بسته بود — direct: HTTP 404 Not Found (HTTP 404) — https://finai.ir/blog/bank-deposit-interest-1405 | wayback: snapshot یافت نشد | proxy: صفحهٔ «پیدا نشد» با کد ۲۰۰",
           "name": "finai",
-          "observedAt": "2026-11-08T10:39:21.415Z",
-          "ok": true,
-          "values": 6,
-          "via": "direct"
+          "ok": false
         },
         {
           "ageDays": 0,
           "chain": "direct✓",
           "name": "khanesarmaye",
-          "observedAt": "2026-11-08T10:39:23.490Z",
+          "observedAt": "2026-11-09T11:55:27.242Z",
           "ok": true,
           "values": 6,
           "via": "direct"
@@ -298,7 +297,7 @@
           "ageDays": 0,
           "chain": "direct✓",
           "name": "nabzgheymat",
-          "observedAt": "2026-11-08T10:39:29.545Z",
+          "observedAt": "2026-11-09T11:55:30.698Z",
           "ok": true,
           "values": 6,
           "via": "direct"

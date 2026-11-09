@@ -1,47 +1,47 @@
 {
-  "generatedAt": "2026-11-08T10:39:32.412Z",
-  "lastRun": "2026-11-08T10:39:32.305Z",
+  "generatedAt": "2026-11-09T11:55:32.601Z",
+  "lastRun": "2026-11-09T11:55:32.492Z",
   "lastRunMode": "full",
   "counts": {
-    "credit": 108,
+    "credit": 109,
     "deposits": 53,
     "funds": 73,
     "loans": 297,
     "loyalty": 14,
-    "total": 545
+    "total": 546
   },
   "freshness": {
-    "d7": 240,
-    "d30": 91,
-    "d90": 146,
-    "older": 66,
+    "d7": 253,
+    "d30": 79,
+    "d90": 145,
+    "older": 67,
     "unknown": 2,
-    "total": 545,
-    "medianDays": 19
+    "total": 546,
+    "medianDays": 20
   },
   "categoryFreshness": {
     "deposits": {
       "total": 53,
-      "fresh": 5,
-      "recent": 0,
+      "fresh": 0,
+      "recent": 5,
       "aging": 47,
       "stale": 0,
       "unknown": 1
     },
     "credit": {
-      "total": 108,
+      "total": 109,
       "fresh": 44,
-      "recent": 18,
+      "recent": 19,
       "aging": 32,
       "stale": 13,
       "unknown": 1
     },
     "loans": {
       "total": 297,
-      "fresh": 146,
-      "recent": 54,
-      "aging": 44,
-      "stale": 53,
+      "fresh": 145,
+      "recent": 55,
+      "aging": 43,
+      "stale": 54,
       "unknown": 0
     },
     "loyalty": {
@@ -54,8 +54,8 @@
     },
     "funds": {
       "total": 73,
-      "fresh": 45,
-      "recent": 19,
+      "fresh": 64,
+      "recent": 0,
       "aging": 9,
       "stale": 0,
       "unknown": 0
@@ -220,7 +220,7 @@
       "name": "rade.ir",
       "status": "ok",
       "ok": true,
-      "parsed": 150
+      "parsed": 141
     },
     {
       "name": "bank-sites",
@@ -229,7 +229,7 @@
       "reached": 1,
       "targets": 24,
       "viaFallback": 1,
-      "empty": 13
+      "empty": 14
     },
     {
       "name": "macro-indicators",
@@ -264,7 +264,7 @@
     "dgshahr.com"
   ],
   "crosscheck": {
-    "generatedAt": "2026-11-08T10:39:32.224Z",
+    "generatedAt": "2026-11-09T11:55:32.412Z",
     "summary": {
       "matched": 6,
       "mismatched": 0,
