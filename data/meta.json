@@ -9,33 +9,33 @@
     "total": 546
   },
   "freshness": {
-    "d30": 79,
-    "d7": 253,
-    "d90": 145,
-    "medianDays": 20,
+    "d30": 82,
+    "d7": 249,
+    "d90": 146,
+    "medianDays": 21,
     "older": 67,
     "total": 546,
     "unknown": 2
   },
-  "lastRun": "2026-11-09T11:55:32.492Z",
-  "lastRunDurationMs": 202668,
+  "lastRun": "2026-11-10T11:29:21.800Z",
+  "lastRunDurationMs": 195923,
   "lastRunMode": "full",
   "sources": [
     {
-      "attempted": 141,
+      "attempted": 134,
       "discovered": 618,
       "failures": 0,
       "fresh": 120,
-      "ms": 21406,
+      "ms": 24247,
       "name": "rade.ir",
       "ok": true,
-      "parsed": 141,
-      "rotated": 21
+      "parsed": 134,
+      "rotated": 14
     },
     {
       "detail": [
         {
-          "ageDays": 57,
+          "ageDays": 58,
           "id": "blubank",
           "ok": true,
           "rates": [
@@ -82,7 +82,7 @@
           "url": "https://banksepah.ir/سپرده"
         },
         {
-          "ageDays": 1105,
+          "ageDays": 1106,
           "empty": true,
           "id": "eghtesad-novin",
           "ok": false,
@@ -96,7 +96,7 @@
           "url": "https://parsian-bank.ir/"
         },
         {
-          "ageDays": 329,
+          "ageDays": 330,
           "empty": true,
           "id": "pasargad",
           "ok": false,
@@ -111,7 +111,7 @@
           "via": "direct"
         },
         {
-          "ageDays": 1510,
+          "ageDays": 1511,
           "empty": true,
           "id": "refah",
           "ok": false,
@@ -119,7 +119,7 @@
           "via": "wayback"
         },
         {
-          "ageDays": 1601,
+          "ageDays": 1602,
           "empty": true,
           "id": "maskan",
           "ok": false,
@@ -127,15 +127,13 @@
           "via": "wayback"
         },
         {
-          "ageDays": 506,
-          "empty": true,
+          "error": "همهٔ مسیرهای «https://www.karafarinbank.ir/» بسته بود — direct: شبکه در دسترس نبود — https://www.karafarinbank.ir/ | wayback: snapshot یافت نشد",
           "id": "karafarin",
           "ok": false,
-          "url": "https://www.karafarinbank.ir/",
-          "via": "wayback"
+          "url": "https://www.karafarinbank.ir/"
         },
         {
-          "ageDays": 1621,
+          "ageDays": 1622,
           "empty": true,
           "id": "shahr",
           "ok": false,
@@ -149,14 +147,14 @@
           "url": "https://www.sinabank.ir/"
         },
         {
-          "ageDays": 1678,
+          "ageDays": 1679,
           "id": "mehr-iran",
           "ok": false,
           "url": "https://www.qmb.ir/",
           "via": "wayback"
         },
         {
-          "ageDays": 1291,
+          "ageDays": 1292,
           "empty": true,
           "id": "resalat",
           "ok": false,
@@ -164,7 +162,7 @@
           "via": "wayback"
         },
         {
-          "ageDays": 511,
+          "ageDays": 512,
           "empty": true,
           "id": "vipad",
           "ok": false,
@@ -172,7 +170,7 @@
           "via": "wayback"
         },
         {
-          "ageDays": 1843,
+          "ageDays": 1844,
           "empty": true,
           "id": "middle-east",
           "ok": false,
@@ -180,7 +178,7 @@
           "via": "wayback"
         },
         {
-          "ageDays": 522,
+          "ageDays": 523,
           "empty": true,
           "id": "keshavarzi",
           "ok": false,
@@ -201,7 +199,7 @@
           "via": "direct"
         },
         {
-          "ageDays": 175,
+          "ageDays": 176,
           "empty": true,
           "id": "tobank",
           "ok": false,
@@ -209,12 +207,12 @@
           "via": "wayback"
         }
       ],
-      "empty": 14,
-      "ms": 139493,
+      "empty": 13,
+      "ms": 144171,
       "name": "bank-sites",
       "ok": true,
       "reachable": 1,
-      "reached": 16,
+      "reached": 15,
       "targets": 24,
       "viaFallback": 1
     },
@@ -227,7 +225,7 @@
           "url": "https://www.amar.org.ir/english/Statistics-by-Topic/Consumer-Price-Index"
         }
       ],
-      "ms": 15575,
+      "ms": 11340,
       "name": "macro-indicators",
       "ok": true,
       "policy": {
@@ -243,7 +241,7 @@
     },
     {
       "degraded": true,
-      "ms": 3724,
+      "ms": 3038,
       "name": "dgshahr.com",
       "observedAt": "2026-10-12",
       "ok": true,
@@ -256,7 +254,7 @@
     {
       "etf": 38,
       "issuance": 29,
-      "ms": 3367,
+      "ms": 4727,
       "name": "isignal.ir",
       "ok": true,
       "origin": "api:signalpardazgroup.com",
@@ -274,21 +272,24 @@
     {
       "matched": 6,
       "mismatched": 0,
-      "ms": 18979,
+      "ms": 8186,
       "name": "crosscheck",
       "ok": true,
       "sources": [
         {
-          "chain": "direct✗(HTTP 404 Not Found (HTTP 404) — https://finai.ir/blog/bank-deposit-interest-1405) ← wayback✗(snapshot یافت نشد) ← proxy✗(صفحهٔ «پیدا نشد» با کد ۲۰۰)",
-          "error": "همهٔ مسیرهای «https://finai.ir/blog/bank-deposit-interest-1405» بسته بود — direct: HTTP 404 Not Found (HTTP 404) — https://finai.ir/blog/bank-deposit-interest-1405 | wayback: snapshot یافت نشد | proxy: صفحهٔ «پیدا نشد» با کد ۲۰۰",
+          "ageDays": 0,
+          "chain": "direct✓",
           "name": "finai",
-          "ok": false
+          "observedAt": "2026-11-10T11:29:13.484Z",
+          "ok": true,
+          "values": 6,
+          "via": "direct"
         },
         {
           "ageDays": 0,
           "chain": "direct✓",
           "name": "khanesarmaye",
-          "observedAt": "2026-11-09T11:55:27.242Z",
+          "observedAt": "2026-11-10T11:29:15.436Z",
           "ok": true,
           "values": 6,
           "via": "direct"
@@ -297,7 +298,7 @@
           "ageDays": 0,
           "chain": "direct✓",
           "name": "nabzgheymat",
-          "observedAt": "2026-11-09T11:55:30.698Z",
+          "observedAt": "2026-11-10T11:29:19.404Z",
           "ok": true,
           "values": 6,
           "via": "direct"
