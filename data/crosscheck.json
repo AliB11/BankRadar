@@ -5,21 +5,21 @@
       "label": "نرخ مرجع سپرده عادی یک‌ساله (گزارش رسانه)",
       "observations": [
         {
-          "observedAt": "2026-11-10T11:29:13.484Z",
+          "observedAt": "2026-11-11T11:17:59.220Z",
           "source": "finai",
           "url": "https://finai.ir/blog/bank-deposit-interest-1405",
           "value": 20.5,
           "via": "direct"
         },
         {
-          "observedAt": "2026-11-10T11:29:15.436Z",
+          "observedAt": "2026-11-11T11:18:18.649Z",
           "source": "khanesarmaye",
           "url": "https://bank.khanesarmaye.com/blog/bank-interest",
           "value": 20.5,
           "via": "direct"
         },
         {
-          "observedAt": "2026-11-10T11:29:19.404Z",
+          "observedAt": "2026-11-11T11:18:22.162Z",
           "source": "nabzgheymat",
           "url": "https://nabzgheymat.ir/%D8%B3%D9%88%D8%AF-%D8%B3%D9%BE%D8%B1%D8%AF%D9%87-%D8%A8%D8%A7%D9%86%DA%A9%DB%8C-%D8%AF%D8%B1-%D8%A2%D8%A8%D8%A7%D9%86-%DB%B1%DB%B4%DB%B0%DB%B5-%DA%86%D9%82%D8%AF%D8%B1-%D8%A7%D8%B3%D8%AA-%E2%94%82/",
           "value": 20.5,
@@ -35,21 +35,21 @@
       "label": "سقف سود سپرده دو ساله",
       "observations": [
         {
-          "observedAt": "2026-11-10T11:29:13.484Z",
+          "observedAt": "2026-11-11T11:17:59.220Z",
           "source": "finai",
           "url": "https://finai.ir/blog/bank-deposit-interest-1405",
           "value": 21.5,
           "via": "direct"
         },
         {
-          "observedAt": "2026-11-10T11:29:15.436Z",
+          "observedAt": "2026-11-11T11:18:18.649Z",
           "source": "khanesarmaye",
           "url": "https://bank.khanesarmaye.com/blog/bank-interest",
           "value": 21.5,
           "via": "direct"
         },
         {
-          "observedAt": "2026-11-10T11:29:19.404Z",
+          "observedAt": "2026-11-11T11:18:22.162Z",
           "source": "nabzgheymat",
           "url": "https://nabzgheymat.ir/%D8%B3%D9%88%D8%AF-%D8%B3%D9%BE%D8%B1%D8%AF%D9%87-%D8%A8%D8%A7%D9%86%DA%A9%DB%8C-%D8%AF%D8%B1-%D8%A2%D8%A8%D8%A7%D9%86-%DB%B1%DB%B4%DB%B0%DB%B5-%DA%86%D9%82%D8%AF%D8%B1-%D8%A7%D8%B3%D8%AA-%E2%94%82/",
           "value": 21.5,
@@ -65,21 +65,21 @@
       "label": "سقف سود سپرده سه ساله",
       "observations": [
         {
-          "observedAt": "2026-11-10T11:29:13.484Z",
+          "observedAt": "2026-11-11T11:17:59.220Z",
           "source": "finai",
           "url": "https://finai.ir/blog/bank-deposit-interest-1405",
           "value": 22.5,
           "via": "direct"
         },
         {
-          "observedAt": "2026-11-10T11:29:15.436Z",
+          "observedAt": "2026-11-11T11:18:18.649Z",
           "source": "khanesarmaye",
           "url": "https://bank.khanesarmaye.com/blog/bank-interest",
           "value": 22.5,
           "via": "direct"
         },
         {
-          "observedAt": "2026-11-10T11:29:19.404Z",
+          "observedAt": "2026-11-11T11:18:22.162Z",
           "source": "nabzgheymat",
           "url": "https://nabzgheymat.ir/%D8%B3%D9%88%D8%AF-%D8%B3%D9%BE%D8%B1%D8%AF%D9%87-%D8%A8%D8%A7%D9%86%DA%A9%DB%8C-%D8%AF%D8%B1-%D8%A2%D8%A8%D8%A7%D9%86-%DB%B1%DB%B4%DB%B0%DB%B5-%DA%86%D9%82%D8%AF%D8%B1-%D8%A7%D8%B3%D8%AA-%E2%94%82/",
           "value": 22.5,
@@ -95,21 +95,21 @@
       "label": "سود سپرده کوتاه‌مدت ویژه سه‌ماهه",
       "observations": [
         {
-          "observedAt": "2026-11-10T11:29:13.484Z",
+          "observedAt": "2026-11-11T11:17:59.220Z",
           "source": "finai",
           "url": "https://finai.ir/blog/bank-deposit-interest-1405",
           "value": 12,
           "via": "direct"
         },
         {
-          "observedAt": "2026-11-10T11:29:15.436Z",
+          "observedAt": "2026-11-11T11:18:18.649Z",
           "source": "khanesarmaye",
           "url": "https://bank.khanesarmaye.com/blog/bank-interest",
           "value": 12,
           "via": "direct"
         },
         {
-          "observedAt": "2026-11-10T11:29:19.404Z",
+          "observedAt": "2026-11-11T11:18:22.162Z",
           "source": "nabzgheymat",
           "url": "https://nabzgheymat.ir/%D8%B3%D9%88%D8%AF-%D8%B3%D9%BE%D8%B1%D8%AF%D9%87-%D8%A8%D8%A7%D9%86%DA%A9%DB%8C-%D8%AF%D8%B1-%D8%A2%D8%A8%D8%A7%D9%86-%DB%B1%DB%B4%DB%B0%DB%B5-%DA%86%D9%82%D8%AF%D8%B1-%D8%A7%D8%B3%D8%AA-%E2%94%82/",
           "value": 12,
@@ -125,21 +125,21 @@
       "label": "سود سپرده کوتاه‌مدت ویژه شش‌ماهه",
       "observations": [
         {
-          "observedAt": "2026-11-10T11:29:13.484Z",
+          "observedAt": "2026-11-11T11:17:59.220Z",
           "source": "finai",
           "url": "https://finai.ir/blog/bank-deposit-interest-1405",
           "value": 17,
           "via": "direct"
         },
         {
-          "observedAt": "2026-11-10T11:29:15.436Z",
+          "observedAt": "2026-11-11T11:18:18.649Z",
           "source": "khanesarmaye",
           "url": "https://bank.khanesarmaye.com/blog/bank-interest",
           "value": 17,
           "via": "direct"
         },
         {
-          "observedAt": "2026-11-10T11:29:19.404Z",
+          "observedAt": "2026-11-11T11:18:22.162Z",
           "source": "nabzgheymat",
           "url": "https://nabzgheymat.ir/%D8%B3%D9%88%D8%AF-%D8%B3%D9%BE%D8%B1%D8%AF%D9%87-%D8%A8%D8%A7%D9%86%DA%A9%DB%8C-%D8%AF%D8%B1-%D8%A2%D8%A8%D8%A7%D9%86-%DB%B1%DB%B4%DB%B0%DB%B5-%DA%86%D9%82%D8%AF%D8%B1-%D8%A7%D8%B3%D8%AA-%E2%94%82/",
           "value": 17,
@@ -155,21 +155,21 @@
       "label": "سود سپرده کوتاه‌مدت عادی (کارتی)",
       "observations": [
         {
-          "observedAt": "2026-11-10T11:29:13.484Z",
+          "observedAt": "2026-11-11T11:17:59.220Z",
           "source": "finai",
           "url": "https://finai.ir/blog/bank-deposit-interest-1405",
           "value": 5,
           "via": "direct"
         },
         {
-          "observedAt": "2026-11-10T11:29:15.436Z",
+          "observedAt": "2026-11-11T11:18:18.649Z",
           "source": "khanesarmaye",
           "url": "https://bank.khanesarmaye.com/blog/bank-interest",
           "value": 5,
           "via": "direct"
         },
         {
-          "observedAt": "2026-11-10T11:29:19.404Z",
+          "observedAt": "2026-11-11T11:18:22.162Z",
           "source": "nabzgheymat",
           "url": "https://nabzgheymat.ir/%D8%B3%D9%88%D8%AF-%D8%B3%D9%BE%D8%B1%D8%AF%D9%87-%D8%A8%D8%A7%D9%86%DA%A9%DB%8C-%D8%AF%D8%B1-%D8%A2%D8%A8%D8%A7%D9%86-%DB%B1%DB%B4%DB%B0%DB%B5-%DA%86%D9%82%D8%AF%D8%B1-%D8%A7%D8%B3%D8%AA-%E2%94%82/",
           "value": 5,
@@ -181,14 +181,14 @@
       "status": "match"
     }
   ],
-  "generatedAt": "2026-11-10T11:29:21.670Z",
+  "generatedAt": "2026-11-11T11:18:24.672Z",
   "source": "crosscheck",
   "sources": [
     {
       "ageDays": 0,
       "chain": "direct✓",
       "name": "finai",
-      "observedAt": "2026-11-10T11:29:13.484Z",
+      "observedAt": "2026-11-11T11:17:59.220Z",
       "ok": true,
       "values": 6,
       "via": "direct"
@@ -197,7 +197,7 @@
       "ageDays": 0,
       "chain": "direct✓",
       "name": "khanesarmaye",
-      "observedAt": "2026-11-10T11:29:15.436Z",
+      "observedAt": "2026-11-11T11:18:18.649Z",
       "ok": true,
       "values": 6,
       "via": "direct"
@@ -206,7 +206,7 @@
       "ageDays": 0,
       "chain": "direct✓",
       "name": "nabzgheymat",
-      "observedAt": "2026-11-10T11:29:19.404Z",
+      "observedAt": "2026-11-11T11:18:22.162Z",
       "ok": true,
       "values": 6,
       "via": "direct"
