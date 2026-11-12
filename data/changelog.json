@@ -1,198 +1,5 @@
 {
-  "added": [
-    {
-      "bank": "بانک سامان",
-      "category": "credit",
-      "id": "rade-704690",
-      "maxAmount": 400000000,
-      "product": "وام کارت اعتباری اعضای هیئت علمی دانشگاه‌ها بانک سامان",
-      "rate": 23
-    },
-    {
-      "bank": "بانک ملی",
-      "category": "credit",
-      "id": "rade-704694",
-      "maxAmount": 300000000,
-      "product": "وام کالاپی بانک ملی",
-      "rate": 23
-    },
-    {
-      "bank": "بانک ملی",
-      "category": "credit",
-      "id": "rade-704699",
-      "maxAmount": 200000000,
-      "product": "کارت اعتبار طلائی بانک ملی",
-      "rate": 23
-    },
-    {
-      "bank": "بانک تجارت",
-      "category": "credit",
-      "id": "rade-704700",
-      "maxAmount": 5000000000,
-      "product": "وام دنتال پلاس بانک تجارت",
-      "rate": 23
-    },
-    {
-      "bank": "بانک ملت",
-      "category": "credit",
-      "id": "rade-704716",
-      "maxAmount": 100000000,
-      "product": "وام خرید کالا زرین پلاس",
-      "rate": 23
-    },
-    {
-      "bank": "بانک قرض‌الحسنه مهر ایران",
-      "category": "credit",
-      "id": "rade-704740",
-      "maxAmount": 9000000,
-      "product": "وام مهر آموز بانک مهر ایران",
-      "rate": 0
-    },
-    {
-      "bank": "بانک دی",
-      "category": "credit",
-      "id": "rade-704741",
-      "maxAmount": 300000000,
-      "product": "وام کارت اعتباری انفرادی اعضای هیئت علمی دانشگاه‌ها بانک دی",
-      "rate": 23
-    },
-    {
-      "bank": "بانک توسعه تعاون",
-      "category": "credit",
-      "id": "rade-704751",
-      "maxAmount": null,
-      "product": "وام رویان سبز بانک توسعه تعاون",
-      "rate": 19
-    },
-    {
-      "bank": "بانک کارآفرین",
-      "category": "credit",
-      "id": "rade-704767",
-      "maxAmount": 300000000,
-      "product": "وام همیاران سبز بانک کارآفرین",
-      "rate": 23
-    },
-    {
-      "bank": "بانک سینا",
-      "category": "credit",
-      "id": "rade-704781",
-      "maxAmount": 300000000,
-      "product": "وام نخل بانک سینا",
-      "rate": 16
-    },
-    {
-      "bank": "بانک تجارت",
-      "category": "credit",
-      "id": "rade-704784",
-      "maxAmount": 300000000,
-      "product": "وام کالانو بانک تجارت",
-      "rate": 23
-    },
-    {
-      "bank": "بانک سینا",
-      "category": "credit",
-      "id": "rade-704795",
-      "maxAmount": 100000000,
-      "product": "وام رز بانک سینا",
-      "rate": 23
-    },
-    {
-      "bank": "بانک گردشگری",
-      "category": "credit",
-      "id": "rade-704815",
-      "maxAmount": 100000000,
-      "product": "طرح ملی جهاد کالا بانک گردشگری",
-      "rate": 23
-    },
-    {
-      "bank": "پست بانک",
-      "category": "credit",
-      "id": "rade-704821",
-      "maxAmount": 200000000,
-      "product": "وام خرید کالا پست بانک",
-      "rate": 23
-    },
-    {
-      "bank": "بانک تجارت",
-      "category": "credit",
-      "id": "rade-704830",
-      "maxAmount": 120000000,
-      "product": "طرح تسهیلاتی اسنوا بانک تجارت",
-      "rate": 23
-    },
-    {
-      "bank": "بانک آینده",
-      "category": "credit",
-      "id": "rade-704847",
-      "maxAmount": 50000000,
-      "product": "طرح آینده داران ۱ بانک آینده",
-      "rate": 7
-    },
-    {
-      "bank": "بانک گردشگری",
-      "category": "credit",
-      "id": "rade-704862",
-      "maxAmount": 50000000,
-      "product": "طرح زی کارت بانک گردشگری",
-      "rate": 4
-    },
-    {
-      "bank": "بانک ایران زمین",
-      "category": "credit",
-      "id": "rade-704865",
-      "maxAmount": 300000000,
-      "product": "وام انتخاب پلاس بانک ایران زمین",
-      "rate": 23
-    },
-    {
-      "bank": "بانک پاسارگاد",
-      "category": "loans",
-      "id": "rade-705173",
-      "maxAmount": null,
-      "product": "وام با میانگین حساب بانک پاسارگاد",
-      "rate": 18
-    },
-    {
-      "bank": "بانک گردشگری",
-      "category": "loans",
-      "id": "rade-705174",
-      "maxAmount": null,
-      "product": "وام با سپرده بلندمدت بانک گردشگری",
-      "rate": 18
-    },
-    {
-      "bank": "پست بانک",
-      "category": "loans",
-      "id": "rade-705175",
-      "maxAmount": 20000000,
-      "product": "وام با میانگین حساب پست بانک",
-      "rate": 17
-    },
-    {
-      "bank": "بانک کشاورزی",
-      "category": "loans",
-      "id": "rade-705177",
-      "maxAmount": null,
-      "product": "وام با میانگین حساب بانک کشاورزی",
-      "rate": 18
-    },
-    {
-      "bank": "بانک ایران زمین",
-      "category": "loans",
-      "id": "rade-705179",
-      "maxAmount": null,
-      "product": "وام با میانگین حساب بانک ایران زمین",
-      "rate": 22
-    },
-    {
-      "bank": "بانک ایران زمین",
-      "category": "loans",
-      "id": "rade-705180",
-      "maxAmount": 1000000000,
-      "product": "وام با سپرده بلندمدت بانک ایران زمین",
-      "rate": 14
-    }
-  ],
+  "added": [],
   "amountChanged": [],
   "confidenceChanged": [],
   "rateChanged": [],
@@ -200,7 +7,7 @@
   "revived": [],
   "staleNow": [],
   "summary": {
-    "added": 24,
+    "added": 0,
     "amountChanged": 0,
     "confidenceChanged": 0,
     "rateChanged": 0,
@@ -208,7 +15,7 @@
     "revived": 0,
     "staleNow": 0,
     "termChanged": 0,
-    "totalChanges": 24
+    "totalChanges": 0
   },
   "termChanged": []
 }
