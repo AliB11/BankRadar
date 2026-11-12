@@ -1,24 +1,24 @@
 {
-  "autoDiscovered": 481,
+  "autoDiscovered": 511,
   "counts": {
     "credit": 109,
     "deposits": 53,
     "funds": 73,
-    "loans": 303,
+    "loans": 333,
     "loyalty": 14,
-    "total": 552
+    "total": 582
   },
   "freshness": {
-    "d30": 82,
-    "d7": 255,
+    "d30": 81,
+    "d7": 286,
     "d90": 146,
-    "medianDays": 22,
+    "medianDays": 11,
     "older": 67,
-    "total": 552,
+    "total": 582,
     "unknown": 2
   },
-  "lastRun": "2026-11-11T11:18:24.746Z",
-  "lastRunDurationMs": 207314,
+  "lastRun": "2026-11-12T11:35:32.545Z",
+  "lastRunDurationMs": 209187,
   "lastRunMode": "full",
   "sources": [
     {
@@ -26,7 +26,7 @@
       "discovered": 617,
       "failures": 0,
       "fresh": 120,
-      "ms": 25689,
+      "ms": 35257,
       "name": "rade.ir",
       "ok": true,
       "parsed": 150,
@@ -35,7 +35,7 @@
     {
       "detail": [
         {
-          "ageDays": 59,
+          "ageDays": 60,
           "id": "blubank",
           "ok": true,
           "rates": [
@@ -82,7 +82,7 @@
           "url": "https://banksepah.ir/سپرده"
         },
         {
-          "ageDays": 1107,
+          "ageDays": 1108,
           "empty": true,
           "id": "eghtesad-novin",
           "ok": false,
@@ -96,7 +96,7 @@
           "url": "https://parsian-bank.ir/"
         },
         {
-          "ageDays": 331,
+          "ageDays": 332,
           "empty": true,
           "id": "pasargad",
           "ok": false,
@@ -111,15 +111,13 @@
           "via": "direct"
         },
         {
-          "ageDays": 1512,
-          "empty": true,
+          "error": "همهٔ مسیرهای «https://www.refah-bank.ir/» بسته بود — direct: شبکه در دسترس نبود — https://www.refah-bank.ir/ | wayback: snapshot یافت نشد",
           "id": "refah",
           "ok": false,
-          "url": "https://www.refah-bank.ir/",
-          "via": "wayback"
+          "url": "https://www.refah-bank.ir/"
         },
         {
-          "ageDays": 1603,
+          "ageDays": 1604,
           "empty": true,
           "id": "maskan",
           "ok": false,
@@ -127,15 +125,13 @@
           "via": "wayback"
         },
         {
-          "ageDays": 508,
-          "empty": true,
+          "error": "همهٔ مسیرهای «https://www.karafarinbank.ir/» بسته بود — direct: شبکه در دسترس نبود — https://www.karafarinbank.ir/ | wayback: snapshot یافت نشد",
           "id": "karafarin",
           "ok": false,
-          "url": "https://www.karafarinbank.ir/",
-          "via": "wayback"
+          "url": "https://www.karafarinbank.ir/"
         },
         {
-          "ageDays": 1623,
+          "ageDays": 1624,
           "empty": true,
           "id": "shahr",
           "ok": false,
@@ -149,14 +145,13 @@
           "url": "https://www.sinabank.ir/"
         },
         {
-          "ageDays": 1680,
+          "error": "همهٔ مسیرهای «https://www.qmb.ir/» بسته بود — direct: شبکه در دسترس نبود — https://www.qmb.ir/ | wayback: snapshot یافت نشد",
           "id": "mehr-iran",
           "ok": false,
-          "url": "https://www.qmb.ir/",
-          "via": "wayback"
+          "url": "https://www.qmb.ir/"
         },
         {
-          "ageDays": 1293,
+          "ageDays": 1294,
           "empty": true,
           "id": "resalat",
           "ok": false,
@@ -164,7 +159,7 @@
           "via": "wayback"
         },
         {
-          "ageDays": 513,
+          "ageDays": 514,
           "empty": true,
           "id": "vipad",
           "ok": false,
@@ -172,7 +167,7 @@
           "via": "wayback"
         },
         {
-          "ageDays": 1845,
+          "ageDays": 1846,
           "empty": true,
           "id": "middle-east",
           "ok": false,
@@ -180,7 +175,7 @@
           "via": "wayback"
         },
         {
-          "ageDays": 524,
+          "ageDays": 525,
           "empty": true,
           "id": "keshavarzi",
           "ok": false,
@@ -201,7 +196,7 @@
           "via": "direct"
         },
         {
-          "ageDays": 177,
+          "ageDays": 178,
           "empty": true,
           "id": "tobank",
           "ok": false,
@@ -209,12 +204,12 @@
           "via": "wayback"
         }
       ],
-      "empty": 14,
-      "ms": 138128,
+      "empty": 12,
+      "ms": 146981,
       "name": "bank-sites",
       "ok": true,
       "reachable": 1,
-      "reached": 16,
+      "reached": 13,
       "targets": 24,
       "viaFallback": 1
     },
@@ -227,7 +222,7 @@
           "url": "https://www.amar.org.ir/english/Statistics-by-Topic/Consumer-Price-Index"
         }
       ],
-      "ms": 11032,
+      "ms": 11166,
       "name": "macro-indicators",
       "ok": true,
       "policy": {
@@ -243,7 +238,7 @@
     },
     {
       "degraded": true,
-      "ms": 3115,
+      "ms": 3156,
       "name": "dgshahr.com",
       "observedAt": "2026-10-12",
       "ok": true,
@@ -256,12 +251,12 @@
     {
       "etf": 38,
       "issuance": 29,
-      "ms": 3789,
+      "ms": 3268,
       "name": "isignal.ir",
       "ok": true,
       "origin": "api:signalpardazgroup.com",
       "page": {
-        "bytes": 72457,
+        "bytes": 79140,
         "ok": true,
         "url": "https://isignal.ir/fund/"
       },
@@ -274,7 +269,7 @@
     {
       "matched": 6,
       "mismatched": 0,
-      "ms": 25453,
+      "ms": 9101,
       "name": "crosscheck",
       "ok": true,
       "sources": [
@@ -282,7 +277,7 @@
           "ageDays": 0,
           "chain": "direct✓",
           "name": "finai",
-          "observedAt": "2026-11-11T11:17:59.220Z",
+          "observedAt": "2026-11-12T11:35:23.352Z",
           "ok": true,
           "values": 6,
           "via": "direct"
@@ -291,7 +286,7 @@
           "ageDays": 0,
           "chain": "direct✓",
           "name": "khanesarmaye",
-          "observedAt": "2026-11-11T11:18:18.649Z",
+          "observedAt": "2026-11-12T11:35:25.538Z",
           "ok": true,
           "values": 6,
           "via": "direct"
@@ -300,7 +295,7 @@
           "ageDays": 0,
           "chain": "direct✓",
           "name": "nabzgheymat",
-          "observedAt": "2026-11-11T11:18:22.162Z",
+          "observedAt": "2026-11-12T11:35:28.943Z",
           "ok": true,
           "values": 6,
           "via": "direct"
@@ -309,6 +304,6 @@
       "unverified": 0
     }
   ],
-  "stale": 0,
+  "stale": 6,
   "version": 2
 }
