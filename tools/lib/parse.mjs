@@ -172,6 +172,9 @@ export function parseTomanAmount(text) {
     const found = MULTIPLIERS.find((x) => x.re.test(unit));
     if (found) value *= found.mult;
   }
+  // عدد بدون واحد (مثل «۲» از «۲ ضامن» یا شمارش ردیف) مبلغ نیست؛ وگرنه مبلغی
+  // چند صد هزار برابر کوچک‌تر از واقعیت منتشر می‌شود (کف منطقی: هزار تومان).
+  if (!unit && value < 1000) return null;
   return Math.round(value);
 }
 

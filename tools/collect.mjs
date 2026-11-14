@@ -179,7 +179,16 @@ export function isThinScrape(candidate, current) {
   if (!Object.hasOwn(candidate, 'desc')) return false;
   const nextLen = String(candidate.desc ?? '').trim().length;
   const prevLen = String(current.desc ?? '').trim().length;
-  return nextLen < 40 && prevLen >= 40;
+  if (nextLen < 40 && prevLen >= 40) return true;
+  // desc که فقط عنوان خود محصول است (fallback منبع رده) و نرخ هم خوانده نشده،
+  // برداشت ناقص است و نباید نرخ واقعی رکورد موجود را صفر کند. شرط current.rate > 0
+  // وام قرض‌الحسنه با نرخ صفر مشروع را از این قفس خارج نگه می‌دارد تا مبالغش تازه بماند.
+  const rateMissing = candidate.rate == null || candidate.rate === 0;
+  if (rateMissing && current.rate > 0) {
+    const title = String(candidate.product ?? '').trim();
+    if (title && String(candidate.desc ?? '').trim() === title) return true;
+  }
+  return false;
 }
 
 export function mergeProducts(existing, incoming) {
@@ -587,7 +596,9 @@ async function main() {
         await writeJSON('crosscheck.json', ccResult.data);
         report.sources.push({
           name: 'crosscheck',
-          ok: ccResult.data.summary.matched > 0 || ccResult.data.summary.unverified < ccResult.data.checks.length,
+          // «همه منابع جایگزین مخالف بودند» بدترین حالت است و نباید سبز دیده شود؛
+          // اختلاف جزئی همراه با توافق کافی همچنان قابل قبول است.
+          ok: ccResult.data.summary.matched > 0 && ccResult.data.summary.mismatched < ccResult.data.checks.length,
           matched: ccResult.data.summary.matched,
           mismatched: ccResult.data.summary.mismatched,
           unverified: ccResult.data.summary.unverified,
