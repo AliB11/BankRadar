@@ -184,6 +184,62 @@
         "regulatory": {
           "type": "boolean"
         },
+        "stale": {
+          "type": "boolean",
+          "description": "رکورد خودکار که در واکشی‌های اخیر دیده نشده؛ ادغام و امتیاز اعتبار منبع بر آن تکیه دارند و باید boolean واقعی بمانند."
+        },
+        "autoDiscovered": {
+          "type": "boolean",
+          "description": "رکورد گردآوری خودکار در برابر دست‌نویس؛ مرز حفاظت فیلدهای ساختاری در ادغام و جریمه امتیاز است."
+        },
+        "sourceKind": {
+          "type": "string",
+          "description": "نوع منبع در برخی رکوردهای قدیمی‌تر به‌صورت فیلد سطح بالا؛ مقدار جدید فقط با enum مجاز source ثبت می‌شود."
+        },
+        "availabilitySource": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            },
+            "kind": {
+              "enum": [
+                "regulator",
+                "bank",
+                "aggregator",
+                "press",
+                "snapshot"
+              ]
+            }
+          },
+          "required": [
+            "title",
+            "url"
+          ],
+          "description": "منبع وضعیت عرضه (historical/available)؛ در رابط به‌صورت پیوند نمایش داده می‌شود."
+        },
+        "pros": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "cons": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "updateNote": {
+          "type": "string"
+        },
+        "extra": {
+          "type": "object",
+          "description": "فیلدهای الحاقی منبع (مثلاً NAV و ضامن صندوق‌ها)؛ بدون قرارداد ثابت."
+        },
         "lastUpdated": {
           "type": [
             "string",
