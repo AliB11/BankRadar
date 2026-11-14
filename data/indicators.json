@@ -4,7 +4,7 @@
     "realDepositReturnAnnual": -31.8,
     "realDepositReturnCbi": -28.4
   },
-  "generatedAt": "2026-11-13T11:19:14.202Z",
+  "generatedAt": "2026-11-14T10:45:32.900Z",
   "generator": "ممیزی مستند ۲۰۲۶-۱۱-۰۲؛ خط لوله tools/collect.mjs",
   "indicators": {
     "certificateRate": {
@@ -20,12 +20,12 @@
       "value": 23
     },
     "corridorCeilingRate": {
-      "changedAt": "2026-11-07T10:32:04.790Z",
+      "changedAt": "2026-11-14T10:45:32.900Z",
       "label": "نرخ اعتبارگیری قاعده‌مند (سقف کریدور)",
-      "observedDate": "1405/08/14",
-      "officialDate": "2026-11-05",
+      "observedDate": "1405/08/21",
+      "officialDate": "2026-11-12",
       "period": "آبان ۱۴۰۵",
-      "previousValue": 24,
+      "previousValue": 34,
       "source": {
         "kind": "regulator",
         "title": "بانک مرکزی — نرخ سود سیاستی (جدول هفتگی رسمی)",
@@ -137,12 +137,12 @@
       "value": 22.5
     },
     "depositFacilityRate": {
-      "changedAt": "2026-11-07T10:32:04.790Z",
+      "changedAt": "2026-11-14T10:45:32.900Z",
       "label": "نرخ سپرده‌گذاری قاعده‌مند",
-      "observedDate": "1405/08/14",
-      "officialDate": "2026-11-05",
+      "observedDate": "1405/08/21",
+      "officialDate": "2026-11-12",
       "period": "آبان ۱۴۰۵",
-      "previousValue": 17,
+      "previousValue": 26,
       "source": {
         "kind": "regulator",
         "title": "بانک مرکزی — نرخ سود سیاستی (جدول هفتگی رسمی)",
@@ -317,19 +317,19 @@
       "value": 88.7
     },
     "interbankRate": {
-      "changedAt": "2026-11-07T10:32:04.790Z",
+      "changedAt": "2026-11-14T10:45:32.900Z",
       "label": "نرخ سود بازار بین‌بانکی",
-      "observedDate": "1405/08/14",
-      "officialDate": "2026-11-05",
+      "observedDate": "1405/08/21",
+      "officialDate": "2026-11-12",
       "period": "آبان ۱۴۰۵",
-      "previousValue": 24,
+      "previousValue": 33.92,
       "source": {
         "kind": "regulator",
         "title": "بانک مرکزی — نرخ سود سیاستی (جدول هفتگی رسمی)",
         "url": "https://www.cbi.ir/PolicyRates/policyrates_fa.aspx"
       },
       "unit": "%",
-      "value": 33.92
+      "value": 33.79
     },
     "loanRateCeiling": {
       "corroboration": [
@@ -390,12 +390,12 @@
       "value": 4
     },
     "repoFloorRate": {
-      "changedAt": "2026-11-07T10:32:04.790Z",
+      "changedAt": "2026-11-14T10:45:32.900Z",
       "label": "حداقل نرخ توافق بازخرید",
-      "observedDate": "1405/08/14",
-      "officialDate": "2026-11-05",
+      "observedDate": "1405/08/21",
+      "officialDate": "2026-11-12",
       "period": "آبان ۱۴۰۵",
-      "previousValue": 23,
+      "previousValue": 32,
       "source": {
         "kind": "regulator",
         "title": "بانک مرکزی — نرخ سود سیاستی (جدول هفتگی رسمی)",
