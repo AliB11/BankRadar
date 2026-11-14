@@ -271,3 +271,58 @@ test('رکوردهای نگاشت‌شده هیچ موجودیت یا ارقام
     }
   }
 });
+
+/* ---------- رگرسیون: باگ‌های تجزیه که داده را بی‌صدا خراب می‌کردند ---------- */
+
+test('جداکننده اعشار فارسی (٫) نرخ را دو عدد مجزا نمی‌کند (۲۲٫۷۵ → ۲۲٫۷۵ نه ۷۵)', () => {
+  assert.deepEqual(parseRateCell('۲۲٫۷۵ درصد'), { rate: 22.75, floor: 22.75 });
+  assert.deepEqual(parseRateCell('۲۳٫۵ درصد'), { rate: 23.5, floor: 23.5 });
+  // فرمت با نقطه ASCII نباید تغییری کند
+  assert.deepEqual(parseRateCell('۲۶.۵٪'), { rate: 26.5, floor: 26.5 });
+});
+
+test('جداکننده هزارگان فارسی (٬) مبالغ را سه عدد مجزا نمی‌کند', () => {
+  assert.deepEqual(parseBandAmount('۱٬۵۰۰٬۰۰۰ تومان'), { min: 1_500_000, max: null });
+  assert.deepEqual(parseBandAmount('۱٬۰۰۰٬۰۰۰٬۰۰۰ تومان'), { min: 1_000_000_000, max: null });
+});
+
+test('جمع ترکیبی واحدهای نزولی («یک میلیارد و ۵۰۰ میلیون») یک مبلغ است، نه بازه', () => {
+  assert.deepEqual(parseBandAmount('یک میلیارد و ۵۰۰ میلیون تومان'), { min: 1_500_000_000, max: null });
+  assert.deepEqual(parseBandAmount('۵۰ میلیون و ۵۰۰ هزار تومان'), { min: 50_500_000, max: null });
+  // بازه‌های واقعی با «و» نباید جمع شوند
+  assert.deepEqual(parseBandAmount('۵۰ تا ۱۰۰ میلیون تومان'), { min: 50_000_000, max: 100_000_000 });
+  assert.deepEqual(parseBandAmount('۲۰ و ۳۰ میلیون تومان'), { min: 20_000_000, max: 30_000_000 });
+  // شکل‌های پیشین دست‌نخورده می‌مانند
+  assert.deepEqual(parseBandAmount('یک میلیارد تومان و بیش‌تر'), { min: 1_000_000_000, max: null });
+  assert.deepEqual(parseBandAmount('کم‌تر از ۵ میلیارد تومان'), { min: null, max: 5_000_000_000 });
+  assert.deepEqual(parseBandAmount('۲-۵ میلیارد تومان'), { min: 2_000_000_000, max: 5_000_000_000 });
+});
+
+test('سلول نرخ با عبارت «درصد سالانه» در خانه مدت نمی‌نشیند و بانک حذف نمی‌شود', () => {
+  const htmlOne = '<table>'
+    + '<tr><th>بانک</th><th>سقف نرخ سود</th><th>حداقل مدت</th><th>حداقل موجودی</th></tr>'
+    + '<tr><td>بانک آزمایشی</td><td>۲۳ درصد سالانه</td><td>یک ماه</td><td>۱۰۰ میلیون تومان</td></tr>'
+    + '</table>';
+  const { tierRows } = parseDgshahrHtml(htmlOne);
+  assert.equal(tierRows.length, 1, 'سطر باید پارس شود، نه بی‌صدا حذف');
+  assert.equal(tierRows[0].rate, 23, 'نرخ ۲۳ باید از «۲۳ درصد سالانه» بیاید');
+  assert.equal(tierRows[0].termText, 'یک ماه', 'مدت همچنان درست می‌ماند');
+  assert.equal(tierRows[0].minAmount, 100_000_000);
+});
+
+test('rowspan در سطرهای کوتاه‌تر از جدول به بانک بعدی نشت نمی‌کند', () => {
+  const htmlRows = '<table>'
+    + '<tr><th>بانک</th><th>سقف نرخ</th><th>مدت</th><th>حداقل موجودی</th></tr>'
+    + '<tr><td>بانک الف</td><td>٪۳۰</td><td>یک ماه</td><td rowspan="2">۵۰ میلیون تومان</td></tr>'
+    + '<tr><td>٪۲۳</td></tr>'
+    + '<tr><td>بانک ب</td><td>٪۲۵</td><td>۳ ماه</td><td>۲۰۰ میلیون تومان</td></tr>'
+    + '</table>';
+  const { tierRows } = parseDgshahrHtml(htmlRows);
+  const b = tierRows.find((r) => r.bank.trim() === 'بانک ب');
+  assert.ok(b, 'بانک ب باید پارس شود');
+  assert.equal(b.rate, 25);
+  assert.equal(b.minAmount, 200_000_000, 'مبلغ بانک الف به بانک ب نشت نکرده باشد');
+  // سطر کوتاه بانک الف هم carry را در جای درست مصرف کرده باشد
+  const short = tierRows.filter((r) => r.rate === 23);
+  assert.equal(short.length, 0, 'سطر بدون بانک (ادامه‌دار) در خروجی tier ثبت نمی‌شود');
+});

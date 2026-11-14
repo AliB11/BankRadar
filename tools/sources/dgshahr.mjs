@@ -85,7 +85,9 @@ export function normalizeRateText(text) {
 }
 
 function numTokens(text) {
-  const t = normalizeText(text).replace(/,/g, '');
+  const t = normalizeText(text)
+    .replace(/\u066b/g, '.') // جداکننده اعشار فارسی (٫) — وگرنه «۲۲٫۷۵» دو عدد مجزا می‌شود و max آن (۷۵) به‌عنوان نرخ منتشر می‌شد
+    .replace(/[\u066c,]/g, ''); // جداکننده هزارگان (٬ / ,) — وگرنه «۱٬۵۰۰٬۰۰۰» سه عدد مجزا می‌شود
   const out = [];
   const re = /(\d+(?:\.\d+)?)/g;
   let m;
@@ -108,7 +110,7 @@ function numTokens(text) {
  */
 export function parseBandAmount(text) {
   const raw = String(text || '');
-  const t = normalizeText(raw).replace(/,/g, '');
+  const t = normalizeText(raw).replace(/[\u066c,]/g, ''); // هزارگان فارسی (٬) و ASCII (,) حذف می‌شوند
   if (!t || t === '–' || t === '-') return { min: null, max: null };
 
   // سلولی که دربارهٔ «امتیاز» است مبلغ نیست (حتی اگر عدد و «هزار تومان»
@@ -136,10 +138,20 @@ export function parseBandAmount(text) {
     u === 'تریلیون' ? 1e12 : u === 'میلیارد' ? 1e9 : u === 'میلیون' ? 1e6 : u === 'هزار' ? 1e3 : 1;
   const values = toks.map((x) => Math.round(x.n * multOf(x.unit)));
 
-  if (/کم/.test(t) && /از/.test(t)) return { min: null, max: Math.max(...values) };
-  if (/بیش/.test(t)) return { min: Math.min(...values), max: null };
-  if (values.length >= 2) return { min: Math.min(...values), max: Math.max(...values) };
-  return { min: values[0], max: null };
+  // جمع ترکیبی واحدهای نزولی: «یک میلیارد و ۵۰۰ میلیون تومان» یک مبلغ است، نه بازه.
+  // شرط نزولی بودن، بازه‌های با «و» مثل «۲۰ و ۳۰ میلیون تومان» را دست‌نخورده نگه می‌دارد.
+  let list = values;
+  if (toks.length >= 2 && / و /.test(t)) {
+    const units = toks.map((x) => multOf(x.unit));
+    if (units.slice(1).every((mu, i) => mu < units[i]) && values.every((v) => v > 0)) {
+      list = [values.reduce((a, b) => a + b, 0)];
+    }
+  }
+
+  if (/کم/.test(t) && /از/.test(t)) return { min: null, max: Math.max(...list) };
+  if (/بیش/.test(t)) return { min: Math.min(...list), max: null };
+  if (list.length >= 2) return { min: Math.min(...list), max: Math.max(...list) };
+  return { min: list[0], max: null };
 }
 
 /** تجزیه سلول نرخ: همه اعداد نرخی؛ سقف = بزرگ‌ترین (قرارداد «تا X» داده‌ها) */
@@ -199,6 +211,7 @@ function extractTableGrids(html) {
 function expandRowspans(rawRows) {
   const grid = [];
   const carry = [];
+  let width = 0;
   for (const cells of rawRows) {
     const line = [];
     let i = 0;
@@ -216,7 +229,20 @@ function expandRowspans(rawRows) {
       if (c.rowspan > 1) carry[col] = { text: c.text, remaining: c.rowspan - 1 };
       col += 1;
     }
+    // سطرهای کوتاه‌تر از عرض جدول: carryهای ستون‌های بعدی باید در همین سطر مصرف شوند،
+    // وگرنه remaining آن‌ها کم نمی‌شد و متن بانک قبلی به سطرهای بعدی نشت می‌کرد.
+    while (col < width) {
+      if (carry[col]) {
+        line.push(carry[col].text);
+        carry[col].remaining -= 1;
+        if (carry[col].remaining <= 0) carry[col] = null;
+      } else {
+        line.push('');
+      }
+      col += 1;
+    }
     grid.push(line);
+    if (line.length > width) width = line.length;
   }
   return grid;
 }
@@ -238,6 +264,13 @@ function classifyTierCells(cells) {
     }
     if (t === '–' || t === '-') {
       if (slots.brk == null) slots.brk = t;
+      continue;
+    }
+    // «۲۳ درصد سالانه» نرخ است نه مدت — عبارت نرخ سالانه باید پیش از ماه/سال چک شود،
+    // وگرنه سلول نرخ در خانهٔ مدت می‌نشیند و بانک بی‌نرخ، بی‌صدا از خروجی حذف می‌شد.
+    if (/درصد\s*(سالانه|سالیانه|علی‌الحساب)/.test(t)) {
+      if (slots.rate == null) slots.rate = t;
+      else if (slots.brk == null) slots.brk = t;
       continue;
     }
     if (/ماه|سال/.test(t)) {
