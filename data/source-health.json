@@ -1,29 +1,29 @@
 {
-  "generatedAt": "2026-11-14T11:14:27.095Z",
-  "lastRun": "2026-11-14T11:13:52.850Z",
-  "lastRunMode": "weekly-sync",
+  "generatedAt": "2026-11-15T11:19:10.149Z",
+  "lastRun": "2026-11-15T11:19:10.034Z",
+  "lastRunMode": "full",
   "counts": {
     "credit": 110,
-    "deposits": 53,
+    "deposits": 58,
     "funds": 73,
     "loans": 362,
     "loyalty": 14,
-    "total": 612
+    "total": 617
   },
   "freshness": {
-    "d7": 316,
-    "d30": 75,
-    "d90": 151,
-    "older": 68,
+    "d7": 319,
+    "d30": 77,
+    "d90": 150,
+    "older": 69,
     "unknown": 2,
-    "total": 612,
+    "total": 617,
     "medianDays": 4
   },
   "categoryFreshness": {
     "deposits": {
-      "total": 53,
-      "fresh": 0,
-      "recent": 5,
+      "total": 58,
+      "fresh": 4,
+      "recent": 6,
       "aging": 47,
       "stale": 0,
       "unknown": 1
@@ -32,8 +32,8 @@
       "total": 110,
       "fresh": 45,
       "recent": 18,
-      "aging": 33,
-      "stale": 13,
+      "aging": 32,
+      "stale": 14,
       "unknown": 1
     },
     "loans": {
@@ -54,8 +54,8 @@
     },
     "funds": {
       "total": 73,
-      "fresh": 65,
-      "recent": 0,
+      "fresh": 64,
+      "recent": 1,
       "aging": 8,
       "stale": 0,
       "unknown": 0
@@ -220,24 +220,30 @@
       "name": "rade.ir",
       "status": "ok",
       "ok": true,
-      "parsed": 199
+      "parsed": 147
     },
     {
       "name": "bank-sites",
       "status": "ok",
       "ok": true,
       "reached": 1,
-      "targets": 24
+      "targets": 24,
+      "viaFallback": 1,
+      "empty": 14
     },
     {
       "name": "macro-indicators",
       "status": "ok",
-      "ok": true
+      "ok": true,
+      "sourcesOk": 3
     },
     {
       "name": "dgshahr.com",
-      "status": "ok",
+      "status": "degraded",
       "ok": true,
+      "degraded": true,
+      "via": "wayback",
+      "observedAt": "2026-10-12",
       "parsed": 31
     },
     {
@@ -254,9 +260,11 @@
       "mismatched": 0
     }
   ],
-  "degradedSources": [],
+  "degradedSources": [
+    "dgshahr.com"
+  ],
   "crosscheck": {
-    "generatedAt": "2026-11-14T10:45:47.413Z",
+    "generatedAt": "2026-11-15T11:19:09.945Z",
     "summary": {
       "matched": 6,
       "mismatched": 0,
@@ -272,7 +280,7 @@
   },
   "verdict": {
     "dataFresh": true,
-    "sourcesHealthy": true,
+    "sourcesHealthy": false,
     "note": "اعداد این گزارش از دادهٔ ثبت‌شده ساخته می‌شوند، نه از واکشی زنده."
   }
 }

@@ -2,75 +2,279 @@
   "autoDiscovered": 541,
   "counts": {
     "credit": 110,
-    "deposits": 53,
+    "deposits": 58,
     "funds": 73,
     "loans": 362,
     "loyalty": 14,
-    "total": 612
+    "total": 617
   },
   "freshness": {
-    "d30": 75,
-    "d7": 316,
-    "d90": 151,
-    "medianDays": 5,
-    "older": 68,
-    "total": 612,
+    "d30": 77,
+    "d7": 319,
+    "d90": 150,
+    "medianDays": 4,
+    "older": 69,
+    "total": 617,
     "unknown": 2
   },
-  "lastRun": "2026-11-14T11:13:52.850Z",
-  "lastRunDurationMs": 196614,
-  "lastRunMode": "weekly-sync",
+  "lastRun": "2026-11-15T11:19:10.034Z",
+  "lastRunDurationMs": 182220,
+  "lastRunMode": "full",
   "sources": [
     {
-      "attempted": 199,
+      "attempted": 148,
       "discovered": 619,
-      "ms": 24490,
+      "failures": 1,
+      "fresh": 120,
+      "ms": 25208,
       "name": "rade.ir",
       "ok": true,
-      "parsed": 199
+      "parsed": 147,
+      "rotated": 28
     },
     {
-      "ms": 129731,
+      "detail": [
+        {
+          "ageDays": 63,
+          "id": "blubank",
+          "ok": true,
+          "rates": [
+            23
+          ],
+          "url": "https://blubank.com/",
+          "via": "wayback"
+        },
+        {
+          "empty": true,
+          "id": "cbi-policy-rates",
+          "ok": false,
+          "url": "https://www.cbi.ir/PolicyRates/policyrates_fa.aspx",
+          "via": "direct"
+        },
+        {
+          "error": "همهٔ مسیرهای «https://bmi.ir/fa/deposit» بسته بود — direct: HTTP 403 Forbidden (HTTP 403) — https://bmi.ir/fa/deposit | mirror: HTTP 403 Forbidden (HTTP 403) — ",
+          "id": "melli-deposit",
+          "ok": false,
+          "url": "https://bmi.ir/fa/deposit"
+        },
+        {
+          "error": "همهٔ مسیرهای «https://bankmellat.ir/deposits» بسته بود — direct: شبکه در دسترس نبود — https://bankmellat.ir/deposits | mirror: شبکه در دسترس نبود — https://www.",
+          "id": "mellat-deposit",
+          "ok": false,
+          "url": "https://bankmellat.ir/deposits"
+        },
+        {
+          "error": "همهٔ مسیرهای «https://tejaratbank.ir/دپارتمان-حساب-سپرده» بسته بود — direct: شبکه در دسترس نبود — https://tejaratbank.ir/دپارتمان-حساب-سپرده | mirror: شبکه در د",
+          "id": "tejarat-deposit",
+          "ok": false,
+          "url": "https://tejaratbank.ir/دپارتمان-حساب-سپرده"
+        },
+        {
+          "error": "همهٔ مسیرهای «https://www.bsi.ir/Services/Deposits» بسته بود — direct: شبکه در دسترس نبود — https://www.bsi.ir/Services/Deposits | wayback: snapshot یافت نشد",
+          "id": "saderat-deposit",
+          "ok": false,
+          "url": "https://www.bsi.ir/Services/Deposits"
+        },
+        {
+          "error": "همهٔ مسیرهای «https://banksepah.ir/سپرده» بسته بود — direct: شبکه در دسترس نبود — https://banksepah.ir/سپرده | mirror: شبکه در دسترس نبود — https://www.banksepa",
+          "id": "sepah-deposit",
+          "ok": false,
+          "url": "https://banksepah.ir/سپرده"
+        },
+        {
+          "ageDays": 1111,
+          "empty": true,
+          "id": "eghtesad-novin",
+          "ok": false,
+          "url": "https://www.enbank.ir/",
+          "via": "wayback"
+        },
+        {
+          "error": "همهٔ مسیرهای «https://parsian-bank.ir/» بسته بود — direct: شبکه در دسترس نبود — https://parsian-bank.ir/ | mirror: شبکه در دسترس نبود — https://www.parsian-bank",
+          "id": "parsian",
+          "ok": false,
+          "url": "https://parsian-bank.ir/"
+        },
+        {
+          "ageDays": 335,
+          "empty": true,
+          "id": "pasargad",
+          "ok": false,
+          "url": "https://www.bpi.ir/",
+          "via": "wayback"
+        },
+        {
+          "empty": true,
+          "id": "saman",
+          "ok": false,
+          "url": "https://www.sb24.ir/",
+          "via": "direct"
+        },
+        {
+          "ageDays": 1516,
+          "empty": true,
+          "id": "refah",
+          "ok": false,
+          "url": "https://www.refah-bank.ir/",
+          "via": "wayback"
+        },
+        {
+          "ageDays": 1607,
+          "empty": true,
+          "id": "maskan",
+          "ok": false,
+          "url": "https://www.bank-maskan.ir/",
+          "via": "wayback"
+        },
+        {
+          "ageDays": 512,
+          "empty": true,
+          "id": "karafarin",
+          "ok": false,
+          "url": "https://www.karafarinbank.ir/",
+          "via": "wayback"
+        },
+        {
+          "ageDays": 1627,
+          "empty": true,
+          "id": "shahr",
+          "ok": false,
+          "url": "https://www.shahr-bank.ir/",
+          "via": "wayback"
+        },
+        {
+          "error": "همهٔ مسیرهای «https://www.sinabank.ir/» بسته بود — direct: شبکه در دسترس نبود — https://www.sinabank.ir/ | wayback: صفحهٔ «پیدا نشد» با کد ۲۰۰",
+          "id": "sina",
+          "ok": false,
+          "url": "https://www.sinabank.ir/"
+        },
+        {
+          "ageDays": 1684,
+          "id": "mehr-iran",
+          "ok": false,
+          "url": "https://www.qmb.ir/",
+          "via": "wayback"
+        },
+        {
+          "ageDays": 1297,
+          "empty": true,
+          "id": "resalat",
+          "ok": false,
+          "url": "https://www.rqbank.ir/",
+          "via": "wayback"
+        },
+        {
+          "ageDays": 517,
+          "empty": true,
+          "id": "vipad",
+          "ok": false,
+          "url": "https://wepod.ir/",
+          "via": "wayback"
+        },
+        {
+          "ageDays": 1849,
+          "empty": true,
+          "id": "middle-east",
+          "ok": false,
+          "url": "https://www.mebank.ir/",
+          "via": "wayback"
+        },
+        {
+          "ageDays": 528,
+          "empty": true,
+          "id": "keshavarzi",
+          "ok": false,
+          "url": "https://www.bki.ir/",
+          "via": "wayback"
+        },
+        {
+          "error": "همهٔ مسیرهای «https://www.gardeshgari-bank.com/» بسته بود — direct: شبکه در دسترس نبود — https://www.gardeshgari-bank.com/ | wayback: snapshot یافت نشد",
+          "id": "gardeshgari",
+          "ok": false,
+          "url": "https://www.gardeshgari-bank.com/"
+        },
+        {
+          "empty": true,
+          "id": "bankino",
+          "ok": false,
+          "url": "https://bankino.digital/",
+          "via": "direct"
+        },
+        {
+          "ageDays": 181,
+          "empty": true,
+          "id": "tobank",
+          "ok": false,
+          "url": "https://tobank.ir/",
+          "via": "wayback"
+        }
+      ],
+      "empty": 14,
+      "ms": 133307,
       "name": "bank-sites",
       "ok": true,
       "reachable": 1,
-      "targets": 24
+      "reached": 16,
+      "targets": 24,
+      "viaFallback": 1
     },
     {
-      "ms": 8788,
+      "failures": [
+        {
+          "error": "همهٔ مسیرهای «https://www.amar.org.ir/english/Statistics-by-Topic/Consumer-Price-Index» بسته بود — direct: شبکه در دسترس نبود — https://www.amar.org.ir/english/",
+          "label": "مرکز آمار ایران — شاخص قیمت مصرف‌کننده",
+          "source": "amar-cpi",
+          "url": "https://www.amar.org.ir/english/Statistics-by-Topic/Consumer-Price-Index"
+        }
+      ],
+      "ms": 8649,
       "name": "macro-indicators",
       "ok": true,
+      "policy": {
+        "latest": {
+          "date": "1405/08/21",
+          "interbank": 33.79,
+          "iso": "2026-11-12"
+        },
+        "rows": 34
+      },
+      "sourcesOk": 3,
       "touched": []
     },
     {
-      "ms": 4115,
+      "degraded": true,
+      "ms": 2468,
       "name": "dgshahr.com",
+      "observedAt": "2026-10-12",
       "ok": true,
       "parsed": 31,
       "schemes": 13,
-      "tiers": 51
+      "standard": 6,
+      "tiers": 51,
+      "via": "wayback"
     },
     {
       "etf": 38,
       "issuance": 29,
-      "live": true,
-      "ms": 2666,
+      "ms": 3678,
       "name": "isignal.ir",
       "ok": true,
       "origin": "api:signalpardazgroup.com",
       "page": {
-        "bytes": 79140,
+        "bytes": 79302,
         "ok": true,
         "url": "https://isignal.ir/fund/"
       },
       "parsed": 67,
       "refreshed": 8,
+      "rows": 599,
+      "skipped": 13,
       "unmapped": 93
     },
     {
       "matched": 6,
       "mismatched": 0,
-      "ms": 7692,
+      "ms": 8781,
       "name": "crosscheck",
       "ok": true,
       "sources": [
@@ -78,7 +282,7 @@
           "ageDays": 0,
           "chain": "direct✓",
           "name": "finai",
-          "observedAt": "2026-11-14T10:45:39.721Z",
+          "observedAt": "2026-11-15T11:19:01.164Z",
           "ok": true,
           "values": 6,
           "via": "direct"
@@ -87,7 +291,7 @@
           "ageDays": 0,
           "chain": "direct✓",
           "name": "khanesarmaye",
-          "observedAt": "2026-11-14T10:45:41.824Z",
+          "observedAt": "2026-11-15T11:19:03.031Z",
           "ok": true,
           "values": 6,
           "via": "direct"
@@ -96,7 +300,7 @@
           "ageDays": 0,
           "chain": "direct✓",
           "name": "nabzgheymat",
-          "observedAt": "2026-11-14T10:45:45.039Z",
+          "observedAt": "2026-11-15T11:19:07.859Z",
           "ok": true,
           "values": 6,
           "via": "direct"
