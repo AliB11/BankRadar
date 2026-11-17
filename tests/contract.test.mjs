@@ -186,9 +186,9 @@ test('کشوی جزئیات برای محصولات اعتباری، نوع عق
   assert.ok(html.includes(CONTRACT_META[loan.contractType].label), 'برچسب کامل نوع عقد باید دیده شود');
 });
 
-test('خروجی CSV ستون نوع عقد را دارد', async () => {
+test('خروجی اکسل ستون نوع عقد را دارد', async () => {
   const appSrc = fs.readFileSync(path.join(ROOT, 'assets/js/app.js'), 'utf8');
-  assert.match(appSrc, /'contractType'/, 'CSV_COLUMNS باید contractType را داشته باشد');
+  assert.match(appSrc, /CONTRACT_META\[p\.contractType\]/, 'خروجی اکسل باید نوع عقد را داشته باشد');
 });
 
 test('مقدار صریح contractType داده، بر استنتاج ارجحیت دارد', async () => {

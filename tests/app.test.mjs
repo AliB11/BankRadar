@@ -205,6 +205,19 @@ test('راه‌انداز سامانه روی پوسته واقعی بدون خ�
   assert.equal(doc.getElementById('drawer').classList.contains('is-open'), true, 'Enter باید محصول پیشنهادی فعال را باز کند');
   closeDirectResult.dispatchEvent(makeEvent('click', { target: closeDirectResult }));
 
+  // خروجی هر بخش مستقل از انتخاب مقایسه است و رتبه‌بندی بر اساس امتیاز مرتب می‌شود.
+  const chosen = app.store.products.find((p) => p.category !== app.store.filters.category);
+  app.store.compare.add(chosen.id);
+  assert.deepEqual(app.excelRows('filtered').map((p) => p.id), app.filtered().map((p) => p.id));
+  assert.deepEqual(app.excelRows('compare').map((p) => p.id), [chosen.id]);
+  assert.deepEqual(app.excelRows('detail', chosen.id).map((p) => p.id), [chosen.id]);
+  assert.equal(app.excelRows('all').length, products);
+  app.store.filters.sort = 'name';
+  const ranked = app.excelRows('rank');
+  assert.ok(ranked.every((p, i) => !i || app.store.scored.get(ranked[i - 1].id).score >= app.store.scored.get(p.id).score));
+  assert.ok(ranked.every((p) => p.availability !== 'historical'));
+  app.store.compare.clear();
+
   // ۷) شمارش کل محصولات تغییری نکرده است
   assert.equal(app.store.products.length, products, 'تعداد محصولات تغییر کرده است');
 });
