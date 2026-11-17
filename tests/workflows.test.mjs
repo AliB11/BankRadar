@@ -191,7 +191,7 @@ test('انتشار صفحات فقط از شاخه اصلی و با بسته ک�
   assert.match(source, /branches:\s*\[main\]/);
   assert.match(source, /id-token:\s*write/);
   assert.match(source, /pages:\s*write/);
-  for (const asset of ['index.html', 'assets', 'data/products.json', 'data/bundle.js', '.nojekyll']) {
+  for (const asset of ['index.html', 'assets', 'data/products.json', 'data/bundle.js', 'data/report.xlsx', '.nojekyll']) {
     assert.ok(source.includes(asset), `${asset} باید در بسته انتشار باشد`);
   }
 });
