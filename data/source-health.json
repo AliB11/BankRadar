@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-16T11:51:26.369Z",
-  "lastRun": "2026-11-16T11:51:26.239Z",
+  "generatedAt": "2026-11-17T12:11:24.601Z",
+  "lastRun": "2026-11-17T12:11:24.493Z",
   "lastRunMode": "full",
   "counts": {
     "credit": 110,
@@ -12,12 +12,12 @@
   },
   "freshness": {
     "d7": 320,
-    "d30": 77,
-    "d90": 149,
+    "d30": 76,
+    "d90": 150,
     "older": 70,
     "unknown": 2,
     "total": 618,
-    "medianDays": 4
+    "medianDays": 5
   },
   "categoryFreshness": {
     "deposits": {
@@ -39,8 +39,8 @@
     "loans": {
       "total": 363,
       "fresh": 207,
-      "recent": 52,
-      "aging": 48,
+      "recent": 51,
+      "aging": 49,
       "stale": 56,
       "unknown": 0
     },
@@ -229,7 +229,7 @@
       "reached": 1,
       "targets": 24,
       "viaFallback": 1,
-      "empty": 14
+      "empty": 13
     },
     {
       "name": "macro-indicators",
@@ -256,7 +256,7 @@
       "name": "crosscheck",
       "status": "ok",
       "ok": true,
-      "matched": 6,
+      "matched": 7,
       "mismatched": 0
     }
   ],
@@ -264,9 +264,9 @@
     "dgshahr.com"
   ],
   "crosscheck": {
-    "generatedAt": "2026-11-16T11:51:26.144Z",
+    "generatedAt": "2026-11-17T12:11:24.408Z",
     "summary": {
-      "matched": 6,
+      "matched": 7,
       "mismatched": 0,
       "unverified": 0
     },
