@@ -55,6 +55,7 @@ jobs:
           cp -r assets dist/
           mkdir -p dist/data
           cp data/products.json data/banks.json data/indicators.json data/meta.json data/bundle.js data/schema.json dist/data/
+          cp data/report.xlsx dist/data/
           cp data/weekly-report.json dist/data/ 2>/dev/null || true
           cp data/changelog.json dist/data/ 2>/dev/null || true
           cp data/changelog.md dist/data/ 2>/dev/null || true

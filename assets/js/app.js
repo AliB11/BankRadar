@@ -16,7 +16,7 @@ import {
 import { DEFAULT_WEIGHTS, WEIGHT_META, PRESETS } from './score.js';
 import { scheduleFor, scheduleLegacy, effectiveAnnualRate, realRate } from './finance.js';
 import { buildXlsx } from './xlsx.js';
-import * as view from './views.js';
+import * as view from './views.js?v=excel-20261117';
 
 /* ---------- اعلان ---------- */
 

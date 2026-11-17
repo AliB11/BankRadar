@@ -11,6 +11,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import { Blob as NodeBlob } from 'node:buffer';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -216,8 +217,58 @@ test('راه‌انداز سامانه روی پوسته واقعی بدون خ�
   const ranked = app.excelRows('rank');
   assert.ok(ranked.every((p, i) => !i || app.store.scored.get(ranked[i - 1].id).score >= app.store.scored.get(p.id).score));
   assert.ok(ranked.every((p) => p.availability !== 'historical'));
+  // کلیک واقعی روی کنش دانلود باید Blob اکسل و پیوند دانلود بسازد.
+  const oldBlob = globalThis.Blob;
+  globalThis.Blob = NodeBlob;
+  const oldCreate = URL.createObjectURL;
+  const oldRevoke = URL.revokeObjectURL;
+  const oldClick = Element.prototype.click;
+  let blob, filename;
+  URL.createObjectURL = (value) => { blob = value; return 'blob:test'; };
+  URL.revokeObjectURL = () => {};
+  Element.prototype.click = function () {
+    if (this.tagName === 'A') filename = this.download;
+    else oldClick.call(this);
+  };
+  try {
+    for (const scope of ['filtered', 'compare', 'detail', 'rank', 'indicators', 'charts', 'all']) {
+      blob = filename = null;
+      const button = new Element('button');
+      button.setAttribute('data-action', 'download-xlsx');
+      button.setAttribute('data-scope', scope);
+      if (scope === 'detail') button.setAttribute('data-id', chosen.id);
+      doc.body.append(button);
+      button.dispatchEvent(makeEvent('click', { target: button }));
+      assert.match(filename, new RegExp(`^bank-radar-${scope}-.*\\.xlsx$`));
+      assert.equal(blob.type, 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+      const bytes = new Uint8Array(await blob.arrayBuffer());
+      assert.deepEqual([...bytes.slice(0, 4)], [0x50, 0x4b, 0x03, 0x04]);
+      const contents = new TextDecoder().decode(bytes);
+      assert.ok(contents.includes('xl/workbook.xml'));
+      assert.ok(contents.includes('xl/worksheets/sheet1.xml'));
+      if (scope === 'detail' || scope === 'compare') assert.ok(contents.includes(chosen.product));
+      if (scope === 'charts') assert.ok(contents.includes('پوشش دسته‌ها'));
+      button.remove();
+    }
+  } finally {
+    globalThis.Blob = oldBlob;
+    URL.createObjectURL = oldCreate;
+    URL.revokeObjectURL = oldRevoke;
+    Element.prototype.click = oldClick;
+  }
   app.store.compare.clear();
 
   // ۷) شمارش کل محصولات تغییری نکرده است
   assert.equal(app.store.products.length, products, 'تعداد محصولات تغییر کرده است');
+});
+
+test('دکمه اکسل در نوار بالایی و مسیر نسخه‌دار برای عبور از کش موجود است', () => {
+  const index = read('index.html');
+  const app = read('assets/js/app.js');
+  const config = JSON.parse(read('vercel.json'));
+  assert.match(index, /data-action="download-xlsx" data-scope="filtered"[^>]*>▦ اکسل<\/button>/);
+  assert.match(index, /assets\/js\/app\.js\?v=excel-20261117/);
+  assert.match(app, /\.\/views\.js\?v=excel-20261117/);
+  const assetRule = config.headers.find((rule) => rule.source === '/assets/(.*)');
+  assert.match(assetRule.headers.find((header) => header.key === 'Cache-Control').value, /must-revalidate/);
 });
