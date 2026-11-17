@@ -478,33 +478,6 @@ function download(filename, content, type) {
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 
-const CSV_COLUMNS = [
-  'id', 'bank', 'product', 'category', 'subcategory', 'rate', 'rateKnown', 'rateKind', 'feeModel', 'availability',
-  'contractType',
-  'minAmount', 'maxAmount', 'termMonths', 'collateralKind', 'collateral',
-  'confidence', 'autoDiscovered', 'stale', 'lastUpdated', 'sourceUrl',
-];
-
-function exportCSV() {
-  const rows = store.compare.size
-    ? store.products.filter((p) => store.compare.has(p.id))
-    : filtered();
-
-  const csvEscape = (v) => `"${String(v ?? '').replace(/"/g, '""').replace(/\r?\n/g, ' ')}"`;
-  const lines = [CSV_COLUMNS.join(',')];
-  for (const p of rows) {
-    lines.push(
-      CSV_COLUMNS.map((c) => {
-        if (c === 'sourceUrl') return csvEscape(p.source?.url ?? '');
-        return csvEscape(p[c]);
-      }).join(','),
-    );
-  }
-  // BOM برای نمایش صحیح فارسی در Excel
-  download(`bank-radar-${todayISO()}.csv`, `\uFEFF${lines.join('\r\n')}`, 'text/csv;charset=utf-8');
-  toast(`${fa(rows.length)} رکورد در قالب CSV خروجی گرفته شد.`);
-}
-
 function exportJSON() {
   const payload = {
     generatedAt: new Date().toISOString(),
@@ -519,21 +492,24 @@ function exportJSON() {
 
 /* ---------- خروجی اکسل ---------- */
 
-/**
- * خروجی اکسل (.xlsx) سه‌برگه‌ای، بدون هیچ وابستگی خارجی (assets/js/xlsx.js).
- *
- * دامنهٔ ردیف‌ها با CSV یکی است: اگر سبدهای مقایسه چیزی دارد همان‌ها، وگرنه
- * نتیجهٔ فیلترهای جاری — یعنی «خروجی همان چیزی که می‌بینی».
- *
- * برگهٔ «محصولات» اعداد کلیدی (نرخ، سقف، امتیاز، بازده حقیقی) را به‌صورت سلول
- * عددی می‌نویسد تا کاربر بتواند در اکسل مرتب‌سازی و فرمول بزند؛ برگهٔ «شاخص‌های
- * کلان» و «خلاصه» زمینهٔ تصمیم و شرایط تولید داده را کنار جدول می‌آورند تا
- * گزارش بدون این صفحهٔ وب هم خودکفا باشد.
- */
-function exportExcel() {
-  const rows = store.compare.size
-    ? store.products.filter((p) => store.compare.has(p.id))
-    : filtered();
+/** ساخت گزارش برای دامنهٔ همان بخشی که کاربر انتخاب کرده است. */
+export function excelRows(scope, id) {
+  switch (scope) {
+    case 'all': return [...store.products];
+    case 'compare': return store.products.filter((p) => store.compare.has(p.id));
+    case 'rank': return view.rankedProducts(filtered()).slice(0, 8);
+    case 'detail': return store.products.filter((p) => p.id === id);
+    case 'indicators': return [];
+    default: return filtered();
+  }
+}
+
+function exportExcel(scope = 'filtered', id) {
+  const rows = excelRows(scope, id);
+  if ((scope === 'compare' || scope === 'detail') && !rows.length) {
+    toast('محصولی برای خروجی این بخش وجود ندارد.', 'bad');
+    return;
+  }
 
   const inflation = store.indicators?.inflationAnnual?.value ?? null;
   const checkedOf = (p) => p.lastSeen || p.lastVerified || p.source?.checked || p.lastUpdated || '';
@@ -547,9 +523,10 @@ function exportExcel() {
       p.subcategory || '',
       p.rateKnown === false || p.rateKind === 'none' ? null : p.rate,
       p.rateKind === 'fee' ? 'کارمزد' : p.rateKind === 'none' ? 'بدون نرخ' : 'سود',
-      p.maxAmount ?? null,
+      p.multiPlan ? null : p.maxAmount ?? null,
       p.minAmount ?? null,
-      p.termMonths ?? null,
+      p.multiPlan ? null : p.termMonths ?? null,
+      CONTRACT_META[p.contractType]?.label ?? p.contractType ?? '',
       result.score ?? null,
       result.realRate ?? null,
       p.collateral || '',
@@ -566,7 +543,7 @@ function exportExcel() {
 
   const indicatorRows = Object.entries(store.indicators ?? {})
     .filter(([, v]) => v && typeof v === 'object')
-    .map(([key, v]) => [key, v.label ?? '', typeof v.value === 'number' ? v.value : null, v.period ?? '', v.sourceKind ?? '']);
+    .map(([key, v]) => [key, v.label ?? '', typeof v.value === 'number' ? v.value : null, v.period ?? '', v.source?.kind ?? v.sourceKind ?? '', v.source?.url ?? '']);
 
   const s = summary();
   const summaryRows = [
@@ -577,29 +554,29 @@ function exportExcel() {
     ['تورم سالانه مرجع (%)', inflation],
     ['آخرین اجرای خط لوله', store.meta?.lastRun ?? ''],
     ['نوع اجرا', store.meta?.lastRunMode ?? ''],
-    ['دامنهٔ ردیف‌ها', store.compare.size ? `سبد مقایسه (${rows.length} محصول)` : `فیلترهای جاری (${rows.length} محصول)`],
+    ['دامنهٔ ردیف‌ها', `${scope} (${rows.length} محصول)`],
     ...Object.entries(store.filters ?? {}).map(([k, v]) => [`فیلتر: ${k}`, String(v)]),
     ...Object.entries(store.weights ?? DEFAULT_WEIGHTS).map(([k, v]) => [`وزن: ${WEIGHT_META[k]?.label ?? k}`, v]),
     ...Object.entries(CATEGORY_META).map(([key, meta]) => [`دسته: ${meta.title}`, s.byCategory[key] ?? 0]),
   ];
 
-  const bytes = buildXlsx([
+  const sheets = [
     {
       name: 'محصولات',
       columns: [
         'بانک / نهاد', 'محصول', 'دسته', 'زیردسته', 'نرخ یا کارمزد (٪)', 'نوع نرخ',
-        'سقف (تومان)', 'حداقل (تومان)', 'مدت (ماه)', 'امتیاز جذابیت', 'بازده/هزینه حقیقی (٪)',
+        'سقف (تومان)', 'حداقل (تومان)', 'مدت (ماه)', 'نوع عقد', 'امتیاز جذابیت', 'بازده/هزینه حقیقی (٪)',
         'وثیقه', 'نوع وثیقه', 'اطمینان منبع', 'نیازمند بازبینی', 'وضعیت عرضه',
         'آخرین کنترل', 'به‌روزرسانی منبع', 'لینک منبع', 'توضیح',
       ],
       rows: productRows,
-      widths: [22, 30, 12, 14, 14, 9, 16, 16, 9, 12, 17, 18, 13, 12, 12, 11, 13, 13, 30, 44],
+      widths: [22, 30, 12, 14, 14, 9, 16, 16, 9, 16, 12, 17, 18, 13, 12, 12, 11, 13, 13, 30, 44],
     },
     {
       name: 'شاخص‌های کلان',
-      columns: ['کلید', 'عنوان', 'مقدار', 'دوره', 'نوع منبع'],
+      columns: ['کلید', 'عنوان', 'مقدار', 'دوره', 'نوع منبع', 'لینک منبع'],
       rows: indicatorRows,
-      widths: [22, 34, 12, 14, 12],
+      widths: [22, 34, 12, 14, 12, 36],
     },
     {
       name: 'خلاصه',
@@ -607,10 +584,19 @@ function exportExcel() {
       rows: summaryRows,
       widths: [30, 44],
     },
-  ]);
-
-  download(`bank-radar-${todayISO()}.xlsx`, bytes, 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-  toast(`${fa(rows.length)} رکورد در قالب اکسل (سه برگه) خروجی گرفته شد.`);
+  ];
+  if (scope === 'charts') {
+    const ranges = (kind) => (store.ranges?.[kind] ?? []).map((r) => [r.label, r.rate ?? null, r.note ?? '']);
+    sheets.push(
+      { name: 'نرخ سپرده', columns: ['عنوان', 'نرخ (٪)', 'توضیح'], rows: ranges('depositCaps') },
+      { name: 'نرخ تسهیلات', columns: ['عنوان', 'نرخ (٪)', 'توضیح'], rows: ranges('loanCaps') },
+      { name: 'پوشش دسته‌ها', columns: ['دسته', 'تعداد'], rows: Object.entries(CATEGORY_META).map(([key, meta]) => [meta.title, s.byCategory[key] ?? 0]) },
+      { name: 'مزیت مالی', columns: ['بانک', 'محصول', 'مزیت خام'], rows: [...rows].sort((a, b) => b.benefit - a.benefit).slice(0, 6).map((p) => [p.bank, p.product, Math.round(p.benefit)]) },
+    );
+  }
+  const bytes = buildXlsx(sheets);
+  download(`bank-radar-${scope}-${todayISO()}.xlsx`, bytes, 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+  toast(`خروجی اکسل ساخته شد (${fa(rows.length)} محصول).`);
 }
 
 /* ---------- بارگذاری داده دستی ---------- */
@@ -903,11 +889,8 @@ function bindEvents() {
       case 'close-method':
         closeModal('#method-modal');
         break;
-      case 'download-csv':
-        exportCSV();
-        break;
       case 'download-xlsx':
-        exportExcel();
+        exportExcel(actionEl.dataset.scope || 'filtered', id);
         break;
       case 'download-json':
         exportJSON();

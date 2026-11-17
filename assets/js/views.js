@@ -64,6 +64,7 @@ export function heroHTML() {
         داده‌ها از منابع رسمی بانک‌ها، بانک مرکزی و مراجع مقایسه‌ای گردآوری و به‌صورت خودکار به‌روزرسانی می‌شوند.
       </p>
 
+      <button class="btn btn--sm" type="button" data-action="download-xlsx" data-scope="indicators">خروجی اکسل شاخص‌ها</button>
       <div class="macro-strip">
         ${macroCell(periodLabel('تورم سالانه', 'inflationAnnual'), inflation != null ? faPercent(inflation) : '—', 'var(--danger)')}
         ${macroCell(periodLabel('مرجع سپرده یک‌ساله', 'depositCap1y'), depositCap != null ? faPercent(depositCap) : '—')}
@@ -309,7 +310,7 @@ export function toolbarHTML(rows) {
       مقایسه <span class="chip chip--info" style="margin-inline-start:4px">${fa(store.compare.size)}</span>
     </button>
     <button class="btn btn--sm btn--primary" type="button" data-action="download-xlsx"
-      title="خروجی اکسل سه‌برگه‌ای: محصولات فیلترشده یا سبدهای مقایسه + شاخص‌های کلان + خلاصه">
+      data-scope="filtered" title="خروجی اکسل محصولات فیلترشده">
       <span aria-hidden="true">▦</span> خروجی اکسل
     </button>
     <button class="btn btn--sm" type="button" data-action="open-data">مرکز داده</button>
@@ -505,8 +506,13 @@ function emptyHTML() {
 
 /* ---------- رتبه‌بندی ---------- */
 
+export function rankedProducts(rows) {
+  return rows.filter((p) => p.availability !== 'historical')
+    .sort((a, b) => resultOf(b.id).score - resultOf(a.id).score);
+}
+
 export function rankHTML(rows) {
-  const eligible = rows.filter((p) => p.availability !== 'historical');
+  const eligible = rankedProducts(rows);
   const top = eligible.slice(0, 8);
   const meta = CATEGORY_META[store.filters.category];
 
@@ -526,7 +532,7 @@ export function rankHTML(rows) {
           بر پایه وزن‌های جاری شما و با تعدیل نرخ حقیقی · ${esc(meta.desc)}
         </p>
       </div>
-      <span class="chip">${fa(eligible.length)} محصول در رتبه‌بندی</span>
+      <div class="row"><span class="chip">${fa(eligible.length)} محصول در رتبه‌بندی</span> <button class="btn btn--sm" type="button" data-action="download-xlsx" data-scope="rank">خروجی اکسل رتبه‌بندی</button></div>
     </div>
 
     <div class="rank-list">
@@ -683,8 +689,7 @@ export function compareHTML() {
           title="نمایش جدول مقایسه در کل صفحه">حالت تمام‌عرض</button>
         <button class="btn btn--sm" type="button" data-action="copy-compare-link"
           title="کپی لینکی که این همین انتخاب مقایسه را برای دیگران باز می‌کند">کپی لینک</button>
-        <button class="btn btn--sm btn--primary" type="button" data-action="download-xlsx">خروجی اکسل</button>
-        <button class="btn btn--sm" type="button" data-action="download-csv">خروجی CSV</button>
+        <button class="btn btn--sm btn--primary" type="button" data-action="download-xlsx" data-scope="compare">خروجی اکسل مقایسه</button>
         <button class="btn btn--sm btn--danger" type="button" data-action="clear-compare">پاک‌کردن</button>
       </div>
     </div>
@@ -765,6 +770,7 @@ export function chartsHTML(rows) {
     }));
 
   return `
+  <div class="row row-between" style="margin-block-start:var(--sp-5)"><h3>نمودارها</h3><button class="btn btn--sm" type="button" data-action="download-xlsx" data-scope="charts">خروجی اکسل داده‌های نمودارها</button></div>
   <section class="chart-grid" style="margin-block-start:var(--sp-5)">
     <div class="panel chart-card">
       <div class="chart-head">
@@ -922,6 +928,7 @@ export function detailHTML(p) {
   </div>
 
   <div class="drawer-body">
+    <button class="btn btn--sm" type="button" data-action="download-xlsx" data-scope="detail" data-id="${esc(p.id)}">خروجی اکسل این محصول</button>
     ${p.availability === 'historical' ? `<p class="chip chip--warn">${esc(p.availabilityNote || 'این رکورد تاریخی است؛ امکان عرضه جدید آن تأیید نشده است.')} ${p.availabilitySource?.url ? `<a href="${safeUrl(p.availabilitySource.url)}" target="_blank" rel="noopener noreferrer">اطلاعیه مرجع</a>` : ''}</p>` : ''}
     <div class="row row-between" style="margin-block-end:var(--sp-4)">
       <div class="score-ring" style="width:74px;height:74px">
@@ -1279,8 +1286,7 @@ export function dataModalHTML() {
     <div class="row" style="margin-block-start:var(--sp-3)">
       <button class="btn btn--primary btn--sm" type="button" data-action="import-json">بارگذاری JSON</button>
       <button class="btn btn--sm" type="button" data-action="download-json">خروجی JSON فعلی</button>
-      <button class="btn btn--sm btn--primary" type="button" data-action="download-xlsx">خروجی اکسل</button>
-      <button class="btn btn--sm" type="button" data-action="download-csv">خروجی CSV</button>
+      <button class="btn btn--sm btn--primary" type="button" data-action="download-xlsx" data-scope="all">خروجی اکسل همه محصولات</button>
       <button class="btn btn--sm btn--danger" type="button" data-action="reset-local">پاک‌کردن داده محلی</button>
     </div>
   </div>`;
