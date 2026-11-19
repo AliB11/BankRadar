@@ -9,8 +9,8 @@
     "total": 657
   },
   "disclaimer": "هر رکورد دارای منبع و تاریخ کنترل است. نرخ‌های سود تابع مصوبات شورای پول و اعتبار و بخشنامه‌های بانک مرکزی است و بانک‌ها می‌توانند شرایط را تغییر دهند. پیش از اقدام، شرایط را از منبع رسمی بانک تأیید کنید.",
-  "generatedAt": "2026-11-19T11:55:00.008Z",
-  "generator": "tools/collect.mjs",
+  "generatedAt": "2026-11-19T13:58:34.888Z",
+  "generator": "tools/sync-weekly.mjs",
   "products": [
     {
       "amountLabel": "از ۱ میلیون تا مبالغ میلیاردی",
@@ -75,7 +75,6 @@
       "friction": 94,
       "id": "blu-bigbox",
       "lastUpdated": null,
-      "lastVerified": "2026-11-14",
       "maxAmount": null,
       "minAmount": 0,
       "paymentSchedule": "monthly",
@@ -89,7 +88,6 @@
         "تأیید هویت دیجیتال"
       ],
       "source": {
-        "checked": "2026-11-14",
         "kind": "press",
         "title": "سپرده سرمایه‌گذاری بلندمدت بلو با ۲۰٫۵ درصد سود (ویستا — بازنشر مجله بلوبانک)",
         "url": "https://vista.ir/2609/232/e3rce/"
@@ -776,7 +774,6 @@
       "digital": 70,
       "friction": 80,
       "id": "keshavarzi-deposit-pref-25",
-      "lastVerified": "2026-11-14",
       "maxAmount": null,
       "minAmount": 500000000,
       "product": "سپرده با سود ترجیحی بانک کشاورزی (سقف ۲۵٪ برای مبالغ بالا)",
@@ -787,7 +784,6 @@
         "مانده حداقل ۵۰۰ میلیون تومان برای سقف نرخ"
       ],
       "source": {
-        "checked": "2026-11-14",
         "kind": "aggregator",
         "title": "FinAI — جدول سقف سود سپرده بانک‌ها ۱۴۰۵",
         "url": "https://finai.ir/blog/bank-deposit-interest-1405"
@@ -1188,7 +1184,6 @@
       "digital": 70,
       "friction": 80,
       "id": "middle-east-deposit-pref-25",
-      "lastVerified": "2026-11-14",
       "maxAmount": null,
       "minAmount": 200000000,
       "product": "سپرده با سود ترجیحی بانک خاورمیانه (سقف ۲۵٪ برای مبالغ بالا)",
@@ -1199,7 +1194,6 @@
         "مانده حداقل ۲۰۰ میلیون تومان برای سقف نرخ"
       ],
       "source": {
-        "checked": "2026-11-14",
         "kind": "aggregator",
         "title": "FinAI — جدول سقف سود سپرده بانک‌ها ۱۴۰۵",
         "url": "https://finai.ir/blog/bank-deposit-interest-1405"
@@ -1628,7 +1622,7 @@
       },
       "friction": 85,
       "id": "rade-704361",
-      "lastSeen": "2026-11-14",
+      "lastSeen": "2026-11-19",
       "lastUpdated": "2026-11-01",
       "lastVerified": "2026-10-16",
       "maxAmount": null,
@@ -1646,7 +1640,7 @@
       "regulatory": false,
       "requirements": [],
       "source": {
-        "checked": "2026-11-14",
+        "checked": "2026-11-19",
         "kind": "aggregator",
         "title": "رده — سپرده وینگر بانک اقتصاد نوین",
         "url": "https://www.rade.ir/bank-account-checking-account/704361-%d8%b3%d9%be%d8%b1%d8%af%d9%87-%d9%88%db%8c%d9%86%da%af%d8%b1-%d8%a8%d8%a7%d9%86%da%a9-%d8%a7%d9%82%d8%aa%d8%b5%d8%a7%d8%af-%d9%86%d9%88%db%8c%d9%86/"
@@ -1687,7 +1681,7 @@
       },
       "friction": 85,
       "id": "rade-705203",
-      "lastSeen": "2026-11-14",
+      "lastSeen": "2026-11-19",
       "lastUpdated": "2026-11-01",
       "lastVerified": "2026-10-16",
       "maxAmount": null,
@@ -1706,7 +1700,7 @@
       "regulatory": false,
       "requirements": [],
       "source": {
-        "checked": "2026-11-14",
+        "checked": "2026-11-19",
         "kind": "aggregator",
         "title": "رده — سپرده رفاه فردا بانک رفاه کارگران",
         "url": "https://www.rade.ir/bank-account-special-deposit/705203-%d8%b3%d9%be%d8%b1%d8%af%d9%87-%d8%b1%d9%81%d8%a7%d9%87-%d9%81%d8%b1%d8%af%d8%a7-%d8%a8%d8%a7%d9%86%da%a9-%d8%b1%d9%81%d8%a7%d9%87-%da%a9%d8%a7%d8%b1%da%af%d8%b1%d8%a7%d9%86/"
@@ -1747,7 +1741,7 @@
       },
       "friction": 85,
       "id": "rade-705678",
-      "lastSeen": "2026-11-14",
+      "lastSeen": "2026-11-19",
       "lastUpdated": "2026-11-01",
       "lastVerified": "2026-10-16",
       "maxAmount": null,
@@ -1766,7 +1760,7 @@
       "regulatory": false,
       "requirements": [],
       "source": {
-        "checked": "2026-11-14",
+        "checked": "2026-11-19",
         "kind": "aggregator",
         "title": "رده — سپرده بلندمدت دومینو بانک خاورمیانه",
         "url": "https://www.rade.ir/bank-account-time-deposit/705678-%d8%b3%d9%be%d8%b1%d8%af%d9%87-%d8%a8%d9%84%d9%86%d8%af%d9%85%d8%af%d8%aa-%d8%af%d9%88%d9%85%db%8c%d9%86%d9%88-%d8%a8%d8%a7%d9%86%da%a9-%d8%ae%d8%a7%d9%88%d8%b1%d9%85%db%8c%d8%a7%d9%86%d9%87/"
@@ -1807,7 +1801,7 @@
       },
       "friction": 85,
       "id": "rade-707739",
-      "lastSeen": "2026-11-14",
+      "lastSeen": "2026-11-19",
       "lastUpdated": "2026-11-01",
       "lastVerified": "2026-10-16",
       "maxAmount": null,
@@ -1826,7 +1820,7 @@
       "regulatory": false,
       "requirements": [],
       "source": {
-        "checked": "2026-11-14",
+        "checked": "2026-11-19",
         "kind": "aggregator",
         "title": "رده — طرح سرمایه‌گذاری رستا ویپاد بانک پاسارگاد",
         "url": "https://www.rade.ir/bank-account-special-deposit/707739-%d8%b7%d8%b1%d8%ad-%d8%b3%d8%b1%d9%85%d8%a7%db%8c%d9%87%da%af%d8%b0%d8%a7%d8%b1%db%8c-%d8%b1%d8%b3%d8%aa%d8%a7-%d9%88%db%8c%d9%be%d8%a7%d8%af/"
@@ -1867,7 +1861,7 @@
       },
       "friction": 85,
       "id": "rade-707740",
-      "lastSeen": "2026-11-14",
+      "lastSeen": "2026-11-19",
       "lastUpdated": "2026-11-01",
       "lastVerified": "2026-10-16",
       "maxAmount": null,
@@ -1886,7 +1880,7 @@
       "regulatory": false,
       "requirements": [],
       "source": {
-        "checked": "2026-11-14",
+        "checked": "2026-11-19",
         "kind": "aggregator",
         "title": "رده — طرح سرمایه‌گذاری بیست+ ویپاد بانک پاسارگاد",
         "url": "https://www.rade.ir/bank-account-special-deposit/707740-%d8%b7%d8%b1%d8%ad-%d8%b3%d8%b1%d9%85%d8%a7%db%8c%d9%87%da%af%d8%b0%d8%a7%d8%b1%db%8c-%d8%a8%db%8c%d8%b3%d8%aa-%d9%88%db%8c%d9%be%d8%a7%d8%af/"
@@ -2064,7 +2058,6 @@
       "friction": 80,
       "id": "refah-special-certificate-farmad",
       "lastUpdated": "2026-10-28",
-      "lastVerified": "2026-11-14",
       "maxAmount": null,
       "minAmount": null,
       "paymentSchedule": "monthly",
@@ -2078,7 +2071,6 @@
         "اوراق با نام و الکترونیکی"
       ],
       "source": {
-        "checked": "2026-11-14",
         "kind": "bank",
         "title": "اطلاعیه رسمی بانک رفاه کارگران — انتشار اوراق گواهی سپرده خاص",
         "url": "https://refah-bank.rkb24.ir/3003-6-3638/index.html"
@@ -2779,7 +2771,6 @@
       "friction": 80,
       "id": "tejarat-special-certificate-choopan",
       "lastUpdated": null,
-      "lastVerified": "2026-11-14",
       "maxAmount": null,
       "minAmount": null,
       "paymentSchedule": "variable",
@@ -2793,7 +2784,6 @@
         "اوراق با نام و غیرقابل انتقال به غیر"
       ],
       "source": {
-        "checked": "2026-11-14",
         "kind": "bank",
         "title": "بانک تجارت — پذیره‌نویسی اوراق گواهی سپرده مدت‌دار ویژه سرمایه‌گذاری خاص",
         "url": "https://www.tejaratbank.ir/news/2458423-bt.html"
@@ -3595,7 +3585,7 @@
       },
       "friction": 72,
       "id": "rade-704689",
-      "lastSeen": "2026-11-14",
+      "lastSeen": "2026-11-19",
       "lastUpdated": "2026-05-20",
       "lastVerified": "2026-10-16",
       "maxAmount": 200000000,
@@ -3613,7 +3603,7 @@
         "قسط تقریبی: ۱۲,۵۷۱,۲۸۶ تومان"
       ],
       "source": {
-        "checked": "2026-11-14",
+        "checked": "2026-11-19",
         "kind": "aggregator",
         "title": "رده — وام نسیم خرید بانک سرمایه",
         "url": "https://www.rade.ir/loan-goods-loan/704689-%d9%88%d8%a7%d9%85-%d9%86%d8%b3%db%8c%d9%85-%d8%ae%d8%b1%db%8c%d8%af-%d8%a8%d8%a7%d9%86%da%a9-%d8%b3%d8%b1%d9%85%d8%a7%db%8c%d9%87/"
@@ -5303,7 +5293,7 @@
       },
       "friction": 72,
       "id": "rade-704848",
-      "lastSeen": "2026-11-14",
+      "lastSeen": "2026-11-19",
       "lastUpdated": null,
       "maxAmount": 100000000,
       "minAmount": null,
@@ -5320,7 +5310,7 @@
         "قسط تقریبی: ۳,۲۰۵,۱۴۷ تومان"
       ],
       "source": {
-        "checked": "2026-11-14",
+        "checked": "2026-11-19",
         "kind": "aggregator",
         "title": "رده — وام بدون ضامن پست بانک",
         "url": "https://www.rade.ir/loan-no-guarantor-loans/704848-%d9%88%d8%a7%d9%85-%d8%a8%d8%af%d9%88%d9%86-%d8%b6%d8%a7%d9%85%d9%86-%d9%be%d8%b3%d8%aa-%d8%a8%d8%a7%d9%86%da%a9/"
@@ -5358,7 +5348,7 @@
       },
       "friction": 72,
       "id": "rade-704849",
-      "lastSeen": "2026-11-14",
+      "lastSeen": "2026-11-19",
       "lastUpdated": null,
       "maxAmount": 100000000,
       "minAmount": null,
@@ -5375,7 +5365,7 @@
         "قسط تقریبی: ۲,۲۷۲,۷۲۷ تومان"
       ],
       "source": {
-        "checked": "2026-11-14",
+        "checked": "2026-11-19",
         "kind": "aggregator",
         "title": "رده — وام بدون ضامن بانک مهر ایران",
         "url": "https://www.rade.ir/loan-no-guarantor-loans/704849-%d9%88%d8%a7%d9%85-%d8%a8%d8%af%d9%88%d9%86-%d8%b6%d8%a7%d9%85%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%87%d8%b1-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
@@ -5413,7 +5403,7 @@
       },
       "friction": 72,
       "id": "rade-704850",
-      "lastSeen": "2026-11-14",
+      "lastSeen": "2026-11-19",
       "lastUpdated": null,
       "maxAmount": 100000000,
       "minAmount": null,
@@ -5430,7 +5420,7 @@
         "قسط تقریبی: ۳,۲۰۵,۱۴۷ تومان"
       ],
       "source": {
-        "checked": "2026-11-14",
+        "checked": "2026-11-19",
         "kind": "aggregator",
         "title": "رده — وام بدون ضامن بانک ملی",
         "url": "https://www.rade.ir/loan-no-guarantor-loans/704850-%d9%88%d8%a7%d9%85-%d8%a8%d8%af%d9%88%d9%86-%d8%b6%d8%a7%d9%85%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%84%db%8c/"
@@ -5468,7 +5458,7 @@
       },
       "friction": 72,
       "id": "rade-704851",
-      "lastSeen": "2026-11-14",
+      "lastSeen": "2026-11-19",
       "lastUpdated": null,
       "maxAmount": 100000000,
       "minAmount": null,
@@ -5485,7 +5475,7 @@
         "قسط تقریبی: ۳,۲۰۵,۱۴۷ تومان"
       ],
       "source": {
-        "checked": "2026-11-14",
+        "checked": "2026-11-19",
         "kind": "aggregator",
         "title": "رده — وام بدون ضامن بانک ملت",
         "url": "https://www.rade.ir/loan-no-guarantor-loans/704851-%d9%88%d8%a7%d9%85-%d8%a8%d8%af%d9%88%d9%86-%d8%b6%d8%a7%d9%85%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%84%d8%aa/"
@@ -5523,7 +5513,7 @@
       },
       "friction": 72,
       "id": "rade-704852",
-      "lastSeen": "2026-11-14",
+      "lastSeen": "2026-11-19",
       "lastUpdated": null,
       "maxAmount": 100000000,
       "minAmount": null,
@@ -5540,7 +5530,7 @@
         "قسط تقریبی: ۳,۲۰۵,۱۴۷ تومان"
       ],
       "source": {
-        "checked": "2026-11-14",
+        "checked": "2026-11-19",
         "kind": "aggregator",
         "title": "رده — وام بدون ضامن بانک مسکن",
         "url": "https://www.rade.ir/loan-no-guarantor-loans/704852-%d9%88%d8%a7%d9%85-%d8%a8%d8%af%d9%88%d9%86-%d8%b6%d8%a7%d9%85%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d8%b3%da%a9%d9%86/"
@@ -5578,7 +5568,7 @@
       },
       "friction": 72,
       "id": "rade-704853",
-      "lastSeen": "2026-11-14",
+      "lastSeen": "2026-11-19",
       "lastUpdated": null,
       "maxAmount": 100000000,
       "minAmount": null,
@@ -5595,7 +5585,7 @@
         "قسط تقریبی: ۳,۲۰۵,۱۴۷ تومان"
       ],
       "source": {
-        "checked": "2026-11-14",
+        "checked": "2026-11-19",
         "kind": "aggregator",
         "title": "رده — وام بدون ضامن بانک کشاورزی",
         "url": "https://www.rade.ir/loan-no-guarantor-loans/704853-%d9%88%d8%a7%d9%85-%d8%a8%d8%af%d9%88%d9%86-%d8%b6%d8%a7%d9%85%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%da%a9%d8%b4%d8%a7%d9%88%d8%b1%d8%b2%db%8c/"
@@ -5633,7 +5623,7 @@
       },
       "friction": 72,
       "id": "rade-704854",
-      "lastSeen": "2026-11-14",
+      "lastSeen": "2026-11-19",
       "lastUpdated": null,
       "maxAmount": 100000000,
       "minAmount": null,
@@ -5650,7 +5640,7 @@
         "قسط تقریبی: ۳,۲۰۵,۱۴۷ تومان"
       ],
       "source": {
-        "checked": "2026-11-14",
+        "checked": "2026-11-19",
         "kind": "aggregator",
         "title": "رده — وام بدون ضامن بانک صادرات",
         "url": "https://www.rade.ir/loan-no-guarantor-loans/704854-%d9%88%d8%a7%d9%85-%d8%a8%d8%af%d9%88%d9%86-%d8%b6%d8%a7%d9%85%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d8%b5%d8%a7%d8%af%d8%b1%d8%a7%d8%aa/"
@@ -5688,7 +5678,7 @@
       },
       "friction": 72,
       "id": "rade-704855",
-      "lastSeen": "2026-11-14",
+      "lastSeen": "2026-11-19",
       "lastUpdated": null,
       "maxAmount": 50000000,
       "minAmount": 3000000,
@@ -5705,7 +5695,7 @@
         "قسط تقریبی: ۱,۹۳۵,۴۸۶ تومان"
       ],
       "source": {
-        "checked": "2026-11-14",
+        "checked": "2026-11-19",
         "kind": "aggregator",
         "title": "رده — وام بدون ضامن بانک شهر (تسهیلات با همراه شهر پلاس)",
         "url": "https://www.rade.ir/loan-no-guarantor-loans/704855-%d9%88%d8%a7%d9%85-%d8%a8%d8%af%d9%88%d9%86-%d8%b6%d8%a7%d9%85%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d8%b4%d9%87%d8%b1-%d8%aa%d8%b3%d9%87%db%8c%d9%84%d8%a7%d8%aa-%d8%a8%d8%a7-%d9%87%d9%85%d8%b1%d8%a7%d9%87/"
@@ -5743,7 +5733,7 @@
       },
       "friction": 72,
       "id": "rade-704856",
-      "lastSeen": "2026-11-14",
+      "lastSeen": "2026-11-19",
       "lastUpdated": null,
       "maxAmount": 100000000,
       "minAmount": null,
@@ -5760,7 +5750,7 @@
         "قسط تقریبی: ۳,۲۰۵,۱۴۷ تومان"
       ],
       "source": {
-        "checked": "2026-11-14",
+        "checked": "2026-11-19",
         "kind": "aggregator",
         "title": "رده — وام بدون ضامن بانک سپه",
         "url": "https://www.rade.ir/loan-no-guarantor-loans/704856-%d9%88%d8%a7%d9%85-%d8%a8%d8%af%d9%88%d9%86-%d8%b6%d8%a7%d9%85%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d8%b3%d9%be%d9%87/"
@@ -5798,7 +5788,7 @@
       },
       "friction": 72,
       "id": "rade-704857",
-      "lastSeen": "2026-11-14",
+      "lastSeen": "2026-11-19",
       "lastUpdated": null,
       "maxAmount": 100000000,
       "minAmount": null,
@@ -5815,7 +5805,7 @@
         "قسط تقریبی: ۳,۲۰۵,۱۴۷ تومان"
       ],
       "source": {
-        "checked": "2026-11-14",
+        "checked": "2026-11-19",
         "kind": "aggregator",
         "title": "رده — وام بدون ضامن بانک رفاه کارگران",
         "url": "https://www.rade.ir/loan-no-guarantor-loans/704857-%d9%88%d8%a7%d9%85-%d8%a8%d8%af%d9%88%d9%86-%d8%b6%d8%a7%d9%85%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d8%b1%d9%81%d8%a7%d9%87-%da%a9%d8%a7%d8%b1%da%af%d8%b1%d8%a7%d9%86/"
@@ -5853,7 +5843,7 @@
       },
       "friction": 72,
       "id": "rade-704858",
-      "lastSeen": "2026-11-14",
+      "lastSeen": "2026-11-19",
       "lastUpdated": null,
       "maxAmount": 100000000,
       "minAmount": null,
@@ -5870,7 +5860,7 @@
         "قسط تقریبی: ۳,۲۰۵,۱۴۷ تومان"
       ],
       "source": {
-        "checked": "2026-11-14",
+        "checked": "2026-11-19",
         "kind": "aggregator",
         "title": "رده — وام بدون ضامن بانک توسعه صادرات",
         "url": "https://www.rade.ir/loan-no-guarantor-loans/704858-%d9%88%d8%a7%d9%85-%d8%a8%d8%af%d9%88%d9%86-%d8%b6%d8%a7%d9%85%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d8%aa%d9%88%d8%b3%d8%b9%d9%87-%d8%b5%d8%a7%d8%af%d8%b1%d8%a7%d8%aa/"
@@ -5908,7 +5898,7 @@
       },
       "friction": 72,
       "id": "rade-704859",
-      "lastSeen": "2026-11-14",
+      "lastSeen": "2026-11-19",
       "lastUpdated": null,
       "maxAmount": 100000000,
       "minAmount": null,
@@ -5925,7 +5915,7 @@
         "قسط تقریبی: ۳,۲۰۵,۱۴۷ تومان"
       ],
       "source": {
-        "checked": "2026-11-14",
+        "checked": "2026-11-19",
         "kind": "aggregator",
         "title": "رده — وام بدون ضامن بانک توسعه تعاون",
         "url": "https://www.rade.ir/loan-no-guarantor-loans/704859-%d9%88%d8%a7%d9%85-%d8%a8%d8%af%d9%88%d9%86-%d8%b6%d8%a7%d9%85%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d8%aa%d9%88%d8%b3%d8%b9%d9%87-%d8%aa%d8%b9%d8%a7%d9%88%d9%86/"
@@ -5963,7 +5953,7 @@
       },
       "friction": 72,
       "id": "rade-704860",
-      "lastSeen": "2026-11-14",
+      "lastSeen": "2026-11-19",
       "lastUpdated": null,
       "maxAmount": 100000000,
       "minAmount": null,
@@ -5980,7 +5970,7 @@
         "قسط تقریبی: ۳,۲۰۵,۱۴۷ تومان"
       ],
       "source": {
-        "checked": "2026-11-14",
+        "checked": "2026-11-19",
         "kind": "aggregator",
         "title": "رده — وام بدون ضامن بانک تجارت",
         "url": "https://www.rade.ir/loan-no-guarantor-loans/704860-%d9%88%d8%a7%d9%85-%d8%a8%d8%af%d9%88%d9%86-%d8%b6%d8%a7%d9%85%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d8%aa%d8%ac%d8%a7%d8%b1%d8%aa/"
@@ -6018,7 +6008,7 @@
       },
       "friction": 50,
       "id": "rade-704861",
-      "lastSeen": "2026-11-14",
+      "lastSeen": "2026-11-19",
       "lastUpdated": null,
       "maxAmount": 300000000,
       "minAmount": null,
@@ -6035,7 +6025,7 @@
         "قسط تقریبی: ۱۵,۷۱۱,۹۹۲ تومان"
       ],
       "source": {
-        "checked": "2026-11-14",
+        "checked": "2026-11-19",
         "kind": "aggregator",
         "title": "رده — طرح بهارانه بانک آینده",
         "url": "https://www.rade.ir/loan-no-guarantor-loans/704861-%d8%b7%d8%b1%d8%ad-%d8%a8%d9%87%d8%a7%d8%b1%d8%a7%d9%86%d9%87-%d8%a8%d8%a7%d9%86%da%a9-%d8%a2%db%8c%d9%86%d8%af%d9%87/"
@@ -7890,7 +7880,7 @@
       },
       "friction": 72,
       "id": "rade-705318",
-      "lastSeen": "2026-11-14",
+      "lastSeen": "2026-11-19",
       "lastUpdated": "2026-10-20",
       "lastVerified": "2026-10-16",
       "maxAmount": 50000000,
@@ -7908,7 +7898,7 @@
         "قسط تقریبی: ۵,۵۲۹,۹۸۴ تومان"
       ],
       "source": {
-        "checked": "2026-11-14",
+        "checked": "2026-11-19",
         "kind": "aggregator",
         "title": "رده — تسهیلات برآیند چک‌یار ویپاد بانک پاسارگاد",
         "url": "https://www.rade.ir/loan-no-guarantor-loans/705318-%d8%aa%d8%b3%d9%87%db%8c%d9%84%d8%a7%d8%aa-%d8%a8%d8%b1%d8%a2%db%8c%d9%86%d8%af-%da%86%da%a9%db%8c%d8%a7%d8%b1-%d9%88%db%8c%d9%be%d8%a7%d8%af-%d8%a8%d8%a7%d9%86%da%a9-%d9%be%d8%a7%d8%b3%d8%a7/"
@@ -7946,7 +7936,7 @@
       },
       "friction": 72,
       "id": "rade-705549",
-      "lastSeen": "2026-11-14",
+      "lastSeen": "2026-11-19",
       "lastUpdated": "2026-10-20",
       "lastVerified": "2026-10-16",
       "maxAmount": 300000000,
@@ -7964,7 +7954,7 @@
         "قسط تقریبی: ۱۵,۷۱۱,۹۹۲ تومان"
       ],
       "source": {
-        "checked": "2026-11-14",
+        "checked": "2026-11-19",
         "kind": "aggregator",
         "title": "رده — وام سازمانی بلوبانک",
         "url": "https://www.rade.ir/loan-instant-loan/705549-%d9%88%d8%a7%d9%85-%d8%b3%d8%a7%d8%b2%d9%85%d8%a7%d9%86%db%8c-%d8%a8%d9%84%d9%88%d8%a8%d8%a7%d9%86%da%a9/"
@@ -8002,7 +7992,7 @@
       },
       "friction": 72,
       "id": "rade-705630",
-      "lastSeen": "2026-11-14",
+      "lastSeen": "2026-11-19",
       "lastUpdated": "2026-10-20",
       "lastVerified": "2026-10-16",
       "maxAmount": 50000000,
@@ -8020,7 +8010,7 @@
         "قسط تقریبی: ۲,۶۱۸,۶۶۵ تومان"
       ],
       "source": {
-        "checked": "2026-11-14",
+        "checked": "2026-11-19",
         "kind": "aggregator",
         "title": "رده — وام غیرحضوری فرازبانک ایران زمین",
         "url": "https://www.rade.ir/loan-no-guarantor-loans/705630-%d9%88%d8%a7%d9%85-%d8%ba%db%8c%d8%b1%d8%ad%d8%b6%d9%88%d8%b1%db%8c-%d9%81%d8%b1%d8%a7%d8%b2%d8%a8%d8%a7%d9%86%da%a9-%d8%a7%db%8c%d8%b1%d8%a7%d9%86-%d8%b2%d9%85%db%8c%d9%86/"
@@ -8058,7 +8048,7 @@
       },
       "friction": 72,
       "id": "rade-705737",
-      "lastSeen": "2026-11-14",
+      "lastSeen": "2026-11-19",
       "lastUpdated": "2026-08-16",
       "lastVerified": "2026-10-16",
       "maxAmount": 2250000000,
@@ -8076,7 +8066,7 @@
         "قسط تقریبی: ۱۸۳,۳۴۰,۶۱۶ تومان"
       ],
       "source": {
-        "checked": "2026-11-14",
+        "checked": "2026-11-19",
         "kind": "aggregator",
         "title": "رده — وام ثروت سرمایه بانک سرمایه",
         "url": "https://www.rade.ir/loan-no-guarantor-loans/705737-%d9%88%d8%a7%d9%85-%d8%ab%d8%b1%d9%88%d8%aa-%d8%b3%d8%b1%d9%85%d8%a7%db%8c%d9%87-%d8%a8%d8%a7%d9%86%da%a9-%d8%b3%d8%b1%d9%85%d8%a7%db%8c%d9%87/"
@@ -8114,7 +8104,7 @@
       },
       "friction": 72,
       "id": "rade-705742",
-      "lastSeen": "2026-11-14",
+      "lastSeen": "2026-11-19",
       "lastUpdated": "2025-12-29",
       "lastVerified": "2026-10-16",
       "maxAmount": 200000000,
@@ -8132,7 +8122,7 @@
         "قسط تقریبی: ۷,۷۴۱,۹۴۴ تومان"
       ],
       "source": {
-        "checked": "2026-11-14",
+        "checked": "2026-11-19",
         "kind": "aggregator",
         "title": "رده — طرح بای کارت بانک گردشگری",
         "url": "https://www.rade.ir/loan-instant-loan/705742-%d8%b7%d8%b1%d8%ad-%d8%a8%d8%a7%db%8c-%da%a9%d8%a7%d8%b1%d8%aa-%d8%a8%d8%a7%d9%86%da%a9-%da%af%d8%b1%d8%af%d8%b4%da%af%d8%b1%db%8c/"
@@ -8170,7 +8160,7 @@
       },
       "friction": 50,
       "id": "rade-705857",
-      "lastSeen": "2026-11-14",
+      "lastSeen": "2026-11-19",
       "lastUpdated": "2026-09-15",
       "lastVerified": "2026-10-16",
       "maxAmount": 200000000,
@@ -8188,7 +8178,7 @@
         "قسط تقریبی: ۷,۷۴۱,۹۴۴ تومان"
       ],
       "source": {
-        "checked": "2026-11-14",
+        "checked": "2026-11-19",
         "kind": "aggregator",
         "title": "رده — تسهیلات کارت اعتباری توبانک بانک گردشگری",
         "url": "https://www.rade.ir/loan-goods-loan/705857-%d8%aa%d8%b3%d9%87%db%8c%d9%84%d8%a7%d8%aa-%da%a9%d8%a7%d8%b1%d8%aa-%d8%a7%d8%b9%d8%aa%d8%a8%d8%a7%d8%b1%db%8c-%d8%aa%d9%88%d8%a8%d8%a7%d9%86%da%a9-%d8%a8%d8%a7%d9%86%da%a9-%da%af%d8%b1%d8%af%d8%b4/"
@@ -8226,7 +8216,7 @@
       },
       "friction": 72,
       "id": "rade-706036",
-      "lastSeen": "2026-11-14",
+      "lastSeen": "2026-11-19",
       "lastUpdated": "2026-09-27",
       "lastVerified": "2026-10-16",
       "maxAmount": 600000000,
@@ -8244,7 +8234,7 @@
         "قسط تقریبی: ۲۳,۲۲۵,۸۳۳ تومان"
       ],
       "source": {
-        "checked": "2026-11-14",
+        "checked": "2026-11-19",
         "kind": "aggregator",
         "title": "رده — وام نیترو بانک صادرات ایران",
         "url": "https://www.rade.ir/loan-no-guarantor-loans/706036-%d9%88%d8%a7%d9%85-%d9%86%db%8c%d8%aa%d8%b1%d9%88-%d8%a8%d8%a7%d9%86%da%a9-%d8%b5%d8%a7%d8%af%d8%b1%d8%a7%d8%aa-%d8%a7%db%8c%d8%b1%d8%a7%d9%86/"
@@ -8282,7 +8272,7 @@
       },
       "friction": 72,
       "id": "rade-706662",
-      "lastSeen": "2026-11-14",
+      "lastSeen": "2026-11-19",
       "lastUpdated": "2026-10-20",
       "lastVerified": "2026-10-16",
       "maxAmount": 50000000,
@@ -8300,7 +8290,7 @@
         "قسط تقریبی: ۸,۹۰۱,۲۰۴ تومان"
       ],
       "source": {
-        "checked": "2026-11-14",
+        "checked": "2026-11-19",
         "kind": "aggregator",
         "title": "رده — وام میکرولون بانک ملت",
         "url": "https://www.rade.ir/loan-no-guarantor-loans/706662-%d9%88%d8%a7%d9%85-%d9%85%db%8c%da%a9%d8%b1%d9%88%d9%84%d9%88%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%84%d8%aa/"
@@ -8394,7 +8384,7 @@
       },
       "friction": 72,
       "id": "rade-706689",
-      "lastSeen": "2026-11-14",
+      "lastSeen": "2026-11-19",
       "lastUpdated": "2026-10-20",
       "lastVerified": "2026-10-16",
       "maxAmount": 100000000,
@@ -8412,7 +8402,7 @@
         "قسط تقریبی: ۹,۴۰۷,۶۳۲ تومان"
       ],
       "source": {
-        "checked": "2026-11-14",
+        "checked": "2026-11-19",
         "kind": "aggregator",
         "title": "رده — تسهیلات اعتباری ایرانسل (بانک ملت)",
         "url": "https://www.rade.ir/loan-goods-loan/706689-%d8%aa%d8%b3%d9%87%db%8c%d9%84%d8%a7%d8%aa-%d8%a7%d8%b9%d8%aa%d8%a8%d8%a7%d8%b1%db%8c-%d8%a7%db%8c%d8%b1%d8%a7%d9%86%d8%b3%d9%84-%d8%a8%d8%a7%d9%86%da%a9-%d9%85%d9%84%d8%aa/"
@@ -26983,7 +26973,7 @@
       },
       "friction": 72,
       "id": "rade-705455",
-      "lastSeen": "2026-11-13",
+      "lastSeen": "2026-11-19",
       "lastUpdated": "2026-10-20",
       "lastVerified": "2026-10-16",
       "maxAmount": 5000000000,
@@ -27001,7 +26991,7 @@
         "قسط تقریبی: ۴۴۸,۹۳۵,۵۸۸ تومان"
       ],
       "source": {
-        "checked": "2026-11-13",
+        "checked": "2026-11-19",
         "kind": "aggregator",
         "title": "رده — وام طرح نویان بانک کشاورزی",
         "url": "https://www.rade.ir/loan-cash-loan/705455-%d9%88%d8%a7%d9%85-%d8%b7%d8%b1%d8%ad-%d9%86%d9%88%db%8c%d8%a7%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%da%a9%d8%b4%d8%a7%d9%88%d8%b1%d8%b2%db%8c/"
@@ -27095,7 +27085,7 @@
       },
       "friction": 50,
       "id": "rade-705509",
-      "lastSeen": "2026-11-13",
+      "lastSeen": "2026-11-19",
       "lastUpdated": "2026-10-20",
       "lastVerified": "2026-10-16",
       "maxAmount": 300000000,
@@ -27113,7 +27103,7 @@
         "قسط تقریبی: ۱۱,۶۱۲,۹۱۶ تومان"
       ],
       "source": {
-        "checked": "2026-11-13",
+        "checked": "2026-11-19",
         "kind": "aggregator",
         "title": "رده — وام پارس‌وام بانک پارسیان",
         "url": "https://www.rade.ir/loan-cash-loan/705509-%d9%88%d8%a7%d9%85-%d9%be%d8%a7%d8%b1%d8%b3%d9%88%d8%a7%d9%85-%d8%a8%d8%a7%d9%86%da%a9-%d9%be%d8%a7%d8%b1%d8%b3%db%8c%d8%a7%d9%86/"
@@ -27151,7 +27141,7 @@
       },
       "friction": 72,
       "id": "rade-705536",
-      "lastSeen": "2026-11-13",
+      "lastSeen": "2026-11-19",
       "lastUpdated": "2026-10-20",
       "lastVerified": "2026-10-16",
       "maxAmount": 300000000,
@@ -27169,7 +27159,7 @@
         "قسط تقریبی: ۱۱,۶۱۲,۹۱۶ تومان"
       ],
       "source": {
-        "checked": "2026-11-13",
+        "checked": "2026-11-19",
         "kind": "aggregator",
         "title": "رده — وام ماه‌یار بانک سینا",
         "url": "https://www.rade.ir/loan-cash-loan/705536-%d9%88%d8%a7%d9%85-%d9%85%d8%a7%d9%87%db%8c%d8%a7%d8%b1-%d8%a8%d8%a7%d9%86%da%a9-%d8%b3%db%8c%d9%86%d8%a7/"
@@ -27319,7 +27309,7 @@
       },
       "friction": 72,
       "id": "rade-705623",
-      "lastSeen": "2026-11-13",
+      "lastSeen": "2026-11-19",
       "lastUpdated": "2026-10-20",
       "lastVerified": "2026-10-16",
       "maxAmount": null,
@@ -27336,7 +27326,7 @@
         "هزینه جانبی: —"
       ],
       "source": {
-        "checked": "2026-11-13",
+        "checked": "2026-11-19",
         "kind": "aggregator",
         "title": "رده — طرح ارزبان بانک رفاه کارگران",
         "url": "https://www.rade.ir/loan-cash-loan/705623-%d8%b7%d8%b1%d8%ad-%d8%a7%d8%b1%d8%b2%d8%a8%d8%a7%d9%86-%d8%a8%d8%a7%d9%86%da%a9-%d8%b1%d9%81%d8%a7%d9%87-%da%a9%d8%a7%d8%b1%da%af%d8%b1%d8%a7%d9%86/"
@@ -27431,7 +27421,7 @@
       },
       "friction": 72,
       "id": "rade-705685",
-      "lastSeen": "2026-11-13",
+      "lastSeen": "2026-11-19",
       "lastUpdated": "2026-10-20",
       "lastVerified": "2026-10-16",
       "maxAmount": 15000000000,
@@ -27449,7 +27439,7 @@
         "قسط تقریبی: ۴۸۰,۷۷۲,۰۷۳ تومان"
       ],
       "source": {
-        "checked": "2026-11-13",
+        "checked": "2026-11-19",
         "kind": "aggregator",
         "title": "رده — طرح کسب‌و‌کار 2 بانک دی",
         "url": "https://www.rade.ir/loan-cash-loan/705685-%d8%b7%d8%b1%d8%ad-%da%a9%d8%b3%d8%a8-%d9%88-%da%a9%d8%a7%d8%b1-%d8%a8%d8%a7%d9%86%da%a9-%d8%af%db%8c/"
@@ -27543,7 +27533,7 @@
       },
       "friction": 50,
       "id": "rade-705749",
-      "lastSeen": "2026-11-13",
+      "lastSeen": "2026-11-19",
       "lastUpdated": "2026-07-21",
       "lastVerified": "2026-10-16",
       "maxAmount": 400000000,
@@ -27561,7 +27551,7 @@
         "قسط تقریبی: ۱۵,۴۸۳,۸۸۹ تومان"
       ],
       "source": {
-        "checked": "2026-11-13",
+        "checked": "2026-11-19",
         "kind": "aggregator",
         "title": "رده — وام شکوفایی ملل موسسه اعتباری ملل",
         "url": "https://www.rade.ir/loan-cash-loan/705749-%d9%88%d8%a7%d9%85-%d8%b4%da%a9%d9%88%d9%81%d8%a7%db%8c%db%8c-%d9%85%d9%84%d9%84-%d9%85%d9%88%d8%b3%d8%b3%d9%87-%d8%a7%d8%b9%d8%aa%d8%a8%d8%a7%d8%b1%db%8c-%d9%85%d9%84%d9%84/"
@@ -27655,7 +27645,7 @@
       },
       "friction": 50,
       "id": "rade-705756",
-      "lastSeen": "2026-11-13",
+      "lastSeen": "2026-11-19",
       "lastUpdated": "2026-05-20",
       "lastVerified": "2026-10-16",
       "maxAmount": 400000000,
@@ -27673,7 +27663,7 @@
         "قسط تقریبی: ۱۵,۲۷۶,۱۸۱ تومان"
       ],
       "source": {
-        "checked": "2026-11-13",
+        "checked": "2026-11-19",
         "kind": "aggregator",
         "title": "رده — وام همگام موسسه اعتباری ملل",
         "url": "https://www.rade.ir/loan-cash-loan/705756-%d9%88%d8%a7%d9%85-%d9%87%d9%85%da%af%d8%a7%d9%85-%d9%85%d9%88%d8%b3%d8%b3%d9%87-%d8%a7%d8%b9%d8%aa%d8%a8%d8%a7%d8%b1%db%8c-%d9%85%d9%84%d9%84/"
@@ -27767,7 +27757,7 @@
       },
       "friction": 50,
       "id": "rade-705795",
-      "lastSeen": "2026-11-13",
+      "lastSeen": "2026-11-19",
       "lastUpdated": "2026-10-10",
       "lastVerified": "2026-10-16",
       "maxAmount": 100000000,
@@ -27785,7 +27775,7 @@
         "قسط تقریبی: ۵,۲۳۷,۳۳۱ تومان"
       ],
       "source": {
-        "checked": "2026-11-13",
+        "checked": "2026-11-19",
         "kind": "aggregator",
         "title": "رده — وام باجت بانک تجارت",
         "url": "https://www.rade.ir/loan-cash-loan/705795-%d9%88%d8%a7%d9%85-%d8%a8%d8%a7%d8%ac%d8%aa-%d8%a8%d8%a7%d9%86%da%a9-%d8%aa%d8%ac%d8%a7%d8%b1%d8%aa/"
@@ -27823,7 +27813,7 @@
       },
       "friction": 72,
       "id": "rade-705807",
-      "lastSeen": "2026-11-13",
+      "lastSeen": "2026-11-19",
       "lastUpdated": "2026-07-15",
       "lastVerified": "2026-10-16",
       "maxAmount": null,
@@ -27840,7 +27830,7 @@
         "هزینه جانبی: —"
       ],
       "source": {
-        "checked": "2026-11-13",
+        "checked": "2026-11-19",
         "kind": "aggregator",
         "title": "رده — طرح ارزیار بانک رفاه کارگران",
         "url": "https://www.rade.ir/loan-cash-loan/705807-%d8%b7%d8%b1%d8%ad-%d8%a7%d8%b1%d8%b2%db%8c%d8%a7%d8%b1-%d8%a8%d8%a7%d9%86%da%a9-%d8%b1%d9%81%d8%a7%d9%87-%da%a9%d8%a7%d8%b1%da%af%d8%b1%d8%a7%d9%86/"
@@ -27878,7 +27868,7 @@
       },
       "friction": 50,
       "id": "rade-705924",
-      "lastSeen": "2026-11-13",
+      "lastSeen": "2026-11-19",
       "lastUpdated": "2026-07-28",
       "lastVerified": "2026-10-16",
       "maxAmount": 35000000000,
@@ -27896,7 +27886,7 @@
         "قسط تقریبی: ۱۸,۰۰۴,۷۱۶,۹۴۹ تومان"
       ],
       "source": {
-        "checked": "2026-11-13",
+        "checked": "2026-11-19",
         "kind": "aggregator",
         "title": "رده — طرح صنعت ارز بانک صنعت و معدن",
         "url": "https://www.rade.ir/loan-cash-loan/705924-%d8%b7%d8%b1%d8%ad-%d8%b5%d9%86%d8%b9%d8%aa-%d8%a7%d8%b1%d8%b2-%d8%a8%d8%a7%d9%86%da%a9-%d8%b5%d9%86%d8%b9%d8%aa-%d9%88-%d9%85%d8%b9%d8%af%d9%86/"
@@ -31990,7 +31980,7 @@
       "termMonths": null
     },
     {
-      "amountLabel": "هر واحد حدود ۱۰۰.۲ هزار تومان — حداقل صدور طبق امیدنامه",
+      "amountLabel": "هر واحد حدود ۱۰۰.۳ هزار تومان — حداقل صدور طبق امیدنامه",
       "audience": "سرمایه‌گذاران کم‌ریسک متقاضی واریز سود ماهانه بدون نیاز به معاملات برخط",
       "autoDiscovered": true,
       "bank": "بانک صادرات ایران / تأمین سرمایه سپهر",
@@ -32000,15 +31990,15 @@
       "collateral": "ندارد — ابطال واحدها از طریق مدیر صندوق",
       "collateralKind": "none",
       "confidence": "medium",
-      "desc": "صندوق درآمد ثابت صدور و ابطالی «اندوخته پایدار سپهر» با مدیریت تأمین سرمایه سپهر. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۲۶) ۲۹.۷۴٪ بوده است (شش‌ماهه ۱۴.۸۱٪، سه‌ماهه ۷.۴۷٪، یک‌ماهه ۲.۵۵٪). صدور و ابطال واحدها از طریق مدیر صندوق انجام می‌شود و سود به‌صورت دوره‌ای (ماهانه) به حساب سرمایه‌گذار واریز می‌گردد. قیمت هر واحد حدود ۱۰۰.۲ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
+      "desc": "صندوق درآمد ثابت صدور و ابطالی «اندوخته پایدار سپهر» با مدیریت تأمین سرمایه سپهر. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۲۷) ۲۹.۷۳٪ بوده است (شش‌ماهه ۱۴.۸۱٪، سه‌ماهه ۷.۴۶٪، یک‌ماهه ۲.۵۵٪). صدور و ابطال واحدها از طریق مدیر صندوق انجام می‌شود و سود به‌صورت دوره‌ای (ماهانه) به حساب سرمایه‌گذار واریز می‌گردد. قیمت هر واحد حدود ۱۰۰.۳ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
       "digital": 85,
       "extra": {
-        "dataDate": "1405/08/26",
+        "dataDate": "1405/08/27",
         "fullName": null,
         "guarantor": null,
         "inception": null,
         "isignalId": 255,
-        "issuePrice": 1002188,
+        "issuePrice": 1003024,
         "manager": "تأمین سرمایه سپهر",
         "navBillionRial": null,
         "payout": "monthly",
@@ -32016,9 +32006,9 @@
         "returns": {
           "oneMonth": 2.55,
           "oneWeek": 0.63,
-          "oneYear": 29.74,
+          "oneYear": 29.73,
           "sixMonth": 14.81,
-          "threeMonth": 7.47
+          "threeMonth": 7.46
         },
         "site": null,
         "symbol": null
@@ -32026,14 +32016,14 @@
       "friction": 88,
       "id": "fund-andookhteh-sepehr",
       "lastSeen": "2026-11-19",
-      "lastUpdated": "2026-11-17",
+      "lastUpdated": "2026-11-18",
       "lastVerified": "2026-11-19",
       "maxAmount": null,
-      "minAmount": 100219,
+      "minAmount": 100302,
       "product": "صندوق سرمایه‌گذاری اندوخته پایدار سپهر (صدور و ابطالی)",
-      "rate": 29.74,
+      "rate": 29.73,
       "rateKind": "profit",
-      "rateLabel": "بازدهی یک‌ساله ۲۹.۷۴٪ (صدور و ابطالی، تقسیم سود ماهانه) — آی‌سیگنال ۱۴۰۵/۰۸/۲۶",
+      "rateLabel": "بازدهی یک‌ساله ۲۹.۷۳٪ (صدور و ابطالی، تقسیم سود ماهانه) — آی‌سیگنال ۱۴۰۵/۰۸/۲۷",
       "regulatory": true,
       "requirements": [
         "ثبت‌نام سجام",
@@ -32413,15 +32403,15 @@
       "collateral": "ندارد — ابطال واحدها از طریق مدیر صندوق",
       "collateralKind": "none",
       "confidence": "medium",
-      "desc": "صندوق درآمد ثابت صدور و ابطالی «کاریزما» با مدیریت سبدگردان کاریزما. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۲۶) ۲۷.۹۶٪ بوده است (شش‌ماهه ۱۴.۷۳٪، سه‌ماهه ۷.۳۸٪، یک‌ماهه ۲.۴۷٪). صدور و ابطال واحدها از طریق مدیر صندوق انجام می‌شود و سود به‌صورت دوره‌ای (ماهانه) به حساب سرمایه‌گذار واریز می‌گردد. قیمت هر واحد حدود ۱۰۰.۲ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
+      "desc": "صندوق درآمد ثابت صدور و ابطالی «کاریزما» با مدیریت سبدگردان کاریزما. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۲۷) ۲۷.۹۶٪ بوده است (شش‌ماهه ۱۴.۷۲٪، سه‌ماهه ۷.۳۸٪، یک‌ماهه ۲.۴۷٪). صدور و ابطال واحدها از طریق مدیر صندوق انجام می‌شود و سود به‌صورت دوره‌ای (ماهانه) به حساب سرمایه‌گذار واریز می‌گردد. قیمت هر واحد حدود ۱۰۰.۲ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
       "digital": 85,
       "extra": {
-        "dataDate": "1405/08/26",
+        "dataDate": "1405/08/27",
         "fullName": null,
         "guarantor": null,
         "inception": null,
         "isignalId": 313,
-        "issuePrice": 1001589,
+        "issuePrice": 1002449,
         "manager": "سبدگردان کاریزما",
         "navBillionRial": null,
         "payout": "monthly",
@@ -32430,7 +32420,7 @@
           "oneMonth": 2.47,
           "oneWeek": 0.57,
           "oneYear": 27.96,
-          "sixMonth": 14.73,
+          "sixMonth": 14.72,
           "threeMonth": 7.38
         },
         "site": null,
@@ -32439,14 +32429,14 @@
       "friction": 88,
       "id": "fund-charisma-fixed",
       "lastSeen": "2026-11-19",
-      "lastUpdated": "2026-11-17",
+      "lastUpdated": "2026-11-18",
       "lastVerified": "2026-11-19",
       "maxAmount": null,
-      "minAmount": 100159,
+      "minAmount": 100245,
       "product": "صندوق درآمد ثابت کاریزما (صدور و ابطالی)",
       "rate": 27.96,
       "rateKind": "profit",
-      "rateLabel": "بازدهی یک‌ساله ۲۷.۹۶٪ (صدور و ابطالی، تقسیم سود ماهانه) — آی‌سیگنال ۱۴۰۵/۰۸/۲۶",
+      "rateLabel": "بازدهی یک‌ساله ۲۷.۹۶٪ (صدور و ابطالی، تقسیم سود ماهانه) — آی‌سیگنال ۱۴۰۵/۰۸/۲۷",
       "regulatory": true,
       "requirements": [
         "ثبت‌نام سجام",
@@ -33109,22 +33099,22 @@
       "digital": 90,
       "extra": {
         "isignal": {
-          "dataDate": "1405/08/26",
+          "dataDate": "1405/08/27",
           "fullName": null,
           "guarantor": null,
           "inception": null,
           "isignalId": 230,
-          "issuePrice": 1020603,
+          "issuePrice": 1021384,
           "manager": "تأمین سرمایه تمدن",
           "navBillionRial": null,
           "payout": "monthly",
           "redeemPrice": null,
           "returns": {
-            "oneMonth": 2.316346,
-            "oneWeek": 0.522056,
+            "oneMonth": 2.319775,
+            "oneWeek": 0.522146,
             "oneYear": 30,
-            "sixMonth": 13.267161,
-            "threeMonth": 6.711968
+            "sixMonth": 13.264352,
+            "threeMonth": 6.714002
           },
           "site": null,
           "symbol": null
@@ -33133,14 +33123,14 @@
       "friction": 92,
       "id": "fund-ganjineh-zarrin-shahr",
       "lastSeen": "2026-11-19",
-      "lastUpdated": "2026-11-17",
+      "lastUpdated": "2026-11-18",
       "lastVerified": "2026-11-19",
       "maxAmount": null,
       "minAmount": 100000,
       "product": "صندوق سرمایه‌گذاری گنجینه زرین شهر (صدور و ابطال / آی‌بی‌شاپ)",
       "rate": 30,
       "rateKind": "profit",
-      "rateLabel": "بازدهی یک‌ساله ۳۰٪ (صدور و ابطالی، تقسیم سود ماهانه) — آی‌سیگنال ۱۴۰۵/۰۸/۲۶",
+      "rateLabel": "بازدهی یک‌ساله ۳۰٪ (صدور و ابطالی، تقسیم سود ماهانه) — آی‌سیگنال ۱۴۰۵/۰۸/۲۷",
       "regulatory": true,
       "requirements": [
         "ثبت‌نام در سامانه آی‌بی‌شاپ یا مراجعه به شعب بانک شهر",
@@ -33151,7 +33141,7 @@
         "title": "تأمین سرمایه تمدن — صندوق گنجینه زرین شهر",
         "url": "https://ibshop.ir"
       },
-      "sourceObservedAt": "2026-11-17",
+      "sourceObservedAt": "2026-11-18",
       "speed": 86,
       "stale": false,
       "subcategory": "issuance-redemption",
@@ -33720,7 +33710,7 @@
       "termMonths": null
     },
     {
-      "amountLabel": "هر واحد حدود ۱۰۲.۴ هزار تومان — حداقل صدور طبق امیدنامه",
+      "amountLabel": "هر واحد حدود ۱۰۲.۵ هزار تومان — حداقل صدور طبق امیدنامه",
       "audience": "سرمایه‌گذاران کم‌ریسک متقاضی واریز سود ماهانه بدون نیاز به معاملات برخط",
       "autoDiscovered": true,
       "bank": "بانک ایران زمین / مشاور سرمایه‌گذاری هدف حافظ",
@@ -33730,15 +33720,15 @@
       "collateral": "ندارد — ابطال واحدها از طریق مدیر صندوق",
       "collateralKind": "none",
       "confidence": "medium",
-      "desc": "صندوق درآمد ثابت صدور و ابطالی «بانک ایران زمین» با مدیریت مشاور سرمایه‌گذاری هدف حافظ. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۲۶) ۳۱.۱٪ بوده است (شش‌ماهه ۱۵.۸۷٪، سه‌ماهه ۷.۷۸٪، یک‌ماهه ۲.۶۲٪). صدور و ابطال واحدها از طریق مدیر صندوق انجام می‌شود و سود به‌صورت دوره‌ای (ماهانه) به حساب سرمایه‌گذار واریز می‌گردد. قیمت هر واحد حدود ۱۰۲.۴ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
+      "desc": "صندوق درآمد ثابت صدور و ابطالی «بانک ایران زمین» با مدیریت مشاور سرمایه‌گذاری هدف حافظ. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۲۷) ۳۱.۰۸٪ بوده است (شش‌ماهه ۱۵.۶۸٪، سه‌ماهه ۷.۷۷٪، یک‌ماهه ۲.۶۲٪). صدور و ابطال واحدها از طریق مدیر صندوق انجام می‌شود و سود به‌صورت دوره‌ای (ماهانه) به حساب سرمایه‌گذار واریز می‌گردد. قیمت هر واحد حدود ۱۰۲.۵ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
       "digital": 85,
       "extra": {
-        "dataDate": "1405/08/26",
+        "dataDate": "1405/08/27",
         "fullName": null,
         "guarantor": null,
         "inception": null,
         "isignalId": 296,
-        "issuePrice": 1023742,
+        "issuePrice": 1024577,
         "manager": "مشاور سرمایه‌گذاری هدف حافظ",
         "navBillionRial": null,
         "payout": "monthly",
@@ -33746,9 +33736,9 @@
         "returns": {
           "oneMonth": 2.62,
           "oneWeek": 0.58,
-          "oneYear": 31.1,
-          "sixMonth": 15.87,
-          "threeMonth": 7.78
+          "oneYear": 31.08,
+          "sixMonth": 15.68,
+          "threeMonth": 7.77
         },
         "site": null,
         "symbol": null
@@ -33756,14 +33746,14 @@
       "friction": 88,
       "id": "fund-iran-zamin",
       "lastSeen": "2026-11-19",
-      "lastUpdated": "2026-11-17",
+      "lastUpdated": "2026-11-18",
       "lastVerified": "2026-11-19",
       "maxAmount": null,
-      "minAmount": 102374,
+      "minAmount": 102458,
       "product": "صندوق سرمایه‌گذاری بانک ایران زمین (صدور و ابطالی)",
-      "rate": 31.1,
+      "rate": 31.08,
       "rateKind": "profit",
-      "rateLabel": "بازدهی یک‌ساله ۳۱.۱٪ (صدور و ابطالی، تقسیم سود ماهانه) — آی‌سیگنال ۱۴۰۵/۰۸/۲۶",
+      "rateLabel": "بازدهی یک‌ساله ۳۱.۰۸٪ (صدور و ابطالی، تقسیم سود ماهانه) — آی‌سیگنال ۱۴۰۵/۰۸/۲۷",
       "regulatory": true,
       "requirements": [
         "ثبت‌نام سجام",
@@ -34135,7 +34125,7 @@
       "termMonths": null
     },
     {
-      "amountLabel": "هر واحد حدود ۱۰۰.۵ هزار تومان — حداقل صدور طبق امیدنامه",
+      "amountLabel": "هر واحد حدود ۱۰۰.۶ هزار تومان — حداقل صدور طبق امیدنامه",
       "audience": "سرمایه‌گذاران کم‌ریسک متقاضی واریز سود ماهانه بدون نیاز به معاملات برخط",
       "autoDiscovered": true,
       "bank": "بانک تجارت / تأمین سرمایه کاردان",
@@ -34145,25 +34135,25 @@
       "collateral": "ندارد — ابطال واحدها از طریق مدیر صندوق",
       "collateralKind": "none",
       "confidence": "medium",
-      "desc": "صندوق درآمد ثابت صدور و ابطالی «کاردان» با مدیریت تأمین سرمایه کاردان. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۲۶) ۲۷.۸۹٪ بوده است (شش‌ماهه ۱۳.۶۷٪، سه‌ماهه ۶.۹۱٪، یک‌ماهه ۲.۴۷٪). صدور و ابطال واحدها از طریق مدیر صندوق انجام می‌شود و سود به‌صورت دوره‌ای (ماهانه) به حساب سرمایه‌گذار واریز می‌گردد. قیمت هر واحد حدود ۱۰۰.۵ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
+      "desc": "صندوق درآمد ثابت صدور و ابطالی «کاردان» با مدیریت تأمین سرمایه کاردان. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۲۷) ۲۷.۸۷٪ بوده است (شش‌ماهه ۱۳.۶۵٪، سه‌ماهه ۶.۹۱٪، یک‌ماهه ۲.۴۷٪). صدور و ابطال واحدها از طریق مدیر صندوق انجام می‌شود و سود به‌صورت دوره‌ای (ماهانه) به حساب سرمایه‌گذار واریز می‌گردد. قیمت هر واحد حدود ۱۰۰.۶ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
       "digital": 85,
       "extra": {
-        "dataDate": "1405/08/26",
+        "dataDate": "1405/08/27",
         "fullName": null,
         "guarantor": null,
         "inception": null,
         "isignalId": 323,
-        "issuePrice": 1005096,
+        "issuePrice": 1005946,
         "manager": "تأمین سرمایه کاردان",
         "navBillionRial": null,
         "payout": "monthly",
         "redeemPrice": null,
         "returns": {
-          "oneMonth": 2.47,
-          "oneWeek": 0.578,
-          "oneYear": 27.885,
-          "sixMonth": 13.671,
-          "threeMonth": 6.906
+          "oneMonth": 2.471,
+          "oneWeek": 0.595,
+          "oneYear": 27.874,
+          "sixMonth": 13.645,
+          "threeMonth": 6.912
         },
         "site": null,
         "symbol": null
@@ -34171,14 +34161,14 @@
       "friction": 88,
       "id": "fund-kardan-tejarat",
       "lastSeen": "2026-11-19",
-      "lastUpdated": "2026-11-17",
+      "lastUpdated": "2026-11-18",
       "lastVerified": "2026-11-19",
       "maxAmount": null,
-      "minAmount": 100510,
+      "minAmount": 100595,
       "product": "صندوق درآمد ثابت کاردان (صدور و ابطالی)",
-      "rate": 27.89,
+      "rate": 27.87,
       "rateKind": "profit",
-      "rateLabel": "بازدهی یک‌ساله ۲۷.۸۹٪ (صدور و ابطالی، تقسیم سود ماهانه) — آی‌سیگنال ۱۴۰۵/۰۸/۲۶",
+      "rateLabel": "بازدهی یک‌ساله ۲۷.۸۷٪ (صدور و ابطالی، تقسیم سود ماهانه) — آی‌سیگنال ۱۴۰۵/۰۸/۲۷",
       "regulatory": true,
       "requirements": [
         "ثبت‌نام سجام",
@@ -34422,7 +34412,7 @@
       "collateral": "ندارد — ابطال واحدها از طریق مدیر صندوق",
       "collateralKind": "none",
       "confidence": "medium",
-      "desc": "صندوق درآمد ثابت صدور و ابطالی «کوثر یکم» با مدیریت سبدگردان آبان. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۲۷) ۳۳.۴۳٪ بوده است (شش‌ماهه ۱۵.۹۶٪، سه‌ماهه ۷.۸۸٪، یک‌ماهه ۲.۶۲٪). صدور و ابطال واحدها از طریق مدیر صندوق انجام می‌شود و سود به‌صورت دوره‌ای (ماهانه) به حساب سرمایه‌گذار واریز می‌گردد. قیمت هر واحد حدود ۱۰۲.۶ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
+      "desc": "صندوق درآمد ثابت صدور و ابطالی «کوثر یکم» با مدیریت سبدگردان آبان. بازدهی محقق‌شدهٔ یک‌سالهٔ آن طبق داده‌های آی‌سیگنال (به‌روزرسانی ۱۴۰۵/۰۸/۲۷) ۳۳.۴۵٪ بوده است (شش‌ماهه ۱۵.۹۸٪، سه‌ماهه ۷.۹٪، یک‌ماهه ۲.۶۵٪). صدور و ابطال واحدها از طریق مدیر صندوق انجام می‌شود و سود به‌صورت دوره‌ای (ماهانه) به حساب سرمایه‌گذار واریز می‌گردد. قیمت هر واحد حدود ۱۰۲.۶ هزار تومان است. بازدهی گذشته تضمین‌کنندهٔ بازدهی آینده نیست.",
       "digital": 85,
       "extra": {
         "dataDate": "1405/08/27",
@@ -34430,17 +34420,17 @@
         "guarantor": null,
         "inception": null,
         "isignalId": 341,
-        "issuePrice": 1025877,
+        "issuePrice": 1026124,
         "manager": "سبدگردان آبان",
         "navBillionRial": null,
         "payout": "monthly",
         "redeemPrice": null,
         "returns": {
-          "oneMonth": 2.623,
-          "oneWeek": 0.579,
-          "oneYear": 33.426,
-          "sixMonth": 15.955,
-          "threeMonth": 7.875
+          "oneMonth": 2.647,
+          "oneWeek": 0.603,
+          "oneYear": 33.45,
+          "sixMonth": 15.979,
+          "threeMonth": 7.899
         },
         "site": null,
         "symbol": null
@@ -34451,11 +34441,11 @@
       "lastUpdated": "2026-11-18",
       "lastVerified": "2026-11-19",
       "maxAmount": null,
-      "minAmount": 102588,
+      "minAmount": 102612,
       "product": "صندوق درآمد ثابت کوثر یکم (صدور و ابطالی)",
-      "rate": 33.43,
+      "rate": 33.45,
       "rateKind": "profit",
-      "rateLabel": "بازدهی یک‌ساله ۳۳.۴۳٪ (صدور و ابطالی، تقسیم سود ماهانه) — آی‌سیگنال ۱۴۰۵/۰۸/۲۷",
+      "rateLabel": "بازدهی یک‌ساله ۳۳.۴۵٪ (صدور و ابطالی، تقسیم سود ماهانه) — آی‌سیگنال ۱۴۰۵/۰۸/۲۷",
       "regulatory": true,
       "requirements": [
         "ثبت‌نام سجام",
@@ -34564,22 +34554,22 @@
       "digital": 88,
       "extra": {
         "isignal": {
-          "dataDate": "1405/08/26",
+          "dataDate": "1405/08/27",
           "fullName": null,
           "guarantor": null,
           "inception": null,
           "isignalId": 269,
-          "issuePrice": 1002265,
+          "issuePrice": 1003010,
           "manager": "تأمین سرمایه لوتوس پارسیان",
           "navBillionRial": null,
           "payout": "monthly",
           "redeemPrice": null,
           "returns": {
             "oneMonth": 2.5,
-            "oneWeek": 0.68,
-            "oneYear": 28.64,
-            "sixMonth": 14.49,
-            "threeMonth": 7.47
+            "oneWeek": 0.7,
+            "oneYear": 28.62,
+            "sixMonth": 14.51,
+            "threeMonth": 7.49
           },
           "site": null,
           "symbol": null
@@ -34588,14 +34578,14 @@
       "friction": 90,
       "id": "fund-lotus-parsian",
       "lastSeen": "2026-11-19",
-      "lastUpdated": "2026-11-17",
+      "lastUpdated": "2026-11-18",
       "lastVerified": "2026-11-19",
       "maxAmount": null,
       "minAmount": 110000,
       "product": "صندوق سرمایه‌گذاری لوتوس پارسیان (صدور و ابطالی)",
-      "rate": 28.64,
+      "rate": 28.62,
       "rateKind": "profit",
-      "rateLabel": "بازدهی یک‌ساله ۲۸.۶۴٪ (صدور و ابطالی، تقسیم سود ماهانه) — آی‌سیگنال ۱۴۰۵/۰۸/۲۶",
+      "rateLabel": "بازدهی یک‌ساله ۲۸.۶۲٪ (صدور و ابطالی، تقسیم سود ماهانه) — آی‌سیگنال ۱۴۰۵/۰۸/۲۷",
       "regulatory": true,
       "requirements": [
         "کد سجام",
@@ -34606,7 +34596,7 @@
         "title": "تأمین سرمایه لوتوس پارسیان",
         "url": "https://lotusib.ir"
       },
-      "sourceObservedAt": "2026-11-17",
+      "sourceObservedAt": "2026-11-18",
       "speed": 88,
       "stale": false,
       "subcategory": "issuance-redemption",
