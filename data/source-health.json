@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-19T14:01:39.758Z",
-  "lastRun": "2026-11-19T14:01:39.609Z",
-  "lastRunMode": "weekly-sync",
+  "generatedAt": "2026-11-20T11:59:31.206Z",
+  "lastRun": "2026-11-20T11:59:31.113Z",
+  "lastRunMode": "full",
   "counts": {
     "credit": 141,
     "deposits": 58,
@@ -12,12 +12,12 @@
   },
   "freshness": {
     "d7": 355,
-    "d30": 58,
-    "d90": 168,
+    "d30": 17,
+    "d90": 209,
     "older": 70,
     "unknown": 6,
     "total": 657,
-    "medianDays": 5
+    "medianDays": 6
   },
   "categoryFreshness": {
     "deposits": {
@@ -31,16 +31,16 @@
     "credit": {
       "total": 141,
       "fresh": 76,
-      "recent": 12,
-      "aging": 38,
+      "recent": 3,
+      "aging": 47,
       "stale": 14,
       "unknown": 1
     },
     "loans": {
       "total": 371,
       "fresh": 215,
-      "recent": 39,
-      "aging": 61,
+      "recent": 7,
+      "aging": 93,
       "stale": 56,
       "unknown": 0
     },
@@ -76,7 +76,7 @@
       "value": 34,
       "period": "آبان ۱۴۰۵",
       "sourceKind": "regulator",
-      "class": "fresh"
+      "class": "recent"
     },
     {
       "key": "depositCap1y",
@@ -108,7 +108,7 @@
       "value": 26,
       "period": "آبان ۱۴۰۵",
       "sourceKind": "regulator",
-      "class": "fresh"
+      "class": "recent"
     },
     {
       "key": "depositShort3m",
@@ -180,7 +180,7 @@
       "value": 33.79,
       "period": "آبان ۱۴۰۵",
       "sourceKind": "regulator",
-      "class": "fresh"
+      "class": "recent"
     },
     {
       "key": "loanRateCeiling",
@@ -212,7 +212,7 @@
       "value": 32,
       "period": "آبان ۱۴۰۵",
       "sourceKind": "regulator",
-      "class": "fresh"
+      "class": "recent"
     }
   ],
   "sources": [
@@ -220,24 +220,30 @@
       "name": "rade.ir",
       "status": "ok",
       "ok": true,
-      "parsed": 159
+      "parsed": 149
     },
     {
       "name": "bank-sites",
       "status": "ok",
       "ok": true,
       "reached": 1,
-      "targets": 24
+      "targets": 24,
+      "viaFallback": 1,
+      "empty": 14
     },
     {
       "name": "macro-indicators",
       "status": "ok",
-      "ok": true
+      "ok": true,
+      "sourcesOk": 3
     },
     {
       "name": "dgshahr.com",
-      "status": "ok",
+      "status": "degraded",
       "ok": true,
+      "degraded": true,
+      "via": "wayback",
+      "observedAt": "2026-10-12",
       "parsed": 31
     },
     {
@@ -254,9 +260,11 @@
       "mismatched": 0
     }
   ],
-  "degradedSources": [],
+  "degradedSources": [
+    "dgshahr.com"
+  ],
   "crosscheck": {
-    "generatedAt": "2026-11-19T11:58:09.410Z",
+    "generatedAt": "2026-11-20T11:59:31.030Z",
     "summary": {
       "matched": 6,
       "mismatched": 0,
@@ -272,7 +280,7 @@
   },
   "verdict": {
     "dataFresh": true,
-    "sourcesHealthy": true,
+    "sourcesHealthy": false,
     "note": "اعداد این گزارش از دادهٔ ثبت‌شده ساخته می‌شوند، نه از واکشی زنده."
   }
 }
