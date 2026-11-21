@@ -1,77 +1,254 @@
 {
-  "added": [],
-  "amountChanged": [],
-  "confidenceChanged": [],
-  "rateChanged": [
+  "added": [
     {
-      "bank": "بانک صادرات ایران / تأمین سرمایه سپهر",
-      "delta": -0.01,
-      "diff": -0.01,
-      "from": 29.74,
-      "id": "fund-andookhteh-sepehr",
-      "newRate": 29.73,
-      "oldRate": 29.74,
-      "product": "صندوق سرمایه‌گذاری اندوخته پایدار سپهر (صدور و ابطالی)",
-      "to": 29.73
+      "bank": "بانک کشاورزی",
+      "category": "loans",
+      "id": "rade-704813",
+      "maxAmount": 200000000,
+      "product": "طرح بانوی ایرانی بانک کشاورزی",
+      "rate": 23
     },
     {
-      "bank": "بانک ایران زمین / مشاور سرمایه‌گذاری هدف حافظ",
-      "delta": -0.02,
-      "diff": -0.02,
-      "from": 31.1,
-      "id": "fund-iran-zamin",
-      "newRate": 31.08,
-      "oldRate": 31.1,
-      "product": "صندوق سرمایه‌گذاری بانک ایران زمین (صدور و ابطالی)",
-      "to": 31.08
+      "bank": "بانک ملی",
+      "category": "loans",
+      "id": "rade-704814",
+      "maxAmount": 500000000,
+      "product": "طرح مروارید بانک ملی",
+      "rate": 17
     },
     {
-      "bank": "بانک تجارت / تأمین سرمایه کاردان",
-      "delta": -0.02,
-      "diff": -0.02,
-      "from": 27.89,
-      "id": "fund-kardan-tejarat",
-      "newRate": 27.87,
-      "oldRate": 27.89,
-      "product": "صندوق درآمد ثابت کاردان (صدور و ابطالی)",
-      "to": 27.87
+      "bank": "بانک پاسارگاد",
+      "category": "loans",
+      "id": "rade-704816",
+      "maxAmount": null,
+      "product": "تسهیلات مبتنی بر مراوده بانک پاسارگاد",
+      "rate": 6
     },
     {
-      "bank": "سبدگردان آبان",
-      "delta": 0.02,
-      "diff": 0.02,
-      "from": 33.43,
-      "id": "fund-kosar-1-aban",
-      "newRate": 33.45,
-      "oldRate": 33.43,
-      "product": "صندوق درآمد ثابت کوثر یکم (صدور و ابطالی)",
-      "to": 33.45
+      "bank": "بانک تجارت",
+      "category": "loans",
+      "id": "rade-704818",
+      "maxAmount": 5000000000,
+      "product": "طرح تسهیلاتی تصنیف بانک تجارت",
+      "rate": 23
     },
     {
-      "bank": "بانک پارسیان / تأمین سرمایه لوتوس پارسیان",
-      "delta": -0.02,
-      "diff": -0.02,
-      "from": 28.64,
-      "id": "fund-lotus-parsian",
-      "newRate": 28.62,
-      "oldRate": 28.64,
-      "product": "صندوق سرمایه‌گذاری لوتوس پارسیان (صدور و ابطالی)",
-      "to": 28.62
+      "bank": "بانک کشاورزی",
+      "category": "loans",
+      "id": "rade-704819",
+      "maxAmount": 300000000,
+      "product": "وام ویژه گندم‌کاران بانک کشاورزی",
+      "rate": 23
+    },
+    {
+      "bank": "بانک سینا",
+      "category": "loans",
+      "id": "rade-704822",
+      "maxAmount": 300000000,
+      "product": "طرح ارغوان بانک سینا",
+      "rate": 18
+    },
+    {
+      "bank": "بانک مسکن",
+      "category": "loans",
+      "id": "rade-704823",
+      "maxAmount": 300000000,
+      "product": "طرح توسعه تابش بانک مسکن",
+      "rate": 19
+    },
+    {
+      "bank": "بانک تجارت",
+      "category": "loans",
+      "id": "rade-704826",
+      "maxAmount": 200000000,
+      "product": "طرح قلک بانک تجارت",
+      "rate": 6
+    },
+    {
+      "bank": "بانک تجارت",
+      "category": "loans",
+      "id": "rade-704828",
+      "maxAmount": 200000000,
+      "product": "طرح تسهیل بانک تجارت",
+      "rate": 14
+    },
+    {
+      "bank": "بانک تجارت",
+      "category": "loans",
+      "id": "rade-704829",
+      "maxAmount": 200000000,
+      "product": "طرح حامی بانک تجارت",
+      "rate": 14
+    },
+    {
+      "bank": "موسسه اعتباری ملل",
+      "category": "loans",
+      "id": "rade-704839",
+      "maxAmount": 300000000,
+      "product": "وام با معدل حساب موسسه اعتباری ملل",
+      "rate": 23
+    },
+    {
+      "bank": "بانک ملی",
+      "category": "loans",
+      "id": "rade-704840",
+      "maxAmount": 2000000000,
+      "product": "تسهیلات با دستگاه کارت خوان بانک ملی",
+      "rate": 1
+    },
+    {
+      "bank": "بانک سینا",
+      "category": "loans",
+      "id": "rade-704841",
+      "maxAmount": 300000000,
+      "product": "طرح نرگس بانک سینا",
+      "rate": 10
+    },
+    {
+      "bank": "بانک آینده",
+      "category": "loans",
+      "id": "rade-704844",
+      "maxAmount": 200000000,
+      "product": "تسهیلات با حساب وکالتی بانک آینده",
+      "rate": 23
+    },
+    {
+      "bank": "بانک مسکن",
+      "category": "loans",
+      "id": "rade-704846",
+      "maxAmount": 160000000,
+      "product": "طرح تابش بانک مسکن",
+      "rate": 12
+    },
+    {
+      "bank": "بانک گردشگری",
+      "category": "loans",
+      "id": "rade-704863",
+      "maxAmount": 300000000,
+      "product": "طرح پارسا بانک گردشگری",
+      "rate": 4
+    },
+    {
+      "bank": "بانک سپه",
+      "category": "loans",
+      "id": "rade-704864",
+      "maxAmount": 5000000000,
+      "product": "طرح کارآسان بانک سپه",
+      "rate": 23
+    },
+    {
+      "bank": "بانک صادرات",
+      "category": "loans",
+      "id": "rade-704867",
+      "maxAmount": 1000000000,
+      "product": "طرح صبای سپهر بانک صادرات",
+      "rate": 23
+    },
+    {
+      "bank": "بانک کارآفرین",
+      "category": "loans",
+      "id": "rade-704868",
+      "maxAmount": 5000000000,
+      "product": "طرح ارزش سلامت بانک کارآفرین",
+      "rate": 23
+    },
+    {
+      "bank": "بانک شهر",
+      "category": "loans",
+      "id": "rade-704870",
+      "maxAmount": 2000000000,
+      "product": "تسهیلات با دستگاه کارتخوان بانک شهر",
+      "rate": 23
+    },
+    {
+      "bank": "بانک شهر",
+      "category": "loans",
+      "id": "rade-704871",
+      "maxAmount": 300000000,
+      "product": "تسهیلات پویا شهر بانک شهر",
+      "rate": 23
+    },
+    {
+      "bank": "بانک سینا",
+      "category": "loans",
+      "id": "rade-704872",
+      "maxAmount": 200000000,
+      "product": "طرح اعتباری ویژه بانک سینا",
+      "rate": 10
+    },
+    {
+      "bank": "بانک تجارت",
+      "category": "loans",
+      "id": "rade-704875",
+      "maxAmount": 200000000,
+      "product": "طرح پویا برتر بانک تجارت",
+      "rate": 7
+    },
+    {
+      "bank": "بانک صادرات",
+      "category": "loans",
+      "id": "rade-704877",
+      "maxAmount": 200000000,
+      "product": "طرح میثاق ۲ بانک صادرات ایران",
+      "rate": 14
+    },
+    {
+      "bank": "بانک کشاورزی",
+      "category": "loans",
+      "id": "rade-704878",
+      "maxAmount": 300000000,
+      "product": "طرح مهر ماندگار بانک کشاورزی",
+      "rate": 10
+    },
+    {
+      "bank": "بانک توسعه تعاون",
+      "category": "loans",
+      "id": "rade-704879",
+      "maxAmount": 1000000000,
+      "product": "بسته رونق تعاون ۲ بانک توسعه تعاون",
+      "rate": 10
+    },
+    {
+      "bank": "بانک گردشگری",
+      "category": "loans",
+      "id": "rade-704882",
+      "maxAmount": 5000000000,
+      "product": "تسهیلات با دستگاه کارتخوان بانک گردشگری",
+      "rate": 10
+    },
+    {
+      "bank": "بانک سپه",
+      "category": "loans",
+      "id": "rade-704891",
+      "maxAmount": 1000000000,
+      "product": "طرح نگین اعتماد بانک سپه",
+      "rate": 17
+    },
+    {
+      "bank": "بانک توسعه تعاون",
+      "category": "loans",
+      "id": "rade-709798",
+      "maxAmount": null,
+      "product": "وام اوراق تعاون بانک توسعه تعاون",
+      "rate": 22.5
     }
   ],
+  "amountChanged": [],
+  "confidenceChanged": [],
+  "rateChanged": [],
   "removed": [],
   "revived": [],
   "staleNow": [],
   "summary": {
-    "added": 0,
+    "added": 29,
     "amountChanged": 0,
     "confidenceChanged": 0,
-    "rateChanged": 5,
+    "rateChanged": 0,
     "removed": 0,
     "revived": 0,
     "staleNow": 0,
     "termChanged": 0,
-    "totalChanges": 5
+    "totalChanges": 29
   },
   "termChanged": []
 }

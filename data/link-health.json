@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-11-14T11:14:25.108Z",
-  "total": 21,
-  "ok": 10,
-  "dead": 11,
+  "generatedAt": "2026-11-21T12:07:30.630Z",
+  "total": 23,
+  "ok": 11,
+  "dead": 12,
   "healthPercent": 48,
   "deadLinks": [
     {
@@ -13,7 +13,7 @@
       "ok": false,
       "status": 0,
       "error": "The operation was aborted due to timeout",
-      "checkedAt": "2026-11-14T11:14:25.007Z"
+      "checkedAt": "2026-11-21T12:07:20.722Z"
     },
     {
       "productId": "blu-loan-beja",
@@ -23,16 +23,16 @@
       "ok": false,
       "status": 0,
       "error": "fetch failed",
-      "checkedAt": "2026-11-14T11:14:25.107Z"
+      "checkedAt": "2026-11-21T12:07:17.357Z"
     },
     {
-      "productId": "mellat-deposit-pref-30",
-      "bank": "بانک ملت",
-      "product": "سپرده با سود ترجیحی بانک ملت (پلکانی ۲۷ تا ۲۹.۹٪ بر اساس مانده)",
+      "productId": "mellal-deposit-pref-26",
+      "bank": "مؤسسه اعتباری ملل",
+      "product": "سپرده با سود ترجیحی مؤسسه اعتباری ملل (سقف ۳۰.۵٪ برای مبالغ بالا)",
       "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/",
       "ok": false,
       "status": 403,
-      "checkedAt": "2026-11-14T11:14:15.545Z"
+      "checkedAt": "2026-11-21T12:07:17.567Z"
     },
     {
       "productId": "fund-amin-ashna",
@@ -42,7 +42,7 @@
       "ok": false,
       "status": 0,
       "error": "fetch failed",
-      "checkedAt": "2026-11-14T11:13:54.644Z"
+      "checkedAt": "2026-11-21T12:06:49.333Z"
     },
     {
       "productId": "fund-yaghoot-agah",
@@ -52,7 +52,7 @@
       "ok": false,
       "status": 0,
       "error": "The operation was aborted due to timeout",
-      "checkedAt": "2026-11-14T11:14:09.007Z"
+      "checkedAt": "2026-11-21T12:07:04.219Z"
     },
     {
       "productId": "fund-ganjineh-zarrin-shahr",
@@ -62,7 +62,7 @@
       "ok": false,
       "status": 0,
       "error": "The operation was aborted due to timeout",
-      "checkedAt": "2026-11-14T11:14:09.042Z"
+      "checkedAt": "2026-11-21T12:07:04.242Z"
     },
     {
       "productId": "fund-lotus-parsian",
@@ -72,16 +72,7 @@
       "ok": false,
       "status": 0,
       "error": "The operation was aborted due to timeout",
-      "checkedAt": "2026-11-14T11:14:09.043Z"
-    },
-    {
-      "productId": "farzandavari-220",
-      "bank": "شبکه بانکی (ثبت‌نام: بانک مرکزی)",
-      "product": "تسهیلات قرض‌الحسنه فرزندآوری — فرزند پنجم و بیشتر",
-      "url": "https://nabzgheymat.ir/%D9%88%D8%A7%D9%85-%D9%81%D8%B1%D8%B2%D9%86%D8%AF%D8%A2%D9%88%D8%B1%DB%8C-%DB%B1%DB%B4%DB%B0%DB%B5%D8%9B-%D8%A7%D8%B2-%DB%B4%DB%B4-%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86-%D8%AA%D8%A7-%DB%B2%DB%B2%DB%B0/",
-      "ok": false,
-      "status": 503,
-      "checkedAt": "2026-11-14T11:14:13.551Z"
+      "checkedAt": "2026-11-21T12:07:04.244Z"
     },
     {
       "productId": "fund-omid-sepah",
@@ -91,7 +82,17 @@
       "ok": false,
       "status": 0,
       "error": "fetch failed",
-      "checkedAt": "2026-11-14T11:13:54.746Z"
+      "checkedAt": "2026-11-21T12:06:49.361Z"
+    },
+    {
+      "productId": "refah-special-certificate-farmad",
+      "bank": "بانک رفاه کارگران",
+      "product": "اوراق گواهی سپرده خاص — صنایع پزشکی فارمد (۲۵٪ علی‌الحساب)",
+      "url": "https://refah-bank.rkb24.ir/3003-6-3638/index.html",
+      "ok": false,
+      "status": 0,
+      "error": "The operation was aborted due to timeout",
+      "checkedAt": "2026-11-21T12:07:05.361Z"
     },
     {
       "productId": "tobank-club",
@@ -100,7 +101,7 @@
       "url": "https://tobank.ir",
       "ok": false,
       "status": 403,
-      "checkedAt": "2026-11-14T11:13:57.594Z"
+      "checkedAt": "2026-11-21T12:07:04.721Z"
     },
     {
       "productId": "vipad-weclub",
@@ -110,7 +111,17 @@
       "ok": false,
       "status": 0,
       "error": "The operation was aborted due to timeout",
-      "checkedAt": "2026-11-14T11:14:13.595Z"
+      "checkedAt": "2026-11-21T12:07:20.245Z"
+    },
+    {
+      "productId": "tejarat-special-certificate-choopan",
+      "bank": "بانک تجارت",
+      "product": "اوراق گواهی سپرده خاص — فرآورده‌های لبنی چوپان آستانه (۲۵٪ علی‌الحساب)",
+      "url": "https://www.tejaratbank.ir/news/2458423-bt.html",
+      "ok": false,
+      "status": 0,
+      "error": "The operation was aborted due to timeout",
+      "checkedAt": "2026-11-21T12:07:30.629Z"
     }
   ],
   "all": [
@@ -121,7 +132,7 @@
       "url": "https://aloghesti.com/mag/best-loans-for-purchasing-goods/",
       "ok": true,
       "status": 200,
-      "checkedAt": "2026-11-14T11:14:11.850Z"
+      "checkedAt": "2026-11-21T12:07:11.235Z"
     },
     {
       "productId": "farzandavari-44",
@@ -130,7 +141,7 @@
       "url": "https://andishemoaser.ir/%D8%AB%D8%A8%D8%AA%D9%86%D8%A7%D9%85-%D9%88%D8%A7%D9%85-%D9%81%D8%B1%D8%B2%D9%86%D8%AF%D8%A2%D9%88%D8%B1%DB%8C-%DB%B1%DB%B4%DB%B0%DB%B5-%D8%A2%D8%BA%D8%A7%D8%B2-%D8%B4%D8%AF-%D9%85%D8%A8/",
       "ok": true,
       "status": 200,
-      "checkedAt": "2026-11-14T11:14:13.452Z"
+      "checkedAt": "2026-11-21T12:07:13.080Z"
     },
     {
       "productId": "murabaha-khord-23",
@@ -139,7 +150,7 @@
       "url": "https://andishemoaser.ir/%D9%85%D8%AD%D8%A7%D8%B3%D8%A8%D9%87-%D9%88%D8%A7%D9%85-%D8%A8%D8%A7%D9%86%DA%A9%DB%8C%D8%9B-%D9%81%D8%B1%D9%85%D9%88%D9%84-%D8%AF%D9%82%DB%8C%D9%82-%D8%A7%D9%82%D8%B3%D8%A7%D8%B7-%D9%85%D8%A7%D9%87/",
       "ok": true,
       "status": 200,
-      "checkedAt": "2026-11-14T11:14:10.066Z"
+      "checkedAt": "2026-11-21T12:07:09.907Z"
     },
     {
       "productId": "saderat-ghasta",
@@ -148,7 +159,7 @@
       "url": "https://andishemoaser.ir/%D9%88%D8%A7%D9%85-%D9%82%D8%B3%D8%B7%D8%A7-%DB%B1%DB%B4%DB%B0%DB%B5-%D9%85%D8%A8%D9%84%D8%BA%D8%8C-%D8%B4%D8%B1%D8%A7%DB%8C%D8%B7-%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA%D8%8C-%D9%82%D8%B3%D8%B7%D8%A7/",
       "ok": true,
       "status": 200,
-      "checkedAt": "2026-11-14T11:14:14.531Z"
+      "checkedAt": "2026-11-21T12:07:13.876Z"
     },
     {
       "productId": "bankino-vamino-club",
@@ -157,7 +168,7 @@
       "url": "https://bankino.digital",
       "ok": true,
       "status": 206,
-      "checkedAt": "2026-11-14T11:13:57.415Z"
+      "checkedAt": "2026-11-21T12:07:08.549Z"
     },
     {
       "productId": "sepah-negin-club",
@@ -167,7 +178,7 @@
       "ok": false,
       "status": 0,
       "error": "The operation was aborted due to timeout",
-      "checkedAt": "2026-11-14T11:14:25.007Z"
+      "checkedAt": "2026-11-21T12:07:20.722Z"
     },
     {
       "productId": "blu-loan-beja",
@@ -177,16 +188,16 @@
       "ok": false,
       "status": 0,
       "error": "fetch failed",
-      "checkedAt": "2026-11-14T11:14:25.107Z"
+      "checkedAt": "2026-11-21T12:07:17.357Z"
     },
     {
-      "productId": "mellat-deposit-pref-30",
-      "bank": "بانک ملت",
-      "product": "سپرده با سود ترجیحی بانک ملت (پلکانی ۲۷ تا ۲۹.۹٪ بر اساس مانده)",
+      "productId": "mellal-deposit-pref-26",
+      "bank": "مؤسسه اعتباری ملل",
+      "product": "سپرده با سود ترجیحی مؤسسه اعتباری ملل (سقف ۳۰.۵٪ برای مبالغ بالا)",
       "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/",
       "ok": false,
       "status": 403,
-      "checkedAt": "2026-11-14T11:14:15.545Z"
+      "checkedAt": "2026-11-21T12:07:17.567Z"
     },
     {
       "productId": "mehr-iran-mehryar",
@@ -195,7 +206,7 @@
       "url": "https://digivam.app/mehriran-bank/",
       "ok": true,
       "status": 200,
-      "checkedAt": "2026-11-14T11:14:14.527Z"
+      "checkedAt": "2026-11-21T12:07:14.629Z"
     },
     {
       "productId": "fund-amin-ashna",
@@ -205,7 +216,7 @@
       "ok": false,
       "status": 0,
       "error": "fetch failed",
-      "checkedAt": "2026-11-14T11:13:54.644Z"
+      "checkedAt": "2026-11-21T12:06:49.333Z"
     },
     {
       "productId": "fund-yaghoot-agah",
@@ -215,7 +226,7 @@
       "ok": false,
       "status": 0,
       "error": "The operation was aborted due to timeout",
-      "checkedAt": "2026-11-14T11:14:09.007Z"
+      "checkedAt": "2026-11-21T12:07:04.219Z"
     },
     {
       "productId": "fund-ganjineh-zarrin-shahr",
@@ -225,7 +236,7 @@
       "ok": false,
       "status": 0,
       "error": "The operation was aborted due to timeout",
-      "checkedAt": "2026-11-14T11:14:09.042Z"
+      "checkedAt": "2026-11-21T12:07:04.242Z"
     },
     {
       "productId": "fund-lotus-parsian",
@@ -235,7 +246,7 @@
       "ok": false,
       "status": 0,
       "error": "The operation was aborted due to timeout",
-      "checkedAt": "2026-11-14T11:14:09.043Z"
+      "checkedAt": "2026-11-21T12:07:04.244Z"
     },
     {
       "productId": "ezdevaj-350",
@@ -244,7 +255,7 @@
       "url": "https://nabzgheymat.ir/%D9%88%D8%A7%D9%85-%D8%A7%D8%B2%D8%AF%D9%88%D8%A7%D8%AC-%D9%88-%D9%81%D8%B1%D8%B2%D9%86%D8%AF%D8%A2%D9%88%D8%B1%DB%8C-%DB%B1%DB%B4%DB%B0%DB%B5%D8%9B-%DB%B6%DB%B0%DB%B0-%D8%AA%D8%A7-%DB%B7%DB%B0%DB%B0/",
       "ok": true,
       "status": 200,
-      "checkedAt": "2026-11-14T11:14:12.595Z"
+      "checkedAt": "2026-11-21T12:07:12.222Z"
     },
     {
       "productId": "ezdevaj-300",
@@ -253,16 +264,16 @@
       "url": "https://nabzgheymat.ir/%D9%88%D8%A7%D9%85-%D8%A7%D8%B2%D8%AF%D9%88%D8%A7%D8%AC-%DB%B1%DB%B4%DB%B0%DB%B5%D8%9B-%D9%85%D8%A8%D9%84%D8%BA-%DB%B3%DB%B0%DB%B0-%D8%AA%D8%A7-%DB%B3%DB%B5%DB%B0-%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86/",
       "ok": true,
       "status": 200,
-      "checkedAt": "2026-11-14T11:14:11.464Z"
+      "checkedAt": "2026-11-21T12:07:11.908Z"
     },
     {
       "productId": "farzandavari-220",
       "bank": "شبکه بانکی (ثبت‌نام: بانک مرکزی)",
       "product": "تسهیلات قرض‌الحسنه فرزندآوری — فرزند پنجم و بیشتر",
       "url": "https://nabzgheymat.ir/%D9%88%D8%A7%D9%85-%D9%81%D8%B1%D8%B2%D9%86%D8%AF%D8%A2%D9%88%D8%B1%DB%8C-%DB%B1%DB%B4%DB%B0%DB%B5%D8%9B-%D8%A7%D8%B2-%DB%B4%DB%B4-%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86-%D8%AA%D8%A7-%DB%B2%DB%B2%DB%B0/",
-      "ok": false,
-      "status": 503,
-      "checkedAt": "2026-11-14T11:14:13.551Z"
+      "ok": true,
+      "status": 200,
+      "checkedAt": "2026-11-21T12:07:12.954Z"
     },
     {
       "productId": "fund-omid-sepah",
@@ -272,7 +283,17 @@
       "ok": false,
       "status": 0,
       "error": "fetch failed",
-      "checkedAt": "2026-11-14T11:13:54.746Z"
+      "checkedAt": "2026-11-21T12:06:49.361Z"
+    },
+    {
+      "productId": "refah-special-certificate-farmad",
+      "bank": "بانک رفاه کارگران",
+      "product": "اوراق گواهی سپرده خاص — صنایع پزشکی فارمد (۲۵٪ علی‌الحساب)",
+      "url": "https://refah-bank.rkb24.ir/3003-6-3638/index.html",
+      "ok": false,
+      "status": 0,
+      "error": "The operation was aborted due to timeout",
+      "checkedAt": "2026-11-21T12:07:05.361Z"
     },
     {
       "productId": "tobank-club",
@@ -281,7 +302,7 @@
       "url": "https://tobank.ir",
       "ok": false,
       "status": 403,
-      "checkedAt": "2026-11-14T11:13:57.594Z"
+      "checkedAt": "2026-11-21T12:07:04.721Z"
     },
     {
       "productId": "vipad-weclub",
@@ -291,7 +312,7 @@
       "ok": false,
       "status": 0,
       "error": "The operation was aborted due to timeout",
-      "checkedAt": "2026-11-14T11:14:13.595Z"
+      "checkedAt": "2026-11-21T12:07:20.245Z"
     },
     {
       "productId": "deposit-kootah-moddate-adi",
@@ -300,7 +321,7 @@
       "url": "https://www.cbi.ir",
       "ok": true,
       "status": 200,
-      "checkedAt": "2026-11-14T11:14:09.849Z"
+      "checkedAt": "2026-11-21T12:07:09.591Z"
     },
     {
       "productId": "blu-loan-instant",
@@ -309,7 +330,17 @@
       "url": "https://www.rade.ir/service/694259-%D9%88%D8%A7%D9%85-%D8%A8%D9%84%D9%88%D8%A8%D8%A7%D9%86%DA%A9/",
       "ok": true,
       "status": 200,
-      "checkedAt": "2026-11-14T11:14:15.269Z"
+      "checkedAt": "2026-11-21T12:07:14.724Z"
+    },
+    {
+      "productId": "tejarat-special-certificate-choopan",
+      "bank": "بانک تجارت",
+      "product": "اوراق گواهی سپرده خاص — فرآورده‌های لبنی چوپان آستانه (۲۵٪ علی‌الحساب)",
+      "url": "https://www.tejaratbank.ir/news/2458423-bt.html",
+      "ok": false,
+      "status": 0,
+      "error": "The operation was aborted due to timeout",
+      "checkedAt": "2026-11-21T12:07:30.629Z"
     }
   ]
 }
