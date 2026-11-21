@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-11-20T11:59:31.206Z",
-  "lastRun": "2026-11-20T11:59:31.113Z",
+  "generatedAt": "2026-11-21T11:31:29.018Z",
+  "lastRun": "2026-11-21T11:31:28.912Z",
   "lastRunMode": "full",
   "counts": {
     "credit": 141,
     "deposits": 58,
     "funds": 73,
-    "loans": 371,
+    "loans": 372,
     "loyalty": 14,
-    "total": 657
+    "total": 658
   },
   "freshness": {
-    "d7": 355,
+    "d7": 356,
     "d30": 17,
-    "d90": 209,
-    "older": 70,
+    "d90": 207,
+    "older": 72,
     "unknown": 6,
-    "total": 657,
-    "medianDays": 6
+    "total": 658,
+    "medianDays": 5
   },
   "categoryFreshness": {
     "deposits": {
@@ -37,11 +37,11 @@
       "unknown": 1
     },
     "loans": {
-      "total": 371,
-      "fresh": 215,
+      "total": 372,
+      "fresh": 216,
       "recent": 7,
-      "aging": 93,
-      "stale": 56,
+      "aging": 92,
+      "stale": 57,
       "unknown": 0
     },
     "loyalty": {
@@ -56,8 +56,8 @@
       "total": 73,
       "fresh": 64,
       "recent": 1,
-      "aging": 8,
-      "stale": 0,
+      "aging": 7,
+      "stale": 1,
       "unknown": 0
     }
   },
@@ -76,7 +76,7 @@
       "value": 34,
       "period": "آبان ۱۴۰۵",
       "sourceKind": "regulator",
-      "class": "recent"
+      "class": "fresh"
     },
     {
       "key": "depositCap1y",
@@ -108,7 +108,7 @@
       "value": 26,
       "period": "آبان ۱۴۰۵",
       "sourceKind": "regulator",
-      "class": "recent"
+      "class": "fresh"
     },
     {
       "key": "depositShort3m",
@@ -177,10 +177,10 @@
     {
       "key": "interbankRate",
       "label": "نرخ سود بازار بین‌بانکی",
-      "value": 33.79,
+      "value": 33.65,
       "period": "آبان ۱۴۰۵",
       "sourceKind": "regulator",
-      "class": "recent"
+      "class": "fresh"
     },
     {
       "key": "loanRateCeiling",
@@ -209,10 +209,10 @@
     {
       "key": "repoFloorRate",
       "label": "حداقل نرخ توافق بازخرید",
-      "value": 32,
+      "value": 32.2,
       "period": "آبان ۱۴۰۵",
       "sourceKind": "regulator",
-      "class": "recent"
+      "class": "fresh"
     }
   ],
   "sources": [
@@ -264,7 +264,7 @@
     "dgshahr.com"
   ],
   "crosscheck": {
-    "generatedAt": "2026-11-20T11:59:31.030Z",
+    "generatedAt": "2026-11-21T11:31:28.828Z",
     "summary": {
       "matched": 6,
       "mismatched": 0,

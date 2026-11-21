@@ -4,7 +4,7 @@
     "realDepositReturnAnnual": -31.8,
     "realDepositReturnCbi": -28.4
   },
-  "generatedAt": "2026-11-20T11:59:15.153Z",
+  "generatedAt": "2026-11-21T11:31:03.260Z",
   "generator": "ممیزی مستند ۲۰۲۶-۱۱-۰۲؛ خط لوله tools/collect.mjs",
   "indicators": {
     "certificateRate": {
@@ -20,10 +20,10 @@
       "value": 23
     },
     "corridorCeilingRate": {
-      "changedAt": "2026-11-14T10:45:32.900Z",
+      "changedAt": "2026-11-21T11:31:03.259Z",
       "label": "نرخ اعتبارگیری قاعده‌مند (سقف کریدور)",
-      "observedDate": "1405/08/21",
-      "officialDate": "2026-11-12",
+      "observedDate": "1405/08/28",
+      "officialDate": "2026-11-19",
       "period": "آبان ۱۴۰۵",
       "previousValue": 34,
       "source": {
@@ -137,10 +137,10 @@
       "value": 22.5
     },
     "depositFacilityRate": {
-      "changedAt": "2026-11-14T10:45:32.900Z",
+      "changedAt": "2026-11-21T11:31:03.259Z",
       "label": "نرخ سپرده‌گذاری قاعده‌مند",
-      "observedDate": "1405/08/21",
-      "officialDate": "2026-11-12",
+      "observedDate": "1405/08/28",
+      "officialDate": "2026-11-19",
       "period": "آبان ۱۴۰۵",
       "previousValue": 26,
       "source": {
@@ -317,19 +317,19 @@
       "value": 88.7
     },
     "interbankRate": {
-      "changedAt": "2026-11-14T10:45:32.900Z",
+      "changedAt": "2026-11-21T11:31:03.259Z",
       "label": "نرخ سود بازار بین‌بانکی",
-      "observedDate": "1405/08/21",
-      "officialDate": "2026-11-12",
+      "observedDate": "1405/08/28",
+      "officialDate": "2026-11-19",
       "period": "آبان ۱۴۰۵",
-      "previousValue": 33.92,
+      "previousValue": 33.79,
       "source": {
         "kind": "regulator",
         "title": "بانک مرکزی — نرخ سود سیاستی (جدول هفتگی رسمی)",
         "url": "https://www.cbi.ir/PolicyRates/policyrates_fa.aspx"
       },
       "unit": "%",
-      "value": 33.79
+      "value": 33.65
     },
     "loanRateCeiling": {
       "corroboration": [
@@ -390,10 +390,10 @@
       "value": 4
     },
     "repoFloorRate": {
-      "changedAt": "2026-11-14T10:45:32.900Z",
+      "changedAt": "2026-11-21T11:31:03.259Z",
       "label": "حداقل نرخ توافق بازخرید",
-      "observedDate": "1405/08/21",
-      "officialDate": "2026-11-12",
+      "observedDate": "1405/08/28",
+      "officialDate": "2026-11-19",
       "period": "آبان ۱۴۰۵",
       "previousValue": 32,
       "source": {
@@ -402,7 +402,7 @@
         "url": "https://www.cbi.ir/PolicyRates/policyrates_fa.aspx"
       },
       "unit": "%",
-      "value": 32
+      "value": 32.2
     }
   },
   "note": "شاخص‌های کلان و نرخ‌های مرجع نظام بانکی. مبنای محاسبه «نرخ واقعی» در سامانه.",
