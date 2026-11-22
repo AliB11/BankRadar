@@ -158,10 +158,13 @@
   <!--
     داده درون‌خطی: این فایل توسط tools/build-bundle.mjs ساخته می‌شود.
     بارگذاری با تگ script انتخاب شده تا سامانه روی file:// هم (که fetch به دلیل CORS
-    شکست می‌خورد) به‌درستی کار کند. در محیط وب، assets/js/store.js نسخه تازه‌تر
-    data/products.json را در پس‌زمینه جایگزین می‌کند.
+    شکست می‌خورد) به‌درستی کار کند. در محیط وب، assets/js/store.js با گیت تازگیِ
+    meta.json فقط در صورت تازه‌تر بودن نسخهٔ JSON، فایل کامل products.json را می‌گیرد.
+    defer: بدون آن، اسکریپت ~۱٫۳ مگابایتی تجزیه HTML را مسدود می‌کرد و اسکلت
+    صفحه تا پایان دانلود/اجرا نقاشی نمی‌شد؛ با defer اسکلت فوری می‌آید و ترتیب
+    اجرا (بسته پیش از app.js) حفظ می‌شود.
   -->
-  <script src="data/bundle.js"></script>
+  <script src="data/bundle.js" defer></script>
   <script type="module" src="assets/js/app.js?v=excel-20261117"></script>
 </body>
 </html>

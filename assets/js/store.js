@@ -2,8 +2,12 @@
  * وضعیت مرکزی سامانه: بارگذاری داده، فیلترها، مرتب‌سازی و ماندگاری انتخاب‌ها.
  *
  * راهبرد بارگذاری داده:
- *   ۱. data/bundle.js از طریق تگ script بارگذاری می‌شود → روی file:// هم کار می‌کند
- *   ۲. در محیط وب، data/products.json تازه‌تر از بسته بررسی و در صورت تفاوت جایگزین می‌شود
+ *   ۱. data/bundle.js از طریق تگ script با defer بارگذاری می‌شود → روی file:// هم
+ *      کار می‌کند و اسکلت صفحه پیش از اجرای اسکریپت ~۱٫۳MB نقاشی می‌شود
+ *   ۲. در محیط وب، تازگی products.json ابتدا با meta.json (~۹KB، فیلد
+ *      productsGeneratedAt) کاوش می‌شود؛ فقط اگر نسخه تازه‌تر از بسته باشد
+ *      فایل کامل (~۱٫۶MB) گرفته می‌شود — پیش‌تر در هر بارگذاری دانلود و دور
+ *      انداخته می‌شد
  *   ۳. در نبود هر دو، پیام خطای قابل‌فهم نمایش داده می‌شود (نه صفحه سفید)
  */
 
@@ -165,11 +169,41 @@ function fromBundle() {
 }
 
 /**
- * تلاش برای دریافت داده تازه‌تر از JSON (فقط در محیط وب).
- * در file:// این فراخوانی شکست می‌خورد و بی‌صدا نادیده گرفته می‌شود.
+ * کاوش تازگی products.json با meta.json (حدود ۹KB) پیش از دانلود فایل کامل.
+ *
+ * چرا لازم است: products.json بیش از ۱٫۶ مگابایت است. در نسخه پیشین، این فایل
+ * در هر بارگذاری صفحه دانلود می‌شد و در حالت عادی — که بسته درون‌خطی هم‌نسخهٔ
+ * آن است — کامل دور انداخته می‌شد؛ یعنی نیمی از حجم بارگذاری هدر می‌رفت.
+ * meta.json فقط چند کیلوبایت است و پس از افزودن «productsGeneratedAt» به آن
+ * در خط لوله، نسخهٔ products.json را بدون دانلود کامل مشخص می‌کند.
+ *
+ * سازگاری با نسخه‌های قدیمی meta.json (بدون فیلد جدید): lastRun پایان همان
+ * اجرایی است که products.json را نوشته؛ فاصلهٔ کمتر از ۳۰ دقیقه میان lastRun
+ * و مهر بسته یعنی «همان اجرا» و دانلود کامل لازم نیست.
+ *
+ * نتیجهٔ کاوش در lastMetaProbe می‌ماند تا loadData دوباره meta نگرفت.
  */
+let lastMetaProbe = null;
+
 async function fetchFresh(baseGeneratedAt) {
   try {
+    try {
+      const metaRes = await fetch(`data/meta.json?_t=${Date.now()}`, { cache: 'no-store' });
+      if (metaRes.ok) {
+        const meta = await metaRes.json();
+        lastMetaProbe = meta;
+        const productsGeneratedAt = meta.productsGeneratedAt ?? null;
+        if (baseGeneratedAt && productsGeneratedAt) {
+          if (atLeastAsNew(baseGeneratedAt, productsGeneratedAt)) return null;
+        } else if (baseGeneratedAt && meta.lastRun) {
+          const gap = Date.parse(meta.lastRun) - Date.parse(baseGeneratedAt);
+          if (Number.isFinite(gap) && gap >= 0 && gap < 30 * 60_000) return null;
+        }
+      }
+    } catch {
+      // کاوش meta اختیاری است؛ در file:// شکست می‌خورد و مسیر پیشین ادامه می‌یابد
+    }
+
     const res = await fetch(`data/products.json?_t=${Date.now()}`, { cache: 'no-store' });
     if (!res.ok) return null;
     const json = await res.json();
@@ -260,12 +294,14 @@ export async function reloadFreshData() {
       store.meta.banksGeneratedAt = bankFile.generatedAt ?? store.meta.banksGeneratedAt;
     }
 
-    // فیدهای هفتگی اختیاری
-    const weekly = await fetchOptionalJSON('data/weekly-report.json');
+    // فیدهای هفتگی اختیاری — موازی؛ پیش‌تر سه رفت‌وبرگشت ترتیبی بود
+    const [weekly, changelog, history] = await Promise.all([
+      fetchOptionalJSON('data/weekly-report.json'),
+      fetchOptionalJSON('data/changelog.json'),
+      fetchOptionalJSON('data/history/weekly-history.json'),
+    ]);
     if (weekly) store.weeklyReport = weekly;
-    const changelog = await fetchOptionalJSON('data/changelog.json');
     if (changelog) store.changelog = changelog;
-    const history = await fetchOptionalJSON('data/history/weekly-history.json');
     if (Array.isArray(history)) store.history = history;
     store.transparency = computeTransparencyLocal(store.products);
 
@@ -306,7 +342,10 @@ export async function loadData() {
   if (fresh?.generatedAt) store.meta.generatedAt = fresh.generatedAt;
 
   const [metaFresh, indicatorsFresh, banksFresh] = await Promise.all([
-    fetchOptionalJSON('data/meta.json'), fetchOptionalJSON('data/indicators.json'), fetchOptionalJSON('data/banks.json'),
+    // meta.json در گیت تازگی fetchFresh همین بار گرفته شده؛ دوباره دانلود نکن
+    lastMetaProbe ? Promise.resolve(lastMetaProbe) : fetchOptionalJSON('data/meta.json'),
+    fetchOptionalJSON('data/indicators.json'),
+    fetchOptionalJSON('data/banks.json'),
   ]);
   if (metaFresh && atLeastAsNew(metaFresh.lastRun, store.meta.lastRun)) {
     // تاریخ ساخت و شمار محصولات مربوط به products است، نه آخرین اجرا.
@@ -345,13 +384,17 @@ export async function loadData() {
 
   recalculate();
 
-  // فیدهای هفتگی اختیاری — در file:// شکست می‌خورد و نادیده گرفته می‌شود
+  // فیدهای هفتگی اختیاری — در file:// شکست می‌خورد و نادیده گرفته می‌شود.
+  // سه فایل با هم گرفته می‌شوند نه پشت‌سرهم: هر await ترتیبی یک رفت‌وبرگشت
+  // کامل شبکه به زمان آماده‌سازی صفحه اضافه می‌کرد.
   try {
-    const weekly = await fetchOptionalJSON('data/weekly-report.json');
+    const [weekly, changelog, history] = await Promise.all([
+      fetchOptionalJSON('data/weekly-report.json'),
+      fetchOptionalJSON('data/changelog.json'),
+      fetchOptionalJSON('data/history/weekly-history.json'),
+    ]);
     if (weekly) store.weeklyReport = weekly;
-    const changelog = await fetchOptionalJSON('data/changelog.json');
     if (changelog) store.changelog = changelog;
-    const history = await fetchOptionalJSON('data/history/weekly-history.json');
     if (Array.isArray(history)) store.history = history;
     store.transparency = computeTransparencyLocal(store.products);
   } catch {
