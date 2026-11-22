@@ -188,6 +188,51 @@ export const KNOWN_FUNDS = Object.freeze({
   569: { slug: 'etemad-melli', bankId: 'melli', payout: 'monthly' },
   255: { slug: 'andookhteh-sepehr', bankId: 'saderat', payout: 'monthly' },
   5385: { slug: 'andookhteh-mellat', bankId: 'mellat', fullName: 'اندوخته ملت', payout: 'monthly' },
+
+  // ---- نگاشت‌های افزوده ۱۴۰۵/۰۹/۰۱ (بر پایه خروجی «unmapped» اجرای زنده) ----
+  // فقط صندوق‌هایی که نهادِ مدیرشان از قبل در data/banks.json ثبت است تا «بانک»
+  // خودساخته ساخته نشود؛ پوشش صندوق‌های وابسته به بانک‌ها (خزانه ملت، اوج ملت،
+  // آتیه ملت، نگین رفاه، صنعت و معدن، ارزش آفرینان دی و…) کامل‌تر می‌شود.
+  // payout طبق قرارداد غالب نگاشت‌های موجود: صدور/ابطالی → ماهانه، ETF →
+  // انباشته؛ همهٔ رکوردهای خودکار medium confidence دارند و باید تأیید شوند.
+  // شناسهٔ ۱۹۹ («اندوخته ملت» دومی در خود API) عمداً نگاشت نشد تا محصول
+  // تکراری نسازد؛ همان صندوق با شناسهٔ 5385 پوشش داده شده است.
+  5312: { slug: 'khazane-mellat', bankId: 'mellat', payout: 'none' },
+  200: { slug: 'ooj-mellat', bankId: 'mellat', payout: 'monthly' },
+  181: { slug: 'atiyeh-mellat', bankId: 'mellat', payout: 'none' },
+  201: { slug: 'negin-refah', bankId: 'refah', payout: 'monthly' },
+  217: { slug: 'rahavard-maskan', bankId: 'maskan', payout: 'monthly' },
+  187: { slug: 'mava-maskan', bankId: 'maskan', payout: 'monthly' },
+  202: { slug: 'moshtarek-sanat-madan', bankId: 'sanat-madan', payout: 'monthly' },
+  220: { slug: 'arzesh-afrinan-day', bankId: 'day', payout: 'monthly' },
+  268: { slug: 'gostaresh-farday-iranian', bankId: 'ayandeh', payout: 'monthly' },
+  262: { slug: 'moshtarek-karafarin', bankId: 'karafarin', payout: 'monthly' },
+  223: { slug: 'asa-karafarin', bankId: 'karafarin', payout: 'none' },
+  231: { slug: 'hazare-sevom-pad', bankId: 'pasargad', payout: 'monthly' },
+  309: { slug: 'nikukari-alzahra', bankId: 'parsian', payout: 'monthly' },
+  240: { slug: 'piroozan-parsian', bankId: 'parsian', payout: 'monthly' },
+  288: { slug: 'nikukari-rahnegar', bankId: 'charisma', payout: 'monthly' },
+  5171: { slug: 'oragh-dolati-charisma', bankId: 'charisma', payout: 'monthly' },
+  340: { slug: 'nikukari-farday-roshan', bankId: 'charisma', payout: 'monthly' },
+  974: { slug: 'hedayeh-farabi', bankId: 'farabi', payout: 'monthly' },
+  570: { slug: 'padash-etemad-tamadon', bankId: 'tamadon-ib', payout: 'monthly' },
+  354: { slug: 'andookhteh-tosee-saderat', bankId: 'tamadon-ib', payout: 'monthly' },
+  558: { slug: 'saramad-bazar', bankId: 'karamad', payout: 'monthly' },
+  5329: { slug: 'asayesh-hummers', bankId: 'hummers', payout: 'monthly' },
+  5269: { slug: 'damoon-aseman', bankId: 'aseman', payout: 'none' },
+  4230: { slug: 'asamid', bankId: 'aseman', payout: 'none' },
+  5263: { slug: 'sahel-aram-firouzeh', bankId: 'firouzeh', payout: 'monthly' },
+  5238: { slug: 'moravarid-agah', bankId: 'agah', payout: 'monthly' },
+  5207: { slug: 'seporde-mandegar-bidar', bankId: 'eghtesad-bidar', payout: 'monthly' },
+  5185: { slug: 'nedaye-mandegar-damavand', bankId: 'damavand-ib', payout: 'monthly' },
+  5180: { slug: 'shokouh-ooj-damavand', bankId: 'damavand-ib', payout: 'monthly' },
+  5173: { slug: 'toranj-sabet', bankId: 'toranj', payout: 'none' },
+  5167: { slug: 'roshd-aban', bankId: 'aban', payout: 'none' },
+  5165: { slug: 'khazane-dariush', bankId: 'dariush', payout: 'monthly' },
+  5163: { slug: 'afaagh-arman-ati', bankId: 'arman-ati', payout: 'none' },
+  5148: { slug: 'nedaye-sabet-kian', bankId: 'kian', payout: 'monthly' },
+  5056: { slug: 'ganjin-dariush', bankId: 'dariush', payout: 'none' },
+  5045: { slug: 'dara-algorithm', bankId: 'algorithm', payout: 'none' },
 });
 
 /* ------------------------------------------------------------------ */
@@ -401,6 +446,31 @@ export function rejectReason(row) {
   }
   if (!row.manager) return 'مدیر صندوق مشخص نیست';
   return null;
+}
+
+/**
+ * سنجش پوشش پاسخ زنده — گارد «پاسخ جزئی».
+ *
+ * سرویس داده گاهی به‌جای فهرست کامل صندوق‌ها، دستهٔ کوچکی از ردیف‌ها برمی‌گرداند
+ * (نمونهٔ واقعی ۱۴۰۵/۰۹/۰۱: ۲۴ ردیف به‌جای ~۱۷۴). در آن اجرا فقط یک صندوق
+ * نگاشت می‌شد ولی منبع سبزِ «اجرا شد» گزارش شد — همان الگوی گمراه‌کننده‌ای که
+ * ممیزی F3 در مورد برش ثابت آی‌سیگنال ثبت کرده بود.
+ *
+ * قاعده: اگر پاسخ زنده کمتر از ۴۰٪ صندوق‌های جدول شناخت را برگرداند، اجرا
+ * «کاهش‌یافته» ثبت می‌شود؛ در گزارش منبع سبز کامل دیده نمی‌شود.
+ *
+ * @param {number} productCount شمار محصول تولیدشده از پاسخ زنده
+ * @param {boolean} live آیا پاسخ از شبکه آمده است (برش همیشه degraded نیست)
+ * @returns {{degraded:boolean, note:string|null}}
+ */
+export function assessLiveCoverage(productCount, live) {
+  const knownCount = Object.keys(KNOWN_FUNDS).length;
+  if (!live) return { degraded: false, note: null };
+  if (productCount >= knownCount * 0.4) return { degraded: false, note: null };
+  return {
+    degraded: true,
+    note: `پاسخ زنده فقط ${productCount} صندوق از ${knownCount} نگاشت‌شده را پوشش داد — پاسخ جزئی سرویس؛ داده این اجرا نمایندهٔ کامل بازار نیست`,
+  };
 }
 
 /* ------------------------------------------------------------------ */
@@ -797,6 +867,7 @@ export async function collect({
   const unmapped = [];
   const products = [];
   const seen = new Set();
+  const seenNames = new Set();
   let etf = 0;
   let issuance = 0;
   let refreshed = 0;
@@ -813,13 +884,25 @@ export async function collect({
       unmapped.push({ id: row.id, name: row.name, manager: row.manager, typeId: row.typeId });
       continue;
     }
+    // گارد تکرار نام: خودِ سرویس داده گاهی یک صندوق را با دو شناسهٔ متفاوت
+    // می‌فرستد (نمونهٔ واقعی: «اندوخته ملت» با شناسهٔ 199 و 5385). بدون این
+    // گارد، دو محصول هم‌نام ساخته می‌شد و در فهرست و مقایسه دوباره دیده می‌شد.
+    const nameKey = `${row.etf ? 'e' : 'i'}::${foldForMatch(row.name)}`;
+    if (seenNames.has(nameKey)) continue;
     const product = mapFundToProduct(row, { banks, existing, today: now, live });
     if (!product) continue;
+    seenNames.add(nameKey);
     products.push(product);
     if (row.etf) etf += 1;
     else issuance += 1;
     if (!product.autoDiscovered) refreshed += 1;
   }
+
+  // پاسخ جزئی: سرویس گاهی به‌جای فهرست کامل، دستهٔ کوچکی از ردیف‌ها برمی‌گرداند
+  // (نمونهٔ واقعی ۱۴۰۵/۰۹/۰۱: ۲۴ ردیف به‌جای ۱۷۴). در این حالت منبع «زنده و
+  // سالم» گزارش نمی‌شود؛ degraded ثبت می‌گردد تا پنل منابع سبزِ گمراه‌کننده نسازد.
+  const coverage = assessLiveCoverage(products.length, live);
+  if (coverage.degraded) log(`آی‌سیگنال: هشدار — ${coverage.note}`);
 
   log(
     `آی‌سیگنال: ${products.length} صندوق درآمد ثابت (${etf} ETF، ${issuance} صدور/ابطالی؛ ${refreshed} به‌روزرسانی رکورد دست‌نویس)، ${skipped.length} رد شد` +
@@ -834,6 +917,7 @@ export async function collect({
     url: ISIGNAL_FUND_LIST_URL,
     origin,
     live,
+    ...(coverage.degraded ? { degraded: true, note: coverage.note } : {}),
     page,
     attempts,
     rows: rawRows.length,

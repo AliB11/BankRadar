@@ -15,6 +15,7 @@
 | `data/source-health.json` | گزارش سلامت منابع و تازگی داده برای پنل/مخزن | خیر — با `npm run health` ساخته می‌شود |
 | `data/bundle.js` | بسته درون‌خطی برای بارگذاری در مرورگر | خیر — ساخته می‌شود |
 | `tests/fixtures/isignal-funds-*.json` | برش برون‌خط صندوق‌های درآمد ثابت آی‌سیگنال (ورودی `ISIGNAL_JSON_FILE`) | با هر برداشت تازه |
+| `FINAI_HTML_FILE` | درون‌ریزی آفلاین جدول سقف طرح ویژه FinAI برای منبع `tools/sources/finai.mjs` | متغیر محیطی |
 
 ## چرخه به‌روزرسانی
 

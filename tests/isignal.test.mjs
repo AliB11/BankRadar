@@ -19,6 +19,7 @@ import {
   FIXED_INCOME_TYPES,
   normalizeRow,
   rejectReason,
+  assessLiveCoverage,
   mapFundToProduct,
   canonicalJalali,
   collect,
@@ -475,4 +476,52 @@ test('productTitle خروجی همیشه سر راست دارد', () => {
   const row = normalizeRow({ id: 553, name: 'با درآمد ثابت کیان', typeId: 43, manager: 'کارگزاری آگاه', oneYear: 30, date: '1405/07/05' });
   const title = productTitle(row, {});
   assert.ok(!/درآمد ثابت با درآمد ثابت|ثابت ثابت/.test(title), title);
+});
+
+/* ------------------------------------------------------------------ */
+/* گاردهای پاسخ جزئی و تکرار نام (افزودهٔ ۱۴۰۵/۰۹)                      */
+/* ------------------------------------------------------------------ */
+
+test('assessLiveCoverage: پاسخ زندهٔ کامل degraded نیست', () => {
+  const verdict = assessLiveCoverage(Object.keys(KNOWN_FUNDS).length, true);
+  assert.equal(verdict.degraded, false);
+  assert.equal(verdict.note, null);
+});
+
+test('assessLiveCoverage: پاسخ جزئی (کمتر از ۴۰٪ نگاشت‌ها) degraded می‌گیرد', () => {
+  // نمونهٔ واقعی ۱۴۰۵/۰۹/۰۱: ۲۴ ردیف زنده، فقط ۱ محصول نگاشت‌شده، ولی منبع سبز
+  const verdict = assessLiveCoverage(1, true);
+  assert.equal(verdict.degraded, true);
+  assert.match(verdict.note, /پاسخ جزئی|پوشش داد/);
+});
+
+test('assessLiveCoverage: برش برون‌خط مشمول گارد پوشش نیست', () => {
+  const verdict = assessLiveCoverage(1, false);
+  assert.equal(verdict.degraded, false);
+});
+
+test('گارد تکرار نام: دو شناسهٔ هم‌نام فقط یک محصول می‌سازند', async () => {
+  // خود API یک صندوق را با دو شناسه می‌فرستد (نمونه: اندوخته ملت با 199 و 5385)
+  const dupRows = [
+    { id: 900001, name: 'تست هم‌نام', manager: 'سبدگردان تست', typeId: 30, 'return.oneYear': 28.4, buyPrice: 101000, date: '14050816' },
+    { id: 900002, name: 'تست هم‌نام', manager: 'سبدگردان تست', typeId: 30, 'return.oneYear': 28.4, buyPrice: 101000, date: '14050816' },
+    { id: 900003, name: 'تست متمایز', manager: 'سبدگردان تست', typeId: 30, 'return.oneYear': 28.4, buyPrice: 101000, date: '14050816' },
+  ];
+  const inline = { rows: dupRows, dataDate: '1405/08/16' };
+  const result = await collect({ existing: [], banks: [], snapshot: inline, today: TODAY, probePage: false, onlyKnown: false });
+  const names = result.products.map((p) => p.product);
+  assert.equal(result.products.length, 2, 'هم‌نام‌ها فقط یک‌بار وارد می‌شوند');
+  assert.equal(new Set(names).size, names.length, 'نام تکراری در خروجی');
+});
+
+test('KNOWN_FUNDS افزوده‌شده: bankId معتبر، payout مجاز و bankIdها در banks.json', () => {
+  const bankIds = new Set(banks.map((b) => b.id));
+  // نگاشت‌های افزوده: صندوق‌های وابسته به بانک‌ها و نهادهای موجود در banks.json
+  for (const [id, meta] of Object.entries(KNOWN_FUNDS)) {
+    assert.ok(['monthly', 'none'].includes(meta.payout), `payout نامعتبر برای ${id}`);
+    assert.ok(bankIds.has(meta.bankId), `bankId «${meta.bankId}» (صندوق ${id}) در banks.json نیست`);
+  }
+  assert.ok(KNOWN_FUNDS[5312], 'خزانه ملت نگاشت نشده است');
+  assert.ok(KNOWN_FUNDS[201], 'نگین رفاه نگاشت نشده است');
+  assert.ok(KNOWN_FUNDS[202], 'مشترک صنعت و معدن نگاشت نشده است');
 });

@@ -1,25 +1,26 @@
 {
-  "autoDiscovered": 633,
+  "autoDiscovered": 674,
   "counts": {
     "credit": 141,
-    "deposits": 58,
-    "funds": 73,
+    "deposits": 63,
+    "funds": 109,
     "loans": 423,
     "loyalty": 14,
-    "total": 709
+    "total": 750
   },
   "freshness": {
-    "d30": 17,
-    "d7": 407,
-    "d90": 176,
+    "d30": 19,
+    "d7": 442,
+    "d90": 178,
     "medianDays": 5,
-    "older": 103,
-    "total": 709,
+    "older": 105,
+    "total": 750,
     "unknown": 6
   },
-  "lastRun": "2026-11-22T11:46:07.006Z",
-  "lastRunDurationMs": 182068,
-  "lastRunMode": "full",
+  "lastRun": "2026-11-22T15:14:15.863Z",
+  "lastRunDurationMs": 1006,
+  "lastRunMode": "only:finai",
+  "productsGeneratedAt": "2026-11-22T15:14:14.857Z",
   "sources": [
     {
       "attempted": 149,
@@ -252,9 +253,9 @@
       "via": "wayback"
     },
     {
-      "etf": 0,
-      "issuance": 1,
-      "ms": 2433,
+      "etf": 48,
+      "issuance": 55,
+      "ms": 1353,
       "name": "isignal.ir",
       "ok": true,
       "origin": "api:signalpardazgroup.com",
@@ -263,11 +264,11 @@
         "ok": true,
         "url": "https://isignal.ir/fund/"
       },
-      "parsed": 1,
-      "refreshed": 0,
-      "rows": 24,
-      "skipped": 0,
-      "unmapped": 6
+      "parsed": 103,
+      "refreshed": 8,
+      "rows": 601,
+      "skipped": 14,
+      "unmapped": 57
     },
     {
       "matched": 6,
@@ -305,6 +306,18 @@
         }
       ],
       "unverified": 0
+    },
+    {
+      "agreed": 8,
+      "corroboration": 25,
+      "degraded": false,
+      "ms": 712,
+      "name": "finai.ir",
+      "observedAt": "2026-11-22",
+      "ok": true,
+      "parsed": 0,
+      "rows": 25,
+      "via": "direct"
     }
   ],
   "stale": 6,

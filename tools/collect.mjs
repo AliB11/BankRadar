@@ -14,6 +14,7 @@
  *   node tools/collect.mjs --offline    # بدون شبکه و تغییر داده/گزارش؛ فقط بازسازی bundle
  *   node tools/collect.mjs --limit=60   # محدودکردن تعداد صفحات وام
  *   node tools/collect.mjs --only=dgshahr  # فقط منبع دیجی‌شهر (برای درون‌ریزی آفلاین: DGSHAHR_HTML_FILE)
+ *   node tools/collect.mjs --only=finai    # فقط جدول سقف طرح ویژه FinAI (برون‌خط: FINAI_HTML_FILE)
  *   node tools/collect.mjs --only=isignal  # فقط صندوق‌های درآمد ثابت آی‌سیگنال (برون‌خط: ISIGNAL_JSON_FILE)
  *   node tools/collect.mjs --only=crosscheck # فقط تطبیق مستقل نرخ‌ها با منابع جایگزین
  */
@@ -27,6 +28,7 @@ import * as rade from './sources/rade.mjs';
 import * as banks from './sources/banks.mjs';
 import * as cbi from './sources/cbi.mjs';
 import * as dgshahr from './sources/dgshahr.mjs';
+import * as finai from './sources/finai.mjs';
 import * as isignal from './sources/isignal.mjs';
 import * as crosscheck from './sources/crosscheck.mjs';
 import { buildBundle } from './build-bundle.mjs';
@@ -550,6 +552,35 @@ async function main() {
       }
     }
 
+    // ۴-ب) FinAI — جدول بانک‌محور سقف طرح ویژه سپرده؛ پوشش بانک‌هایی که در
+    //      جدول ترجیحی دیجی‌شهر نیستند + تطبیق مستقل نرخ‌های ترجیحی مشترک
+    if (runs('finai')) {
+      const banksData = await readJSON('banks.json', { banks: [] });
+      const finResult = await runSource('finai', () =>
+        finai.collect({ existing: dataset.products, banks: banksData?.banks ?? [], log: vlog }),
+      );
+      if (finResult.ok) {
+        incoming = incoming.concat(finResult.data.products);
+        const agree = finResult.data.corroboration.filter((c) => c.agree).length;
+        report.sources.push({
+          name: 'finai.ir',
+          ok: true,
+          via: finResult.data.via,
+          observedAt: finResult.data.observedAt,
+          degraded: finResult.data.via === 'wayback' || finResult.data.via === 'proxy',
+          parsed: finResult.data.products.length,
+          rows: finResult.data.rows,
+          corroboration: finResult.data.corroboration.length,
+          agreed: agree,
+          ms: finResult.ms,
+        });
+        log(`FinAI: ${finResult.data.products.length} محصول سپرده جدید + ${finResult.data.corroboration.length} تطبیق (${agree} توافق)`);
+      } else {
+        report.sources.push({ name: 'finai.ir', ok: false, error: finResult.error, ms: finResult.ms });
+        log(`FinAI: ناموفق — ${finResult.error}`);
+      }
+    }
+
     // ۵) آی‌سیگنال — صندوق‌های درآمد ثابت (ETF و صدور/ابطالی) با بازدهی محقق‌شده
     if (runs('isignal')) {
       const banksData = await readJSON('banks.json', { banks: [] });
@@ -558,14 +589,16 @@ async function main() {
       );
       if (isResult.ok) {
         incoming = incoming.concat(isResult.data.products);
-        // ok فقط وقتی true است که داده واقعاً از شبکه آمده باشد. پیش‌تر
-        // fallback به برش ذخیره‌شده هم ok:true می‌گرفت و در پنل، منبعِ مرده
-        // سبز دیده می‌شد (یافتهٔ F3).
+        // ok فقط وقتی true است که داده واقعاً از شبکه آمده باشد و پوشش کامل
+        // داشته باشد. پیش‌تر fallback به برش ذخیره‌شده هم ok:true می‌گرفت و در
+        // پنل، منبعِ مرده سبز دیده می‌شد (یافتهٔ F3). پاسخ جزئی سرویس (مثلاً
+        // ۲۴ ردیف به‌جای ~۱۷۴) هم حالا سبز کامل نمی‌گیرد.
         const isLive = isResult.data.live === true;
+        const isDegraded = isResult.data.degraded === true;
         report.sources.push({
           name: 'isignal.ir',
-          ok: isLive,
-          ...(isLive ? {} : { degraded: true, note: 'برش ذخیره‌شده — سرویس زنده در دسترس نبود' }),
+          ok: isLive && !isDegraded,
+          ...(isLive && !isDegraded ? {} : { degraded: true, note: isLive ? isResult.data.note ?? 'پاسخ جزئی سرویس' : 'برش ذخیره‌شده — سرویس زنده در دسترس نبود' }),
           origin: isResult.data.origin,
           page: isResult.data.page,
           rows: isResult.data.rows,
@@ -664,12 +697,18 @@ async function main() {
     lastRun: report.finishedAt,
     lastRunDurationMs: report.durationMs,
     lastRunMode: OFFLINE ? 'offline' : DRY_RUN ? 'dry-run' : ONLY.size ? `only:${[...ONLY].join(',')}` : 'full',
+    // مهر «نسخهٔ products.json» — سامانه مرورگر با مقایسه این فیلد با مهر بسته
+    // درون‌خطی، بدون دانلود فایل کامل (~۱٫۶MB) می‌فهمد داده تازه‌تر شده یا نه.
+    productsGeneratedAt: productsOut.generatedAt,
     counts: productsOut.counts,
     stale: productsOut.stale,
     autoDiscovered: productsOut.autoDiscovered,
     freshness: report.freshness,
     sources: metaSources,
   });
+  // خلاصهٔ Actions هم باید حالت واقعی اجرا را نشان دهد؛ پیش‌تر report
+  // فیلد lastRunMode نداشت و اجرای --only همیشه «full» گزارش می‌شد.
+  report.lastRunMode = OFFLINE ? 'offline' : DRY_RUN ? 'dry-run' : ONLY.size ? `only:${[...ONLY].join(',')}` : 'full';
 
   if (!DRY_RUN) {
     await buildBundle({ dataDir: DATA, log: vlog });

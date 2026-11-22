@@ -1364,6 +1364,7 @@ export function footerHTML() {
     ['بانک مرکزی جمهوری اسلامی ایران', 'https://www.cbi.ir'],
     ['رده — مقایسه خدمات بانکی', 'https://www.rade.ir/loan/'],
     ['دیجی‌شهر — مقایسه نرخ سود سپرده بانکی', 'https://dgshahr.com/blog/best-banks-for-deposit-rates/'],
+    ['FinAI — جدول نرخ سود سپرده بانکی', 'https://finai.ir/blog/bank-deposit-interest-1405'],
     ['آی‌سیگنال — صندوق‌های درآمد ثابت', 'https://isignal.ir'],
     ['مرکز آمار ایران', 'https://www.amar.org.ir'],
   ];
@@ -1391,7 +1392,7 @@ export function footerHTML() {
         <h4>منابع اصلی داده</h4>
         <ul>
           ${sources
-            .slice(0, 5)
+            .slice(0, 6)
             .map(([name, url]) => `<li><a href="${safeUrl(url)}" target="_blank" rel="noopener noreferrer">${esc(name)}</a></li>`)
             .join('')}
           <li><a href="https://fipiran.ir" target="_blank" rel="noopener noreferrer">مرکز پردازش اطلاعات مالی ایران (فیپیران)</a></li>

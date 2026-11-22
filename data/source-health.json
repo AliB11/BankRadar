@@ -1,28 +1,28 @@
 {
-  "generatedAt": "2026-11-22T11:46:07.117Z",
-  "lastRun": "2026-11-22T11:46:07.006Z",
-  "lastRunMode": "full",
+  "generatedAt": "2026-11-22T15:03:42.790Z",
+  "lastRun": "2026-11-22T15:02:09.992Z",
+  "lastRunMode": "only:finai,isignal",
   "counts": {
     "credit": 141,
-    "deposits": 58,
-    "funds": 73,
+    "deposits": 63,
+    "funds": 109,
     "loans": 423,
     "loyalty": 14,
-    "total": 709
+    "total": 750
   },
   "freshness": {
-    "d7": 407,
-    "d30": 17,
-    "d90": 176,
-    "older": 103,
+    "d7": 442,
+    "d30": 19,
+    "d90": 178,
+    "older": 105,
     "unknown": 6,
-    "total": 709,
+    "total": 750,
     "medianDays": 5
   },
   "categoryFreshness": {
     "deposits": {
-      "total": 58,
-      "fresh": 0,
+      "total": 63,
+      "fresh": 5,
       "recent": 6,
       "aging": 16,
       "stale": 31,
@@ -53,11 +53,11 @@
       "unknown": 0
     },
     "funds": {
-      "total": 73,
-      "fresh": 64,
-      "recent": 1,
-      "aging": 7,
-      "stale": 1,
+      "total": 109,
+      "fresh": 94,
+      "recent": 3,
+      "aging": 9,
+      "stale": 3,
       "unknown": 0
     }
   },
@@ -250,7 +250,7 @@
       "name": "isignal.ir",
       "status": "ok",
       "ok": true,
-      "parsed": 1
+      "parsed": 103
     },
     {
       "name": "crosscheck",
@@ -258,6 +258,14 @@
       "ok": true,
       "matched": 6,
       "mismatched": 0
+    },
+    {
+      "name": "finai.ir",
+      "status": "ok",
+      "ok": true,
+      "via": "direct",
+      "observedAt": "2026-11-22",
+      "parsed": 5
     }
   ],
   "degradedSources": [
