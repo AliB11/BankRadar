@@ -26,9 +26,15 @@ export function esc(value) {
     .replace(/'/g, '&#39;');
 }
 
-/** فرار دادن مقدار برای قرار گرفتن در attribute سبک/شناسه */
+/**
+ * فرار دادن مقدار برای قرار گرفتن در attribute سبک/شناسه.
+ * ترتیب مهم است: ابتدا نویسه‌های خارج از فهرست مجاز از متن خام حذف می‌شوند و
+ * بعد esc() گرفته می‌شود. اگر برعکس باشد، خروجی esc («&amp;») با حذف «&»
+ * به «amp;» خراب می‌شد و متن attribute به هم می‌ریخت.
+ */
 export function escAttr(value) {
-  return esc(value).replace(/[^a-zA-Z0-9\u0600-\u06FF\-_ :;.,#%()]/g, '');
+  const filtered = String(value ?? '').replace(/[^a-zA-Z0-9\u0600-\u06FF\-_ :;.,#%()]/g, '');
+  return esc(filtered);
 }
 
 /**
