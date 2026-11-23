@@ -17,26 +17,26 @@
     "total": 750,
     "unknown": 6
   },
-  "lastRun": "2026-11-22T15:14:15.863Z",
-  "lastRunDurationMs": 1006,
-  "lastRunMode": "only:finai",
-  "productsGeneratedAt": "2026-11-22T15:14:14.857Z",
+  "lastRun": "2026-11-23T13:22:03.567Z",
+  "lastRunDurationMs": 218424,
+  "lastRunMode": "full",
+  "productsGeneratedAt": "2026-11-23T13:18:25.143Z",
   "sources": [
     {
-      "attempted": 149,
+      "attempted": 132,
       "discovered": 625,
       "failures": 1,
       "fresh": 120,
-      "ms": 20225,
+      "ms": 20392,
       "name": "rade.ir",
       "ok": true,
-      "parsed": 148,
-      "rotated": 29
+      "parsed": 131,
+      "rotated": 12
     },
     {
       "detail": [
         {
-          "ageDays": 70,
+          "ageDays": 71,
           "id": "blubank",
           "ok": true,
           "rates": [
@@ -83,7 +83,7 @@
           "url": "https://banksepah.ir/سپرده"
         },
         {
-          "ageDays": 1118,
+          "ageDays": 1119,
           "empty": true,
           "id": "eghtesad-novin",
           "ok": false,
@@ -97,7 +97,7 @@
           "url": "https://parsian-bank.ir/"
         },
         {
-          "ageDays": 342,
+          "ageDays": 343,
           "empty": true,
           "id": "pasargad",
           "ok": false,
@@ -112,13 +112,15 @@
           "via": "direct"
         },
         {
-          "error": "همهٔ مسیرهای «https://www.refah-bank.ir/» بسته بود — direct: شبکه در دسترس نبود — https://www.refah-bank.ir/ | wayback: snapshot یافت نشد",
+          "ageDays": 1524,
+          "empty": true,
           "id": "refah",
           "ok": false,
-          "url": "https://www.refah-bank.ir/"
+          "url": "https://www.refah-bank.ir/",
+          "via": "wayback"
         },
         {
-          "ageDays": 1614,
+          "ageDays": 1615,
           "empty": true,
           "id": "maskan",
           "ok": false,
@@ -126,7 +128,7 @@
           "via": "wayback"
         },
         {
-          "ageDays": 519,
+          "ageDays": 520,
           "empty": true,
           "id": "karafarin",
           "ok": false,
@@ -134,7 +136,7 @@
           "via": "wayback"
         },
         {
-          "ageDays": 1634,
+          "ageDays": 1635,
           "empty": true,
           "id": "shahr",
           "ok": false,
@@ -148,14 +150,14 @@
           "url": "https://www.sinabank.ir/"
         },
         {
-          "ageDays": 1691,
+          "ageDays": 1692,
           "id": "mehr-iran",
           "ok": false,
           "url": "https://www.qmb.ir/",
           "via": "wayback"
         },
         {
-          "ageDays": 1304,
+          "ageDays": 1305,
           "empty": true,
           "id": "resalat",
           "ok": false,
@@ -163,7 +165,7 @@
           "via": "wayback"
         },
         {
-          "ageDays": 524,
+          "ageDays": 525,
           "empty": true,
           "id": "vipad",
           "ok": false,
@@ -171,15 +173,13 @@
           "via": "wayback"
         },
         {
-          "ageDays": 1856,
-          "empty": true,
+          "error": "همهٔ مسیرهای «https://www.mebank.ir/» بسته بود — direct: شبکه در دسترس نبود — https://www.mebank.ir/ | wayback: snapshot یافت نشد",
           "id": "middle-east",
           "ok": false,
-          "url": "https://www.mebank.ir/",
-          "via": "wayback"
+          "url": "https://www.mebank.ir/"
         },
         {
-          "ageDays": 535,
+          "ageDays": 536,
           "empty": true,
           "id": "keshavarzi",
           "ok": false,
@@ -200,7 +200,7 @@
           "via": "direct"
         },
         {
-          "ageDays": 188,
+          "ageDays": 189,
           "empty": true,
           "id": "tobank",
           "ok": false,
@@ -209,7 +209,7 @@
         }
       ],
       "empty": 13,
-      "ms": 134435,
+      "ms": 135952,
       "name": "bank-sites",
       "ok": true,
       "reachable": 1,
@@ -226,7 +226,7 @@
           "url": "https://www.amar.org.ir/english/Statistics-by-Topic/Consumer-Price-Index"
         }
       ],
-      "ms": 13441,
+      "ms": 33079,
       "name": "macro-indicators",
       "ok": true,
       "policy": {
@@ -242,7 +242,7 @@
     },
     {
       "degraded": true,
-      "ms": 2696,
+      "ms": 4947,
       "name": "dgshahr.com",
       "observedAt": "2026-10-12",
       "ok": true,
@@ -253,14 +253,26 @@
       "via": "wayback"
     },
     {
+      "agreed": 8,
+      "corroboration": 25,
+      "degraded": false,
+      "ms": 1452,
+      "name": "finai.ir",
+      "observedAt": "2026-11-23",
+      "ok": true,
+      "parsed": 0,
+      "rows": 25,
+      "via": "direct"
+    },
+    {
       "etf": 48,
       "issuance": 55,
-      "ms": 1353,
+      "ms": 3534,
       "name": "isignal.ir",
       "ok": true,
       "origin": "api:signalpardazgroup.com",
       "page": {
-        "bytes": 372510,
+        "bytes": 359490,
         "ok": true,
         "url": "https://isignal.ir/fund/"
       },
@@ -273,7 +285,7 @@
     {
       "matched": 6,
       "mismatched": 0,
-      "ms": 8689,
+      "ms": 18776,
       "name": "crosscheck",
       "ok": true,
       "sources": [
@@ -281,7 +293,7 @@
           "ageDays": 0,
           "chain": "direct✓",
           "name": "finai",
-          "observedAt": "2026-11-22T11:45:58.217Z",
+          "observedAt": "2026-11-23T13:21:44.683Z",
           "ok": true,
           "values": 6,
           "via": "direct"
@@ -290,7 +302,7 @@
           "ageDays": 0,
           "chain": "direct✓",
           "name": "khanesarmaye",
-          "observedAt": "2026-11-22T11:45:59.537Z",
+          "observedAt": "2026-11-23T13:21:45.519Z",
           "ok": true,
           "values": 6,
           "via": "direct"
@@ -299,25 +311,13 @@
           "ageDays": 0,
           "chain": "direct✓",
           "name": "nabzgheymat",
-          "observedAt": "2026-11-22T11:46:04.417Z",
+          "observedAt": "2026-11-23T13:21:49.490Z",
           "ok": true,
           "values": 6,
           "via": "direct"
         }
       ],
       "unverified": 0
-    },
-    {
-      "agreed": 8,
-      "corroboration": 25,
-      "degraded": false,
-      "ms": 712,
-      "name": "finai.ir",
-      "observedAt": "2026-11-22",
-      "ok": true,
-      "parsed": 0,
-      "rows": 25,
-      "via": "direct"
     }
   ],
   "stale": 6,

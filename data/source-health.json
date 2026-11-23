@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-22T15:03:42.790Z",
-  "lastRun": "2026-11-22T15:02:09.992Z",
-  "lastRunMode": "only:finai,isignal",
+  "generatedAt": "2026-11-23T13:22:03.689Z",
+  "lastRun": "2026-11-23T13:22:03.567Z",
+  "lastRunMode": "full",
   "counts": {
     "credit": 141,
     "deposits": 63,
@@ -220,7 +220,7 @@
       "name": "rade.ir",
       "status": "ok",
       "ok": true,
-      "parsed": 148
+      "parsed": 131
     },
     {
       "name": "bank-sites",
@@ -247,6 +247,14 @@
       "parsed": 31
     },
     {
+      "name": "finai.ir",
+      "status": "ok",
+      "ok": true,
+      "via": "direct",
+      "observedAt": "2026-11-23",
+      "parsed": 0
+    },
+    {
       "name": "isignal.ir",
       "status": "ok",
       "ok": true,
@@ -258,21 +266,13 @@
       "ok": true,
       "matched": 6,
       "mismatched": 0
-    },
-    {
-      "name": "finai.ir",
-      "status": "ok",
-      "ok": true,
-      "via": "direct",
-      "observedAt": "2026-11-22",
-      "parsed": 5
     }
   ],
   "degradedSources": [
     "dgshahr.com"
   ],
   "crosscheck": {
-    "generatedAt": "2026-11-22T11:46:06.906Z",
+    "generatedAt": "2026-11-23T13:22:03.459Z",
     "summary": {
       "matched": 6,
       "mismatched": 0,
