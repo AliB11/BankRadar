@@ -1,22 +1,22 @@
 {
-  "generatedAt": "2026-11-23T13:22:03.689Z",
-  "lastRun": "2026-11-23T13:22:03.567Z",
+  "generatedAt": "2026-11-24T14:02:50.061Z",
+  "lastRun": "2026-11-24T14:02:49.976Z",
   "lastRunMode": "full",
   "counts": {
     "credit": 141,
     "deposits": 63,
     "funds": 109,
-    "loans": 423,
+    "loans": 424,
     "loyalty": 14,
-    "total": 750
+    "total": 751
   },
   "freshness": {
-    "d7": 442,
-    "d30": 19,
+    "d7": 443,
+    "d30": 18,
     "d90": 178,
-    "older": 105,
+    "older": 106,
     "unknown": 6,
-    "total": 750,
+    "total": 751,
     "medianDays": 5
   },
   "categoryFreshness": {
@@ -32,15 +32,15 @@
       "total": 141,
       "fresh": 76,
       "recent": 3,
-      "aging": 47,
-      "stale": 14,
+      "aging": 46,
+      "stale": 15,
       "unknown": 1
     },
     "loans": {
-      "total": 423,
-      "fresh": 267,
-      "recent": 7,
-      "aging": 92,
+      "total": 424,
+      "fresh": 268,
+      "recent": 6,
+      "aging": 93,
       "stale": 57,
       "unknown": 0
     },
@@ -220,7 +220,7 @@
       "name": "rade.ir",
       "status": "ok",
       "ok": true,
-      "parsed": 131
+      "parsed": 149
     },
     {
       "name": "bank-sites",
@@ -229,7 +229,7 @@
       "reached": 1,
       "targets": 24,
       "viaFallback": 1,
-      "empty": 13
+      "empty": 14
     },
     {
       "name": "macro-indicators",
@@ -251,7 +251,7 @@
       "status": "ok",
       "ok": true,
       "via": "direct",
-      "observedAt": "2026-11-23",
+      "observedAt": "2026-11-24",
       "parsed": 0
     },
     {
@@ -272,7 +272,7 @@
     "dgshahr.com"
   ],
   "crosscheck": {
-    "generatedAt": "2026-11-23T13:22:03.459Z",
+    "generatedAt": "2026-11-24T14:02:49.903Z",
     "summary": {
       "matched": 6,
       "mismatched": 0,
