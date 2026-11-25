@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-24T14:02:50.061Z",
-  "lastRun": "2026-11-24T14:02:49.976Z",
+  "generatedAt": "2026-11-25T13:18:03.187Z",
+  "lastRun": "2026-11-25T13:18:03.103Z",
   "lastRunMode": "full",
   "counts": {
     "credit": 141,
@@ -17,7 +17,7 @@
     "older": 106,
     "unknown": 6,
     "total": 751,
-    "medianDays": 5
+    "medianDays": 6
   },
   "categoryFreshness": {
     "deposits": {
@@ -251,7 +251,7 @@
       "status": "ok",
       "ok": true,
       "via": "direct",
-      "observedAt": "2026-11-24",
+      "observedAt": "2026-11-25",
       "parsed": 0
     },
     {
@@ -272,7 +272,7 @@
     "dgshahr.com"
   ],
   "crosscheck": {
-    "generatedAt": "2026-11-24T14:02:49.903Z",
+    "generatedAt": "2026-11-25T13:18:03.026Z",
     "summary": {
       "matched": 6,
       "mismatched": 0,
