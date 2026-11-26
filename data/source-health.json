@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-25T13:18:03.187Z",
-  "lastRun": "2026-11-25T13:18:03.103Z",
+  "generatedAt": "2026-11-26T12:58:20.461Z",
+  "lastRun": "2026-11-26T12:58:20.372Z",
   "lastRunMode": "full",
   "counts": {
     "credit": 141,
@@ -11,13 +11,13 @@
     "total": 751
   },
   "freshness": {
-    "d7": 443,
-    "d30": 18,
-    "d90": 178,
+    "d7": 440,
+    "d30": 19,
+    "d90": 180,
     "older": 106,
     "unknown": 6,
     "total": 751,
-    "medianDays": 6
+    "medianDays": 5
   },
   "categoryFreshness": {
     "deposits": {
@@ -31,16 +31,16 @@
     "credit": {
       "total": 141,
       "fresh": 76,
-      "recent": 3,
-      "aging": 46,
+      "recent": 2,
+      "aging": 47,
       "stale": 15,
       "unknown": 1
     },
     "loans": {
       "total": 424,
-      "fresh": 268,
-      "recent": 6,
-      "aging": 93,
+      "fresh": 265,
+      "recent": 8,
+      "aging": 94,
       "stale": 57,
       "unknown": 0
     },
@@ -229,7 +229,7 @@
       "reached": 1,
       "targets": 24,
       "viaFallback": 1,
-      "empty": 14
+      "empty": 13
     },
     {
       "name": "macro-indicators",
@@ -251,7 +251,7 @@
       "status": "ok",
       "ok": true,
       "via": "direct",
-      "observedAt": "2026-11-25",
+      "observedAt": "2026-11-26",
       "parsed": 0
     },
     {
@@ -272,7 +272,7 @@
     "dgshahr.com"
   ],
   "crosscheck": {
-    "generatedAt": "2026-11-25T13:18:03.026Z",
+    "generatedAt": "2026-11-26T12:58:20.292Z",
     "summary": {
       "matched": 6,
       "mismatched": 0,
