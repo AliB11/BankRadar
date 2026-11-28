@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-21T12:07:30.630Z",
+  "generatedAt": "2026-11-28T12:43:48.921Z",
   "total": 23,
   "ok": 11,
   "dead": 12,
@@ -13,7 +13,7 @@
       "ok": false,
       "status": 0,
       "error": "The operation was aborted due to timeout",
-      "checkedAt": "2026-11-21T12:07:20.722Z"
+      "checkedAt": "2026-11-28T12:43:38.517Z"
     },
     {
       "productId": "blu-loan-beja",
@@ -23,7 +23,7 @@
       "ok": false,
       "status": 0,
       "error": "fetch failed",
-      "checkedAt": "2026-11-21T12:07:17.357Z"
+      "checkedAt": "2026-11-28T12:43:45.377Z"
     },
     {
       "productId": "mellal-deposit-pref-26",
@@ -32,7 +32,7 @@
       "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/",
       "ok": false,
       "status": 403,
-      "checkedAt": "2026-11-21T12:07:17.567Z"
+      "checkedAt": "2026-11-28T12:43:39.041Z"
     },
     {
       "productId": "fund-amin-ashna",
@@ -42,7 +42,7 @@
       "ok": false,
       "status": 0,
       "error": "fetch failed",
-      "checkedAt": "2026-11-21T12:06:49.333Z"
+      "checkedAt": "2026-11-28T12:43:08.019Z"
     },
     {
       "productId": "fund-yaghoot-agah",
@@ -52,7 +52,7 @@
       "ok": false,
       "status": 0,
       "error": "The operation was aborted due to timeout",
-      "checkedAt": "2026-11-21T12:07:04.219Z"
+      "checkedAt": "2026-11-28T12:43:21.617Z"
     },
     {
       "productId": "fund-ganjineh-zarrin-shahr",
@@ -62,7 +62,7 @@
       "ok": false,
       "status": 0,
       "error": "The operation was aborted due to timeout",
-      "checkedAt": "2026-11-21T12:07:04.242Z"
+      "checkedAt": "2026-11-28T12:43:21.651Z"
     },
     {
       "productId": "fund-lotus-parsian",
@@ -72,7 +72,7 @@
       "ok": false,
       "status": 0,
       "error": "The operation was aborted due to timeout",
-      "checkedAt": "2026-11-21T12:07:04.244Z"
+      "checkedAt": "2026-11-28T12:43:21.654Z"
     },
     {
       "productId": "fund-omid-sepah",
@@ -82,7 +82,7 @@
       "ok": false,
       "status": 0,
       "error": "fetch failed",
-      "checkedAt": "2026-11-21T12:06:49.361Z"
+      "checkedAt": "2026-11-28T12:43:08.121Z"
     },
     {
       "productId": "refah-special-certificate-farmad",
@@ -92,7 +92,7 @@
       "ok": false,
       "status": 0,
       "error": "The operation was aborted due to timeout",
-      "checkedAt": "2026-11-21T12:07:05.361Z"
+      "checkedAt": "2026-11-28T12:43:24.122Z"
     },
     {
       "productId": "tobank-club",
@@ -101,7 +101,7 @@
       "url": "https://tobank.ir",
       "ok": false,
       "status": 403,
-      "checkedAt": "2026-11-21T12:07:04.721Z"
+      "checkedAt": "2026-11-28T12:43:22.517Z"
     },
     {
       "productId": "vipad-weclub",
@@ -111,7 +111,7 @@
       "ok": false,
       "status": 0,
       "error": "The operation was aborted due to timeout",
-      "checkedAt": "2026-11-21T12:07:20.245Z"
+      "checkedAt": "2026-11-28T12:43:37.656Z"
     },
     {
       "productId": "tejarat-special-certificate-choopan",
@@ -121,7 +121,7 @@
       "ok": false,
       "status": 0,
       "error": "The operation was aborted due to timeout",
-      "checkedAt": "2026-11-21T12:07:30.629Z"
+      "checkedAt": "2026-11-28T12:43:48.920Z"
     }
   ],
   "all": [
@@ -132,7 +132,7 @@
       "url": "https://aloghesti.com/mag/best-loans-for-purchasing-goods/",
       "ok": true,
       "status": 200,
-      "checkedAt": "2026-11-21T12:07:11.235Z"
+      "checkedAt": "2026-11-28T12:43:27.570Z"
     },
     {
       "productId": "farzandavari-44",
@@ -141,7 +141,7 @@
       "url": "https://andishemoaser.ir/%D8%AB%D8%A8%D8%AA%D9%86%D8%A7%D9%85-%D9%88%D8%A7%D9%85-%D9%81%D8%B1%D8%B2%D9%86%D8%AF%D8%A2%D9%88%D8%B1%DB%8C-%DB%B1%DB%B4%DB%B0%DB%B5-%D8%A2%D8%BA%D8%A7%D8%B2-%D8%B4%D8%AF-%D9%85%D8%A8/",
       "ok": true,
       "status": 200,
-      "checkedAt": "2026-11-21T12:07:13.080Z"
+      "checkedAt": "2026-11-28T12:43:31.374Z"
     },
     {
       "productId": "murabaha-khord-23",
@@ -150,7 +150,7 @@
       "url": "https://andishemoaser.ir/%D9%85%D8%AD%D8%A7%D8%B3%D8%A8%D9%87-%D9%88%D8%A7%D9%85-%D8%A8%D8%A7%D9%86%DA%A9%DB%8C%D8%9B-%D9%81%D8%B1%D9%85%D9%88%D9%84-%D8%AF%D9%82%DB%8C%D9%82-%D8%A7%D9%82%D8%B3%D8%A7%D8%B7-%D9%85%D8%A7%D9%87/",
       "ok": true,
       "status": 200,
-      "checkedAt": "2026-11-21T12:07:09.907Z"
+      "checkedAt": "2026-11-28T12:43:26.761Z"
     },
     {
       "productId": "saderat-ghasta",
@@ -159,7 +159,7 @@
       "url": "https://andishemoaser.ir/%D9%88%D8%A7%D9%85-%D9%82%D8%B3%D8%B7%D8%A7-%DB%B1%DB%B4%DB%B0%DB%B5-%D9%85%D8%A8%D9%84%D8%BA%D8%8C-%D8%B4%D8%B1%D8%A7%DB%8C%D8%B7-%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA%D8%8C-%D9%82%D8%B3%D8%B7%D8%A7/",
       "ok": true,
       "status": 200,
-      "checkedAt": "2026-11-21T12:07:13.876Z"
+      "checkedAt": "2026-11-28T12:43:32.798Z"
     },
     {
       "productId": "bankino-vamino-club",
@@ -168,7 +168,7 @@
       "url": "https://bankino.digital",
       "ok": true,
       "status": 206,
-      "checkedAt": "2026-11-21T12:07:08.549Z"
+      "checkedAt": "2026-11-28T12:43:25.441Z"
     },
     {
       "productId": "sepah-negin-club",
@@ -178,7 +178,7 @@
       "ok": false,
       "status": 0,
       "error": "The operation was aborted due to timeout",
-      "checkedAt": "2026-11-21T12:07:20.722Z"
+      "checkedAt": "2026-11-28T12:43:38.517Z"
     },
     {
       "productId": "blu-loan-beja",
@@ -188,7 +188,7 @@
       "ok": false,
       "status": 0,
       "error": "fetch failed",
-      "checkedAt": "2026-11-21T12:07:17.357Z"
+      "checkedAt": "2026-11-28T12:43:45.377Z"
     },
     {
       "productId": "mellal-deposit-pref-26",
@@ -197,7 +197,7 @@
       "url": "https://dgshahr.com/blog/best-banks-for-deposit-rates/",
       "ok": false,
       "status": 403,
-      "checkedAt": "2026-11-21T12:07:17.567Z"
+      "checkedAt": "2026-11-28T12:43:39.041Z"
     },
     {
       "productId": "mehr-iran-mehryar",
@@ -206,7 +206,7 @@
       "url": "https://digivam.app/mehriran-bank/",
       "ok": true,
       "status": 200,
-      "checkedAt": "2026-11-21T12:07:14.629Z"
+      "checkedAt": "2026-11-28T12:43:33.590Z"
     },
     {
       "productId": "fund-amin-ashna",
@@ -216,7 +216,7 @@
       "ok": false,
       "status": 0,
       "error": "fetch failed",
-      "checkedAt": "2026-11-21T12:06:49.333Z"
+      "checkedAt": "2026-11-28T12:43:08.019Z"
     },
     {
       "productId": "fund-yaghoot-agah",
@@ -226,7 +226,7 @@
       "ok": false,
       "status": 0,
       "error": "The operation was aborted due to timeout",
-      "checkedAt": "2026-11-21T12:07:04.219Z"
+      "checkedAt": "2026-11-28T12:43:21.617Z"
     },
     {
       "productId": "fund-ganjineh-zarrin-shahr",
@@ -236,7 +236,7 @@
       "ok": false,
       "status": 0,
       "error": "The operation was aborted due to timeout",
-      "checkedAt": "2026-11-21T12:07:04.242Z"
+      "checkedAt": "2026-11-28T12:43:21.651Z"
     },
     {
       "productId": "fund-lotus-parsian",
@@ -246,7 +246,7 @@
       "ok": false,
       "status": 0,
       "error": "The operation was aborted due to timeout",
-      "checkedAt": "2026-11-21T12:07:04.244Z"
+      "checkedAt": "2026-11-28T12:43:21.654Z"
     },
     {
       "productId": "ezdevaj-350",
@@ -255,7 +255,7 @@
       "url": "https://nabzgheymat.ir/%D9%88%D8%A7%D9%85-%D8%A7%D8%B2%D8%AF%D9%88%D8%A7%D8%AC-%D9%88-%D9%81%D8%B1%D8%B2%D9%86%D8%AF%D8%A2%D9%88%D8%B1%DB%8C-%DB%B1%DB%B4%DB%B0%DB%B5%D8%9B-%DB%B6%DB%B0%DB%B0-%D8%AA%D8%A7-%DB%B7%DB%B0%DB%B0/",
       "ok": true,
       "status": 200,
-      "checkedAt": "2026-11-21T12:07:12.222Z"
+      "checkedAt": "2026-11-28T12:43:30.052Z"
     },
     {
       "productId": "ezdevaj-300",
@@ -264,7 +264,7 @@
       "url": "https://nabzgheymat.ir/%D9%88%D8%A7%D9%85-%D8%A7%D8%B2%D8%AF%D9%88%D8%A7%D8%AC-%DB%B1%DB%B4%DB%B0%DB%B5%D8%9B-%D9%85%D8%A8%D9%84%D8%BA-%DB%B3%DB%B0%DB%B0-%D8%AA%D8%A7-%DB%B3%DB%B5%DB%B0-%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86/",
       "ok": true,
       "status": 200,
-      "checkedAt": "2026-11-21T12:07:11.908Z"
+      "checkedAt": "2026-11-28T12:43:29.100Z"
     },
     {
       "productId": "farzandavari-220",
@@ -273,7 +273,7 @@
       "url": "https://nabzgheymat.ir/%D9%88%D8%A7%D9%85-%D9%81%D8%B1%D8%B2%D9%86%D8%AF%D8%A2%D9%88%D8%B1%DB%8C-%DB%B1%DB%B4%DB%B0%DB%B5%D8%9B-%D8%A7%D8%B2-%DB%B4%DB%B4-%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86-%D8%AA%D8%A7-%DB%B2%DB%B2%DB%B0/",
       "ok": true,
       "status": 200,
-      "checkedAt": "2026-11-21T12:07:12.954Z"
+      "checkedAt": "2026-11-28T12:43:30.471Z"
     },
     {
       "productId": "fund-omid-sepah",
@@ -283,7 +283,7 @@
       "ok": false,
       "status": 0,
       "error": "fetch failed",
-      "checkedAt": "2026-11-21T12:06:49.361Z"
+      "checkedAt": "2026-11-28T12:43:08.121Z"
     },
     {
       "productId": "refah-special-certificate-farmad",
@@ -293,7 +293,7 @@
       "ok": false,
       "status": 0,
       "error": "The operation was aborted due to timeout",
-      "checkedAt": "2026-11-21T12:07:05.361Z"
+      "checkedAt": "2026-11-28T12:43:24.122Z"
     },
     {
       "productId": "tobank-club",
@@ -302,7 +302,7 @@
       "url": "https://tobank.ir",
       "ok": false,
       "status": 403,
-      "checkedAt": "2026-11-21T12:07:04.721Z"
+      "checkedAt": "2026-11-28T12:43:22.517Z"
     },
     {
       "productId": "vipad-weclub",
@@ -312,7 +312,7 @@
       "ok": false,
       "status": 0,
       "error": "The operation was aborted due to timeout",
-      "checkedAt": "2026-11-21T12:07:20.245Z"
+      "checkedAt": "2026-11-28T12:43:37.656Z"
     },
     {
       "productId": "deposit-kootah-moddate-adi",
@@ -321,7 +321,7 @@
       "url": "https://www.cbi.ir",
       "ok": true,
       "status": 200,
-      "checkedAt": "2026-11-21T12:07:09.591Z"
+      "checkedAt": "2026-11-28T12:43:28.621Z"
     },
     {
       "productId": "blu-loan-instant",
@@ -330,7 +330,7 @@
       "url": "https://www.rade.ir/service/694259-%D9%88%D8%A7%D9%85-%D8%A8%D9%84%D9%88%D8%A8%D8%A7%D9%86%DA%A9/",
       "ok": true,
       "status": 200,
-      "checkedAt": "2026-11-21T12:07:14.724Z"
+      "checkedAt": "2026-11-28T12:43:32.919Z"
     },
     {
       "productId": "tejarat-special-certificate-choopan",
@@ -340,7 +340,7 @@
       "ok": false,
       "status": 0,
       "error": "The operation was aborted due to timeout",
-      "checkedAt": "2026-11-21T12:07:30.629Z"
+      "checkedAt": "2026-11-28T12:43:48.920Z"
     }
   ]
 }
