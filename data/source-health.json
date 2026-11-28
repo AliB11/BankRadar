@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-27T12:52:52.238Z",
-  "lastRun": "2026-11-27T12:52:52.134Z",
+  "generatedAt": "2026-11-28T12:04:54.785Z",
+  "lastRun": "2026-11-28T12:04:54.651Z",
   "lastRunMode": "full",
   "counts": {
     "credit": 141,
@@ -11,35 +11,35 @@
     "total": 751
   },
   "freshness": {
-    "d7": 443,
-    "d30": 16,
-    "d90": 180,
-    "older": 106,
+    "d7": 437,
+    "d30": 20,
+    "d90": 181,
+    "older": 107,
     "unknown": 6,
     "total": 751,
-    "medianDays": 6
+    "medianDays": 5
   },
   "categoryFreshness": {
     "deposits": {
       "total": 63,
       "fresh": 5,
-      "recent": 6,
-      "aging": 16,
+      "recent": 5,
+      "aging": 17,
       "stale": 31,
       "unknown": 5
     },
     "credit": {
       "total": 141,
       "fresh": 76,
-      "recent": 2,
+      "recent": 1,
       "aging": 47,
-      "stale": 15,
+      "stale": 16,
       "unknown": 1
     },
     "loans": {
       "total": 424,
-      "fresh": 268,
-      "recent": 5,
+      "fresh": 262,
+      "recent": 11,
       "aging": 94,
       "stale": 57,
       "unknown": 0
@@ -74,9 +74,9 @@
       "key": "corridorCeilingRate",
       "label": "نرخ اعتبارگیری قاعده‌مند (سقف کریدور)",
       "value": 34,
-      "period": "آبان ۱۴۰۵",
+      "period": "آذر ۱۴۰۵",
       "sourceKind": "regulator",
-      "class": "recent"
+      "class": "fresh"
     },
     {
       "key": "depositCap1y",
@@ -106,9 +106,9 @@
       "key": "depositFacilityRate",
       "label": "نرخ سپرده‌گذاری قاعده‌مند",
       "value": 26,
-      "period": "آبان ۱۴۰۵",
+      "period": "آذر ۱۴۰۵",
       "sourceKind": "regulator",
-      "class": "recent"
+      "class": "fresh"
     },
     {
       "key": "depositShort3m",
@@ -177,10 +177,10 @@
     {
       "key": "interbankRate",
       "label": "نرخ سود بازار بین‌بانکی",
-      "value": 33.65,
-      "period": "آبان ۱۴۰۵",
+      "value": 33.94,
+      "period": "آذر ۱۴۰۵",
       "sourceKind": "regulator",
-      "class": "recent"
+      "class": "fresh"
     },
     {
       "key": "loanRateCeiling",
@@ -209,10 +209,10 @@
     {
       "key": "repoFloorRate",
       "label": "حداقل نرخ توافق بازخرید",
-      "value": 32.2,
-      "period": "آبان ۱۴۰۵",
+      "value": 31.9,
+      "period": "آذر ۱۴۰۵",
       "sourceKind": "regulator",
-      "class": "recent"
+      "class": "fresh"
     }
   ],
   "sources": [
@@ -220,7 +220,7 @@
       "name": "rade.ir",
       "status": "ok",
       "ok": true,
-      "parsed": 149
+      "parsed": 148
     },
     {
       "name": "bank-sites",
@@ -229,7 +229,7 @@
       "reached": 1,
       "targets": 24,
       "viaFallback": 1,
-      "empty": 13
+      "empty": 14
     },
     {
       "name": "macro-indicators",
@@ -251,7 +251,7 @@
       "status": "ok",
       "ok": true,
       "via": "direct",
-      "observedAt": "2026-11-27",
+      "observedAt": "2026-11-28",
       "parsed": 0
     },
     {
@@ -272,7 +272,7 @@
     "dgshahr.com"
   ],
   "crosscheck": {
-    "generatedAt": "2026-11-27T12:52:52.053Z",
+    "generatedAt": "2026-11-28T12:04:54.545Z",
     "summary": {
       "matched": 6,
       "mismatched": 0,
